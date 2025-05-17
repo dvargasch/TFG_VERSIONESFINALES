@@ -1,4 +1,5 @@
 
+
 ////////////////////////////////////////////////////////////////////////////////
 ///////////////////////Memoria SRAM de 2kbits con TMR///////////////////////////
 ///////////////////////Estudiante: Daniela Vargas Chavarria/////////////////////
@@ -20,19 +21,24 @@ module memory (
   logic [7:0] mem [0:255];
   logic [7:0] addr_r;
 
-  always_ff @(posedge clk) begin
+  always_ff @(posedge clk or posedge  rst) begin
     if (rst) begin
       addr_r <= 8'd0;
       data_out <= 8'd0;
     end 
     else if (enable) begin
-      addr_r <= addr;
-      if (we || write_back) begin
-        mem[addr] <= (write_back ? corrected_data : data_in);
-      end else begin
-        data_out <= mem[addr];
-      end
-    end
+  addr_r <= addr;
+  if (we) begin
+	  mem[addr] <= data_in;
+  end else if (write_back) begin
+    mem[addr_r] <= corrected_data;
+  end else begin
+    data_out <= mem[addr];
+  end
+end else begin
+//  data_out <= 8'd0; 
+end
+
   end
 endmodule
 
@@ -58,17 +64,43 @@ module top (
 );
 
   logic [7:0] data_out_1, data_out_2, data_out_3;
-  logic fault_1, fault_2, fault_3;
+  logic mismatch_1, mismatch_2, mismatch_3;
+  logic mismatch_1_d, mismatch_2_d, mismatch_3_d;
   logic write_back_1, write_back_2, write_back_3;
 
-  assign mismatch_1 = (data_out_1 != data_out);
-  assign mismatch_2 = (data_out_2 != data_out);
-  assign mismatch_3 = (data_out_3 != data_out);
+  // Votación
+  voter voter (
+    .mem_1(data_out_1),
+    .mem_2(data_out_2),
+    .mem_3(data_out_3),
+    .mem_out(data_out)
+  );
 
-  assign write_back_1 = !we && enable && mismatch_1;
-  assign write_back_2 = !we && enable && mismatch_2;
-  assign write_back_3 = !we && enable && mismatch_3;
+  // Mismatch entre cada memoria y el dato votado
+  always_comb begin
+    mismatch_1 = (data_out_1 != data_out);
+    mismatch_2 = (data_out_2 != data_out);
+    mismatch_3 = (data_out_3 != data_out);
+  end
 
+  // Detecta flanco ascendente de mismatch: solo un ciclo de write_back
+  always_ff @(posedge clk or posedge rst) begin
+    if (rst) begin
+      mismatch_1_d <= 1'b0;
+      mismatch_2_d <= 1'b0;
+      mismatch_3_d <= 1'b0;
+    end else begin
+      mismatch_1_d <= mismatch_1;
+      mismatch_2_d <= mismatch_2;
+      mismatch_3_d <= mismatch_3;
+    end
+  end
+
+  assign write_back_1 = !we && enable && (mismatch_1 && !mismatch_1_d);
+  assign write_back_2 = !we && enable && (mismatch_2 && !mismatch_2_d);
+  assign write_back_3 = !we && enable && (mismatch_3 && !mismatch_3_d);
+
+  // Instancias de memorias
   memory memory_1 (
     .clk(clk), .rst(rst), .enable(enable),
     .we(we), .write_back(write_back_1), .corrected_data(data_out),
@@ -87,11 +119,5 @@ module top (
     .addr(addr), .data_in(data_in), .data_out(data_out_3)
   );
 
-  voter voter (
-    .mem_1(data_out_1),
-    .mem_2(data_out_2),
-    .mem_3(data_out_3),
-    .mem_out(data_out)
-  );
-
 endmodule
+
