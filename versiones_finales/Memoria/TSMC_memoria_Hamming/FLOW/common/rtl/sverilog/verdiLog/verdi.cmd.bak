@@ -1,0 +1,99 @@
+simSetSimulator "-vcssv" -exec "./results_2" -args " " -uvmDebug on
+debImport "-i" "-simflow" "-dbdir" "./results_2.daidir"
+srcTBInvokeSim
+verdiSetActWin -dock widgetDock_<Member>
+verdiSetActWin -dock widgetDock_MTB_SOURCE_TAB_1
+wvCreateWindow
+srcSignalViewSelect "tb_sram_2kbit.ADDR_W"
+verdiSetActWin -dock widgetDock_<Signal_List>
+srcSignalViewSelect "tb_sram_2kbit.clk"
+srcSignalViewSelect "tb_sram_2kbit.clk" "tb_sram_2kbit.enable"
+srcSignalViewSelect "tb_sram_2kbit.clk" "tb_sram_2kbit.enable" "tb_sram_2kbit.we"
+srcSignalViewSelect "tb_sram_2kbit.clk" "tb_sram_2kbit.enable" "tb_sram_2kbit.we" \
+           "tb_sram_2kbit.addr\[7:0\]"
+srcSignalViewSelect "tb_sram_2kbit.clk" "tb_sram_2kbit.enable" "tb_sram_2kbit.we" \
+           "tb_sram_2kbit.addr\[7:0\]" "tb_sram_2kbit.data_in\[7:0\]"
+srcSignalViewSelect "tb_sram_2kbit.clk" "tb_sram_2kbit.enable" "tb_sram_2kbit.we" \
+           "tb_sram_2kbit.addr\[7:0\]" "tb_sram_2kbit.data_in\[7:0\]" \
+           "tb_sram_2kbit.data_out\[7:0\]"
+wvAddSignal -win $_nWave3 "/tb_sram_2kbit/clk" "/tb_sram_2kbit/enable" \
+           "/tb_sram_2kbit/we" "/tb_sram_2kbit/addr\[7:0\]" \
+           "/tb_sram_2kbit/data_in\[7:0\]" "/tb_sram_2kbit/data_out\[7:0\]"
+wvSetPosition -win $_nWave3 {("G1" 0)}
+wvSetPosition -win $_nWave3 {("G1" 6)}
+wvSetPosition -win $_nWave3 {("G1" 6)}
+wvSelectGroup -win $_nWave3 {G2}
+verdiSetActWin -win $_nWave3
+srcSignalViewSelect "tb_sram_2kbit.rst"
+verdiSetActWin -dock widgetDock_<Signal_List>
+srcSignalViewSelect "tb_sram_2kbit.rst"
+wvSetPosition -win $_nWave3 {("G1" 3)}
+wvSetPosition -win $_nWave3 {("G1" 2)}
+wvAddSignal -win $_nWave3 "/tb_sram_2kbit/rst"
+wvSetPosition -win $_nWave3 {("G1" 2)}
+wvSetPosition -win $_nWave3 {("G1" 3)}
+wvSetPosition -win $_nWave3 {("G1" 2)}
+verdiSetActWin -win $_nWave3
+wvSetPosition -win $_nWave3 {("G1" 1)}
+wvMoveSelected -win $_nWave3
+wvSetPosition -win $_nWave3 {("G1" 1)}
+wvSetPosition -win $_nWave3 {("G1" 2)}
+verdiSetActWin -dock widgetDock_<Inst._Tree>
+srcHBSelect "tb_sram_2kbit.dut" -win $_nTrace1
+srcHBSelect "tb_sram_2kbit.dut" -win $_nTrace1
+srcSetScope "tb_sram_2kbit.dut" -delim "." -win $_nTrace1
+srcHBSelect "tb_sram_2kbit.dut" -win $_nTrace1
+srcSignalViewSelect "tb_sram_2kbit.dut.synd_lo\[2:0\]"
+verdiSetActWin -dock widgetDock_<Signal_List>
+srcSignalViewSelect "tb_sram_2kbit.dut.synd_lo\[2:0\]" \
+           "tb_sram_2kbit.dut.synd_hi\[2:0\]"
+wvSetPosition -win $_nWave3 {("G1" 4)}
+wvSetPosition -win $_nWave3 {("G1" 7)}
+wvAddSignal -win $_nWave3 "/tb_sram_2kbit/dut/synd_lo\[2:0\]" \
+           "/tb_sram_2kbit/dut/synd_hi\[2:0\]"
+wvSetPosition -win $_nWave3 {("G1" 7)}
+wvSetPosition -win $_nWave3 {("G1" 9)}
+srcSignalViewSelect "tb_sram_2kbit.dut.cw_hi_fixed\[6:0\]"
+srcSignalViewSelect "tb_sram_2kbit.dut.mem_out\[13:0\]"
+srcSignalViewSelect "tb_sram_2kbit.dut.mem_out\[13:0\]"
+wvSetPosition -win $_nWave3 {("G1" 3)}
+wvSetPosition -win $_nWave3 {("G1" 8)}
+wvSetPosition -win $_nWave3 {("G1" 9)}
+wvAddSignal -win $_nWave3 "/tb_sram_2kbit/dut/mem_out\[13:0\]"
+wvSetPosition -win $_nWave3 {("G1" 9)}
+wvSetPosition -win $_nWave3 {("G1" 10)}
+srcSignalViewSelect "tb_sram_2kbit.dut.addr\[7:0\]"
+srcSignalViewSelect "tb_sram_2kbit.dut.write_back"
+srcSignalViewSelect "tb_sram_2kbit.dut.write_back"
+wvSetPosition -win $_nWave3 {("G1" 3)}
+wvSetPosition -win $_nWave3 {("G1" 7)}
+wvSetPosition -win $_nWave3 {("G1" 9)}
+wvSetPosition -win $_nWave3 {("G1" 10)}
+wvSetPosition -win $_nWave3 {("G2" 0)}
+wvSetPosition -win $_nWave3 {("G1" 10)}
+wvAddSignal -win $_nWave3 "/tb_sram_2kbit/dut/write_back"
+wvSetPosition -win $_nWave3 {("G1" 10)}
+wvSetPosition -win $_nWave3 {("G1" 11)}
+srcHBSelect "tb_sram_2kbit" -win $_nTrace1
+srcSetScope "tb_sram_2kbit" -delim "." -win $_nTrace1
+verdiSetActWin -dock widgetDock_<Inst._Tree>
+srcHBSelect "tb_sram_2kbit" -win $_nTrace1
+srcDeselectAll -win $_nTrace1
+srcSelect -win $_nTrace1 -signal "dut.mem\[20\]" -line 71 -pos 1
+verdiSetActWin -dock widgetDock_MTB_SOURCE_TAB_1
+srcAddSelectedToWave -clipboard -win $_nTrace1
+wvDrop -win $_nWave3
+srcDeselectAll -win $_nTrace1
+srcSelect -win $_nTrace1 -signal "dut.mem\[40\]" -line 117 -pos 1
+srcAddSelectedToWave -clipboard -win $_nTrace1
+wvDrop -win $_nWave3
+srcTBRunSim
+wvZoomAll -win $_nWave3
+verdiSetActWin -win $_nWave3
+wvSelectGroup -win $_nWave3 {G2}
+wvScrollDown -win $_nWave3 0
+wvScrollUp -win $_nWave3 2
+wvScrollDown -win $_nWave3 1
+wvSetCursor -win $_nWave3 6310.148976 -snap {("G1" 7)}
+wvZoom -win $_nWave3 1720.949721 256995.158287
+debExit

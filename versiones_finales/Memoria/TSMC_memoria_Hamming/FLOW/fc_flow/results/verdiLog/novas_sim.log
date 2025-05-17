@@ -1,0 +1,31 @@
+Invoking simulator...
+
+./results -sml=verdi +UVM_VERDI_TRACE=UVM_AWARE +fsdb+gate=off -ucli2Proc -ucli
+debImport "-i" "-simflow" "-dbdir" "./results.daidir"
+*Verdi* Loading libsscore_vcs202303.so
+
+*Verdi* : Enable RPC Server(2963321)
+
+srcTBInvokeSim
+Chronologic VCS simulator copyright 1991-2023
+Contains Synopsys proprietary information.
+Compiler version U-2023.03-SP2_Full64; Runtime version U-2023.03-SP2_Full64;  May 16 21:45 2025
+xterm-256color is Not a valid terminal...
+Verdi>fsdbDumpvars 1 "tb_sram_2kbit.dut"  +all +trace_process;fsdbDumpflush 
+
+*Verdi* : Begin traversing the scope (tb_sram_2kbit.dut), layer (1).
+*Verdi* : Enable +trace_process and +all dumping.
+*Verdi* : End of traversing.
+*Verdi* : Flush all FSDB Files at 0 ps.
+
+Verdi>run
+t=25000 en=0 ? data_out=xxxxxxxx (esperado X)
+$finish called from file "tb.sv", line 155.
+$finish at simulation time               305000
+Simulation complete, time is 305000 ps.
+tb.sv, 155 :         $finish;
+           V C S   S i m u l a t i o n   R e p o r t 
+Time: 305000 ps
+CPU Time:      1.220 seconds;       Data structure size:   6.3Mb
+Fri May 16 21:50:36 2025
+debExit

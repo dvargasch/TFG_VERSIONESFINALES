@@ -1,0 +1,7 @@
+set search_path [list . /mnt/vol_synopsys2023/synopsys/fusioncompiler/U-2022.12-SP6/dw/syn_ver /mnt/vol_synopsys2023/synopsys/fusioncompiler/U-2022.12-SP6/dw/sim_ver /mnt/vol_synopsys2023/synopsys/fusioncompiler/U-2022.12-SP6/libraries/syn ] 
+analyze -format sverilog  "/mnt/vol_NFS_rh003/estudiantes/DANIELA_VARGAS/TFG_SEMANA12/sintesis_0511/versiones_finales/Memoria/TSMC_memoria/TSMC_memoria_TMR/FLOW/fc_flow/flow/work/../../../common/rtl/sverilog/top.sv" 
+C/mnt/vol_NFS_rh003/estudiantes/DANIELA_VARGAS/TFG_SEMANA12/sintesis_0511/versiones_finales/Memoria/TSMC_memoria/TSMC_memoria_TMR/FLOW/fc_flow/flow/work
+/mnt/vol_NFS_rh003/estudiantes/DANIELA_VARGAS/TFG_SEMANA12/sintesis_0511/versiones_finales/Memoria/TSMC_memoria/TSMC_memoria_TMR/FLOW/common/rtl/sverilog/top.sv
+top
+elaborate top
+set_top_module top
