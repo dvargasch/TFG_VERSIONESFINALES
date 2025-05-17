@@ -2,6 +2,10 @@
 `timescale 1ns/1ps
 
 `include "top.sv"
+
+
+`timescale 1ns/1ps
+
 module tb_sram_2kbit;
 
   localparam ADDR_W = 8;
@@ -40,7 +44,7 @@ module tb_sram_2kbit;
     data_in  = 0;
     rst      = 1;  
     @(posedge clk);
-    rst      = 0;  
+    rst      <= 0;  
     @(posedge clk);
 
     // Escritura de datos conocidos
@@ -58,43 +62,48 @@ module tb_sram_2kbit;
     // -------------------------
     // INYECCIÓN DE ERRORES CON FORCE
     // -------------------------
-
-  //  @(posedge clk);
     force dut.memory_1.mem[10] = 8'h00;
-    addr <= 8'd10; //@(posedge clk);
+    addr <= 8'd10; 
     release dut.memory_1.mem[10];
 
     @(posedge clk);
     force dut.memory_2.mem[20] = 8'hFF;
-    addr <= 8'd20; //@(posedge clk);
+    addr <= 8'd20; 
     release dut.memory_2.mem[20];
 
     @(posedge clk);
     $display("\n>> FORCE: Error en mem2 (posición 30)");
     force dut.memory_3.mem[30] = 8'h00;
-    addr <= 8'd30; //@(posedge clk);
+    addr <= 8'd30; 
     release dut.memory_3.mem[30];
 
     @(posedge clk);
-    $display("\n>> FORCE: Error en mem0 y mem1 (posición 10)");
-    force dut.memory_1.mem[10] = 8'h11;
+   // $display("\n>> FORCE: Error en mem0 y mem1 (posición 10)");
+    force dut.memory_3.mem[10] = 8'h11;
   //  force dut.mem1.mem[10] = 8'h22;
-    addr <= 8'd10;// @(posedge clk);
+  //  addr <= 8'd10; 
   //  release dut.mem0.mem[10];
-    release dut.memory_1.mem[10];
+    release dut.memory_3.mem[10];
 
     @(posedge clk);
     $display("\n>> FORCE: Error en las 3 memorias (posición 20)");
-    force dut.memory_1.mem[20] = 8'hAA;
+   // force dut.memory_1.mem[20] = 8'hAA;
   //  force dut.mem1.mem[20] = 8'hBB;
   //  force dut.mem2.mem[20] = 8'hCC;
-    addr <= 8'd20;// @(posedge clk);
-    release dut.memory_1.mem[20];
+   // addr <= 8'd20; 
+ //   release dut.memory_1.mem[20];
  //   release dut.mem1.mem[20];
    // release dut.mem2.mem[20];
-
+@(posedge clk);
+     addr <= 8'd10; 
+    
+    @(posedge clk);
+ @(posedge clk);
+    @(posedge clk);
+ @(posedge clk);
     $display("\nTest terminado.");
     $finish;
   end
 
 endmodule
+

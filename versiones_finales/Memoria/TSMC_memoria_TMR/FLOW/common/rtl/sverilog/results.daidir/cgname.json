@@ -1,0 +1,26 @@
+{
+    "std": [
+        "std",
+        "reYIK",
+        "module",
+        1
+    ],
+    "memory": [
+        "memory",
+        "DhPSm",
+        "module",
+        2
+    ],
+    "tb_sram_2kbit": [
+        "tb_sram_2kbit",
+        "QIC36",
+        "module",
+        3
+    ],
+    "...MASTER...": [
+        "SIM",
+        "amcQw",
+        "module",
+        4
+    ]
+}

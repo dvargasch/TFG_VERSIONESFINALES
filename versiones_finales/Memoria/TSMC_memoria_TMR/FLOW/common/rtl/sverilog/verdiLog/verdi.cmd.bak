@@ -1,0 +1,108 @@
+simSetSimulator "-vcssv" -exec "./results" -args " " -uvmDebug on
+debImport "-i" "-simflow" "-dbdir" "./results.daidir"
+srcTBInvokeSim
+verdiSetActWin -dock widgetDock_<Member>
+verdiSetActWin -dock widgetDock_MTB_SOURCE_TAB_1
+wvCreateWindow
+verdiSetActWin -win $_nWave3
+verdiSetActWin -dock widgetDock_<Inst._Tree>
+srcHBSelect "tb_sram_2kbit.dut.voter" -win $_nTrace1
+srcHBDrag -win $_nTrace1
+wvDumpScope "tb_sram_2kbit.dut.voter"
+wvSetPosition -win $_nWave3 {("voter" 0)}
+wvRenameGroup -win $_nWave3 {G1} {voter}
+wvAddSignal -win $_nWave3 "/tb_sram_2kbit/dut/voter/mem_1\[7:0\]" \
+           "/tb_sram_2kbit/dut/voter/mem_2\[7:0\]" \
+           "/tb_sram_2kbit/dut/voter/mem_3\[7:0\]" \
+           "/tb_sram_2kbit/dut/voter/mem_out\[7:0\]"
+wvSetPosition -win $_nWave3 {("voter" 0)}
+wvSetPosition -win $_nWave3 {("voter" 4)}
+wvSetPosition -win $_nWave3 {("voter" 4)}
+wvSelectSignal -win $_nWave3 {( "voter" 4 )} 
+verdiSetActWin -win $_nWave3
+srcTBRunSim
+wvZoomAll -win $_nWave3
+wvSetCursor -win $_nWave3 96986.754967 -snap {("voter" 3)}
+wvSetCursor -win $_nWave3 105715.562914 -snap {("voter" 1)}
+wvSetCursor -win $_nWave3 116060.816777 -snap {("voter" 2)}
+wvSetCursor -win $_nWave3 125597.847682 -snap {("voter" 2)}
+wvSetCursor -win $_nWave3 85025.055188 -snap {("voter" 2)}
+srcDeselectAll -win $_nTrace1
+verdiSetActWin -dock widgetDock_MTB_SOURCE_TAB_1
+srcDeselectAll -win $_nTrace1
+srcSelect -win $_nTrace1 -signal "dut.memory_1.mem\[20\]" -line 88 -pos 1
+srcDeselectAll -win $_nTrace1
+wvSetCursor -win $_nWave3 95047.019868 -snap {("voter" 2)}
+verdiSetActWin -win $_nWave3
+wvSetCursor -win $_nWave3 105068.984547 -snap {("voter" 3)}
+srcDeselectAll -win $_nTrace1
+verdiSetActWin -dock widgetDock_MTB_SOURCE_TAB_1
+srcDeselectAll -win $_nTrace1
+srcDeselectAll -win $_nTrace1
+srcDeselectAll -win $_nTrace1
+srcDeselectAll -win $_nTrace1
+srcDeselectAll -win $_nTrace1
+srcAction -pos 75 3 2 -win $_nTrace1 -name "dut.memory_3.mem\[30\]" -ctrlKey off
+srcDeselectAll -win $_nTrace1
+srcSelect -win $_nTrace1 -signal "dut.memory_3.mem\[30\]" -line 76 -pos 1
+srcDeselectAll -win $_nTrace1
+srcDeselectAll -win $_nTrace1
+wvSelectSignal -win $_nWave3 {( "voter" 1 )} 
+verdiSetActWin -win $_nWave3
+wvSelectSignal -win $_nWave3 {( "voter" 4 )} 
+srcHBSelect "tb_sram_2kbit.dut.memory_1" -win $_nTrace1
+srcSetScope "tb_sram_2kbit.dut.memory_1" -delim "." -win $_nTrace1
+srcHBSelect "tb_sram_2kbit.dut.memory_1" -win $_nTrace1
+verdiSetActWin -dock widgetDock_<Inst._Tree>
+srcSignalViewSelect "tb_sram_2kbit.dut.memory_1.write_back"
+verdiSetActWin -dock widgetDock_<Signal_List>
+srcSignalViewSelect "tb_sram_2kbit.dut.memory_1.write_back"
+wvSetPosition -win $_nWave3 {("voter" 0)}
+wvSetPosition -win $_nWave3 {("voter" 4)}
+wvSetPosition -win $_nWave3 {("G2" 0)}
+wvAddSignal -win $_nWave3 "/tb_sram_2kbit/dut/memory_1/write_back"
+wvSetPosition -win $_nWave3 {("G2" 0)}
+wvSetPosition -win $_nWave3 {("G2" 1)}
+wvSetPosition -win $_nWave3 {("G2" 1)}
+srcHBSelect "tb_sram_2kbit.dut.memory_2" -win $_nTrace1
+srcSetScope "tb_sram_2kbit.dut.memory_2" -delim "." -win $_nTrace1
+verdiSetActWin -dock widgetDock_<Inst._Tree>
+srcHBSelect "tb_sram_2kbit.dut.memory_2" -win $_nTrace1
+srcHBSelect "tb_sram_2kbit.dut.memory_2" -win $_nTrace1
+srcSignalViewSelect "tb_sram_2kbit.dut.memory_2.write_back"
+verdiSetActWin -dock widgetDock_<Signal_List>
+srcSignalViewSelect "tb_sram_2kbit.dut.memory_2.write_back"
+wvSetPosition -win $_nWave3 {("voter" 0)}
+wvSetPosition -win $_nWave3 {("voter" 4)}
+wvSetPosition -win $_nWave3 {("G2" 0)}
+wvSetPosition -win $_nWave3 {("G2" 1)}
+wvAddSignal -win $_nWave3 "/tb_sram_2kbit/dut/memory_2/write_back"
+wvSetPosition -win $_nWave3 {("G2" 1)}
+wvSetPosition -win $_nWave3 {("G2" 2)}
+srcHBSelect "tb_sram_2kbit.dut.memory_3" -win $_nTrace1
+srcSetScope "tb_sram_2kbit.dut.memory_3" -delim "." -win $_nTrace1
+verdiSetActWin -dock widgetDock_<Inst._Tree>
+srcHBSelect "tb_sram_2kbit.dut.memory_3" -win $_nTrace1
+srcHBSelect "tb_sram_2kbit.dut.memory_3" -win $_nTrace1
+srcSignalViewSelect "tb_sram_2kbit.dut.memory_3.mem\[0:255\]"
+verdiSetActWin -dock widgetDock_<Signal_List>
+srcSignalViewSelect "tb_sram_2kbit.dut.memory_3.write_back"
+srcSignalViewSelect "tb_sram_2kbit.dut.memory_3.write_back"
+wvSetPosition -win $_nWave3 {("voter" 0)}
+wvSetPosition -win $_nWave3 {("voter" 2)}
+wvSetPosition -win $_nWave3 {("voter" 4)}
+wvSetPosition -win $_nWave3 {("G2" 1)}
+wvSetPosition -win $_nWave3 {("G2" 2)}
+wvAddSignal -win $_nWave3 "/tb_sram_2kbit/dut/memory_3/write_back"
+wvSetPosition -win $_nWave3 {("G2" 2)}
+wvSetPosition -win $_nWave3 {("G2" 3)}
+srcTBSimReset
+srcTBRunSim
+wvZoomAll -win $_nWave3
+verdiSetActWin -win $_nWave3
+wvSetCursor -win $_nWave3 124627.980132 -snap {("voter" 2)}
+wvSetCursor -win $_nWave3 114929.304636 -snap {("voter" 2)}
+wvSetCursor -win $_nWave3 85833.278146 -snap {("voter" 4)}
+wvSetCursor -win $_nWave3 115737.527594 -snap {("voter" 2)}
+wvSetCursor -win $_nWave3 125597.847682 -snap {("voter" 2)}
+debExit
