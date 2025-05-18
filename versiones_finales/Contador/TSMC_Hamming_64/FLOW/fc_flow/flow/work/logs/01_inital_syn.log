@@ -40,7 +40,7 @@ set DESIGN_LIBRARY "${DESIGN_NAME}_lib"
 #################################
 set time [get_date]
 puts "Command Start at: ${time}"
-Command Start at: Sun May 18 02:23:08 2025
+Command Start at: Sun May 18 15:05:01 2025
 ####################################
 ### 1. Variables for design prep ###
 ####################################
@@ -138,18 +138,18 @@ set UNSELECT_RULES "PO.DN.2* OD.DN.2* M*.DN.1* CSR.R.1* DM*.R.1*"
 PO.DN.2* OD.DN.2* M*.DN.1* CSR.R.1* DM*.R.1*
 # Open the design library
 open_lib ${DESIGN_LIBRARY}
-Information: Loading library file '/mnt/vol_NFS_rh003/estudiantes/DANIELA_VARGAS/Version_final/0516/versiones_finales/Contador/TSMC_Hamming_8/FLOW/fc_flow/flow/work/top_lib' (FILE-007)
-Information: Loading library file '/mnt/vol_NFS_rh003/estudiantes/DANIELA_VARGAS/Version_final/0516/versiones_finales/Contador/TSMC_Hamming_8/FLOW/fc_flow/setup/ndm_libraries/ndm/tcbn65lphpbwpcghvt_1_physical_only.ndm' (FILE-007)
-Information: Loading library file '/mnt/vol_NFS_rh003/estudiantes/DANIELA_VARGAS/Version_final/0516/versiones_finales/Contador/TSMC_Hamming_8/FLOW/fc_flow/setup/ndm_libraries/ndm/tcbn65lphpbwp_1_physical_only.ndm' (FILE-007)
-Information: Loading library file '/mnt/vol_NFS_rh003/estudiantes/DANIELA_VARGAS/Version_final/0516/versiones_finales/Contador/TSMC_Hamming_8/FLOW/fc_flow/setup/ndm_libraries/ndm/tpdn65lpgv2od3_sd_physical_only.ndm' (FILE-007)
-Information: Loading library file '/mnt/vol_NFS_rh003/estudiantes/DANIELA_VARGAS/Version_final/0516/versiones_finales/Contador/TSMC_Hamming_8/FLOW/fc_flow/setup/ndm_libraries/ndm/tpfn65lpgv2od3_physical_only.ndm' (FILE-007)
-Information: Loading library file '/mnt/vol_NFS_rh003/estudiantes/DANIELA_VARGAS/Version_final/0516/versiones_finales/Contador/TSMC_Hamming_8/FLOW/fc_flow/setup/ndm_libraries/ndm/tpbn65v_physical_only.ndm' (FILE-007)
-Information: Loading library file '/mnt/vol_NFS_rh003/estudiantes/DANIELA_VARGAS/Version_final/0516/versiones_finales/Contador/TSMC_Hamming_8/FLOW/fc_flow/setup/ndm_libraries/ndm/tpin65gv_physical_only.ndm' (FILE-007)
-Information: Loading library file '/mnt/vol_NFS_rh003/estudiantes/DANIELA_VARGAS/Version_final/0516/versiones_finales/Contador/TSMC_Hamming_8/FLOW/fc_flow/setup/ndm_libraries/ndm/tcbn65lphpbwpcghvt_1.ndm' (FILE-007)
-Information: Loading library file '/mnt/vol_NFS_rh003/estudiantes/DANIELA_VARGAS/Version_final/0516/versiones_finales/Contador/TSMC_Hamming_8/FLOW/fc_flow/setup/ndm_libraries/ndm/tcbn65lphpbwp_1.ndm' (FILE-007)
-Information: Loading library file '/mnt/vol_NFS_rh003/estudiantes/DANIELA_VARGAS/Version_final/0516/versiones_finales/Contador/TSMC_Hamming_8/FLOW/fc_flow/setup/ndm_libraries/ndm/tpdn65lpgv2od3_sdml.ndm' (FILE-007)
-Information: Loading library file '/mnt/vol_NFS_rh003/estudiantes/DANIELA_VARGAS/Version_final/0516/versiones_finales/Contador/TSMC_Hamming_8/FLOW/fc_flow/setup/ndm_libraries/ndm/tpfn65lpgv2od3ml.ndm' (FILE-007)
-Information: Loading library file '/mnt/vol_NFS_rh003/estudiantes/DANIELA_VARGAS/Version_final/0516/versiones_finales/Contador/TSMC_Hamming_8/FLOW/fc_flow/setup/ndm_libraries/ndm/ts1n65lpa2048x32m4_140a_5m.ndm' (FILE-007)
+Information: Loading library file '/mnt/vol_NFS_rh003/estudiantes/DANIELA_VARGAS/Version_final/0516/versiones_finales/Contador/TSMC_Hamming_64/FLOW/fc_flow/flow/work/top_lib' (FILE-007)
+Information: Loading library file '/mnt/vol_NFS_rh003/estudiantes/DANIELA_VARGAS/Version_final/0516/versiones_finales/Contador/TSMC_Hamming_64/FLOW/fc_flow/setup/ndm_libraries/ndm/tcbn65lphpbwpcghvt_1_physical_only.ndm' (FILE-007)
+Information: Loading library file '/mnt/vol_NFS_rh003/estudiantes/DANIELA_VARGAS/Version_final/0516/versiones_finales/Contador/TSMC_Hamming_64/FLOW/fc_flow/setup/ndm_libraries/ndm/tcbn65lphpbwp_1_physical_only.ndm' (FILE-007)
+Information: Loading library file '/mnt/vol_NFS_rh003/estudiantes/DANIELA_VARGAS/Version_final/0516/versiones_finales/Contador/TSMC_Hamming_64/FLOW/fc_flow/setup/ndm_libraries/ndm/tpdn65lpgv2od3_sd_physical_only.ndm' (FILE-007)
+Information: Loading library file '/mnt/vol_NFS_rh003/estudiantes/DANIELA_VARGAS/Version_final/0516/versiones_finales/Contador/TSMC_Hamming_64/FLOW/fc_flow/setup/ndm_libraries/ndm/tpfn65lpgv2od3_physical_only.ndm' (FILE-007)
+Information: Loading library file '/mnt/vol_NFS_rh003/estudiantes/DANIELA_VARGAS/Version_final/0516/versiones_finales/Contador/TSMC_Hamming_64/FLOW/fc_flow/setup/ndm_libraries/ndm/tpbn65v_physical_only.ndm' (FILE-007)
+Information: Loading library file '/mnt/vol_NFS_rh003/estudiantes/DANIELA_VARGAS/Version_final/0516/versiones_finales/Contador/TSMC_Hamming_64/FLOW/fc_flow/setup/ndm_libraries/ndm/tpin65gv_physical_only.ndm' (FILE-007)
+Information: Loading library file '/mnt/vol_NFS_rh003/estudiantes/DANIELA_VARGAS/Version_final/0516/versiones_finales/Contador/TSMC_Hamming_64/FLOW/fc_flow/setup/ndm_libraries/ndm/tcbn65lphpbwpcghvt_1.ndm' (FILE-007)
+Information: Loading library file '/mnt/vol_NFS_rh003/estudiantes/DANIELA_VARGAS/Version_final/0516/versiones_finales/Contador/TSMC_Hamming_64/FLOW/fc_flow/setup/ndm_libraries/ndm/tcbn65lphpbwp_1.ndm' (FILE-007)
+Information: Loading library file '/mnt/vol_NFS_rh003/estudiantes/DANIELA_VARGAS/Version_final/0516/versiones_finales/Contador/TSMC_Hamming_64/FLOW/fc_flow/setup/ndm_libraries/ndm/tpdn65lpgv2od3_sdml.ndm' (FILE-007)
+Information: Loading library file '/mnt/vol_NFS_rh003/estudiantes/DANIELA_VARGAS/Version_final/0516/versiones_finales/Contador/TSMC_Hamming_64/FLOW/fc_flow/setup/ndm_libraries/ndm/tpfn65lpgv2od3ml.ndm' (FILE-007)
+Information: Loading library file '/mnt/vol_NFS_rh003/estudiantes/DANIELA_VARGAS/Version_final/0516/versiones_finales/Contador/TSMC_Hamming_64/FLOW/fc_flow/setup/ndm_libraries/ndm/ts1n65lpa2048x32m4_140a_5m.ndm' (FILE-007)
 Warning: Technology used to create frame-view and current technology have inconsistency: Fat table contents are different. (FRAM-054)
 Warning: Technology 'tcbn65lphpbwpcghvt.tf' used for frame-view creation in library 'tcbn65lphpbwpcghvt_1_physical_only', is inconsistent with the current technology 'tsmcn65_9lmT2.tf' of library 'top_lib'. Please run derive_design_level_via_regions to generate up-do-date via region in the design library. (NDM-102)
 Warning: Technology used to create frame-view and current technology have inconsistency: Fat table contents are different. (FRAM-054)
@@ -175,9 +175,9 @@ if {[string equal verilog ${HDL}]} {
 }
 Information: By default, the HDL template library is 'WORK' (LBR-??).
 Running PRESTO HDLC
-Compiling source file /mnt/vol_NFS_rh003/estudiantes/DANIELA_VARGAS/Version_final/0516/versiones_finales/Contador/TSMC_Hamming_8/FLOW/fc_flow/flow/work/../../../common/rtl/sverilog/top.sv
+Compiling source file /mnt/vol_NFS_rh003/estudiantes/DANIELA_VARGAS/Version_final/0516/versiones_finales/Contador/TSMC_Hamming_64/FLOW/fc_flow/flow/work/../../../common/rtl/sverilog/top.sv
 Presto compilation completed successfully.
-Elapsed = 00:00:00.04, CPU = 00:00:00.00
+Elapsed = 00:00:00.05, CPU = 00:00:00.01
 1
 #### ----- Elaborate and hierarchize the design ----- ####
 # Elaborate
@@ -187,23 +187,23 @@ Information: Elaborating HDL template WORK:counter_and_parity instantiated from 
 
 Inferred memory devices in process
 	in routine counter_and_parity line 68 in file
-		'/mnt/vol_NFS_rh003/estudiantes/DANIELA_VARGAS/Version_final/0516/versiones_finales/Contador/TSMC_Hamming_8/FLOW/fc_flow/flow/work/../../../common/rtl/sverilog/top.sv'.
+		'/mnt/vol_NFS_rh003/estudiantes/DANIELA_VARGAS/Version_final/0516/versiones_finales/Contador/TSMC_Hamming_64/FLOW/fc_flow/flow/work/../../../common/rtl/sverilog/top.sv'.
 ===============================================================================
 |    Register Name    |   Type    | Width | Bus | MB | AR | AS | SR | SS | ST |
 ===============================================================================
-|    count_neg_reg    | Flip-flop |   8   |  Y  | Y  | Y  | N  | N  | N  | N  |
+|    count_neg_reg    | Flip-flop |  64   |  Y  | Y  | Y  | N  | N  | N  | N  |
 ===============================================================================
 
 Inferred memory devices in process
 	in routine counter_and_parity line 76 in file
-		'/mnt/vol_NFS_rh003/estudiantes/DANIELA_VARGAS/Version_final/0516/versiones_finales/Contador/TSMC_Hamming_8/FLOW/fc_flow/flow/work/../../../common/rtl/sverilog/top.sv'.
+		'/mnt/vol_NFS_rh003/estudiantes/DANIELA_VARGAS/Version_final/0516/versiones_finales/Contador/TSMC_Hamming_64/FLOW/fc_flow/flow/work/../../../common/rtl/sverilog/top.sv'.
 ===============================================================================
 |    Register Name    |   Type    | Width | Bus | MB | AR | AS | SR | SS | ST |
 ===============================================================================
-|     parity_reg      | Flip-flop |   6   |  Y  | Y  | Y  | N  | N  | N  | N  |
-|    count_reg_reg    | Flip-flop |   8   |  Y  | Y  | Y  | N  | N  | N  | N  |
-| counter_stored_reg  | Flip-flop |   8   |  Y  | Y  | Y  | N  | N  | N  | N  |
-|  parity_stored_reg  | Flip-flop |   6   |  Y  | Y  | Y  | N  | N  | N  | N  |
+|     parity_reg      | Flip-flop |  48   |  Y  | Y  | Y  | N  | N  | N  | N  |
+|    count_reg_reg    | Flip-flop |  64   |  Y  | Y  | Y  | N  | N  | N  | N  |
+| counter_stored_reg  | Flip-flop |  64   |  Y  | Y  | Y  | N  | N  | N  | N  |
+|  parity_stored_reg  | Flip-flop |  48   |  Y  | Y  | Y  | N  | N  | N  | N  |
 |      busy_reg       | Flip-flop |   1   |  N  | N  | Y  | N  | N  | N  | N  |
 |   enable_last_reg   | Flip-flop |   1   |  N  | N  | Y  | N  | N  | N  | N  |
 |   reset_done_reg    | Flip-flop |   1   |  N  | N  | Y  | N  | N  | N  | N  |
@@ -212,7 +212,7 @@ Presto compilation completed successfully. (counter_and_parity)
 Information: Elaborating HDL template WORK:syndrome instantiated from 'top'. (ELAB-193)
 
 Statistics for case statements in always block at line 165 in file
-	'/mnt/vol_NFS_rh003/estudiantes/DANIELA_VARGAS/Version_final/0516/versiones_finales/Contador/TSMC_Hamming_8/FLOW/fc_flow/flow/work/../../../common/rtl/sverilog/top.sv'
+	'/mnt/vol_NFS_rh003/estudiantes/DANIELA_VARGAS/Version_final/0516/versiones_finales/Contador/TSMC_Hamming_64/FLOW/fc_flow/flow/work/../../../common/rtl/sverilog/top.sv'
 ===============================================
 |           Line           |  full/ parallel  |
 ===============================================
@@ -221,35 +221,35 @@ Statistics for case statements in always block at line 165 in file
 
 Inferred memory devices in process
 	in routine syndrome line 141 in file
-		'/mnt/vol_NFS_rh003/estudiantes/DANIELA_VARGAS/Version_final/0516/versiones_finales/Contador/TSMC_Hamming_8/FLOW/fc_flow/flow/work/../../../common/rtl/sverilog/top.sv'.
+		'/mnt/vol_NFS_rh003/estudiantes/DANIELA_VARGAS/Version_final/0516/versiones_finales/Contador/TSMC_Hamming_64/FLOW/fc_flow/flow/work/../../../common/rtl/sverilog/top.sv'.
 ===========================================================================
 |    Register Name    | Type  | Width | Bus | MB | AR | AS | SR | SS | ST |
 ===========================================================================
-|    syndrome_reg     | Latch |   6   |  Y  | Y  | N  | N  | -  | -  | -  |
+|    syndrome_reg     | Latch |  48   |  Y  | Y  | N  | N  | -  | -  | -  |
 ===========================================================================
 
 Inferred memory devices in process
 	in routine syndrome line 165 in file
-		'/mnt/vol_NFS_rh003/estudiantes/DANIELA_VARGAS/Version_final/0516/versiones_finales/Contador/TSMC_Hamming_8/FLOW/fc_flow/flow/work/../../../common/rtl/sverilog/top.sv'.
+		'/mnt/vol_NFS_rh003/estudiantes/DANIELA_VARGAS/Version_final/0516/versiones_finales/Contador/TSMC_Hamming_64/FLOW/fc_flow/flow/work/../../../common/rtl/sverilog/top.sv'.
 =================================================================================
 |     Register Name     |   Type    | Width | Bus | MB | AR | AS | SR | SS | ST |
 =================================================================================
-| corrected_counter_reg | Flip-flop |   8   |  Y  | Y  | Y  | N  | N  | N  | N  |
+| corrected_counter_reg | Flip-flop |  64   |  Y  | Y  | Y  | N  | N  | N  | N  |
 =================================================================================
 Presto compilation completed successfully. (syndrome)
 Number of modules read: 3
-Top level ports:        11
+Top level ports:        67
 Total in all modules
-  Ports:                83
-  Nets:                 239
-  Instances:            142
-Elapsed = 00:00:00.15, CPU = 00:00:00.11
+  Ports:                573
+  Nets:                 1653
+  Instances:            954
+Elapsed = 00:00:00.27, CPU = 00:00:00.22
 1
 # Set top module in the design
 set_top_module ${DESIGN_NAME}
 Information: User units loaded from library 'tcbn65lphpbwpcghvt_1' (LNK-040)
 Information: Added key list 'DesignWare' to design 'top'. (DWS-0216)
-Elapsed = 00:00:00.47, CPU = 00:00:00.26
+Elapsed = 00:00:00.62, CPU = 00:00:00.37
 1
 # Save block after RTL setup
 save_block -as ${DESIGN_NAME}/rtl_read
@@ -263,8 +263,8 @@ Information: Timer using 1 threads
 INFO: compile_fusion is running in balanced flow mode.
 Warning: No site rows found in floorplan. (LGL-397)
 Information: Starting 'compile_fusion -to initial_map' (FLW-8000)
-Information: Time: 2025-05-18 02:23:09 / Session: 0.00 hr / Command: 0.00 hr / Memory: 489 MB (FLW-8100)
-CPU Load: 3%, Ram Free: 1 GB, Swap Free: 0 GB, Work Disk Free: 246 GB, Tmp Disk Free: 53 GB
+Information: Time: 2025-05-18 15:05:02 / Session: 0.00 hr / Command: 0.00 hr / Memory: 495 MB (FLW-8100)
+CPU Load: 6%, Ram Free: 0 GB, Swap Free: 0 GB, Work Disk Free: 238 GB, Tmp Disk Free: 53 GB
 Warning: No site rows found in floorplan. (LGL-397)
 INFO: Start environment monitoring: recipes
 INFO: compile_fusion is running in balanced flow mode.
@@ -284,7 +284,7 @@ Warning: Mapping to scan cell 'GSDFCNQD1HPBWP' in library is not possible becaus
 Information: The automatic clock gate timing flow is activated. Clock latencies set on clock gate cells will be automatically adjusted by an estimate for latency. (CGT-4005)
 ----------------------------------------------------------------------------------------------------------
 Information: Starting compile_fusion / initial_map (FLW-8000)
-Information: Time: 2025-05-18 02:23:11 / Session: 0.00 hr / Command: 0.00 hr / Memory: 624 MB (FLW-8100)
+Information: Time: 2025-05-18 15:05:04 / Session: 0.00 hr / Command: 0.00 hr / Memory: 629 MB (FLW-8100)
 ----------------------------------------------------------------------------------------------------------
 Warning: Mapping to scan cell 'GSDFCNQD1HPBWP' in library is not possible because cell has 'dont_use' attribute. (SQM-1067)
 Warning: No site rows found in floorplan. (LGL-397)
@@ -303,14 +303,14 @@ Warning: No valid clocks available in mode 'default'. Setting clock frequency to
 Warning: No site rows found in floorplan. (LGL-397)
 Warning: No site rows found in floorplan. (LGL-397)
 Information: Starting compile_fusion / initial_map / MV Cell Insertion (FLW-8000)
-Information: Time: 2025-05-18 02:23:11 / Session: 0.00 hr / Command: 0.00 hr / Memory: 672 MB (FLW-8100)
+Information: Time: 2025-05-18 15:05:05 / Session: 0.00 hr / Command: 0.00 hr / Memory: 676 MB (FLW-8100)
 Information: Result of compile_fusion / initial_map / MV Cell Insertion (FLW-8500)
 Information: Total number of MV cells in the design. (MV-334)
 Information: Ending   compile_fusion / initial_map / MV Cell Insertion (FLW-8001)
-Information: Time: 2025-05-18 02:23:11 / Session: 0.00 hr / Command: 0.00 hr / Memory: 672 MB (FLW-8100)
+Information: Time: 2025-05-18 15:05:05 / Session: 0.00 hr / Command: 0.00 hr / Memory: 676 MB (FLW-8100)
 
 Information: Starting compile_fusion / initial_map / Logic Simplification (1) (FLW-8000)
-Information: Time: 2025-05-18 02:23:11 / Session: 0.00 hr / Command: 0.00 hr / Memory: 672 MB (FLW-8100)
+Information: Time: 2025-05-18 15:05:05 / Session: 0.00 hr / Command: 0.00 hr / Memory: 676 MB (FLW-8100)
 Information: The hierarchy syndrome_inst is ungrouped due to auto_ungrouping. (UNG-1001)
 Information: The hierarchy counter_and_parity is ungrouped due to auto_ungrouping. (UNG-1001)
 Information: 2 of 2 hierarchies are ungrouped. Use report_ungroup for a list. (UNG-1003)
@@ -321,20 +321,25 @@ Hierarchy                                                 Count
 -------------------------------------------------------------------
 Auto ungrouped hierarchies                                  2
 -------------------------------------------------------------------
-Information: The register counter_and_parity/parity_reg[5] is removed because it is unloaded. (SQM-4101)
-Information: The register counter_and_parity/parity_reg[4] is removed because it is unloaded. (SQM-4101)
-Information: The register counter_and_parity/parity_reg[3] is removed because it is unloaded. (SQM-4101)
-Information: The register counter_and_parity/parity_reg[2] is removed because it is unloaded. (SQM-4101)
-Information: The register counter_and_parity/parity_reg[1] is removed because it is unloaded. (SQM-4101)
-Information: The register counter_and_parity/parity_reg[0] is removed because it is unloaded. (SQM-4101)
-Information: 6 registers were removed because they were unloaded. Use report_transformed_registers for a list. (SQM-3101)
+Information: The register counter_and_parity/parity_reg[47] is removed because it is unloaded. (SQM-4101)
+Information: The register counter_and_parity/parity_reg[46] is removed because it is unloaded. (SQM-4101)
+Information: The register counter_and_parity/parity_reg[45] is removed because it is unloaded. (SQM-4101)
+Information: The register counter_and_parity/parity_reg[44] is removed because it is unloaded. (SQM-4101)
+Information: The register counter_and_parity/parity_reg[43] is removed because it is unloaded. (SQM-4101)
+Information: The register counter_and_parity/parity_reg[42] is removed because it is unloaded. (SQM-4101)
+Information: The register counter_and_parity/parity_reg[41] is removed because it is unloaded. (SQM-4101)
+Information: The register counter_and_parity/parity_reg[40] is removed because it is unloaded. (SQM-4101)
+Information: The register counter_and_parity/parity_reg[39] is removed because it is unloaded. (SQM-4101)
+Information: The register counter_and_parity/parity_reg[38] is removed because it is unloaded. (SQM-4101)
+Information: 48 registers were removed because they were unloaded. Use report_transformed_registers for a list. (SQM-3101)
+Information: 38 out of 48 SQM-4101 messages were not printed due to limit 10 (after 'compile_fusion' at 01_inital_syn.tcl:45) (MSG-3913)
 Warning: Mapping to scan cell 'GSDFCNQD1HPBWP' in library is not possible because cell has 'dont_use' attribute. (SQM-1067)
 Warning: No site rows found in floorplan. (LGL-397)
 Warning: No site rows found in floorplan. (LGL-397)
 Warning: No valid clocks available in mode 'default'. Setting clock frequency to 1 GHz. (POW-034)
 Warning: No site rows found in floorplan. (LGL-397)
 Warning: No site rows found in floorplan. (LGL-397)
-Information: Register Bits Before Sharing = 47, After Sharing = 47, Savings = 0 (SQM-2000)
+Information: Register Bits Before Sharing = 355, After Sharing = 355, Savings = 0 (SQM-2000)
 Warning: No site rows found in floorplan. (LGL-397)
 Warning: No site rows found in floorplan. (LGL-397)
 Warning: No valid clocks available in mode 'default'. Setting clock frequency to 1 GHz. (POW-034)
@@ -346,7 +351,7 @@ Warning: No valid clocks available in mode 'default'. Setting clock frequency to
 Warning: No site rows found in floorplan. (LGL-397)
 Warning: No site rows found in floorplan. (LGL-397)
 Information: Ending   compile_fusion / initial_map / Logic Simplification (1) (FLW-8001)
-Information: Time: 2025-05-18 02:23:16 / Session: 0.00 hr / Command: 0.00 hr / Memory: 734 MB (FLW-8100)
+Information: Time: 2025-05-18 15:05:09 / Session: 0.00 hr / Command: 0.00 hr / Memory: 728 MB (FLW-8100)
 
 Warning: No site rows found in floorplan. (LGL-397)
 Warning: No site rows found in floorplan. (LGL-397)
@@ -354,32 +359,37 @@ Warning: No valid clocks available in mode 'default'. Setting clock frequency to
 Warning: No site rows found in floorplan. (LGL-397)
 Warning: No site rows found in floorplan. (LGL-397)
 Information: Starting compile_fusion / initial_map / Early Logic Optimization (FLW-8000)
-Information: Time: 2025-05-18 02:23:16 / Session: 0.00 hr / Command: 0.00 hr / Memory: 734 MB (FLW-8100)
+Information: Time: 2025-05-18 15:05:10 / Session: 0.00 hr / Command: 0.00 hr / Memory: 728 MB (FLW-8100)
 Warning: No valid clocks available in mode 'default'. Setting clock frequency to 1 GHz. (POW-034)
 Information: Timer using 1 threads
 Information: Ending   compile_fusion / initial_map / Early Logic Optimization (FLW-8001)
-Information: Time: 2025-05-18 02:23:20 / Session: 0.01 hr / Command: 0.00 hr / Memory: 734 MB (FLW-8100)
+Information: Time: 2025-05-18 15:05:13 / Session: 0.01 hr / Command: 0.00 hr / Memory: 738 MB (FLW-8100)
 
 Warning: No valid clocks available in mode 'default'. Setting clock frequency to 1 GHz. (POW-034)
 Information: Starting compile_fusion / initial_map / High-Level Optimization and Technology Mapping (FLW-8000)
-Information: Time: 2025-05-18 02:23:20 / Session: 0.01 hr / Command: 0.00 hr / Memory: 734 MB (FLW-8100)
+Information: Time: 2025-05-18 15:05:13 / Session: 0.01 hr / Command: 0.00 hr / Memory: 738 MB (FLW-8100)
 Information: Added key list 'DesignWare' to design 'top'. (DWS-0216)
 Warning: No cell bus will be mapped to multibit because there is no multibit cells in the cell libraries. (SQM-1040)
 Warning: Shift register Inferencing is enabled so only head flop will be replaced with scan cell and not all registers in shift register chains are scan replaced. (SQM-1074)
-Warning: For sequential element 'syndrome_inst/syndrome_reg[5]' of module 'top' : No latches available in library with requested scan type. Instance 'syndrome_inst/syndrome_reg[5]' is mapped to non-scan latch 'tcbn65lphpbwp_1/LNQD1HPBWP' (SQM-1019)
-Warning: For sequential element 'syndrome_inst/syndrome_reg[4]' of module 'top' : No latches available in library with requested scan type. Instance 'syndrome_inst/syndrome_reg[4]' is mapped to non-scan latch 'tcbn65lphpbwp_1/LNQD1HPBWP' (SQM-1019)
-Warning: For sequential element 'syndrome_inst/syndrome_reg[3]' of module 'top' : No latches available in library with requested scan type. Instance 'syndrome_inst/syndrome_reg[3]' is mapped to non-scan latch 'tcbn65lphpbwp_1/LNQD1HPBWP' (SQM-1019)
-Warning: For sequential element 'syndrome_inst/syndrome_reg[2]' of module 'top' : No latches available in library with requested scan type. Instance 'syndrome_inst/syndrome_reg[2]' is mapped to non-scan latch 'tcbn65lphpbwp_1/LNQD1HPBWP' (SQM-1019)
-Warning: For sequential element 'syndrome_inst/syndrome_reg[1]' of module 'top' : No latches available in library with requested scan type. Instance 'syndrome_inst/syndrome_reg[1]' is mapped to non-scan latch 'tcbn65lphpbwp_1/LNQD1HPBWP' (SQM-1019)
-Warning: For sequential element 'syndrome_inst/syndrome_reg[0]' of module 'top' : No latches available in library with requested scan type. Instance 'syndrome_inst/syndrome_reg[0]' is mapped to non-scan latch 'tcbn65lphpbwp_1/LNQD1HPBWP' (SQM-1019)
+Warning: For sequential element 'syndrome_inst/syndrome_reg[47]' of module 'top' : No latches available in library with requested scan type. Instance 'syndrome_inst/syndrome_reg[47]' is mapped to non-scan latch 'tcbn65lphpbwp_1/LNQD1HPBWP' (SQM-1019)
+Warning: For sequential element 'syndrome_inst/syndrome_reg[46]' of module 'top' : No latches available in library with requested scan type. Instance 'syndrome_inst/syndrome_reg[46]' is mapped to non-scan latch 'tcbn65lphpbwp_1/LNQD1HPBWP' (SQM-1019)
+Warning: For sequential element 'syndrome_inst/syndrome_reg[45]' of module 'top' : No latches available in library with requested scan type. Instance 'syndrome_inst/syndrome_reg[45]' is mapped to non-scan latch 'tcbn65lphpbwp_1/LNQD1HPBWP' (SQM-1019)
+Warning: For sequential element 'syndrome_inst/syndrome_reg[44]' of module 'top' : No latches available in library with requested scan type. Instance 'syndrome_inst/syndrome_reg[44]' is mapped to non-scan latch 'tcbn65lphpbwp_1/LNQD1HPBWP' (SQM-1019)
+Warning: For sequential element 'syndrome_inst/syndrome_reg[43]' of module 'top' : No latches available in library with requested scan type. Instance 'syndrome_inst/syndrome_reg[43]' is mapped to non-scan latch 'tcbn65lphpbwp_1/LNQD1HPBWP' (SQM-1019)
+Warning: For sequential element 'syndrome_inst/syndrome_reg[42]' of module 'top' : No latches available in library with requested scan type. Instance 'syndrome_inst/syndrome_reg[42]' is mapped to non-scan latch 'tcbn65lphpbwp_1/LNQD1HPBWP' (SQM-1019)
+Warning: For sequential element 'syndrome_inst/syndrome_reg[41]' of module 'top' : No latches available in library with requested scan type. Instance 'syndrome_inst/syndrome_reg[41]' is mapped to non-scan latch 'tcbn65lphpbwp_1/LNQD1HPBWP' (SQM-1019)
+Warning: For sequential element 'syndrome_inst/syndrome_reg[40]' of module 'top' : No latches available in library with requested scan type. Instance 'syndrome_inst/syndrome_reg[40]' is mapped to non-scan latch 'tcbn65lphpbwp_1/LNQD1HPBWP' (SQM-1019)
+Warning: For sequential element 'syndrome_inst/syndrome_reg[39]' of module 'top' : No latches available in library with requested scan type. Instance 'syndrome_inst/syndrome_reg[39]' is mapped to non-scan latch 'tcbn65lphpbwp_1/LNQD1HPBWP' (SQM-1019)
+Warning: For sequential element 'syndrome_inst/syndrome_reg[38]' of module 'top' : No latches available in library with requested scan type. Instance 'syndrome_inst/syndrome_reg[38]' is mapped to non-scan latch 'tcbn65lphpbwp_1/LNQD1HPBWP' (SQM-1019)
+Information: 38 out of 48 SQM-1019 messages were not printed due to limit 10 (after 'compile_fusion' at 01_inital_syn.tcl:45) (MSG-3913)
 Information: Ending   compile_fusion / initial_map / High-Level Optimization and Technology Mapping (FLW-8001)
-Information: Time: 2025-05-18 02:23:20 / Session: 0.01 hr / Command: 0.00 hr / Memory: 734 MB (FLW-8100)
+Information: Time: 2025-05-18 15:05:16 / Session: 0.01 hr / Command: 0.00 hr / Memory: 738 MB (FLW-8100)
 
-Information: Register Bits Before Sharing = 47, After Sharing = 47, Savings = 0 (SQM-2000)
+Information: Register Bits Before Sharing = 355, After Sharing = 355, Savings = 0 (SQM-2000)
 Information: Starting compile_fusion / initial_map / Logic Simplification (2) (FLW-8000)
-Information: Time: 2025-05-18 02:23:21 / Session: 0.01 hr / Command: 0.00 hr / Memory: 734 MB (FLW-8100)
+Information: Time: 2025-05-18 15:05:16 / Session: 0.01 hr / Command: 0.00 hr / Memory: 738 MB (FLW-8100)
 Information: Ending   compile_fusion / initial_map / Logic Simplification (2) (FLW-8001)
-Information: Time: 2025-05-18 02:23:21 / Session: 0.01 hr / Command: 0.00 hr / Memory: 734 MB (FLW-8100)
+Information: Time: 2025-05-18 15:05:16 / Session: 0.01 hr / Command: 0.00 hr / Memory: 738 MB (FLW-8100)
 
 Information: Result of compile_fusion / initial_map / Clock Gate Insertion (FLW-8500)
 Number of Pre-Existing Clock Gates with dont touch attribute: 0
@@ -390,33 +400,33 @@ Number of ICG library cells with CTS purpose: 16
 Clock Gating Type                   | Number of   | Register Count | Equivalent 
                                     | Clock Gates |                | Bitwidth   
 --------------------------------------------------------------------------------
-Regular Clock Gating                |           2 |             22 |         22
+Regular Clock Gating                |           2 |            176 |        176
 --------------------------------------------------------------------------------
 --------------------------------------------------------------------------------
                  Regular Clock Gating Ungated Register Summary                  
 --------------------------------------------------------------------------------
  Ungated Reason                                            | Count | Bitwidth   
 --------------------------------------------------------------------------------
- Enable is Constant One.                                   |    18 |       18
+ Enable is Constant One.                                   |   130 |      130
  Minimum Bitwidth Not Met.                                 |     1 |        1
- Not Processed.                                            |     6 |        6
+ Not Processed.                                            |    48 |       48
 --------------------------------------------------------------------------------
 Compile-fusion optimization summary            SETUP-COST    R2R-COST HOLD-COST LDRC-COST          AREA     LEAKAGE     INSTCNT            ELAPSE       MEM
-Compile-fusion                                          -           -         -         -        791.60           -         129              0.01       733
+Compile-fusion                                          -           -         -         -       6023.20           -         937              0.01       737
 Information: Ending   compile_fusion / initial_map (FLW-8001)
-Information: Time: 2025-05-18 02:23:21 / Session: 0.01 hr / Command: 0.00 hr / Memory: 734 MB (FLW-8100)
-CPU Load: 4%, Ram Free: 1 GB, Swap Free: 0 GB, Work Disk Free: 246 GB, Tmp Disk Free: 53 GB
+Information: Time: 2025-05-18 15:05:16 / Session: 0.01 hr / Command: 0.00 hr / Memory: 738 MB (FLW-8100)
+CPU Load: 8%, Ram Free: 0 GB, Swap Free: 0 GB, Work Disk Free: 238 GB, Tmp Disk Free: 53 GB
 
 Information: >>>>>>> 6 unique error and warning message tags while observing compile_fusion / initial_map: (MSG-3100)
 Information: #prnt #trgr #lmt    Tag  Level     Format (or last printed message)                                (MSG-3036)
 Information:     1     1  1 SQM-1074  WARNING   Warning: Shift register Inferencing is enabled so only head ... (MSG-3032)
 Information:     3     2  3 SQM-1067  WARNING   Warning: Mapping to scan cell 'GSDFCNQD1HPBWP' in library is... (MSG-3032)
 Information:     1     1  1 SQM-1040  WARNING   Warning: No cell bus will be mapped to multibit because ther... (MSG-3032)
-Information:     6     6 10 SQM-1019  WARNING   Warning: For sequential element 'syndrome_inst/syndrome_reg[... (MSG-3032)
+Information:    10    48 10 SQM-1019  WARNING   Warning: For sequential element 'syndrome_inst/syndrome_reg[... (MSG-3032)
 Information:    14     9 10 POW-034   WARNING   Warning: No valid clocks available in mode 'default'. Settin... (MSG-3032)
 Information:    38    28  0 LGL-397   WARNING   Warning: No site rows found in floorplan. (LGL-397)             (MSG-3032)
-Information:    63    47  5        6  <------   Total sum of messages (MSG-3038)
-Information: >>>>>>> Summary: 47 error&warning MSGs observed during compile_fusion / initial_map (MSG-3103)
+Information:    67    89  5        6  <------   Total sum of messages (MSG-3038)
+Information: >>>>>>> Summary: 89 error&warning MSGs observed during compile_fusion / initial_map (MSG-3103)
 
 Warning: Duplicate callback function set for step 'fc/logic_opto/dwProcessPrecond1' (FLW-2224)
 Warning: Duplicate callback function set for step 'fc/logic_opto/dwProcessPrecond1' (FLW-2224)
@@ -471,15 +481,15 @@ Information:     2     2  0 FLW-2224  WARNING   Warning: Duplicate callback func
 Information:     1     1  1 SQM-1074  WARNING   Warning: Shift register Inferencing is enabled so only head ... (MSG-3032)
 Information:     3     3  3 SQM-1067  WARNING   Warning: Mapping to scan cell 'GSDFCNQD1HPBWP' in library is... (MSG-3032)
 Information:     1     1  1 SQM-1040  WARNING   Warning: No cell bus will be mapped to multibit because ther... (MSG-3032)
-Information:     6     6 10 SQM-1019  WARNING   Warning: For sequential element 'syndrome_inst/syndrome_reg[... (MSG-3032)
+Information:    10    48 10 SQM-1019  WARNING   Warning: For sequential element 'syndrome_inst/syndrome_reg[... (MSG-3032)
 Information:    14    14 10 POW-034   WARNING   Warning: No valid clocks available in mode 'default'. Settin... (MSG-3032)
 Information:    40    39  0 LGL-397   WARNING   Warning: No site rows found in floorplan. (LGL-397)             (MSG-3032)
 Information:    30    30  0 NEX-001   WARNING   Warning: Technology layer 'AP' setting 'routing-direction' i... (MSG-3032)
-Information:    97    96  5        8  <------   Total sum of messages (MSG-3038)
-Information: >>>>>>> Summary: 96 error&warning MSGs observed during fusion (MSG-3103)
+Information:   101   138  5        8  <------   Total sum of messages (MSG-3038)
+Information: >>>>>>> Summary: 138 error&warning MSGs observed during fusion (MSG-3103)
 Information: Ending   'compile_fusion -to initial_map' (FLW-8001)
-Information: Time: 2025-05-18 02:23:21 / Session: 0.01 hr / Command: 0.00 hr / Memory: 734 MB (FLW-8100)
-CPU Load: 4%, Ram Free: 1 GB, Swap Free: 0 GB, Work Disk Free: 246 GB, Tmp Disk Free: 53 GB
+Information: Time: 2025-05-18 15:05:17 / Session: 0.01 hr / Command: 0.00 hr / Memory: 738 MB (FLW-8100)
+CPU Load: 8%, Ram Free: 0 GB, Swap Free: 0 GB, Work Disk Free: 238 GB, Tmp Disk Free: 53 GB
 1
 # Collect the reports
 report_timing
@@ -492,7 +502,7 @@ Warning: No physical information exists for design 'top'. Zero interconnect dela
 Warning: The extractor can not be initialized for design 'top'. Zero interconnect delay is used in timing analysis. (TIM-102)
 Warning: Batch extraction is skipped for block "top"
 Information: Update timing completed net estimation for all the timing graph nets (TIM-111)
-Information: Net estimation statistics: timing graph nets = 142, routed nets = 0, across physical hierarchy nets = 0, parasitics cached nets = 0, delay annotated nets = 0, parasitics annotated nets = 0, multi-voltage nets = 0. (TIM-112)
+Information: Net estimation statistics: timing graph nets = 1050, routed nets = 0, across physical hierarchy nets = 0, parasitics cached nets = 0, delay annotated nets = 0, parasitics annotated nets = 0, multi-voltage nets = 0. (TIM-112)
 ************************************************************
 Timer Settings:
 Delay Calculation Style:                   auto
@@ -512,7 +522,7 @@ Report : timing
         -report_by design
 Design : top
 Version: U-2022.12-SP6
-Date   : Sun May 18 02:23:21 2025
+Date   : Sun May 18 15:05:17 2025
 ****************************************
 No paths.
 1
@@ -523,7 +533,7 @@ Report : power
         -significant_digits 2
 Design : top
 Version: U-2022.12-SP6
-Date   : Sun May 18 02:23:21 2025
+Date   : Sun May 18 15:05:17 2025
 ****************************************
 Information: Activity propagation will be performed for scenario default.
 Information: Doing activity propagation for mode 'default' and corner 'default' with effort level 'medium'. (POW-024)
@@ -555,27 +565,32 @@ VDD (power) probability 1.00 (default)
 VSS (ground) probability 1.00 (default)
 Warning: Power table extrapolation (extrapolation mode) for port CP on cell clock_gate_counter_and_parity/count_reg_reg for parameter Tinp. Lowest table value = 0.004000, highest table value = 0.331200, value = 0.000000 (POW-046)
 Warning: Power table extrapolation (extrapolation mode) for port Q on cell clock_gate_counter_and_parity/count_reg_reg for parameter Tinp. Lowest table value = 0.004000, highest table value = 0.331200, value = 0.000000 (POW-046)
-Warning: Power table extrapolation (extrapolation mode) for port CPN on cell counter_and_parity/count_neg_reg[6] for parameter Tinp. Lowest table value = 0.004000, highest table value = 0.331200, value = 0.000000 (POW-046)
-Warning: Power table extrapolation (extrapolation mode) for port CDN on cell counter_and_parity/count_neg_reg[6] for parameter Tinp. Lowest table value = 0.004000, highest table value = 0.331200, value = 0.793667 (POW-046)
-Warning: Power table extrapolation (extrapolation mode) for port Q on cell counter_and_parity/count_neg_reg[6] for parameter Tinp. Lowest table value = 0.004000, highest table value = 0.331200, value = 0.000000 (POW-046)
-Warning: Power table extrapolation (extrapolation mode) for port QN on cell counter_and_parity/count_neg_reg[6] for parameter Tinp. Lowest table value = 0.004000, highest table value = 0.331200, value = 0.846367 (POW-046)
-Warning: Power table extrapolation (extrapolation mode) for port QN on cell counter_and_parity/count_neg_reg[6] for parameter Cout. Lowest table value = 0.000600, highest table value = 0.037700, value = 0.000000 (POW-046)
-Warning: Power table extrapolation (extrapolation mode) for port EN on cell syndrome_inst/syndrome_reg[4] for parameter Tinp. Lowest table value = 0.004000, highest table value = 0.331200, value = 0.000000 (POW-046)
-Warning: Power table extrapolation (extrapolation mode) for port Q on cell syndrome_inst/syndrome_reg[4] for parameter Tinp. Lowest table value = 0.004000, highest table value = 0.331200, value = 0.000000 (POW-046)
-Warning: Power table extrapolation (extrapolation mode) for port EN on cell syndrome_inst/syndrome_reg[0] for parameter Tinp. Lowest table value = 0.004000, highest table value = 0.331200, value = 0.000000 (POW-046)
+Warning: Power table extrapolation (extrapolation mode) for port CPN on cell counter_and_parity/count_neg_reg[62] for parameter Tinp. Lowest table value = 0.004000, highest table value = 0.331200, value = 0.000000 (POW-046)
+Warning: Power table extrapolation (extrapolation mode) for port CDN on cell counter_and_parity/count_neg_reg[62] for parameter Tinp. Lowest table value = 0.004000, highest table value = 0.331200, value = 5.862465 (POW-046)
+Warning: Fall toggles on pin counter_and_parity/count_neg_reg[62]/QN are impossible given input states; converted to rise toggles. (POW-069)
+Warning: Power table extrapolation (extrapolation mode) for port QN on cell counter_and_parity/count_neg_reg[62] for parameter Tinp. Lowest table value = 0.004000, highest table value = 0.331200, value = 6.266212 (POW-046)
+Warning: Power table extrapolation (extrapolation mode) for port QN on cell counter_and_parity/count_neg_reg[62] for parameter Cout. Lowest table value = 0.000600, highest table value = 0.037700, value = 0.000000 (POW-046)
+Warning: Power table extrapolation (extrapolation mode) for port EN on cell syndrome_inst/syndrome_reg[46] for parameter Tinp. Lowest table value = 0.004000, highest table value = 0.331200, value = 0.000000 (POW-046)
+Warning: Power table extrapolation (extrapolation mode) for port EN on cell syndrome_inst/syndrome_reg[44] for parameter Tinp. Lowest table value = 0.004000, highest table value = 0.331200, value = 0.000000 (POW-046)
+Warning: Power table extrapolation (extrapolation mode) for port EN on cell syndrome_inst/syndrome_reg[43] for parameter Tinp. Lowest table value = 0.004000, highest table value = 0.331200, value = 0.000000 (POW-046)
+Warning: Power table extrapolation (extrapolation mode) for port EN on cell syndrome_inst/syndrome_reg[41] for parameter Tinp. Lowest table value = 0.004000, highest table value = 0.331200, value = 0.000000 (POW-046)
 Note - message 'POW-046' limit (10) exceeded. Remainder will be suppressed.
-Warning: Fall toggles on pin counter_and_parity/count_neg_reg[7]/QN are impossible given input states; converted to rise toggles. (POW-069)
-Warning: Fall toggles on pin counter_and_parity/count_neg_reg[5]/QN are impossible given input states; converted to rise toggles. (POW-069)
-Warning: Fall toggles on pin counter_and_parity/count_neg_reg[3]/QN are impossible given input states; converted to rise toggles. (POW-069)
-Warning: Fall toggles on pin counter_and_parity/count_reg_reg[7]/QN are impossible given input states; converted to rise toggles. (POW-069)
-Warning: Fall toggles on pin counter_and_parity/count_reg_reg[5]/QN are impossible given input states; converted to rise toggles. (POW-069)
-Warning: Fall toggles on pin counter_and_parity/count_reg_reg[3]/QN are impossible given input states; converted to rise toggles. (POW-069)
+Warning: Fall toggles on pin syndrome_inst/syndrome_reg[34]/QN are impossible given input states; converted to rise toggles. (POW-069)
+Warning: Fall toggles on pin syndrome_inst/syndrome_reg[32]/QN are impossible given input states; converted to rise toggles. (POW-069)
+Warning: Fall toggles on pin syndrome_inst/syndrome_reg[31]/QN are impossible given input states; converted to rise toggles. (POW-069)
+Warning: Fall toggles on pin syndrome_inst/syndrome_reg[29]/QN are impossible given input states; converted to rise toggles. (POW-069)
+Warning: Fall toggles on pin syndrome_inst/syndrome_reg[28]/QN are impossible given input states; converted to rise toggles. (POW-069)
+Warning: Fall toggles on pin syndrome_inst/syndrome_reg[25]/QN are impossible given input states; converted to rise toggles. (POW-069)
+Warning: Fall toggles on pin syndrome_inst/syndrome_reg[22]/QN are impossible given input states; converted to rise toggles. (POW-069)
+Warning: Fall toggles on pin syndrome_inst/syndrome_reg[18]/QN are impossible given input states; converted to rise toggles. (POW-069)
+Warning: Fall toggles on pin syndrome_inst/syndrome_reg[12]/QN are impossible given input states; converted to rise toggles. (POW-069)
+Note - message 'POW-069' limit (10) exceeded. Remainder will be suppressed.
 
-  Cell Internal Power    = 3.98e+04 nW ( 78.6%)
-  Net Switching Power    = 1.08e+04 nW ( 21.4%)
-Total Dynamic Power      = 5.07e+04 nW (100.0%)
+  Cell Internal Power    = 2.42e+05 nW ( 78.4%)
+  Net Switching Power    = 6.66e+04 nW ( 21.6%)
+Total Dynamic Power      = 3.08e+05 nW (100.0%)
 
-Cell Leakage Power       = 1.78e+04 nW
+Cell Leakage Power       = 1.47e+05 nW
 
 
   Attributes
@@ -589,34 +604,34 @@ memory                    0.00e+00               0.00e+00               0.00e+00
 black_box                 0.00e+00               0.00e+00               0.00e+00               0.00e+00    (  0.0%)         
 clock_network             0.00e+00               0.00e+00               0.00e+00               0.00e+00    (  0.0%)         
 register                  0.00e+00               0.00e+00               0.00e+00               0.00e+00    (  0.0%)         
-sequential                3.70e+04               7.39e+02               1.16e+04               4.93e+04    ( 72.0%)         
-combinational             2.86e+03               1.01e+04               6.23e+03               1.92e+04    ( 28.0%)         
+sequential                2.38e+05               2.75e+03               8.27e+04               3.23e+05    ( 71.1%)         
+combinational             3.83e+03               6.38e+04               6.39e+04               1.32e+05    ( 28.9%)         
 -----------------------------------------------------------------------------------------------------------------------------
-Total                     3.98e+04 nW            1.08e+04 nW            1.78e+04 nW            6.85e+04 nW
+Total                     2.42e+05 nW            6.66e+04 nW            1.47e+05 nW            4.55e+05 nW
 1
 report_area
 ****************************************
 Report : area
 Design : top
 Version: U-2022.12-SP6
-Date   : Sun May 18 02:23:21 2025
+Date   : Sun May 18 15:05:17 2025
 ****************************************
 
-Number of ports:                           11
-Number of nets:                           143
-Number of cells:                          129
-Number of combinational cells:             80
-Number of sequential cells:                49
+Number of ports:                          261
+Number of nets:                          1180
+Number of cells:                          937
+Number of combinational cells:            580
+Number of sequential cells:               357
 Number of macros/black boxes:               0
-Number of buf/inv:                          2
-Number of references:                      31
+Number of buf/inv:                          3
+Number of references:                      32
 
-Combinational area:                    250.40
-Buf/Inv area:                            2.40
-Noncombinational area:                 541.20
+Combinational area:                   2093.20
+Buf/Inv area:                            3.60
+Noncombinational area:                3930.00
 Macro/Black Box area:                    0.00
 
-Total cell area:                       791.60
+Total cell area:                      6023.20
 1
 #### -----  Gate level netlist generation ----- ####
 write_verilog ../../results/${DESIGN_NAME}_initial_syn.v 
@@ -651,10 +666,11 @@ Load ICV ICCII menu file: /mnt/vol_synopsys2023/synopsys/icvalidator/U-2022.12-S
 
  + VUE INFO: Found a usable port: 2446
 
-Information: 116 out of 126 POW-046 messages were not printed due to limit 10  (MSG-3913)
+Information: 813 out of 823 POW-046 messages were not printed due to limit 10  (MSG-3913)
+Information: 87 out of 97 POW-069 messages were not printed due to limit 10  (MSG-3913)
 fc_shell> exit
-Maximum memory usage for this session: 733.61 MB
-Maximum memory usage for this session including child processes: 733.61 MB
-CPU usage for this session:     24 seconds (  0.01 hours)
-Elapsed time for this session:     45 seconds (  0.01 hours)
+Maximum memory usage for this session: 737.75 MB
+Maximum memory usage for this session including child processes: 737.75 MB
+CPU usage for this session:     27 seconds (  0.01 hours)
+Elapsed time for this session:     52 seconds (  0.01 hours)
 Thank you for using Fusion Compiler.

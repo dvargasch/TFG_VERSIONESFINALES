@@ -1,5 +1,5 @@
 module top #(
-    parameter int width = 8,
+    parameter int width = 128,
     parameter int blocks = width / 4,
     parameter int parity_bits = blocks * 3
 )(
@@ -43,7 +43,7 @@ module top #(
 endmodule
 
 module counter_and_parity  #(
-  parameter int width = 8,
+  parameter int width = 128,
   parameter int blocks = width / 4,
   parameter int parity_bits = blocks * 3
 )(
@@ -67,7 +67,7 @@ module counter_and_parity  #(
 
     always @(negedge clk or posedge reset) begin
         if (reset) begin
-            count_neg <= 8'b0;
+            count_neg <= 128'b0;
         end else begin
             count_neg <= counter;
         end
@@ -75,13 +75,13 @@ module counter_and_parity  #(
 
     always @(posedge clk or posedge reset) begin
         if (reset) begin
-            count_reg <= 8'b0;
-            counter_stored <= 8'b0;
-            parity_stored <= 6'b0;
+            count_reg <= 128'b0;
+            counter_stored <= 128'b0;
+            parity_stored <= 96'b0;
             busy <= 1'b0;
             enable_last <= 1'b0;
             reset_done <= 1'b0;
-            parity <= 6'b0;
+            parity <= 96'b0;
         end else begin
             if (!reset_done) begin
                 reset_done <= 1'b1;
@@ -120,7 +120,7 @@ end
 endmodule
 
 module syndrome  #(
-    parameter int width = 8,
+    parameter int width = 128,
     parameter int blocks = width / 4,
     parameter int parity_bits = blocks * 3
 )(
