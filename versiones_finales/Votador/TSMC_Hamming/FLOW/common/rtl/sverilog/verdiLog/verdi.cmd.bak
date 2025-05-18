@@ -1,0 +1,104 @@
+simSetSimulator "-vcssv" -exec "./results" -args " " -uvmDebug on
+debImport "-i" "-simflow" "-dbdir" "./results.daidir"
+srcTBInvokeSim
+verdiSetActWin -dock widgetDock_<Member>
+verdiSetActWin -dock widgetDock_MTB_SOURCE_TAB_1
+wvCreateWindow
+wvRestoreSignal -win $_nWave3 \
+           "/mnt/vol_NFS_rh003/estudiantes/DANIELA_VARGAS/TFG_10/TFG/sintesis/Votador/TSMC_Hamming/FLOW/common/rtl/sverilog/signal.rc" \
+           -overWriteAutoAlias on -appendSignals on
+verdiQtPrefEnv -show
+verdiQtPrefEnv -find "h"
+verdiQtPrefEnv -find "he"
+verdiQtPrefEnv -find "hex"
+verdiQtPrefEnv -find "hexa"
+verdiQtPrefEnv -find "hexa"
+wvSetPreference -IntTimeRadix Bin -OthersRadix Bin
+srcSetPreference -cfiletype \
+           {Source files (*.v; *.vlg; *.vl; *.vr; *.vrh; *.sv; *.svh; *.ova; *.vhd; *.vhdl; *.psl; *.vu; *.e;*.c; *.cpp; *.cxx; *.cc; *.h; *.hpp; *.hxx; *.hh; *.tcl; *.tk; *.do; *.upf; *.cpf);;HDL files (*.v; *.vlg; *.vl; *.vr; *.vrh; *.sv; *.svh; *.ova; *.vhd; *.vhdl; *.psl; *.vu; *.e);;C/C++ files (*.c; *.cpp; *.cxx; *.cc; *.h; *.hpp; *.hxx; *.hh);;Tcl files (*.tcl; *.tk; *.do);;Power files (*.upf;*.cpf) }
+srcSetPreference -profileTime off
+simSetInteractiveFsdbFile inter.fsdb
+verdiQtPrefEnv -apply
+verdiQtPrefEnv -apply
+verdiQtPrefEnv -ok
+srcTBRunSim
+wvZoomAll -win $_nWave3
+wvSetCursor -win $_nWave3 25274.876847 -snap {("Modulo top" 4)}
+wvZoom -win $_nWave3 0.000000 119380.180180
+wvSelectSignal -win $_nWave3 {( "Modulo top" 1 )} 
+wvSelectSignal -win $_nWave3 {( "Modulo top" 2 )} 
+wvSelectSignal -win $_nWave3 {( "Modulo top" 3 )} 
+wvSelectSignal -win $_nWave3 {( "Modulo top" 6 )} 
+wvSetCursor -win $_nWave3 9679.474069 -snap {("Modulo top" 8)}
+wvSelectSignal -win $_nWave3 {( "Modulo top" 9 )} 
+wvSelectSignal -win $_nWave3 {( "Modulo top" 7 )} 
+wvSelectSignal -win $_nWave3 {( "Modulo decoder" 1 )} 
+wvSelectSignal -win $_nWave3 {( "Modulo Voter" 3 )} 
+wvScrollDown -win $_nWave3 2
+wvSelectSignal -win $_nWave3 {( "Modulo Voter" 4 )} 
+wvScrollDown -win $_nWave3 0
+wvSelectGroup -win $_nWave3 {Modulo decoder}
+wvSetPosition -win $_nWave3 {("Modulo decoder" 0)}
+wvSetPosition -win $_nWave3 {("Modulo decoder" 3)}
+wvSetPosition -win $_nWave3 {("Modulo encoder data 1" 2)}
+wvSetPosition -win $_nWave3 {("Modulo encoder data 3" 0)}
+wvSetPosition -win $_nWave3 {("Modulo Voter" 1)}
+wvSetPosition -win $_nWave3 {("Modulo Voter" 2)}
+wvSetPosition -win $_nWave3 {("Modulo Voter" 3)}
+wvSetPosition -win $_nWave3 {("Modulo Voter" 4)}
+wvSetPosition -win $_nWave3 {("G7" 0)}
+wvSetPosition -win $_nWave3 {("Modulo Voter" 4)}
+wvMoveSelected -win $_nWave3
+wvSetPosition -win $_nWave3 {("Modulo decoder" 3)}
+wvSelectSignal -win $_nWave3 {( "Modulo decoder" 1 )} 
+wvSelectSignal -win $_nWave3 {( "Modulo decoder" 2 )} 
+wvSelectSignal -win $_nWave3 {( "Modulo decoder" 3 )} 
+wvSelectGroup -win $_nWave3 {G7}
+wvSelectGroup -win $_nWave3 {G7}
+wvScrollUp -win $_nWave3 2
+wvSelectSignal -win $_nWave3 {( "Modulo decoder" 2 )} 
+wvSelectSignal -win $_nWave3 {( "Modulo Voter" 4 )} 
+wvSetCursor -win $_nWave3 66800.321042 -snap {("Modulo Voter" 0)}
+wvSelectSignal -win $_nWave3 {( "Modulo Voter" 2 )} 
+wvSelectSignal -win $_nWave3 {( "Modulo Voter" 4 )} 
+wvRenameSignal -win $_nWave3 {/tb_top_module/dut/voter_inst/data_voted[6:0]} \
+           {voted_data[6:0]}
+wvSelectSignal -win $_nWave3 {( "Modulo top" 9 )} 
+wvSelectSignal -win $_nWave3 {( "Modulo Voter" 4 )} 
+wvSelectSignal -win $_nWave3 {( "Modulo decoder" 3 )} 
+wvSelectSignal -win $_nWave3 {( "Modulo top" 4 )} 
+wvSelectSignal -win $_nWave3 {( "Modulo decoder" 3 )} 
+wvSelectGroup -win $_nWave3 {G7}
+wvSelectSignal -win $_nWave3 {( "Modulo top" 6 )} 
+wvSelectSignal -win $_nWave3 {( "Modulo top" 4 )} 
+wvSelectSignal -win $_nWave3 {( "Modulo top" 9 )} 
+wvSelectSignal -win $_nWave3 {( "Modulo top" 4 )} 
+wvSetPosition -win $_nWave3 {("Modulo top" 4)}
+wvSetPosition -win $_nWave3 {("Modulo top" 5)}
+wvSetPosition -win $_nWave3 {("Modulo top" 6)}
+wvSetPosition -win $_nWave3 {("Modulo top" 7)}
+wvSetPosition -win $_nWave3 {("Modulo top" 8)}
+wvSetPosition -win $_nWave3 {("Modulo top" 9)}
+wvSetPosition -win $_nWave3 {("Modulo encoder data 1" 0)}
+wvSetPosition -win $_nWave3 {("Modulo top" 9)}
+wvMoveSelected -win $_nWave3
+wvSetPosition -win $_nWave3 {("Modulo top" 9)}
+wvSelectSignal -win $_nWave3 {( "Modulo top" 6 )} 
+wvSelectSignal -win $_nWave3 {( "Modulo top" 8 )} 
+wvSelectSignal -win $_nWave3 {( "Modulo top" 8 )} 
+wvSelectGroup -win $_nWave3 {G7}
+wvSelectSignal -win $_nWave3 {( "Modulo decoder" 1 )} 
+wvSelectSignal -win $_nWave3 {( "Modulo decoder" 2 )} 
+wvSelectGroup -win $_nWave3 {G7}
+wvSelectSignal -win $_nWave3 {( "Modulo top" 9 )} 
+verdiHighlightSignal -sigColor { "tb_top_module.dut.voted_q" N/A }
+verdiHighlightSignal -sigColor { "tb_top_module.dut.voted_q" ID_RED5 }
+verdiHighlightSignal -apply
+wvSelectSignal -win $_nWave3 {( "Modulo decoder" 2 )} 
+verdiHighlightSignal -sigColor { "tb_top_module.dut.decoder_inst.decoded" N/A }
+verdiHighlightSignal -sigColor { "tb_top_module.dut.decoder_inst.decoded" ID_RED5 \
+           }
+verdiHighlightSignal -apply
+wvSelectSignal -win $_nWave3 {( "Modulo decoder" 3 )} 
+wvSelectGroup -win $_nWave3 {G7}
+debExit

@@ -1,0 +1,2 @@
+	tb_top_module.dut.voted_q	ID_RED5
+	tb_top_module.dut.decoder_inst.decoded	ID_RED5

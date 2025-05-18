@@ -1,0 +1,70 @@
+Magic 271485
+Revision Verdi_U-2023.03-SP2
+
+; Window Layout <x> <y> <width> <height> <signalwidth> <valuewidth>
+viewPort 0 25 1501 541 330 65
+
+; File list:
+; openDirFile [-d delimiter] [-s time_offset] [-rf auto_bus_rule_file] path_name file_name
+openDirFile -d / "" "/mnt/vol_NFS_rh003/estudiantes/DANIELA_VARGAS/TFG_10/TFG/sintesis/Votador/TSMC_Hamming/FLOW/common/rtl/sverilog/inter.fsdb"
+
+; file time scale:
+; fileTimeScale ### s|ms|us|ns|ps
+
+; signal spacing:
+signalSpacing 5
+
+; windowTimeUnit is used for zoom, cursor & marker
+; waveform viewport range
+zoom 0.000000 161600.000000
+cursor 100000.000000
+marker 0.000000
+
+; user define markers
+; userMarker time_pos marker_name color linestyle
+; visible top row signal index
+top 0
+; marker line index
+markerPos 16
+
+; event list
+; addEvent event_name event_expression
+; curEvent event_name
+
+
+
+COMPLEX_EVENT_BEGIN
+
+
+COMPLEX_EVENT_END
+
+
+
+; toolbar current search type
+; curSTATUS search_type
+curSTATUS ByChange
+
+
+addGroup "Datos de entrada"
+activeDirFile "" "/mnt/vol_NFS_rh003/estudiantes/DANIELA_VARGAS/TFG_10/TFG/sintesis/Votador/TSMC_Hamming/FLOW/common/rtl/sverilog/inter.fsdb"
+addSignal -h 15 -UNSIGNED -BIN /tb_top_module/dut/data_1[3:0]
+addSignal -h 15 -UNSIGNED -BIN /tb_top_module/dut/data_2[3:0]
+addSignal -h 15 -UNSIGNED -BIN /tb_top_module/dut/data_3[3:0]
+addGroup "Datos codificados"
+addSignal -h 15 -UNSIGNED -BIN /tb_top_module/dut/encoder_data_1/coded_data[6:0]
+addSignal -h 15 -UNSIGNED -BIN /tb_top_module/dut/encoder_data_2/coded_data[6:0]
+addSignal -h 15 -UNSIGNED -BIN /tb_top_module/dut/encoder_data_3/coded_data[6:0]
+addGroup "Salida del votador"
+addSignal -h 15 -UNSIGNED -BIN /tb_top_module/dut/voter_inst/data_voted[6:0]
+addGroup "Sindrome"
+addSignal -h 15 /tb_top_module/dut/decoder_inst/unnamed$$_0/syndrome_3
+addSignal -h 15 /tb_top_module/dut/decoder_inst/unnamed$$_0/syndrome_2
+addSignal -h 15 /tb_top_module/dut/decoder_inst/unnamed$$_0/syndrome_1
+addSignal -h 15 /tb_top_module/dut/fault
+addGroup "Dato corregido y decodificado"
+addSignal -h 15 -UNSIGNED -BIN /tb_top_module/dut/decoder_inst/decoded[3:0]
+addGroup "G8"
+
+; getSignalForm Scope Hierarchy Status
+; active file of getSignalForm
+
