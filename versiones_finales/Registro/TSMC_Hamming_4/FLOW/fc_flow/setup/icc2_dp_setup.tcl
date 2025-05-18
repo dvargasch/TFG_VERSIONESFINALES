@@ -6,7 +6,7 @@ set TSMC_HOME "/mnt/vol_NFS_rh003/profesores/pmendoza/KITS/TSMCHOME";
 ############################
 ## RTL file name and type ##
 ############################
-set DESIGN_NAME "name_RTL"
+set DESIGN_NAME "top"
 set HDL "sverilog"
 set DESIGN_LIBRARY "${DESIGN_NAME}_lib"
 
