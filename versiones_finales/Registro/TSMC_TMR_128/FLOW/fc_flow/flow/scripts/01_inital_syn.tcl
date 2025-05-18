@@ -39,6 +39,8 @@ save_block -as ${DESIGN_NAME}/rtl_read
 
 
 #### ----- Initial mapping ----- ####
+set_dont_touch [get_nets parallel*] true
+set_dont_touch [get_nets serial_out*] true
 
 # Just to inital map
 compile_fusion -to initial_map  
