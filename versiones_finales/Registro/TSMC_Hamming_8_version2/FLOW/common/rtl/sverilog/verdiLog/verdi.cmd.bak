@@ -1,0 +1,115 @@
+simSetSimulator "-vcssv" -exec "./prueba_3" -args " " -uvmDebug on
+debImport "-i" "-simflow" "-dbdir" "./prueba_3.daidir"
+srcTBInvokeSim
+verdiSetActWin -dock widgetDock_<Member>
+verdiSetActWin -dock widgetDock_MTB_SOURCE_TAB_1
+wvCreateWindow
+srcSignalViewSelect "universal_register_4bit_tb.reg_data\[7:0\]"
+verdiSetActWin -dock widgetDock_<Signal_List>
+srcSignalViewSelect "universal_register_4bit_tb.reg_data\[7:0\]" \
+           "universal_register_4bit_tb.pipo_out\[7:0\]"
+srcSignalViewSelect "universal_register_4bit_tb.reg_data\[7:0\]" \
+           "universal_register_4bit_tb.pipo_out\[7:0\]" \
+           "universal_register_4bit_tb.parallel_out\[7:0\]"
+srcSignalViewSelect "universal_register_4bit_tb.reg_data\[7:0\]" \
+           "universal_register_4bit_tb.pipo_out\[7:0\]" \
+           "universal_register_4bit_tb.parallel_out\[7:0\]" \
+           "universal_register_4bit_tb.serial_out"
+srcSignalViewSelect "universal_register_4bit_tb.reg_data\[7:0\]" \
+           "universal_register_4bit_tb.pipo_out\[7:0\]" \
+           "universal_register_4bit_tb.parallel_out\[7:0\]" \
+           "universal_register_4bit_tb.serial_out" \
+           "universal_register_4bit_tb.parallel_in\[7:0\]"
+srcSignalViewSelect "universal_register_4bit_tb.reg_data\[7:0\]" \
+           "universal_register_4bit_tb.pipo_out\[7:0\]" \
+           "universal_register_4bit_tb.parallel_out\[7:0\]" \
+           "universal_register_4bit_tb.serial_out" \
+           "universal_register_4bit_tb.parallel_in\[7:0\]" \
+           "universal_register_4bit_tb.serial_in"
+srcSignalViewSelect "universal_register_4bit_tb.reg_data\[7:0\]" \
+           "universal_register_4bit_tb.pipo_out\[7:0\]" \
+           "universal_register_4bit_tb.parallel_out\[7:0\]" \
+           "universal_register_4bit_tb.serial_out" \
+           "universal_register_4bit_tb.parallel_in\[7:0\]" \
+           "universal_register_4bit_tb.serial_in" \
+           "universal_register_4bit_tb.load"
+srcSignalViewSelect "universal_register_4bit_tb.reg_data\[7:0\]" \
+           "universal_register_4bit_tb.pipo_out\[7:0\]" \
+           "universal_register_4bit_tb.parallel_out\[7:0\]" \
+           "universal_register_4bit_tb.serial_out" \
+           "universal_register_4bit_tb.parallel_in\[7:0\]" \
+           "universal_register_4bit_tb.serial_in" \
+           "universal_register_4bit_tb.load" \
+           "universal_register_4bit_tb.mode\[1:0\]"
+srcSignalViewSelect "universal_register_4bit_tb.reg_data\[7:0\]" \
+           "universal_register_4bit_tb.pipo_out\[7:0\]" \
+           "universal_register_4bit_tb.parallel_out\[7:0\]" \
+           "universal_register_4bit_tb.serial_out" \
+           "universal_register_4bit_tb.parallel_in\[7:0\]" \
+           "universal_register_4bit_tb.serial_in" \
+           "universal_register_4bit_tb.load" \
+           "universal_register_4bit_tb.mode\[1:0\]" \
+           "universal_register_4bit_tb.enable"
+srcSignalViewSelect "universal_register_4bit_tb.reg_data\[7:0\]" \
+           "universal_register_4bit_tb.pipo_out\[7:0\]" \
+           "universal_register_4bit_tb.parallel_out\[7:0\]" \
+           "universal_register_4bit_tb.serial_out" \
+           "universal_register_4bit_tb.parallel_in\[7:0\]" \
+           "universal_register_4bit_tb.serial_in" \
+           "universal_register_4bit_tb.load" \
+           "universal_register_4bit_tb.mode\[1:0\]" \
+           "universal_register_4bit_tb.enable" \
+           "universal_register_4bit_tb.rst"
+srcSignalViewSelect "universal_register_4bit_tb.reg_data\[7:0\]" \
+           "universal_register_4bit_tb.pipo_out\[7:0\]" \
+           "universal_register_4bit_tb.parallel_out\[7:0\]" \
+           "universal_register_4bit_tb.serial_out" \
+           "universal_register_4bit_tb.parallel_in\[7:0\]" \
+           "universal_register_4bit_tb.serial_in" \
+           "universal_register_4bit_tb.load" \
+           "universal_register_4bit_tb.mode\[1:0\]" \
+           "universal_register_4bit_tb.enable" \
+           "universal_register_4bit_tb.rst" "universal_register_4bit_tb.clk"
+wvAddSignal -win $_nWave3 "/universal_register_4bit_tb/reg_data\[7:0\]" \
+           "/universal_register_4bit_tb/pipo_out\[7:0\]" \
+           "/universal_register_4bit_tb/parallel_out\[7:0\]" \
+           "/universal_register_4bit_tb/serial_out" \
+           "/universal_register_4bit_tb/parallel_in\[7:0\]" \
+           "/universal_register_4bit_tb/serial_in" \
+           "/universal_register_4bit_tb/load" \
+           "/universal_register_4bit_tb/mode\[1:0\]" \
+           "/universal_register_4bit_tb/enable" \
+           "/universal_register_4bit_tb/rst" "/universal_register_4bit_tb/clk"
+wvSetPosition -win $_nWave3 {("G1" 0)}
+wvSetPosition -win $_nWave3 {("G1" 11)}
+wvSetPosition -win $_nWave3 {("G1" 11)}
+srcTBRunSim
+wvZoomAll -win $_nWave3
+verdiSetActWin -win $_nWave3
+wvSelectSignal -win $_nWave3 {( "G1" 3 )} 
+srcSignalViewSelect "universal_register_4bit_tb.serial_out"
+verdiSetActWin -dock widgetDock_<Signal_List>
+srcHBSelect "universal_register_4bit_tb.dut" -win $_nTrace1
+srcSetScope "universal_register_4bit_tb.dut" -delim "." -win $_nTrace1
+verdiSetActWin -dock widgetDock_<Inst._Tree>
+srcHBSelect "universal_register_4bit_tb.dut" -win $_nTrace1
+srcSignalViewSelect "universal_register_4bit_tb.dut.reg_data\[7:0\]"
+verdiSetActWin -dock widgetDock_<Signal_List>
+srcSignalViewSelect "universal_register_4bit_tb.dut.reg_data\[7:0\]"
+wvSetPosition -win $_nWave3 {("G1" 0)}
+wvSetPosition -win $_nWave3 {("G1" 3)}
+wvSetPosition -win $_nWave3 {("G1" 0)}
+wvSetPosition -win $_nWave3 {("G1" 9)}
+wvSetPosition -win $_nWave3 {("G1" 10)}
+wvSetPosition -win $_nWave3 {("G1" 11)}
+wvAddSignal -win $_nWave3 "/universal_register_4bit_tb/dut/reg_data\[7:0\]"
+wvSetPosition -win $_nWave3 {("G1" 11)}
+wvSetPosition -win $_nWave3 {("G1" 12)}
+srcTBSimReset
+srcTBRunSim
+wvZoomAll -win $_nWave3
+verdiSetActWin -win $_nWave3
+wvSetCursor -win $_nWave3 294386.234177 -snap {("G1" 8)}
+wvZoom -win $_nWave3 276386.286920 526062.974684
+wvZoom -win $_nWave3 287447.912327 368039.754580
+debExit
