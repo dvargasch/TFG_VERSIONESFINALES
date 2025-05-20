@@ -1,0 +1,3 @@
+Command Line: /mnt/vol_synopsys2023/synopsys/verdi/U-2023.03-SP2/platform/LINUXAMD64/bin/Novas -i -simflow -simBin ./prueba_1 -simOpt  
+uname(Linux redhat003 4.18.0-553.51.1.el8_10.x86_64 #1 SMP Fri Apr 25 00:55:37 EDT 2025 x86_64)
+au time 115.213576 9.257710 1.983222 delta 271527936 271527936 total 848379904 848379904

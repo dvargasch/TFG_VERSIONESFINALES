@@ -1,0 +1,67 @@
+Magic 271485
+Revision Verdi_R-2020.12-SP2
+
+; Window Layout <x> <y> <width> <height> <signalwidth> <valuewidth>
+viewPort 0 25 1272 549 279 105
+
+; File list:
+; openDirFile [-d delimiter] [-s time_offset] [-rf auto_bus_rule_file] path_name file_name
+openDirFile -d / "" "/mnt/vol_NFS_rh003/estudiantes/DANIELA_VARGAS/Version_final/0516/versiones_finales/Contador/TSMC_Hamming_16_version2/FLOW/common/rtl/sverilog/inter.fsdb"
+
+; file time scale:
+; fileTimeScale ### s|ms|us|ns|ps
+
+; signal spacing:
+signalSpacing 5
+
+; windowTimeUnit is used for zoom, cursor & marker
+; waveform viewport range
+zoom 115505.568445 169532.366589
+cursor 15000.000000
+marker 0.000000
+
+; user define markers
+; userMarker time_pos marker_name color linestyle
+userMarker 145000 M2 ID_GREEN5 long_dashed
+userMarker 134959.305 M1 ID_GREEN5 long_dashed
+
+; visible top row signal index
+top 0
+; marker line index
+markerPos 10
+
+; event list
+; addEvent event_name event_expression
+; curEvent event_name
+
+
+
+COMPLEX_EVENT_BEGIN
+
+
+COMPLEX_EVENT_END
+
+
+
+; toolbar current search type
+; curSTATUS search_type
+curSTATUS ByChange
+
+
+addGroup "Prueba 3"
+activeDirFile "" "/mnt/vol_NFS_rh003/estudiantes/DANIELA_VARGAS/Version_final/0516/versiones_finales/Contador/TSMC_Hamming_16_version2/FLOW/common/rtl/sverilog/inter.fsdb"
+addSignal -h 15 /tb_top/dut/clk
+addSignal -h 15 /tb_top/dut/reset
+addSignal -h 15 /tb_top/dut/enable
+addSignal -h 15 -UNSIGNED -BIN /tb_top/dut/counter[15:0]
+addSignal -h 15 -UNSIGNED -BIN /tb_top/dut/counter_and_parity/parity_stored[11:0]
+addSignal -h 15 -UNSIGNED -BIN /tb_top/dut/counter_and_parity/corrected_counter[15:0]
+addSignal -h 15 -UNSIGNED -BIN /tb_top/dut/counter_and_parity/corrected_parity[11:0]
+addSignal -h 15 /tb_top/dut/counter_and_parity/error_detected_data
+addSignal -h 15 /tb_top/dut/syndrome_inst/error_detected_parity
+addSignal -h 15 -UNSIGNED -BIN /tb_top/dut/syndrome_inst/syndrome[11:0]
+addGroup "G3"
+
+; getSignalForm Scope Hierarchy Status
+; active file of getSignalForm
+

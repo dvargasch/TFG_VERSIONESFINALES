@@ -1,0 +1,95 @@
+simSetSimulator "-vcssv" -exec "./prueba_3" -args " " -uvmDebug on
+debImport "-i" "-simflow" "-dbdir" "./prueba_3.daidir"
+srcTBInvokeSim
+wvCreateWindow
+srcHBSelect "tb_top.dut" -win $_nTrace1
+srcHBDrag -win $_nTrace1
+wvDumpScope "tb_top.dut.counter_and_parity"
+wvRenameGroup -win $_nWave3 {G1} {counter_and_parity}
+wvAddSignal -win $_nWave3 "/tb_top/dut/counter_and_parity/clk" \
+           "/tb_top/dut/counter_and_parity/reset" \
+           "/tb_top/dut/counter_and_parity/enable" \
+           "/tb_top/dut/counter_and_parity/corrected_counter\[15:0\]" \
+           "/tb_top/dut/counter_and_parity/corrected_parity\[11:0\]" \
+           "/tb_top/dut/counter_and_parity/counter\[15:0\]" \
+           "/tb_top/dut/counter_and_parity/parity\[11:0\]" \
+           "/tb_top/dut/counter_and_parity/parity_stored\[11:0\]" \
+           "/tb_top/dut/counter_and_parity/busy" \
+           "/tb_top/dut/counter_and_parity/error_detected_data" \
+           "/tb_top/dut/counter_and_parity/enable_last"
+wvSetPosition -win $_nWave3 {("counter_and_parity" 0)}
+wvSetPosition -win $_nWave3 {("counter_and_parity" 11)}
+wvSetPosition -win $_nWave3 {("counter_and_parity" 11)}
+srcHBSelect "tb_top.dut.syndrome_inst" -win $_nTrace1
+srcHBDrag -win $_nTrace1
+wvSetPosition -win $_nWave3 {("counter_and_parity" 0)}
+wvSetPosition -win $_nWave3 {("counter_and_parity" 1)}
+wvSetPosition -win $_nWave3 {("counter_and_parity" 2)}
+wvSetPosition -win $_nWave3 {("counter_and_parity" 4)}
+wvSetPosition -win $_nWave3 {("counter_and_parity" 5)}
+wvSetPosition -win $_nWave3 {("counter_and_parity" 6)}
+wvSetPosition -win $_nWave3 {("counter_and_parity" 7)}
+wvSetPosition -win $_nWave3 {("counter_and_parity" 8)}
+wvSetPosition -win $_nWave3 {("counter_and_parity" 9)}
+wvSetPosition -win $_nWave3 {("counter_and_parity" 10)}
+wvSetPosition -win $_nWave3 {("counter_and_parity" 11)}
+wvSetPosition -win $_nWave3 {("G2" 0)}
+wvDumpScope "tb_top.dut.syndrome_inst"
+wvRenameGroup -win $_nWave3 {G2} {syndrome_inst}
+wvAddSignal -win $_nWave3 "/tb_top/dut/syndrome_inst/clk" \
+           "/tb_top/dut/syndrome_inst/enable" \
+           "/tb_top/dut/syndrome_inst/parity\[11:0\]" \
+           "/tb_top/dut/syndrome_inst/parity_stored\[11:0\]" \
+           "/tb_top/dut/syndrome_inst/counter_reg\[15:0\]" \
+           "/tb_top/dut/syndrome_inst/syndrome\[11:0\]" \
+           "/tb_top/dut/syndrome_inst/busy" \
+           "/tb_top/dut/syndrome_inst/corrected_counter\[15:0\]" \
+           "/tb_top/dut/syndrome_inst/error_detected_parity" \
+           "/tb_top/dut/syndrome_inst/error_detected_data" \
+           "/tb_top/dut/syndrome_inst/corrected_parity\[11:0\]" \
+           "/tb_top/dut/syndrome_inst/enable_last" \
+           "/tb_top/dut/syndrome_inst/reset"
+wvSetPosition -win $_nWave3 {("syndrome_inst" 0)}
+wvSetPosition -win $_nWave3 {("syndrome_inst" 13)}
+wvSetPosition -win $_nWave3 {("syndrome_inst" 13)}
+srcTBRunSim
+wvZoomAll -win $_nWave3
+wvSetCursor -win $_nWave3 189714.791183 -snap {("counter_and_parity" 8)}
+wvZoom -win $_nWave3 150591.937355 225111.658933
+wvSearchNext -win $_nWave3
+wvSearchNext -win $_nWave3
+wvSetCursor -win $_nWave3 172639.278966 -snap {("syndrome_inst" 7)}
+wvSetCursor -win $_nWave3 175232.772756 -snap {("syndrome_inst" 7)}
+wvSelectSignal -win $_nWave3 {( "syndrome_inst" 1 )} 
+wvSelectSignal -win $_nWave3 {( "counter_and_parity" 7 )} 
+wvSelectSignal -win $_nWave3 {( "counter_and_parity" 6 )} 
+wvZoomOut -win $_nWave3
+wvZoomOut -win $_nWave3
+wvZoomOut -win $_nWave3
+wvZoomOut -win $_nWave3
+wvZoomIn -win $_nWave3
+wvZoomIn -win $_nWave3
+wvZoomAll -win $_nWave3
+wvSetCursor -win $_nWave3 116126.566125 -snap {("counter_and_parity" 10)}
+wvZoom -win $_nWave3 170774.361949 264545.011601
+wvSetCursor -win $_nWave3 174581.754916 -snap {("counter_and_parity" 6)}
+wvSearchPrev -win $_nWave3
+wvSearchNext -win $_nWave3
+wvSearchNext -win $_nWave3
+wvZoomAll -win $_nWave3
+wvSetCursor -win $_nWave3 164564.385151 -snap {("syndrome_inst" 2)}
+wvSetCursor -win $_nWave3 173879.350348 -snap {("syndrome_inst" 1)}
+wvSetCursor -win $_nWave3 185367.807425 -snap {("syndrome_inst" 1)}
+wvSetCursor -win $_nWave3 193751.276102 -snap {("syndrome_inst" 1)}
+wvSetCursor -win $_nWave3 205860.730858 -snap {("syndrome_inst" 1)}
+wvSetCursor -win $_nWave3 213623.201856 -snap {("syndrome_inst" 1)}
+wvSetCursor -win $_nWave3 224180.162413 -snap {("syndrome_inst" 1)}
+wvZoom -win $_nWave3 185367.807425 248709.570766
+wvScrollUp -win $_nWave3 1
+wvZoomOut -win $_nWave3
+wvZoomOut -win $_nWave3
+wvSetCursor -win $_nWave3 113159.221674 -snap {("counter_and_parity" 9)}
+srcDeselectAll -win $_nTrace1
+wvZoomAll -win $_nWave3
+wvSetCursor -win $_nWave3 168911.368910 -snap {("syndrome_inst" 2)}
+debExit

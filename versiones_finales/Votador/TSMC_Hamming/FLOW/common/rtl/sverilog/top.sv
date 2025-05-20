@@ -53,16 +53,16 @@ module decoder (
 );
 
   always_comb begin
-    logic syndrome_1, syndrome_2, syndrome_3;
+    logic [2:0] syndrome;
     logic [6:0] data_to_be_decoded;
 
     data_to_be_decoded = coded_data_voted;
 
-    syndrome_1 = data_to_be_decoded[0] ^ data_to_be_decoded[2] ^ data_to_be_decoded[4] ^ data_to_be_decoded[6];  
-    syndrome_2 = data_to_be_decoded[0] ^ data_to_be_decoded[1] ^ data_to_be_decoded[4] ^ data_to_be_decoded[5];  
-    syndrome_3 = data_to_be_decoded[0] ^ data_to_be_decoded[1] ^ data_to_be_decoded[2] ^ data_to_be_decoded[3];  
+    syndrome[0] = data_to_be_decoded[0] ^ data_to_be_decoded[2] ^ data_to_be_decoded[4] ^ data_to_be_decoded[6];  
+    syndrome[1] = data_to_be_decoded[0] ^ data_to_be_decoded[1] ^ data_to_be_decoded[4] ^ data_to_be_decoded[5];  
+    syndrome[2] = data_to_be_decoded[0] ^ data_to_be_decoded[1] ^ data_to_be_decoded[2] ^ data_to_be_decoded[3];  
 
-    if (syndrome_1 == 0 && syndrome_2 == 0 && syndrome_3 == 0) begin
+    if (syndrome == 0) begin
       error = 0;  
       decoded = {data_to_be_decoded[4], data_to_be_decoded[2], data_to_be_decoded[1],data_to_be_decoded[0]}; 
     end else begin

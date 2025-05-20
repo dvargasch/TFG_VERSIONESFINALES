@@ -230,8 +230,8 @@ autoSaveSession = FALSE
 TclAutoSource = 
 cmd_enter_form = FALSE
 SyncBrowserDir = TRUE
-version = Verdi_U-2023.03-SP2
 ViewMouse13Swap = FALSE
+version = Verdi_U-2023.03-SP2
 SignalCaseInSensitive = FALSE
 [GlobalProp]
 ErrWindow_Font = Helvetica_M_R_12
@@ -341,6 +341,7 @@ Text_font = COURIER12
 nMemory_font = Fixed 14
 Wave_getsignal_form_font = -f COURIER12
 Text_annotFont = Helvetica_M_R_10
+schematics_fixFontSize = False
 [OpenFile]
 CFileType = Source files (*.v; *.vlg; *.vl; *.vr; *.vrh; *.sv; *.svh; *.ova; *.vhd; *.vhdl; *.psl; *.vu; *.e;*.c; *.cpp; *.cxx; *.cc; *.h; *.hpp; *.hxx; *.hh; *.tcl; *.tk; *.do; *.upf; *.cpf);;HDL files (*.v; *.vlg; *.vl; *.vr; *.vrh; *.sv; *.svh; *.ova; *.vhd; *.vhdl\
 ; *.psl; *.vu; *.e);;C/C++ files (*.c; *.cpp; *.cxx; *.cc; *.h; *.hpp; *.hxx; *.hh);;Tcl files (*.tcl; *.tk; *.do);;Power files (*.upf;*.cpf)
@@ -392,11 +393,11 @@ saveWaveformStat = TRUE
 savePropStat = FALSE
 savePropDtl = TRUE
 [QtDialog]
-saveSigDlg = 674,371,551,386
 restoreSigDlg = 684,326,551,438
-QwUserAskDlg = 798,505,324,134
 highlightColor = 622,381,675,327
 qPrefDlg = 602,333,716,424
+saveSigDlg = 684,352,551,386
+QwUserAskDlg = 798,505,324,134
 [Relationship]
 hideRecursiceNode = FALSE
 [Safety]
@@ -477,24 +478,24 @@ vcs_mixOption = -vhdlrun "-vhpi debussy:FSDBDumpCmd"
 scs_mixPath = scsim
 scs_mixOption = -vhpi debussy:FSDBDumpCmd
 iscCmdSep = FALSE
-uvmAware = TRUE
 interactive_fsdb_file = inter.fsdb
 simXLMode = FALSE
 invokeSimPath = work
-vcs_svPath = ./results
 thirdpartyIdx = -1
-simType = vcssv
 NoAppendOption = FALSE
 ScsDebugAll = FALSE
+simType = vcssv
 bSVTBMode = TRUE
 SimMode = TRUE
 interactiveDebugging = TRUE
 KeepBreakPoints = FALSE
+vcs_svPath = ./results_errors
+uvmAware = TRUE
 smartlog = TRUE
 vcs_svOption = -sml=verdi
 [SimulationPlus2]
-dumpPowerRoot = FALSE
 eventDumpUnfinish = FALSE
+dumpPowerRoot = FALSE
 [Source]
 wordWrapOn = TRUE
 viewReuse = TRUE
@@ -702,33 +703,33 @@ DefaultLogTimeUnit = "1.000000ns"
 parRuleSets = "/mnt/vol_synopsys2023/synopsys/verdi/U-2023.03-SP2/share/VIA/Apps/PredefinedParRules/par_rule_OVM.rc /mnt/vol_synopsys2023/synopsys/verdi/U-2023.03-SP2/share/VIA/Apps/PredefinedParRules/par_rule_UVM.rc /mnt/vol_synopsys2023/synopsys/verdi/U-2023.03-SP2/sh\
 are/VIA/Apps/PredefinedParRules/par_rule_LP.rc /mnt/vol_synopsys2023/synopsys/verdi/U-2023.03-SP2/share/VIA/Apps/PredefinedParRules/par_rule_VCS.rc "
 [VIA.interactiveDebug.preference.vgifColumnSettingRC.setting0.column0]
-name = "Time"
-width = 60
-visualIndex = 0
-isHidden = FALSE
-isUserChangeColumnVisible = FALSE
-[VIA.interactiveDebug.preference.vgifColumnSettingRC.setting0.column1]
-name = "Code"
-width = 60
-visualIndex = 4
-isHidden = TRUE
-isUserChangeColumnVisible = FALSE
-[VIA.interactiveDebug.preference.vgifColumnSettingRC.setting0.column2]
-name = "Block's First Line"
-width = 120
-visualIndex = 1
-isHidden = TRUE
-isUserChangeColumnVisible = FALSE
-[VIA.interactiveDebug.preference.vgifColumnSettingRC.setting0.column3]
 name = "Type"
 width = 60
 visualIndex = 5
 isHidden = TRUE
 isUserChangeColumnVisible = FALSE
-[VIA.interactiveDebug.preference.vgifColumnSettingRC.setting0.column4]
+[VIA.interactiveDebug.preference.vgifColumnSettingRC.setting0.column1]
 name = "Message"
 width = 2000
 visualIndex = 6
+isHidden = FALSE
+isUserChangeColumnVisible = FALSE
+[VIA.interactiveDebug.preference.vgifColumnSettingRC.setting0.column2]
+name = "Time"
+width = 60
+visualIndex = 0
+isHidden = FALSE
+isUserChangeColumnVisible = FALSE
+[VIA.interactiveDebug.preference.vgifColumnSettingRC.setting0.column3]
+name = "Code"
+width = 60
+visualIndex = 4
+isHidden = TRUE
+isUserChangeColumnVisible = FALSE
+[VIA.interactiveDebug.preference.vgifColumnSettingRC.setting0.column4]
+name = "Severity"
+width = 60
+visualIndex = 2
 isHidden = FALSE
 isUserChangeColumnVisible = FALSE
 [VIA.interactiveDebug.preference.vgifColumnSettingRC.setting0.column5]
@@ -738,10 +739,10 @@ visualIndex = 3
 isHidden = FALSE
 isUserChangeColumnVisible = FALSE
 [VIA.interactiveDebug.preference.vgifColumnSettingRC.setting0.column6]
-name = "Severity"
-width = 60
-visualIndex = 2
-isHidden = FALSE
+name = "Block's First Line"
+width = 120
+visualIndex = 1
+isHidden = TRUE
 isUserChangeColumnVisible = FALSE
 [VIA.oneSearch.preference]
 DefaultDisplayTimeUnit = "1.000000ns"
@@ -751,39 +752,39 @@ isOneSearchVisible = TRUE
 [VIA.oneSearch.preference.vgifColumnSettingRC.setting0]
 parRuleSets = ""
 [VIA.oneSearch.preference.vgifColumnSettingRC.setting0.column0]
+name = "Severity"
+width = 60
+visualIndex = 2
+isHidden = FALSE
+isUserChangeColumnVisible = FALSE
+[VIA.oneSearch.preference.vgifColumnSettingRC.setting0.column1]
 name = "Block's First Line"
 width = 120
 visualIndex = 1
 isHidden = TRUE
 isUserChangeColumnVisible = FALSE
-[VIA.oneSearch.preference.vgifColumnSettingRC.setting0.column1]
-name = "Message"
-width = 2000
-visualIndex = 5
-isHidden = FALSE
-isUserChangeColumnVisible = FALSE
 [VIA.oneSearch.preference.vgifColumnSettingRC.setting0.column2]
-name = "Time"
-width = 60
-visualIndex = 0
-isHidden = FALSE
-isUserChangeColumnVisible = FALSE
-[VIA.oneSearch.preference.vgifColumnSettingRC.setting0.column3]
 name = "Code"
 width = 60
 visualIndex = 3
 isHidden = TRUE
 isUserChangeColumnVisible = FALSE
-[VIA.oneSearch.preference.vgifColumnSettingRC.setting0.column4]
+[VIA.oneSearch.preference.vgifColumnSettingRC.setting0.column3]
 name = "Type"
 width = 60
 visualIndex = 4
 isHidden = TRUE
 isUserChangeColumnVisible = FALSE
+[VIA.oneSearch.preference.vgifColumnSettingRC.setting0.column4]
+name = "Message"
+width = 2000
+visualIndex = 5
+isHidden = FALSE
+isUserChangeColumnVisible = FALSE
 [VIA.oneSearch.preference.vgifColumnSettingRC.setting0.column5]
-name = "Severity"
+name = "Time"
 width = 60
-visualIndex = 2
+visualIndex = 0
 isHidden = FALSE
 isUserChangeColumnVisible = FALSE
 [VIA.parRule]
@@ -872,7 +873,7 @@ open_rc_file_dir
 DefaultIntTimeRadix = Bin
 DefaultOthersRadix = Bin
 getSignalForm = 0 0 800 479 100 30 100 30
-viewPort = 0 25 1459 692 369 65
+viewPort = 0 25 1501 539 330 65
 legendBackground = -c ID_BLACK
 valueBackground = -c ID_BLACK
 curveBackground = -c ID_BLACK
@@ -1038,8 +1039,8 @@ printBasic = 1 0 0 FALSE FALSE
 printDest = -printer {}
 printSignature = {%f %h %t} {}
 curveWindow_Drag&Drop_Mode = TRUE
-RecentFile1 = "\"/mnt/vol_NFS_rh003/estudiantes/DANIELA_VARGAS/TFG_10/TFG/sintesis/Votador/TSMC_Hamming/FLOW/common/rtl/sverilog/signal.rc\""
-RecentFile2 = "\"/mnt/vol_NFS_rh003/estudiantes/DANIELA_VARGAS/TFG_10/TFG/sintesis/Votador/TSMC_Hamming/FLOW/common/rtl/sverilog/inter.fsdb\""
+RecentFile1 = "\"/mnt/vol_NFS_rh003/estudiantes/DANIELA_VARGAS/TFG_10/TFG/sintesis/Votador/TSMC_Hamming/FLOW/common/rtl/sverilog/inter.fsdb\""
+RecentFile2 = "\"/mnt/vol_NFS_rh003/estudiantes/DANIELA_VARGAS/TFG_10/TFG/sintesis/Votador/TSMC_Hamming/FLOW/common/rtl/sverilog/signal.rc\""
 open_file_time_range = FALSE
 legend_window_font = -f COURIER12 -c ID_CYAN5
 value_window_font = -f COURIER12 -c ID_CYAN5
@@ -1796,7 +1797,7 @@ AddImportArgument = FALSE
 LineBreakWithScope = TRUE
 StopAfterCompileOption = -s
 [wave.0]
-viewPort = 0 25 1459 692 369 65
+viewPort = 0 25 1501 539 330 65
 [wave.1]
 viewPort = 127 219 960 332 100 65
 [wave.2]
