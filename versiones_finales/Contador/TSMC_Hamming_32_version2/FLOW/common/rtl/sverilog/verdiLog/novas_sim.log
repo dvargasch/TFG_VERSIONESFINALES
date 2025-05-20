@@ -1,0 +1,54 @@
+Invoking simulator...
+
+./prueba_1_a -sml=verdi +UVM_VERDI_TRACE=UVM_AWARE +fsdb+gate=off -ucli2Proc -ucli
+debImport "-i" "-simflow" "-dbdir" "./prueba_1_a.daidir"
+*Verdi* Loading libsscore_vcs202303.so
+
+*Verdi* : Enable RPC Server(76527)
+
+srcTBInvokeSim
+Chronologic VCS simulator copyright 1991-2023
+Contains Synopsys proprietary information.
+Compiler version U-2023.03-SP2_Full64; Runtime version U-2023.03-SP2_Full64;  May 19 22:52 2025
+xterm-256color is Not a valid terminal...
+Verdi>fsdbDumpvars 1 "tb_top.clk"  +all +trace_process;fsdbDumpvars 1 "tb_top.reset"  +all +trace_process;fsdbDumpvars 1 "tb_top.enable"  +all +trace_process;fsdbDumpvars 1 "tb_top.counter"  +all +trace_process;fsdbDumpflush 
+
+*Verdi* : Dumping the signal (tb_top.clk).
+*Verdi* : Dumping the signal (tb_top.reset).
+*Verdi* : Dumping the signal (tb_top.enable).
+*Verdi* : Dumping the signal (tb_top.counter).
+*Verdi* : Flush all FSDB Files at 0 ps.
+
+Verdi>fsdbDumpvars 1 "tb_top.dut.counter_and_parity.parity_stored"  +all +trace_process;fsdbDumpflush 
+
+*Verdi* : Dumping the signal (tb_top.dut.counter_and_parity.parity_stored).
+*Verdi* : Flush all FSDB Files at 0 ps.
+
+Verdi>fsdbDumpvars 1 "tb_top.dut.counter_and_parity.corrected_counter"  +all +trace_process;fsdbDumpvars 1 "tb_top.dut.counter_and_parity.corrected_parity"  +all +trace_process;fsdbDumpflush 
+
+*Verdi* : Dumping the signal (tb_top.dut.counter_and_parity.corrected_counter).
+*Verdi* : Dumping the signal (tb_top.dut.counter_and_parity.corrected_parity).
+*Verdi* : Flush all FSDB Files at 0 ps.
+
+Verdi>fsdbDumpvars 1 "tb_top.dut.counter_and_parity.error_detected_data"  +all +trace_process;fsdbDumpflush 
+
+*Verdi* : Dumping the signal (tb_top.dut.counter_and_parity.error_detected_data).
+*Verdi* : Flush all FSDB Files at 0 ps.
+
+Verdi>fsdbDumpvars 1 "tb_top.dut.syndrome_inst.error_detected_parity"  +all +trace_process;fsdbDumpflush 
+
+*Verdi* : Dumping the signal (tb_top.dut.syndrome_inst.error_detected_parity).
+*Verdi* : Flush all FSDB Files at 0 ps.
+
+Verdi>fsdbDumpvars 1 "tb_top.dut.syndrome_inst.syndrome"  +all +trace_process;fsdbDumpflush 
+
+*Verdi* : Dumping the signal (tb_top.dut.syndrome_inst.syndrome).
+*Verdi* : Flush all FSDB Files at 0 ps.
+
+Verdi>run
+tb.sv, 47 :         $stop;
+           V C S   S i m u l a t i o n   R e p o r t 
+Time: 215000 ps
+CPU Time:      0.140 seconds;       Data structure size:   0.0Mb
+Mon May 19 22:56:33 2025
+debExit
