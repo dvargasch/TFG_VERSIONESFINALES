@@ -4,20 +4,20 @@ ifeq ($(LDVERSION), 0)
 endif
 
 ARCHIVE_OBJS=
-ARCHIVE_OBJS += _3489662_archive_1.so
-_3489662_archive_1.so : archive.1/_3489662_archive_1.a
+ARCHIVE_OBJS += _153587_archive_1.so
+_153587_archive_1.so : archive.4/_153587_archive_1.a
 	@$(AR) -s $<
-	@$(PIC_LD) -shared  -Bsymbolic $(LD_NORELAX_FLAG)  -o .//../results_errors.daidir//_3489662_archive_1.so --whole-archive $< --no-whole-archive
+	@$(PIC_LD) -shared  -Bsymbolic $(LD_NORELAX_FLAG)  -o .//../prueba_2.daidir//_153587_archive_1.so --whole-archive $< --no-whole-archive
 	@rm -f $@
-	@ln -sf .//../results_errors.daidir//_3489662_archive_1.so $@
+	@ln -sf .//../prueba_2.daidir//_153587_archive_1.so $@
 
 
 ARCHIVE_OBJS += _prev_archive_1.so
-_prev_archive_1.so : archive.1/_prev_archive_1.a
+_prev_archive_1.so : archive.4/_prev_archive_1.a
 	@$(AR) -s $<
-	@$(PIC_LD) -shared  -Bsymbolic $(LD_NORELAX_FLAG)  -o .//../results_errors.daidir//_prev_archive_1.so --whole-archive $< --no-whole-archive
+	@$(PIC_LD) -shared  -Bsymbolic $(LD_NORELAX_FLAG)  -o .//../prueba_2.daidir//_prev_archive_1.so --whole-archive $< --no-whole-archive
 	@rm -f $@
-	@ln -sf .//../results_errors.daidir//_prev_archive_1.so $@
+	@ln -sf .//../prueba_2.daidir//_prev_archive_1.so $@
 
 
 

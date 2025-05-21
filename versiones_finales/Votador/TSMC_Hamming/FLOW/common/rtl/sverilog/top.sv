@@ -67,7 +67,7 @@ module decoder (
       decoded = {data_to_be_decoded[4], data_to_be_decoded[2], data_to_be_decoded[1],data_to_be_decoded[0]}; 
     end else begin
       error = 1;  
-      case ({syndrome_3, syndrome_2, syndrome_1})
+      case (syndrome)
         3'b001: data_to_be_decoded[6] = ~data_to_be_decoded[6]; 
         3'b010: data_to_be_decoded[5] = ~data_to_be_decoded[5]; 
         3'b011: data_to_be_decoded[4] = ~data_to_be_decoded[4]; 

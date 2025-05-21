@@ -2658,11 +2658,6 @@ static inline U asm_bsf (U in)
 #ifdef __cplusplus
 extern "C" {
 #endif
-void  rmaPropagate0_p_results_errors_daidir (UB  * pcode, scalar  val);
-void  rmaPropagate0_results_errors_daidir (UB  * pcode, scalar  val);
-void  rmaPropagate0_f_results_errors_daidir (UB  * pcode, scalar  val, U  I614, scalar  * I1420, U  did);
-void  rmaPropagate0_r_results_errors_daidir (UB  * pcode);
-void  rmaPropagate0_wn_results_errors_daidir (UB  * pcode, scalar  val);
 void  schedNewEvent (struct dummyq_struct * I1405, EBLK  * I1400, U  I622);
 #ifdef __cplusplus
 }

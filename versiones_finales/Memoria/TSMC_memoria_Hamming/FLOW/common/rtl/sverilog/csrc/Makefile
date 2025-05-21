@@ -8,7 +8,7 @@ VSRC=..
 TARGET_ARCH=
 
 # Choose name of executable 
-PRODUCTBASE=$(VSRC)/results_3
+PRODUCTBASE=$(VSRC)/prueba_3
 
 PRODUCT=$(PRODUCTBASE)
 
@@ -21,9 +21,9 @@ DEPLIBS=
 VCSUCLI=-lvcsucli
 BALIBS= 
 LLVM_FLAGS=
-RUNTIME=-lvcsnew -lsimprofile -lreader_common /mnt/vol_synopsys2023/synopsys/vcs/U-2023.03-SP2/linux64/lib/libBA.a -luclinative /mnt/vol_synopsys2023/synopsys/vcs/U-2023.03-SP2/linux64/lib/vcs_tls.o $(DEPLIBS) 
+RUNTIME=-lvcsnew -lsimprofile -lreader_common /mnt/vol_NFS_rh003/tools/vcs/R-2020.12-SP2/linux64/lib/libBA.a -luclinative /mnt/vol_NFS_rh003/tools/vcs/R-2020.12-SP2/linux64/lib/vcs_tls.o $(DEPLIBS) 
 
-VCS_SAVE_RESTORE_OBJ=/mnt/vol_synopsys2023/synopsys/vcs/U-2023.03-SP2/linux64/lib/vcs_save_restore_new.o
+VCS_SAVE_RESTORE_OBJ=/mnt/vol_NFS_rh003/tools/vcs/R-2020.12-SP2/linux64/lib/vcs_save_restore_new.o
 
 # Select your favorite compiler
 
@@ -40,17 +40,16 @@ STDLIB =
 STRIPFLAGS= 
 
 PRE_LDFLAGS= # Loader Flags
-LDFLAGS= -rdynamic  -Wl,-rpath='$$ORIGIN'/results_3.daidir -Wl,-rpath=./results_3.daidir -Wl,-rpath=/mnt/vol_synopsys2023/synopsys/vcs/U-2023.03-SP2/linux64/lib -L/mnt/vol_synopsys2023/synopsys/vcs/U-2023.03-SP2/linux64/lib 
+LDFLAGS= -rdynamic  -Wl,-rpath='$$ORIGIN'/prueba_3.daidir -Wl,-rpath=./prueba_3.daidir -Wl,-rpath=/mnt/vol_NFS_rh003/tools/vcs/R-2020.12-SP2/linux64/lib -L/mnt/vol_NFS_rh003/tools/vcs/R-2020.12-SP2/linux64/lib 
 # Picarchive Flags
 PICLDFLAGS= -Wl,-rpath-link=./ 
-PIC_LD=ld
 
 # C run time startup
 CRT0=
 # C run time startup
 CRTN=
 # Machine specific libraries
-SYSLIBS=/mnt/vol_synopsys2023/synopsys/verdi/U-2023.03-SP2/share/PLI/VCS/LINUX64/pli.a -ldl  -lc -lm -lpthread -ldl
+SYSLIBS=/mnt/vol_NFS_rh003/tools/verdi/R-2020.12-SP2/share/PLI/VCS/LINUX64/pli.a -ldl  -lc -lm -lpthread -ldl
 
 # Default defines
 SHELL=/bin/sh
@@ -66,15 +65,15 @@ TMPSPECENV=$(VCSTMPSPECENV)
 CC=$(TMPSPECENV) $(VCS_CC) $(TMPSPECARG)
 
 # C flags for compilation
-CFLAGS=$(STDLIB)-w  -pipe -fPIC -O -I/mnt/vol_synopsys2023/synopsys/vcs/U-2023.03-SP2/include   
+CFLAGS=$(STDLIB)-w  -pipe -fPIC -O -I/mnt/vol_NFS_rh003/tools/vcs/R-2020.12-SP2/include   
 
-CFLAGS_O0=-w  -pipe -fPIC -I/mnt/vol_synopsys2023/synopsys/vcs/U-2023.03-SP2/include -O0  -fno-strict-aliasing -fno-optimize-sibling-calls   
+CFLAGS_O0=-w  -pipe -fPIC -I/mnt/vol_NFS_rh003/tools/vcs/R-2020.12-SP2/include -O0  -fno-strict-aliasing -fno-optimize-sibling-calls   
 
-CFLAGS_CG=-w  -pipe -fPIC -I/mnt/vol_synopsys2023/synopsys/vcs/U-2023.03-SP2/include -O  -fno-strict-aliasing -fno-optimize-sibling-calls   
+CFLAGS_CG=-w  -pipe -fPIC -I/mnt/vol_NFS_rh003/tools/vcs/R-2020.12-SP2/include -O  -fno-strict-aliasing -fno-optimize-sibling-calls   
 
-CFLAGS_CG_CLIB=-w  -pipe -fPIC -I/mnt/vol_synopsys2023/synopsys/vcs/U-2023.03-SP2/include -O  -fno-strict-aliasing -fno-optimize-sibling-calls   
+CFLAGS_CG_CLIB=-w  -pipe -fPIC -I/mnt/vol_NFS_rh003/tools/vcs/R-2020.12-SP2/include -O  -fno-strict-aliasing -fno-optimize-sibling-calls   
 
-CFLAGS_RMAR=-w  -pipe -fPIC -I/mnt/vol_synopsys2023/synopsys/vcs/U-2023.03-SP2/include -O  -fno-strict-aliasing -fno-optimize-sibling-calls   
+CFLAGS_RMAR=-w  -pipe -fPIC -I/mnt/vol_NFS_rh003/tools/vcs/R-2020.12-SP2/include -O  -fno-strict-aliasing -fno-optimize-sibling-calls   
 
 CFLAGS_CG+=$(STDLIB)
 CFLAGS_CG_CLIB+=$(STDLIB)
@@ -117,11 +116,9 @@ $(PRODUCT_TIMESTAMP) : product_clean_order
 	$(LD) $(CRT0) -o $(PRODUCT) $(LLVM_FLAGS) $(STDLIB) $(PRE_LDFLAGS) $(STRIPFLAGS) $(PCLDFLAGS) $(LDFLAGS) $(PICLDFLAGS) $(OBJS)  $(LIBS)   $(RUNTIME) -Wl,-whole-archive $(VCSMXSAIF) $(VCSUCLI) $(PLILIBS) $(DECLIBS) $(BALIBS) -Wl,-no-whole-archive     $(LINK_TB) $(DPI_STUB_OBJS) $(PLI_STUB_OBJS)   $(VCS_SAVE_RESTORE_OBJ) $(SYSLIBS) $(CRTN)
 	@rm -f csrc[0-9]*.o
 	@rm -f cuarc[0-9]*.o
-	@rm -f cuarcall.o
-	@rm -f localsym.txt
 	@touch $(PRODUCT_TIMESTAMP)
 	@-if [ -d ./objs ]; then find ./objs -type d -empty -delete; fi
 
-$(PRODUCT) :  $(LD_VERSION_CHECK)  $(OBJS) $(DOTLIBS) $(DPI_STUB_OBJS) $(PLI_STUB_OBJS) $(CMODLIB) $(SYSC_STUB_LIB) $(DPI_ALLOW_MAIN_SO)  /mnt/vol_synopsys2023/synopsys/vcs/U-2023.03-SP2/linux64/lib/libvcsnew.so /mnt/vol_synopsys2023/synopsys/vcs/U-2023.03-SP2/linux64/lib/libsimprofile.so /mnt/vol_synopsys2023/synopsys/vcs/U-2023.03-SP2/linux64/lib/libreader_common.so /mnt/vol_synopsys2023/synopsys/vcs/U-2023.03-SP2/linux64/lib/libBA.a /mnt/vol_synopsys2023/synopsys/vcs/U-2023.03-SP2/linux64/lib/libuclinative.so /mnt/vol_synopsys2023/synopsys/vcs/U-2023.03-SP2/linux64/lib/vcs_tls.o /mnt/vol_synopsys2023/synopsys/vcs/U-2023.03-SP2/linux64/lib/libvcsucli.so  $(VCS_SAVE_RESTORE_OBJ) 
+$(PRODUCT) :  $(LD_VERSION_CHECK)  $(OBJS) $(DOTLIBS) $(DPI_STUB_OBJS) $(PLI_STUB_OBJS) $(CMODLIB) $(SYSC_STUB_LIB)  /mnt/vol_NFS_rh003/tools/vcs/R-2020.12-SP2/linux64/lib/libvcsnew.so /mnt/vol_NFS_rh003/tools/vcs/R-2020.12-SP2/linux64/lib/libsimprofile.so /mnt/vol_NFS_rh003/tools/vcs/R-2020.12-SP2/linux64/lib/libreader_common.so /mnt/vol_NFS_rh003/tools/vcs/R-2020.12-SP2/linux64/lib/libBA.a /mnt/vol_NFS_rh003/tools/vcs/R-2020.12-SP2/linux64/lib/libuclinative.so /mnt/vol_NFS_rh003/tools/vcs/R-2020.12-SP2/linux64/lib/vcs_tls.o /mnt/vol_NFS_rh003/tools/vcs/R-2020.12-SP2/linux64/lib/libvcsucli.so  $(VCS_SAVE_RESTORE_OBJ) 
 	@touch $(PRODUCT)
 

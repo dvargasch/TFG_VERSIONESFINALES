@@ -1,0 +1,26 @@
+{
+    "std": [
+        "std",
+        "reYIK",
+        "module",
+        1
+    ],
+    "syndrome": [
+        "syndrome",
+        "A3NJ4",
+        "module",
+        3
+    ],
+    "tb_sram_2kbit": [
+        "tb_sram_2kbit",
+        "QIC36",
+        "module",
+        4
+    ],
+    "...MASTER...": [
+        "SIM",
+        "amcQw",
+        "module",
+        5
+    ]
+}

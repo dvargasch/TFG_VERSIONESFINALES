@@ -8,7 +8,7 @@ VSRC=..
 TARGET_ARCH=
 
 # Choose name of executable 
-PRODUCTBASE=$(VSRC)/results_errors
+PRODUCTBASE=$(VSRC)/prueba_2
 
 PRODUCT=$(PRODUCTBASE)
 
@@ -40,7 +40,7 @@ STDLIB =
 STRIPFLAGS= 
 
 PRE_LDFLAGS= # Loader Flags
-LDFLAGS= -rdynamic  -Wl,-rpath='$$ORIGIN'/results_errors.daidir -Wl,-rpath=./results_errors.daidir -Wl,-rpath=/mnt/vol_synopsys2023/synopsys/vcs/U-2023.03-SP2/linux64/lib -L/mnt/vol_synopsys2023/synopsys/vcs/U-2023.03-SP2/linux64/lib 
+LDFLAGS= -rdynamic  -Wl,-rpath='$$ORIGIN'/prueba_2.daidir -Wl,-rpath=./prueba_2.daidir -Wl,-rpath=/mnt/vol_synopsys2023/synopsys/vcs/U-2023.03-SP2/linux64/lib -L/mnt/vol_synopsys2023/synopsys/vcs/U-2023.03-SP2/linux64/lib 
 # Picarchive Flags
 PICLDFLAGS= -Wl,-rpath-link=./ 
 PIC_LD=ld

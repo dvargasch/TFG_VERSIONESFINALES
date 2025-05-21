@@ -7,7 +7,6 @@ module tb_top_module;
   // Señales de prueba
   logic [3:0] data_1, data_2, data_3;
   logic [3:0] voted_q;
-  logic fault;
   logic introduce_error_1;
   logic introduce_error_2;
   logic introduce_error_3;
@@ -22,9 +21,8 @@ module tb_top_module;
     .data_1(data_1),
     .data_2(data_2),
     .data_3(data_3),
-    .voted_q(voted_q),
-    .fault(fault)
-  );
+    .voted_q(voted_q)
+    );
 
   // Inicialización y generación del archivo .VCD
   initial begin
@@ -313,7 +311,7 @@ introduce_error_8 = 1;
 always_comb begin
     if (introduce_error_8) begin
       // Usar `force` para inyectar un valor incorrecto directamente en el votador
-      force dut.voter_inst.data_voted = 7'b1011011;  // Forzar un valor erróneo
+      force dut.voter_inst.data_voted = 7'b1010000;  // Forzar un valor erróneo
     end else begin
       // Liberar el control sobre la señal, para que el votador actúe normalmente
       release dut.voter_inst.data_voted;  // Dejar que el votador funcione normalmente

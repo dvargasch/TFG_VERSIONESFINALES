@@ -1,7 +1,7 @@
-Command: /mnt/vol_NFS_rh003/estudiantes/DANIELA_VARGAS/Version_final/0516/versiones_finales/Votador/TSMC_Hamming/FLOW/common/rtl/sverilog/results_errors -sml=verdi +UVM_VERDI_TRACE=UVM_AWARE +fsdb+gate=off -ucli2Proc -ucli -l /mnt/vol_NFS_rh003/estudiantes/DANIELA_VARGAS/Version_final/0516/versiones_finales/Votador/TSMC_Hamming/FLOW/common/rtl/sverilog/verdiLog/sim.log
+Command: /mnt/vol_NFS_rh003/estudiantes/DANIELA_VARGAS/Version_final/0516/versiones_finales/Votador/TSMC_Hamming/FLOW/common/rtl/sverilog/prueba_2 -sml=verdi +UVM_VERDI_TRACE=UVM_AWARE +fsdb+gate=off -ucli2Proc -ucli -l /mnt/vol_NFS_rh003/estudiantes/DANIELA_VARGAS/Version_final/0516/versiones_finales/Votador/TSMC_Hamming/FLOW/common/rtl/sverilog/verdiLog/sim.log
 Chronologic VCS simulator copyright 1991-2023
 Contains Synopsys proprietary information.
-Compiler version U-2023.03-SP2_Full64; Runtime version U-2023.03-SP2_Full64;  May 18 16:11 2025
+Compiler version U-2023.03-SP2_Full64; Runtime version U-2023.03-SP2_Full64;  May 20 13:40 2025
 
 ucli% synUtils::getArch
 linux64
@@ -17,24 +17,24 @@ FSDB Dumper for VCS, Release Verdi_U-2023.03-SP2, Linux x86_64/64bit, 08/28/2023
 ucli% synEnv::hasFataled
 0
 ucli% ucliCore::getToolPID
-3969213
+153895
 ucli% sps_interactive
-*Verdi* : Enable RPC Server(3969213)
+*Verdi* : Enable RPC Server(153895)
 
 ucli% ucliCore::getToolPID
-3969213
+153895
 ucli% ucliCore::getToolPID
-3969213
+153895
 ucli% if {[catch {ucliCore::setFocus tool}]} {}
 
 ucli% puts $ucliCore::nativeUcliMode
 0
 
 ucli% ucliCore::getToolTopPID
-3969213
+153895
 ucli% pid
-3969228
-ucli% synUtils::sendTool -active {_icl_createSharedMemory /tmp/vcs_dve_general.VARGAS_CHAVARRIA_2025.3969213 }
+153907
+ucli% synUtils::sendTool -active {_icl_createSharedMemory /tmp/vcs_dve_general.VARGAS_CHAVARRIA_2025.153895 }
 
 ucli% if { [info vars watch::vcbp_str_len_limit_of_get_value] != ""} {set watch::vcbp_str_len_limit_of_get_value 1024}
 1024
@@ -97,7 +97,7 @@ line: 5
 logFilename: /mnt/vol_NFS_rh003/estudiantes/DANIELA_VARGAS/Version_final/0516/versiones_finales/Votador/TSMC_Hamming/FLOW/common/rtl/sverilog/verdiLog/sim.log
 macroIndex: -1
 macroOffset: -1
-pid: 3969213
+pid: 153895
 scope: tb_top_module
 startCol: 0
 state: stopped
@@ -119,44 +119,18 @@ ucli% stop
 No stop points are set
 ucli% if {[catch {ucliCore::setFocus tool}]} {}
 
-ucli% fsdbDumpvars 1 "tb_top_module.dut.data_1"  +all +trace_process;fsdbDumpflush 
+ucli% fsdbDumpvars 1 "tb_top_module.dut.data_1"  +all +trace_process;fsdbDumpvars 1 "tb_top_module.dut.data_3"  +all +trace_process;fsdbDumpvars 1 "tb_top_module.dut.data_2"  +all +trace_process;fsdbDumpflush 
 *Verdi* : Dumping the signal (tb_top_module.dut.data_1).
-*Verdi* : Flush all FSDB Files at 0 ps.
-
-ucli% if {[catch {ucliCore::setFocus tool}]} {}
-
-ucli% fsdbDumpvars 1 "tb_top_module.dut.data_2"  +all +trace_process;fsdbDumpflush 
+*Verdi* : Dumping the signal (tb_top_module.dut.data_3).
 *Verdi* : Dumping the signal (tb_top_module.dut.data_2).
 *Verdi* : Flush all FSDB Files at 0 ps.
 
 ucli% if {[catch {ucliCore::setFocus tool}]} {}
 
-ucli% fsdbDumpvars 1 "tb_top_module.dut.data_3"  +all +trace_process;fsdbDumpflush 
-*Verdi* : Dumping the signal (tb_top_module.dut.data_3).
-*Verdi* : Flush all FSDB Files at 0 ps.
-
-ucli% if {[catch {ucliCore::setFocus tool}]} {}
-
-ucli% fsdbDumpvars 1 "tb_top_module.dut.voted_q"  +all +trace_process;fsdbDumpflush 
-*Verdi* : Dumping the signal (tb_top_module.dut.voted_q).
-*Verdi* : Flush all FSDB Files at 0 ps.
-
-ucli% if {[catch {ucliCore::setFocus tool}]} {}
-
-ucli% fsdbDumpvars 1 "tb_top_module.dut.encoder_data_1.coded_data"  +all +trace_process;fsdbDumpflush 
-*Verdi* : Dumping the signal (tb_top_module.dut.encoder_data_1.coded_data).
-*Verdi* : Flush all FSDB Files at 0 ps.
-
-ucli% if {[catch {ucliCore::setFocus tool}]} {}
-
-ucli% fsdbDumpvars 1 "tb_top_module.dut.encoder_data_2.coded_data"  +all +trace_process;fsdbDumpflush 
-*Verdi* : Dumping the signal (tb_top_module.dut.encoder_data_2.coded_data).
-*Verdi* : Flush all FSDB Files at 0 ps.
-
-ucli% if {[catch {ucliCore::setFocus tool}]} {}
-
-ucli% fsdbDumpvars 1 "tb_top_module.dut.encoder_data_3.coded_data"  +all +trace_process;fsdbDumpflush 
-*Verdi* : Dumping the signal (tb_top_module.dut.encoder_data_3.coded_data).
+ucli% fsdbDumpvars 1 "tb_top_module.dut.voter_inst.coded_data_2"  +all +trace_process;fsdbDumpvars 1 "tb_top_module.dut.voter_inst.coded_data_1"  +all +trace_process;fsdbDumpvars 1 "tb_top_module.dut.voter_inst.coded_data_3"  +all +trace_process;fsdbDumpflush 
+*Verdi* : Dumping the signal (tb_top_module.dut.voter_inst.coded_data_2).
+*Verdi* : Dumping the signal (tb_top_module.dut.voter_inst.coded_data_1).
+*Verdi* : Dumping the signal (tb_top_module.dut.voter_inst.coded_data_3).
 *Verdi* : Flush all FSDB Files at 0 ps.
 
 ucli% if {[catch {ucliCore::setFocus tool}]} {}
@@ -167,34 +141,34 @@ ucli% fsdbDumpvars 1 "tb_top_module.dut.voter_inst.data_voted"  +all +trace_proc
 
 ucli% if {[catch {ucliCore::setFocus tool}]} {}
 
-ucli% fsdbDumpvars 1 "tb_top_module.dut.decoder_inst.unnamed\$\$_0.syndrome_1"  +all +trace_process;fsdbDumpflush 
-*Verdi* : Dumping the signal (tb_top_module.dut.decoder_inst.unnamed$$_0.syndrome_1).
+ucli% fsdbDumpvars 1 "tb_top_module.dut.fault"  +all +trace_process;fsdbDumpflush 
+*Verdi* : Dumping the signal (tb_top_module.dut.fault).
 *Verdi* : Flush all FSDB Files at 0 ps.
 
 ucli% if {[catch {ucliCore::setFocus tool}]} {}
 
-ucli% fsdbDumpvars 1 "tb_top_module.dut.decoder_inst.unnamed\$\$_0.syndrome_2"  +all +trace_process;fsdbDumpflush 
-*Verdi* : Dumping the signal (tb_top_module.dut.decoder_inst.unnamed$$_0.syndrome_2).
+ucli% fsdbDumpvars 1 "tb_top_module.dut.decoder_inst.unnamed\$\$_0.syndrome"  +all +trace_process;fsdbDumpflush 
+*Verdi* : Dumping the signal (tb_top_module.dut.decoder_inst.unnamed$$_0.syndrome).
 *Verdi* : Flush all FSDB Files at 0 ps.
 
 ucli% if {[catch {ucliCore::setFocus tool}]} {}
 
-ucli% fsdbDumpvars 1 "tb_top_module.dut.decoder_inst.unnamed\$\$_0.syndrome_3"  +all +trace_process;fsdbDumpflush 
-*Verdi* : Dumping the signal (tb_top_module.dut.decoder_inst.unnamed$$_0.syndrome_3).
+ucli% fsdbDumpvars 1 "tb_top_module.dut.voted_q"  +all +trace_process;fsdbDumpflush 
+*Verdi* : Dumping the signal (tb_top_module.dut.voted_q).
 *Verdi* : Flush all FSDB Files at 0 ps.
 
 ucli% if {[catch {ucliCore::setFocus tool}]} {}
 
 ucli% run
-$finish called from file "tb.sv", line 239.
+$finish called from file "tb.sv", line 237.
 $finish at simulation time               160000
 Simulation complete, time is 160000 ps.
-tb.sv, 239 :     $finish;
+tb.sv, 237 :     $finish;
 
 ucli% synEnv::hasFataled
 0
 ucli% ucliCore::getToolPID
-3969213
+153895
 ucli% save::getUserdefinedProcs
 ::stateVerdiChangeCB ::LoadFSDBDumpCmd
 ucli% if {[catch {ucliCore::setFocus tool}]} {}
@@ -206,7 +180,7 @@ ucli% senv
 activeDomain: Verilog
 activeFile: tb.sv
 activeFrame: 
-activeLine: 239
+activeLine: 237
 activeScope: tb_top_module
 activeThread: 
 endCol: 0
@@ -216,11 +190,11 @@ fsdbFilename:
 hasTB: 0
 inputFilename: 
 keyFilename: ucli.key
-line: 239
+line: 237
 logFilename: /mnt/vol_NFS_rh003/estudiantes/DANIELA_VARGAS/Version_final/0516/versiones_finales/Votador/TSMC_Hamming/FLOW/common/rtl/sverilog/verdiLog/sim.log
 macroIndex: -1
 macroOffset: -1
-pid: 3969213
+pid: 153895
 scope: tb_top_module
 startCol: 0
 state: stopped
@@ -247,8 +221,8 @@ ucli% if {[catch {ucliCore::setFocus tool}]} {}
 ucli% finish; quit
            V C S   S i m u l a t i o n   R e p o r t 
 Time: 160000 ps
-CPU Time:      0.200 seconds;       Data structure size:   0.0Mb
-Sun May 18 19:55:05 2025
+CPU Time:      0.160 seconds;       Data structure size:   0.0Mb
+Tue May 20 13:44:36 2025
 
 <VERDI_Terminated>
 

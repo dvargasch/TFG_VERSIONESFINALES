@@ -40,7 +40,7 @@ set DESIGN_LIBRARY "${DESIGN_NAME}_lib"
 #################################
 set time [get_date]
 puts "Command Start at: ${time}"
-Command Start at: Sun May 18 16:01:22 2025
+Command Start at: Tue May 20 13:45:33 2025
 ####################################
 ### 1. Variables for design prep ###
 ####################################
@@ -184,27 +184,27 @@ Warning:  /mnt/vol_NFS_rh003/estudiantes/DANIELA_VARGAS/Version_final/0516/versi
 Warning:  /mnt/vol_NFS_rh003/estudiantes/DANIELA_VARGAS/Version_final/0516/versiones_finales/Votador/TSMC_Hamming/FLOW/fc_flow/flow/work/../../../common/rtl/sverilog/top.sv:49: Overwriting existing design element 'decoder' with newer version. (VER-64)
 Compiling source file /mnt/vol_NFS_rh003/estudiantes/DANIELA_VARGAS/Version_final/0516/versiones_finales/Votador/TSMC_Hamming/FLOW/fc_flow/flow/work/../../../common/rtl/sverilog/tb_sin_errores.sv
 Opening include file /mnt/vol_NFS_rh003/estudiantes/DANIELA_VARGAS/Version_final/0516/versiones_finales/Votador/TSMC_Hamming/FLOW/fc_flow/flow/work/../../../common/rtl/sverilog/top.sv
-Error:  /mnt/vol_NFS_rh003/estudiantes/DANIELA_VARGAS/Version_final/0516/versiones_finales/Votador/TSMC_Hamming/FLOW/fc_flow/flow/work/../../../common/rtl/sverilog/tb.sv:246: The 'force' construct is not supported by synthesis. (VER-967)
-Error:  /mnt/vol_NFS_rh003/estudiantes/DANIELA_VARGAS/Version_final/0516/versiones_finales/Votador/TSMC_Hamming/FLOW/fc_flow/flow/work/../../../common/rtl/sverilog/tb.sv:249: The 'release' construct is not supported by synthesis. (VER-968)
-Error:  /mnt/vol_NFS_rh003/estudiantes/DANIELA_VARGAS/Version_final/0516/versiones_finales/Votador/TSMC_Hamming/FLOW/fc_flow/flow/work/../../../common/rtl/sverilog/tb.sv:256: The 'force' construct is not supported by synthesis. (VER-967)
-Error:  /mnt/vol_NFS_rh003/estudiantes/DANIELA_VARGAS/Version_final/0516/versiones_finales/Votador/TSMC_Hamming/FLOW/fc_flow/flow/work/../../../common/rtl/sverilog/tb.sv:259: The 'release' construct is not supported by synthesis. (VER-968)
-Error:  /mnt/vol_NFS_rh003/estudiantes/DANIELA_VARGAS/Version_final/0516/versiones_finales/Votador/TSMC_Hamming/FLOW/fc_flow/flow/work/../../../common/rtl/sverilog/tb.sv:266: The 'force' construct is not supported by synthesis. (VER-967)
-Error:  /mnt/vol_NFS_rh003/estudiantes/DANIELA_VARGAS/Version_final/0516/versiones_finales/Votador/TSMC_Hamming/FLOW/fc_flow/flow/work/../../../common/rtl/sverilog/tb.sv:269: The 'release' construct is not supported by synthesis. (VER-968)
-Error:  /mnt/vol_NFS_rh003/estudiantes/DANIELA_VARGAS/Version_final/0516/versiones_finales/Votador/TSMC_Hamming/FLOW/fc_flow/flow/work/../../../common/rtl/sverilog/tb.sv:276: The 'force' construct is not supported by synthesis. (VER-967)
-Error:  /mnt/vol_NFS_rh003/estudiantes/DANIELA_VARGAS/Version_final/0516/versiones_finales/Votador/TSMC_Hamming/FLOW/fc_flow/flow/work/../../../common/rtl/sverilog/tb.sv:279: The 'release' construct is not supported by synthesis. (VER-968)
-Error:  /mnt/vol_NFS_rh003/estudiantes/DANIELA_VARGAS/Version_final/0516/versiones_finales/Votador/TSMC_Hamming/FLOW/fc_flow/flow/work/../../../common/rtl/sverilog/tb.sv:286: The 'force' construct is not supported by synthesis. (VER-967)
-Error:  /mnt/vol_NFS_rh003/estudiantes/DANIELA_VARGAS/Version_final/0516/versiones_finales/Votador/TSMC_Hamming/FLOW/fc_flow/flow/work/../../../common/rtl/sverilog/tb.sv:289: The 'release' construct is not supported by synthesis. (VER-968)
-Error:  /mnt/vol_NFS_rh003/estudiantes/DANIELA_VARGAS/Version_final/0516/versiones_finales/Votador/TSMC_Hamming/FLOW/fc_flow/flow/work/../../../common/rtl/sverilog/tb.sv:296: The 'force' construct is not supported by synthesis. (VER-967)
-Error:  /mnt/vol_NFS_rh003/estudiantes/DANIELA_VARGAS/Version_final/0516/versiones_finales/Votador/TSMC_Hamming/FLOW/fc_flow/flow/work/../../../common/rtl/sverilog/tb.sv:299: The 'release' construct is not supported by synthesis. (VER-968)
-Error:  /mnt/vol_NFS_rh003/estudiantes/DANIELA_VARGAS/Version_final/0516/versiones_finales/Votador/TSMC_Hamming/FLOW/fc_flow/flow/work/../../../common/rtl/sverilog/tb.sv:306: The 'force' construct is not supported by synthesis. (VER-967)
-Error:  /mnt/vol_NFS_rh003/estudiantes/DANIELA_VARGAS/Version_final/0516/versiones_finales/Votador/TSMC_Hamming/FLOW/fc_flow/flow/work/../../../common/rtl/sverilog/tb.sv:309: The 'release' construct is not supported by synthesis. (VER-968)
-Error:  /mnt/vol_NFS_rh003/estudiantes/DANIELA_VARGAS/Version_final/0516/versiones_finales/Votador/TSMC_Hamming/FLOW/fc_flow/flow/work/../../../common/rtl/sverilog/tb.sv:316: The 'force' construct is not supported by synthesis. (VER-967)
-Error:  /mnt/vol_NFS_rh003/estudiantes/DANIELA_VARGAS/Version_final/0516/versiones_finales/Votador/TSMC_Hamming/FLOW/fc_flow/flow/work/../../../common/rtl/sverilog/tb.sv:319: The 'release' construct is not supported by synthesis. (VER-968)
+Error:  /mnt/vol_NFS_rh003/estudiantes/DANIELA_VARGAS/Version_final/0516/versiones_finales/Votador/TSMC_Hamming/FLOW/fc_flow/flow/work/../../../common/rtl/sverilog/tb.sv:244: The 'force' construct is not supported by synthesis. (VER-967)
+Error:  /mnt/vol_NFS_rh003/estudiantes/DANIELA_VARGAS/Version_final/0516/versiones_finales/Votador/TSMC_Hamming/FLOW/fc_flow/flow/work/../../../common/rtl/sverilog/tb.sv:247: The 'release' construct is not supported by synthesis. (VER-968)
+Error:  /mnt/vol_NFS_rh003/estudiantes/DANIELA_VARGAS/Version_final/0516/versiones_finales/Votador/TSMC_Hamming/FLOW/fc_flow/flow/work/../../../common/rtl/sverilog/tb.sv:254: The 'force' construct is not supported by synthesis. (VER-967)
+Error:  /mnt/vol_NFS_rh003/estudiantes/DANIELA_VARGAS/Version_final/0516/versiones_finales/Votador/TSMC_Hamming/FLOW/fc_flow/flow/work/../../../common/rtl/sverilog/tb.sv:257: The 'release' construct is not supported by synthesis. (VER-968)
+Error:  /mnt/vol_NFS_rh003/estudiantes/DANIELA_VARGAS/Version_final/0516/versiones_finales/Votador/TSMC_Hamming/FLOW/fc_flow/flow/work/../../../common/rtl/sverilog/tb.sv:264: The 'force' construct is not supported by synthesis. (VER-967)
+Error:  /mnt/vol_NFS_rh003/estudiantes/DANIELA_VARGAS/Version_final/0516/versiones_finales/Votador/TSMC_Hamming/FLOW/fc_flow/flow/work/../../../common/rtl/sverilog/tb.sv:267: The 'release' construct is not supported by synthesis. (VER-968)
+Error:  /mnt/vol_NFS_rh003/estudiantes/DANIELA_VARGAS/Version_final/0516/versiones_finales/Votador/TSMC_Hamming/FLOW/fc_flow/flow/work/../../../common/rtl/sverilog/tb.sv:274: The 'force' construct is not supported by synthesis. (VER-967)
+Error:  /mnt/vol_NFS_rh003/estudiantes/DANIELA_VARGAS/Version_final/0516/versiones_finales/Votador/TSMC_Hamming/FLOW/fc_flow/flow/work/../../../common/rtl/sverilog/tb.sv:277: The 'release' construct is not supported by synthesis. (VER-968)
+Error:  /mnt/vol_NFS_rh003/estudiantes/DANIELA_VARGAS/Version_final/0516/versiones_finales/Votador/TSMC_Hamming/FLOW/fc_flow/flow/work/../../../common/rtl/sverilog/tb.sv:284: The 'force' construct is not supported by synthesis. (VER-967)
+Error:  /mnt/vol_NFS_rh003/estudiantes/DANIELA_VARGAS/Version_final/0516/versiones_finales/Votador/TSMC_Hamming/FLOW/fc_flow/flow/work/../../../common/rtl/sverilog/tb.sv:287: The 'release' construct is not supported by synthesis. (VER-968)
+Error:  /mnt/vol_NFS_rh003/estudiantes/DANIELA_VARGAS/Version_final/0516/versiones_finales/Votador/TSMC_Hamming/FLOW/fc_flow/flow/work/../../../common/rtl/sverilog/tb.sv:294: The 'force' construct is not supported by synthesis. (VER-967)
+Error:  /mnt/vol_NFS_rh003/estudiantes/DANIELA_VARGAS/Version_final/0516/versiones_finales/Votador/TSMC_Hamming/FLOW/fc_flow/flow/work/../../../common/rtl/sverilog/tb.sv:297: The 'release' construct is not supported by synthesis. (VER-968)
+Error:  /mnt/vol_NFS_rh003/estudiantes/DANIELA_VARGAS/Version_final/0516/versiones_finales/Votador/TSMC_Hamming/FLOW/fc_flow/flow/work/../../../common/rtl/sverilog/tb.sv:304: The 'force' construct is not supported by synthesis. (VER-967)
+Error:  /mnt/vol_NFS_rh003/estudiantes/DANIELA_VARGAS/Version_final/0516/versiones_finales/Votador/TSMC_Hamming/FLOW/fc_flow/flow/work/../../../common/rtl/sverilog/tb.sv:307: The 'release' construct is not supported by synthesis. (VER-968)
+Error:  /mnt/vol_NFS_rh003/estudiantes/DANIELA_VARGAS/Version_final/0516/versiones_finales/Votador/TSMC_Hamming/FLOW/fc_flow/flow/work/../../../common/rtl/sverilog/tb.sv:314: The 'force' construct is not supported by synthesis. (VER-967)
+Error:  /mnt/vol_NFS_rh003/estudiantes/DANIELA_VARGAS/Version_final/0516/versiones_finales/Votador/TSMC_Hamming/FLOW/fc_flow/flow/work/../../../common/rtl/sverilog/tb.sv:317: The 'release' construct is not supported by synthesis. (VER-968)
 Error:  Cannot recover from previous errors. (VER-518)
 Error:  Too many errors; can't continue. (VER-40)
 *** Presto compilation terminated with 17 errors. ***
 Error: Presto analyze failed 
-Elapsed = 00:00:00.12, CPU = 00:00:00.02
+Elapsed = 00:00:00.09, CPU = 00:00:00.02
 0
 #### ----- Elaborate and hierarchize the design ----- ####
 # Elaborate
@@ -228,15 +228,15 @@ Number of modules read: 4
 Top level ports:        16
 Total in all modules
   Ports:                67
-  Nets:                 160
-  Instances:            79
-Elapsed = 00:00:00.16, CPU = 00:00:00.12
+  Nets:                 162
+  Instances:            81
+Elapsed = 00:00:00.16, CPU = 00:00:00.11
 1
 # Set top module in the design
 set_top_module ${DESIGN_NAME}
 Information: User units loaded from library 'tcbn65lphpbwpcghvt_1' (LNK-040)
 Information: Added key list 'DesignWare' to design 'top'. (DWS-0216)
-Elapsed = 00:00:00.51, CPU = 00:00:00.26
+Elapsed = 00:00:00.57, CPU = 00:00:00.25
 1
 # Save block after RTL setup
 save_block -as ${DESIGN_NAME}/rtl_read
@@ -250,8 +250,8 @@ Information: Timer using 1 threads
 INFO: compile_fusion is running in balanced flow mode.
 Warning: No site rows found in floorplan. (LGL-397)
 Information: Starting 'compile_fusion -to initial_map' (FLW-8000)
-Information: Time: 2025-05-18 16:01:24 / Session: 0.00 hr / Command: 0.00 hr / Memory: 489 MB (FLW-8100)
-CPU Load: 4%, Ram Free: 0 GB, Swap Free: 0 GB, Work Disk Free: 232 GB, Tmp Disk Free: 53 GB
+Information: Time: 2025-05-20 13:45:34 / Session: 0.00 hr / Command: 0.00 hr / Memory: 489 MB (FLW-8100)
+CPU Load: 1%, Ram Free: 1 GB, Swap Free: 7 GB, Work Disk Free: 155 GB, Tmp Disk Free: 53 GB
 Warning: No site rows found in floorplan. (LGL-397)
 INFO: Start environment monitoring: recipes
 INFO: compile_fusion is running in balanced flow mode.
@@ -271,7 +271,7 @@ Warning: Mapping to scan cell 'GSDFCNQD1HPBWP' in library is not possible becaus
 Information: The automatic clock gate timing flow is activated. Clock latencies set on clock gate cells will be automatically adjusted by an estimate for latency. (CGT-4005)
 ----------------------------------------------------------------------------------------------------------
 Information: Starting compile_fusion / initial_map (FLW-8000)
-Information: Time: 2025-05-18 16:01:25 / Session: 0.00 hr / Command: 0.00 hr / Memory: 624 MB (FLW-8100)
+Information: Time: 2025-05-20 13:45:35 / Session: 0.00 hr / Command: 0.00 hr / Memory: 624 MB (FLW-8100)
 ----------------------------------------------------------------------------------------------------------
 Warning: Mapping to scan cell 'GSDFCNQD1HPBWP' in library is not possible because cell has 'dont_use' attribute. (SQM-1067)
 Warning: No site rows found in floorplan. (LGL-397)
@@ -290,14 +290,14 @@ Warning: No valid clocks available in mode 'default'. Setting clock frequency to
 Warning: No site rows found in floorplan. (LGL-397)
 Warning: No site rows found in floorplan. (LGL-397)
 Information: Starting compile_fusion / initial_map / MV Cell Insertion (FLW-8000)
-Information: Time: 2025-05-18 16:01:26 / Session: 0.00 hr / Command: 0.00 hr / Memory: 661 MB (FLW-8100)
+Information: Time: 2025-05-20 13:45:36 / Session: 0.00 hr / Command: 0.00 hr / Memory: 671 MB (FLW-8100)
 Information: Result of compile_fusion / initial_map / MV Cell Insertion (FLW-8500)
 Information: Total number of MV cells in the design. (MV-334)
 Information: Ending   compile_fusion / initial_map / MV Cell Insertion (FLW-8001)
-Information: Time: 2025-05-18 16:01:26 / Session: 0.00 hr / Command: 0.00 hr / Memory: 661 MB (FLW-8100)
+Information: Time: 2025-05-20 13:45:36 / Session: 0.00 hr / Command: 0.00 hr / Memory: 671 MB (FLW-8100)
 
 Information: Starting compile_fusion / initial_map / Logic Simplification (1) (FLW-8000)
-Information: Time: 2025-05-18 16:01:26 / Session: 0.00 hr / Command: 0.00 hr / Memory: 661 MB (FLW-8100)
+Information: Time: 2025-05-20 13:45:36 / Session: 0.00 hr / Command: 0.00 hr / Memory: 671 MB (FLW-8100)
 Information: The hierarchy encoder_data_1 is ungrouped due to auto_ungrouping. (UNG-1001)
 Information: The hierarchy encoder_data_2 is ungrouped due to auto_ungrouping. (UNG-1001)
 Information: The hierarchy encoder_data_3 is ungrouped due to auto_ungrouping. (UNG-1001)
@@ -328,7 +328,7 @@ Warning: No valid clocks available in mode 'default'. Setting clock frequency to
 Warning: No site rows found in floorplan. (LGL-397)
 Warning: No site rows found in floorplan. (LGL-397)
 Information: Ending   compile_fusion / initial_map / Logic Simplification (1) (FLW-8001)
-Information: Time: 2025-05-18 16:01:27 / Session: 0.00 hr / Command: 0.00 hr / Memory: 701 MB (FLW-8100)
+Information: Time: 2025-05-20 13:45:37 / Session: 0.00 hr / Command: 0.00 hr / Memory: 691 MB (FLW-8100)
 
 Warning: Mapping to scan cell 'GSDFCNQD1HPBWP' in library is not possible because cell has 'dont_use' attribute. (SQM-1067)
 Warning: No site rows found in floorplan. (LGL-397)
@@ -337,26 +337,26 @@ Warning: No valid clocks available in mode 'default'. Setting clock frequency to
 Warning: No site rows found in floorplan. (LGL-397)
 Warning: No site rows found in floorplan. (LGL-397)
 Information: Starting compile_fusion / initial_map / Early Logic Optimization (FLW-8000)
-Information: Time: 2025-05-18 16:01:31 / Session: 0.00 hr / Command: 0.00 hr / Memory: 701 MB (FLW-8100)
+Information: Time: 2025-05-20 13:45:41 / Session: 0.00 hr / Command: 0.00 hr / Memory: 701 MB (FLW-8100)
 Warning: No valid clocks available in mode 'default'. Setting clock frequency to 1 GHz. (POW-034)
 Information: Timer using 1 threads
 Information: Ending   compile_fusion / initial_map / Early Logic Optimization (FLW-8001)
-Information: Time: 2025-05-18 16:01:34 / Session: 0.01 hr / Command: 0.00 hr / Memory: 711 MB (FLW-8100)
+Information: Time: 2025-05-20 13:45:44 / Session: 0.01 hr / Command: 0.00 hr / Memory: 711 MB (FLW-8100)
 
 Warning: No valid clocks available in mode 'default'. Setting clock frequency to 1 GHz. (POW-034)
 Information: Starting compile_fusion / initial_map / High-Level Optimization and Technology Mapping (FLW-8000)
-Information: Time: 2025-05-18 16:01:34 / Session: 0.01 hr / Command: 0.00 hr / Memory: 711 MB (FLW-8100)
+Information: Time: 2025-05-20 13:45:44 / Session: 0.01 hr / Command: 0.00 hr / Memory: 711 MB (FLW-8100)
 Information: Added key list 'DesignWare' to design 'top'. (DWS-0216)
 Warning: No cell bus will be mapped to multibit because there is no multibit cells in the cell libraries. (SQM-1040)
 Warning: Shift register Inferencing is enabled so only head flop will be replaced with scan cell and not all registers in shift register chains are scan replaced. (SQM-1074)
 Information: Ending   compile_fusion / initial_map / High-Level Optimization and Technology Mapping (FLW-8001)
-Information: Time: 2025-05-18 16:01:35 / Session: 0.01 hr / Command: 0.00 hr / Memory: 711 MB (FLW-8100)
+Information: Time: 2025-05-20 13:45:44 / Session: 0.01 hr / Command: 0.00 hr / Memory: 711 MB (FLW-8100)
 
 Information: Register Bits Before Sharing = 0, After Sharing = 0, Savings = 0 (SQM-2000)
 Information: Starting compile_fusion / initial_map / Logic Simplification (2) (FLW-8000)
-Information: Time: 2025-05-18 16:01:35 / Session: 0.01 hr / Command: 0.00 hr / Memory: 730 MB (FLW-8100)
+Information: Time: 2025-05-20 13:45:45 / Session: 0.01 hr / Command: 0.00 hr / Memory: 730 MB (FLW-8100)
 Information: Ending   compile_fusion / initial_map / Logic Simplification (2) (FLW-8001)
-Information: Time: 2025-05-18 16:01:35 / Session: 0.01 hr / Command: 0.00 hr / Memory: 730 MB (FLW-8100)
+Information: Time: 2025-05-20 13:45:45 / Session: 0.01 hr / Command: 0.00 hr / Memory: 730 MB (FLW-8100)
 
 Information: Result of compile_fusion / initial_map / Clock Gate Insertion (FLW-8500)
 Number of Pre-Existing Clock Gates with dont touch attribute: 0
@@ -370,10 +370,10 @@ Clock Gating Type                   | Number of   | Register Count | Equivalent
 Regular Clock Gating                |           0 |              0 |          0
 --------------------------------------------------------------------------------
 Compile-fusion optimization summary            SETUP-COST    R2R-COST HOLD-COST LDRC-COST          AREA     LEAKAGE     INSTCNT            ELAPSE       MEM
-Compile-fusion                                          -           -         -         -        122.00           -          34              0.01       729
+Compile-fusion                                          -           -         -         -        122.00           -          34              0.01       730
 Information: Ending   compile_fusion / initial_map (FLW-8001)
-Information: Time: 2025-05-18 16:01:35 / Session: 0.01 hr / Command: 0.00 hr / Memory: 730 MB (FLW-8100)
-CPU Load: 4%, Ram Free: 0 GB, Swap Free: 0 GB, Work Disk Free: 232 GB, Tmp Disk Free: 53 GB
+Information: Time: 2025-05-20 13:45:45 / Session: 0.01 hr / Command: 0.00 hr / Memory: 730 MB (FLW-8100)
+CPU Load: 2%, Ram Free: 1 GB, Swap Free: 7 GB, Work Disk Free: 155 GB, Tmp Disk Free: 53 GB
 
 Information: >>>>>>> 5 unique error and warning message tags while observing compile_fusion / initial_map: (MSG-3100)
 Information: #prnt #trgr #lmt    Tag  Level     Format (or last printed message)                                (MSG-3036)
@@ -444,8 +444,8 @@ Information:    30    30  0 NEX-001   WARNING   Warning: Technology layer 'AP' s
 Information:    91    90  4        7  <------   Total sum of messages (MSG-3038)
 Information: >>>>>>> Summary: 90 error&warning MSGs observed during fusion (MSG-3103)
 Information: Ending   'compile_fusion -to initial_map' (FLW-8001)
-Information: Time: 2025-05-18 16:01:35 / Session: 0.01 hr / Command: 0.00 hr / Memory: 730 MB (FLW-8100)
-CPU Load: 4%, Ram Free: 0 GB, Swap Free: 0 GB, Work Disk Free: 232 GB, Tmp Disk Free: 53 GB
+Information: Time: 2025-05-20 13:45:45 / Session: 0.01 hr / Command: 0.00 hr / Memory: 730 MB (FLW-8100)
+CPU Load: 2%, Ram Free: 1 GB, Swap Free: 7 GB, Work Disk Free: 155 GB, Tmp Disk Free: 53 GB
 1
 # Collect the reports
 report_timing
@@ -478,7 +478,7 @@ Report : timing
         -report_by design
 Design : top
 Version: U-2022.12-SP6
-Date   : Sun May 18 16:01:35 2025
+Date   : Tue May 20 13:45:45 2025
 ****************************************
 No paths.
 1
@@ -489,7 +489,7 @@ Report : power
         -significant_digits 2
 Design : top
 Version: U-2022.12-SP6
-Date   : Sun May 18 16:01:35 2025
+Date   : Tue May 20 13:45:45 2025
 ****************************************
 Information: Activity propagation will be performed for scenario default.
 Information: Doing activity propagation for mode 'default' and corner 'default' with effort level 'medium'. (POW-024)
@@ -559,7 +559,7 @@ report_area
 Report : area
 Design : top
 Version: U-2022.12-SP6
-Date   : Sun May 18 16:01:35 2025
+Date   : Tue May 20 13:45:45 2025
 ****************************************
 
 Number of ports:                           16
@@ -613,8 +613,8 @@ Load ICV ICCII menu file: /mnt/vol_synopsys2023/synopsys/icvalidator/U-2022.12-S
 
 Information: 10 out of 20 POW-046 messages were not printed due to limit 10  (MSG-3913)
 fc_shell> exit
-Maximum memory usage for this session: 729.63 MB
-Maximum memory usage for this session including child processes: 729.63 MB
-CPU usage for this session:     27 seconds (  0.01 hours)
-Elapsed time for this session:    109 seconds (  0.03 hours)
+Maximum memory usage for this session: 730.39 MB
+Maximum memory usage for this session including child processes: 730.39 MB
+CPU usage for this session:     24 seconds (  0.01 hours)
+Elapsed time for this session:     59 seconds (  0.02 hours)
 Thank you for using Fusion Compiler.

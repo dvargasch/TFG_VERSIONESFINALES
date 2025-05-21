@@ -1,0 +1,8 @@
+Command Line: /mnt/vol_NFS_rh003/tools/verdi/R-2020.12-SP2/platform/LINUXAMD64/bin/Novas -i -simflow -simBin ./results -simOpt  
+uname(Linux redhat003 4.18.0-553.51.1.el8_10.x86_64 #1 SMP Fri Apr 25 00:55:37 EDT 2025 x86_64)
+Read sm file (/mnt/vol_NFS_rh003/estudiantes/DANIELA_VARGAS/Version_final/0516/versiones_finales/Registro/TSMC_Hamming_4_version2/FLOW/common/rtl/sverilog/results.daidir/kdb.elab++/work.lib++/universal_register_8bit_tb/hdl) error!!
+Read sm file (/mnt/vol_NFS_rh003/estudiantes/DANIELA_VARGAS/Version_final/0516/versiones_finales/Registro/TSMC_Hamming_4_version2/FLOW/common/rtl/sverilog/results.daidir/kdb.elab++/work.lib++/top/hdl) error!!
+Read sm file (/mnt/vol_NFS_rh003/estudiantes/DANIELA_VARGAS/Version_final/0516/versiones_finales/Registro/TSMC_Hamming_4_version2/FLOW/common/rtl/sverilog/results.daidir/kdb.elab++/work.lib++/syndrome/hdl) error!!
+Read sm file (/mnt/vol_NFS_rh003/estudiantes/DANIELA_VARGAS/Version_final/0516/versiones_finales/Registro/TSMC_Hamming_4_version2/FLOW/common/rtl/sverilog/results.daidir/kdb.elab++/work.lib++/std/hdl) error!!
+Warning: fail to build static rpc connection for pid 166096
+au time 14.845339 3.178950 0.562192 delta 204009472 204009472 total 692658176 692658176

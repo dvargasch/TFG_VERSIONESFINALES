@@ -1,0 +1,32 @@
+{
+    "std": [
+        "std",
+        "reYIK",
+        "module",
+        1
+    ],
+    "top": [
+        "top",
+        "Emx8S",
+        "module",
+        2
+    ],
+    "encoder": [
+        "encoder",
+        "PcQ6K",
+        "module",
+        3
+    ],
+    "tb_top_module": [
+        "tb_top_module",
+        "ESaq3",
+        "module",
+        4
+    ],
+    "...MASTER...": [
+        "SIM",
+        "amcQw",
+        "module",
+        5
+    ]
+}

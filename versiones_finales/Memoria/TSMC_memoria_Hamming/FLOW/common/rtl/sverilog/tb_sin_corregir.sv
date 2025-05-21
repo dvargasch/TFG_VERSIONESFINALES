@@ -114,7 +114,7 @@ module tb_sram_2kbit;
 
     // Ver contenido antes del error
     $display("mem[10] antes del error = %b", dut.mem[10]);
-    force dut.mem[40] = 14'b10010000110100; //10011000111100
+    force dut.mem[40] = 14'b10010000110000; //10011000111100
   // @(posedge clk);
     release dut.mem[40];
     // Inyección de error en bit 2 (mem[10][2] = ~mem[10][2])

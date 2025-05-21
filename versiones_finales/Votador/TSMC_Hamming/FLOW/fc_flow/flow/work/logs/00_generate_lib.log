@@ -39,7 +39,7 @@ set DESIGN_LIBRARY "${DESIGN_NAME}_lib"
 #################################
 set time [get_date]
 puts "Command Start at: ${time}"
-Command Start at: Sun May 18 16:01:08 2025
+Command Start at: Tue May 20 13:45:16 2025
 ####################################
 ### 1. Variables for design prep ###
 ####################################
@@ -187,7 +187,7 @@ report_ref_libs
 Report : Reference Library Report
 Library: top_lib
 Version: U-2022.12-SP6
-Date   : Sun May 18 16:01:09 2025
+Date   : Tue May 20 13:45:17 2025
 ****************************************
 
     Name                               Path                                                                                                                                                                                Location
@@ -210,8 +210,8 @@ save_lib
 Saving library 'top_lib'
 1
 exit
-Maximum memory usage for this session: 383.87 MB
-Maximum memory usage for this session including child processes: 383.87 MB
+Maximum memory usage for this session: 383.84 MB
+Maximum memory usage for this session including child processes: 383.84 MB
 CPU usage for this session:      8 seconds (  0.00 hours)
-Elapsed time for this session:     12 seconds (  0.00 hours)
+Elapsed time for this session:     10 seconds (  0.00 hours)
 Thank you for using Fusion Compiler.

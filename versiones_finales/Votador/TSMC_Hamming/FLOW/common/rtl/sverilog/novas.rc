@@ -397,6 +397,7 @@ restoreSigDlg = 684,326,551,438
 highlightColor = 622,381,675,327
 qPrefDlg = 602,333,716,424
 saveSigDlg = 684,352,551,386
+usrMarkerDialog = 560,395,800,300
 QwUserAskDlg = 798,505,324,134
 [Relationship]
 hideRecursiceNode = FALSE
@@ -489,7 +490,7 @@ bSVTBMode = TRUE
 SimMode = TRUE
 interactiveDebugging = TRUE
 KeepBreakPoints = FALSE
-vcs_svPath = ./results_errors
+vcs_svPath = ./prueba_2
 uvmAware = TRUE
 smartlog = TRUE
 vcs_svOption =  -sml=verdi
@@ -703,9 +704,9 @@ DefaultLogTimeUnit = "1.000000ns"
 parRuleSets = "/mnt/vol_synopsys2023/synopsys/verdi/U-2023.03-SP2/share/VIA/Apps/PredefinedParRules/par_rule_OVM.rc /mnt/vol_synopsys2023/synopsys/verdi/U-2023.03-SP2/share/VIA/Apps/PredefinedParRules/par_rule_UVM.rc /mnt/vol_synopsys2023/synopsys/verdi/U-2023.03-SP2/sh\
 are/VIA/Apps/PredefinedParRules/par_rule_LP.rc /mnt/vol_synopsys2023/synopsys/verdi/U-2023.03-SP2/share/VIA/Apps/PredefinedParRules/par_rule_VCS.rc "
 [VIA.interactiveDebug.preference.vgifColumnSettingRC.setting0.column0]
-name = "Message"
-width = 2000
-visualIndex = 6
+name = "Reporter"
+width = 60
+visualIndex = 3
 isHidden = FALSE
 isUserChangeColumnVisible = FALSE
 [VIA.interactiveDebug.preference.vgifColumnSettingRC.setting0.column1]
@@ -721,10 +722,10 @@ visualIndex = 4
 isHidden = TRUE
 isUserChangeColumnVisible = FALSE
 [VIA.interactiveDebug.preference.vgifColumnSettingRC.setting0.column3]
-name = "Block's First Line"
-width = 120
-visualIndex = 1
-isHidden = TRUE
+name = "Message"
+width = 2000
+visualIndex = 6
+isHidden = FALSE
 isUserChangeColumnVisible = FALSE
 [VIA.interactiveDebug.preference.vgifColumnSettingRC.setting0.column4]
 name = "Type"
@@ -733,16 +734,16 @@ visualIndex = 5
 isHidden = TRUE
 isUserChangeColumnVisible = FALSE
 [VIA.interactiveDebug.preference.vgifColumnSettingRC.setting0.column5]
-name = "Reporter"
-width = 60
-visualIndex = 3
-isHidden = FALSE
-isUserChangeColumnVisible = FALSE
-[VIA.interactiveDebug.preference.vgifColumnSettingRC.setting0.column6]
 name = "Severity"
 width = 60
 visualIndex = 2
 isHidden = FALSE
+isUserChangeColumnVisible = FALSE
+[VIA.interactiveDebug.preference.vgifColumnSettingRC.setting0.column6]
+name = "Block's First Line"
+width = 120
+visualIndex = 1
+isHidden = TRUE
 isUserChangeColumnVisible = FALSE
 [VIA.oneSearch.preference]
 DefaultDisplayTimeUnit = "1.000000ns"
@@ -752,15 +753,15 @@ isOneSearchVisible = TRUE
 [VIA.oneSearch.preference.vgifColumnSettingRC.setting0]
 parRuleSets = ""
 [VIA.oneSearch.preference.vgifColumnSettingRC.setting0.column0]
-name = "Code"
+name = "Severity"
 width = 60
-visualIndex = 3
-isHidden = TRUE
+visualIndex = 2
+isHidden = FALSE
 isUserChangeColumnVisible = FALSE
 [VIA.oneSearch.preference.vgifColumnSettingRC.setting0.column1]
-name = "Type"
-width = 60
-visualIndex = 4
+name = "Block's First Line"
+width = 120
+visualIndex = 1
 isHidden = TRUE
 isUserChangeColumnVisible = FALSE
 [VIA.oneSearch.preference.vgifColumnSettingRC.setting0.column2]
@@ -776,15 +777,15 @@ visualIndex = 0
 isHidden = FALSE
 isUserChangeColumnVisible = FALSE
 [VIA.oneSearch.preference.vgifColumnSettingRC.setting0.column4]
-name = "Severity"
+name = "Code"
 width = 60
-visualIndex = 2
-isHidden = FALSE
+visualIndex = 3
+isHidden = TRUE
 isUserChangeColumnVisible = FALSE
 [VIA.oneSearch.preference.vgifColumnSettingRC.setting0.column5]
-name = "Block's First Line"
-width = 120
-visualIndex = 1
+name = "Type"
+width = 60
+visualIndex = 4
 isHidden = TRUE
 isUserChangeColumnVisible = FALSE
 [VIA.parRule]

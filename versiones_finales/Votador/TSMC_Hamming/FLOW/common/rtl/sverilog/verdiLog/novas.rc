@@ -397,6 +397,7 @@ restoreSigDlg = 684,326,551,438
 highlightColor = 622,381,675,327
 qPrefDlg = 602,333,716,424
 saveSigDlg = 684,352,551,386
+usrMarkerDialog = 560,395,800,300
 QwUserAskDlg = 798,505,324,134
 [Relationship]
 hideRecursiceNode = FALSE
@@ -413,7 +414,7 @@ HighlightSafetyObject = TRUE
 3 = string (session file name)
 4 = string (session file name)
 5 = string (session file name)
-1 = /mnt/vol_NFS_rh003/estudiantes/DANIELA_VARGAS/TFG_10/TFG/sintesis/Votador/TSMC_Hamming/FLOW/common/rtl/sverilog/verdiLog/novas_autosave.ses
+1 = /mnt/vol_NFS_rh003/estudiantes/DANIELA_VARGAS/Version_final/0516/versiones_finales/Votador/TSMC_Hamming/FLOW/common/rtl/sverilog/verdiLog/novas_autosave.ses
 [Signal List]
 sigListBackgroundColor = ID_GRAY6
 sigListForegroundColor = ID_BLACK
@@ -489,7 +490,7 @@ bSVTBMode = TRUE
 SimMode = TRUE
 interactiveDebugging = TRUE
 KeepBreakPoints = FALSE
-vcs_svPath = ./results_errors
+vcs_svPath = ./prueba_2
 uvmAware = TRUE
 smartlog = TRUE
 vcs_svOption = -sml=verdi
@@ -703,22 +704,22 @@ DefaultLogTimeUnit = "1.000000ns"
 parRuleSets = "/mnt/vol_synopsys2023/synopsys/verdi/U-2023.03-SP2/share/VIA/Apps/PredefinedParRules/par_rule_OVM.rc /mnt/vol_synopsys2023/synopsys/verdi/U-2023.03-SP2/share/VIA/Apps/PredefinedParRules/par_rule_UVM.rc /mnt/vol_synopsys2023/synopsys/verdi/U-2023.03-SP2/sh\
 are/VIA/Apps/PredefinedParRules/par_rule_LP.rc /mnt/vol_synopsys2023/synopsys/verdi/U-2023.03-SP2/share/VIA/Apps/PredefinedParRules/par_rule_VCS.rc "
 [VIA.interactiveDebug.preference.vgifColumnSettingRC.setting0.column0]
-name = "Type"
+name = "Reporter"
 width = 60
-visualIndex = 5
-isHidden = TRUE
+visualIndex = 3
+isHidden = FALSE
 isUserChangeColumnVisible = FALSE
 [VIA.interactiveDebug.preference.vgifColumnSettingRC.setting0.column1]
-name = "Message"
-width = 2000
-visualIndex = 6
+name = "Severity"
+width = 60
+visualIndex = 2
 isHidden = FALSE
 isUserChangeColumnVisible = FALSE
 [VIA.interactiveDebug.preference.vgifColumnSettingRC.setting0.column2]
-name = "Time"
-width = 60
-visualIndex = 0
-isHidden = FALSE
+name = "Block's First Line"
+width = 120
+visualIndex = 1
+isHidden = TRUE
 isUserChangeColumnVisible = FALSE
 [VIA.interactiveDebug.preference.vgifColumnSettingRC.setting0.column3]
 name = "Code"
@@ -727,22 +728,22 @@ visualIndex = 4
 isHidden = TRUE
 isUserChangeColumnVisible = FALSE
 [VIA.interactiveDebug.preference.vgifColumnSettingRC.setting0.column4]
-name = "Severity"
-width = 60
-visualIndex = 2
+name = "Message"
+width = 2000
+visualIndex = 6
 isHidden = FALSE
 isUserChangeColumnVisible = FALSE
 [VIA.interactiveDebug.preference.vgifColumnSettingRC.setting0.column5]
-name = "Reporter"
+name = "Type"
 width = 60
-visualIndex = 3
-isHidden = FALSE
+visualIndex = 5
+isHidden = TRUE
 isUserChangeColumnVisible = FALSE
 [VIA.interactiveDebug.preference.vgifColumnSettingRC.setting0.column6]
-name = "Block's First Line"
-width = 120
-visualIndex = 1
-isHidden = TRUE
+name = "Time"
+width = 60
+visualIndex = 0
+isHidden = FALSE
 isUserChangeColumnVisible = FALSE
 [VIA.oneSearch.preference]
 DefaultDisplayTimeUnit = "1.000000ns"
@@ -752,39 +753,39 @@ isOneSearchVisible = TRUE
 [VIA.oneSearch.preference.vgifColumnSettingRC.setting0]
 parRuleSets = ""
 [VIA.oneSearch.preference.vgifColumnSettingRC.setting0.column0]
-name = "Severity"
-width = 60
-visualIndex = 2
-isHidden = FALSE
-isUserChangeColumnVisible = FALSE
-[VIA.oneSearch.preference.vgifColumnSettingRC.setting0.column1]
 name = "Block's First Line"
 width = 120
 visualIndex = 1
 isHidden = TRUE
 isUserChangeColumnVisible = FALSE
-[VIA.oneSearch.preference.vgifColumnSettingRC.setting0.column2]
+[VIA.oneSearch.preference.vgifColumnSettingRC.setting0.column1]
 name = "Code"
 width = 60
 visualIndex = 3
 isHidden = TRUE
 isUserChangeColumnVisible = FALSE
-[VIA.oneSearch.preference.vgifColumnSettingRC.setting0.column3]
+[VIA.oneSearch.preference.vgifColumnSettingRC.setting0.column2]
 name = "Type"
 width = 60
 visualIndex = 4
 isHidden = TRUE
 isUserChangeColumnVisible = FALSE
-[VIA.oneSearch.preference.vgifColumnSettingRC.setting0.column4]
+[VIA.oneSearch.preference.vgifColumnSettingRC.setting0.column3]
 name = "Message"
 width = 2000
 visualIndex = 5
 isHidden = FALSE
 isUserChangeColumnVisible = FALSE
-[VIA.oneSearch.preference.vgifColumnSettingRC.setting0.column5]
+[VIA.oneSearch.preference.vgifColumnSettingRC.setting0.column4]
 name = "Time"
 width = 60
 visualIndex = 0
+isHidden = FALSE
+isUserChangeColumnVisible = FALSE
+[VIA.oneSearch.preference.vgifColumnSettingRC.setting0.column5]
+name = "Severity"
+width = 60
+visualIndex = 2
 isHidden = FALSE
 isUserChangeColumnVisible = FALSE
 [VIA.parRule]
@@ -1039,8 +1040,9 @@ printBasic = 1 0 0 FALSE FALSE
 printDest = -printer {}
 printSignature = {%f %h %t} {}
 curveWindow_Drag&Drop_Mode = TRUE
-RecentFile1 = "\"/mnt/vol_NFS_rh003/estudiantes/DANIELA_VARGAS/TFG_10/TFG/sintesis/Votador/TSMC_Hamming/FLOW/common/rtl/sverilog/inter.fsdb\""
-RecentFile2 = "\"/mnt/vol_NFS_rh003/estudiantes/DANIELA_VARGAS/TFG_10/TFG/sintesis/Votador/TSMC_Hamming/FLOW/common/rtl/sverilog/signal.rc\""
+RecentFile1 = "\"/mnt/vol_NFS_rh003/estudiantes/DANIELA_VARGAS/Version_final/0516/versiones_finales/Votador/TSMC_Hamming/FLOW/common/rtl/sverilog/inter.fsdb\""
+RecentFile2 = "\"/mnt/vol_NFS_rh003/estudiantes/DANIELA_VARGAS/TFG_10/TFG/sintesis/Votador/TSMC_Hamming/FLOW/common/rtl/sverilog/inter.fsdb\""
+RecentFile3 = "\"/mnt/vol_NFS_rh003/estudiantes/DANIELA_VARGAS/TFG_10/TFG/sintesis/Votador/TSMC_Hamming/FLOW/common/rtl/sverilog/signal.rc\""
 open_file_time_range = FALSE
 legend_window_font = -f COURIER12 -c ID_CYAN5
 value_window_font = -f COURIER12 -c ID_CYAN5
