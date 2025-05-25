@@ -1,45 +1,42 @@
 version: (200506)
 
 available memory: 64M bytes
-used memory: 344064 bytes [need 336K bytes if disable swap]
+used memory: 245760 bytes [need 240K bytes if disable swap]
 
-used block: 21 [memory(21) file(0)]
-                 [ 8K(18) 64K(3) { total 336K bytes } ]
-overhead: (15062) bytes for (21) blocks [Average: (717) bytes/block]
+used block: 16 [memory(16) file(0)]
+                 [ 8K(14) 64K(2) { total 240K bytes } ]
+overhead: (9538) bytes for (16) blocks [Average: (596) bytes/block]
 
 write  => 0(times) 0K(bytes) [0K bytes to file]
-read   => 3(times) 133K(bytes) [12K bytes compressed data from file]
-access => 1495483(times) 11707M(bytes)
-          [hit ratio: 99.9998%]
+read   => 2(times) 69K(bytes) [8K bytes compressed data from file]
+access => 489174(times) 3834M(bytes)
+          [hit ratio: 99.9996%]
 
 time: write(0) read(0)  unit: second
 
-swap file directory: (/mnt/vol_NFS_rh003/estudiantes/DANIELA_VARGAS/Version_final/0516/versiones_finales/Registro/TSMC_Hamming_4/FLOW/fc_flow/results/verdiLog)
-used swap file number: (4)
+swap file directory: (/mnt/vol_NFS_rh003/estudiantes/DANIELA_VARGAS/Version_final/0516/versiones_finales/Registro/TSMC_Hamming_4_version2/FLOW/fc_flow/results/verdiLog)
+used swap file number: (3)
 
 
 
 swap file manager:
 arrSize: (256)
-idxCnt: (5)
+idxCnt: (4)
 closeHead: (1)
-closeTail: (4)
-openCnt: (4)
-fid(4): fd(1073741826) fileName(/mnt/vol_NFS_rh003/estudiantes/DANIELA_VARGAS/Version_final/0516/versiones_finales/Registro/TSMC_Hamming_4/FLOW/fc_flow/results/results.daidir/kdb.elab++/work.lib++/tcbn65lphpbwp.v.tdc)
-	size(461738) lastModTime(1747526213) curModTime(1747526213)
-	mode(rb)	hot(0) cool(3) pos(0)
-fid(3): fd(1073741825) fileName(/mnt/vol_NFS_rh003/estudiantes/DANIELA_VARGAS/Version_final/0516/versiones_finales/Registro/TSMC_Hamming_4/FLOW/fc_flow/results/results.daidir/kdb.elab++/work.lib++/top_initial_syn.v#inc___vcs_unit__1__1#.tdc)
-	size(8843) lastModTime(1747526213) curModTime(1747526213)
-	mode(rb)	hot(4) cool(2) pos(0)
-fid(2): fd(34) fileName(/mnt/vol_NFS_rh003/estudiantes/DANIELA_VARGAS/Version_final/0516/versiones_finales/Registro/TSMC_Hamming_4/FLOW/fc_flow/results/verdiLog/_swap_0001#8323328#3645858)
-	size(0) lastModTime(0) curModTime(1747526229)
+closeTail: (3)
+openCnt: (3)
+fid(3): fd(1073741825) fileName(/mnt/vol_NFS_rh003/estudiantes/DANIELA_VARGAS/Version_final/0516/versiones_finales/Registro/TSMC_Hamming_4_version2/FLOW/fc_flow/results/prueba_1.daidir/kdb.elab++/work.lib++/top_initial_syn.v#inc___vcs_unit__1__1#.tdc)
+	size(9068) lastModTime(1747862494) curModTime(1747862494)
+	mode(rb)	hot(0) cool(2) pos(0)
+fid(2): fd(33) fileName(/mnt/vol_NFS_rh003/estudiantes/DANIELA_VARGAS/Version_final/0516/versiones_finales/Registro/TSMC_Hamming_4_version2/FLOW/fc_flow/results/verdiLog/_swap_0001#8323328#295986)
+	size(0) lastModTime(0) curModTime(1747862644)
 	mode(w+b)	hot(3) cool(1) pos(0)
-fid(1): fd(1073741824) fileName(/mnt/vol_NFS_rh003/estudiantes/DANIELA_VARGAS/Version_final/0516/versiones_finales/Registro/TSMC_Hamming_4/FLOW/fc_flow/results/results.daidir/kdb.elab++/work.lib++/tb.sv.tdc)
-	size(4028) lastModTime(1747526213) curModTime(1747526213)
+fid(1): fd(1073741824) fileName(/mnt/vol_NFS_rh003/estudiantes/DANIELA_VARGAS/Version_final/0516/versiones_finales/Registro/TSMC_Hamming_4_version2/FLOW/fc_flow/results/prueba_1.daidir/kdb.elab++/work.lib++/tb.sv.tdc)
+	size(3641) lastModTime(1747862494) curModTime(1747862494)
 	mode(rb)	hot(2) cool(0) pos(0)
 fid(0): fd(0) fileName(NULL)
 	mode(NULL)	hot(0) cool(0) pos(0)
 ==================================================
-mySelf(0x18f3c0e0) pre(0x198c5450) next((nil))
+mySelf(153d4ca0) pre(167db260) next(0)
 version(200506)
-date(Aug 13 2023 07:34:34)
+date(May 19 2021 05:00:27)

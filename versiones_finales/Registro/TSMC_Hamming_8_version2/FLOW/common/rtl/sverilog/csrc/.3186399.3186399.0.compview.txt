@@ -1,0 +1,7 @@
+{"vcs1":{"timestamp_begin":1748122485.100202850, "rt":0.75, "ut":0.20, "st":0.16}}
+{"vcselab":{"timestamp_begin":1748122485.917150099, "rt":0.37, "ut":0.18, "st":0.06}}
+{"link":{"timestamp_begin":1748122486.345274785, "rt":0.32, "ut":0.11, "st":0.05}}
+{"SNPS_VCS_INTERNAL_ROOT_START_TIME": 1748122484.550805942}
+{"VCS_COMP_START_TIME": 1748122484.550805942}
+{"VCS_COMP_END_TIME": 1748122487.195217536}
+{"VCS_USER_OPTIONS": "-Mupdate tb_sin_errores.sv -v /mnt/vol_NFS_rh003/profesores/pmendoza/KITS/TSMCHOME/digital/Front_End/verilog/tcbn65lphpbwpcghvt_200a/tcbn65lphpbwpcghvt.v -v /mnt/vol_NFS_rh003/profesores/pmendoza/KITS/TSMCHOME/digital/Front_End/verilog/tcbn65lphpbwp_140a/tcbn65lphpbwp.v -o sin_errores -full64 -sverilog -kdb -lca -debug_acc+all -debug_region+cell+encrypt -l log_test +lint=TFIPC-L -cm line+tgl+cond+fsm+branch+assert"}

@@ -1,0 +1,278 @@
+simSetSimulator "-vcssv" -exec "./sin_errores" -args " " -uvmDebug on
+debImport "-i" "-simflow" "-dbdir" "./sin_errores.daidir"
+srcTBInvokeSim
+wvCreateWindow
+srcHBSelect "universal_register_8bit_tb.dut" -win $_nTrace1
+srcSetScope "universal_register_8bit_tb.dut" -delim "." -win $_nTrace1
+srcHBSelect "universal_register_8bit_tb.dut" -win $_nTrace1
+srcSignalViewSelect "universal_register_8bit_tb.dut.p3_corr\[0:0\]"
+srcSignalViewSelect "universal_register_8bit_tb.dut.p2_corr\[0:0\]" \
+           "universal_register_8bit_tb.dut.p3_corr\[0:0\]"
+srcSignalViewSelect "universal_register_8bit_tb.dut.p3_next\[0:0\]" \
+           "universal_register_8bit_tb.dut.p1_corr\[0:0\]" \
+           "universal_register_8bit_tb.dut.p2_corr\[0:0\]" \
+           "universal_register_8bit_tb.dut.p3_corr\[0:0\]"
+srcSignalViewSelect "universal_register_8bit_tb.dut.p2_next\[0:0\]" \
+           "universal_register_8bit_tb.dut.p3_next\[0:0\]" \
+           "universal_register_8bit_tb.dut.p1_corr\[0:0\]" \
+           "universal_register_8bit_tb.dut.p2_corr\[0:0\]" \
+           "universal_register_8bit_tb.dut.p3_corr\[0:0\]"
+srcSignalViewSelect "universal_register_8bit_tb.dut.p1_next\[0:0\]" \
+           "universal_register_8bit_tb.dut.p2_next\[0:0\]" \
+           "universal_register_8bit_tb.dut.p3_next\[0:0\]" \
+           "universal_register_8bit_tb.dut.p1_corr\[0:0\]" \
+           "universal_register_8bit_tb.dut.p2_corr\[0:0\]" \
+           "universal_register_8bit_tb.dut.p3_corr\[0:0\]"
+srcSignalViewSelect "universal_register_8bit_tb.dut.p3\[0:0\]" \
+           "universal_register_8bit_tb.dut.p1_next\[0:0\]" \
+           "universal_register_8bit_tb.dut.p2_next\[0:0\]" \
+           "universal_register_8bit_tb.dut.p3_next\[0:0\]" \
+           "universal_register_8bit_tb.dut.p1_corr\[0:0\]" \
+           "universal_register_8bit_tb.dut.p2_corr\[0:0\]" \
+           "universal_register_8bit_tb.dut.p3_corr\[0:0\]"
+srcSignalViewSelect "universal_register_8bit_tb.dut.clk" \
+           "universal_register_8bit_tb.dut.rst" \
+           "universal_register_8bit_tb.dut.enable" \
+           "universal_register_8bit_tb.dut.load" \
+           "universal_register_8bit_tb.dut.serial_in" \
+           "universal_register_8bit_tb.dut.mode\[1:0\]" \
+           "universal_register_8bit_tb.dut.parallel_in\[3:0\]" \
+           "universal_register_8bit_tb.dut.serial_out" \
+           "universal_register_8bit_tb.dut.parallel_out\[3:0\]" \
+           "universal_register_8bit_tb.dut.width" \
+           "universal_register_8bit_tb.dut.blocks" \
+           "universal_register_8bit_tb.dut.corrected_data\[3:0\]" \
+           "universal_register_8bit_tb.dut.reg_data\[3:0\]" \
+           "universal_register_8bit_tb.dut.reg_data_next\[3:0\]" \
+           "universal_register_8bit_tb.dut.syndrome\[0:0\]" \
+           "universal_register_8bit_tb.dut.fault" \
+           "universal_register_8bit_tb.dut.p1\[0:0\]" \
+           "universal_register_8bit_tb.dut.p2\[0:0\]" \
+           "universal_register_8bit_tb.dut.p3\[0:0\]" \
+           "universal_register_8bit_tb.dut.p1_next\[0:0\]" \
+           "universal_register_8bit_tb.dut.p2_next\[0:0\]" \
+           "universal_register_8bit_tb.dut.p3_next\[0:0\]" \
+           "universal_register_8bit_tb.dut.p1_corr\[0:0\]" \
+           "universal_register_8bit_tb.dut.p2_corr\[0:0\]" \
+           "universal_register_8bit_tb.dut.p3_corr\[0:0\]"
+srcSignalViewSelect "universal_register_8bit_tb.dut.rst" \
+           "universal_register_8bit_tb.dut.enable" \
+           "universal_register_8bit_tb.dut.load" \
+           "universal_register_8bit_tb.dut.serial_in" \
+           "universal_register_8bit_tb.dut.mode\[1:0\]" \
+           "universal_register_8bit_tb.dut.parallel_in\[3:0\]" \
+           "universal_register_8bit_tb.dut.serial_out" \
+           "universal_register_8bit_tb.dut.parallel_out\[3:0\]" \
+           "universal_register_8bit_tb.dut.width" \
+           "universal_register_8bit_tb.dut.blocks" \
+           "universal_register_8bit_tb.dut.corrected_data\[3:0\]" \
+           "universal_register_8bit_tb.dut.reg_data\[3:0\]" \
+           "universal_register_8bit_tb.dut.reg_data_next\[3:0\]" \
+           "universal_register_8bit_tb.dut.syndrome\[0:0\]" \
+           "universal_register_8bit_tb.dut.fault" \
+           "universal_register_8bit_tb.dut.p1\[0:0\]" \
+           "universal_register_8bit_tb.dut.p2\[0:0\]" \
+           "universal_register_8bit_tb.dut.p3\[0:0\]" \
+           "universal_register_8bit_tb.dut.p1_next\[0:0\]" \
+           "universal_register_8bit_tb.dut.p2_next\[0:0\]" \
+           "universal_register_8bit_tb.dut.p3_next\[0:0\]" \
+           "universal_register_8bit_tb.dut.p1_corr\[0:0\]" \
+           "universal_register_8bit_tb.dut.p2_corr\[0:0\]" \
+           "universal_register_8bit_tb.dut.p3_corr\[0:0\]"
+srcSignalViewSelect "universal_register_8bit_tb.dut.clk" \
+           "universal_register_8bit_tb.dut.rst" \
+           "universal_register_8bit_tb.dut.enable" \
+           "universal_register_8bit_tb.dut.load" \
+           "universal_register_8bit_tb.dut.serial_in" \
+           "universal_register_8bit_tb.dut.mode\[1:0\]" \
+           "universal_register_8bit_tb.dut.parallel_in\[3:0\]" \
+           "universal_register_8bit_tb.dut.serial_out" \
+           "universal_register_8bit_tb.dut.parallel_out\[3:0\]" \
+           "universal_register_8bit_tb.dut.width" \
+           "universal_register_8bit_tb.dut.blocks" \
+           "universal_register_8bit_tb.dut.corrected_data\[3:0\]" \
+           "universal_register_8bit_tb.dut.reg_data\[3:0\]" \
+           "universal_register_8bit_tb.dut.reg_data_next\[3:0\]" \
+           "universal_register_8bit_tb.dut.syndrome\[0:0\]" \
+           "universal_register_8bit_tb.dut.fault" \
+           "universal_register_8bit_tb.dut.p1\[0:0\]" \
+           "universal_register_8bit_tb.dut.p2\[0:0\]" \
+           "universal_register_8bit_tb.dut.p3\[0:0\]" \
+           "universal_register_8bit_tb.dut.p1_next\[0:0\]" \
+           "universal_register_8bit_tb.dut.p2_next\[0:0\]" \
+           "universal_register_8bit_tb.dut.p3_next\[0:0\]" \
+           "universal_register_8bit_tb.dut.p1_corr\[0:0\]" \
+           "universal_register_8bit_tb.dut.p2_corr\[0:0\]" \
+           "universal_register_8bit_tb.dut.p3_corr\[0:0\]"
+wvAddSignal -win $_nWave3 "/universal_register_8bit_tb/dut/clk" \
+           "/universal_register_8bit_tb/dut/rst" \
+           "/universal_register_8bit_tb/dut/enable" \
+           "/universal_register_8bit_tb/dut/load" \
+           "/universal_register_8bit_tb/dut/serial_in" \
+           "/universal_register_8bit_tb/dut/mode\[1:0\]" \
+           "/universal_register_8bit_tb/dut/parallel_in\[3:0\]" \
+           "/universal_register_8bit_tb/dut/serial_out" \
+           "/universal_register_8bit_tb/dut/parallel_out\[3:0\]" \
+           "/universal_register_8bit_tb/dut/width\[31:0\]" \
+           "/universal_register_8bit_tb/dut/blocks\[31:0\]" \
+           "/universal_register_8bit_tb/dut/corrected_data\[3:0\]" \
+           "/universal_register_8bit_tb/dut/reg_data\[3:0\]" \
+           "/universal_register_8bit_tb/dut/reg_data_next\[3:0\]" \
+           "/universal_register_8bit_tb/dut/syndrome\[0:0\]" \
+           "/universal_register_8bit_tb/dut/fault" \
+           "/universal_register_8bit_tb/dut/p1\[0:0\]" \
+           "/universal_register_8bit_tb/dut/p2\[0:0\]" \
+           "/universal_register_8bit_tb/dut/p3\[0:0\]" \
+           "/universal_register_8bit_tb/dut/p1_next\[0:0\]" \
+           "/universal_register_8bit_tb/dut/p2_next\[0:0\]" \
+           "/universal_register_8bit_tb/dut/p3_next\[0:0\]" \
+           "/universal_register_8bit_tb/dut/p1_corr\[0:0\]" \
+           "/universal_register_8bit_tb/dut/p2_corr\[0:0\]" \
+           "/universal_register_8bit_tb/dut/p3_corr\[0:0\]"
+wvSetPosition -win $_nWave3 {("G1" 0)}
+wvSetPosition -win $_nWave3 {("G1" 25)}
+wvSetPosition -win $_nWave3 {("G1" 25)}
+srcTBRunSim
+wvZoomAll -win $_nWave3
+wvScrollDown -win $_nWave3 1
+wvScrollUp -win $_nWave3 2
+wvScrollUp -win $_nWave3 2
+wvScrollDown -win $_nWave3 1
+wvSelectSignal -win $_nWave3 {( "G1" 13 )} 
+wvSelectSignal -win $_nWave3 {( "G1" 21 )} 
+wvScrollDown -win $_nWave3 3
+wvSelectSignal -win $_nWave3 {( "G1" 25 )} 
+wvScrollUp -win $_nWave3 4
+wvScrollDown -win $_nWave3 0
+wvScrollDown -win $_nWave3 0
+wvScrollDown -win $_nWave3 2
+wvSelectGroup -win $_nWave3 {G2}
+wvScrollUp -win $_nWave3 2
+wvSelectSignal -win $_nWave3 {( "G1" 8 )} 
+wvSelectSignal -win $_nWave3 {( "G1" 6 )} 
+wvSetPosition -win $_nWave3 {("G1" 6)}
+wvSetPosition -win $_nWave3 {("G1" 5)}
+wvSetPosition -win $_nWave3 {("G1" 4)}
+wvSetPosition -win $_nWave3 {("G1" 3)}
+wvMoveSelected -win $_nWave3
+wvSetPosition -win $_nWave3 {("G1" 3)}
+wvSetPosition -win $_nWave3 {("G1" 4)}
+wvSelectSignal -win $_nWave3 {( "G1" 5 )} 
+wvSelectSignal -win $_nWave3 {( "G1" 5 6 )} 
+wvSelectSignal -win $_nWave3 {( "G1" 5 6 9 )} 
+wvSelectSignal -win $_nWave3 {( "G1" 5 6 7 9 )} 
+wvSelectSignal -win $_nWave3 {( "G1" 5 6 7 8 9 )} 
+wvSetPosition -win $_nWave3 {("G1" 7)}
+wvSetPosition -win $_nWave3 {("G1" 6)}
+wvSetPosition -win $_nWave3 {("G1" 5)}
+wvSetPosition -win $_nWave3 {("G1" 4)}
+wvMoveSelected -win $_nWave3
+wvSetPosition -win $_nWave3 {("G1" 4)}
+wvSetPosition -win $_nWave3 {("G1" 9)}
+wvSelectSignal -win $_nWave3 {( "G1" 10 )} 
+wvCut -win $_nWave3
+wvSetPosition -win $_nWave3 {("G1" 9)}
+wvSelectSignal -win $_nWave3 {( "G1" 10 )} 
+wvCut -win $_nWave3
+wvSetPosition -win $_nWave3 {("G1" 9)}
+wvSelectSignal -win $_nWave3 {( "G1" 10 )} 
+wvSetPosition -win $_nWave3 {("G1" 10)}
+wvSetPosition -win $_nWave3 {("G1" 9)}
+wvMoveSelected -win $_nWave3
+wvSetPosition -win $_nWave3 {("G1" 9)}
+wvSetPosition -win $_nWave3 {("G1" 10)}
+wvSelectSignal -win $_nWave3 {( "G1" 11 )} 
+wvSetPosition -win $_nWave3 {("G1" 11)}
+wvSetPosition -win $_nWave3 {("G1" 10)}
+wvSetPosition -win $_nWave3 {("G1" 9)}
+wvMoveSelected -win $_nWave3
+wvSetPosition -win $_nWave3 {("G1" 9)}
+wvSetPosition -win $_nWave3 {("G1" 10)}
+wvSelectSignal -win $_nWave3 {( "G1" 12 )} 
+wvSelectSignal -win $_nWave3 {( "G1" 13 )} 
+wvSelectSignal -win $_nWave3 {( "G1" 12 )} 
+wvSetPosition -win $_nWave3 {("G1" 12)}
+wvSetPosition -win $_nWave3 {("G1" 11)}
+wvSetPosition -win $_nWave3 {("G1" 10)}
+wvMoveSelected -win $_nWave3
+wvSetPosition -win $_nWave3 {("G1" 10)}
+wvSetPosition -win $_nWave3 {("G1" 11)}
+wvSelectSignal -win $_nWave3 {( "G1" 12 )} 
+wvSelectSignal -win $_nWave3 {( "G1" 13 )} 
+wvSelectSignal -win $_nWave3 {( "G1" 12 )} 
+wvSetPosition -win $_nWave3 {("G1" 12)}
+wvSetPosition -win $_nWave3 {("G1" 11)}
+wvSetPosition -win $_nWave3 {("G1" 10)}
+wvSetPosition -win $_nWave3 {("G1" 11)}
+wvMoveSelected -win $_nWave3
+wvSetPosition -win $_nWave3 {("G1" 11)}
+wvSetPosition -win $_nWave3 {("G1" 12)}
+wvSelectSignal -win $_nWave3 {( "G1" 13 )} 
+wvSelectSignal -win $_nWave3 {( "G1" 15 )} 
+wvSelectSignal -win $_nWave3 {( "G1" 15 16 )} 
+wvSelectSignal -win $_nWave3 {( "G1" 15 16 17 )} 
+wvSelectSignal -win $_nWave3 {( "G1" 15 16 17 18 )} 
+wvSelectSignal -win $_nWave3 {( "G1" 15 16 17 18 19 )} 
+wvSelectSignal -win $_nWave3 {( "G1" 15 16 17 18 19 20 )} 
+wvSetPosition -win $_nWave3 {("G1" 18)}
+wvSetPosition -win $_nWave3 {("G1" 17)}
+wvSetPosition -win $_nWave3 {("G1" 16)}
+wvSetPosition -win $_nWave3 {("G1" 15)}
+wvSetPosition -win $_nWave3 {("G1" 13)}
+wvSetPosition -win $_nWave3 {("G1" 12)}
+wvSetPosition -win $_nWave3 {("G1" 11)}
+wvMoveSelected -win $_nWave3
+wvSetPosition -win $_nWave3 {("G1" 11)}
+wvSetPosition -win $_nWave3 {("G1" 17)}
+wvSelectSignal -win $_nWave3 {( "G1" 18 )} 
+wvSetPosition -win $_nWave3 {("G1" 18)}
+wvSetPosition -win $_nWave3 {("G1" 17)}
+wvMoveSelected -win $_nWave3
+wvSetPosition -win $_nWave3 {("G1" 17)}
+wvSetPosition -win $_nWave3 {("G1" 18)}
+wvSelectSignal -win $_nWave3 {( "G1" 21 )} 
+wvSelectSignal -win $_nWave3 {( "G1" 21 22 )} 
+wvSelectSignal -win $_nWave3 {( "G1" 21 22 23 )} 
+wvSetPosition -win $_nWave3 {("G1" 22)}
+wvSetPosition -win $_nWave3 {("G1" 21)}
+wvSetPosition -win $_nWave3 {("G1" 20)}
+wvSetPosition -win $_nWave3 {("G1" 19)}
+wvSetPosition -win $_nWave3 {("G1" 18)}
+wvMoveSelected -win $_nWave3
+wvSetPosition -win $_nWave3 {("G1" 18)}
+wvSetPosition -win $_nWave3 {("G1" 21)}
+wvSelectSignal -win $_nWave3 {( "G1" 22 )} 
+wvSelectSignal -win $_nWave3 {( "G1" 22 23 )} 
+wvSelectSignal -win $_nWave3 {( "G1" 18 )} 
+wvSelectSignal -win $_nWave3 {( "G1" 22 )} 
+wvSelectSignal -win $_nWave3 {( "G1" 23 )} 
+wvSelectSignal -win $_nWave3 {( "G1" 22 23 )} 
+wvSelectSignal -win $_nWave3 {( "G1" 23 )} 
+wvSelectSignal -win $_nWave3 {( "G1" 22 )} 
+wvSelectSignal -win $_nWave3 {( "G1" 15 )} 
+wvSelectSignal -win $_nWave3 {( "G1" 22 )} 
+wvSetPosition -win $_nWave3 {("G1" 22)}
+wvSetPosition -win $_nWave3 {("G1" 18)}
+wvSetPosition -win $_nWave3 {("G1" 17)}
+wvSetPosition -win $_nWave3 {("G1" 16)}
+wvSetPosition -win $_nWave3 {("G1" 17)}
+wvSetPosition -win $_nWave3 {("G1" 18)}
+wvSetPosition -win $_nWave3 {("G1" 19)}
+wvSetPosition -win $_nWave3 {("G1" 20)}
+wvSetPosition -win $_nWave3 {("G1" 21)}
+wvMoveSelected -win $_nWave3
+wvSetPosition -win $_nWave3 {("G1" 21)}
+wvSetPosition -win $_nWave3 {("G1" 22)}
+wvSelectSignal -win $_nWave3 {( "G1" 23 )} 
+wvSetPosition -win $_nWave3 {("G1" 23)}
+wvSetPosition -win $_nWave3 {("G1" 22)}
+wvSetPosition -win $_nWave3 {("G1" 21)}
+wvSetPosition -win $_nWave3 {("G1" 22)}
+wvMoveSelected -win $_nWave3
+wvSetPosition -win $_nWave3 {("G1" 22)}
+wvSetPosition -win $_nWave3 {("G1" 23)}
+wvSelectGroup -win $_nWave3 {G2}
+wvZoom -win $_nWave3 0.000000 323836.982846
+srcDeselectAll -win $_nTrace1
+srcDeselectAll -win $_nTrace1
+debExit

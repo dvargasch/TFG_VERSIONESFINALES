@@ -1,0 +1,15 @@
+
+Input DRC Error Database.......... /mnt/vol_NFS_rh003/estudiantes/DANIELA_VARGAS/Version_final/0516/versiones_finales/semana14/Registro_Hamming/Hamming_64/FLOW/fc_flow/flow/work/signoff_fix_drc_run/signoff_check_drc_run
+Limit to Cell..................... top
+Maximum Errors/Command............ 1000
+
+SIGNOFF AUTOFIX DRC SUMMARY:
+
+        DRC NAME        :   TOTAL DRC   : PROCESSED DRC :  TARGETED DRC : REMAINING TARGETED DRC :   FIX RATE   : COMMENT
+OD.DN.2 : Min. OD densi :            1  :            1  :            0  :               0        :          --  : 1 ignored: <#1>
+PO.DN.2 : {OD OR DOD OR :           46  :           46  :            0  :               0        :          --  : 46 ignored: <#2>
+
+NOTE:
+Reasons : Detail Info
+     #1 : size of error shapes greater than threshold
+     #2 : shapes associated with error are not Zroute modifiable

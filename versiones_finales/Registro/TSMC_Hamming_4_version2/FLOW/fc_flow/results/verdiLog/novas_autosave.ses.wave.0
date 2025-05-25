@@ -1,12 +1,12 @@
 Magic 271485
-Revision Verdi_U-2023.03-SP2
+Revision Verdi_R-2020.12-SP2
 
 ; Window Layout <x> <y> <width> <height> <signalwidth> <valuewidth>
-viewPort 0 5 1272 418 213 65
+viewPort 0 25 1272 508 234 65
 
 ; File list:
 ; openDirFile [-d delimiter] [-s time_offset] [-rf auto_bus_rule_file] path_name file_name
-openDirFile -d / "" "/mnt/vol_NFS_rh003/estudiantes/DANIELA_VARGAS/Version_final/0516/versiones_finales/Registro/TSMC_Hamming_4/FLOW/fc_flow/results/inter.fsdb"
+openDirFile -d / "" "/mnt/vol_NFS_rh003/estudiantes/DANIELA_VARGAS/Version_final/0516/versiones_finales/Registro/TSMC_Hamming_4_version2/FLOW/fc_flow/results/inter.fsdb"
 
 ; file time scale:
 ; fileTimeScale ### s|ms|us|ns|ps
@@ -16,16 +16,21 @@ signalSpacing 5
 
 ; windowTimeUnit is used for zoom, cursor & marker
 ; waveform viewport range
-zoom 0.000000 375974.111212
-cursor 95000.000000
+zoom 0.000000 358550.000000
+cursor 275000.000000
 marker 0.000000
 
 ; user define markers
 ; userMarker time_pos marker_name color linestyle
+userMarker 325000 "Inicio modo PIPO" ID_GREEN5 long_dashed
+userMarker 205000 "Inicio modo PISO" ID_GREEN5 long_dashed
+userMarker 105000 "Inicio modo SIPO" ID_GREEN5 long_dashed
+userMarker 5000 "Inicio modo SISO" ID_GREEN5 long_dashed
+
 ; visible top row signal index
 top 0
 ; marker line index
-markerPos 9
+markerPos 12
 
 ; event list
 ; addEvent event_name event_expression
@@ -46,16 +51,28 @@ curSTATUS ByChange
 
 
 addGroup "G1"
-activeDirFile "" "/mnt/vol_NFS_rh003/estudiantes/DANIELA_VARGAS/Version_final/0516/versiones_finales/Registro/TSMC_Hamming_4/FLOW/fc_flow/results/inter.fsdb"
-addSignal -h 15 /universal_register_8bit_tb/dut/clk
-addSignal -h 15 -UNSIGNED -HEX /universal_register_8bit_tb/dut/parallel_out[3:0]
-addSignal -h 15 /universal_register_8bit_tb/dut/load
-addSignal -h 15 /universal_register_8bit_tb/dut/rst
-addSignal -h 15 -UNSIGNED -HEX /universal_register_8bit_tb/dut/mode[1:0]
-addSignal -h 15 /universal_register_8bit_tb/dut/enable
-addSignal -h 15 /universal_register_8bit_tb/dut/serial_out
-addSignal -h 15 -UNSIGNED -HEX /universal_register_8bit_tb/dut/parallel_in[3:0]
-addSignal -h 15 /universal_register_8bit_tb/dut/serial_in
+activeDirFile "" "/mnt/vol_NFS_rh003/estudiantes/DANIELA_VARGAS/Version_final/0516/versiones_finales/Registro/TSMC_Hamming_4_version2/FLOW/fc_flow/results/inter.fsdb"
+addSignal -h 15 /universal_register_4bit_tb/dut/clk
+addSignal -h 15 /universal_register_4bit_tb/dut/rst
+addSignal -h 15 /universal_register_4bit_tb/dut/load
+addSignal -h 15 /universal_register_4bit_tb/dut/enable
+addSignal -h 15 -UNSIGNED -BIN /universal_register_4bit_tb/dut/mode[1:0]
+addSignal -h 15 -UNSIGNED -BIN /universal_register_4bit_tb/dut/parallel_in[3:0]
+addSignal -h 15 -UNSIGNED -BIN /universal_register_4bit_tb/dut/parallel_out[3:0]
+addSignal -h 15 /universal_register_4bit_tb/dut/serial_in
+addSignal -h 15 /universal_register_4bit_tb/dut/serial_out
+addSignal -h 15 /universal_register_4bit_tb/dut/p1[0:0]
+addSignal -h 15 /universal_register_4bit_tb/dut/p2[0:0]
+addSignal -h 15 /universal_register_4bit_tb/dut/p3[0:0]
+addSubGroup "\p1_reg[0]"
+addSignal -h 15 /universal_register_4bit_tb/dut/\p1_reg[0] /Q
+endSubGroup "\p1_reg[0]"
+addSubGroup "\p2_reg[0]"
+addSignal -h 15 /universal_register_4bit_tb/dut/\p2_reg[0] /Q
+endSubGroup "\p2_reg[0]"
+addSubGroup "\p3_reg[0]"
+addSignal -h 15 /universal_register_4bit_tb/dut/\p3_reg[0] /Q
+endSubGroup "\p3_reg[0]"
 addGroup "G2"
 
 ; getSignalForm Scope Hierarchy Status

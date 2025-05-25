@@ -1,8 +1,8 @@
 Magic 271485
-Revision Verdi_U-2023.03-SP2
+Revision Verdi_R-2020.12-SP2
 
 ; Window Layout <x> <y> <width> <height> <signalwidth> <valuewidth>
-viewPort 0 5 1272 418 156 65
+viewPort 0 25 1684 538 393 65
 
 ; File list:
 ; openDirFile [-d delimiter] [-s time_offset] [-rf auto_bus_rule_file] path_name file_name
@@ -16,7 +16,7 @@ signalSpacing 5
 
 ; windowTimeUnit is used for zoom, cursor & marker
 ; waveform viewport range
-zoom 0.000000 531934.867821
+zoom 0.000000 560550.000000
 cursor 555000.000000
 marker 0.000000
 
@@ -25,7 +25,7 @@ marker 0.000000
 ; visible top row signal index
 top 0
 ; marker line index
-markerPos 4
+markerPos 11
 
 ; event list
 ; addEvent event_name event_expression
@@ -45,12 +45,19 @@ COMPLEX_EVENT_END
 curSTATUS ByChange
 
 
-addGroup "dut"
+addGroup "G1"
 activeDirFile "" "/mnt/vol_NFS_rh003/estudiantes/DANIELA_VARGAS/Version_final/0516/versiones_finales/Contador/TSMC_Hamming_16_version3/FLOW/fc_flow/results/inter.fsdb"
 addSignal -h 15 /tb_top/dut/clk
 addSignal -h 15 /tb_top/dut/reset
 addSignal -h 15 /tb_top/dut/enable
+addSignal -h 15 /tb_top/dut/enable_last
+addSignal -h 15 /tb_top/dut/busy
 addSignal -h 15 -UNSIGNED -HEX /tb_top/dut/counter[15:0]
+addSignal -h 15 -UNSIGNED -HEX /tb_top/dut/\counter_and_parity/count_neg [15:0]
+addSignal -h 15 -UNSIGNED -HEX /tb_top/dut/\counter_and_parity/counter_stored [15:0]
+addSignal -h 15 -UNSIGNED -HEX /tb_top/dut/parity_stored[11:0]
+addSignal -h 15 -UNSIGNED -HEX /tb_top/dut/corrected_counter[15:0]
+addSignal -h 15 -UNSIGNED -HEX /tb_top/dut/syndrome[11:0]
 addGroup "G2"
 
 ; getSignalForm Scope Hierarchy Status

@@ -1,0 +1,44 @@
+Warning: Scenario scenarioSS is not configured for hold analysis: skipping. (UIC-058)
+****************************************
+Report : timing
+        -path_type full
+        -delay_type min
+        -max_paths 1
+        -report_by design
+Design : top
+Version: U-2022.12-SP6
+Date   : Sun May 25 02:04:06 2025
+****************************************
+
+  Startpoint: p1_reg[19] (rising edge-triggered flip-flop clocked by SYS_CLK)
+  Endpoint: p1_reg[19] (rising edge-triggered flip-flop clocked by SYS_CLK)
+  Mode: mode1
+  Corner: cornerFF
+  Scenario: scenarioFF
+  Path Group: SYS_CLK
+  Path Type: min
+
+  Point                                            Incr      Path  
+  ------------------------------------------------------------------------
+  clock SYS_CLK (rise edge)                        0.00      0.00
+  clock network delay (propagated)                 0.22      0.22
+
+  p1_reg[19]/CP (SDFCND0HPBWP)                     0.00      0.22 r
+  p1_reg[19]/QN (SDFCND0HPBWP)                     0.15      0.37 r
+  ctmi_5334/ZN (MUX3ND0HPBWP)                      0.04      0.41 f
+  p1_reg[19]/D (SDFCND0HPBWP)                      0.00      0.41 f
+  data arrival time                                          0.41
+
+  clock SYS_CLK (rise edge)                        0.00      0.00
+  clock network delay (propagated)                 0.22      0.22
+  p1_reg[19]/CP (SDFCND0HPBWP)                     0.00      0.22 r
+  library hold time                                0.00      0.22
+  data required time                                         0.22
+  ------------------------------------------------------------------------
+  data required time                                         0.22
+  data arrival time                                         -0.41
+  ------------------------------------------------------------------------
+  slack (MET)                                                0.19
+
+
+1

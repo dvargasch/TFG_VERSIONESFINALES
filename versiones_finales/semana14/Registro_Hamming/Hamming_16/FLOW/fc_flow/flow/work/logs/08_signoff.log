@@ -1,0 +1,1905 @@
+
+
+
+                              Fusion Compiler (TM)
+
+             Version U-2022.12-SP6 for linux64 - Aug 25, 2023 -SLE
+
+                    Copyright (c) 1988 - 2023 Synopsys, Inc.
+   This software and the associated documentation are proprietary to Synopsys,
+ Inc. This software may only be used in accordance with the terms and conditions
+ of a written license agreement with Synopsys, Inc. All other use, reproduction,
+   or distribution of this software is strictly prohibited.  Licensed Products
+     communicate with Synopsys servers for the purpose of providing software
+    updates, detecting software piracy and verifying that customers are using
+    Licensed Products in conformity with the applicable License Key for such
+  Licensed Products. Synopsys will use information gathered in connection with
+    this process to deliver software updates and pursue software pirates and
+                                   infringers.
+
+ Inclusivity & Diversity - Visit SolvNetPlus to read the "Synopsys Statement on
+            Inclusivity and Diversity" (Refer to article 000036315 at
+                        https://solvnetplus.synopsys.com)
+ 
+Information: Term was not able to be set up using xterm-256color . Using "xterm" by default instead. (CLE-10)
+#####################################
+#####          Signoff          #####
+#####################################
+# Sourcing setup script
+source -echo ../../setup/icc2_dp_setup.tcl
+set CURR_DIR  [pwd]
+set PROY_HOME ${CURR_DIR}/../..;
+set TSMC_HOME "/mnt/vol_NFS_rh003/profesores/pmendoza/KITS/TSMCHOME";
+############################
+## RTL file name and type ##
+############################
+set DESIGN_NAME "top"
+set HDL "sverilog"
+set DESIGN_LIBRARY "${DESIGN_NAME}_lib"
+#################################
+set time [get_date]
+puts "Command Start at: ${time}"
+Command Start at: Sun May 25 01:07:59 2025
+####################################
+### 1. Variables for design prep ###
+####################################
+### SDC File
+set SDCNAME "${DESIGN_NAME}"
+### Ref Libs
+set NDM_LIBS_PATH "../../setup/ndm_libraries/ndm/"
+set STD_TIME_FRAME "../../setup/ndm_libraries/ndm/tcbn65lphpbwp_1.ndm"
+set REFERENCE_LIBRARY "{${STD_TIME_FRAME} }"
+set REFERENCE_LIBRARY 		[list   ${NDM_LIBS_PATH}/tcbn65lphpbwpcghvt_1_physical_only.ndm \
+									${NDM_LIBS_PATH}/tcbn65lphpbwp_1_physical_only.ndm \
+									${NDM_LIBS_PATH}/tpdn65lpgv2od3_sd_physical_only.ndm \
+									${NDM_LIBS_PATH}/tpfn65lpgv2od3_physical_only.ndm \
+									${NDM_LIBS_PATH}/tpbn65v_physical_only.ndm \
+									${NDM_LIBS_PATH}/tpin65gv_physical_only.ndm \
+									${NDM_LIBS_PATH}/tcbn65lphpbwpcghvt_1.ndm \
+									${NDM_LIBS_PATH}/tcbn65lphpbwp_1.ndm \
+									${NDM_LIBS_PATH}/tpdn65lpgv2od3_sdml.ndm \
+									${NDM_LIBS_PATH}/tpfn65lpgv2od3ml.ndm \
+									${NDM_LIBS_PATH}/ts1n65lpa2048x32m4_140a_5m.ndm ];
+################################
+### 2. Tech files and setup ####
+################################
+set TECH_FILE "${TSMC_HOME}/digital/Back_End/milkyway/tcbn65lphpbwp_140a/techfiles/tsmcn65_9lmT2.tf"
+set TECH_LIB ""
+#######################
+## Layers and widths ##
+#######################
+set STANDARD_CELLS_WIDTH 0.42
+set MAX_ROUTING_LAYER   "M6"
+set MIN_ROUTING_LAYER   "M2"
+set TARGET_SKEW         0.1
+set RTL_PATH		"${CURR_DIR}/../../../common/rtl"
+set SDC_PATH		"${CURR_DIR}/../../../common/sdc"
+set SDC_FILE		"${CURR_DIR}/${DESIGN_NAME}.sdc"
+####################################################
+set VERILOG_PATH	"${RTL_PATH}/verilog"
+set SVERILOG_PATH	"${RTL_PATH}/sverilog" 
+set VHDL_PATH		"${RTL_PATH}/vhdl"
+set RESULTS_PATH	"${CURR_DIR}/../../results"
+set REPORTS_PATH	"${CURR_DIR}/../../reports"
+###########
+## Paths ##
+###########
+set DRC_RUNSET_FILE	"${CURR_DIR}/../../DRC/ICVLN65S_9M_6X2Z.26_1a"
+set GDS_MAP_FILE        "${TSMC_HOME}/digital/Back_End/milkyway/tcbn65lphpbwpcg_200a/gdsout_6X2Z.map"
+set ICV                "-I /mnt/vol_synopsys2023/pdks/xfab/design/xkit/xh018/synopsys/v9_0/ICValidator/v9_0_2"
+####################
+## Auto-floorplan ##
+####################
+set CONTROL_AUTO           "core"
+# Percentage of cell area usage
+set CORE_UTILIZATION_AUTO  0.5
+# Move the nucleus 10 units
+set CORE_OFFSET_AUTO       10
+# Core shape
+set SHAPE_AUTO             "R"
+# Aspect ratio
+set SIDE_RATIO_AUTO        {1 1.5}
+# Flip the first row of the cell
+set FFR_AUTO               "true"
+# Using the M3 layer for pins
+set LAYER_PIN_AUTO         {M3}
+# Allows pins on all sides of the cell
+set SIDES_AUTO             {1 2 3 4}
+# Distance between pins
+set PIN_SPACE_AUTO         4
+######################
+## Floorplan manual ##
+######################
+set CONTROL_M            "core"
+# Percentage of cell area usage
+set CORE_UTILIZATION_M   0.5
+# Move the nucleus 10 units 
+set CORE_OFFSET_M        10
+# Core shape
+set SHAPE_M              "R"
+# Aspect ratio 
+set SIDE_RATIO_M         {1.5 1}
+# Flip the first row of the cell
+set FFR_M                "true" 
+# Using the M3 layer for pins
+set LAYER_PIN_M          {M3}
+# Allows pins on all sides of the cell
+set SIDES_M              {1 2 3 4}
+# Distance between pins
+set PIN_SPACE_M          4 
+#########################
+## Configure MultiCore ##
+#########################
+set_host_options -name Oculi -max_cores 2
+#report_host_options
+source ${CURR_DIR}/../../setup/utilities.tcl
+set UNSELECT_RULES "PO.DN.2* OD.DN.2* M*.DN.1* CSR.R.1* DM*.R.1*"
+PO.DN.2* OD.DN.2* M*.DN.1* CSR.R.1* DM*.R.1*
+#### ----- Open lib and create new block from previous script (07_route_opt.tcl) ----- ####
+# Open the design library
+open_lib ${DESIGN_LIBRARY}
+Information: Loading library file '/mnt/vol_NFS_rh003/estudiantes/DANIELA_VARGAS/Version_final/0516/versiones_finales/semana14/Registro_Hamming/Hamming_16/FLOW/fc_flow/flow/work/top_lib' (FILE-007)
+Information: Loading library file '/mnt/vol_NFS_rh003/estudiantes/DANIELA_VARGAS/Version_final/0516/versiones_finales/semana14/Registro_Hamming/Hamming_16/FLOW/fc_flow/setup/ndm_libraries/ndm/tcbn65lphpbwpcghvt_1_physical_only.ndm' (FILE-007)
+Information: Loading library file '/mnt/vol_NFS_rh003/estudiantes/DANIELA_VARGAS/Version_final/0516/versiones_finales/semana14/Registro_Hamming/Hamming_16/FLOW/fc_flow/setup/ndm_libraries/ndm/tcbn65lphpbwp_1_physical_only.ndm' (FILE-007)
+Information: Loading library file '/mnt/vol_NFS_rh003/estudiantes/DANIELA_VARGAS/Version_final/0516/versiones_finales/semana14/Registro_Hamming/Hamming_16/FLOW/fc_flow/setup/ndm_libraries/ndm/tpdn65lpgv2od3_sd_physical_only.ndm' (FILE-007)
+Information: Loading library file '/mnt/vol_NFS_rh003/estudiantes/DANIELA_VARGAS/Version_final/0516/versiones_finales/semana14/Registro_Hamming/Hamming_16/FLOW/fc_flow/setup/ndm_libraries/ndm/tpfn65lpgv2od3_physical_only.ndm' (FILE-007)
+Information: Loading library file '/mnt/vol_NFS_rh003/estudiantes/DANIELA_VARGAS/Version_final/0516/versiones_finales/semana14/Registro_Hamming/Hamming_16/FLOW/fc_flow/setup/ndm_libraries/ndm/tpbn65v_physical_only.ndm' (FILE-007)
+Information: Loading library file '/mnt/vol_NFS_rh003/estudiantes/DANIELA_VARGAS/Version_final/0516/versiones_finales/semana14/Registro_Hamming/Hamming_16/FLOW/fc_flow/setup/ndm_libraries/ndm/tpin65gv_physical_only.ndm' (FILE-007)
+Information: Loading library file '/mnt/vol_NFS_rh003/estudiantes/DANIELA_VARGAS/Version_final/0516/versiones_finales/semana14/Registro_Hamming/Hamming_16/FLOW/fc_flow/setup/ndm_libraries/ndm/tcbn65lphpbwpcghvt_1.ndm' (FILE-007)
+Information: Loading library file '/mnt/vol_NFS_rh003/estudiantes/DANIELA_VARGAS/Version_final/0516/versiones_finales/semana14/Registro_Hamming/Hamming_16/FLOW/fc_flow/setup/ndm_libraries/ndm/tcbn65lphpbwp_1.ndm' (FILE-007)
+Information: Loading library file '/mnt/vol_NFS_rh003/estudiantes/DANIELA_VARGAS/Version_final/0516/versiones_finales/semana14/Registro_Hamming/Hamming_16/FLOW/fc_flow/setup/ndm_libraries/ndm/tpdn65lpgv2od3_sdml.ndm' (FILE-007)
+Information: Loading library file '/mnt/vol_NFS_rh003/estudiantes/DANIELA_VARGAS/Version_final/0516/versiones_finales/semana14/Registro_Hamming/Hamming_16/FLOW/fc_flow/setup/ndm_libraries/ndm/tpfn65lpgv2od3ml.ndm' (FILE-007)
+Information: Loading library file '/mnt/vol_NFS_rh003/estudiantes/DANIELA_VARGAS/Version_final/0516/versiones_finales/semana14/Registro_Hamming/Hamming_16/FLOW/fc_flow/setup/ndm_libraries/ndm/ts1n65lpa2048x32m4_140a_5m.ndm' (FILE-007)
+Warning: Technology used to create frame-view and current technology have inconsistency: Fat table contents are different. (FRAM-054)
+Warning: Technology 'tcbn65lphpbwpcghvt.tf' used for frame-view creation in library 'tcbn65lphpbwpcghvt_1_physical_only', is inconsistent with the current technology 'tsmcn65_9lmT2.tf' of library 'top_lib'. Please run derive_design_level_via_regions to generate up-do-date via region in the design library. (NDM-102)
+Warning: Technology used to create frame-view and current technology have inconsistency: Fat table contents are different. (FRAM-054)
+Warning: Technology 'tpdn65lpgv2od3_sd.tf' used for frame-view creation in library 'tpdn65lpgv2od3_sd_physical_only', is inconsistent with the current technology 'tsmcn65_9lmT2.tf' of library 'top_lib'. Please run derive_design_level_via_regions to generate up-do-date via region in the design library. (NDM-102)
+Warning: Technology used to create frame-view and current technology have inconsistency: Fat table contents are different. (FRAM-054)
+Warning: Technology 'tpfn65lpgv2od3.tf' used for frame-view creation in library 'tpfn65lpgv2od3_physical_only', is inconsistent with the current technology 'tsmcn65_9lmT2.tf' of library 'top_lib'. Please run derive_design_level_via_regions to generate up-do-date via region in the design library. (NDM-102)
+Warning: Technology used to create frame-view and current technology have inconsistency: Fat table contents are different. (FRAM-054)
+Warning: Technology 'tcbn65lphpbwpcghvt.tf' used for frame-view creation in library 'tcbn65lphpbwpcghvt_1', is inconsistent with the current technology 'tsmcn65_9lmT2.tf' of library 'top_lib'. Please run derive_design_level_via_regions to generate up-do-date via region in the design library. (NDM-102)
+Warning: Technology used to create frame-view and current technology have inconsistency: Fat table contents are different. (FRAM-054)
+Warning: Technology 'tpdn65lpgv2od3_sd.tf' used for frame-view creation in library 'tpdn65lpgv2od3_sdml', is inconsistent with the current technology 'tsmcn65_9lmT2.tf' of library 'top_lib'. Please run derive_design_level_via_regions to generate up-do-date via region in the design library. (NDM-102)
+Warning: Technology used to create frame-view and current technology have inconsistency: Fat table contents are different. (FRAM-054)
+Warning: Technology 'tpfn65lpgv2od3.tf' used for frame-view creation in library 'tpfn65lpgv2od3ml', is inconsistent with the current technology 'tsmcn65_9lmT2.tf' of library 'top_lib'. Please run derive_design_level_via_regions to generate up-do-date via region in the design library. (NDM-102)
+{top_lib}
+# Copy and open block
+copy_block -from ${DESIGN_NAME}/route_opt -to ${DESIGN_NAME}/signoff
+Information: User units loaded from library 'tcbn65lphpbwpcghvt_1' (LNK-040)
+{top_lib:top/signoff.design}
+open_block ${DESIGN_NAME}/signoff
+Information: Incrementing open_count of block 'top_lib:top/signoff.design' to 2. (DES-021)
+{top_lib:top/signoff.design}
+#### ----- Filler cell insertion ----- ####
+#Select filler cell
+#set FILLER_CELLS [get_object_name [sort_collection -descending [get_lib_cells */FEED*] area]]
+# Add filler cells
+#create_stdcell_fillers -lib_cells ${FILLER_CELLS} 
+set_app_options -name place.legalize.enable_advanced_legalizer -value false
+place.legalize.enable_advanced_legalizer false
+set_app_options -name place.legalize.filler_lib_cells -value { [ get_lib_cells tcbn65lphpbwp_1/DCAP* ] }
+place.legalize.filler_lib_cells {[ get_lib_cells tcbn65lphpbwp_1/DCAP* ]}
+create_stdcell_fillers -lib_cells [ get_lib_cells tcbn65lphpbwp_1/DCAP* ]
+Using libraries: top_lib tcbn65lphpbwpcghvt_1_physical_only tcbn65lphpbwp_1_physical_only tpdn65lpgv2od3_sd_physical_only tpfn65lpgv2od3_physical_only tpbn65v_physical_only tpin65gv_physical_only tcbn65lphpbwpcghvt_1 tcbn65lphpbwp_1 tpdn65lpgv2od3_sdml tpfn65lpgv2od3ml ts1n65lpa2048x32m4_140a_5m
+Updating block top_lib:top/signoff.design
+Design 'top' was successfully linked.
+CHF: Filler insertion auto mode id 0, current filler mode 0, M0M1Routing = 0 
+* Disjointed site row process : FALSE
+INFO:: begin filler insertions...
+CHF::NPL_CHKQUERY_PNET checking turned off by default
+master DCAP16HPBWP has site unit
+master DCAP32HPBWP has site unit
+master DCAP4HPBWP has site unit
+master DCAP64HPBWP has site unit
+master DCAP8HPBWP has site unit
+master DCAPHPBWP has site unit
+ Use site unit (2000)
+Warning: filler ref cell DCAP16HPBWP not marked filler type. (CHF-011)
+Warning: filler ref cell DCAP32HPBWP not marked filler type. (CHF-011)
+Warning: filler ref cell DCAP4HPBWP not marked filler type. (CHF-011)
+Warning: filler ref cell DCAP64HPBWP not marked filler type. (CHF-011)
+Warning: filler ref cell DCAP8HPBWP not marked filler type. (CHF-011)
+Warning: filler ref cell DCAPHPBWP not marked filler type. (CHF-011)
+Warning: filler ref cells not listed from laregst to smallest. Tool may not be able to fill all empty space. (CHF-008)
+Warning: Smallest filler provided is greater than specified in option place.rules.min_vt_filler_size (CHF-073)
+Warning: option -continue_on_error turned on automatically. (CHF-014)
+Warning: Routing direction of metal layer PO is neither "horizontal" nor "vertical".  PDC checks will not be performed on this layer. (PDC-003)
+PDC app_options settings =========
+	place.legalize.enable_prerouted_net_check: 1
+	place.legalize.num_tracks_for_access_check: 1
+	place.legalize.use_eol_spacing_for_access_check: 0
+	place.legalize.allow_touch_track_for_access_check: 1
+	place.legalize.reduce_conservatism_in_eol_check: 0
+	place.legalize.preroute_shape_merge_distance: 0.0
+	place.legalize.enable_non_preferred_direction_span_check: 0
+
+Layer M1: cached 0 shapes out of 106 total shapes.
+Layer M2: cached 0 shapes out of 1486 total shapes.
+Cached 324 vias out of 3482 total vias.
+CHF: loading design...
+CHF:: Loading blkInsts from NDM...
+CHF:: Building row/inst relations...
+INFO:: Use fillers in order(1000): DCAP16HPBWP (16 x 1), DCAP32HPBWP (32 x 1), DCAP4HPBWP (4 x 1), DCAP64HPBWP (64 x 1), DCAP8HPBWP (8 x 1), DCAPHPBWP (3 x 1), 
+	40% complete ...
+	70% complete ...
+Regular Filler Insertion Complete
+CHF:: Create all new fillers...
+... 40 of regular filler DCAP16HPBWP inserted
+... 0 of regular filler DCAP32HPBWP inserted
+... 143 of regular filler DCAP4HPBWP inserted
+... 0 of regular filler DCAP64HPBWP inserted
+... 0 of regular filler DCAP8HPBWP inserted
+... 45 of regular filler DCAPHPBWP inserted
+set_app_options -name place.legalize.enable_advanced_legalizer -value false
+place.legalize.enable_advanced_legalizer false
+set_app_options -name place.legalize.filler_lib_cells -value { [ get_lib_cells tcbn65lphpbwp_1_physical_only/FILL* ] }
+place.legalize.filler_lib_cells {[ get_lib_cells tcbn65lphpbwp_1_physical_only/FILL* ]}
+create_stdcell_fillers -lib_cells [ get_lib_cells tcbn65lphpbwp_1_physical_only/FILL* ]
+CHF: Filler insertion auto mode id 0, current filler mode 0, M0M1Routing = 0 
+* Disjointed site row process : FALSE
+INFO:: begin filler insertions...
+CHF::NPL_CHKQUERY_PNET checking turned off by default
+master FILL16HPBWP has site unit
+master FILL1HPBWP has site unit
+master FILL1_LLHPBWP has site unit
+master FILL2HPBWP has site unit
+master FILL32HPBWP has site unit
+master FILL4HPBWP has site unit
+master FILL64HPBWP has site unit
+master FILL8HPBWP has site unit
+master FILL_NW_FA_LLHPBWP has site unit
+master FILL_NW_HHHPBWP has site unit
+master FILL_NW_LLHPBWP has site unit
+ Use site unit (2000)
+Warning: filler ref cell FILL1_LLHPBWP not marked filler type. (CHF-011)
+Warning: filler ref cell FILL_NW_FA_LLHPBWP not marked filler type. (CHF-011)
+Warning: filler ref cell FILL_NW_HHHPBWP not marked filler type. (CHF-011)
+Warning: filler ref cell FILL_NW_LLHPBWP not marked filler type. (CHF-011)
+Warning: filler ref cells not listed from laregst to smallest. Tool may not be able to fill all empty space. (CHF-008)
+INFO:: process regular filler master min-vth type: 
+Warning: Routing direction of metal layer PO is neither "horizontal" nor "vertical".  PDC checks will not be performed on this layer. (PDC-003)
+PDC app_options settings =========
+	place.legalize.enable_prerouted_net_check: 1
+	place.legalize.num_tracks_for_access_check: 1
+	place.legalize.use_eol_spacing_for_access_check: 0
+	place.legalize.allow_touch_track_for_access_check: 1
+	place.legalize.reduce_conservatism_in_eol_check: 0
+	place.legalize.preroute_shape_merge_distance: 0.0
+	place.legalize.enable_non_preferred_direction_span_check: 0
+
+Layer M1: cached 0 shapes out of 106 total shapes.
+Layer M2: cached 0 shapes out of 1486 total shapes.
+Cached 324 vias out of 3482 total vias.
+CHF: loading design...
+CHF:: Loading blkInsts from NDM...
+CHF:: Building row/inst relations...
+INFO:: Use fillers in order(1000): FILL16HPBWP (16 x 1), FILL1HPBWP (1 x 1), FILL1_LLHPBWP (1 x 2), FILL2HPBWP (2 x 1), FILL32HPBWP (32 x 1), FILL4HPBWP (4 x 1), FILL64HPBWP (64 x 1), FILL8HPBWP (8 x 1), FILL_NW_FA_LLHPBWP (8 x 2), FILL_NW_HHHPBWP (8 x 2), FILL_NW_LLHPBWP (8 x 2), 
+	40% complete ...
+	70% complete ...
+Regular Filler Insertion Complete
+... 0 of regular filler FILL16HPBWP inserted
+... 161 of regular filler FILL1HPBWP inserted
+... 0 of regular filler FILL1_LLHPBWP inserted
+... 0 of regular filler FILL2HPBWP inserted
+... 0 of regular filler FILL32HPBWP inserted
+... 0 of regular filler FILL4HPBWP inserted
+... 0 of regular filler FILL64HPBWP inserted
+... 0 of regular filler FILL8HPBWP inserted
+... 0 of regular filler FILL_NW_FA_LLHPBWP inserted
+... 0 of regular filler FILL_NW_HHHPBWP inserted
+... 0 of regular filler FILL_NW_LLHPBWP inserted
+set_app_options -name place.legalize.filler_lib_cells -value { [ get_lib_cells tcbn65lphpbwp_1_physical_only/FILL* ] [ get_lib_cells tcbn65lphpbwp_1/DCAP* ] }
+place.legalize.filler_lib_cells {[ get_lib_cells tcbn65lphpbwp_1_physical_only/FILL* ] [ get_lib_cells tcbn65lphpbwp_1/DCAP* ]}
+connect_pg_net -automatic
+****************************************
+Report : Power/Ground Connection Summary
+Design : top
+Version: U-2022.12-SP6
+Date   : Sun May 25 01:08:02 2025
+****************************************
+P/G net name                  P/G pin count(previous/current)
+--------------------------------------------------------------------------------
+Power net VDD                 432/821
+Ground net VSS                432/821
+--------------------------------------------------------------------------------
+Information: connections of 778 power/ground pin(s) are created or changed.
+1
+# Check legality of the filler cells
+check_legality
+Information: The command 'check_legality' cleared the undo history. (UNDO-016)
+
+************************
+
+running check_legality
+
+Warning: Routing direction of metal layer PO is neither "horizontal" nor "vertical".  PDC checks will not be performed on this layer. (PDC-003)
+PDC app_options settings =========
+	place.legalize.enable_prerouted_net_check: 1
+	place.legalize.num_tracks_for_access_check: 1
+	place.legalize.use_eol_spacing_for_access_check: 0
+	place.legalize.allow_touch_track_for_access_check: 1
+	place.legalize.reduce_conservatism_in_eol_check: 0
+	place.legalize.preroute_shape_merge_distance: 0.0
+	place.legalize.enable_non_preferred_direction_span_check: 0
+
+Layer M1: cached 0 shapes out of 106 total shapes.
+Layer M2: cached 0 shapes out of 1486 total shapes.
+Cached 324 vias out of 3482 total vias.
+
+check_legality for block design top ... 
+Information: Initializing classic cellmap without advanced rules enabled and without PDC enabled
+Information: The following app options are used in cellmap
+        place.legalize.enable_color_aware_placement : false
+        place.legalize.use_nll_query_cm : false
+        place.legalize.enable_advanced_legalizer : false
+        place.legalize.enable_prerouted_net_check : true
+        place.legalize.enable_advanced_prerouted_net_check : false
+        place.legalize.always_continue : true
+        place.legalize.limit_legality_checks : false
+        place.common.pnet_aware_density : 1.0000
+        place.common.pnet_aware_min_width : 0.0000
+        place.common.pnet_aware_layers : {}
+        place.common.use_placement_model : false
+        place.common.enable_advanced_placement_model : true
+        cts.placement.cell_spacing_rule_style : maximum
+Total 0.3673 seconds to build cellmap data
+Information: Creating classic rule checker.
+Warning: Routing direction of metal layer PO is neither "horizontal" nor "vertical".  PDC checks will not be performed on this layer. (PDC-003)
+=====> Processed 53 ref cells (12 fillers) from library
+Design has no advanced rules
+Checking legality
+Checking cell legality:
+0%....10%....20%....30%....40%....50%....60%....70%....80%....90%....100%
+Sorting rows.
+Checking spacing rule legality.
+0%....10%....20%....30%....40%....50%....60%....70%....80%....90%....100%
+Checking packing rule legality.
+
+
+****************************************
+  Report : Legality
+****************************************
+
+VIOLATIONS BY CATEGORY:
+   MOVABLE  APP-FIXED USER-FIXED  DESCRIPTION
+         0          0          0  Two objects overlap.
+         0          0          0  A cell violates a pnet.
+         0          0          0  A cell is illegal at a site.
+         0          0          0  A cell is not aligned with a site.
+         0          0          0  A cell has an illegal orientation.
+         0          0          0  A cell spacing rule is violated.
+         0          0          0  A layer rule is violated.
+         0          0          0  A cell is in the wrong region.
+         0          0          0  Two cells violate cts margins.
+         0          0          0  Two cells violate coloring.
+
+         0          0          0  TOTAL
+
+TOTAL 0 Violations.
+
+VIOLATIONS BY SUBCATEGORY:
+     MOVABLE  APP-FIXED USER-FIXED  DESCRIPTION
+
+         0          0          0    Two objects overlap.
+           0          0          0    Two cells overlap.
+           0          0          0    Two cells have overlapping keepout margins.
+           0          0          0    A cell overlaps a blockage.
+           0          0          0    A cell keepout margin overlaps a blockage.
+
+         0          0          0    A cell violates a pnet.
+
+         0          0          0    A cell is illegal at a site.
+           0          0          0    A cell violates pin-track alignment rules.
+           0          0          0    A cell is illegal at a site.
+           0          0          0    A cell violates legal index rule.
+           0          0          0    A cell has the wrong variant for its location.
+
+         0          0          0    A cell is not aligned with a site.
+           0          0          0    A cell is not aligned with the base site.
+           0          0          0    A cell is not aligned with an overlaid site.
+
+         0          0          0    A cell has an illegal orientation.
+
+         0          0          0    A cell spacing rule is violated.
+           0          0          0    A spacing rule is violated in a row.
+           0          0          0    A spacing rule is violated between adjacent rows.
+           0          0          0    A cell violates vertical abutment rule.
+           0          0          0    A cell violates metal spacing rule.
+
+         0          0          0    A layer rule is violated.
+           0          0          0    A layer VTH rule is violated.
+           0          0          0    A layer OD rule is violated.
+           0          0          0    A layer OD max-width rule is violated.
+           0          0          0    A layer ALL_OD corner rule is violated.
+           0          0          0    A layer max-vertical-length rule is violated.
+           0          0          0    A layer TPO rule is violated.
+           0          0          0    Filler cell insertion cannot satisfy layer rules.
+
+         0          0          0    A cell is in the wrong region.
+           0          0          0    A cell is outside its hard bound.
+           0          0          0    A cell is in the wrong voltage area.
+           0          0          0    A cell violates an exclusive movebound.
+
+         0          0          0    Two cells violate cts margins.
+
+         0          0          0    Two cells violate coloring.
+
+
+check_legality for block design top succeeded!
+
+
+check_legality succeeded.
+
+**************************
+
+1
+remove_stdcell_fillers_with_violation
+Cell Min-Routing-Layer = M2
+Cell Max-Routing-Layer = M6
+Error: The 'VIA1_C' value specified for the 'common.via_on_grid_by_layer_name' option is invalid. (ZRT-476)
+Error: The 'VIA2_C' value specified for the 'common.via_on_grid_by_layer_name' option is invalid. (ZRT-476)
+Information: Option route.detail.force_end_on_preferred_grid will be ignored since none of the layers have preferred grid. (ZRT-703)
+Skipping 1 internal pins that are not physical. Set route.common.verbose_level to > 0 and run routing command to get skipped pin names.
+Info: number of net_type_blockage: 0 
+Information: Via ladder engine would be activated for pattern must join connection in certain commands. Please refer to man-page for the command list. (ZRT-619)
+Via on layer (VIA1) needs more than one tracks
+Warning: Layer M1 pitch 0.200 may be too small: wire/via-down 0.180, wire/via-up 0.225. (ZRT-026)
+Via on layer (VIA7) needs more than one tracks
+Warning: Layer M7 pitch 0.200 may be too small: wire/via-down 0.200, wire/via-up 0.350. (ZRT-026)
+Via on layer (RV) needs more than one tracks
+Warning: Layer M9 pitch 0.800 may be too small: wire/via-down 0.800, wire/via-up 3.600. (ZRT-026)
+Information: When applicable Min-max layer allow_pin_connection mode will allow paths of length 5.03 outside the layer range. (ZRT-707)
+Information: When applicable Min-max layer allow_pin_connection mode will allow paths of length 5.03 outside the layer range on clock nets. (ZRT-718)
+Information: When applicable layer based tapering will taper up to 0.00 in distance from the pin. (ZRT-706)
+Printing options for 'route.common.*'
+common.eco_route_fix_existing_drc                       :	 true                
+common.via_on_grid_by_layer_name                        :	 {VIA1_C false} {VIA2_C true}
+common.wire_on_grid_by_layer_name                       :	 {M1 true} {M2 true} {M3 true}
+
+Printing options for 'route.detail.*'
+detail.antenna                                          :	 false               
+detail.antenna_fixing_preference                        :	 use_diodes          
+detail.diode_libcell_names                              :	 */ANTENNAHPBWP      
+detail.eco_route_use_soft_spacing_for_timing_optimization:	 true                
+detail.insert_diodes_during_routing                     :	 true                
+detail.timing_driven                                    :	 true                
+
+Printing options for 'route.auto_via_ladder.*'
+
+[Start Removing Filler Cells] Elapsed real time: 0:00:00 
+[Start Removing Filler Cells] Elapsed cpu  time: sys=0:00:00 usr=0:00:00 total=0:00:00
+[Start Removing Filler Cells] Stage (MB): Used    0  Alloctr    0  Proc    0 
+[Start Removing Filler Cells] Total (MB): Used   29  Alloctr   29  Proc 7424 
+
+Begin Filler DRC check ...
+
+Information: Using 1 threads for routing. (ZRT-444)
+Partition 1, Fillers with Violations = 85
+[End Removing Filler Cells] Elapsed real time: 0:00:00 
+[End Removing Filler Cells] Elapsed cpu  time: sys=0:00:00 usr=0:00:00 total=0:00:00
+[End Removing Filler Cells] Stage (MB): Used   49  Alloctr   50  Proc  152 
+[End Removing Filler Cells] Total (MB): Used   78  Alloctr   79  Proc 7576 
+Updating the database ...
+Delete xofiller!DCAPHPBWP!x106000y140000 due to Diff net spacing violation
+Delete xofiller!DCAP4HPBWP!x170000y140000 due to Short violation
+Delete xofiller!DCAPHPBWP!x178000y140000 due to Diff net spacing violation
+Delete xofiller!DCAP16HPBWP!x410000y140000 due to Diff net var rule spacing violation
+Delete xofiller!DCAP4HPBWP!x442000y140000 due to Diff net var rule spacing violation
+Delete xofiller!DCAP16HPBWP!x502000y140000 due to Diff net spacing violation
+Delete xofiller!DCAPHPBWP!x534000y140000 due to Diff net spacing violation
+Delete xofiller!DCAPHPBWP!x186000y160000 due to Short violation
+Delete xofiller!DCAP4HPBWP!x290000y160000 due to Short violation
+Delete xofiller!DCAPHPBWP!x306000y160000 due to Diff net spacing violation
+Delete xofiller!DCAP4HPBWP!x326000y160000 due to Diff net spacing violation
+Delete xofiller!DCAPHPBWP!x352000y160000 due to Diff net spacing violation
+Delete xofiller!DCAP4HPBWP!x474000y160000 due to Diff net spacing violation
+Delete xofiller!DCAP4HPBWP!x532000y160000 due to Short violation
+Delete xofiller!DCAP4HPBWP!x228000y180000 due to Diff net spacing violation
+Delete xofiller!DCAPHPBWP!x254000y180000 due to Diff net spacing violation
+Delete xofiller!DCAP4HPBWP!x276000y180000 due to Diff net spacing violation
+Delete xofiller!DCAP16HPBWP!x476000y180000 due to Diff net spacing violation
+Delete xofiller!DCAPHPBWP!x106000y200000 due to Short violation
+Delete xofiller!DCAPHPBWP!x246000y200000 due to Short violation
+Delete xofiller!DCAP4HPBWP!x322000y200000 due to Diff net spacing violation
+Delete xofiller!DCAP4HPBWP!x470000y200000 due to Diff net spacing violation
+Delete xofiller!DCAP4HPBWP!x166000y220000 due to Short violation
+Delete xofiller!DCAP4HPBWP!x174000y220000 due to Diff net spacing violation
+Delete xofiller!DCAP4HPBWP!x200000y220000 due to Short violation
+Delete xofiller!DCAP4HPBWP!x294000y220000 due to Diff net spacing violation
+Delete xofiller!DCAP4HPBWP!x370000y220000 due to Diff net spacing violation
+Delete xofiller!DCAP4HPBWP!x378000y220000 due to Short violation
+Delete xofiller!DCAP4HPBWP!x432000y220000 due to Short violation
+Delete xofiller!DCAPHPBWP!x460000y220000 due to Short violation
+Delete xofiller!DCAPHPBWP!x106000y240000 due to Diff net spacing violation
+Delete xofiller!DCAP4HPBWP!x332000y240000 due to Diff net spacing violation
+Delete xofiller!DCAP4HPBWP!x446000y240000 due to Short violation
+Delete xofiller!DCAP4HPBWP!x494000y240000 due to Diff net spacing violation
+Delete xofiller!DCAP4HPBWP!x528000y240000 due to Short violation
+Delete xofiller!DCAP4HPBWP!x234000y260000 due to Diff net spacing violation
+Delete xofiller!DCAP4HPBWP!x354000y260000 due to Short violation
+Delete xofiller!DCAP4HPBWP!x376000y260000 due to Short violation
+Delete xofiller!DCAPHPBWP!x490000y260000 due to Diff net spacing violation
+Delete xofiller!DCAP4HPBWP!x510000y260000 due to Short violation
+Delete xofiller!DCAP4HPBWP!x594000y260000 due to Short violation
+Delete xofiller!DCAP4HPBWP!x106000y280000 due to Diff net spacing violation
+Delete xofiller!DCAP4HPBWP!x194000y280000 due to Diff net spacing violation
+Delete xofiller!DCAP4HPBWP!x202000y280000 due to Diff net spacing violation
+Delete xofiller!DCAPHPBWP!x228000y280000 due to Short violation
+Delete xofiller!DCAP4HPBWP!x330000y280000 due to Diff net spacing violation
+Delete xofiller!DCAPHPBWP!x386000y280000 due to Short violation
+Delete xofiller!DCAP4HPBWP!x454000y280000 due to Short violation
+Delete xofiller!DCAPHPBWP!x482000y280000 due to Diff net spacing violation
+Delete xofiller!DCAP4HPBWP!x516000y280000 due to Diff net spacing violation
+Reporting for the first 50 deleted cells
+Deleted 85 cell instances
+verify_pg_nets
+Info: verify_pg_nets will be obsolete. Please use check_pg_connectivity.
+Checking secondary net through power switch is enabled. 
+Secondary net will be checked together from primary net. They will be treated as the same net
+Primary Net : VDD    Secondary Net:
+Primary Net : VSS    Secondary Net:
+Loading cell instances...
+Number of Standard Cells: 736
+Number of Macro Cells: 0
+Number of IO Pad Cells: 0
+Number of Blocks: 0
+Loading P/G wires and vias...
+Number of VDD Wires: 22
+Number of VDD Vias: 202
+Number of VDD Terminals: 18
+**************Verify net VDD connectivity*****************
+  Number of floating wires: 0
+  Number of floating vias: 0
+  Number of floating std cells: 0
+  Number of floating hard macros: 0
+  Number of floating I/O pads: 0
+  Number of floating terminals: 0
+  Number of floating hierarchical blocks: 0
+************************************************************
+Loading cell instances...
+Loading P/G wires and vias...
+Number of VSS Wires: 160
+Number of VSS Vias: 254
+Number of VSS Terminals: 18
+**************Verify net VSS connectivity*****************
+  Number of floating wires: 0
+  Number of floating vias: 0
+  Number of floating std cells: 0
+  Number of floating hard macros: 0
+  Number of floating I/O pads: 0
+  Number of floating terminals: 0
+  Number of floating hierarchical blocks: 0
+************************************************************
+Overall runtime: 0 seconds.
+check_routes
+Cell Min-Routing-Layer = M2
+Cell Max-Routing-Layer = M6
+Error: The 'VIA1_C' value specified for the 'common.via_on_grid_by_layer_name' option is invalid. (ZRT-476)
+Error: The 'VIA2_C' value specified for the 'common.via_on_grid_by_layer_name' option is invalid. (ZRT-476)
+Found antenna rule mode 1, diode mode 4:
+	layer M1: , diode ratio {0 0 1 0 0} 
+	layer M2: , diode ratio {0 0 1 0 0} 
+	layer M3: , diode ratio {0 0 1 0 0} 
+	layer M4: , diode ratio {0 0 1 0 0} 
+	layer M5: , diode ratio {0 0 1 0 0} 
+	layer M6: , diode ratio {0 0 1 0 0} 
+	layer M7: , diode ratio {0 0 1 0 0} 
+	layer M8: , diode ratio {0 0 1 0 0} 
+	layer M9:  max ratio 5000, diode ratio {0.06 0 8000 50000} 
+	layer AP: , diode ratio {0 0 1 0 0} 
+	layer CO: , diode ratio {0 0 1 0 0} 
+	layer VIA1:  max ratio 20, diode ratio {0 0 1 0 0} 
+	layer VIA2:  max ratio 20, diode ratio {0 0 1 0 0} 
+	layer VIA3:  max ratio 20, diode ratio {0 0 1 0 0} 
+	layer VIA4:  max ratio 20, diode ratio {0 0 1 0 0} 
+	layer VIA5:  max ratio 20, diode ratio {0 0 1 0 0} 
+	layer VIA6:  max ratio 20, diode ratio {0 0 1 0 0} 
+	layer VIA7:  max ratio 20, diode ratio {0 0 1 0 0} 
+	layer VIA8:  max ratio 20, diode ratio {0 0 1 0 0} 
+	layer RV:  max ratio 200, diode ratio {0.06 0 83 400} 
+Found antenna rule mode 2, diode mode 4:
+	layer M1:  max ratio 5000 metal scale 1, diode ratio {0.06 0 456 43000} 
+	layer M2:  max ratio 5000 metal scale 1, diode ratio {0.06 0 456 43000} 
+	layer M3:  max ratio 5000 metal scale 1, diode ratio {0.06 0 456 43000} 
+	layer M4:  max ratio 5000 metal scale 1, diode ratio {0.06 0 456 43000} 
+	layer M5:  max ratio 5000 metal scale 1, diode ratio {0.06 0 456 43000} 
+	layer M6:  max ratio 5000 metal scale 1, diode ratio {0.06 0 456 43000} 
+	layer M7:  max ratio 5000 metal scale 1, diode ratio {0.06 0 456 43000} 
+	layer M8:  max ratio 5000 metal scale 1, diode ratio {0.06 0 456 43000} 
+	layer M9:  max ratio 5000 metal scale 1, diode ratio {0 1 0 0} 
+	layer AP:  metal scale 1, diode ratio {0 0 1 0 0} 
+	layer CO: , diode ratio {0 0 1 0 0} 
+	layer VIA1:  max ratio 900 cut scale 1, diode ratio {0.06 0 210 900} 
+	layer VIA2:  max ratio 900 cut scale 1, diode ratio {0.06 0 210 900} 
+	layer VIA3:  max ratio 900 cut scale 1, diode ratio {0.06 0 210 900} 
+	layer VIA4:  max ratio 900 cut scale 1, diode ratio {0.06 0 210 900} 
+	layer VIA5:  max ratio 900 cut scale 1, diode ratio {0.06 0 210 900} 
+	layer VIA6:  max ratio 900 cut scale 1, diode ratio {0.06 0 210 900} 
+	layer VIA7:  max ratio 900 cut scale 1, diode ratio {0.06 0 210 900} 
+	layer VIA8:  max ratio 900 cut scale 1, diode ratio {0.06 0 210 900} 
+	layer RV:  cut scale 1, diode ratio {0 0 1 0 0} 
+Found antenna rule mode 4, diode mode 4:
+	layer M1: , diode ratio {0 0 1 0 0} 
+	layer M2: , diode ratio {0 0 1 0 0} 
+	layer M3: , diode ratio {0 0 1 0 0} 
+	layer M4: , diode ratio {0 0 1 0 0} 
+	layer M5: , diode ratio {0 0 1 0 0} 
+	layer M6: , diode ratio {0 0 1 0 0} 
+	layer M7: , diode ratio {0 0 1 0 0} 
+	layer M8: , diode ratio {0 0 1 0 0} 
+	layer M9: , diode ratio {0 0 1 0 0} 
+	layer AP:  max ratio 2000, diode ratio {0.06 0 8000 30000} 
+	layer CO: , diode ratio {0 0 1 0 0} 
+	layer VIA1: , diode ratio {0 0 1 0 0} 
+	layer VIA2: , diode ratio {0 0 1 0 0} 
+	layer VIA3: , diode ratio {0 0 1 0 0} 
+	layer VIA4: , diode ratio {0 0 1 0 0} 
+	layer VIA5: , diode ratio {0 0 1 0 0} 
+	layer VIA6: , diode ratio {0 0 1 0 0} 
+	layer VIA7: , diode ratio {0 0 1 0 0} 
+	layer VIA8: , diode ratio {0 0 1 0 0} 
+	layer RV: , diode ratio {0 0 1 0 0} 
+Information: Option route.detail.force_end_on_preferred_grid will be ignored since none of the layers have preferred grid. (ZRT-703)
+Skipping 1 internal pins that are not physical. Set route.common.verbose_level to > 0 and run routing command to get skipped pin names.
+Info: number of net_type_blockage: 0 
+Information: Via ladder engine would be activated for pattern must join connection in certain commands. Please refer to man-page for the command list. (ZRT-619)
+Via on layer (VIA1) needs more than one tracks
+Warning: Layer M1 pitch 0.200 may be too small: wire/via-down 0.180, wire/via-up 0.225. (ZRT-026)
+Via on layer (VIA7) needs more than one tracks
+Warning: Layer M7 pitch 0.200 may be too small: wire/via-down 0.200, wire/via-up 0.350. (ZRT-026)
+Via on layer (RV) needs more than one tracks
+Warning: Layer M9 pitch 0.800 may be too small: wire/via-down 0.800, wire/via-up 3.600. (ZRT-026)
+Information: When applicable Min-max layer allow_pin_connection mode will allow paths of length 5.03 outside the layer range. (ZRT-707)
+Information: When applicable Min-max layer allow_pin_connection mode will allow paths of length 5.03 outside the layer range on clock nets. (ZRT-718)
+Information: When applicable layer based tapering will taper up to 0.00 in distance from the pin. (ZRT-706)
+
+
+Start checking for open nets ... 
+
+Total number of nets = 254, of which 0 are not extracted
+Total number of open nets = 0, of which 0 are frozen
+
+Check 254 nets, 0 have Errors
+
+[CHECK OPEN NETS] Elapsed real time: 0:00:00 
+[CHECK OPEN NETS] Elapsed cpu  time: sys=0:00:00 usr=0:00:00 total=0:00:00
+[CHECK OPEN NETS] Stage (MB): Used    0  Alloctr    0  Proc    0 
+[CHECK OPEN NETS] Total (MB): Used   20  Alloctr   20  Proc 7576 
+Printing options for 'route.common.*'
+common.eco_route_fix_existing_drc                       :	 true                
+common.via_on_grid_by_layer_name                        :	 {VIA1_C false} {VIA2_C true}
+common.wire_on_grid_by_layer_name                       :	 {M1 true} {M2 true} {M3 true}
+
+Printing options for 'route.detail.*'
+detail.antenna                                          :	 true                
+detail.antenna_fixing_preference                        :	 use_diodes          
+detail.diode_libcell_names                              :	 */ANTENNAHPBWP      
+detail.eco_route_use_soft_spacing_for_timing_optimization:	 true                
+detail.insert_diodes_during_routing                     :	 true                
+detail.timing_driven                                    :	 true                
+
+Printing options for 'route.auto_via_ladder.*'
+
+*****Start reporting antenna related parameters*****
+  Antenna/diode mode:
+    Antenna mode 1; diode mode 4
+      Metal lay (M1)0; maxRatio 2147483648.000 maxPRatio 2147483648.000 maxNRatio 2147483648.000; vector (0.000 0.000 1.000 0.000 0.000)
+      Cut lay (VIA1)1; maxRatio 20.000 maxPRatio 2147483648.000 maxNRatio 2147483648.000; vector (0.000 0.000 1.000 0.000 0.000)
+      Metal lay (M2)1; maxRatio 2147483648.000 maxPRatio 2147483648.000 maxNRatio 2147483648.000; vector (0.000 0.000 1.000 0.000 0.000)
+      Cut lay (VIA2)2; maxRatio 20.000 maxPRatio 2147483648.000 maxNRatio 2147483648.000; vector (0.000 0.000 1.000 0.000 0.000)
+      Metal lay (M3)2; maxRatio 2147483648.000 maxPRatio 2147483648.000 maxNRatio 2147483648.000; vector (0.000 0.000 1.000 0.000 0.000)
+      Cut lay (VIA3)3; maxRatio 20.000 maxPRatio 2147483648.000 maxNRatio 2147483648.000; vector (0.000 0.000 1.000 0.000 0.000)
+      Metal lay (M4)3; maxRatio 2147483648.000 maxPRatio 2147483648.000 maxNRatio 2147483648.000; vector (0.000 0.000 1.000 0.000 0.000)
+      Cut lay (VIA4)4; maxRatio 20.000 maxPRatio 2147483648.000 maxNRatio 2147483648.000; vector (0.000 0.000 1.000 0.000 0.000)
+      Metal lay (M5)4; maxRatio 2147483648.000 maxPRatio 2147483648.000 maxNRatio 2147483648.000; vector (0.000 0.000 1.000 0.000 0.000)
+      Cut lay (VIA5)5; maxRatio 20.000 maxPRatio 2147483648.000 maxNRatio 2147483648.000; vector (0.000 0.000 1.000 0.000 0.000)
+      Metal lay (M6)5; maxRatio 2147483648.000 maxPRatio 2147483648.000 maxNRatio 2147483648.000; vector (0.000 0.000 1.000 0.000 0.000)
+      Cut lay (VIA6)6; maxRatio 20.000 maxPRatio 2147483648.000 maxNRatio 2147483648.000; vector (0.000 0.000 1.000 0.000 0.000)
+      Metal lay (M7)6; maxRatio 2147483648.000 maxPRatio 2147483648.000 maxNRatio 2147483648.000; vector (0.000 0.000 1.000 0.000 0.000)
+      Cut lay (VIA7)7; maxRatio 20.000 maxPRatio 2147483648.000 maxNRatio 2147483648.000; vector (0.000 0.000 1.000 0.000 0.000)
+      Metal lay (M8)7; maxRatio 2147483648.000 maxPRatio 2147483648.000 maxNRatio 2147483648.000; vector (0.000 0.000 1.000 0.000 0.000)
+      Cut lay (VIA8)8; maxRatio 20.000 maxPRatio 2147483648.000 maxNRatio 2147483648.000; vector (0.000 0.000 1.000 0.000 0.000)
+      Metal lay (M9)8; maxRatio 5000.000 maxPRatio 2147483648.000 maxNRatio 2147483648.000; vector (0.060 0.000 8000.000 50000.000 0.000)
+      Cut lay (RV)9; maxRatio 200.000 maxPRatio 2147483648.000 maxNRatio 2147483648.000; vector (0.060 0.000 83.000 400.000 0.000)
+      Metal lay (AP)9; maxRatio 2147483648.000 maxPRatio 2147483648.000 maxNRatio 2147483648.000; vector (0.000 0.000 1.000 0.000 0.000)
+    Antenna mode 2; diode mode 4
+      Metal lay (M1)0; maxRatio 5000.000 maxPRatio 2147483648.000 maxNRatio 2147483648.000; vector (0.060 0.000 456.000 43000.000 0.000); protectedMetalScale 1.000
+      Cut lay (VIA1)1; maxRatio 900.000 maxPRatio 2147483648.000 maxNRatio 2147483648.000; vector (0.060 0.000 210.000 900.000 0.000); protectedCutScale 1.000
+      Metal lay (M2)1; maxRatio 5000.000 maxPRatio 2147483648.000 maxNRatio 2147483648.000; vector (0.060 0.000 456.000 43000.000 0.000); protectedMetalScale 1.000
+      Cut lay (VIA2)2; maxRatio 900.000 maxPRatio 2147483648.000 maxNRatio 2147483648.000; vector (0.060 0.000 210.000 900.000 0.000); protectedCutScale 1.000
+      Metal lay (M3)2; maxRatio 5000.000 maxPRatio 2147483648.000 maxNRatio 2147483648.000; vector (0.060 0.000 456.000 43000.000 0.000); protectedMetalScale 1.000
+      Cut lay (VIA3)3; maxRatio 900.000 maxPRatio 2147483648.000 maxNRatio 2147483648.000; vector (0.060 0.000 210.000 900.000 0.000); protectedCutScale 1.000
+      Metal lay (M4)3; maxRatio 5000.000 maxPRatio 2147483648.000 maxNRatio 2147483648.000; vector (0.060 0.000 456.000 43000.000 0.000); protectedMetalScale 1.000
+      Cut lay (VIA4)4; maxRatio 900.000 maxPRatio 2147483648.000 maxNRatio 2147483648.000; vector (0.060 0.000 210.000 900.000 0.000); protectedCutScale 1.000
+      Metal lay (M5)4; maxRatio 5000.000 maxPRatio 2147483648.000 maxNRatio 2147483648.000; vector (0.060 0.000 456.000 43000.000 0.000); protectedMetalScale 1.000
+      Cut lay (VIA5)5; maxRatio 900.000 maxPRatio 2147483648.000 maxNRatio 2147483648.000; vector (0.060 0.000 210.000 900.000 0.000); protectedCutScale 1.000
+      Metal lay (M6)5; maxRatio 5000.000 maxPRatio 2147483648.000 maxNRatio 2147483648.000; vector (0.060 0.000 456.000 43000.000 0.000); protectedMetalScale 1.000
+      Cut lay (VIA6)6; maxRatio 900.000 maxPRatio 2147483648.000 maxNRatio 2147483648.000; vector (0.060 0.000 210.000 900.000 0.000); protectedCutScale 1.000
+      Metal lay (M7)6; maxRatio 5000.000 maxPRatio 2147483648.000 maxNRatio 2147483648.000; vector (0.060 0.000 456.000 43000.000 0.000); protectedMetalScale 1.000
+      Cut lay (VIA7)7; maxRatio 900.000 maxPRatio 2147483648.000 maxNRatio 2147483648.000; vector (0.060 0.000 210.000 900.000 0.000); protectedCutScale 1.000
+      Metal lay (M8)7; maxRatio 5000.000 maxPRatio 2147483648.000 maxNRatio 2147483648.000; vector (0.060 0.000 456.000 43000.000 0.000); protectedMetalScale 1.000
+      Cut lay (VIA8)8; maxRatio 900.000 maxPRatio 2147483648.000 maxNRatio 2147483648.000; vector (0.060 0.000 210.000 900.000 0.000); protectedCutScale 1.000
+      Metal lay (M9)8; maxRatio 5000.000 maxPRatio 2147483648.000 maxNRatio 2147483648.000; vector (0.000 1.000 0.000 0.000 0.000); protectedMetalScale 1.000
+      Cut lay (RV)9; maxRatio 2147483648.000 maxPRatio 2147483648.000 maxNRatio 2147483648.000; vector (0.000 0.000 1.000 0.000 0.000); protectedCutScale 1.000
+      Metal lay (AP)9; maxRatio 2147483648.000 maxPRatio 2147483648.000 maxNRatio 2147483648.000; vector (0.000 0.000 1.000 0.000 0.000); protectedMetalScale 1.000
+    Antenna mode 4; diode mode 4
+      Metal lay (M1)0; maxRatio 2147483648.000 maxPRatio 2147483648.000 maxNRatio 2147483648.000; vector (0.000 0.000 1.000 0.000 0.000)
+      Cut lay (VIA1)1; maxRatio 2147483648.000 maxPRatio 2147483648.000 maxNRatio 2147483648.000; vector (0.000 0.000 1.000 0.000 0.000)
+      Metal lay (M2)1; maxRatio 2147483648.000 maxPRatio 2147483648.000 maxNRatio 2147483648.000; vector (0.000 0.000 1.000 0.000 0.000)
+      Cut lay (VIA2)2; maxRatio 2147483648.000 maxPRatio 2147483648.000 maxNRatio 2147483648.000; vector (0.000 0.000 1.000 0.000 0.000)
+      Metal lay (M3)2; maxRatio 2147483648.000 maxPRatio 2147483648.000 maxNRatio 2147483648.000; vector (0.000 0.000 1.000 0.000 0.000)
+      Cut lay (VIA3)3; maxRatio 2147483648.000 maxPRatio 2147483648.000 maxNRatio 2147483648.000; vector (0.000 0.000 1.000 0.000 0.000)
+      Metal lay (M4)3; maxRatio 2147483648.000 maxPRatio 2147483648.000 maxNRatio 2147483648.000; vector (0.000 0.000 1.000 0.000 0.000)
+      Cut lay (VIA4)4; maxRatio 2147483648.000 maxPRatio 2147483648.000 maxNRatio 2147483648.000; vector (0.000 0.000 1.000 0.000 0.000)
+      Metal lay (M5)4; maxRatio 2147483648.000 maxPRatio 2147483648.000 maxNRatio 2147483648.000; vector (0.000 0.000 1.000 0.000 0.000)
+      Cut lay (VIA5)5; maxRatio 2147483648.000 maxPRatio 2147483648.000 maxNRatio 2147483648.000; vector (0.000 0.000 1.000 0.000 0.000)
+      Metal lay (M6)5; maxRatio 2147483648.000 maxPRatio 2147483648.000 maxNRatio 2147483648.000; vector (0.000 0.000 1.000 0.000 0.000)
+      Cut lay (VIA6)6; maxRatio 2147483648.000 maxPRatio 2147483648.000 maxNRatio 2147483648.000; vector (0.000 0.000 1.000 0.000 0.000)
+      Metal lay (M7)6; maxRatio 2147483648.000 maxPRatio 2147483648.000 maxNRatio 2147483648.000; vector (0.000 0.000 1.000 0.000 0.000)
+      Cut lay (VIA7)7; maxRatio 2147483648.000 maxPRatio 2147483648.000 maxNRatio 2147483648.000; vector (0.000 0.000 1.000 0.000 0.000)
+      Metal lay (M8)7; maxRatio 2147483648.000 maxPRatio 2147483648.000 maxNRatio 2147483648.000; vector (0.000 0.000 1.000 0.000 0.000)
+      Cut lay (VIA8)8; maxRatio 2147483648.000 maxPRatio 2147483648.000 maxNRatio 2147483648.000; vector (0.000 0.000 1.000 0.000 0.000)
+      Metal lay (M9)8; maxRatio 2147483648.000 maxPRatio 2147483648.000 maxNRatio 2147483648.000; vector (0.000 0.000 1.000 0.000 0.000)
+      Cut lay (RV)9; maxRatio 2147483648.000 maxPRatio 2147483648.000 maxNRatio 2147483648.000; vector (0.000 0.000 1.000 0.000 0.000)
+      Metal lay (AP)9; maxRatio 2000.000 maxPRatio 2147483648.000 maxNRatio 2147483648.000; vector (0.060 0.000 8000.000 30000.000 0.000)
+  Top lay antenna ratio fix threshold == -1
+  Antenna max pin count threshold == -1
+  Check PG net == false
+  MergeGate == true
+  Break antenna to port mode == float
+  Break antenna to macro pin mode == normal
+*****End reporting antenna related parameters*****
+Warning: Skipping antenna analysis for net mode[1]. The pin mode[1] on cell top does not have enough gate area information. (ZRT-311)
+Warning: Skipping antenna analysis for net mode[0]. The pin mode[0] on cell top does not have enough gate area information. (ZRT-311)
+Warning: Skipping antenna analysis for net parallel_in[15]. The pin parallel_in[15] on cell top does not have enough gate area information. (ZRT-311)
+Warning: Skipping antenna analysis for net parallel_in[14]. The pin parallel_in[14] on cell top does not have enough gate area information. (ZRT-311)
+Warning: Skipping antenna analysis for net parallel_in[13]. The pin parallel_in[13] on cell top does not have enough gate area information. (ZRT-311)
+Warning: Skipping antenna analysis for net parallel_in[12]. The pin parallel_in[12] on cell top does not have enough gate area information. (ZRT-311)
+Warning: Skipping antenna analysis for net parallel_in[11]. The pin parallel_in[11] on cell top does not have enough gate area information. (ZRT-311)
+Warning: Skipping antenna analysis for net parallel_in[10]. The pin parallel_in[10] on cell top does not have enough gate area information. (ZRT-311)
+Warning: Skipping antenna analysis for net parallel_in[9]. The pin parallel_in[9] on cell top does not have enough gate area information. (ZRT-311)
+Warning: Skipping antenna analysis for net parallel_in[8]. The pin parallel_in[8] on cell top does not have enough gate area information. (ZRT-311)
+Warning: Skipping antenna analysis for net parallel_in[7]. The pin parallel_in[7] on cell top does not have enough gate area information. (ZRT-311)
+Warning: Skipping antenna analysis for net parallel_in[6]. The pin parallel_in[6] on cell top does not have enough gate area information. (ZRT-311)
+Warning: Skipping antenna analysis for net parallel_in[5]. The pin parallel_in[5] on cell top does not have enough gate area information. (ZRT-311)
+Warning: Skipping antenna analysis for net parallel_in[4]. The pin parallel_in[4] on cell top does not have enough gate area information. (ZRT-311)
+Warning: Skipping antenna analysis for net parallel_in[3]. The pin parallel_in[3] on cell top does not have enough gate area information. (ZRT-311)
+Warning: Skipping antenna analysis for net parallel_in[2]. The pin parallel_in[2] on cell top does not have enough gate area information. (ZRT-311)
+Warning: Skipping antenna analysis for net parallel_in[1]. The pin parallel_in[1] on cell top does not have enough gate area information. (ZRT-311)
+Warning: Skipping antenna analysis for net parallel_in[0]. The pin parallel_in[0] on cell top does not have enough gate area information. (ZRT-311)
+Warning: Skipping antenna analysis for net clk. The pin clk on cell top does not have enough gate area information. (ZRT-311)
+Warning: Skipping antenna analysis for net rst. The pin rst on cell top does not have enough gate area information. (ZRT-311)
+Warning: Skipping antenna analysis for net enable. The pin enable on cell top does not have enough gate area information. (ZRT-311)
+Warning: Skipping antenna analysis for net load. The pin load on cell top does not have enough gate area information. (ZRT-311)
+Warning: Skipping antenna analysis for net serial_in. The pin serial_in on cell top does not have enough gate area information. (ZRT-311)
+Skipping antenna analysis for 23 nets as they don't have enough gate area info.
+
+Begin full DRC check ...
+
+Information: Using 1 threads for routing. (ZRT-444)
+Checked	1/1 Partitions, Violations =	0
+[DRC CHECK] Elapsed real time: 0:00:00 
+[DRC CHECK] Elapsed cpu  time: sys=0:00:00 usr=0:00:00 total=0:00:00
+[DRC CHECK] Stage (MB): Used    0  Alloctr    0  Proc    3 
+[DRC CHECK] Total (MB): Used   91  Alloctr   92  Proc 7579 
+Start net based rule analysis
+Found 0 antenna instance ports
+End net based rule analysis
+[Antenna analysis] Elapsed real time: 0:00:00 
+[Antenna analysis] Elapsed cpu  time: sys=0:00:00 usr=0:00:00 total=0:00:00
+[Antenna analysis] Stage (MB): Used    0  Alloctr    0  Proc    0 
+[Antenna analysis] Total (MB): Used   92  Alloctr   93  Proc 7579 
+
+DRC-SUMMARY:
+	@@@@@@@ TOTAL VIOLATIONS =	0
+
+
+Total Wire Length =                    5862 micron
+Total Number of Contacts =             3078
+Total Number of Wires =                3019
+Total Number of PtConns =              429
+Total Number of Routed Wires =       2830
+Total Routed Wire Length =           5305 micron
+Total Number of Routed Contacts =       3026
+	Layer                M1 :         12 micron
+	Layer                M2 :       1166 micron
+	Layer                M3 :        488 micron
+	Layer                M4 :       1303 micron
+	Layer                M5 :       2181 micron
+	Layer                M6 :        155 micron
+	Layer                M7 :          0 micron
+	Layer                M8 :          0 micron
+	Layer                M9 :          0 micron
+	Layer                AP :          0 micron
+	Via           VIA56_1x2 :          3
+	Via           VIA56_2x1 :         42
+	Via               VIA45 :         29
+	Via        FATVIA45_2x1 :          0
+	Via      VIA45(rot)_1x2 :          0
+	Via           VIA45_1x2 :        402
+	Via           VIA45_2x1 :        149
+	Via               VIA34 :         45
+	Via   FATVIA34(rot)_1x2 :          0
+	Via        FATVIA34_1x2 :          0
+	Via        FATVIA34_2x2 :          0
+	Via   FATVIA34_2x2(rot) :          0
+	Via        FATVIA34_1x4 :          0
+	Via      VIA34(rot)_1x2 :          9
+	Via      VIA34(rot)_2x1 :          5
+	Via           VIA34_1x2 :        304
+	Via           VIA34_2x1 :        282
+	Via               VIA23 :         66
+	Via          VIA23(rot) :          1
+	Via      VIA23(rot)_1x2 :         16
+	Via      VIA23(rot)_2x1 :         10
+	Via           VIA23_1x2 :        546
+	Via           VIA23_2x1 :        147
+	Via               VIA12 :        214
+	Via          VIA12(rot) :         33
+	Via   FATVIA12(rot)_1x2 :          1
+	Via      VIA12(rot)_1x2 :         40
+	Via      VIA12(rot)_2x1 :        100
+	Via           VIA12_1x2 :        452
+	Via           VIA12_2x1 :        130
+
+ 
+Redundant via conversion report:
+--------------------------------
+
+  Total optimized via conversion rate = 87.04% (2679 / 3078 vias)
+ 
+    Layer VIA1       = 74.54% (723    / 970     vias)
+        Weight 1     = 74.54% (723     vias)
+        Un-optimized =  0.00% (0       vias)
+        Un-mapped    = 25.46% (247     vias)
+    Layer VIA2       = 91.48% (719    / 786     vias)
+        Weight 1     = 91.48% (719     vias)
+        Un-optimized =  0.00% (0       vias)
+        Un-mapped    =  8.52% (67      vias)
+    Layer VIA3       = 92.68% (633    / 683     vias)
+        Weight 1     = 92.68% (633     vias)
+        Un-optimized =  0.00% (0       vias)
+        Un-mapped    =  7.32% (50      vias)
+    Layer VIA4       = 94.11% (559    / 594     vias)
+        Weight 1     = 94.11% (559     vias)
+        Un-optimized =  0.00% (0       vias)
+        Un-mapped    =  5.89% (35      vias)
+    Layer VIA5       = 100.00% (45     / 45      vias)
+        Weight 1     = 100.00% (45      vias)
+        Un-optimized =  0.00% (0       vias)
+        Un-mapped    =  0.00% (0       vias)
+ 
+  Total double via conversion rate    = 87.04% (2679 / 3078 vias)
+ 
+    Layer VIA1       = 74.54% (723    / 970     vias)
+    Layer VIA2       = 91.48% (719    / 786     vias)
+    Layer VIA3       = 92.68% (633    / 683     vias)
+    Layer VIA4       = 94.11% (559    / 594     vias)
+    Layer VIA5       = 100.00% (45     / 45      vias)
+ 
+  The optimized via conversion rate based on total routed via count = 87.04% (2679 / 3078 vias)
+ 
+    Layer VIA1       = 74.54% (723    / 970     vias)
+        Weight 1     = 74.54% (723     vias)
+        Un-optimized =  0.00% (0       vias)
+        Un-mapped    = 25.46% (247     vias)
+    Layer VIA2       = 91.48% (719    / 786     vias)
+        Weight 1     = 91.48% (719     vias)
+        Un-optimized =  0.00% (0       vias)
+        Un-mapped    =  8.52% (67      vias)
+    Layer VIA3       = 92.68% (633    / 683     vias)
+        Weight 1     = 92.68% (633     vias)
+        Un-optimized =  0.00% (0       vias)
+        Un-mapped    =  7.32% (50      vias)
+    Layer VIA4       = 94.11% (559    / 594     vias)
+        Weight 1     = 94.11% (559     vias)
+        Un-optimized =  0.00% (0       vias)
+        Un-mapped    =  5.89% (35      vias)
+    Layer VIA5       = 100.00% (45     / 45      vias)
+        Weight 1     = 100.00% (45      vias)
+        Un-optimized =  0.00% (0       vias)
+        Un-mapped    =  0.00% (0       vias)
+ 
+
+
+Verify Summary:
+
+Total number of nets = 254, of which 0 are not extracted
+Total number of open nets = 0, of which 0 are frozen
+Total number of excluded ports = 0 ports of 0 unplaced cells connected to 0 nets
+                                 0 ports without pins of 0 cells connected to 0 nets
+                                 0 ports of 0 cover cells connected to 0 non-pg nets
+Total number of DRCs = 0
+Total number of antenna violations = 0
+Total number of tie to rail violations = not checked
+Total number of tie to rail directly violations = not checked
+
+
+check_lvs -max_errors 1500 -open_reporting detailed
+Information: Using 1 threads for LVS
+[Check Short] Stage 1	Elapsed =    0:00:00, CPU =    0:00:00
+[Check Short] Stage 1-2	Elapsed =    0:00:00, CPU =    0:00:00
+[Check Short] Stage 2	Elapsed =    0:00:00, CPU =    0:00:00
+[Check Short] Stage 2-2	Elapsed =    0:00:00, CPU =    0:00:00
+[Check Short] Stage 3	Elapsed =    0:00:00, CPU =    0:00:00
+[Check Short] End	Elapsed =    0:00:00, CPU =    0:00:00
+[Check Net] Init	Elapsed =    0:00:00, CPU =    0:00:00
+[Check Net] 10% 	Elapsed =    0:00:00, CPU =    0:00:00
+[Check Net] 20% 	Elapsed =    0:00:00, CPU =    0:00:00
+[Check Net] 30% 	Elapsed =    0:00:00, CPU =    0:00:00
+[Check Net] 40% 	Elapsed =    0:00:00, CPU =    0:00:00
+[Check Net] 50% 	Elapsed =    0:00:00, CPU =    0:00:00
+[Check Net] 60% 	Elapsed =    0:00:00, CPU =    0:00:00
+[Check Net] 70% 	Elapsed =    0:00:00, CPU =    0:00:00
+[Check Net] 80% 	Elapsed =    0:00:00, CPU =    0:00:00
+[Check Net] 90% 	Elapsed =    0:00:00, CPU =    0:00:00
+[Check Net] All nets are submitted.
+[Check Net] 100%	Elapsed =    0:00:00, CPU =    0:00:00
+
+===============================================================
+    Maximum number of violations is set to 1500
+    Abort checking when more than 1500 violations are found
+    All violations might not be found.
+===============================================================
+Total number of input nets is 254.
+Total number of short violations is 0.
+Total number of open locations is 0 (0 open nets).
+Total number of floating route violations is 0.
+
+Elapsed =    0:00:00, CPU =    0:00:00
+1
+#### ----- Connect PG nets ----- ####
+#connect_pg_net -net VDD [get_pins -hierarchical  */VDD]
+#connect_pg_net -net VSS [get_pins -hierarchical  */VSS]
+# Save block before ICV run
+save_block
+Information: The command 'save_block' cleared the undo history. (UNDO-016)
+Information: Saving block 'top_lib:top/signoff.design'
+1
+#### ----- ICV In-Design Run ----- ####
+# Max cores
+set_host_options -target ICV -max_cores 2
+1
+# Select runset file
+set_app_options -name  signoff.check_drc.runset -value ${DRC_RUNSET_FILE}
+signoff.check_drc.runset /mnt/vol_NFS_rh003/estudiantes/DANIELA_VARGAS/Version_final/0516/versiones_finales/semana14/Registro_Hamming/Hamming_16/FLOW/fc_flow/flow/work/../../DRC/ICVLN65S_9M_6X2Z.26_1a
+# Select GDS file
+set_app_options -name  signoff.physical.layer_map_file -value ${GDS_MAP_FILE}
+signoff.physical.layer_map_file /mnt/vol_NFS_rh003/profesores/pmendoza/KITS/TSMCHOME/digital/Back_End/milkyway/tcbn65lphpbwpcg_200a/gdsout_6X2Z.map
+# Max errors per rule
+set_app_options -name signoff.check_drc.max_errors_per_rule -value 1000
+signoff.check_drc.max_errors_per_rule 1000
+# Reports file 
+set_app_options -name signoff.check_drc.run_dir -value "./signoff_drc_run/"
+signoff.check_drc.run_dir ./signoff_drc_run/
+# Specify ICV version    
+set_app_options -name signoff.check_drc.user_defined_options -value ${ICV}
+signoff.check_drc.user_defined_options {-I /mnt/vol_synopsys2023/pdks/xfab/design/xkit/xh018/synopsys/v9_0/ICValidator/v9_0_2}
+set_app_options -name signoff.fix_drc.user_defined_options -value ${ICV}
+signoff.fix_drc.user_defined_options {-I /mnt/vol_synopsys2023/pdks/xfab/design/xkit/xh018/synopsys/v9_0/ICValidator/v9_0_2}
+# Save block before DRC check
+save_block
+Information: Saving block 'top_lib:top/signoff.design'
+1
+# Run ICV DRC 
+signoff_check_drc
+Num filler cells found = 161, skipped = 0
+
+Start to run ICV ...
+Running new impl for popen..
+............................................. 0% complete [0:00:00]
+............................................. 0% complete [0:00:00]
+............................................. 0% complete [0:00:00]
+............................................. 0% complete [0:00:00]
+............................................. 0% complete [0:00:00]
+............................................. 0% complete [0:00:00]
+............................................. 0% complete [0:00:00]
+............................................. 0% complete [0:00:00]
+............................................. 0% complete [0:00:00]
+............................................. 0% complete [0:00:00]
+............................................. 0% complete [0:00:00]
+............................................. 0% complete [0:00:00]
+............................................. 0% complete [0:00:00]
+............................................. 0% complete [0:00:00]
+............................................. 0% complete [0:00:00]
+............................................. 0% complete [0:00:00]
+............................................. 0% complete [0:00:00]
+............................................. 0% complete [0:00:00]
+............................................. 0% complete [0:00:00]
+............................................. 0% complete [0:00:00]
+............................................. 0% complete [0:00:00]
+............................................. 0% complete [0:00:00]
+............................................. 0% complete [0:00:00]
+............................................. 0% complete [0:00:00]
+............................................. 0% complete [0:00:00]
+............................................. 0% complete [0:00:00]
+............................................. 0% complete [0:00:00]
+............................................. 0% complete [0:00:00]
+............................................. 0% complete [0:00:00]
+............................................. 0% complete [0:00:00]
+............................................. 0% complete [0:00:00]
+............................................. 0% complete [0:00:00]
+............................................. 0% complete [0:00:00]
+............................................. 0% complete [0:00:00]
+............................................. 1% complete [0:00:08]
+............................................. 2% complete [0:00:08]
+............................................. 3% complete [0:00:08]
+............................................. 3% complete [0:00:08]
+............................................. 4% complete [0:00:08]
+............................................. 5% complete [0:00:08]
+............................................. 5% complete [0:00:08]
+............................................. 5% complete [0:00:08]
+............................................. 5% complete [0:00:08]
+............................................. 5% complete [0:00:08]
+............................................. 5% complete [0:00:08]
+............................................. 10% complete [0:00:08]
+............................................. 10% complete [0:00:08]
+............................................. 10% complete [0:00:08]
+............................................. 10% complete [0:00:08]
+............................................. 10% complete [0:00:08]
+............................................. 10% complete [0:00:08]
+............................................. 15% complete [0:00:09]
+............................................. 15% complete [0:00:09]
+............................................. 15% complete [0:00:09]
+............................................. 15% complete [0:00:09]
+............................................. 15% complete [0:00:09]
+............................................. 15% complete [0:00:09]
+............................................. 20% complete [0:00:09]
+............................................. 20% complete [0:00:09]
+............................................. 20% complete [0:00:09]
+............................................. 20% complete [0:00:09]
+............................................. 20% complete [0:00:09]
+............................................. 20% complete [0:00:09]
+............................................. 25% complete [0:00:10]
+............................................. 25% complete [0:00:10]
+............................................. 25% complete [0:00:10]
+............................................. 25% complete [0:00:10]
+............................................. 25% complete [0:00:10]
+............................................. 25% complete [0:00:10]
+............................................. 30% complete [0:00:11]
+............................................. 30% complete [0:00:11]
+............................................. 30% complete [0:00:11]
+............................................. 30% complete [0:00:11]
+............................................. 30% complete [0:00:11]
+............................................. 30% complete [0:00:11]
+............................................. 30% complete [0:00:11]
+............................................. 30% complete [0:00:11]
+............................................. 35% complete [0:00:12]
+............................................. 35% complete [0:00:12]
+............................................. 35% complete [0:00:12]
+............................................. 35% complete [0:00:12]
+............................................. 35% complete [0:00:12]
+............................................. 35% complete [0:00:12]
+............................................. 35% complete [0:00:12]
+............................................. 40% complete [0:00:14]
+............................................. 40% complete [0:00:14]
+............................................. 40% complete [0:00:14]
+............................................. 40% complete [0:00:14]
+............................................. 40% complete [0:00:14]
+............................................. 40% complete [0:00:14]
+............................................. 40% complete [0:00:14]
+............................................. 40% complete [0:00:14]
+............................................. 45% complete [0:00:15]
+............................................. 45% complete [0:00:15]
+............................................. 45% complete [0:00:15]
+............................................. 45% complete [0:00:15]
+............................................. 45% complete [0:00:15]
+............................................. 45% complete [0:00:15]
+............................................. 45% complete [0:00:15]
+............................................. 50% complete [0:00:17]
+............................................. 50% complete [0:00:17]
+............................................. 50% complete [0:00:17]
+............................................. 50% complete [0:00:17]
+............................................. 50% complete [0:00:17]
+............................................. 50% complete [0:00:17]
+............................................. 55% complete [0:00:19]
+............................................. 55% complete [0:00:19]
+............................................. 55% complete [0:00:19]
+............................................. 55% complete [0:00:19]
+............................................. 55% complete [0:00:19]
+............................................. 60% complete [0:00:20]
+............................................. 60% complete [0:00:20]
+............................................. 60% complete [0:00:20]
+............................................. 60% complete [0:00:20]
+............................................. 60% complete [0:00:20]
+............................................. 60% complete [0:00:20]
+............................................. 65% complete [0:00:22]
+............................................. 65% complete [0:00:22]
+............................................. 65% complete [0:00:22]
+............................................. 65% complete [0:00:22]
+............................................. 65% complete [0:00:22]
+............................................. 65% complete [0:00:22]
+............................................. 70% complete [0:00:23]
+............................................. 70% complete [0:00:23]
+............................................. 70% complete [0:00:23]
+............................................. 70% complete [0:00:23]
+............................................. 70% complete [0:00:23]
+............................................. 70% complete [0:00:23]
+............................................. 70% complete [0:00:23]
+............................................. 75% complete [0:00:26]
+............................................. 75% complete [0:00:26]
+............................................. 75% complete [0:00:26]
+............................................. 75% complete [0:00:26]
+............................................. 75% complete [0:00:26]
+............................................. 75% complete [0:00:26]
+............................................. 75% complete [0:00:26]
+............................................. 80% complete [0:00:30]
+............................................. 80% complete [0:00:30]
+............................................. 80% complete [0:00:30]
+............................................. 80% complete [0:00:30]
+............................................. 80% complete [0:00:30]
+............................................. 80% complete [0:00:30]
+............................................. 80% complete [0:00:30]
+............................................. 85% complete [0:00:32]
+............................................. 85% complete [0:00:32]
+............................................. 85% complete [0:00:32]
+............................................. 85% complete [0:00:32]
+............................................. 85% complete [0:00:32]
+............................................. 85% complete [0:00:32]
+............................................. 85% complete [0:00:32]
+............................................. 90% complete [0:00:35]
+............................................. 90% complete [0:00:35]
+............................................. 90% complete [0:00:35]
+............................................. 90% complete [0:00:35]
+............................................. 90% complete [0:00:35]
+............................................. 95% complete [0:00:36]
+............................................. 95% complete [0:00:36]
+............................................. 95% complete [0:00:36]
+............................................. 95% complete [0:00:36]
+............................................. 95% complete [0:00:36]
+................................Updated tech file has been written at: /mnt/vol_NFS_rh003/estudiantes/DANIELA_VARGAS/Version_final/0516/versiones_finales/semana14/Registro_Hamming/Hamming_16/FLOW/fc_flow/flow/work/signoff_drc_run/tech.tf
+
+ICV is done!
+For more details see /mnt/vol_NFS_rh003/estudiantes/DANIELA_VARGAS/Version_final/0516/versiones_finales/semana14/Registro_Hamming/Hamming_16/FLOW/fc_flow/flow/work/signoff_drc_run/signoff_check_drc.log
+Overall engine Time=0:01:36 Highest command Mem=0.124 GB
+
+-------------------------------------------------------------------------------
+Rule: CSR.R.1:COi : COi is not allowed inside the empty area of chip corner.	           1055 errors
+  WARNING: Runset error limit exceeded for this rule, some errors omitted.
+Rule: CSR.R.1:M1_real : M1_real is not allowed inside the empty area of chip corner.	           1079 errors
+  WARNING: Runset error limit exceeded for this rule, some errors omitted.
+Rule: CSR.R.1:M1i : M1i is not allowed inside the empty area of chip corner.	           1079 errors
+  WARNING: Runset error limit exceeded for this rule, some errors omitted.
+Rule: CSR.R.1:M2_real : M2_real is not allowed inside the empty area of chip corner.	            980 errors
+Rule: CSR.R.1:M2i : M2i is not allowed inside the empty area of chip corner.	            980 errors
+Rule: CSR.R.1:M3_real : M3_real is not allowed inside the empty area of chip corner.	            717 errors
+Rule: CSR.R.1:M3i : M3i is not allowed inside the empty area of chip corner.	            717 errors
+Rule: CSR.R.1:M4_real : M4_real is not allowed inside the empty area of chip corner.	            607 errors
+Rule: CSR.R.1:M4i : M4i is not allowed inside the empty area of chip corner.	            607 errors
+Rule: CSR.R.1:M5_real : M5_real is not allowed inside the empty area of chip corner.	            260 errors
+Rule: CSR.R.1:M5i : M5i is not allowed inside the empty area of chip corner.	            260 errors
+Rule: CSR.R.1:M6_real : M6_real is not allowed inside the empty area of chip corner.	             21 errors
+Rule: CSR.R.1:M6i : M6i is not allowed inside the empty area of chip corner.	             21 errors
+Rule: CSR.R.1:VIA1i : VIA1i is not allowed inside the empty area of chip corner.	           1084 errors
+  WARNING: Runset error limit exceeded for this rule, some errors omitted.
+Rule: CSR.R.1:VIA2i : VIA2i is not allowed inside the empty area of chip corner.	           1270 errors
+  WARNING: Runset error limit exceeded for this rule, some errors omitted.
+Rule: CSR.R.1:VIA3i : VIA3i is not allowed inside the empty area of chip corner.	           1332 errors
+Rule: CSR.R.1:VIA4i : VIA4i is not allowed inside the empty area of chip corner.	           1153 errors
+Rule: CSR.R.1:VIA5i : VIA5i is not allowed inside the empty area of chip corner.	             90 errors
+Rule: DM1.R.1 : DM1 is a must. The DM1 CAD layer (TSMC default, 31;1 for DM1) must be different from the M1 CAD layer.	              1 error
+Rule: DM2.R.1 : DM2 is a must. The DM2 CAD layer (TSMC default, 32;1 for DM2) must be different from the M2 CAD layer.	              1 error
+Rule: DM3.R.1 : DM3 is a must. The DM3 CAD layer (TSMC default, 33;1 for DM3) must be different from the M3 CAD layer.	              1 error
+Rule: DM4.R.1 : DM4 is a must. The DM4 CAD layer (TSMC default, 34;1 for DM4) must be different from the M4 CAD layer.	              1 error
+Rule: DM5.R.1 : DM5 is a must. The DM5 CAD layer (TSMC default, 35;1 for DM5) must be different from the M5 CAD layer.	              1 error
+Rule: DM6.R.1 : DM6 is a must. The DM6 CAD layer (TSMC default, 36;1 for DM6) must be different from the M6 CAD layer.	              1 error
+Rule: DM7.R.1 : DM7 is a must. The DM7 CAD layer (TSMC default, 37;1 for DM7) must be different from the M7 CAD layer.	              1 error
+Rule: DM8.R.1 : DM8 is a must. The DM8 CAD layer (TSMC default, 38;41 for DM8) must be different from the M8 CAD layer.	              1 error
+Rule: DM9.R.1 : DM9 is a must. The DM9 CAD layer (TSMC default, 39;41 for DM9) must be different from the M9 CAD layer.	              1 error
+-------------------------------------------------------------------------------
+
+signoff_check_drc is finished.
+
+Create error data signoff_check_drc.err ...
+
+Info: Populated ICV Heat Map Data on current block.
+# DRC fix
+signoff_fix_drc
+Initial DRC run directory path is set to "empty".
+Information: Running the advanced guidance based ADR flow.
+INFO: Initial DRC database is not provided. ADR will run DRC first.
+User-specified unselected rule patterns: { USER_GUIDE.M* USER_GUIDE.VIA* *:*Density*of* M*.DN.*:* VIA*.DN.*:* CSR*:* DM*:* Rule*DEN*:* Rule:.*USER_GUIDE.M* Rule:.*USER_GUIDE.VIA* Rule:.*:*Density*of* Rule:.*M*.DN.*:* Rule:.*VIA*.DN.*:* Rule:.*CSR*:* Rule:.*DM*:* *M*.R.14* *USER_GUIDE* *:WARNING* *:LOGO* *NW.[A-Z].* *NWRSTI.[A-Z].* *NWROD.[A-Z].* *OD[0-1].[A-Z].* *OD.[A-Z].* *Gate *PP.[A-Z].* *NP.[A-Z].* *SSD.[A-Z].* *DIODMY.[A-Z].* *RH_OD.[A-Z].* *RH_TN.[A-Z].* *HV_N.[A-Z].* *SR.[A-Z].* *:*Density*of* *ESD.[A-Z].* *SRAM.[A-Z].[0-9]* *ROM.[A-Z].[0-9]* *LUP.[A-Z][0-9].* *[0-9][A-Z]:HIADMY *[A-Z][0-9]:BJTDMY* *[A-Z][0-9]:BJTHDMY* *AN.R.[0-9]* *DOD.[A-Z].[0-9]* *DIODMY.[A-Z].[0-9]* *DTCD.[A-Z].[0-9]* *GRMx.C.2_M1* *GRMx.C.2_M2* *GRMx.C.2_M3* *GRMx.C.2_M4* *GRV1.C.6* *GRVx.C.6_V2* *GRVx.C.6_V3* *M1.G0.1__M1.G0.2__M1.G0.3* *M2.G0.1__M2.G0.2__M2.G0.3* *M3.G0.1__M3.G0.2__M3.G0.3* *M4.G0.1__M4.G0.2__M4.G0.3* *M5.G0.1__M5.G0.2__M5.G0.3* *M6.G0.1__M6.G0.2__M6.G0.3*}
+
+Start to run ICV ...
+Running new impl for popen..
+.......................................................................................... 0% complete [0:00:00]
+............................................. 0% complete [0:00:00]
+............................................. 0% complete [0:00:00]
+............................................. 0% complete [0:00:00]
+............................................. 0% complete [0:00:00]
+............................................. 0% complete [0:00:00]
+............................................. 0% complete [0:00:00]
+............................................. 0% complete [0:00:00]
+............................................. 0% complete [0:00:00]
+............................................. 0% complete [0:00:00]
+............................................. 0% complete [0:00:00]
+............................................. 0% complete [0:00:00]
+............................................. 0% complete [0:00:00]
+............................................. 0% complete [0:00:00]
+............................................. 0% complete [0:00:00]
+............................................. 0% complete [0:00:00]
+............................................. 0% complete [0:00:00]
+............................................. 0% complete [0:00:00]
+............................................. 0% complete [0:00:00]
+............................................. 0% complete [0:00:00]
+............................................. 0% complete [0:00:00]
+............................................. 0% complete [0:00:00]
+............................................. 0% complete [0:00:00]
+............................................. 1% complete [0:00:05]
+............................................. 2% complete [0:00:05]
+............................................. 3% complete [0:00:05]
+............................................. 4% complete [0:00:05]
+............................................. 5% complete [0:00:05]
+............................................. 5% complete [0:00:05]
+............................................. 5% complete [0:00:05]
+............................................. 5% complete [0:00:05]
+............................................. 5% complete [0:00:05]
+............................................. 10% complete [0:00:06]
+............................................. 10% complete [0:00:06]
+............................................. 10% complete [0:00:06]
+............................................. 10% complete [0:00:06]
+............................................. 15% complete [0:00:06]
+............................................. 15% complete [0:00:06]
+............................................. 15% complete [0:00:06]
+............................................. 15% complete [0:00:06]
+............................................. 15% complete [0:00:06]
+............................................. 20% complete [0:00:07]
+............................................. 20% complete [0:00:07]
+............................................. 20% complete [0:00:07]
+............................................. 20% complete [0:00:07]
+............................................. 20% complete [0:00:07]
+............................................. 25% complete [0:00:07]
+............................................. 25% complete [0:00:07]
+............................................. 25% complete [0:00:07]
+............................................. 25% complete [0:00:07]
+............................................. 25% complete [0:00:07]
+............................................. 30% complete [0:00:08]
+............................................. 30% complete [0:00:08]
+............................................. 30% complete [0:00:08]
+............................................. 30% complete [0:00:08]
+............................................. 30% complete [0:00:08]
+............................................. 30% complete [0:00:08]
+............................................. 35% complete [0:00:08]
+............................................. 35% complete [0:00:08]
+............................................. 35% complete [0:00:08]
+............................................. 35% complete [0:00:08]
+............................................. 35% complete [0:00:08]
+............................................. 40% complete [0:00:09]
+............................................. 40% complete [0:00:09]
+............................................. 40% complete [0:00:09]
+............................................. 40% complete [0:00:09]
+............................................. 40% complete [0:00:09]
+............................................. 45% complete [0:00:10]
+............................................. 45% complete [0:00:10]
+............................................. 45% complete [0:00:10]
+............................................. 45% complete [0:00:10]
+............................................. 50% complete [0:00:11]
+............................................. 50% complete [0:00:11]
+............................................. 50% complete [0:00:11]
+............................................. 50% complete [0:00:11]
+............................................. 55% complete [0:00:11]
+............................................. 55% complete [0:00:11]
+............................................. 55% complete [0:00:11]
+............................................. 55% complete [0:00:11]
+............................................. 60% complete [0:00:12]
+............................................. 60% complete [0:00:12]
+............................................. 60% complete [0:00:12]
+............................................. 60% complete [0:00:12]
+............................................. 60% complete [0:00:12]
+............................................. 65% complete [0:00:13]
+............................................. 65% complete [0:00:13]
+............................................. 65% complete [0:00:13]
+............................................. 65% complete [0:00:13]
+............................................. 70% complete [0:00:14]
+............................................. 70% complete [0:00:14]
+............................................. 70% complete [0:00:14]
+............................................. 70% complete [0:00:14]
+............................................. 70% complete [0:00:14]
+............................................. 75% complete [0:00:15]
+............................................. 75% complete [0:00:15]
+............................................. 75% complete [0:00:15]
+............................................. 75% complete [0:00:15]
+............................................. 80% complete [0:00:16]
+............................................. 80% complete [0:00:16]
+............................................. 80% complete [0:00:16]
+............................................. 80% complete [0:00:16]
+............................................. 80% complete [0:00:16]
+............................................. 85% complete [0:00:17]
+............................................. 85% complete [0:00:17]
+............................................. 85% complete [0:00:17]
+............................................. 85% complete [0:00:17]
+............................................. 85% complete [0:00:17]
+............................................. 85% complete [0:00:17]
+............................................. 90% complete [0:00:20]
+............................................. 90% complete [0:00:20]
+............................................. 90% complete [0:00:20]
+............................................. 90% complete [0:00:20]
+............................................. 90% complete [0:00:20]
+............................................. 95% complete [0:00:21]
+............................................. 95% complete [0:00:21]
+............................................. 95% complete [0:00:21]
+............................................. 95% complete [0:00:21]
+............................................. 95% complete [0:00:21]
+.....Updated tech file has been written at: /mnt/vol_NFS_rh003/estudiantes/DANIELA_VARGAS/Version_final/0516/versiones_finales/semana14/Registro_Hamming/Hamming_16/FLOW/fc_flow/flow/work/signoff_fix_drc_run/signoff_check_drc_run/tech.tf
+
+ICV is done!
+For more details see /mnt/vol_NFS_rh003/estudiantes/DANIELA_VARGAS/Version_final/0516/versiones_finales/semana14/Registro_Hamming/Hamming_16/FLOW/fc_flow/flow/work/signoff_fix_drc_run/signoff_check_drc_run/signoff_check_drc.log
+Overall engine Time=0:01:01 Highest command Mem=0.109 GB
+Information: No DRC error is reported! (RT-048)
+
+signoff_check_drc is finished.
+
+Create error data signoff_check_drc.err ...
+
+Info: Populated ICV Heat Map Data on current block.
+Reading ICV Error data...
+Information: Metal2 is vertical. Switching all the directional adr advanced guidances.
+Total of 0 error(s) targeted for Auto-Fix.
+No more targeted error found.
+Signoff DRC Auto Fixing has completed in 0 repair loops.
+
+Input DRC Error Database.......... /mnt/vol_NFS_rh003/estudiantes/DANIELA_VARGAS/Version_final/0516/versiones_finales/semana14/Registro_Hamming/Hamming_16/FLOW/fc_flow/flow/work/signoff_fix_drc_run/signoff_check_drc_run
+Limit to Cell..................... top
+Maximum Errors/Command............ 1000
+
+SIGNOFF AUTOFIX DRC SUMMARY:
+
+        DRC NAME        :   TOTAL DRC   : PROCESSED DRC :  TARGETED DRC : REMAINING TARGETED DRC :   FIX RATE   : COMMENT
+signoff.check_drc.max_errors_per_rule 1000 signoff.check_drc.run_dir ./signoff_drc_run/ signoff.check_drc.user_defined_options {-I /mnt/vol_synopsys2023/pdks/xfab/design/xkit/xh018/synopsys/v9_0/ICValidator/v9_0_2}
+#save_block
+# Run ICV DRC to check the results 
+signoff_check_drc -unselect_rules $UNSELECT_RULES
+User-specified unselected rule patterns: { PO.DN.2* OD.DN.2* M*.DN.1* CSR.R.1* DM*.R.1*}
+Num filler cells found = 161, skipped = 0
+
+Start to run ICV ...
+Running new impl for popen..
+.......................................................................................... 0% complete [0:00:00]
+............................................. 0% complete [0:00:00]
+............................................. 0% complete [0:00:00]
+............................................. 0% complete [0:00:00]
+............................................. 0% complete [0:00:00]
+............................................. 0% complete [0:00:00]
+............................................. 0% complete [0:00:00]
+............................................. 0% complete [0:00:00]
+............................................. 0% complete [0:00:00]
+............................................. 0% complete [0:00:00]
+............................................. 0% complete [0:00:00]
+............................................. 0% complete [0:00:00]
+............................................. 0% complete [0:00:00]
+............................................. 0% complete [0:00:00]
+............................................. 0% complete [0:00:00]
+............................................. 0% complete [0:00:00]
+............................................. 0% complete [0:00:00]
+............................................. 0% complete [0:00:00]
+............................................. 0% complete [0:00:00]
+............................................. 0% complete [0:00:00]
+............................................. 0% complete [0:00:00]
+............................................. 0% complete [0:00:00]
+............................................. 0% complete [0:00:00]
+............................................. 0% complete [0:00:00]
+............................................. 0% complete [0:00:00]
+............................................. 0% complete [0:00:00]
+............................................. 0% complete [0:00:00]
+............................................. 0% complete [0:00:00]
+............................................. 0% complete [0:00:00]
+............................................. 0% complete [0:00:00]
+............................................. 0% complete [0:00:00]
+............................................. 1% complete [0:00:06]
+............................................. 2% complete [0:00:07]
+............................................. 3% complete [0:00:07]
+............................................. 3% complete [0:00:07]
+............................................. 4% complete [0:00:07]
+............................................. 5% complete [0:00:07]
+............................................. 5% complete [0:00:07]
+............................................. 5% complete [0:00:07]
+............................................. 5% complete [0:00:07]
+............................................. 5% complete [0:00:07]
+............................................. 10% complete [0:00:07]
+............................................. 10% complete [0:00:07]
+............................................. 10% complete [0:00:07]
+............................................. 10% complete [0:00:07]
+............................................. 10% complete [0:00:07]
+............................................. 15% complete [0:00:07]
+............................................. 15% complete [0:00:07]
+............................................. 15% complete [0:00:07]
+............................................. 15% complete [0:00:07]
+............................................. 15% complete [0:00:07]
+............................................. 20% complete [0:00:07]
+............................................. 20% complete [0:00:07]
+............................................. 20% complete [0:00:07]
+............................................. 20% complete [0:00:07]
+............................................. 20% complete [0:00:07]
+............................................. 25% complete [0:00:08]
+............................................. 25% complete [0:00:08]
+............................................. 25% complete [0:00:08]
+............................................. 25% complete [0:00:08]
+............................................. 25% complete [0:00:08]
+............................................. 25% complete [0:00:08]
+............................................. 30% complete [0:00:09]
+............................................. 30% complete [0:00:09]
+............................................. 30% complete [0:00:09]
+............................................. 30% complete [0:00:09]
+............................................. 30% complete [0:00:09]
+............................................. 35% complete [0:00:09]
+............................................. 35% complete [0:00:09]
+............................................. 35% complete [0:00:09]
+............................................. 35% complete [0:00:09]
+............................................. 35% complete [0:00:09]
+............................................. 35% complete [0:00:09]
+............................................. 35% complete [0:00:09]
+............................................. 40% complete [0:00:10]
+............................................. 40% complete [0:00:10]
+............................................. 40% complete [0:00:10]
+............................................. 40% complete [0:00:10]
+............................................. 40% complete [0:00:10]
+............................................. 40% complete [0:00:10]
+............................................. 40% complete [0:00:10]
+............................................. 45% complete [0:00:11]
+............................................. 45% complete [0:00:11]
+............................................. 45% complete [0:00:11]
+............................................. 45% complete [0:00:11]
+............................................. 50% complete [0:00:11]
+............................................. 50% complete [0:00:11]
+............................................. 50% complete [0:00:11]
+............................................. 50% complete [0:00:11]
+............................................. 50% complete [0:00:11]
+............................................. 50% complete [0:00:11]
+............................................. 55% complete [0:00:12]
+............................................. 55% complete [0:00:12]
+............................................. 55% complete [0:00:12]
+............................................. 55% complete [0:00:12]
+............................................. 60% complete [0:00:13]
+............................................. 60% complete [0:00:13]
+............................................. 60% complete [0:00:13]
+............................................. 60% complete [0:00:13]
+............................................. 60% complete [0:00:13]
+............................................. 65% complete [0:00:14]
+............................................. 65% complete [0:00:14]
+............................................. 65% complete [0:00:14]
+............................................. 65% complete [0:00:14]
+............................................. 65% complete [0:00:14]
+............................................. 70% complete [0:00:15]
+............................................. 70% complete [0:00:15]
+............................................. 70% complete [0:00:15]
+............................................. 70% complete [0:00:15]
+............................................. 70% complete [0:00:15]
+............................................. 75% complete [0:00:15]
+............................................. 75% complete [0:00:15]
+............................................. 75% complete [0:00:15]
+............................................. 75% complete [0:00:15]
+............................................. 75% complete [0:00:15]
+............................................. 80% complete [0:00:17]
+............................................. 80% complete [0:00:17]
+............................................. 80% complete [0:00:17]
+............................................. 80% complete [0:00:17]
+............................................. 80% complete [0:00:17]
+............................................. 80% complete [0:00:17]
+............................................. 85% complete [0:00:18]
+............................................. 85% complete [0:00:18]
+............................................. 85% complete [0:00:18]
+............................................. 85% complete [0:00:18]
+............................................. 85% complete [0:00:18]
+............................................. 90% complete [0:00:19]
+............................................. 90% complete [0:00:19]
+............................................. 90% complete [0:00:19]
+............................................. 90% complete [0:00:19]
+............................................. 90% complete [0:00:19]
+............................................. 90% complete [0:00:19]
+............................................. 90% complete [0:00:19]
+............................................. 95% complete [0:00:22]
+............................................. 95% complete [0:00:22]
+............................................. 95% complete [0:00:22]
+............................................. 95% complete [0:00:22]
+............................................. 95% complete [0:00:22]
+............................................. 95% complete [0:00:22]
+................................Updated tech file has been written at: /mnt/vol_NFS_rh003/estudiantes/DANIELA_VARGAS/Version_final/0516/versiones_finales/semana14/Registro_Hamming/Hamming_16/FLOW/fc_flow/flow/work/signoff_drc_run/tech.tf
+
+ICV is done!
+For more details see /mnt/vol_NFS_rh003/estudiantes/DANIELA_VARGAS/Version_final/0516/versiones_finales/semana14/Registro_Hamming/Hamming_16/FLOW/fc_flow/flow/work/signoff_drc_run/signoff_check_drc.log
+Overall engine Time=0:01:07 Highest command Mem=0.117 GB
+Information: No DRC error is reported! (RT-048)
+
+signoff_check_drc is finished.
+
+Create error data signoff_check_drc.err ...
+
+Info: Populated ICV Heat Map Data on current block.
+#### ----- Metal Fill ----- #### ------------------Not sure about this, also check with Pablo, again 
+#set_app_options -name signoff.create_metal_fill.runset -value ${MFILL_RUNSET_FILE}
+#signoff_report_metal_density -output pre_metal_fill_density.rpt
+#signoff_create_metal_fill -select_layers {M2 M3 M4 M5 M6}
+#signoff_report_metal_density -output post_metal_fill_density.rpt
+#### ----- Analyze the design and generate reports ----- ####
+check_legality 
+
+************************
+
+running check_legality
+
+Warning: Routing direction of metal layer PO is neither "horizontal" nor "vertical".  PDC checks will not be performed on this layer. (PDC-003)
+PDC app_options settings =========
+	place.legalize.enable_prerouted_net_check: 1
+	place.legalize.num_tracks_for_access_check: 1
+	place.legalize.use_eol_spacing_for_access_check: 0
+	place.legalize.allow_touch_track_for_access_check: 1
+	place.legalize.reduce_conservatism_in_eol_check: 0
+	place.legalize.preroute_shape_merge_distance: 0.0
+	place.legalize.enable_non_preferred_direction_span_check: 0
+
+Layer M1: cached 0 shapes out of 106 total shapes.
+Layer M2: cached 0 shapes out of 1486 total shapes.
+Cached 324 vias out of 3482 total vias.
+
+check_legality for block design top ... 
+Information: Initializing classic cellmap without advanced rules enabled and without PDC enabled
+Information: The following app options are used in cellmap
+        place.legalize.enable_color_aware_placement : false
+        place.legalize.use_nll_query_cm : false
+        place.legalize.enable_advanced_legalizer : false
+        place.legalize.enable_prerouted_net_check : true
+        place.legalize.enable_advanced_prerouted_net_check : false
+        place.legalize.always_continue : true
+        place.legalize.limit_legality_checks : false
+        place.common.pnet_aware_density : 1.0000
+        place.common.pnet_aware_min_width : 0.0000
+        place.common.pnet_aware_layers : {}
+        place.common.use_placement_model : false
+        place.common.enable_advanced_placement_model : true
+        cts.placement.cell_spacing_rule_style : maximum
+Total 0.3607 seconds to build cellmap data
+Information: Creating classic rule checker.
+Warning: Routing direction of metal layer PO is neither "horizontal" nor "vertical".  PDC checks will not be performed on this layer. (PDC-003)
+=====> Processed 53 ref cells (12 fillers) from library
+Design has no advanced rules
+Checking legality
+Checking cell legality:
+0%....10%....20%....30%....40%....50%....60%....70%....80%....90%....100%
+Sorting rows.
+Checking spacing rule legality.
+0%....10%....20%....30%....40%....50%....60%....70%....80%....90%....100%
+Checking packing rule legality.
+
+
+****************************************
+  Report : Legality
+****************************************
+
+VIOLATIONS BY CATEGORY:
+   MOVABLE  APP-FIXED USER-FIXED  DESCRIPTION
+         0          0          0  Two objects overlap.
+         0          0          0  A cell violates a pnet.
+         0          0          0  A cell is illegal at a site.
+         0          0          0  A cell is not aligned with a site.
+         0          0          0  A cell has an illegal orientation.
+         0          0          0  A cell spacing rule is violated.
+         0          0          0  A layer rule is violated.
+         0          0          0  A cell is in the wrong region.
+         0          0          0  Two cells violate cts margins.
+         0          0          0  Two cells violate coloring.
+
+         0          0          0  TOTAL
+
+TOTAL 0 Violations.
+
+VIOLATIONS BY SUBCATEGORY:
+     MOVABLE  APP-FIXED USER-FIXED  DESCRIPTION
+
+         0          0          0    Two objects overlap.
+           0          0          0    Two cells overlap.
+           0          0          0    Two cells have overlapping keepout margins.
+           0          0          0    A cell overlaps a blockage.
+           0          0          0    A cell keepout margin overlaps a blockage.
+
+         0          0          0    A cell violates a pnet.
+
+         0          0          0    A cell is illegal at a site.
+           0          0          0    A cell violates pin-track alignment rules.
+           0          0          0    A cell is illegal at a site.
+           0          0          0    A cell violates legal index rule.
+           0          0          0    A cell has the wrong variant for its location.
+
+         0          0          0    A cell is not aligned with a site.
+           0          0          0    A cell is not aligned with the base site.
+           0          0          0    A cell is not aligned with an overlaid site.
+
+         0          0          0    A cell has an illegal orientation.
+
+         0          0          0    A cell spacing rule is violated.
+           0          0          0    A spacing rule is violated in a row.
+           0          0          0    A spacing rule is violated between adjacent rows.
+           0          0          0    A cell violates vertical abutment rule.
+           0          0          0    A cell violates metal spacing rule.
+
+         0          0          0    A layer rule is violated.
+           0          0          0    A layer VTH rule is violated.
+           0          0          0    A layer OD rule is violated.
+           0          0          0    A layer OD max-width rule is violated.
+           0          0          0    A layer ALL_OD corner rule is violated.
+           0          0          0    A layer max-vertical-length rule is violated.
+           0          0          0    A layer TPO rule is violated.
+           0          0          0    Filler cell insertion cannot satisfy layer rules.
+
+         0          0          0    A cell is in the wrong region.
+           0          0          0    A cell is outside its hard bound.
+           0          0          0    A cell is in the wrong voltage area.
+           0          0          0    A cell violates an exclusive movebound.
+
+         0          0          0    Two cells violate cts margins.
+
+         0          0          0    Two cells violate coloring.
+
+
+check_legality for block design top succeeded!
+
+
+check_legality succeeded.
+
+**************************
+
+1
+report_congestion 
+****************************************
+Report : congestion
+Design : top
+Version: U-2022.12-SP6
+Date   : Sun May 25 01:11:56 2025
+****************************************
+
+Layer     |    overflow     |              # GRCs has
+Name      |  total  |  max  | overflow (%)      | max overflow
+---------------------------------------------------------------
+Both Dirs |     140 |     6 |      68  ( 3.50%) |       2
+H routing |       2 |     1 |       2  ( 0.21%) |       2
+V routing |     138 |     6 |      66  ( 6.79%) |       2
+
+1
+report_utilization
+****************************************
+Report : report_utilization
+Design : top
+Version: U-2022.12-SP6
+Date   : Sun May 25 01:11:56 2025
+****************************************
+Utilization Ratio:			0.5131
+Utilization options:
+ - Area calculation based on:		site_row of block top/signoff
+ - Categories of objects excluded:	hard_macros macro_keepouts soft_macros io_cells hard_blockages 
+Total Area:				1768.0000
+Total Capacity Area:			1768.0000
+Total Area of cells:			907.2000
+Area of excluded objects:
+ - hard_macros         :		0.0000
+ - macro_keepouts      :		0.0000
+ - soft_macros         :		0.0000
+ - io_cells            :		0.0000
+ - hard_blockages      :		0.0000
+Total Area of excluded objects:		0.0000
+Ratio of excluded objects:		0.0000
+
+Utilization of site-rows with:
+ - Site 'unit':				0.5131
+
+0.5131
+collect_reports chip_finish 
+Collecting reports for chip_finish stage...
+Reports are generated for chip_finish stage.
+#### ---- Save and exit ----- ####
+legalize_placement
+Information: Starting 'legalize_placement' (FLW-8000)
+Information: Time: 2025-05-25 01:12:00 / Session: 0.07 hr / Command: 0.00 hr / Memory: 602 MB (FLW-8100)
+nplDplc2Placer::setParam(effort,1)
+nplDplc2Placer::setParam(debug,0)
+nplDplc2Placer::setParam(site_check,2)
+nplDplc2Placer::setParam(app_firm_wgt,0)
+Warning: Routing direction of metal layer PO is neither "horizontal" nor "vertical".  PDC checks will not be performed on this layer. (PDC-003)
+PDC app_options settings =========
+	place.legalize.enable_prerouted_net_check: 1
+	place.legalize.num_tracks_for_access_check: 1
+	place.legalize.use_eol_spacing_for_access_check: 0
+	place.legalize.allow_touch_track_for_access_check: 1
+	place.legalize.reduce_conservatism_in_eol_check: 0
+	place.legalize.preroute_shape_merge_distance: 0.0
+	place.legalize.enable_non_preferred_direction_span_check: 0
+
+Layer M1: cached 0 shapes out of 106 total shapes.
+Layer M2: cached 0 shapes out of 1486 total shapes.
+Cached 324 vias out of 3482 total vias.
+
+Legalizing Top Level Design top ... 
+Information: Initializing classic cellmap without advanced rules enabled and without PDC enabled
+Information: The following app options are used in cellmap
+        place.legalize.enable_color_aware_placement : false
+        place.legalize.use_nll_query_cm : false
+        place.legalize.enable_advanced_legalizer : false
+        place.legalize.enable_prerouted_net_check : true
+        place.legalize.enable_advanced_prerouted_net_check : false
+        place.legalize.always_continue : true
+        place.legalize.limit_legality_checks : false
+        place.common.pnet_aware_density : 1.0000
+        place.common.pnet_aware_min_width : 0.0000
+        place.common.pnet_aware_layers : {}
+        place.common.use_placement_model : false
+        place.common.enable_advanced_placement_model : true
+        cts.placement.cell_spacing_rule_style : maximum
+Total 0.2909 seconds to build cellmap data
+Information: Creating classic rule checker.
+Warning: Routing direction of metal layer PO is neither "horizontal" nor "vertical".  PDC checks will not be performed on this layer. (PDC-003)
+=====> Processed 53 ref cells (12 fillers) from library
+
+Bounds/Regions In This Design:
+        Area    Num Cells  Exclusive Name
+ (square um)
+        1768          736        Yes DEFAULT_VA
+
+Warning: max_legality_failures=5000 ignored.
+	To use it, set limit_legality_checks to true.
+Warning: max_legality_check_range=500 ignored.
+	To use it, set limit_legality_checks to true.
+Starting legalizer.
+Warning: Exclusive bound 'DEFAULT' has no cells.
+Optimizing Exclusive Bound 'DEFAULT_VA' (2/2)
+    Done Exclusive Bound 'DEFAULT_VA' (2/2) (0 sec)
+Legalization complete (0 total sec)
+
+****************************************
+  Report : Placement Attempts
+  Site   : unit
+****************************************
+
+number of cells:                    736
+number of references:                53
+number of site rows:                 17
+number of locations attempted:     3313
+number of locations failed:           0  (0.0%)
+
+Legality of references at locations:
+0 references had failures.
+
+Legality of references in rows:
+0 references had row failures.
+
+****************************************
+  Report : Cell Displacements
+****************************************
+
+number of cells aggregated:         514 (3395 total sites)
+avg row height over cells:        2.000 um
+rms cell displacement:            0.000 um ( 0.00 row height)
+rms weighted cell displacement:   0.000 um ( 0.00 row height)
+max cell displacement:            0.000 um ( 0.00 row height)
+avg cell displacement:            0.000 um ( 0.00 row height)
+avg weighted cell displacement:   0.000 um ( 0.00 row height)
+number of cells moved:                0
+number of large displacements:        0
+large displacement threshold:     3.000 row height
+
+Displacements of worst 10 cells:
+Cell: xofiller!FILL1HPBWP!x162000y160000 (FILL1HPBWP)
+  Input location: (16.2,16)
+  Legal location: (16.2,16)
+  Displacement:   0.000 um ( 0.00 row height)
+Cell: xofiller!FILL1HPBWP!x486000y140000 (FILL1HPBWP)
+  Input location: (48.6,14)
+  Legal location: (48.6,14)
+  Displacement:   0.000 um ( 0.00 row height)
+Cell: xofiller!FILL1HPBWP!x484000y140000 (FILL1HPBWP)
+  Input location: (48.4,14)
+  Legal location: (48.4,14)
+  Displacement:   0.000 um ( 0.00 row height)
+Cell: xofiller!FILL1HPBWP!x466000y140000 (FILL1HPBWP)
+  Input location: (46.6,14)
+  Legal location: (46.6,14)
+  Displacement:   0.000 um ( 0.00 row height)
+Cell: xofiller!FILL1HPBWP!x366000y120000 (FILL1HPBWP)
+  Input location: (36.6,12)
+  Legal location: (36.6,12)
+  Displacement:   0.000 um ( 0.00 row height)
+Cell: xofiller!FILL1HPBWP!x248000y140000 (FILL1HPBWP)
+  Input location: (24.8,14)
+  Legal location: (24.8,14)
+  Displacement:   0.000 um ( 0.00 row height)
+Cell: xofiller!FILL1HPBWP!x246000y140000 (FILL1HPBWP)
+  Input location: (24.6,14)
+  Legal location: (24.6,14)
+  Displacement:   0.000 um ( 0.00 row height)
+Cell: xofiller!FILL1HPBWP!x612000y120000 (FILL1HPBWP)
+  Input location: (61.2,12)
+  Legal location: (61.2,12)
+  Displacement:   0.000 um ( 0.00 row height)
+Cell: xofiller!FILL1HPBWP!x610000y120000 (FILL1HPBWP)
+  Input location: (61,12)
+  Legal location: (61,12)
+  Displacement:   0.000 um ( 0.00 row height)
+Cell: xofiller!FILL1HPBWP!x210000y160000 (FILL1HPBWP)
+  Input location: (21,16)
+  Legal location: (21,16)
+  Displacement:   0.000 um ( 0.00 row height)
+
+Legalization succeeded.
+Total Legalizer CPU: 0.738
+Total Legalizer Wall Time: 0.742
+----------------------------------------------------------------
+Information: Ending 'legalize_placement' (FLW-8001)
+Information: Time: 2025-05-25 01:12:01 / Session: 0.07 hr / Command: 0.00 hr / Memory: 602 MB (FLW-8100)
+1
+get_blocks -all
+{top_lib:top.design top_lib:top/rtl_read.design top_lib:top/inital_syn.design top_lib:top/auto_floorplan.design top_lib:top/manual_floorplan.design top_lib:top/final_floorplan.design top_lib:top/place_opt.design top_lib:top/clock_opt.design top_lib:top/route_opt.design top_lib:top/signoff.design}
+list_blocks
+Lib top_lib /mnt/vol_NFS_rh003/estudiantes/DANIELA_VARGAS/Version_final/0516/versiones_finales/semana14/Registro_Hamming/Hamming_16/FLOW/fc_flow/flow/work/top_lib tech current
+  -   0 top.design May-25-01:00
+  -   0 top/auto_floorplan.design May-25-01:02
+  -   0 top/clock_opt.design May-25-01:07
+  -   0 top/final_floorplan.design May-25-01:02
+  -   0 top/inital_syn.design May-25-01:00
+  -   0 top/manual_floorplan.design May-25-01:02
+  -   0 top/place_opt.design May-25-01:05
+  -   0 top/route_opt.design May-25-01:07
+  -   0 top/rtl_read.design May-25-01:00
+  *>  0 top/signoff.design May-25-01:12 current
+10
+save_block
+Information: The command 'save_block' cleared the undo history. (UNDO-016)
+Information: Saving block 'top_lib:top/signoff.design'
+1
+save_block -as ${DESIGN_NAME}
+Information: Overwriting block 'top.design' in library 'top_lib'. (DES-025)
+1
+save_lib
+Saving library 'top_lib'
+1
+#### ----- Write Out Design Data ----- ####
+#Source write data script
+source -echo ../scripts/08_01_write_data.tcl
+########################################
+#####          Write data          #####
+########################################
+# Write Verilog
+write_verilog \
+	-include {pg_objects pg_netlist} \
+	../../results/${DESIGN_NAME}.pg.v
+write_verilog -exclude {physical_only_cells} ../../results/${DESIGN_NAME}2.v
+# Write Constraints
+write_sdc -output ../../results/${DESIGN_NAME}.sdc
+Information: The command 'write_sdc' cleared the undo history. (UNDO-016)
+
+Warning: Multiply cell derates are skipped!
+
+Warning: Multiply net derates are skipped!
+# Write Parasitics
+write_parasitics -format SPEF -output ../../results/${DESIGN_NAME}.spef
+Information: Design top has 254 nets, 0 global routed, 252 detail routed. (NEX-024)
+NEX: extract design top
+Information: batch extract takes 0.00 seconds, elapse 0.00 seconds (NEX-015)
+Information: The stitching and editing of coupling caps is turned OFF for design 'top_lib:top/signoff.design'. (TIM-125)
+NEX: write corner ID 0 parasitics to ../../results/top.spef.RC_Worst_125.spef 
+spefName ../../results/top.spef.RC_Worst_125.spef, corner name cornerSS 
+NEX: write corner ID 1 parasitics to ../../results/top.spef.RC_Best_125.spef 
+spefName ../../results/top.spef.RC_Best_125.spef, corner name cornerFF 
+NEX: write_parasitics command finished
+# Write GDS
+write_gds -design ${DESIGN_NAME} \
+	  -layer_map ${GDS_MAP_FILE} \
+	  -keep_data_type \
+	  -fill include \
+	  -output_pin all \
+	  -long_names \
+	  -lib_cell_view frame\
+	  ../../results/${DESIGN_NAME}.gds
+#-merge_files ${GDS_FILE} \
+
+write_gds -design ${DESIGN_NAME} \
+	  -output_pin all \
+	  -lib_cell_view frame\
+	  ../../results/${DESIGN_NAME}2.gds
+1
+if {[info exists ::env(NO_GUI)]} {
+    exit
+} else {
+	gui_start
+}
+Maximum memory usage for this session: 602.01 MB
+Maximum memory usage for this session including child processes: 3083.16 MB
+CPU usage for this session:     31 seconds (  0.01 hours)
+Elapsed time for this session:    251 seconds (  0.07 hours)
+Thank you for using Fusion Compiler.

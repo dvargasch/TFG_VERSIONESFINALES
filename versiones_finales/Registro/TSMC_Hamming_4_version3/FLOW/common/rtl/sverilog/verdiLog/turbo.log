@@ -1,0 +1,8 @@
+Command Line: /mnt/vol_NFS_rh003/tools/verdi/R-2020.12-SP2/platform/LINUXAMD64/bin/Novas -i -simflow -simBin ./prueba_1_a -simOpt  
+uname(Linux redhat003 4.18.0-553.51.1.el8_10.x86_64 #1 SMP Fri Apr 25 00:55:37 EDT 2025 x86_64)
+Read sm file (/mnt/vol_NFS_rh003/estudiantes/DANIELA_VARGAS/Version_final/0516/versiones_finales/Registro/TSMC_Hamming_8_version2/FLOW/common/rtl/sverilog/prueba_1_a.daidir/kdb.elab++/work.lib++/universal_register_4bit_tb/hdl) error!!
+Read sm file (/mnt/vol_NFS_rh003/estudiantes/DANIELA_VARGAS/Version_final/0516/versiones_finales/Registro/TSMC_Hamming_8_version2/FLOW/common/rtl/sverilog/prueba_1_a.daidir/kdb.elab++/work.lib++/top/hdl) error!!
+Read sm file (/mnt/vol_NFS_rh003/estudiantes/DANIELA_VARGAS/Version_final/0516/versiones_finales/Registro/TSMC_Hamming_8_version2/FLOW/common/rtl/sverilog/prueba_1_a.daidir/kdb.elab++/work.lib++/syndrome_calc/hdl) error!!
+Read sm file (/mnt/vol_NFS_rh003/estudiantes/DANIELA_VARGAS/Version_final/0516/versiones_finales/Registro/TSMC_Hamming_8_version2/FLOW/common/rtl/sverilog/prueba_1_a.daidir/kdb.elab++/work.lib++/std/hdl) error!!
+Warning: fail to build static rpc connection for pid 286869
+au time 40.806371 3.500765 0.887335 delta 215482368 215482368 total 704131072 704131072

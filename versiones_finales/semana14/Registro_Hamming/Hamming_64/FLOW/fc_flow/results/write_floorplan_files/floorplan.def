@@ -1,0 +1,702 @@
+# 
+# Fusion Compiler write_def
+# Release      : U-2022.12-SP6
+# User Name    : VARGAS_CHAVARRIA_2025
+# Date         : Sun May 25 01:36:21 2025
+# 
+VERSION 5.8 ;
+DIVIDERCHAR "/" ;
+BUSBITCHARS "[]" ;
+DESIGN top ;
+UNITS DISTANCE MICRONS 1000 ;
+PROPERTYDEFINITIONS
+COMPONENTPIN ACCESS_DIRECTION STRING ;
+END PROPERTYDEFINITIONS
+DIEAREA ( 0 0 ) ( 0 88000 ) ( 122800 88000 ) ( 122800 0 ) ;
+PINS 138 ;
+ - clk + NET clk + DIRECTION INPUT + USE SIGNAL
+   + LAYER M3 ( 0 0 ) ( 520 100 )
+   + PLACED ( 122280 85350 ) N ;
+ - rst + NET rst + DIRECTION INPUT + USE SIGNAL
+   + LAYER M3 ( 0 0 ) ( 520 100 )
+   + PLACED ( 122280 84150 ) N ;
+ - enable + NET enable + DIRECTION INPUT + USE SIGNAL
+   + LAYER M3 ( 0 0 ) ( 520 100 )
+   + PLACED ( 122280 82750 ) N ;
+ - load + NET load + DIRECTION INPUT + USE SIGNAL
+   + LAYER M3 ( 0 0 ) ( 520 100 )
+   + PLACED ( 122280 81550 ) N ;
+ - serial_in + NET serial_in + DIRECTION INPUT + USE SIGNAL
+   + LAYER M3 ( 0 0 ) ( 520 100 )
+   + PLACED ( 122280 80350 ) N ;
+ - mode[1] + NET mode[1] + DIRECTION INPUT + USE SIGNAL
+   + LAYER M3 ( 0 0 ) ( 520 100 )
+   + PLACED ( 122280 78950 ) N ;
+ - mode[0] + NET mode[0] + DIRECTION INPUT + USE SIGNAL
+   + LAYER M3 ( 0 0 ) ( 520 100 )
+   + PLACED ( 122280 77750 ) N ;
+ - parallel_in[63] + NET parallel_in[63] + DIRECTION INPUT + USE SIGNAL
+   + LAYER M3 ( 0 0 ) ( 520 100 )
+   + PLACED ( 122280 76550 ) N ;
+ - parallel_in[62] + NET parallel_in[62] + DIRECTION INPUT + USE SIGNAL
+   + LAYER M3 ( 0 0 ) ( 520 100 )
+   + PLACED ( 122280 75150 ) N ;
+ - parallel_in[61] + NET parallel_in[61] + DIRECTION INPUT + USE SIGNAL
+   + LAYER M3 ( 0 0 ) ( 520 100 )
+   + PLACED ( 122280 73950 ) N ;
+ - parallel_in[60] + NET parallel_in[60] + DIRECTION INPUT + USE SIGNAL
+   + LAYER M3 ( 0 0 ) ( 520 100 )
+   + PLACED ( 122280 72750 ) N ;
+ - parallel_in[59] + NET parallel_in[59] + DIRECTION INPUT + USE SIGNAL
+   + LAYER M3 ( 0 0 ) ( 520 100 )
+   + PLACED ( 122280 71350 ) N ;
+ - parallel_in[58] + NET parallel_in[58] + DIRECTION INPUT + USE SIGNAL
+   + LAYER M3 ( 0 0 ) ( 520 100 )
+   + PLACED ( 122280 70150 ) N ;
+ - parallel_in[57] + NET parallel_in[57] + DIRECTION INPUT + USE SIGNAL
+   + LAYER M3 ( 0 0 ) ( 520 100 )
+   + PLACED ( 122280 68950 ) N ;
+ - parallel_in[56] + NET parallel_in[56] + DIRECTION INPUT + USE SIGNAL
+   + LAYER M3 ( 0 0 ) ( 520 100 )
+   + PLACED ( 122280 67550 ) N ;
+ - parallel_in[55] + NET parallel_in[55] + DIRECTION INPUT + USE SIGNAL
+   + LAYER M3 ( 0 0 ) ( 520 100 )
+   + PLACED ( 122280 66350 ) N ;
+ - parallel_in[54] + NET parallel_in[54] + DIRECTION INPUT + USE SIGNAL
+   + LAYER M3 ( 0 0 ) ( 520 100 )
+   + PLACED ( 122280 65150 ) N ;
+ - parallel_in[53] + NET parallel_in[53] + DIRECTION INPUT + USE SIGNAL
+   + LAYER M3 ( 0 0 ) ( 520 100 )
+   + PLACED ( 122280 63750 ) N ;
+ - parallel_in[52] + NET parallel_in[52] + DIRECTION INPUT + USE SIGNAL
+   + LAYER M3 ( 0 0 ) ( 520 100 )
+   + PLACED ( 122280 62550 ) N ;
+ - parallel_in[51] + NET parallel_in[51] + DIRECTION INPUT + USE SIGNAL
+   + LAYER M3 ( 0 0 ) ( 520 100 )
+   + PLACED ( 122280 61350 ) N ;
+ - parallel_in[50] + NET parallel_in[50] + DIRECTION INPUT + USE SIGNAL
+   + LAYER M3 ( 0 0 ) ( 520 100 )
+   + PLACED ( 122280 59950 ) N ;
+ - parallel_in[49] + NET parallel_in[49] + DIRECTION INPUT + USE SIGNAL
+   + LAYER M3 ( 0 0 ) ( 520 100 )
+   + PLACED ( 122280 58750 ) N ;
+ - parallel_in[48] + NET parallel_in[48] + DIRECTION INPUT + USE SIGNAL
+   + LAYER M3 ( 0 0 ) ( 520 100 )
+   + PLACED ( 122280 57550 ) N ;
+ - parallel_in[47] + NET parallel_in[47] + DIRECTION INPUT + USE SIGNAL
+   + LAYER M3 ( 0 0 ) ( 520 100 )
+   + PLACED ( 122280 56150 ) N ;
+ - parallel_in[46] + NET parallel_in[46] + DIRECTION INPUT + USE SIGNAL
+   + LAYER M3 ( 0 0 ) ( 520 100 )
+   + PLACED ( 122280 54950 ) N ;
+ - parallel_in[45] + NET parallel_in[45] + DIRECTION INPUT + USE SIGNAL
+   + LAYER M3 ( 0 0 ) ( 520 100 )
+   + PLACED ( 122280 53750 ) N ;
+ - parallel_in[44] + NET parallel_in[44] + DIRECTION INPUT + USE SIGNAL
+   + LAYER M3 ( 0 0 ) ( 520 100 )
+   + PLACED ( 122280 52550 ) N ;
+ - parallel_in[43] + NET parallel_in[43] + DIRECTION INPUT + USE SIGNAL
+   + LAYER M3 ( 0 0 ) ( 520 100 )
+   + PLACED ( 122280 51150 ) N ;
+ - parallel_in[42] + NET parallel_in[42] + DIRECTION INPUT + USE SIGNAL
+   + LAYER M3 ( 0 0 ) ( 520 100 )
+   + PLACED ( 122280 49950 ) N ;
+ - parallel_in[41] + NET parallel_in[41] + DIRECTION INPUT + USE SIGNAL
+   + LAYER M3 ( 0 0 ) ( 520 100 )
+   + PLACED ( 122280 48550 ) N ;
+ - parallel_in[40] + NET parallel_in[40] + DIRECTION INPUT + USE SIGNAL
+   + LAYER M3 ( 0 0 ) ( 520 100 )
+   + PLACED ( 122280 47350 ) N ;
+ - parallel_in[39] + NET parallel_in[39] + DIRECTION INPUT + USE SIGNAL
+   + LAYER M3 ( 0 0 ) ( 520 100 )
+   + PLACED ( 122280 46150 ) N ;
+ - parallel_in[38] + NET parallel_in[38] + DIRECTION INPUT + USE SIGNAL
+   + LAYER M3 ( 0 0 ) ( 520 100 )
+   + PLACED ( 122280 44750 ) N ;
+ - parallel_in[37] + NET parallel_in[37] + DIRECTION INPUT + USE SIGNAL
+   + LAYER M3 ( 0 0 ) ( 520 100 )
+   + PLACED ( 122280 43550 ) N ;
+ - parallel_in[36] + NET parallel_in[36] + DIRECTION INPUT + USE SIGNAL
+   + LAYER M3 ( 0 0 ) ( 520 100 )
+   + PLACED ( 122280 42350 ) N ;
+ - parallel_in[35] + NET parallel_in[35] + DIRECTION INPUT + USE SIGNAL
+   + LAYER M3 ( 0 0 ) ( 520 100 )
+   + PLACED ( 122280 41150 ) N ;
+ - parallel_in[34] + NET parallel_in[34] + DIRECTION INPUT + USE SIGNAL
+   + LAYER M3 ( 0 0 ) ( 520 100 )
+   + PLACED ( 122280 39950 ) N ;
+ - parallel_in[33] + NET parallel_in[33] + DIRECTION INPUT + USE SIGNAL
+   + LAYER M3 ( 0 0 ) ( 520 100 )
+   + PLACED ( 122280 38550 ) N ;
+ - parallel_in[32] + NET parallel_in[32] + DIRECTION INPUT + USE SIGNAL
+   + LAYER M3 ( 0 0 ) ( 520 100 )
+   + PLACED ( 122280 37350 ) N ;
+ - parallel_in[31] + NET parallel_in[31] + DIRECTION INPUT + USE SIGNAL
+   + LAYER M3 ( 0 0 ) ( 520 100 )
+   + PLACED ( 122280 35950 ) N ;
+ - parallel_in[30] + NET parallel_in[30] + DIRECTION INPUT + USE SIGNAL
+   + LAYER M3 ( 0 0 ) ( 520 100 )
+   + PLACED ( 122280 34750 ) N ;
+ - parallel_in[29] + NET parallel_in[29] + DIRECTION INPUT + USE SIGNAL
+   + LAYER M3 ( 0 0 ) ( 520 100 )
+   + PLACED ( 122280 33550 ) N ;
+ - parallel_in[28] + NET parallel_in[28] + DIRECTION INPUT + USE SIGNAL
+   + LAYER M3 ( 0 0 ) ( 520 100 )
+   + PLACED ( 122280 32150 ) N ;
+ - parallel_in[27] + NET parallel_in[27] + DIRECTION INPUT + USE SIGNAL
+   + LAYER M3 ( 0 0 ) ( 520 100 )
+   + PLACED ( 122280 30950 ) N ;
+ - parallel_in[26] + NET parallel_in[26] + DIRECTION INPUT + USE SIGNAL
+   + LAYER M3 ( 0 0 ) ( 520 100 )
+   + PLACED ( 122280 29750 ) N ;
+ - parallel_in[25] + NET parallel_in[25] + DIRECTION INPUT + USE SIGNAL
+   + LAYER M3 ( 0 0 ) ( 520 100 )
+   + PLACED ( 122280 28350 ) N ;
+ - parallel_in[24] + NET parallel_in[24] + DIRECTION INPUT + USE SIGNAL
+   + LAYER M3 ( 0 0 ) ( 520 100 )
+   + PLACED ( 122280 26950 ) N ;
+ - parallel_in[23] + NET parallel_in[23] + DIRECTION INPUT + USE SIGNAL
+   + LAYER M3 ( 0 0 ) ( 520 100 )
+   + PLACED ( 122280 25950 ) N ;
+ - parallel_in[22] + NET parallel_in[22] + DIRECTION INPUT + USE SIGNAL
+   + LAYER M3 ( 0 0 ) ( 520 100 )
+   + PLACED ( 122280 24550 ) N ;
+ - parallel_in[21] + NET parallel_in[21] + DIRECTION INPUT + USE SIGNAL
+   + LAYER M3 ( 0 0 ) ( 520 100 )
+   + PLACED ( 122280 23350 ) N ;
+ - parallel_in[20] + NET parallel_in[20] + DIRECTION INPUT + USE SIGNAL
+   + LAYER M3 ( 0 0 ) ( 520 100 )
+   + PLACED ( 122280 22150 ) N ;
+ - parallel_in[19] + NET parallel_in[19] + DIRECTION INPUT + USE SIGNAL
+   + LAYER M3 ( 0 0 ) ( 520 100 )
+   + PLACED ( 122280 20750 ) N ;
+ - parallel_in[18] + NET parallel_in[18] + DIRECTION INPUT + USE SIGNAL
+   + LAYER M3 ( 0 0 ) ( 520 100 )
+   + PLACED ( 122280 19550 ) N ;
+ - parallel_in[17] + NET parallel_in[17] + DIRECTION INPUT + USE SIGNAL
+   + LAYER M3 ( 0 0 ) ( 520 100 )
+   + PLACED ( 122280 18350 ) N ;
+ - parallel_in[16] + NET parallel_in[16] + DIRECTION INPUT + USE SIGNAL
+   + LAYER M3 ( 0 0 ) ( 520 100 )
+   + PLACED ( 122280 16950 ) N ;
+ - parallel_in[15] + NET parallel_in[15] + DIRECTION INPUT + USE SIGNAL
+   + LAYER M3 ( 0 0 ) ( 520 100 )
+   + PLACED ( 122280 15750 ) N ;
+ - parallel_in[14] + NET parallel_in[14] + DIRECTION INPUT + USE SIGNAL
+   + LAYER M3 ( 0 0 ) ( 520 100 )
+   + PLACED ( 122280 14350 ) N ;
+ - parallel_in[13] + NET parallel_in[13] + DIRECTION INPUT + USE SIGNAL
+   + LAYER M3 ( 0 0 ) ( 520 100 )
+   + PLACED ( 122280 13150 ) N ;
+ - parallel_in[12] + NET parallel_in[12] + DIRECTION INPUT + USE SIGNAL
+   + LAYER M3 ( 0 0 ) ( 520 100 )
+   + PLACED ( 122280 11950 ) N ;
+ - parallel_in[11] + NET parallel_in[11] + DIRECTION INPUT + USE SIGNAL
+   + LAYER M3 ( 0 0 ) ( 520 100 )
+   + PLACED ( 122280 10750 ) N ;
+ - parallel_in[10] + NET parallel_in[10] + DIRECTION INPUT + USE SIGNAL
+   + LAYER M3 ( 0 0 ) ( 520 100 )
+   + PLACED ( 122280 9350 ) N ;
+ - parallel_in[9] + NET parallel_in[9] + DIRECTION INPUT + USE SIGNAL
+   + LAYER M3 ( 0 0 ) ( 520 100 )
+   + PLACED ( 122280 8150 ) N ;
+ - parallel_in[8] + NET parallel_in[8] + DIRECTION INPUT + USE SIGNAL
+   + LAYER M3 ( 0 0 ) ( 520 100 )
+   + PLACED ( 122280 6950 ) N ;
+ - parallel_in[7] + NET parallel_in[7] + DIRECTION INPUT + USE SIGNAL
+   + LAYER M3 ( 0 0 ) ( 520 100 )
+   + PLACED ( 122280 5550 ) N ;
+ - parallel_in[6] + NET parallel_in[6] + DIRECTION INPUT + USE SIGNAL
+   + LAYER M3 ( 0 0 ) ( 520 100 )
+   + PLACED ( 122280 4350 ) N ;
+ - parallel_in[5] + NET parallel_in[5] + DIRECTION INPUT + USE SIGNAL
+   + LAYER M3 ( 0 0 ) ( 520 100 )
+   + PLACED ( 122280 3150 ) N ;
+ - parallel_in[4] + NET parallel_in[4] + DIRECTION INPUT + USE SIGNAL
+   + LAYER M3 ( 0 0 ) ( 520 100 )
+   + PLACED ( 122280 1750 ) N ;
+ - parallel_in[3] + NET parallel_in[3] + DIRECTION INPUT + USE SIGNAL
+   + LAYER M3 ( 0 0 ) ( 520 100 )
+   + PLACED ( 122280 950 ) N ;
+ - parallel_in[2] + NET parallel_in[2] + DIRECTION INPUT + USE SIGNAL
+   + LAYER M3 ( 0 0 ) ( 520 100 )
+   + PLACED ( 0 85350 ) N ;
+ - parallel_in[1] + NET parallel_in[1] + DIRECTION INPUT + USE SIGNAL
+   + LAYER M3 ( 0 0 ) ( 520 100 )
+   + PLACED ( 0 84150 ) N ;
+ - parallel_in[0] + NET parallel_in[0] + DIRECTION INPUT + USE SIGNAL
+   + LAYER M3 ( 0 0 ) ( 520 100 )
+   + PLACED ( 0 82750 ) N ;
+ - serial_out + NET serial_out + DIRECTION OUTPUT + USE SIGNAL
+   + LAYER M3 ( 0 0 ) ( 520 100 )
+   + PLACED ( 0 81550 ) N ;
+ - parallel_out[63] + NET parallel_out[63] + DIRECTION OUTPUT + USE SIGNAL
+   + LAYER M3 ( 0 0 ) ( 520 100 )
+   + PLACED ( 0 80350 ) N ;
+ - parallel_out[62] + NET parallel_out[62] + DIRECTION OUTPUT + USE SIGNAL
+   + LAYER M3 ( 0 0 ) ( 520 100 )
+   + PLACED ( 0 78950 ) N ;
+ - parallel_out[61] + NET parallel_out[61] + DIRECTION OUTPUT + USE SIGNAL
+   + LAYER M3 ( 0 0 ) ( 520 100 )
+   + PLACED ( 0 77750 ) N ;
+ - parallel_out[60] + NET parallel_out[60] + DIRECTION OUTPUT + USE SIGNAL
+   + LAYER M3 ( 0 0 ) ( 520 100 )
+   + PLACED ( 0 76350 ) N ;
+ - parallel_out[59] + NET parallel_out[59] + DIRECTION OUTPUT + USE SIGNAL
+   + LAYER M3 ( 0 0 ) ( 520 100 )
+   + PLACED ( 0 75150 ) N ;
+ - parallel_out[58] + NET parallel_out[58] + DIRECTION OUTPUT + USE SIGNAL
+   + LAYER M3 ( 0 0 ) ( 520 100 )
+   + PLACED ( 0 73950 ) N ;
+ - parallel_out[57] + NET parallel_out[57] + DIRECTION OUTPUT + USE SIGNAL
+   + LAYER M3 ( 0 0 ) ( 520 100 )
+   + PLACED ( 0 72750 ) N ;
+ - parallel_out[56] + NET parallel_out[56] + DIRECTION OUTPUT + USE SIGNAL
+   + LAYER M3 ( 0 0 ) ( 520 100 )
+   + PLACED ( 0 71350 ) N ;
+ - parallel_out[55] + NET parallel_out[55] + DIRECTION OUTPUT + USE SIGNAL
+   + LAYER M3 ( 0 0 ) ( 520 100 )
+   + PLACED ( 0 70150 ) N ;
+ - parallel_out[54] + NET parallel_out[54] + DIRECTION OUTPUT + USE SIGNAL
+   + LAYER M3 ( 0 0 ) ( 520 100 )
+   + PLACED ( 0 68950 ) N ;
+ - parallel_out[53] + NET parallel_out[53] + DIRECTION OUTPUT + USE SIGNAL
+   + LAYER M3 ( 0 0 ) ( 520 100 )
+   + PLACED ( 0 67550 ) N ;
+ - parallel_out[52] + NET parallel_out[52] + DIRECTION OUTPUT + USE SIGNAL
+   + LAYER M3 ( 0 0 ) ( 520 100 )
+   + PLACED ( 0 66350 ) N ;
+ - parallel_out[51] + NET parallel_out[51] + DIRECTION OUTPUT + USE SIGNAL
+   + LAYER M3 ( 0 0 ) ( 520 100 )
+   + PLACED ( 0 65150 ) N ;
+ - parallel_out[50] + NET parallel_out[50] + DIRECTION OUTPUT + USE SIGNAL
+   + LAYER M3 ( 0 0 ) ( 520 100 )
+   + PLACED ( 0 63750 ) N ;
+ - parallel_out[49] + NET parallel_out[49] + DIRECTION OUTPUT + USE SIGNAL
+   + LAYER M3 ( 0 0 ) ( 520 100 )
+   + PLACED ( 0 62550 ) N ;
+ - parallel_out[48] + NET parallel_out[48] + DIRECTION OUTPUT + USE SIGNAL
+   + LAYER M3 ( 0 0 ) ( 520 100 )
+   + PLACED ( 0 61350 ) N ;
+ - parallel_out[47] + NET parallel_out[47] + DIRECTION OUTPUT + USE SIGNAL
+   + LAYER M3 ( 0 0 ) ( 520 100 )
+   + PLACED ( 0 59950 ) N ;
+ - parallel_out[46] + NET parallel_out[46] + DIRECTION OUTPUT + USE SIGNAL
+   + LAYER M3 ( 0 0 ) ( 520 100 )
+   + PLACED ( 0 58750 ) N ;
+ - parallel_out[45] + NET parallel_out[45] + DIRECTION OUTPUT + USE SIGNAL
+   + LAYER M3 ( 0 0 ) ( 520 100 )
+   + PLACED ( 0 57550 ) N ;
+ - parallel_out[44] + NET parallel_out[44] + DIRECTION OUTPUT + USE SIGNAL
+   + LAYER M3 ( 0 0 ) ( 520 100 )
+   + PLACED ( 0 56150 ) N ;
+ - parallel_out[43] + NET parallel_out[43] + DIRECTION OUTPUT + USE SIGNAL
+   + LAYER M3 ( 0 0 ) ( 520 100 )
+   + PLACED ( 0 54950 ) N ;
+ - parallel_out[42] + NET parallel_out[42] + DIRECTION OUTPUT + USE SIGNAL
+   + LAYER M3 ( 0 0 ) ( 520 100 )
+   + PLACED ( 0 53750 ) N ;
+ - parallel_out[41] + NET parallel_out[41] + DIRECTION OUTPUT + USE SIGNAL
+   + LAYER M3 ( 0 0 ) ( 520 100 )
+   + PLACED ( 122280 85950 ) N ;
+ - parallel_out[40] + NET parallel_out[40] + DIRECTION OUTPUT + USE SIGNAL
+   + LAYER M3 ( 0 0 ) ( 520 100 )
+   + PLACED ( 122280 81750 ) N ;
+ - parallel_out[39] + NET parallel_out[39] + DIRECTION OUTPUT + USE SIGNAL
+   + LAYER M3 ( 0 0 ) ( 520 100 )
+   + PLACED ( 122280 77550 ) N ;
+ - parallel_out[38] + NET parallel_out[38] + DIRECTION OUTPUT + USE SIGNAL
+   + LAYER M3 ( 0 0 ) ( 520 100 )
+   + PLACED ( 122280 73350 ) N ;
+ - parallel_out[37] + NET parallel_out[37] + DIRECTION OUTPUT + USE SIGNAL
+   + LAYER M3 ( 0 0 ) ( 520 100 )
+   + PLACED ( 122280 69150 ) N ;
+ - parallel_out[36] + NET parallel_out[36] + DIRECTION OUTPUT + USE SIGNAL
+   + LAYER M3 ( 0 0 ) ( 520 100 )
+   + PLACED ( 122280 64950 ) N ;
+ - parallel_out[35] + NET parallel_out[35] + DIRECTION OUTPUT + USE SIGNAL
+   + LAYER M3 ( 0 0 ) ( 520 100 )
+   + PLACED ( 122280 60750 ) N ;
+ - parallel_out[34] + NET parallel_out[34] + DIRECTION OUTPUT + USE SIGNAL
+   + LAYER M3 ( 0 0 ) ( 520 100 )
+   + PLACED ( 122280 1950 ) N ;
+ - parallel_out[33] + NET parallel_out[33] + DIRECTION OUTPUT + USE SIGNAL
+   + LAYER M3 ( 0 0 ) ( 520 100 )
+   + PLACED ( 122280 6150 ) N ;
+ - parallel_out[32] + NET parallel_out[32] + DIRECTION OUTPUT + USE SIGNAL
+   + LAYER M3 ( 0 0 ) ( 520 100 )
+   + PLACED ( 122280 10350 ) N ;
+ - parallel_out[31] + NET parallel_out[31] + DIRECTION OUTPUT + USE SIGNAL
+   + LAYER M3 ( 0 0 ) ( 520 100 )
+   + PLACED ( 122280 14550 ) N ;
+ - parallel_out[30] + NET parallel_out[30] + DIRECTION OUTPUT + USE SIGNAL
+   + LAYER M3 ( 0 0 ) ( 520 100 )
+   + PLACED ( 122280 18750 ) N ;
+ - parallel_out[29] + NET parallel_out[29] + DIRECTION OUTPUT + USE SIGNAL
+   + LAYER M3 ( 0 0 ) ( 520 100 )
+   + PLACED ( 122280 56550 ) N ;
+ - parallel_out[28] + NET parallel_out[28] + DIRECTION OUTPUT + USE SIGNAL
+   + LAYER M3 ( 0 0 ) ( 520 100 )
+   + PLACED ( 122280 52350 ) N ;
+ - parallel_out[27] + NET parallel_out[27] + DIRECTION OUTPUT + USE SIGNAL
+   + LAYER M3 ( 0 0 ) ( 520 100 )
+   + PLACED ( 122280 48150 ) N ;
+ - parallel_out[26] + NET parallel_out[26] + DIRECTION OUTPUT + USE SIGNAL
+   + LAYER M3 ( 0 0 ) ( 520 100 )
+   + PLACED ( 122280 43950 ) N ;
+ - parallel_out[25] + NET parallel_out[25] + DIRECTION OUTPUT + USE SIGNAL
+   + LAYER M3 ( 0 0 ) ( 520 100 )
+   + PLACED ( 122280 39750 ) N ;
+ - parallel_out[24] + NET parallel_out[24] + DIRECTION OUTPUT + USE SIGNAL
+   + LAYER M3 ( 0 0 ) ( 520 100 )
+   + PLACED ( 122280 35550 ) N ;
+ - parallel_out[23] + NET parallel_out[23] + DIRECTION OUTPUT + USE SIGNAL
+   + LAYER M3 ( 0 0 ) ( 520 100 )
+   + PLACED ( 122280 31350 ) N ;
+ - parallel_out[22] + NET parallel_out[22] + DIRECTION OUTPUT + USE SIGNAL
+   + LAYER M3 ( 0 0 ) ( 520 100 )
+   + PLACED ( 122280 22950 ) N ;
+ - parallel_out[21] + NET parallel_out[21] + DIRECTION OUTPUT + USE SIGNAL
+   + LAYER M3 ( 0 0 ) ( 520 100 )
+   + PLACED ( 122280 27150 ) N ;
+ - parallel_out[20] + NET parallel_out[20] + DIRECTION OUTPUT + USE SIGNAL
+   + LAYER M3 ( 0 0 ) ( 520 100 )
+   + PLACED ( 0 84950 ) N ;
+ - parallel_out[19] + NET parallel_out[19] + DIRECTION OUTPUT + USE SIGNAL
+   + LAYER M3 ( 0 0 ) ( 520 100 )
+   + PLACED ( 0 80750 ) N ;
+ - parallel_out[18] + NET parallel_out[18] + DIRECTION OUTPUT + USE SIGNAL
+   + LAYER M3 ( 0 0 ) ( 520 100 )
+   + PLACED ( 0 76550 ) N ;
+ - parallel_out[17] + NET parallel_out[17] + DIRECTION OUTPUT + USE SIGNAL
+   + LAYER M3 ( 0 0 ) ( 520 100 )
+   + PLACED ( 0 72350 ) N ;
+ - parallel_out[16] + NET parallel_out[16] + DIRECTION OUTPUT + USE SIGNAL
+   + LAYER M3 ( 0 0 ) ( 520 100 )
+   + PLACED ( 0 68150 ) N ;
+ - parallel_out[15] + NET parallel_out[15] + DIRECTION OUTPUT + USE SIGNAL
+   + LAYER M3 ( 0 0 ) ( 520 100 )
+   + PLACED ( 0 63950 ) N ;
+ - parallel_out[14] + NET parallel_out[14] + DIRECTION OUTPUT + USE SIGNAL
+   + LAYER M3 ( 0 0 ) ( 520 100 )
+   + PLACED ( 0 59750 ) N ;
+ - parallel_out[13] + NET parallel_out[13] + DIRECTION OUTPUT + USE SIGNAL
+   + LAYER M3 ( 0 0 ) ( 520 100 )
+   + PLACED ( 0 55550 ) N ;
+ - parallel_out[12] + NET parallel_out[12] + DIRECTION OUTPUT + USE SIGNAL
+   + LAYER M3 ( 0 0 ) ( 520 100 )
+   + PLACED ( 0 51350 ) N ;
+ - parallel_out[11] + NET parallel_out[11] + DIRECTION OUTPUT + USE SIGNAL
+   + LAYER M3 ( 0 0 ) ( 520 100 )
+   + PLACED ( 0 47150 ) N ;
+ - parallel_out[10] + NET parallel_out[10] + DIRECTION OUTPUT + USE SIGNAL
+   + LAYER M3 ( 0 0 ) ( 520 100 )
+   + PLACED ( 0 42950 ) N ;
+ - parallel_out[9] + NET parallel_out[9] + DIRECTION OUTPUT + USE SIGNAL
+   + LAYER M3 ( 0 0 ) ( 520 100 )
+   + PLACED ( 0 38750 ) N ;
+ - parallel_out[8] + NET parallel_out[8] + DIRECTION OUTPUT + USE SIGNAL
+   + LAYER M3 ( 0 0 ) ( 520 100 )
+   + PLACED ( 0 34550 ) N ;
+ - parallel_out[7] + NET parallel_out[7] + DIRECTION OUTPUT + USE SIGNAL
+   + LAYER M3 ( 0 0 ) ( 520 100 )
+   + PLACED ( 0 30350 ) N ;
+ - parallel_out[6] + NET parallel_out[6] + DIRECTION OUTPUT + USE SIGNAL
+   + LAYER M3 ( 0 0 ) ( 520 100 )
+   + PLACED ( 0 26150 ) N ;
+ - parallel_out[5] + NET parallel_out[5] + DIRECTION OUTPUT + USE SIGNAL
+   + LAYER M3 ( 0 0 ) ( 520 100 )
+   + PLACED ( 0 21950 ) N ;
+ - parallel_out[4] + NET parallel_out[4] + DIRECTION OUTPUT + USE SIGNAL
+   + LAYER M3 ( 0 0 ) ( 520 100 )
+   + PLACED ( 0 17750 ) N ;
+ - parallel_out[3] + NET parallel_out[3] + DIRECTION OUTPUT + USE SIGNAL
+   + LAYER M3 ( 0 0 ) ( 520 100 )
+   + PLACED ( 0 13550 ) N ;
+ - parallel_out[2] + NET parallel_out[2] + DIRECTION OUTPUT + USE SIGNAL
+   + LAYER M3 ( 0 0 ) ( 520 100 )
+   + PLACED ( 0 9350 ) N ;
+ - parallel_out[1] + NET parallel_out[1] + DIRECTION OUTPUT + USE SIGNAL
+   + LAYER M3 ( 0 0 ) ( 520 100 )
+   + PLACED ( 0 5150 ) N ;
+ - parallel_out[0] + NET parallel_out[0] + DIRECTION OUTPUT + USE SIGNAL
+   + LAYER M3 ( 0 0 ) ( 520 100 )
+   + PLACED ( 0 950 ) N ;
+ - VDD + NET VDD + SPECIAL + DIRECTION INPUT + USE POWER ;
+ - VSS + NET VSS + SPECIAL + DIRECTION INPUT + USE GROUND ;
+END PINS
+PINPROPERTIES 136 ;
+ - PIN clk
+   + PROPERTY ACCESS_DIRECTION "0 right" ;
+ - PIN rst
+   + PROPERTY ACCESS_DIRECTION "0 right" ;
+ - PIN enable
+   + PROPERTY ACCESS_DIRECTION "0 right" ;
+ - PIN load
+   + PROPERTY ACCESS_DIRECTION "0 right" ;
+ - PIN serial_in
+   + PROPERTY ACCESS_DIRECTION "0 right" ;
+ - PIN mode[1]
+   + PROPERTY ACCESS_DIRECTION "0 right" ;
+ - PIN mode[0]
+   + PROPERTY ACCESS_DIRECTION "0 right" ;
+ - PIN parallel_in[63]
+   + PROPERTY ACCESS_DIRECTION "0 right" ;
+ - PIN parallel_in[62]
+   + PROPERTY ACCESS_DIRECTION "0 right" ;
+ - PIN parallel_in[61]
+   + PROPERTY ACCESS_DIRECTION "0 right" ;
+ - PIN parallel_in[60]
+   + PROPERTY ACCESS_DIRECTION "0 right" ;
+ - PIN parallel_in[59]
+   + PROPERTY ACCESS_DIRECTION "0 right" ;
+ - PIN parallel_in[58]
+   + PROPERTY ACCESS_DIRECTION "0 right" ;
+ - PIN parallel_in[57]
+   + PROPERTY ACCESS_DIRECTION "0 right" ;
+ - PIN parallel_in[56]
+   + PROPERTY ACCESS_DIRECTION "0 right" ;
+ - PIN parallel_in[55]
+   + PROPERTY ACCESS_DIRECTION "0 right" ;
+ - PIN parallel_in[54]
+   + PROPERTY ACCESS_DIRECTION "0 right" ;
+ - PIN parallel_in[53]
+   + PROPERTY ACCESS_DIRECTION "0 right" ;
+ - PIN parallel_in[52]
+   + PROPERTY ACCESS_DIRECTION "0 right" ;
+ - PIN parallel_in[51]
+   + PROPERTY ACCESS_DIRECTION "0 right" ;
+ - PIN parallel_in[50]
+   + PROPERTY ACCESS_DIRECTION "0 right" ;
+ - PIN parallel_in[49]
+   + PROPERTY ACCESS_DIRECTION "0 right" ;
+ - PIN parallel_in[48]
+   + PROPERTY ACCESS_DIRECTION "0 right" ;
+ - PIN parallel_in[47]
+   + PROPERTY ACCESS_DIRECTION "0 right" ;
+ - PIN parallel_in[46]
+   + PROPERTY ACCESS_DIRECTION "0 right" ;
+ - PIN parallel_in[45]
+   + PROPERTY ACCESS_DIRECTION "0 right" ;
+ - PIN parallel_in[44]
+   + PROPERTY ACCESS_DIRECTION "0 right" ;
+ - PIN parallel_in[43]
+   + PROPERTY ACCESS_DIRECTION "0 right" ;
+ - PIN parallel_in[42]
+   + PROPERTY ACCESS_DIRECTION "0 right" ;
+ - PIN parallel_in[41]
+   + PROPERTY ACCESS_DIRECTION "0 right" ;
+ - PIN parallel_in[40]
+   + PROPERTY ACCESS_DIRECTION "0 right" ;
+ - PIN parallel_in[39]
+   + PROPERTY ACCESS_DIRECTION "0 right" ;
+ - PIN parallel_in[38]
+   + PROPERTY ACCESS_DIRECTION "0 right" ;
+ - PIN parallel_in[37]
+   + PROPERTY ACCESS_DIRECTION "0 right" ;
+ - PIN parallel_in[36]
+   + PROPERTY ACCESS_DIRECTION "0 right" ;
+ - PIN parallel_in[35]
+   + PROPERTY ACCESS_DIRECTION "0 right" ;
+ - PIN parallel_in[34]
+   + PROPERTY ACCESS_DIRECTION "0 right" ;
+ - PIN parallel_in[33]
+   + PROPERTY ACCESS_DIRECTION "0 right" ;
+ - PIN parallel_in[32]
+   + PROPERTY ACCESS_DIRECTION "0 right" ;
+ - PIN parallel_in[31]
+   + PROPERTY ACCESS_DIRECTION "0 right" ;
+ - PIN parallel_in[30]
+   + PROPERTY ACCESS_DIRECTION "0 right" ;
+ - PIN parallel_in[29]
+   + PROPERTY ACCESS_DIRECTION "0 right" ;
+ - PIN parallel_in[28]
+   + PROPERTY ACCESS_DIRECTION "0 right" ;
+ - PIN parallel_in[27]
+   + PROPERTY ACCESS_DIRECTION "0 right" ;
+ - PIN parallel_in[26]
+   + PROPERTY ACCESS_DIRECTION "0 right" ;
+ - PIN parallel_in[25]
+   + PROPERTY ACCESS_DIRECTION "0 right" ;
+ - PIN parallel_in[24]
+   + PROPERTY ACCESS_DIRECTION "0 right" ;
+ - PIN parallel_in[23]
+   + PROPERTY ACCESS_DIRECTION "0 right" ;
+ - PIN parallel_in[22]
+   + PROPERTY ACCESS_DIRECTION "0 right" ;
+ - PIN parallel_in[21]
+   + PROPERTY ACCESS_DIRECTION "0 right" ;
+ - PIN parallel_in[20]
+   + PROPERTY ACCESS_DIRECTION "0 right" ;
+ - PIN parallel_in[19]
+   + PROPERTY ACCESS_DIRECTION "0 right" ;
+ - PIN parallel_in[18]
+   + PROPERTY ACCESS_DIRECTION "0 right" ;
+ - PIN parallel_in[17]
+   + PROPERTY ACCESS_DIRECTION "0 right" ;
+ - PIN parallel_in[16]
+   + PROPERTY ACCESS_DIRECTION "0 right" ;
+ - PIN parallel_in[15]
+   + PROPERTY ACCESS_DIRECTION "0 right" ;
+ - PIN parallel_in[14]
+   + PROPERTY ACCESS_DIRECTION "0 right" ;
+ - PIN parallel_in[13]
+   + PROPERTY ACCESS_DIRECTION "0 right" ;
+ - PIN parallel_in[12]
+   + PROPERTY ACCESS_DIRECTION "0 right" ;
+ - PIN parallel_in[11]
+   + PROPERTY ACCESS_DIRECTION "0 right" ;
+ - PIN parallel_in[10]
+   + PROPERTY ACCESS_DIRECTION "0 right" ;
+ - PIN parallel_in[9]
+   + PROPERTY ACCESS_DIRECTION "0 right" ;
+ - PIN parallel_in[8]
+   + PROPERTY ACCESS_DIRECTION "0 right" ;
+ - PIN parallel_in[7]
+   + PROPERTY ACCESS_DIRECTION "0 right" ;
+ - PIN parallel_in[6]
+   + PROPERTY ACCESS_DIRECTION "0 right" ;
+ - PIN parallel_in[5]
+   + PROPERTY ACCESS_DIRECTION "0 right" ;
+ - PIN parallel_in[4]
+   + PROPERTY ACCESS_DIRECTION "0 right" ;
+ - PIN parallel_in[3]
+   + PROPERTY ACCESS_DIRECTION "0 right" ;
+ - PIN parallel_in[2]
+   + PROPERTY ACCESS_DIRECTION "0 left" ;
+ - PIN parallel_in[1]
+   + PROPERTY ACCESS_DIRECTION "0 left" ;
+ - PIN parallel_in[0]
+   + PROPERTY ACCESS_DIRECTION "0 left" ;
+ - PIN serial_out
+   + PROPERTY ACCESS_DIRECTION "0 left" ;
+ - PIN parallel_out[63]
+   + PROPERTY ACCESS_DIRECTION "0 left" ;
+ - PIN parallel_out[62]
+   + PROPERTY ACCESS_DIRECTION "0 left" ;
+ - PIN parallel_out[61]
+   + PROPERTY ACCESS_DIRECTION "0 left" ;
+ - PIN parallel_out[60]
+   + PROPERTY ACCESS_DIRECTION "0 left" ;
+ - PIN parallel_out[59]
+   + PROPERTY ACCESS_DIRECTION "0 left" ;
+ - PIN parallel_out[58]
+   + PROPERTY ACCESS_DIRECTION "0 left" ;
+ - PIN parallel_out[57]
+   + PROPERTY ACCESS_DIRECTION "0 left" ;
+ - PIN parallel_out[56]
+   + PROPERTY ACCESS_DIRECTION "0 left" ;
+ - PIN parallel_out[55]
+   + PROPERTY ACCESS_DIRECTION "0 left" ;
+ - PIN parallel_out[54]
+   + PROPERTY ACCESS_DIRECTION "0 left" ;
+ - PIN parallel_out[53]
+   + PROPERTY ACCESS_DIRECTION "0 left" ;
+ - PIN parallel_out[52]
+   + PROPERTY ACCESS_DIRECTION "0 left" ;
+ - PIN parallel_out[51]
+   + PROPERTY ACCESS_DIRECTION "0 left" ;
+ - PIN parallel_out[50]
+   + PROPERTY ACCESS_DIRECTION "0 left" ;
+ - PIN parallel_out[49]
+   + PROPERTY ACCESS_DIRECTION "0 left" ;
+ - PIN parallel_out[48]
+   + PROPERTY ACCESS_DIRECTION "0 left" ;
+ - PIN parallel_out[47]
+   + PROPERTY ACCESS_DIRECTION "0 left" ;
+ - PIN parallel_out[46]
+   + PROPERTY ACCESS_DIRECTION "0 left" ;
+ - PIN parallel_out[45]
+   + PROPERTY ACCESS_DIRECTION "0 left" ;
+ - PIN parallel_out[44]
+   + PROPERTY ACCESS_DIRECTION "0 left" ;
+ - PIN parallel_out[43]
+   + PROPERTY ACCESS_DIRECTION "0 left" ;
+ - PIN parallel_out[42]
+   + PROPERTY ACCESS_DIRECTION "0 left" ;
+ - PIN parallel_out[41]
+   + PROPERTY ACCESS_DIRECTION "0 right" ;
+ - PIN parallel_out[40]
+   + PROPERTY ACCESS_DIRECTION "0 right" ;
+ - PIN parallel_out[39]
+   + PROPERTY ACCESS_DIRECTION "0 right" ;
+ - PIN parallel_out[38]
+   + PROPERTY ACCESS_DIRECTION "0 right" ;
+ - PIN parallel_out[37]
+   + PROPERTY ACCESS_DIRECTION "0 right" ;
+ - PIN parallel_out[36]
+   + PROPERTY ACCESS_DIRECTION "0 right" ;
+ - PIN parallel_out[35]
+   + PROPERTY ACCESS_DIRECTION "0 right" ;
+ - PIN parallel_out[34]
+   + PROPERTY ACCESS_DIRECTION "0 right" ;
+ - PIN parallel_out[33]
+   + PROPERTY ACCESS_DIRECTION "0 right" ;
+ - PIN parallel_out[32]
+   + PROPERTY ACCESS_DIRECTION "0 right" ;
+ - PIN parallel_out[31]
+   + PROPERTY ACCESS_DIRECTION "0 right" ;
+ - PIN parallel_out[30]
+   + PROPERTY ACCESS_DIRECTION "0 right" ;
+ - PIN parallel_out[29]
+   + PROPERTY ACCESS_DIRECTION "0 right" ;
+ - PIN parallel_out[28]
+   + PROPERTY ACCESS_DIRECTION "0 right" ;
+ - PIN parallel_out[27]
+   + PROPERTY ACCESS_DIRECTION "0 right" ;
+ - PIN parallel_out[26]
+   + PROPERTY ACCESS_DIRECTION "0 right" ;
+ - PIN parallel_out[25]
+   + PROPERTY ACCESS_DIRECTION "0 right" ;
+ - PIN parallel_out[24]
+   + PROPERTY ACCESS_DIRECTION "0 right" ;
+ - PIN parallel_out[23]
+   + PROPERTY ACCESS_DIRECTION "0 right" ;
+ - PIN parallel_out[22]
+   + PROPERTY ACCESS_DIRECTION "0 right" ;
+ - PIN parallel_out[21]
+   + PROPERTY ACCESS_DIRECTION "0 right" ;
+ - PIN parallel_out[20]
+   + PROPERTY ACCESS_DIRECTION "0 left" ;
+ - PIN parallel_out[19]
+   + PROPERTY ACCESS_DIRECTION "0 left" ;
+ - PIN parallel_out[18]
+   + PROPERTY ACCESS_DIRECTION "0 left" ;
+ - PIN parallel_out[17]
+   + PROPERTY ACCESS_DIRECTION "0 left" ;
+ - PIN parallel_out[16]
+   + PROPERTY ACCESS_DIRECTION "0 left" ;
+ - PIN parallel_out[15]
+   + PROPERTY ACCESS_DIRECTION "0 left" ;
+ - PIN parallel_out[14]
+   + PROPERTY ACCESS_DIRECTION "0 left" ;
+ - PIN parallel_out[13]
+   + PROPERTY ACCESS_DIRECTION "0 left" ;
+ - PIN parallel_out[12]
+   + PROPERTY ACCESS_DIRECTION "0 left" ;
+ - PIN parallel_out[11]
+   + PROPERTY ACCESS_DIRECTION "0 left" ;
+ - PIN parallel_out[10]
+   + PROPERTY ACCESS_DIRECTION "0 left" ;
+ - PIN parallel_out[9]
+   + PROPERTY ACCESS_DIRECTION "0 left" ;
+ - PIN parallel_out[8]
+   + PROPERTY ACCESS_DIRECTION "0 left" ;
+ - PIN parallel_out[7]
+   + PROPERTY ACCESS_DIRECTION "0 left" ;
+ - PIN parallel_out[6]
+   + PROPERTY ACCESS_DIRECTION "0 left" ;
+ - PIN parallel_out[5]
+   + PROPERTY ACCESS_DIRECTION "0 left" ;
+ - PIN parallel_out[4]
+   + PROPERTY ACCESS_DIRECTION "0 left" ;
+ - PIN parallel_out[3]
+   + PROPERTY ACCESS_DIRECTION "0 left" ;
+ - PIN parallel_out[2]
+   + PROPERTY ACCESS_DIRECTION "0 left" ;
+ - PIN parallel_out[1]
+   + PROPERTY ACCESS_DIRECTION "0 left" ;
+ - PIN parallel_out[0]
+   + PROPERTY ACCESS_DIRECTION "0 left" ;
+END PINPROPERTIES
+END DESIGN

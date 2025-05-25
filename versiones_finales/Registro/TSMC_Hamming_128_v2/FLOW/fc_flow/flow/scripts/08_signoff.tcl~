@@ -1,0 +1,127 @@
+#####################################
+#####          Signoff          #####
+#####################################
+
+
+# Sourcing setup script
+source -echo ../../setup/icc2_dp_setup.tcl
+
+
+#### ----- Open lib and create new block from previous script (07_route_opt.tcl) ----- ####
+
+# Open the design library
+open_lib ${DESIGN_LIBRARY}
+
+# Copy and open block
+copy_block -from ${DESIGN_NAME}/route_opt -to ${DESIGN_NAME}/signoff
+open_block ${DESIGN_NAME}/signoff
+
+
+#### ----- Filler cell insertion ----- ####
+
+#Select filler cell
+#set FILLER_CELLS [get_object_name [sort_collection -descending [get_lib_cells */FEED*] area]]
+
+# Add filler cells
+#create_stdcell_fillers -lib_cells ${FILLER_CELLS} 
+set_app_options -name place.legalize.enable_advanced_legalizer -value false
+set_app_options -name place.legalize.filler_lib_cells -value { [ get_lib_cells tcbn65lphpbwp_1/DCAP* ] }
+create_stdcell_fillers -lib_cells [ get_lib_cells tcbn65lphpbwp_1/DCAP* ]
+
+set_app_options -name place.legalize.enable_advanced_legalizer -value false
+set_app_options -name place.legalize.filler_lib_cells -value { [ get_lib_cells tcbn65lphpbwp_1_physical_only/FILL* ] }
+create_stdcell_fillers -lib_cells [ get_lib_cells tcbn65lphpbwp_1_physical_only/FILL* ]
+
+set_app_options -name place.legalize.filler_lib_cells -value { [ get_lib_cells tcbn65lphpbwp_1_physical_only/FILL* ] [ get_lib_cells tcbn65lphpbwp_1/DCAP* ] }
+
+
+connect_pg_net -automatic
+# Check legality of the filler cells
+check_legality
+
+remove_stdcell_fillers_with_violation
+
+verify_pg_nets
+check_routes
+check_lvs -max_errors 1500 -open_reporting detailed
+#### ----- Connect PG nets ----- ####
+
+#connect_pg_net -net VDD [get_pins -hierarchical  */VDD]
+#connect_pg_net -net VSS [get_pins -hierarchical  */VSS]
+
+# Save block before ICV run
+save_block
+
+
+#### ----- ICV In-Design Run ----- ####
+
+# Max cores
+set_host_options -target ICV -max_cores 2
+
+# Select runset file
+set_app_options -name  signoff.check_drc.runset -value ${DRC_RUNSET_FILE}
+
+# Select GDS file
+set_app_options -name  signoff.physical.layer_map_file -value ${GDS_MAP_FILE}
+
+# Max errors per rule
+set_app_options -name signoff.check_drc.max_errors_per_rule -value 1000
+
+# Reports file 
+set_app_options -name signoff.check_drc.run_dir -value "./signoff_drc_run/"
+
+# Specify ICV version    
+set_app_options -name signoff.check_drc.user_defined_options -value ${ICV}
+set_app_options -name signoff.fix_drc.user_defined_options -value ${ICV}
+
+# Save block before DRC check
+save_block
+
+# Run ICV DRC 
+signoff_check_drc
+
+# DRC fix
+signoff_fix_drc
+
+#save_block
+
+# Run ICV DRC to check the results 
+signoff_check_drc
+
+#### ----- Metal Fill ----- #### ------------------Not sure about this, also check with Pablo, again 
+#set_app_options -name signoff.create_metal_fill.runset -value ${MFILL_RUNSET_FILE}
+#signoff_report_metal_density -output pre_metal_fill_density.rpt
+#signoff_create_metal_fill -select_layers {M2 M3 M4 M5 M6}
+#signoff_report_metal_density -output post_metal_fill_density.rpt
+
+
+#### ----- Analyze the design and generate reports ----- ####
+
+check_legality 
+report_congestion 
+report_utilization
+collect_reports chip_finish 
+
+
+#### ---- Save and exit ----- ####
+
+legalize_placement
+get_blocks -all
+list_blocks
+save_block
+save_block -as ${DESIGN_NAME}
+save_lib
+
+
+#### ----- Write Out Design Data ----- ####
+
+#Source write data script
+source -echo ../scripts/08_01_write_data.tcl
+
+if {[info exists ::env(NO_GUI)]} {
+    exit
+} else {
+	gui_start
+}
+
+# The End

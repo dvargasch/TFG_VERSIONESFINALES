@@ -9,8 +9,8 @@ overhead: (9538) bytes for (9) blocks [Average: (1059) bytes/block]
 
 write  => 0(times) 0K(bytes) [0K bytes to file]
 read   => 2(times) 37K(bytes) [6K bytes compressed data from file]
-access => 749119(times) 5867M(bytes)
-          [hit ratio: 99.9997%]
+access => 540137(times) 4234M(bytes)
+          [hit ratio: 99.9996%]
 
 time: write(0) read(0)  unit: second
 
@@ -25,18 +25,18 @@ idxCnt: (4)
 closeHead: (1)
 closeTail: (3)
 openCnt: (3)
-fid(3): fd(1073741825) fileName(/mnt/vol_NFS_rh003/estudiantes/DANIELA_VARGAS/Version_final/0516/versiones_finales/Registro/TSMC_Hamming_8_version2/FLOW/common/rtl/sverilog/prueba_3.daidir/kdb.elab++/work.lib++/top.sv#inc___vcs_unit__1__1#.tdc)
-	size(5562) lastModTime(1747731553) curModTime(1747731553)
+fid(3): fd(1073741825) fileName(/mnt/vol_NFS_rh003/estudiantes/DANIELA_VARGAS/Version_final/0516/versiones_finales/Registro/TSMC_Hamming_8_version2/FLOW/common/rtl/sverilog/prueba3.daidir/kdb.elab++/work.lib++/top.sv#inc___vcs_unit__1__1#.tdc)
+	size(5578) lastModTime(1748144518) curModTime(1748144518)
 	mode(rb)	hot(0) cool(2) pos(0)
-fid(2): fd(34) fileName(/mnt/vol_NFS_rh003/estudiantes/DANIELA_VARGAS/Version_final/0516/versiones_finales/Registro/TSMC_Hamming_8_version2/FLOW/common/rtl/sverilog/verdiLog/_swap_0001#8323328#114885)
-	size(0) lastModTime(0) curModTime(1747731577)
+fid(2): fd(33) fileName(/mnt/vol_NFS_rh003/estudiantes/DANIELA_VARGAS/Version_final/0516/versiones_finales/Registro/TSMC_Hamming_8_version2/FLOW/common/rtl/sverilog/verdiLog/_swap_0001#8323328#3211170)
+	size(0) lastModTime(0) curModTime(1748144573)
 	mode(w+b)	hot(3) cool(1) pos(0)
-fid(1): fd(1073741824) fileName(/mnt/vol_NFS_rh003/estudiantes/DANIELA_VARGAS/Version_final/0516/versiones_finales/Registro/TSMC_Hamming_8_version2/FLOW/common/rtl/sverilog/prueba_3.daidir/kdb.elab++/work.lib++/tb_3.sv.tdc)
-	size(4934) lastModTime(1747731553) curModTime(1747731553)
+fid(1): fd(1073741824) fileName(/mnt/vol_NFS_rh003/estudiantes/DANIELA_VARGAS/Version_final/0516/versiones_finales/Registro/TSMC_Hamming_8_version2/FLOW/common/rtl/sverilog/prueba3.daidir/kdb.elab++/work.lib++/tb_3.sv.tdc)
+	size(4950) lastModTime(1748144518) curModTime(1748144518)
 	mode(rb)	hot(2) cool(0) pos(0)
 fid(0): fd(0) fileName(NULL)
 	mode(NULL)	hot(0) cool(0) pos(0)
 ==================================================
-mySelf(0x18bdf940) pre(0x199d8330) next((nil))
+mySelf(16fd8390) pre(165fd480) next(0)
 version(200506)
-date(Aug 13 2023 07:34:34)
+date(May 19 2021 05:00:27)

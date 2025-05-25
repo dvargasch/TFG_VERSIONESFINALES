@@ -1,5 +1,5 @@
 rmapats_mop.o: rmapats.m
-	@/mnt/vol_synopsys2023/synopsys/vcs/U-2023.03-SP2/linux64/bin/cgmop1  -tls_initexe  -pic -gen_obj rmapats.m rmapats_mop.o; rm -f rmapats.m; touch rmapats.m; touch rmapats_mop.o
+	@/mnt/vol_NFS_rh003/tools/vcs/R-2020.12-SP2/linux64/bin/cgmop1  -tls_initexe  -pic -gen_obj rmapats.m rmapats_mop.o; rm -f rmapats.m; touch rmapats.m; touch rmapats_mop.o
 
 rmapats.o: rmapats.c
 	@$(CC_CG) $(CFLAGS_CG) -c -fPIC -x c -o rmapats.o rmapats.c

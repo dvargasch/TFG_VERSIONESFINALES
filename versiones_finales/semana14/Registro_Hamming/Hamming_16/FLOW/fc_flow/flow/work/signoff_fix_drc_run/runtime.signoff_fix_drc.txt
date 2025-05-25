@@ -1,0 +1,6 @@
+Task   runtime(seconds)
+ICV-EXEC	61
+signoff_check_drc	62
+initial_drc_run	62
+report_generation	0
+Overall ADR Runtime	62

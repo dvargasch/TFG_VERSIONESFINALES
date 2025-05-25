@@ -31,13 +31,13 @@ TMPSPECENV=$(VCSTMPSPECENV)
 CC=$(TMPSPECENV) $(VCS_CC) $(TMPSPECARG)
 
 # C flags for compilation
-CFLAGS=$(STDLIB)-w  -pipe -fPIC -O -I/mnt/vol_synopsys2023/synopsys/vcs/U-2023.03-SP2/include    
+CFLAGS=$(STDLIB)-w  -pipe -fPIC -O -I/mnt/vol_NFS_rh003/tools/vcs/R-2020.12-SP2/include    
 
-CFLAGS_CG=-w  -pipe -fPIC -I/mnt/vol_synopsys2023/synopsys/vcs/U-2023.03-SP2/include -O  -fno-strict-aliasing -fno-optimize-sibling-calls   
+CFLAGS_CG=-w  -pipe -fPIC -I/mnt/vol_NFS_rh003/tools/vcs/R-2020.12-SP2/include -O  -fno-strict-aliasing -fno-optimize-sibling-calls   
 
-CFLAGS_CG_CLIB=-w  -pipe -fPIC -I/mnt/vol_synopsys2023/synopsys/vcs/U-2023.03-SP2/include -O  -fno-strict-aliasing -fno-optimize-sibling-calls   
+CFLAGS_CG_CLIB=-w  -pipe -fPIC -I/mnt/vol_NFS_rh003/tools/vcs/R-2020.12-SP2/include -O  -fno-strict-aliasing -fno-optimize-sibling-calls   
 
-CFLAGS_RMAR=-w  -pipe -fPIC -I/mnt/vol_synopsys2023/synopsys/vcs/U-2023.03-SP2/include -O  -fno-strict-aliasing -fno-optimize-sibling-calls   
+CFLAGS_RMAR=-w  -pipe -fPIC -I/mnt/vol_NFS_rh003/tools/vcs/R-2020.12-SP2/include -O  -fno-strict-aliasing -fno-optimize-sibling-calls   
 
 ASFLAGS=(null)
 LIBS=
@@ -46,4 +46,4 @@ include filelist.hsopt
 
 
 rmapats.so: $(HSOPT_OBJS)
-	@$(VCS_CC) $(LDFLAGS) $(LIBS) -shared -o ./../prueba_3.daidir/rmapats.so $(HSOPT_OBJS)
+	@$(VCS_CC) $(LDFLAGS) $(LIBS) -shared -o ./../prueba3.daidir/rmapats.so $(HSOPT_OBJS)

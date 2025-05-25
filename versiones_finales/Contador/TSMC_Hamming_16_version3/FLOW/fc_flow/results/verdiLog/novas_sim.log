@@ -1,27 +1,37 @@
-Invoking simulator...
-
-./results -sml=verdi +UVM_VERDI_TRACE=UVM_AWARE +fsdb+gate=off -ucli2Proc -ucli
-debImport "-i" "-simflow" "-dbdir" "./results.daidir"
-*Verdi* Loading libsscore_vcs202303.so
-
-*Verdi* : Enable RPC Server(66031)
-
-srcTBInvokeSim
-Chronologic VCS simulator copyright 1991-2023
-Contains Synopsys proprietary information.
-Compiler version U-2023.03-SP2_Full64; Runtime version U-2023.03-SP2_Full64;  May 19 21:13 2025
-xterm-256color is Not a valid terminal...
-Verdi>fsdbDumpvars 1 "tb_top.dut"  +all +trace_process;fsdbDumpflush 
-
-*Verdi* : Begin traversing the scope (tb_top.dut), layer (1).
-*Verdi* : Enable +trace_process and +all dumping.
-*Verdi* : End of traversing.
+Verdi>restart
+*Verdi* Loading libsscore_vcs202012.so
+FSDB Dumper for VCS, Release Verdi_R-2020.12-SP2, Linux x86_64/64bit, 05/23/2021
+(C) 1996 - 2021 by Synopsys, Inc.
+*Verdi* FSDB WARNING: The FSDB file already exists. Overwriting the FSDB file may crash the programs that are using this file.
+*Verdi* : Create FSDB file '/mnt/vol_NFS_rh003/estudiantes/DANIELA_VARGAS/Version_final/0516/versiones_finales/Contador/TSMC_Hamming_16_version3/FLOW/fc_flow/results/inter.fsdb'
 *Verdi* : Flush all FSDB Files at 0 ps.
-
+*Verdi* : Enable RPC Server(1154238)
+*Verdi* : Flush all FSDB Files at 0 ps.
+Verdi>fsdbDumpvars 0 "tb_top.dut.clk"  +all +trace_process;fsdbDumpvars 0 "tb_top.dut.reset"  +all +trace_process;fsdbDumpvars 0 "tb_top.dut.enable"  +all +trace_process;fsdbDumpvars 0 "tb_top.dut.enable_last"  +all +trace_process;fsdbDumpvars 0 "tb_top.dut.busy"  +all +trace_process;fsdbDumpvars 0 "tb_top.dut.counter"  +all +trace_process;fsdbDumpvars 0 "tb_top.dut.\\counter_and_parity/counter_stored "  +all +trace_process;fsdbDumpvars 0 "tb_top.dut.\\counter_and_parity/count_neg "  +all +trace_process;fsdbDumpvars 0 "tb_top.dut.parity_stored"  +all +trace_process;fsdbDumpvars 0 "tb_top.dut.\\clk_clock_gate_counter_and_parity/counter_stored_reg "  +all +trace_process;fsdbDumpvars 0 "tb_top.dut.\\clk_clock_gate_counter_and_parity/count_reg_reg "  +all +trace_process;fsdbDumpvars 0 "tb_top.dut.corrected_counter"  +all +trace_process;fsdbDumpvars 0 "tb_top.dut.syndrome"  +all +trace_process;fsdbDumpvars 0 "tb_top.dut.\\clk_clock_gate_counter_and_parity/parity_stored_reg "  +all +trace_process;fsdbDumpvars 0 "tb_top.dut.\\clk_clock_gate_syndrome_inst/corrected_parity_reg "  +all +trace_process
+*Verdi* : Dumping the signal (tb_top.dut.clk).
+*Verdi* : Dumping the signal (tb_top.dut.reset).
+*Verdi* : Dumping the signal (tb_top.dut.enable).
+*Verdi* : Dumping the signal (tb_top.dut.enable_last).
+*Verdi* : Dumping the signal (tb_top.dut.busy).
+*Verdi* : Dumping the signal (tb_top.dut.counter).
+*Verdi* : Dumping the signal (tb_top.dut.\counter_and_parity/counter_stored ).
+*Verdi* : Dumping the signal (tb_top.dut.\counter_and_parity/count_neg ).
+*Verdi* : Dumping the signal (tb_top.dut.parity_stored).
+*Verdi* : Dumping the signal (tb_top.dut.\clk_clock_gate_counter_and_parity/counter_stored_reg ).
+*Verdi* : Dumping the signal (tb_top.dut.\clk_clock_gate_counter_and_parity/count_reg_reg ).
+*Verdi* : Dumping the signal (tb_top.dut.corrected_counter).
+*Verdi* : Dumping the signal (tb_top.dut.syndrome).
+*Verdi* : Dumping the signal (tb_top.dut.\clk_clock_gate_counter_and_parity/parity_stored_reg ).
+*Verdi* : Dumping the signal (tb_top.dut.\clk_clock_gate_syndrome_inst/corrected_parity_reg ).
+*Verdi* : Flush all FSDB Files at 0 ps.
+Chronologic VCS simulator copyright 1991-2020
+Contains Synopsys proprietary information.
+Compiler version R-2020.12-SP2_Full64; Runtime version R-2020.12-SP2_Full64;  May 22 15:34 2025
+xterm-256color is Not a valid terminal...
 Verdi>run
 tb_sin_errores.sv, 50 :         $stop;
            V C S   S i m u l a t i o n   R e p o r t 
 Time: 555000 ps
-CPU Time:      0.080 seconds;       Data structure size:   0.2Mb
-Mon May 19 21:41:14 2025
+CPU Time:      0.150 seconds;       Data structure size:   0.2Mb
+Thu May 22 15:39:38 2025
 debExit

@@ -39,8 +39,7 @@ save_block -as ${DESIGN_NAME}/rtl_read
 
 
 #### ----- Initial mapping ----- ####
-set_dont_touch [get_nets q*] true
-
+set_dont_touch [get_nets q_*] true
 
 # Just to inital map
 compile_fusion -to initial_map  

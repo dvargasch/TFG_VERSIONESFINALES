@@ -1,0 +1,92 @@
+Magic 271485
+Revision Verdi_R-2020.12-SP2
+
+; Window Layout <x> <y> <width> <height> <signalwidth> <valuewidth>
+viewPort 0 -1 1272 424 198 65
+
+; File list:
+; openDirFile [-d delimiter] [-s time_offset] [-rf auto_bus_rule_file] path_name file_name
+openDirFile -d / "" "/mnt/vol_NFS_rh003/estudiantes/DANIELA_VARGAS/Version_final/0516/versiones_finales/Registro/TSMC_TMR_32/FLOW/common/rtl/sverilog/inter.fsdb"
+
+; file time scale:
+; fileTimeScale ### s|ms|us|ns|ps
+
+; signal spacing:
+signalSpacing 5
+
+; windowTimeUnit is used for zoom, cursor & marker
+; waveform viewport range
+zoom 258510.681587 403922.939980
+cursor 275000.000000
+marker 0.000000
+
+; user define markers
+; userMarker time_pos marker_name color linestyle
+; visible top row signal index
+top 24
+; marker line index
+markerPos 38
+
+; event list
+; addEvent event_name event_expression
+; curEvent event_name
+
+
+
+COMPLEX_EVENT_BEGIN
+
+
+COMPLEX_EVENT_END
+
+
+
+; toolbar current search type
+; curSTATUS search_type
+curSTATUS ByChange
+
+
+addGroup "register_1"
+activeDirFile "" "/mnt/vol_NFS_rh003/estudiantes/DANIELA_VARGAS/Version_final/0516/versiones_finales/Registro/TSMC_TMR_32/FLOW/common/rtl/sverilog/inter.fsdb"
+addSignal -h 15 /universal_register_4bit_tb/dut/register_1/clk
+addSignal -h 15 /universal_register_4bit_tb/dut/register_1/rst
+addSignal -h 15 /universal_register_4bit_tb/dut/register_1/enable
+addSignal -h 15 /universal_register_4bit_tb/dut/register_1/load
+addSignal -h 15 /universal_register_4bit_tb/dut/register_1/serial_in
+addSignal -h 15 -UNSIGNED -HEX /universal_register_4bit_tb/dut/register_1/mode[1:0]
+addSignal -h 15 -UNSIGNED -HEX /universal_register_4bit_tb/dut/register_1/parallel_in[31:0]
+addSignal -h 15 /universal_register_4bit_tb/dut/register_1/serial_out
+addSignal -h 15 -UNSIGNED -HEX /universal_register_4bit_tb/dut/register_1/parallel_out[31:0]
+addGroup "register_2"
+addSignal -h 15 /universal_register_4bit_tb/dut/register_2/clk
+addSignal -h 15 /universal_register_4bit_tb/dut/register_2/rst
+addSignal -h 15 /universal_register_4bit_tb/dut/register_2/enable
+addSignal -h 15 /universal_register_4bit_tb/dut/register_2/load
+addSignal -h 15 /universal_register_4bit_tb/dut/register_2/serial_in
+addSignal -h 15 -UNSIGNED -HEX /universal_register_4bit_tb/dut/register_2/mode[1:0]
+addSignal -h 15 -UNSIGNED -HEX /universal_register_4bit_tb/dut/register_2/parallel_in[31:0]
+addSignal -h 15 /universal_register_4bit_tb/dut/register_2/serial_out
+addSignal -h 15 -UNSIGNED -HEX /universal_register_4bit_tb/dut/register_2/parallel_out[31:0]
+addGroup "register_3"
+addSignal -h 15 /universal_register_4bit_tb/dut/register_3/clk
+addSignal -h 15 /universal_register_4bit_tb/dut/register_3/rst
+addSignal -h 15 /universal_register_4bit_tb/dut/register_3/enable
+addSignal -h 15 /universal_register_4bit_tb/dut/register_3/load
+addSignal -h 15 /universal_register_4bit_tb/dut/register_3/serial_in
+addSignal -h 15 -UNSIGNED -HEX /universal_register_4bit_tb/dut/register_3/mode[1:0]
+addSignal -h 15 -UNSIGNED -HEX /universal_register_4bit_tb/dut/register_3/parallel_in[31:0]
+addSignal -h 15 /universal_register_4bit_tb/dut/register_3/serial_out
+addSignal -h 15 -UNSIGNED -HEX /universal_register_4bit_tb/dut/register_3/parallel_out[31:0]
+addGroup "voter"
+addSignal -h 15 -UNSIGNED -HEX /universal_register_4bit_tb/dut/voter/parallel_out_1[31:0]
+addSignal -h 15 -UNSIGNED -HEX /universal_register_4bit_tb/dut/voter/parallel_out_2[31:0]
+addSignal -h 15 -UNSIGNED -HEX /universal_register_4bit_tb/dut/voter/parallel_out_3[31:0]
+addSignal -h 15 /universal_register_4bit_tb/dut/voter/serial_out_1
+addSignal -h 15 /universal_register_4bit_tb/dut/voter/serial_out_2
+addSignal -h 15 /universal_register_4bit_tb/dut/voter/serial_out_3
+addSignal -h 15 -UNSIGNED -HEX /universal_register_4bit_tb/dut/voter/parallel_out_voted[31:0]
+addSignal -h 15 /universal_register_4bit_tb/dut/voter/serial_out_voted
+addGroup "G5"
+
+; getSignalForm Scope Hierarchy Status
+; active file of getSignalForm
+

@@ -1,0 +1,189 @@
+<?xml version="1.0"?>
+<!-- Created by IC Validator 2022.12-SP4 on Sun May 25 01:10:22 2025
+ -->
+<icvCellMap version="1.1">
+  <library name="tpdn65lpgv2od3_sdml" path="/mnt/vol_NFS_rh003/estudiantes/DANIELA_VARGAS/Version_final/0516/versiones_finales/semana14/Registro_Hamming/Hamming_16/FLOW/fc_flow/setup/ndm_libraries/ndm/tpdn65lpgv2od3_sdml.ndm"/>
+  <library name="tpdn65lpgv2od3_sd_physical_only" path="/mnt/vol_NFS_rh003/estudiantes/DANIELA_VARGAS/Version_final/0516/versiones_finales/semana14/Registro_Hamming/Hamming_16/FLOW/fc_flow/setup/ndm_libraries/ndm/tpdn65lpgv2od3_sd_physical_only.ndm"/>
+  <library name="tcbn65lphpbwpcghvt_1_physical_only" path="/mnt/vol_NFS_rh003/estudiantes/DANIELA_VARGAS/Version_final/0516/versiones_finales/semana14/Registro_Hamming/Hamming_16/FLOW/fc_flow/setup/ndm_libraries/ndm/tcbn65lphpbwpcghvt_1_physical_only.ndm"/>
+  <library name="ts1n65lpa2048x32m4_140a_5m" path="/mnt/vol_NFS_rh003/estudiantes/DANIELA_VARGAS/Version_final/0516/versiones_finales/semana14/Registro_Hamming/Hamming_16/FLOW/fc_flow/setup/ndm_libraries/ndm/ts1n65lpa2048x32m4_140a_5m.ndm"/>
+  <library name="tcbn65lphpbwp_1_physical_only" path="/mnt/vol_NFS_rh003/estudiantes/DANIELA_VARGAS/Version_final/0516/versiones_finales/semana14/Registro_Hamming/Hamming_16/FLOW/fc_flow/setup/ndm_libraries/ndm/tcbn65lphpbwp_1_physical_only.ndm"/>
+  <library name="tpfn65lpgv2od3_physical_only" path="/mnt/vol_NFS_rh003/estudiantes/DANIELA_VARGAS/Version_final/0516/versiones_finales/semana14/Registro_Hamming/Hamming_16/FLOW/fc_flow/setup/ndm_libraries/ndm/tpfn65lpgv2od3_physical_only.ndm"/>
+  <library name="tpbn65v_physical_only" path="/mnt/vol_NFS_rh003/estudiantes/DANIELA_VARGAS/Version_final/0516/versiones_finales/semana14/Registro_Hamming/Hamming_16/FLOW/fc_flow/setup/ndm_libraries/ndm/tpbn65v_physical_only.ndm"/>
+  <library name="top_lib" path="/mnt/vol_NFS_rh003/estudiantes/DANIELA_VARGAS/Version_final/0516/versiones_finales/semana14/Registro_Hamming/Hamming_16/FLOW/fc_flow/flow/work/top_lib"/>
+  <library name="tpin65gv_physical_only" path="/mnt/vol_NFS_rh003/estudiantes/DANIELA_VARGAS/Version_final/0516/versiones_finales/semana14/Registro_Hamming/Hamming_16/FLOW/fc_flow/setup/ndm_libraries/ndm/tpin65gv_physical_only.ndm"/>
+  <library name="tcbn65lphpbwpcghvt_1" path="/mnt/vol_NFS_rh003/estudiantes/DANIELA_VARGAS/Version_final/0516/versiones_finales/semana14/Registro_Hamming/Hamming_16/FLOW/fc_flow/setup/ndm_libraries/ndm/tcbn65lphpbwpcghvt_1.ndm"/>
+  <library name="tcbn65lphpbwp_1" path="/mnt/vol_NFS_rh003/estudiantes/DANIELA_VARGAS/Version_final/0516/versiones_finales/semana14/Registro_Hamming/Hamming_16/FLOW/fc_flow/setup/ndm_libraries/ndm/tcbn65lphpbwp_1.ndm"/>
+  <library name="tpfn65lpgv2od3ml" path="/mnt/vol_NFS_rh003/estudiantes/DANIELA_VARGAS/Version_final/0516/versiones_finales/semana14/Registro_Hamming/Hamming_16/FLOW/fc_flow/setup/ndm_libraries/ndm/tpfn65lpgv2od3ml.ndm"/>
+  <cell id="13" unique_name="XNR3D0HPBWP" orig_name="XNR3D0HPBWP" type="drc_black_box" parent_library="top_lib" default_view="timing" default_phys_view="frame" design_type="lib_cell">
+    <view name="frame" library="tcbn65lphpbwp_1" type="main"/>
+    <parent_is_top/>
+  </cell>
+  <cell id="11" unique_name="AO22D0HPBWP" orig_name="AO22D0HPBWP" type="drc_black_box" parent_library="top_lib" default_view="timing" default_phys_view="frame" design_type="lib_cell">
+    <view name="frame" library="tcbn65lphpbwp_1" type="main"/>
+    <parent_is_top/>
+  </cell>
+  <cell id="7" unique_name="SDFCNQD0HPBWP" orig_name="SDFCNQD0HPBWP" type="drc_black_box" parent_library="top_lib" default_view="timing" default_phys_view="frame" design_type="lib_cell">
+    <view name="frame" library="tcbn65lphpbwp_1" type="main"/>
+    <parent_is_top/>
+  </cell>
+  <cell id="22" unique_name="XNR4D0HPBWP" orig_name="XNR4D0HPBWP" type="drc_black_box" parent_library="top_lib" default_view="timing" default_phys_view="frame" design_type="lib_cell">
+    <view name="frame" library="tcbn65lphpbwp_1" type="main"/>
+    <parent_is_top/>
+  </cell>
+  <cell id="38" unique_name="OR2D0HPBWP" orig_name="OR2D0HPBWP" type="drc_black_box" parent_library="top_lib" default_view="timing" default_phys_view="frame" design_type="lib_cell">
+    <view name="frame" library="tcbn65lphpbwp_1" type="main"/>
+    <parent_is_top/>
+  </cell>
+  <cell id="27" unique_name="INR4D0HPBWP" orig_name="INR4D0HPBWP" type="drc_black_box" parent_library="top_lib" default_view="timing" default_phys_view="frame" design_type="lib_cell">
+    <view name="frame" library="tcbn65lphpbwp_1" type="main"/>
+    <parent_is_top/>
+  </cell>
+  <cell id="36" unique_name="CKND0HPBWP" orig_name="CKND0HPBWP" type="drc_black_box" parent_library="top_lib" default_view="timing" default_phys_view="frame" design_type="lib_cell">
+    <view name="frame" library="tcbn65lphpbwp_1" type="main"/>
+    <parent_is_top/>
+  </cell>
+  <cell id="33" unique_name="ND3D0HPBWP" orig_name="ND3D0HPBWP" type="drc_black_box" parent_library="top_lib" default_view="timing" default_phys_view="frame" design_type="lib_cell">
+    <view name="frame" library="tcbn65lphpbwp_1" type="main"/>
+    <parent_is_top/>
+  </cell>
+  <cell id="16" unique_name="MAOI22D0HPBWP" orig_name="MAOI22D0HPBWP" type="drc_black_box" parent_library="top_lib" default_view="timing" default_phys_view="frame" design_type="lib_cell">
+    <view name="frame" library="tcbn65lphpbwp_1" type="main"/>
+    <parent_is_top/>
+  </cell>
+  <cell id="41" unique_name="CKLNQD4HPBWP" orig_name="CKLNQD4HPBWP" type="drc_black_box" parent_library="top_lib" default_view="timing" default_phys_view="frame" design_type="lib_cell">
+    <view name="frame" library="tcbn65lphpbwp_1" type="main"/>
+    <parent_is_top/>
+  </cell>
+  <cell id="18" unique_name="AOI22D0HPBWP" orig_name="AOI22D0HPBWP" type="drc_black_box" parent_library="top_lib" default_view="timing" default_phys_view="frame" design_type="lib_cell">
+    <view name="frame" library="tcbn65lphpbwp_1" type="main"/>
+    <parent_is_top/>
+  </cell>
+  <cell id="30" unique_name="ND4D0HPBWP" orig_name="ND4D0HPBWP" type="drc_black_box" parent_library="top_lib" default_view="timing" default_phys_view="frame" design_type="lib_cell">
+    <view name="frame" library="tcbn65lphpbwp_1" type="main"/>
+    <parent_is_top/>
+  </cell>
+  <cell id="17" unique_name="AO32D0HPBWP" orig_name="AO32D0HPBWP" type="drc_black_box" parent_library="top_lib" default_view="timing" default_phys_view="frame" design_type="lib_cell">
+    <view name="frame" library="tcbn65lphpbwp_1" type="main"/>
+    <parent_is_top/>
+  </cell>
+  <cell id="34" unique_name="AOI221D0HPBWP" orig_name="AOI221D0HPBWP" type="drc_black_box" parent_library="top_lib" default_view="timing" default_phys_view="frame" design_type="lib_cell">
+    <view name="frame" library="tcbn65lphpbwp_1" type="main"/>
+    <parent_is_top/>
+  </cell>
+  <cell id="31" unique_name="CKND2D0HPBWP" orig_name="CKND2D0HPBWP" type="drc_black_box" parent_library="top_lib" default_view="timing" default_phys_view="frame" design_type="lib_cell">
+    <view name="frame" library="tcbn65lphpbwp_1" type="main"/>
+    <parent_is_top/>
+  </cell>
+  <cell id="23" unique_name="OAI221D0HPBWP" orig_name="OAI221D0HPBWP" type="drc_black_box" parent_library="top_lib" default_view="timing" default_phys_view="frame" design_type="lib_cell">
+    <view name="frame" library="tcbn65lphpbwp_1" type="main"/>
+    <parent_is_top/>
+  </cell>
+  <cell id="42" unique_name="AN2D1HPBWP" orig_name="AN2D1HPBWP" type="drc_black_box" parent_library="top_lib" default_view="timing" default_phys_view="frame" design_type="lib_cell">
+    <view name="frame" library="tcbn65lphpbwp_1" type="main"/>
+    <parent_is_top/>
+  </cell>
+  <cell id="26" unique_name="AN4D0HPBWP" orig_name="AN4D0HPBWP" type="drc_black_box" parent_library="top_lib" default_view="timing" default_phys_view="frame" design_type="lib_cell">
+    <view name="frame" library="tcbn65lphpbwp_1" type="main"/>
+    <parent_is_top/>
+  </cell>
+  <cell id="32" unique_name="CKND2HPBWP" orig_name="CKND2HPBWP" type="drc_black_box" parent_library="top_lib" default_view="timing" default_phys_view="frame" design_type="lib_cell">
+    <view name="frame" library="tcbn65lphpbwp_1" type="main"/>
+    <parent_is_top/>
+  </cell>
+  <cell id="29" unique_name="NR2D0HPBWP" orig_name="NR2D0HPBWP" type="drc_black_box" parent_library="top_lib" default_view="timing" default_phys_view="frame" design_type="lib_cell">
+    <view name="frame" library="tcbn65lphpbwp_1" type="main"/>
+    <parent_is_top/>
+  </cell>
+  <cell id="37" unique_name="CKAN2D0HPBWP" orig_name="CKAN2D0HPBWP" type="drc_black_box" parent_library="top_lib" default_view="timing" default_phys_view="frame" design_type="lib_cell">
+    <view name="frame" library="tcbn65lphpbwp_1" type="main"/>
+    <parent_is_top/>
+  </cell>
+  <cell id="19" unique_name="NR3D0HPBWP" orig_name="NR3D0HPBWP" type="drc_black_box" parent_library="top_lib" default_view="timing" default_phys_view="frame" design_type="lib_cell">
+    <view name="frame" library="tcbn65lphpbwp_1" type="main"/>
+    <parent_is_top/>
+  </cell>
+  <cell id="39" unique_name="CKAN2D1HPBWP" orig_name="CKAN2D1HPBWP" type="drc_black_box" parent_library="top_lib" default_view="timing" default_phys_view="frame" design_type="lib_cell">
+    <view name="frame" library="tcbn65lphpbwp_1" type="main"/>
+    <parent_is_top/>
+  </cell>
+  <cell id="21" unique_name="NR4D0HPBWP" orig_name="NR4D0HPBWP" type="drc_black_box" parent_library="top_lib" default_view="timing" default_phys_view="frame" design_type="lib_cell">
+    <view name="frame" library="tcbn65lphpbwp_1" type="main"/>
+    <parent_is_top/>
+  </cell>
+  <cell id="2" unique_name="TAPCELLHPBWP" orig_name="TAPCELLHPBWP" type="drc_black_box" parent_library="top_lib" default_view="frame" default_phys_view="frame" design_type="lib_cell">
+    <view name="frame" library="tcbn65lphpbwp_1_physical_only" type="main"/>
+    <parent_is_top/>
+  </cell>
+  <cell id="4" unique_name="MUX2ND0HPBWP" orig_name="MUX2ND0HPBWP" type="drc_black_box" parent_library="top_lib" default_view="timing" default_phys_view="frame" design_type="lib_cell">
+    <view name="frame" library="tcbn65lphpbwp_1" type="main"/>
+    <parent_is_top/>
+  </cell>
+  <cell id="25" unique_name="FILL1HPBWP" orig_name="FILL1HPBWP" type="drc_black_box" parent_library="top_lib" default_view="frame" default_phys_view="frame" design_type="filler">
+    <view name="frame" library="tcbn65lphpbwp_1_physical_only" type="main"/>
+    <parent_is_top/>
+  </cell>
+  <cell id="20" unique_name="IND2D0HPBWP" orig_name="IND2D0HPBWP" type="drc_black_box" parent_library="top_lib" default_view="timing" default_phys_view="frame" design_type="lib_cell">
+    <view name="frame" library="tcbn65lphpbwp_1" type="main"/>
+    <parent_is_top/>
+  </cell>
+  <cell id="3" unique_name="IOA22D0HPBWP" orig_name="IOA22D0HPBWP" type="drc_black_box" parent_library="top_lib" default_view="timing" default_phys_view="frame" design_type="lib_cell">
+    <view name="frame" library="tcbn65lphpbwp_1" type="main"/>
+    <parent_is_top/>
+  </cell>
+  <cell id="15" unique_name="DCAP4HPBWP" orig_name="DCAP4HPBWP" type="drc_black_box" parent_library="top_lib" default_view="timing" default_phys_view="frame" design_type="lib_cell">
+    <view name="frame" library="tcbn65lphpbwp_1" type="main"/>
+    <parent_is_top/>
+  </cell>
+  <cell id="14" unique_name="DCAP16HPBWP" orig_name="DCAP16HPBWP" type="drc_black_box" parent_library="top_lib" default_view="timing" default_phys_view="frame" design_type="lib_cell">
+    <view name="frame" library="tcbn65lphpbwp_1" type="main"/>
+    <parent_is_top/>
+  </cell>
+  <cell id="10" unique_name="XOR3D0HPBWP" orig_name="XOR3D0HPBWP" type="drc_black_box" parent_library="top_lib" default_view="timing" default_phys_view="frame" design_type="lib_cell">
+    <view name="frame" library="tcbn65lphpbwp_1" type="main"/>
+    <parent_is_top/>
+  </cell>
+  <cell id="40" unique_name="INVD0HPBWP" orig_name="INVD0HPBWP" type="drc_black_box" parent_library="top_lib" default_view="timing" default_phys_view="frame" design_type="lib_cell">
+    <view name="frame" library="tcbn65lphpbwp_1" type="main"/>
+    <parent_is_top/>
+  </cell>
+  <cell id="35" unique_name="IND3D0HPBWP" orig_name="IND3D0HPBWP" type="drc_black_box" parent_library="top_lib" default_view="timing" default_phys_view="frame" design_type="lib_cell">
+    <view name="frame" library="tcbn65lphpbwp_1" type="main"/>
+    <parent_is_top/>
+  </cell>
+  <cell id="0" unique_name="top" orig_name="top" type="design" parent_library="top_lib" label="signoff" design_type="module">
+    <view name="design" library="top_lib" type="main"/>
+    <use_stream_mode/>
+  </cell>
+  <cell id="1" unique_name="DCAPHPBWP" orig_name="DCAPHPBWP" type="drc_black_box" parent_library="top_lib" default_view="timing" default_phys_view="frame" design_type="lib_cell">
+    <view name="frame" library="tcbn65lphpbwp_1" type="main"/>
+    <parent_is_top/>
+  </cell>
+  <cell id="12" unique_name="IAO22D0HPBWP" orig_name="IAO22D0HPBWP" type="drc_black_box" parent_library="top_lib" default_view="timing" default_phys_view="frame" design_type="lib_cell">
+    <view name="frame" library="tcbn65lphpbwp_1" type="main"/>
+    <parent_is_top/>
+  </cell>
+  <cell id="9" unique_name="MUX3ND0HPBWP" orig_name="MUX3ND0HPBWP" type="drc_black_box" parent_library="top_lib" default_view="timing" default_phys_view="frame" design_type="lib_cell">
+    <view name="frame" library="tcbn65lphpbwp_1" type="main"/>
+    <parent_is_top/>
+  </cell>
+  <cell id="8" unique_name="MOAI22D0HPBWP" orig_name="MOAI22D0HPBWP" type="drc_black_box" parent_library="top_lib" default_view="timing" default_phys_view="frame" design_type="lib_cell">
+    <view name="frame" library="tcbn65lphpbwp_1" type="main"/>
+    <parent_is_top/>
+  </cell>
+  <cell id="6" unique_name="OAI22D0HPBWP" orig_name="OAI22D0HPBWP" type="drc_black_box" parent_library="top_lib" default_view="timing" default_phys_view="frame" design_type="lib_cell">
+    <view name="frame" library="tcbn65lphpbwp_1" type="main"/>
+    <parent_is_top/>
+  </cell>
+  <cell id="5" unique_name="SDFCND0HPBWP" orig_name="SDFCND0HPBWP" type="drc_black_box" parent_library="top_lib" default_view="timing" default_phys_view="frame" design_type="lib_cell">
+    <view name="frame" library="tcbn65lphpbwp_1" type="main"/>
+    <parent_is_top/>
+  </cell>
+  <cell id="24" unique_name="INR2D0HPBWP" orig_name="INR2D0HPBWP" type="drc_black_box" parent_library="top_lib" default_view="timing" default_phys_view="frame" design_type="lib_cell">
+    <view name="frame" library="tcbn65lphpbwp_1" type="main"/>
+    <parent_is_top/>
+  </cell>
+  <cell id="28" unique_name="TIELHPBWP" orig_name="TIELHPBWP" type="drc_black_box" parent_library="top_lib" default_view="timing" default_phys_view="frame" design_type="lib_cell">
+    <view name="frame" library="tcbn65lphpbwp_1" type="main"/>
+    <parent_is_top/>
+  </cell>
+</icvCellMap>

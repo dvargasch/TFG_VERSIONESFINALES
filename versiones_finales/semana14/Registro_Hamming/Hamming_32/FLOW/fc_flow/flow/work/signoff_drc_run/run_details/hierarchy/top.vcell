@@ -1,0 +1,47 @@
+********************************************************************
+
+Preprocess Step 11 : Vcell_pass Pairs Iteration   0 (   0 )
+
+ count    shift nameA                 nameB                overlaps shift      VCELL    overlap_area
+      240  X_   DCAPHPBWP             -                       0   0 (  -0.600) VCELLR1             0.076
+ 1 New Array_id vcells
+
+       37  X_   DCAP16HPBWP           DCAP16HPBWP             0   0  VCELLA2              0.407
+ 1 New Pair vcells
+
+********************************************************************
+
+Preprocess Step 12 : Vcell_pass Pairs Iteration   0 (   1 )
+
+ count    shift nameA                 nameB                overlaps shift      VCELL    overlap_area
+      116  X_   VCELLR1               -                       0   0 (  -1.200) VCELLR3             0.152
+       20  _Y   DCAPHPBWP             DCAPHPBWP              16  16 (  -2.000) VCELLR4         (1) 0.341
+       19  _Y   DCAPHPBWP             DCAPHPBWP              16  16 (   2.000) VCELLR5         (2) 0.341
+ 2 New Array_id vcells
+
+       61  X_   DCAP4HPBWP            DCAP4HPBWP              0   0  VCELLA6              0.102
+ 1 New Pair vcells
+
+********************************************************************
+
+Preprocess Step 13 : Vcell_pass Pairs Iteration   0 (   2 )
+
+ count    shift nameA                 nameB                overlaps shift      VCELL    overlap_area
+       56  X_   VCELLR3               -                       0   0 (  -2.400) VCELLR7             0.305
+       10  _Y   VCELLR4               -                       9   9 (  -4.000) VCELLR8             0.404
+ 2 New Array_id vcells
+
+       11  X_   DCAP16HPBWP           VCELLA6                 0   0  VCELLA9              0.203
+ 1 New Pair vcells
+
+********************************************************************
+
+Preprocess Step 14 : Vcell_pass Pairs Iteration   0 (   3 )
+
+ count    shift nameA                 nameB                overlaps shift      VCELL    overlap_area
+       26  X_   VCELLR7               -                       0   0 (  -4.800) VCELLR10            0.610
+ 1 New Array_id vcells
+
+       11  X_   DCAP16HPBWP           DCAP4HPBWP              0   0  VCELLA11             0.102
+ 1 New Pair vcells
+

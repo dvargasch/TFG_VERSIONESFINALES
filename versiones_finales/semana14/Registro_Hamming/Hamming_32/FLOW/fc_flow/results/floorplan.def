@@ -1,0 +1,1186 @@
+# 
+# Fusion Compiler write_def
+# Release      : U-2022.12-SP6
+# User Name    : VARGAS_CHAVARRIA_2025
+# Date         : Sun May 25 01:19:18 2025
+# 
+VERSION 5.8 ;
+DIVIDERCHAR "/" ;
+BUSBITCHARS "[]" ;
+DESIGN top ;
+UNITS DISTANCE MICRONS 1000 ;
+PROPERTYDEFINITIONS
+COMPONENTPIN ACCESS_DIRECTION STRING ;
+END PROPERTYDEFINITIONS
+DIEAREA ( 0 0 ) ( 0 68000 ) ( 93000 68000 ) ( 93000 0 ) ;
+ROW unit_row_1 unit 10000 10000 FS DO 365 BY 1 STEP 200 0 ;
+ROW unit_row_2 unit 10000 12000 N DO 365 BY 1 STEP 200 0 ;
+ROW unit_row_3 unit 10000 14000 FS DO 365 BY 1 STEP 200 0 ;
+ROW unit_row_4 unit 10000 16000 N DO 365 BY 1 STEP 200 0 ;
+ROW unit_row_5 unit 10000 18000 FS DO 365 BY 1 STEP 200 0 ;
+ROW unit_row_6 unit 10000 20000 N DO 365 BY 1 STEP 200 0 ;
+ROW unit_row_7 unit 10000 22000 FS DO 365 BY 1 STEP 200 0 ;
+ROW unit_row_8 unit 10000 24000 N DO 365 BY 1 STEP 200 0 ;
+ROW unit_row_9 unit 10000 26000 FS DO 365 BY 1 STEP 200 0 ;
+ROW unit_row_10 unit 10000 28000 N DO 365 BY 1 STEP 200 0 ;
+ROW unit_row_11 unit 10000 30000 FS DO 365 BY 1 STEP 200 0 ;
+ROW unit_row_12 unit 10000 32000 N DO 365 BY 1 STEP 200 0 ;
+ROW unit_row_13 unit 10000 34000 FS DO 365 BY 1 STEP 200 0 ;
+ROW unit_row_14 unit 10000 36000 N DO 365 BY 1 STEP 200 0 ;
+ROW unit_row_15 unit 10000 38000 FS DO 365 BY 1 STEP 200 0 ;
+ROW unit_row_16 unit 10000 40000 N DO 365 BY 1 STEP 200 0 ;
+ROW unit_row_17 unit 10000 42000 FS DO 365 BY 1 STEP 200 0 ;
+ROW unit_row_18 unit 10000 44000 N DO 365 BY 1 STEP 200 0 ;
+ROW unit_row_19 unit 10000 46000 FS DO 365 BY 1 STEP 200 0 ;
+ROW unit_row_20 unit 10000 48000 N DO 365 BY 1 STEP 200 0 ;
+ROW unit_row_21 unit 10000 50000 FS DO 365 BY 1 STEP 200 0 ;
+ROW unit_row_22 unit 10000 52000 N DO 365 BY 1 STEP 200 0 ;
+ROW unit_row_23 unit 10000 54000 FS DO 365 BY 1 STEP 200 0 ;
+ROW unit_row_24 unit 10000 56000 N DO 365 BY 1 STEP 200 0 ;
+TRACKS Y 0 DO 341 STEP 200 LAYER M1 ;
+TRACKS X 0 DO 466 STEP 200 LAYER M1 ;
+TRACKS Y 0 DO 341 STEP 200 LAYER M2 ;
+TRACKS X 0 DO 466 STEP 200 LAYER M2 ;
+TRACKS Y 0 DO 341 STEP 200 LAYER M3 ;
+TRACKS X 0 DO 466 STEP 200 LAYER M3 ;
+TRACKS Y 0 DO 341 STEP 200 LAYER M4 ;
+TRACKS X 0 DO 466 STEP 200 LAYER M4 ;
+TRACKS Y 0 DO 341 STEP 200 LAYER M5 ;
+TRACKS X 0 DO 466 STEP 200 LAYER M5 ;
+TRACKS Y 0 DO 341 STEP 200 LAYER M6 ;
+TRACKS X 0 DO 466 STEP 200 LAYER M6 ;
+TRACKS Y 0 DO 341 STEP 200 LAYER M7 ;
+TRACKS X 0 DO 466 STEP 200 LAYER M7 ;
+TRACKS Y 400 DO 85 STEP 800 LAYER M8 ;
+TRACKS X 400 DO 116 STEP 800 LAYER M8 ;
+TRACKS Y 400 DO 85 STEP 800 LAYER M9 ;
+TRACKS X 400 DO 116 STEP 800 LAYER M9 ;
+TRACKS Y 3500 DO 10 STEP 6500 LAYER AP ;
+TRACKS X 3500 DO 14 STEP 6500 LAYER AP ;
+PINS 74 ;
+ - clk + NET clk + DIRECTION INPUT + USE SIGNAL
+   + LAYER M3 ( 0 0 ) ( 520 100 )
+   + PLACED ( 92480 64950 ) N ;
+ - rst + NET rst + DIRECTION INPUT + USE SIGNAL
+   + LAYER M3 ( 0 0 ) ( 520 100 )
+   + PLACED ( 92480 63150 ) N ;
+ - enable + NET enable + DIRECTION INPUT + USE SIGNAL
+   + LAYER M3 ( 0 0 ) ( 520 100 )
+   + PLACED ( 92480 61350 ) N ;
+ - load + NET load + DIRECTION INPUT + USE SIGNAL
+   + LAYER M3 ( 0 0 ) ( 520 100 )
+   + PLACED ( 92480 59350 ) N ;
+ - serial_in + NET serial_in + DIRECTION INPUT + USE SIGNAL
+   + LAYER M3 ( 0 0 ) ( 520 100 )
+   + PLACED ( 92480 57750 ) N ;
+ - mode[1] + NET mode[1] + DIRECTION INPUT + USE SIGNAL
+   + LAYER M3 ( 0 0 ) ( 520 100 )
+   + PLACED ( 92480 55950 ) N ;
+ - mode[0] + NET mode[0] + DIRECTION INPUT + USE SIGNAL
+   + LAYER M3 ( 0 0 ) ( 520 100 )
+   + PLACED ( 92480 53950 ) N ;
+ - parallel_in[31] + NET parallel_in[31] + DIRECTION INPUT + USE SIGNAL
+   + LAYER M3 ( 0 0 ) ( 520 100 )
+   + PLACED ( 92480 52150 ) N ;
+ - parallel_in[30] + NET parallel_in[30] + DIRECTION INPUT + USE SIGNAL
+   + LAYER M3 ( 0 0 ) ( 520 100 )
+   + PLACED ( 92480 50350 ) N ;
+ - parallel_in[29] + NET parallel_in[29] + DIRECTION INPUT + USE SIGNAL
+   + LAYER M3 ( 0 0 ) ( 520 100 )
+   + PLACED ( 92480 48550 ) N ;
+ - parallel_in[28] + NET parallel_in[28] + DIRECTION INPUT + USE SIGNAL
+   + LAYER M3 ( 0 0 ) ( 520 100 )
+   + PLACED ( 92480 46750 ) N ;
+ - parallel_in[27] + NET parallel_in[27] + DIRECTION INPUT + USE SIGNAL
+   + LAYER M3 ( 0 0 ) ( 520 100 )
+   + PLACED ( 92480 44950 ) N ;
+ - parallel_in[26] + NET parallel_in[26] + DIRECTION INPUT + USE SIGNAL
+   + LAYER M3 ( 0 0 ) ( 520 100 )
+   + PLACED ( 92480 42950 ) N ;
+ - parallel_in[25] + NET parallel_in[25] + DIRECTION INPUT + USE SIGNAL
+   + LAYER M3 ( 0 0 ) ( 520 100 )
+   + PLACED ( 92480 41150 ) N ;
+ - parallel_in[24] + NET parallel_in[24] + DIRECTION INPUT + USE SIGNAL
+   + LAYER M3 ( 0 0 ) ( 520 100 )
+   + PLACED ( 92480 39350 ) N ;
+ - parallel_in[23] + NET parallel_in[23] + DIRECTION INPUT + USE SIGNAL
+   + LAYER M3 ( 0 0 ) ( 520 100 )
+   + PLACED ( 92480 37550 ) N ;
+ - parallel_in[22] + NET parallel_in[22] + DIRECTION INPUT + USE SIGNAL
+   + LAYER M3 ( 0 0 ) ( 520 100 )
+   + PLACED ( 92480 35750 ) N ;
+ - parallel_in[21] + NET parallel_in[21] + DIRECTION INPUT + USE SIGNAL
+   + LAYER M3 ( 0 0 ) ( 520 100 )
+   + PLACED ( 92480 33950 ) N ;
+ - parallel_in[20] + NET parallel_in[20] + DIRECTION INPUT + USE SIGNAL
+   + LAYER M3 ( 0 0 ) ( 520 100 )
+   + PLACED ( 92480 31950 ) N ;
+ - parallel_in[19] + NET parallel_in[19] + DIRECTION INPUT + USE SIGNAL
+   + LAYER M3 ( 0 0 ) ( 520 100 )
+   + PLACED ( 92480 30350 ) N ;
+ - parallel_in[18] + NET parallel_in[18] + DIRECTION INPUT + USE SIGNAL
+   + LAYER M3 ( 0 0 ) ( 520 100 )
+   + PLACED ( 92480 28350 ) N ;
+ - parallel_in[17] + NET parallel_in[17] + DIRECTION INPUT + USE SIGNAL
+   + LAYER M3 ( 0 0 ) ( 520 100 )
+   + PLACED ( 92480 26550 ) N ;
+ - parallel_in[16] + NET parallel_in[16] + DIRECTION INPUT + USE SIGNAL
+   + LAYER M3 ( 0 0 ) ( 520 100 )
+   + PLACED ( 92480 24750 ) N ;
+ - parallel_in[15] + NET parallel_in[15] + DIRECTION INPUT + USE SIGNAL
+   + LAYER M3 ( 0 0 ) ( 520 100 )
+   + PLACED ( 92480 22950 ) N ;
+ - parallel_in[14] + NET parallel_in[14] + DIRECTION INPUT + USE SIGNAL
+   + LAYER M3 ( 0 0 ) ( 520 100 )
+   + PLACED ( 92480 20950 ) N ;
+ - parallel_in[13] + NET parallel_in[13] + DIRECTION INPUT + USE SIGNAL
+   + LAYER M3 ( 0 0 ) ( 520 100 )
+   + PLACED ( 92480 19150 ) N ;
+ - parallel_in[12] + NET parallel_in[12] + DIRECTION INPUT + USE SIGNAL
+   + LAYER M3 ( 0 0 ) ( 520 100 )
+   + PLACED ( 92480 17350 ) N ;
+ - parallel_in[11] + NET parallel_in[11] + DIRECTION INPUT + USE SIGNAL
+   + LAYER M3 ( 0 0 ) ( 520 100 )
+   + PLACED ( 92480 15550 ) N ;
+ - parallel_in[10] + NET parallel_in[10] + DIRECTION INPUT + USE SIGNAL
+   + LAYER M3 ( 0 0 ) ( 520 100 )
+   + PLACED ( 92480 13750 ) N ;
+ - parallel_in[9] + NET parallel_in[9] + DIRECTION INPUT + USE SIGNAL
+   + LAYER M3 ( 0 0 ) ( 520 100 )
+   + PLACED ( 92480 11950 ) N ;
+ - parallel_in[8] + NET parallel_in[8] + DIRECTION INPUT + USE SIGNAL
+   + LAYER M3 ( 0 0 ) ( 520 100 )
+   + PLACED ( 92480 9950 ) N ;
+ - parallel_in[7] + NET parallel_in[7] + DIRECTION INPUT + USE SIGNAL
+   + LAYER M3 ( 0 0 ) ( 520 100 )
+   + PLACED ( 92480 8150 ) N ;
+ - parallel_in[6] + NET parallel_in[6] + DIRECTION INPUT + USE SIGNAL
+   + LAYER M3 ( 0 0 ) ( 520 100 )
+   + PLACED ( 92480 6350 ) N ;
+ - parallel_in[5] + NET parallel_in[5] + DIRECTION INPUT + USE SIGNAL
+   + LAYER M3 ( 0 0 ) ( 520 100 )
+   + PLACED ( 92480 4550 ) N ;
+ - parallel_in[4] + NET parallel_in[4] + DIRECTION INPUT + USE SIGNAL
+   + LAYER M3 ( 0 0 ) ( 520 100 )
+   + PLACED ( 92480 2750 ) N ;
+ - parallel_in[3] + NET parallel_in[3] + DIRECTION INPUT + USE SIGNAL
+   + LAYER M3 ( 0 0 ) ( 520 100 )
+   + PLACED ( 92480 950 ) N ;
+ - parallel_in[2] + NET parallel_in[2] + DIRECTION INPUT + USE SIGNAL
+   + LAYER M3 ( 0 0 ) ( 520 100 )
+   + PLACED ( 0 64950 ) N ;
+ - parallel_in[1] + NET parallel_in[1] + DIRECTION INPUT + USE SIGNAL
+   + LAYER M3 ( 0 0 ) ( 520 100 )
+   + PLACED ( 0 63150 ) N ;
+ - parallel_in[0] + NET parallel_in[0] + DIRECTION INPUT + USE SIGNAL
+   + LAYER M3 ( 0 0 ) ( 520 100 )
+   + PLACED ( 0 61350 ) N ;
+ - serial_out + NET serial_out + DIRECTION OUTPUT + USE SIGNAL
+   + LAYER M3 ( 0 0 ) ( 520 100 )
+   + PLACED ( 0 59550 ) N ;
+ - parallel_out[31] + NET parallel_out[31] + DIRECTION OUTPUT + USE SIGNAL
+   + LAYER M3 ( 0 0 ) ( 520 100 )
+   + PLACED ( 0 57750 ) N ;
+ - parallel_out[30] + NET parallel_out[30] + DIRECTION OUTPUT + USE SIGNAL
+   + LAYER M3 ( 0 0 ) ( 520 100 )
+   + PLACED ( 92480 4950 ) N ;
+ - parallel_out[29] + NET parallel_out[29] + DIRECTION OUTPUT + USE SIGNAL
+   + LAYER M3 ( 0 0 ) ( 520 100 )
+   + PLACED ( 92480 9150 ) N ;
+ - parallel_out[28] + NET parallel_out[28] + DIRECTION OUTPUT + USE SIGNAL
+   + LAYER M3 ( 0 0 ) ( 520 100 )
+   + PLACED ( 92480 13350 ) N ;
+ - parallel_out[27] + NET parallel_out[27] + DIRECTION OUTPUT + USE SIGNAL
+   + LAYER M3 ( 0 0 ) ( 520 100 )
+   + PLACED ( 92480 17550 ) N ;
+ - parallel_out[26] + NET parallel_out[26] + DIRECTION OUTPUT + USE SIGNAL
+   + LAYER M3 ( 0 0 ) ( 520 100 )
+   + PLACED ( 92480 21750 ) N ;
+ - parallel_out[25] + NET parallel_out[25] + DIRECTION OUTPUT + USE SIGNAL
+   + LAYER M3 ( 0 0 ) ( 520 100 )
+   + PLACED ( 92480 63750 ) N ;
+ - parallel_out[24] + NET parallel_out[24] + DIRECTION OUTPUT + USE SIGNAL
+   + LAYER M3 ( 0 0 ) ( 520 100 )
+   + PLACED ( 92480 59550 ) N ;
+ - parallel_out[23] + NET parallel_out[23] + DIRECTION OUTPUT + USE SIGNAL
+   + LAYER M3 ( 0 0 ) ( 520 100 )
+   + PLACED ( 92480 55350 ) N ;
+ - parallel_out[22] + NET parallel_out[22] + DIRECTION OUTPUT + USE SIGNAL
+   + LAYER M3 ( 0 0 ) ( 520 100 )
+   + PLACED ( 92480 51150 ) N ;
+ - parallel_out[21] + NET parallel_out[21] + DIRECTION OUTPUT + USE SIGNAL
+   + LAYER M3 ( 0 0 ) ( 520 100 )
+   + PLACED ( 92480 46950 ) N ;
+ - parallel_out[20] + NET parallel_out[20] + DIRECTION OUTPUT + USE SIGNAL
+   + LAYER M3 ( 0 0 ) ( 520 100 )
+   + PLACED ( 92480 25950 ) N ;
+ - parallel_out[19] + NET parallel_out[19] + DIRECTION OUTPUT + USE SIGNAL
+   + LAYER M3 ( 0 0 ) ( 520 100 )
+   + PLACED ( 92480 42750 ) N ;
+ - parallel_out[18] + NET parallel_out[18] + DIRECTION OUTPUT + USE SIGNAL
+   + LAYER M3 ( 0 0 ) ( 520 100 )
+   + PLACED ( 92480 38550 ) N ;
+ - parallel_out[17] + NET parallel_out[17] + DIRECTION OUTPUT + USE SIGNAL
+   + LAYER M3 ( 0 0 ) ( 520 100 )
+   + PLACED ( 92480 34350 ) N ;
+ - parallel_out[16] + NET parallel_out[16] + DIRECTION OUTPUT + USE SIGNAL
+   + LAYER M3 ( 0 0 ) ( 520 100 )
+   + PLACED ( 92480 30150 ) N ;
+ - parallel_out[15] + NET parallel_out[15] + DIRECTION OUTPUT + USE SIGNAL
+   + LAYER M3 ( 0 0 ) ( 520 100 )
+   + PLACED ( 0 63950 ) N ;
+ - parallel_out[14] + NET parallel_out[14] + DIRECTION OUTPUT + USE SIGNAL
+   + LAYER M3 ( 0 0 ) ( 520 100 )
+   + PLACED ( 0 59750 ) N ;
+ - parallel_out[13] + NET parallel_out[13] + DIRECTION OUTPUT + USE SIGNAL
+   + LAYER M3 ( 0 0 ) ( 520 100 )
+   + PLACED ( 0 55550 ) N ;
+ - parallel_out[12] + NET parallel_out[12] + DIRECTION OUTPUT + USE SIGNAL
+   + LAYER M3 ( 0 0 ) ( 520 100 )
+   + PLACED ( 0 51350 ) N ;
+ - parallel_out[11] + NET parallel_out[11] + DIRECTION OUTPUT + USE SIGNAL
+   + LAYER M3 ( 0 0 ) ( 520 100 )
+   + PLACED ( 0 47150 ) N ;
+ - parallel_out[10] + NET parallel_out[10] + DIRECTION OUTPUT + USE SIGNAL
+   + LAYER M3 ( 0 0 ) ( 520 100 )
+   + PLACED ( 0 42950 ) N ;
+ - parallel_out[9] + NET parallel_out[9] + DIRECTION OUTPUT + USE SIGNAL
+   + LAYER M3 ( 0 0 ) ( 520 100 )
+   + PLACED ( 0 38750 ) N ;
+ - parallel_out[8] + NET parallel_out[8] + DIRECTION OUTPUT + USE SIGNAL
+   + LAYER M3 ( 0 0 ) ( 520 100 )
+   + PLACED ( 0 34550 ) N ;
+ - parallel_out[7] + NET parallel_out[7] + DIRECTION OUTPUT + USE SIGNAL
+   + LAYER M3 ( 0 0 ) ( 520 100 )
+   + PLACED ( 0 30350 ) N ;
+ - parallel_out[6] + NET parallel_out[6] + DIRECTION OUTPUT + USE SIGNAL
+   + LAYER M3 ( 0 0 ) ( 520 100 )
+   + PLACED ( 0 26150 ) N ;
+ - parallel_out[5] + NET parallel_out[5] + DIRECTION OUTPUT + USE SIGNAL
+   + LAYER M3 ( 0 0 ) ( 520 100 )
+   + PLACED ( 0 21950 ) N ;
+ - parallel_out[4] + NET parallel_out[4] + DIRECTION OUTPUT + USE SIGNAL
+   + LAYER M3 ( 0 0 ) ( 520 100 )
+   + PLACED ( 0 17750 ) N ;
+ - parallel_out[3] + NET parallel_out[3] + DIRECTION OUTPUT + USE SIGNAL
+   + LAYER M3 ( 0 0 ) ( 520 100 )
+   + PLACED ( 0 13550 ) N ;
+ - parallel_out[2] + NET parallel_out[2] + DIRECTION OUTPUT + USE SIGNAL
+   + LAYER M3 ( 0 0 ) ( 520 100 )
+   + PLACED ( 0 9350 ) N ;
+ - parallel_out[1] + NET parallel_out[1] + DIRECTION OUTPUT + USE SIGNAL
+   + LAYER M3 ( 0 0 ) ( 520 100 )
+   + PLACED ( 0 5150 ) N ;
+ - parallel_out[0] + NET parallel_out[0] + DIRECTION OUTPUT + USE SIGNAL
+   + LAYER M3 ( 0 0 ) ( 520 100 )
+   + PLACED ( 0 950 ) N ;
+ - VDD + NET VDD + SPECIAL + DIRECTION INPUT + USE POWER ;
+ - VSS + NET VSS + SPECIAL + DIRECTION INPUT + USE GROUND ;
+END PINS
+PINPROPERTIES 72 ;
+ - PIN clk
+   + PROPERTY ACCESS_DIRECTION "0 right" ;
+ - PIN rst
+   + PROPERTY ACCESS_DIRECTION "0 right" ;
+ - PIN enable
+   + PROPERTY ACCESS_DIRECTION "0 right" ;
+ - PIN load
+   + PROPERTY ACCESS_DIRECTION "0 right" ;
+ - PIN serial_in
+   + PROPERTY ACCESS_DIRECTION "0 right" ;
+ - PIN mode[1]
+   + PROPERTY ACCESS_DIRECTION "0 right" ;
+ - PIN mode[0]
+   + PROPERTY ACCESS_DIRECTION "0 right" ;
+ - PIN parallel_in[31]
+   + PROPERTY ACCESS_DIRECTION "0 right" ;
+ - PIN parallel_in[30]
+   + PROPERTY ACCESS_DIRECTION "0 right" ;
+ - PIN parallel_in[29]
+   + PROPERTY ACCESS_DIRECTION "0 right" ;
+ - PIN parallel_in[28]
+   + PROPERTY ACCESS_DIRECTION "0 right" ;
+ - PIN parallel_in[27]
+   + PROPERTY ACCESS_DIRECTION "0 right" ;
+ - PIN parallel_in[26]
+   + PROPERTY ACCESS_DIRECTION "0 right" ;
+ - PIN parallel_in[25]
+   + PROPERTY ACCESS_DIRECTION "0 right" ;
+ - PIN parallel_in[24]
+   + PROPERTY ACCESS_DIRECTION "0 right" ;
+ - PIN parallel_in[23]
+   + PROPERTY ACCESS_DIRECTION "0 right" ;
+ - PIN parallel_in[22]
+   + PROPERTY ACCESS_DIRECTION "0 right" ;
+ - PIN parallel_in[21]
+   + PROPERTY ACCESS_DIRECTION "0 right" ;
+ - PIN parallel_in[20]
+   + PROPERTY ACCESS_DIRECTION "0 right" ;
+ - PIN parallel_in[19]
+   + PROPERTY ACCESS_DIRECTION "0 right" ;
+ - PIN parallel_in[18]
+   + PROPERTY ACCESS_DIRECTION "0 right" ;
+ - PIN parallel_in[17]
+   + PROPERTY ACCESS_DIRECTION "0 right" ;
+ - PIN parallel_in[16]
+   + PROPERTY ACCESS_DIRECTION "0 right" ;
+ - PIN parallel_in[15]
+   + PROPERTY ACCESS_DIRECTION "0 right" ;
+ - PIN parallel_in[14]
+   + PROPERTY ACCESS_DIRECTION "0 right" ;
+ - PIN parallel_in[13]
+   + PROPERTY ACCESS_DIRECTION "0 right" ;
+ - PIN parallel_in[12]
+   + PROPERTY ACCESS_DIRECTION "0 right" ;
+ - PIN parallel_in[11]
+   + PROPERTY ACCESS_DIRECTION "0 right" ;
+ - PIN parallel_in[10]
+   + PROPERTY ACCESS_DIRECTION "0 right" ;
+ - PIN parallel_in[9]
+   + PROPERTY ACCESS_DIRECTION "0 right" ;
+ - PIN parallel_in[8]
+   + PROPERTY ACCESS_DIRECTION "0 right" ;
+ - PIN parallel_in[7]
+   + PROPERTY ACCESS_DIRECTION "0 right" ;
+ - PIN parallel_in[6]
+   + PROPERTY ACCESS_DIRECTION "0 right" ;
+ - PIN parallel_in[5]
+   + PROPERTY ACCESS_DIRECTION "0 right" ;
+ - PIN parallel_in[4]
+   + PROPERTY ACCESS_DIRECTION "0 right" ;
+ - PIN parallel_in[3]
+   + PROPERTY ACCESS_DIRECTION "0 right" ;
+ - PIN parallel_in[2]
+   + PROPERTY ACCESS_DIRECTION "0 left" ;
+ - PIN parallel_in[1]
+   + PROPERTY ACCESS_DIRECTION "0 left" ;
+ - PIN parallel_in[0]
+   + PROPERTY ACCESS_DIRECTION "0 left" ;
+ - PIN serial_out
+   + PROPERTY ACCESS_DIRECTION "0 left" ;
+ - PIN parallel_out[31]
+   + PROPERTY ACCESS_DIRECTION "0 left" ;
+ - PIN parallel_out[30]
+   + PROPERTY ACCESS_DIRECTION "0 right" ;
+ - PIN parallel_out[29]
+   + PROPERTY ACCESS_DIRECTION "0 right" ;
+ - PIN parallel_out[28]
+   + PROPERTY ACCESS_DIRECTION "0 right" ;
+ - PIN parallel_out[27]
+   + PROPERTY ACCESS_DIRECTION "0 right" ;
+ - PIN parallel_out[26]
+   + PROPERTY ACCESS_DIRECTION "0 right" ;
+ - PIN parallel_out[25]
+   + PROPERTY ACCESS_DIRECTION "0 right" ;
+ - PIN parallel_out[24]
+   + PROPERTY ACCESS_DIRECTION "0 right" ;
+ - PIN parallel_out[23]
+   + PROPERTY ACCESS_DIRECTION "0 right" ;
+ - PIN parallel_out[22]
+   + PROPERTY ACCESS_DIRECTION "0 right" ;
+ - PIN parallel_out[21]
+   + PROPERTY ACCESS_DIRECTION "0 right" ;
+ - PIN parallel_out[20]
+   + PROPERTY ACCESS_DIRECTION "0 right" ;
+ - PIN parallel_out[19]
+   + PROPERTY ACCESS_DIRECTION "0 right" ;
+ - PIN parallel_out[18]
+   + PROPERTY ACCESS_DIRECTION "0 right" ;
+ - PIN parallel_out[17]
+   + PROPERTY ACCESS_DIRECTION "0 right" ;
+ - PIN parallel_out[16]
+   + PROPERTY ACCESS_DIRECTION "0 right" ;
+ - PIN parallel_out[15]
+   + PROPERTY ACCESS_DIRECTION "0 left" ;
+ - PIN parallel_out[14]
+   + PROPERTY ACCESS_DIRECTION "0 left" ;
+ - PIN parallel_out[13]
+   + PROPERTY ACCESS_DIRECTION "0 left" ;
+ - PIN parallel_out[12]
+   + PROPERTY ACCESS_DIRECTION "0 left" ;
+ - PIN parallel_out[11]
+   + PROPERTY ACCESS_DIRECTION "0 left" ;
+ - PIN parallel_out[10]
+   + PROPERTY ACCESS_DIRECTION "0 left" ;
+ - PIN parallel_out[9]
+   + PROPERTY ACCESS_DIRECTION "0 left" ;
+ - PIN parallel_out[8]
+   + PROPERTY ACCESS_DIRECTION "0 left" ;
+ - PIN parallel_out[7]
+   + PROPERTY ACCESS_DIRECTION "0 left" ;
+ - PIN parallel_out[6]
+   + PROPERTY ACCESS_DIRECTION "0 left" ;
+ - PIN parallel_out[5]
+   + PROPERTY ACCESS_DIRECTION "0 left" ;
+ - PIN parallel_out[4]
+   + PROPERTY ACCESS_DIRECTION "0 left" ;
+ - PIN parallel_out[3]
+   + PROPERTY ACCESS_DIRECTION "0 left" ;
+ - PIN parallel_out[2]
+   + PROPERTY ACCESS_DIRECTION "0 left" ;
+ - PIN parallel_out[1]
+   + PROPERTY ACCESS_DIRECTION "0 left" ;
+ - PIN parallel_out[0]
+   + PROPERTY ACCESS_DIRECTION "0 left" ;
+END PINPROPERTIES
+SPECIALNETS 2 ;
+ - VDD
+   ( PIN VDD )
+   ( clock_gate_reg_data_reg VDD )
+   ( p3_reg\[7\] VDD )
+   ( ctmi_1294 VDD )
+   ( ctmi_1293 VDD )
+   ( ctmi_1292 VDD )
+   ( ctmi_1282 VDD )
+   ( ctmi_1101 VDD )
+   ( ctmi_93 VDD )
+   ( ctmi_92 VDD )
+   ( ctmi_1097 VDD )
+   ( ctmi_1096 VDD )
+   ( ctmi_1093 VDD )
+   ( ctmi_89 VDD )
+   ( ctmi_88 VDD )
+   ( ctmi_1085 VDD )
+   ( ctmi_1082 VDD )
+   ( ctmi_87 VDD )
+   ( ctmi_1078 VDD )
+   ( ctmi_85 VDD )
+   ( ctmi_1075 VDD )
+   ( ctmi_1074 VDD )
+   ( ctmi_1072 VDD )
+   ( ctmi_1070 VDD )
+   ( ctmi_84 VDD )
+   ( ctmi_1068 VDD )
+   ( ctmi_1067 VDD )
+   ( ctmi_83 VDD )
+   ( ctmi_1065 VDD )
+   ( ctmi_1064 VDD )
+   ( ctmi_81 VDD )
+   ( ctmi_1060 VDD )
+   ( ctmi_1057 VDD )
+   ( ctmi_1056 VDD )
+   ( ctmi_1055 VDD )
+   ( ctmi_1053 VDD )
+   ( ctmi_1052 VDD )
+   ( ctmi_1050 VDD )
+   ( ctmi_1049 VDD )
+   ( ctmi_77 VDD )
+   ( ctmi_1047 VDD )
+   ( ctmi_1046 VDD )
+   ( ctmi_1044 VDD )
+   ( ctmi_1043 VDD )
+   ( ctmi_75 VDD )
+   ( ctmi_1040 VDD )
+   ( ctmi_74 VDD )
+   ( ctmi_73 VDD )
+   ( ctmi_1037 VDD )
+   ( ctmi_72 VDD )
+   ( ctmi_1033 VDD )
+   ( ctmi_71 VDD )
+   ( ctmi_70 VDD )
+   ( ctmi_1029 VDD )
+   ( ctmi_1026 VDD )
+   ( ctmi_1025 VDD )
+   ( ctmi_67 VDD )
+   ( ctmi_1021 VDD )
+   ( ctmi_66 VDD )
+   ( ctmi_1018 VDD )
+   ( ctmi_1017 VDD )
+   ( ctmi_64 VDD )
+   ( ctmi_1013 VDD )
+   ( ctmi_63 VDD )
+   ( ctmi_1010 VDD )
+   ( ctmi_1009 VDD )
+   ( ctmi_1008 VDD )
+   ( ctmi_1281 VDD )
+   ( ctmi_1271 VDD )
+   ( ctmi_1270 VDD )
+   ( ctmi_1261 VDD )
+   ( ctmi_1260 VDD )
+   ( ctmi_1259 VDD )
+   ( ctmi_1250 VDD )
+   ( ctmi_1249 VDD )
+   ( ctmi_1248 VDD )
+   ( ctmi_1238 VDD )
+   ( ctmi_1237 VDD )
+   ( ctmi_1227 VDD )
+   ( ctmi_1226 VDD )
+   ( ctmi_1217 VDD )
+   ( ctmi_1216 VDD )
+   ( ctmi_1215 VDD )
+   ( ctmi_1214 VDD )
+   ( ctmi_1213 VDD )
+   ( ctmi_1211 VDD )
+   ( ctmi_1207 VDD )
+   ( ctmi_1291 VDD )
+   ( ctmi_1280 VDD )
+   ( ctmi_1269 VDD )
+   ( ctmi_1258 VDD )
+   ( ctmi_1247 VDD )
+   ( ctmi_1236 VDD )
+   ( ctmi_1225 VDD )
+   ( ctmi_1201 VDD )
+   ( ctmi_1341 VDD )
+   ( ctmi_1340 VDD )
+   ( ctmi_1334 VDD )
+   ( ctmi_1333 VDD )
+   ( ctmi_1315 VDD )
+   ( ctmi_1308 VDD )
+   ( ctmi_1301 VDD )
+   ( ctmi_1300 VDD )
+   ( ctmi_1299 VDD )
+   ( ctmi_1290 VDD )
+   ( ctmi_1289 VDD )
+   ( ctmi_1288 VDD )
+   ( ctmi_1347 VDD )
+   ( ctmi_1279 VDD )
+   ( ctmi_1278 VDD )
+   ( ctmi_1277 VDD )
+   ( ctmi_1268 VDD )
+   ( ctmi_1267 VDD )
+   ( ctmi_1266 VDD )
+   ( ctmi_1332 VDD )
+   ( ctmi_1257 VDD )
+   ( ctmi_1256 VDD )
+   ( ctmi_1255 VDD )
+   ( ctmi_1327 VDD )
+   ( ctmi_1246 VDD )
+   ( ctmi_1245 VDD )
+   ( ctmi_1244 VDD )
+   ( ctmi_1235 VDD )
+   ( ctmi_1234 VDD )
+   ( ctmi_1233 VDD )
+   ( ctmi_1314 VDD )
+   ( ctmi_1224 VDD )
+   ( ctmi_1223 VDD )
+   ( ctmi_1222 VDD )
+   ( ctmi_1307 VDD )
+   ( ctmi_1200 VDD )
+   ( ctmi_1197 VDD )
+   ( ctmi_1195 VDD )
+   ( ctmi_1188 VDD )
+   ( ctmi_1185 VDD )
+   ( ctmi_1183 VDD )
+   ( ctmi_1176 VDD )
+   ( ctmi_1173 VDD )
+   ( ctmi_1171 VDD )
+   ( ctmi_1164 VDD )
+   ( ctmi_1160 VDD )
+   ( ctmi_1155 VDD )
+   ( ctmi_1149 VDD )
+   ( ctmi_1148 VDD )
+   ( ctmi_1146 VDD )
+   ( ctmi_1144 VDD )
+   ( ctmi_1143 VDD )
+   ( ctmi_1139 VDD )
+   ( ctmi_1137 VDD )
+   ( ctmi_1130 VDD )
+   ( ctmi_1127 VDD )
+   ( ctmi_1125 VDD )
+   ( ctmi_1339 VDD )
+   ( ctmi_1320 VDD )
+   ( ctmi_1326 VDD )
+   ( ctmi_1313 VDD )
+   ( ctmi_1306 VDD )
+   ( ctmi_1355 VDD )
+   ( ctmi_1359 VDD )
+   ( ctmi_1358 VDD )
+   ( ctmi_1357 VDD )
+   ( ctmi_1346 VDD )
+   ( ctmi_1305 VDD )
+   ( ctmi_1221 VDD )
+   ( ctmi_1194 VDD )
+   ( ctmi_1312 VDD )
+   ( ctmi_1232 VDD )
+   ( ctmi_1182 VDD )
+   ( ctmi_1319 VDD )
+   ( ctmi_1243 VDD )
+   ( ctmi_1170 VDD )
+   ( ctmi_1325 VDD )
+   ( ctmi_1254 VDD )
+   ( ctmi_62 VDD )
+   ( ctmi_1331 VDD )
+   ( ctmi_1365 VDD )
+   ( ctmi_1265 VDD )
+   ( ctmi_1338 VDD )
+   ( ctmi_1276 VDD )
+   ( ctmi_1136 VDD )
+   ( ctmi_1345 VDD )
+   ( ctmi_1287 VDD )
+   ( ctmi_1124 VDD )
+   ( ctmi_1353 VDD )
+   ( ctmi_1298 VDD )
+   ( ctmi_1118 VDD )
+   ( ctmi_1110 VDD )
+   ( ctmi_1107 VDD )
+   ( ctmi_1142 VDD )
+   ( ctmi_1106 VDD )
+   ( ctmi_1364 VDD )
+   ( ctmi_1363 VDD )
+   ( ctmi_1356 VDD )
+   ( ctmi_1351 VDD )
+   ( ctmi_1366 VDD )
+   ( ctmi_1354 VDD )
+   ( ctmi_1352 VDD )
+   ( ctmi_1362 VDD )
+   ( ctmi_1350 VDD )
+   ( ctmi_1344 VDD )
+   ( ctmi_1337 VDD )
+   ( ctmi_1330 VDD )
+   ( ctmi_1324 VDD )
+   ( ctmi_1318 VDD )
+   ( ctmi_1311 VDD )
+   ( ctmi_1367 VDD )
+   ( ctmi_1304 VDD )
+   ( ctmi_1297 VDD )
+   ( ctmi_1286 VDD )
+   ( reg_data_reg\[2\] VDD )
+   ( reg_data_reg\[14\] VDD )
+   ( reg_data_reg\[20\] VDD )
+   ( ctmi_1397 VDD )
+   ( ctmi_1396 VDD )
+   ( ctmi_1395 VDD )
+   ( ctmi_1394 VDD )
+   ( ctmi_1393 VDD )
+   ( ctmi_1392 VDD )
+   ( ctmi_1242 VDD )
+   ( ctmi_1391 VDD )
+   ( ctmi_1390 VDD )
+   ( ctmi_1389 VDD )
+   ( ctmi_1388 VDD )
+   ( ctmi_1387 VDD )
+   ( ctmi_1386 VDD )
+   ( ctmi_1385 VDD )
+   ( ctmi_1384 VDD )
+   ( ctmi_1383 VDD )
+   ( ctmi_1382 VDD )
+   ( ctmi_1381 VDD )
+   ( ctmi_1380 VDD )
+   ( ctmi_1231 VDD )
+   ( ctmi_1379 VDD )
+   ( ctmi_1378 VDD )
+   ( ctmi_1377 VDD )
+   ( ctmi_1376 VDD )
+   ( ctmi_1375 VDD )
+   ( ctmi_1374 VDD )
+   ( ctmi_1373 VDD )
+   ( ctmi_1372 VDD )
+   ( ctmi_1371 VDD )
+   ( ctmi_1370 VDD )
+   ( ctmi_1369 VDD )
+   ( reg_data_reg\[21\] VDD )
+   ( ctmi_1220 VDD )
+   ( ctmi_1303 VDD )
+   ( ctmi_1196 VDD )
+   ( ctmi_1219 VDD )
+   ( ctmi_61 VDD )
+   ( ctmi_1189 VDD )
+   ( ctmi_1192 VDD )
+   ( ctmi_1187 VDD )
+   ( ctmi_1310 VDD )
+   ( ctmi_1184 VDD )
+   ( ctmi_1230 VDD )
+   ( ctmi_1177 VDD )
+   ( ctmi_1180 VDD )
+   ( ctmi_1175 VDD )
+   ( ctmi_1317 VDD )
+   ( ctmi_1172 VDD )
+   ( ctmi_1241 VDD )
+   ( ctmi_59 VDD )
+   ( ctmi_1165 VDD )
+   ( ctmi_1168 VDD )
+   ( ctmi_1163 VDD )
+   ( ctmi_1323 VDD )
+   ( ctmi_1158 VDD )
+   ( ctmi_1252 VDD )
+   ( ctmi_1154 VDD )
+   ( ctmi_1156 VDD )
+   ( ctmi_1150 VDD )
+   ( ctmi_1329 VDD )
+   ( ctmi_1147 VDD )
+   ( ctmi_1361 VDD )
+   ( ctmi_1145 VDD )
+   ( ctmi_1263 VDD )
+   ( ctmi_1141 VDD )
+   ( ctmi_1336 VDD )
+   ( ctmi_1138 VDD )
+   ( ctmi_1274 VDD )
+   ( ctmi_58 VDD )
+   ( ctmi_1131 VDD )
+   ( ctmi_1134 VDD )
+   ( ctmi_1129 VDD )
+   ( ctmi_1343 VDD )
+   ( ctmi_1126 VDD )
+   ( ctmi_1285 VDD )
+   ( ctmi_57 VDD )
+   ( ctmi_1119 VDD )
+   ( ctmi_1122 VDD )
+   ( ctmi_1117 VDD )
+   ( ctmi_1114 VDD )
+   ( ctmi_1296 VDD )
+   ( ctmi_1112 VDD )
+   ( ctmi_1109 VDD )
+   ( ctmi_1111 VDD )
+   ( ctmi_1116 VDD )
+   ( ctmi_1348 VDD )
+   ( ctmi_1295 VDD )
+   ( ctmi_1198 VDD )
+   ( ctmi_1302 VDD )
+   ( ctmi_1218 VDD )
+   ( ctmi_1186 VDD )
+   ( ctmi_1309 VDD )
+   ( ctmi_1229 VDD )
+   ( ctmi_1162 VDD )
+   ( ctmi_1322 VDD )
+   ( ctmi_1251 VDD )
+   ( ctmi_1174 VDD )
+   ( ctmi_1316 VDD )
+   ( ctmi_1240 VDD )
+   ( ctmi_1140 VDD )
+   ( ctmi_1335 VDD )
+   ( ctmi_1273 VDD )
+   ( ctmi_1328 VDD )
+   ( ctmi_1360 VDD )
+   ( ctmi_1262 VDD )
+   ( ctmi_1128 VDD )
+   ( ctmi_1342 VDD )
+   ( p2_reg\[0\] VDD )
+   ( p2_reg\[1\] VDD )
+   ( p2_reg\[2\] VDD )
+   ( p2_reg\[3\] VDD )
+   ( p2_reg\[4\] VDD )
+   ( p2_reg\[5\] VDD )
+   ( p2_reg\[6\] VDD )
+   ( p2_reg\[7\] VDD )
+   ( p1_reg\[3\] VDD )
+   ( reg_data_reg\[23\] VDD )
+   ( p1_reg\[1\] VDD )
+   ( p1_reg\[2\] VDD )
+   ( p1_reg\[4\] VDD )
+   ( p1_reg\[5\] VDD )
+   ( ctmi_1275 VDD )
+   ( reg_data_reg\[0\] VDD )
+   ( reg_data_reg\[1\] VDD )
+   ( ctmi_1264 VDD )
+   ( reg_data_reg\[3\] VDD )
+   ( reg_data_reg\[4\] VDD )
+   ( reg_data_reg\[5\] VDD )
+   ( reg_data_reg\[6\] VDD )
+   ( reg_data_reg\[7\] VDD )
+   ( reg_data_reg\[8\] VDD )
+   ( reg_data_reg\[9\] VDD )
+   ( reg_data_reg\[10\] VDD )
+   ( reg_data_reg\[11\] VDD )
+   ( reg_data_reg\[12\] VDD )
+   ( reg_data_reg\[13\] VDD )
+   ( ctmi_1253 VDD )
+   ( reg_data_reg\[15\] VDD )
+   ( reg_data_reg\[16\] VDD )
+   ( reg_data_reg\[17\] VDD )
+   ( reg_data_reg\[18\] VDD )
+   ( reg_data_reg\[19\] VDD )
+   ( ctmi_1368 VDD )
+   ( p1_reg\[0\] VDD )
+   ( reg_data_reg\[22\] VDD )
+   ( p1_reg\[6\] VDD )
+   ( p1_reg\[7\] VDD )
+   ( reg_data_reg\[24\] VDD )
+   ( reg_data_reg\[25\] VDD )
+   ( reg_data_reg\[26\] VDD )
+   ( reg_data_reg\[27\] VDD )
+   ( reg_data_reg\[28\] VDD )
+   ( reg_data_reg\[29\] VDD )
+   ( ctmi_56 VDD )
+   ( p3_reg\[0\] VDD )
+   ( p3_reg\[1\] VDD )
+   ( p3_reg\[2\] VDD )
+   ( p3_reg\[3\] VDD )
+   ( p3_reg\[4\] VDD )
+   ( p3_reg\[5\] VDD )
+   ( p3_reg\[6\] VDD )
+   ( ctmi_1284 VDD )
+   ( reg_data_reg\[30\] VDD )
+   ( reg_data_reg\[31\] VDD )
+   ( ctmi_1105 VDD )
+   + USE POWER ;
+ - VSS
+   ( PIN VSS )
+   ( clock_gate_reg_data_reg VSS )
+   ( p3_reg\[7\] VSS )
+   ( ctmi_1294 VSS )
+   ( ctmi_1293 VSS )
+   ( ctmi_1292 VSS )
+   ( ctmi_1282 VSS )
+   ( ctmi_1101 VSS )
+   ( ctmi_93 VSS )
+   ( ctmi_92 VSS )
+   ( ctmi_1097 VSS )
+   ( ctmi_1096 VSS )
+   ( ctmi_1093 VSS )
+   ( ctmi_89 VSS )
+   ( ctmi_88 VSS )
+   ( ctmi_1085 VSS )
+   ( ctmi_1082 VSS )
+   ( ctmi_87 VSS )
+   ( ctmi_1078 VSS )
+   ( ctmi_85 VSS )
+   ( ctmi_1075 VSS )
+   ( ctmi_1074 VSS )
+   ( ctmi_1072 VSS )
+   ( ctmi_1070 VSS )
+   ( ctmi_84 VSS )
+   ( ctmi_1068 VSS )
+   ( ctmi_1067 VSS )
+   ( ctmi_83 VSS )
+   ( ctmi_1065 VSS )
+   ( ctmi_1064 VSS )
+   ( ctmi_81 VSS )
+   ( ctmi_1060 VSS )
+   ( ctmi_1057 VSS )
+   ( ctmi_1056 VSS )
+   ( ctmi_1055 VSS )
+   ( ctmi_1053 VSS )
+   ( ctmi_1052 VSS )
+   ( ctmi_1050 VSS )
+   ( ctmi_1049 VSS )
+   ( ctmi_77 VSS )
+   ( ctmi_1047 VSS )
+   ( ctmi_1046 VSS )
+   ( ctmi_1044 VSS )
+   ( ctmi_1043 VSS )
+   ( ctmi_75 VSS )
+   ( ctmi_1040 VSS )
+   ( ctmi_74 VSS )
+   ( ctmi_73 VSS )
+   ( ctmi_1037 VSS )
+   ( ctmi_72 VSS )
+   ( ctmi_1033 VSS )
+   ( ctmi_71 VSS )
+   ( ctmi_70 VSS )
+   ( ctmi_1029 VSS )
+   ( ctmi_1026 VSS )
+   ( ctmi_1025 VSS )
+   ( ctmi_67 VSS )
+   ( ctmi_1021 VSS )
+   ( ctmi_66 VSS )
+   ( ctmi_1018 VSS )
+   ( ctmi_1017 VSS )
+   ( ctmi_64 VSS )
+   ( ctmi_1013 VSS )
+   ( ctmi_63 VSS )
+   ( ctmi_1010 VSS )
+   ( ctmi_1009 VSS )
+   ( ctmi_1008 VSS )
+   ( ctmi_1281 VSS )
+   ( ctmi_1271 VSS )
+   ( ctmi_1270 VSS )
+   ( ctmi_1261 VSS )
+   ( ctmi_1260 VSS )
+   ( ctmi_1259 VSS )
+   ( ctmi_1250 VSS )
+   ( ctmi_1249 VSS )
+   ( ctmi_1248 VSS )
+   ( ctmi_1238 VSS )
+   ( ctmi_1237 VSS )
+   ( ctmi_1227 VSS )
+   ( ctmi_1226 VSS )
+   ( ctmi_1217 VSS )
+   ( ctmi_1216 VSS )
+   ( ctmi_1215 VSS )
+   ( ctmi_1214 VSS )
+   ( ctmi_1213 VSS )
+   ( ctmi_1211 VSS )
+   ( ctmi_1207 VSS )
+   ( ctmi_1291 VSS )
+   ( ctmi_1280 VSS )
+   ( ctmi_1269 VSS )
+   ( ctmi_1258 VSS )
+   ( ctmi_1247 VSS )
+   ( ctmi_1236 VSS )
+   ( ctmi_1225 VSS )
+   ( ctmi_1201 VSS )
+   ( ctmi_1341 VSS )
+   ( ctmi_1340 VSS )
+   ( ctmi_1334 VSS )
+   ( ctmi_1333 VSS )
+   ( ctmi_1315 VSS )
+   ( ctmi_1308 VSS )
+   ( ctmi_1301 VSS )
+   ( ctmi_1300 VSS )
+   ( ctmi_1299 VSS )
+   ( ctmi_1290 VSS )
+   ( ctmi_1289 VSS )
+   ( ctmi_1288 VSS )
+   ( ctmi_1347 VSS )
+   ( ctmi_1279 VSS )
+   ( ctmi_1278 VSS )
+   ( ctmi_1277 VSS )
+   ( ctmi_1268 VSS )
+   ( ctmi_1267 VSS )
+   ( ctmi_1266 VSS )
+   ( ctmi_1332 VSS )
+   ( ctmi_1257 VSS )
+   ( ctmi_1256 VSS )
+   ( ctmi_1255 VSS )
+   ( ctmi_1327 VSS )
+   ( ctmi_1246 VSS )
+   ( ctmi_1245 VSS )
+   ( ctmi_1244 VSS )
+   ( ctmi_1235 VSS )
+   ( ctmi_1234 VSS )
+   ( ctmi_1233 VSS )
+   ( ctmi_1314 VSS )
+   ( ctmi_1224 VSS )
+   ( ctmi_1223 VSS )
+   ( ctmi_1222 VSS )
+   ( ctmi_1307 VSS )
+   ( ctmi_1200 VSS )
+   ( ctmi_1197 VSS )
+   ( ctmi_1195 VSS )
+   ( ctmi_1188 VSS )
+   ( ctmi_1185 VSS )
+   ( ctmi_1183 VSS )
+   ( ctmi_1176 VSS )
+   ( ctmi_1173 VSS )
+   ( ctmi_1171 VSS )
+   ( ctmi_1164 VSS )
+   ( ctmi_1160 VSS )
+   ( ctmi_1155 VSS )
+   ( ctmi_1149 VSS )
+   ( ctmi_1148 VSS )
+   ( ctmi_1146 VSS )
+   ( ctmi_1144 VSS )
+   ( ctmi_1143 VSS )
+   ( ctmi_1139 VSS )
+   ( ctmi_1137 VSS )
+   ( ctmi_1130 VSS )
+   ( ctmi_1127 VSS )
+   ( ctmi_1125 VSS )
+   ( ctmi_1339 VSS )
+   ( ctmi_1320 VSS )
+   ( ctmi_1326 VSS )
+   ( ctmi_1313 VSS )
+   ( ctmi_1306 VSS )
+   ( ctmi_1355 VSS )
+   ( ctmi_1359 VSS )
+   ( ctmi_1358 VSS )
+   ( ctmi_1357 VSS )
+   ( ctmi_1346 VSS )
+   ( ctmi_1305 VSS )
+   ( ctmi_1221 VSS )
+   ( ctmi_1194 VSS )
+   ( ctmi_1312 VSS )
+   ( ctmi_1232 VSS )
+   ( ctmi_1182 VSS )
+   ( ctmi_1319 VSS )
+   ( ctmi_1243 VSS )
+   ( ctmi_1170 VSS )
+   ( ctmi_1325 VSS )
+   ( ctmi_1254 VSS )
+   ( ctmi_62 VSS )
+   ( ctmi_1331 VSS )
+   ( ctmi_1365 VSS )
+   ( ctmi_1265 VSS )
+   ( ctmi_1338 VSS )
+   ( ctmi_1276 VSS )
+   ( ctmi_1136 VSS )
+   ( ctmi_1345 VSS )
+   ( ctmi_1287 VSS )
+   ( ctmi_1124 VSS )
+   ( ctmi_1353 VSS )
+   ( ctmi_1298 VSS )
+   ( ctmi_1118 VSS )
+   ( ctmi_1110 VSS )
+   ( ctmi_1107 VSS )
+   ( ctmi_1142 VSS )
+   ( ctmi_1106 VSS )
+   ( ctmi_1364 VSS )
+   ( ctmi_1363 VSS )
+   ( ctmi_1356 VSS )
+   ( ctmi_1351 VSS )
+   ( ctmi_1366 VSS )
+   ( ctmi_1354 VSS )
+   ( ctmi_1352 VSS )
+   ( ctmi_1362 VSS )
+   ( ctmi_1350 VSS )
+   ( ctmi_1344 VSS )
+   ( ctmi_1337 VSS )
+   ( ctmi_1330 VSS )
+   ( ctmi_1324 VSS )
+   ( ctmi_1318 VSS )
+   ( ctmi_1311 VSS )
+   ( ctmi_1367 VSS )
+   ( ctmi_1304 VSS )
+   ( ctmi_1297 VSS )
+   ( ctmi_1286 VSS )
+   ( reg_data_reg\[2\] VSS )
+   ( reg_data_reg\[14\] VSS )
+   ( reg_data_reg\[20\] VSS )
+   ( ctmi_1397 VSS )
+   ( ctmi_1396 VSS )
+   ( ctmi_1395 VSS )
+   ( ctmi_1394 VSS )
+   ( ctmi_1393 VSS )
+   ( ctmi_1392 VSS )
+   ( ctmi_1242 VSS )
+   ( ctmi_1391 VSS )
+   ( ctmi_1390 VSS )
+   ( ctmi_1389 VSS )
+   ( ctmi_1388 VSS )
+   ( ctmi_1387 VSS )
+   ( ctmi_1386 VSS )
+   ( ctmi_1385 VSS )
+   ( ctmi_1384 VSS )
+   ( ctmi_1383 VSS )
+   ( ctmi_1382 VSS )
+   ( ctmi_1381 VSS )
+   ( ctmi_1380 VSS )
+   ( ctmi_1231 VSS )
+   ( ctmi_1379 VSS )
+   ( ctmi_1378 VSS )
+   ( ctmi_1377 VSS )
+   ( ctmi_1376 VSS )
+   ( ctmi_1375 VSS )
+   ( ctmi_1374 VSS )
+   ( ctmi_1373 VSS )
+   ( ctmi_1372 VSS )
+   ( ctmi_1371 VSS )
+   ( ctmi_1370 VSS )
+   ( ctmi_1369 VSS )
+   ( reg_data_reg\[21\] VSS )
+   ( ctmi_1220 VSS )
+   ( ctmi_1303 VSS )
+   ( ctmi_1196 VSS )
+   ( ctmi_1219 VSS )
+   ( ctmi_61 VSS )
+   ( ctmi_1189 VSS )
+   ( ctmi_1192 VSS )
+   ( ctmi_1187 VSS )
+   ( ctmi_1310 VSS )
+   ( ctmi_1184 VSS )
+   ( ctmi_1230 VSS )
+   ( ctmi_1177 VSS )
+   ( ctmi_1180 VSS )
+   ( ctmi_1175 VSS )
+   ( ctmi_1317 VSS )
+   ( ctmi_1172 VSS )
+   ( ctmi_1241 VSS )
+   ( ctmi_59 VSS )
+   ( ctmi_1165 VSS )
+   ( ctmi_1168 VSS )
+   ( ctmi_1163 VSS )
+   ( ctmi_1323 VSS )
+   ( ctmi_1158 VSS )
+   ( ctmi_1252 VSS )
+   ( ctmi_1154 VSS )
+   ( ctmi_1156 VSS )
+   ( ctmi_1150 VSS )
+   ( ctmi_1329 VSS )
+   ( ctmi_1147 VSS )
+   ( ctmi_1361 VSS )
+   ( ctmi_1145 VSS )
+   ( ctmi_1263 VSS )
+   ( ctmi_1141 VSS )
+   ( ctmi_1336 VSS )
+   ( ctmi_1138 VSS )
+   ( ctmi_1274 VSS )
+   ( ctmi_58 VSS )
+   ( ctmi_1131 VSS )
+   ( ctmi_1134 VSS )
+   ( ctmi_1129 VSS )
+   ( ctmi_1343 VSS )
+   ( ctmi_1126 VSS )
+   ( ctmi_1285 VSS )
+   ( ctmi_57 VSS )
+   ( ctmi_1119 VSS )
+   ( ctmi_1122 VSS )
+   ( ctmi_1117 VSS )
+   ( ctmi_1114 VSS )
+   ( ctmi_1296 VSS )
+   ( ctmi_1112 VSS )
+   ( ctmi_1109 VSS )
+   ( ctmi_1111 VSS )
+   ( ctmi_1116 VSS )
+   ( ctmi_1348 VSS )
+   ( ctmi_1295 VSS )
+   ( ctmi_1198 VSS )
+   ( ctmi_1302 VSS )
+   ( ctmi_1218 VSS )
+   ( ctmi_1186 VSS )
+   ( ctmi_1309 VSS )
+   ( ctmi_1229 VSS )
+   ( ctmi_1162 VSS )
+   ( ctmi_1322 VSS )
+   ( ctmi_1251 VSS )
+   ( ctmi_1174 VSS )
+   ( ctmi_1316 VSS )
+   ( ctmi_1240 VSS )
+   ( ctmi_1140 VSS )
+   ( ctmi_1335 VSS )
+   ( ctmi_1273 VSS )
+   ( ctmi_1328 VSS )
+   ( ctmi_1360 VSS )
+   ( ctmi_1262 VSS )
+   ( ctmi_1128 VSS )
+   ( ctmi_1342 VSS )
+   ( p2_reg\[0\] VSS )
+   ( p2_reg\[1\] VSS )
+   ( p2_reg\[2\] VSS )
+   ( p2_reg\[3\] VSS )
+   ( p2_reg\[4\] VSS )
+   ( p2_reg\[5\] VSS )
+   ( p2_reg\[6\] VSS )
+   ( p2_reg\[7\] VSS )
+   ( p1_reg\[3\] VSS )
+   ( reg_data_reg\[23\] VSS )
+   ( p1_reg\[1\] VSS )
+   ( p1_reg\[2\] VSS )
+   ( p1_reg\[4\] VSS )
+   ( p1_reg\[5\] VSS )
+   ( ctmi_1275 VSS )
+   ( reg_data_reg\[0\] VSS )
+   ( reg_data_reg\[1\] VSS )
+   ( ctmi_1264 VSS )
+   ( reg_data_reg\[3\] VSS )
+   ( reg_data_reg\[4\] VSS )
+   ( reg_data_reg\[5\] VSS )
+   ( reg_data_reg\[6\] VSS )
+   ( reg_data_reg\[7\] VSS )
+   ( reg_data_reg\[8\] VSS )
+   ( reg_data_reg\[9\] VSS )
+   ( reg_data_reg\[10\] VSS )
+   ( reg_data_reg\[11\] VSS )
+   ( reg_data_reg\[12\] VSS )
+   ( reg_data_reg\[13\] VSS )
+   ( ctmi_1253 VSS )
+   ( reg_data_reg\[15\] VSS )
+   ( reg_data_reg\[16\] VSS )
+   ( reg_data_reg\[17\] VSS )
+   ( reg_data_reg\[18\] VSS )
+   ( reg_data_reg\[19\] VSS )
+   ( ctmi_1368 VSS )
+   ( p1_reg\[0\] VSS )
+   ( reg_data_reg\[22\] VSS )
+   ( p1_reg\[6\] VSS )
+   ( p1_reg\[7\] VSS )
+   ( reg_data_reg\[24\] VSS )
+   ( reg_data_reg\[25\] VSS )
+   ( reg_data_reg\[26\] VSS )
+   ( reg_data_reg\[27\] VSS )
+   ( reg_data_reg\[28\] VSS )
+   ( reg_data_reg\[29\] VSS )
+   ( ctmi_56 VSS )
+   ( p3_reg\[0\] VSS )
+   ( p3_reg\[1\] VSS )
+   ( p3_reg\[2\] VSS )
+   ( p3_reg\[3\] VSS )
+   ( p3_reg\[4\] VSS )
+   ( p3_reg\[5\] VSS )
+   ( p3_reg\[6\] VSS )
+   ( ctmi_1284 VSS )
+   ( reg_data_reg\[30\] VSS )
+   ( reg_data_reg\[31\] VSS )
+   ( ctmi_1105 VSS )
+   + USE GROUND ;
+END SPECIALNETS
+END DESIGN

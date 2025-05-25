@@ -4,7 +4,7 @@ saveDB = TRUE
 relativePath = FALSE
 saveSingleView = FALSE
 saveNWaveWinId = 
-VerdiVersion = Verdi_U-2023.03-SP2
+VerdiVersion = Verdi_R-2020.12-SP2
 [KeyNote]
 Line1 = Automatic Backup 0
 Line2 = Save Open Database Information: Yes
@@ -26,15 +26,15 @@ fdb_campaign =
 fdb_tool = 
 [hb]
 postSimFile = /mnt/vol_NFS_rh003/estudiantes/DANIELA_VARGAS/Version_final/0516/versiones_finales/Registro/TSMC_Hamming_8_version2/FLOW/common/rtl/sverilog/inter.fsdb
-syncTime = 335000
-viewport = 0 0 1920 1016 0 0 497 1270
+syncTime = 555000
+viewport = 0 26 1920 1016 0 0 601 1525
 activeNode = "universal_register_4bit_tb"
 activeScope = "universal_register_4bit_tb"
 activeFile = "tb_3.sv"
 interactiveMode = False
 viewType = Source
 simulatorMode = False
-sourceBeginLine = 104
+sourceBeginLine = 126
 baMode = False
 srcLineNum = True
 AutoWrap = True
@@ -53,21 +53,22 @@ signalPane = True
 SourceVerticalScrollLines = 5
 Scope1 = "universal_register_4bit_tb"
 Scope2 = "universal_register_4bit_tb.dut"
+multipleSelection = 1 4 2 0 0
 sdfCheckUndef = FALSE
 simFlow = FALSE
 [hb.design]
-importCmd = "-simflow" "-dbdir" "./prueba_3.daidir" 
+importCmd = "-simflow" "-dbdir" "./prueba3.daidir" 
 invokeDir = /mnt/vol_NFS_rh003/estudiantes/DANIELA_VARGAS/Version_final/0516/versiones_finales/Registro/TSMC_Hamming_8_version2/FLOW/common/rtl/sverilog
 [hb.sourceTab.1]
 scope = universal_register_4bit_tb
 File = /mnt/vol_NFS_rh003/estudiantes/DANIELA_VARGAS/Version_final/0516/versiones_finales/Registro/TSMC_Hamming_8_version2/FLOW/common/rtl/sverilog/tb_3.sv
-Line = 105
+Line = 127
 [nMemoryManager]
 WaveformFile = /mnt/vol_NFS_rh003/estudiantes/DANIELA_VARGAS/Version_final/0516/versiones_finales/Registro/TSMC_Hamming_8_version2/FLOW/common/rtl/sverilog/inter.fsdb
 UserActionNum = 0
 nMemWindowNum = 0
 [wave.0]
-viewPort = 0 25 1272 525 233 65
+viewPort = 0 -1 1527 456 233 65
 primaryWindow = TRUE
 SessionFile = /mnt/vol_NFS_rh003/estudiantes/DANIELA_VARGAS/Version_final/0516/versiones_finales/Registro/TSMC_Hamming_8_version2/FLOW/common/rtl/sverilog/verdiLog/novas_autosave.ses.wave.0
 displayGrid = FALSE
@@ -91,4 +92,3 @@ fsaRegMask = TRUE
 fsaCoreMask = TRUE
 fsaSfsmMask = TRUE
 fsaEcrMask = TRUE
-tPropMask = TRUE

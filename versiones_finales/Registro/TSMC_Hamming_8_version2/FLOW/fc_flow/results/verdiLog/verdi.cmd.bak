@@ -1,0 +1,194 @@
+simSetSimulator "-vcssv" -exec "./prueba_1" -args " " -uvmDebug on
+debImport "-i" "-simflow" "-dbdir" "./prueba_1.daidir"
+srcTBInvokeSim
+wvCreateWindow
+srcHBSelect "universal_register_4bit_tb.dut" -win $_nTrace1
+srcSetScope "universal_register_4bit_tb.dut" -delim "." -win $_nTrace1
+srcHBSelect "universal_register_4bit_tb.dut" -win $_nTrace1
+srcHBDrag -win $_nTrace1
+wvDumpScope "universal_register_4bit_tb.dut"
+wvRenameGroup -win $_nWave3 {G1} {dut}
+wvAddSignal -win $_nWave3 "/universal_register_4bit_tb/dut/clk" \
+           "/universal_register_4bit_tb/dut/rst" \
+           "/universal_register_4bit_tb/dut/enable" \
+           "/universal_register_4bit_tb/dut/mode\[1:0\]" \
+           "/universal_register_4bit_tb/dut/load" \
+           "/universal_register_4bit_tb/dut/serial_in" \
+           "/universal_register_4bit_tb/dut/parallel_in\[7:0\]" \
+           "/universal_register_4bit_tb/dut/serial_out" \
+           "/universal_register_4bit_tb/dut/parallel_out\[7:0\]"
+wvSetPosition -win $_nWave3 {("dut" 0)}
+wvSetPosition -win $_nWave3 {("dut" 9)}
+wvSetPosition -win $_nWave3 {("dut" 9)}
+srcSignalViewSelect "universal_register_4bit_tb.dut.reg_data\[7:0\]"
+wvSelectSignal -win $_nWave3 {( "dut" 3 )} 
+srcHBSelect "universal_register_4bit_tb.dut.\\p1_reg\[1\] " -win $_nTrace1
+srcHBSelect "universal_register_4bit_tb.dut.\\p1_reg\[0\] " -win $_nTrace1
+srcHBSelect "universal_register_4bit_tb.dut.\\p1_reg\[0\] " -win $_nTrace1
+srcHBSelect "universal_register_4bit_tb.dut.\\p1_reg\[1\] " -win $_nTrace1 -add
+srcHBSelect "universal_register_4bit_tb.dut.\\p1_reg\[0\] " -win $_nTrace1
+srcHBSelect "universal_register_4bit_tb.dut.\\p1_reg\[1\] " -win $_nTrace1 -add
+srcHBSelect "universal_register_4bit_tb.dut.\\p2_reg\[0\] " -win $_nTrace1 -add
+srcHBSelect "universal_register_4bit_tb.dut.\\p1_reg\[0\] " -win $_nTrace1
+srcHBSelect "universal_register_4bit_tb.dut.\\p1_reg\[1\] " -win $_nTrace1 -add
+srcHBSelect "universal_register_4bit_tb.dut.\\p2_reg\[0\] " -win $_nTrace1 -add
+srcHBSelect "universal_register_4bit_tb.dut.\\p2_reg\[1\] " -win $_nTrace1 -add
+srcHBSelect "universal_register_4bit_tb.dut.\\p1_reg\[0\] " -win $_nTrace1
+srcHBSelect "universal_register_4bit_tb.dut.\\p1_reg\[1\] " -win $_nTrace1 -add
+srcHBSelect "universal_register_4bit_tb.dut.\\p2_reg\[0\] " -win $_nTrace1 -add
+srcHBSelect "universal_register_4bit_tb.dut.\\p2_reg\[1\] " -win $_nTrace1 -add
+srcHBSelect "universal_register_4bit_tb.dut.\\p3_reg\[0\] " -win $_nTrace1 -add
+srcHBSelect "universal_register_4bit_tb.dut.\\p1_reg\[0\] " -win $_nTrace1
+srcHBSelect "universal_register_4bit_tb.dut.\\p1_reg\[1\] " -win $_nTrace1 -add
+srcHBSelect "universal_register_4bit_tb.dut.\\p2_reg\[0\] " -win $_nTrace1 -add
+srcHBSelect "universal_register_4bit_tb.dut.\\p2_reg\[1\] " -win $_nTrace1 -add
+srcHBSelect "universal_register_4bit_tb.dut.\\p3_reg\[0\] " -win $_nTrace1 -add
+srcHBSelect "universal_register_4bit_tb.dut.\\p3_reg\[1\] " -win $_nTrace1 -add
+srcHBDrag -win $_nTrace1
+wvSetPosition -win $_nWave3 {("dut" 0)}
+wvSetPosition -win $_nWave3 {("dut" 3)}
+wvSetPosition -win $_nWave3 {("dut" 4)}
+wvSetPosition -win $_nWave3 {("dut" 6)}
+wvSetPosition -win $_nWave3 {("dut" 7)}
+wvSetPosition -win $_nWave3 {("dut" 8)}
+wvSetPosition -win $_nWave3 {("dut" 9)}
+wvDumpScope "universal_register_4bit_tb.dut.\\p1_reg\[0\]" \
+           "universal_register_4bit_tb.dut.\\p1_reg\[1\]" \
+           "universal_register_4bit_tb.dut.\\p2_reg\[0\]" \
+           "universal_register_4bit_tb.dut.\\p2_reg\[1\]" \
+           "universal_register_4bit_tb.dut.\\p3_reg\[0\]" \
+           "universal_register_4bit_tb.dut.\\p3_reg\[1\]"
+wvSetPosition -win $_nWave3 {("dut" 9)}
+wvSetPosition -win $_nWave3 {("dut/\p1_reg[0]" 0)}
+wvAddSubGroup -win $_nWave3 -holdpost {\p1_reg[0]}
+wvAddSignal -win $_nWave3 "/universal_register_4bit_tb/dut/\\p1_reg\[0\] /SI" \
+           "/universal_register_4bit_tb/dut/\\p1_reg\[0\] /D" \
+           "/universal_register_4bit_tb/dut/\\p1_reg\[0\] /SE" \
+           "/universal_register_4bit_tb/dut/\\p1_reg\[0\] /CP" \
+           "/universal_register_4bit_tb/dut/\\p1_reg\[0\] /CDN" \
+           "/universal_register_4bit_tb/dut/\\p1_reg\[0\] /Q"
+wvSetPosition -win $_nWave3 {("dut/\p1_reg[0]" 0)}
+wvSetPosition -win $_nWave3 {("dut/\p1_reg[0]" 6)}
+wvSetPosition -win $_nWave3 {("dut/\p1_reg[0]" 6)}
+wvSetPosition -win $_nWave3 {("dut/\p1_reg[1]" 0)}
+wvAddSubGroup -win $_nWave3 -holdpost {\p1_reg[1]}
+wvAddSignal -win $_nWave3 "/universal_register_4bit_tb/dut/\\p1_reg\[1\] /SI" \
+           "/universal_register_4bit_tb/dut/\\p1_reg\[1\] /D" \
+           "/universal_register_4bit_tb/dut/\\p1_reg\[1\] /SE" \
+           "/universal_register_4bit_tb/dut/\\p1_reg\[1\] /CP" \
+           "/universal_register_4bit_tb/dut/\\p1_reg\[1\] /CDN" \
+           "/universal_register_4bit_tb/dut/\\p1_reg\[1\] /Q"
+wvSetPosition -win $_nWave3 {("dut/\p1_reg[1]" 0)}
+wvSetPosition -win $_nWave3 {("dut/\p1_reg[1]" 6)}
+wvSetPosition -win $_nWave3 {("dut/\p1_reg[1]" 6)}
+wvSetPosition -win $_nWave3 {("dut/\p2_reg[0]" 0)}
+wvAddSubGroup -win $_nWave3 -holdpost {\p2_reg[0]}
+wvAddSignal -win $_nWave3 "/universal_register_4bit_tb/dut/\\p2_reg\[0\] /SI" \
+           "/universal_register_4bit_tb/dut/\\p2_reg\[0\] /D" \
+           "/universal_register_4bit_tb/dut/\\p2_reg\[0\] /SE" \
+           "/universal_register_4bit_tb/dut/\\p2_reg\[0\] /CP" \
+           "/universal_register_4bit_tb/dut/\\p2_reg\[0\] /CDN" \
+           "/universal_register_4bit_tb/dut/\\p2_reg\[0\] /Q"
+wvSetPosition -win $_nWave3 {("dut/\p2_reg[0]" 0)}
+wvSetPosition -win $_nWave3 {("dut/\p2_reg[0]" 6)}
+wvSetPosition -win $_nWave3 {("dut/\p2_reg[0]" 6)}
+wvSetPosition -win $_nWave3 {("dut/\p2_reg[1]" 0)}
+wvAddSubGroup -win $_nWave3 -holdpost {\p2_reg[1]}
+wvAddSignal -win $_nWave3 "/universal_register_4bit_tb/dut/\\p2_reg\[1\] /SI" \
+           "/universal_register_4bit_tb/dut/\\p2_reg\[1\] /D" \
+           "/universal_register_4bit_tb/dut/\\p2_reg\[1\] /SE" \
+           "/universal_register_4bit_tb/dut/\\p2_reg\[1\] /CP" \
+           "/universal_register_4bit_tb/dut/\\p2_reg\[1\] /CDN" \
+           "/universal_register_4bit_tb/dut/\\p2_reg\[1\] /Q"
+wvSetPosition -win $_nWave3 {("dut/\p2_reg[1]" 0)}
+wvSetPosition -win $_nWave3 {("dut/\p2_reg[1]" 6)}
+wvSetPosition -win $_nWave3 {("dut/\p2_reg[1]" 6)}
+wvSetPosition -win $_nWave3 {("dut/\p3_reg[0]" 0)}
+wvAddSubGroup -win $_nWave3 -holdpost {\p3_reg[0]}
+wvAddSignal -win $_nWave3 "/universal_register_4bit_tb/dut/\\p3_reg\[0\] /SI" \
+           "/universal_register_4bit_tb/dut/\\p3_reg\[0\] /D" \
+           "/universal_register_4bit_tb/dut/\\p3_reg\[0\] /SE" \
+           "/universal_register_4bit_tb/dut/\\p3_reg\[0\] /CP" \
+           "/universal_register_4bit_tb/dut/\\p3_reg\[0\] /CDN" \
+           "/universal_register_4bit_tb/dut/\\p3_reg\[0\] /Q"
+wvSetPosition -win $_nWave3 {("dut/\p3_reg[0]" 0)}
+wvSetPosition -win $_nWave3 {("dut/\p3_reg[0]" 6)}
+wvSetPosition -win $_nWave3 {("dut/\p3_reg[0]" 6)}
+wvSetPosition -win $_nWave3 {("dut/\p3_reg[1]" 0)}
+wvAddSubGroup -win $_nWave3 -holdpost {\p3_reg[1]}
+wvAddSignal -win $_nWave3 "/universal_register_4bit_tb/dut/\\p3_reg\[1\] /SI" \
+           "/universal_register_4bit_tb/dut/\\p3_reg\[1\] /D" \
+           "/universal_register_4bit_tb/dut/\\p3_reg\[1\] /SE" \
+           "/universal_register_4bit_tb/dut/\\p3_reg\[1\] /CP" \
+           "/universal_register_4bit_tb/dut/\\p3_reg\[1\] /CDN" \
+           "/universal_register_4bit_tb/dut/\\p3_reg\[1\] /Q"
+wvSetPosition -win $_nWave3 {("dut/\p3_reg[1]" 0)}
+wvSetPosition -win $_nWave3 {("dut/\p3_reg[1]" 6)}
+wvScrollUp -win $_nWave3 10
+wvScrollUp -win $_nWave3 9
+wvScrollUp -win $_nWave3 20
+srcTBRunSim
+verdiQtPrefEnv -show
+verdiQtPrefEnv -find "h"
+verdiQtPrefEnv -find "he"
+verdiQtPrefEnv -find "hec"
+verdiQtPrefEnv -find "he"
+verdiQtPrefEnv -find "hex"
+verdiQtPrefEnv -find "hexa"
+wvSetPreference -setRadix on -radix Bin
+srcSetPreference -cfiletype \
+           {Source files (*.v; *.vlg; *.vl; *.vr; *.vrh; *.sv; *.svh; *.ova; *.vhd; *.vhdl; *.psl; *.vu; *.e;*.c; *.cpp; *.cxx; *.cc; *.h; *.hpp; *.hxx; *.hh; *.tcl; *.tk; *.do; *.upf; *.cpf);;HDL files (*.v; *.vlg; *.vl; *.vr; *.vrh; *.sv; *.svh; *.ova; *.vhd; *.vhdl; *.psl; *.vu; *.e);;C/C++ files (*.c; *.cpp; *.cxx; *.cc; *.h; *.hpp; *.hxx; *.hh);;Tcl files (*.tcl; *.tk; *.do);;Power files (*.upf;*.cpf) }
+srcSetPreference -profileTime off
+simSetInteractiveFsdbFile inter.fsdb
+verdiQtPrefEnv -apply
+verdiQtPrefEnv -cancel
+wvZoomAll -win $_nWave3
+wvScrollDown -win $_nWave3 0
+wvSelectSignal -win $_nWave3 {( "dut/\p1_reg[0]" 1 )} 
+wvSetCursor -win $_nWave3 35703.821656 -snap {("dut" 3)}
+wvSelectSignal -win $_nWave3 {( "dut" 9 )} 
+wvSelectSignal -win $_nWave3 {( "dut" 4 )} 
+wvSelectSignal -win $_nWave3 {( "dut" 3 )} 
+wvSelectSignal -win $_nWave3 {( "dut" 9 )} 
+wvSelectSignal -win $_nWave3 {( "dut" 5 )} 
+wvSelectSignal -win $_nWave3 {( "dut" 6 )} 
+wvSelectSignal -win $_nWave3 {( "dut" 7 )} 
+wvSelectSignal -win $_nWave3 {( "dut" 8 )} 
+wvSelectSignal -win $_nWave3 {( "dut" 9 )} 
+wvSelectSignal -win $_nWave3 {( "dut/\p1_reg[0]" 1 )} 
+srcDeselectAll -win $_nTrace1
+wvSelectSignal -win $_nWave3 {( "dut" 9 )} 
+wvScrollDown -win $_nWave3 0
+wvSetCursor -win $_nWave3 91044.745223 -snap {("dut" 3)}
+wvSetCursor -win $_nWave3 36893.949045 -snap {("dut" 3)}
+wvSelectSignal -win $_nWave3 {( "dut/\p1_reg[0]" 1 )} 
+wvScrollDown -win $_nWave3 0
+wvScrollDown -win $_nWave3 3
+wvScrollUp -win $_nWave3 3
+srcHBSelect "universal_register_4bit_tb.dut" -win $_nTrace1
+srcSetScope "universal_register_4bit_tb.dut" -delim "." -win $_nTrace1
+srcHBSelect "universal_register_4bit_tb.dut" -win $_nTrace1
+srcSignalViewSelect "universal_register_4bit_tb.dut.p1\[1:0\]"
+srcSignalViewSelect "universal_register_4bit_tb.dut.p1\[1:0\]" \
+           "universal_register_4bit_tb.dut.p2\[1:0\]"
+srcSignalViewSelect "universal_register_4bit_tb.dut.p1\[1:0\]" \
+           "universal_register_4bit_tb.dut.p2\[1:0\]" \
+           "universal_register_4bit_tb.dut.p3\[1:0\]"
+wvSetPosition -win $_nWave3 {("dut" 0)}
+wvSetPosition -win $_nWave3 {("dut" 1)}
+wvSetPosition -win $_nWave3 {("dut" 0)}
+wvSetPosition -win $_nWave3 {("dut" 7)}
+wvSetPosition -win $_nWave3 {("dut" 8)}
+wvSetPosition -win $_nWave3 {("dut" 9)}
+wvSetPosition -win $_nWave3 {("dut/\p1_reg[0]" 0)}
+wvSetPosition -win $_nWave3 {("dut" 9)}
+wvAddSignal -win $_nWave3 "/universal_register_4bit_tb/dut/p1\[1:0\]" \
+           "/universal_register_4bit_tb/dut/p2\[1:0\]" \
+           "/universal_register_4bit_tb/dut/p3\[1:0\]"
+wvSetPosition -win $_nWave3 {("dut" 9)}
+wvSetPosition -win $_nWave3 {("dut" 12)}
+wvSetCursor -win $_nWave3 24992.675159 -snap {("dut" 11)}
+wvSelectGroup -win $_nWave3 {dut/\p1_reg[0]}
+wvZoom -win $_nWave3 3570.382166 234455.095541
+wvSetCursor -win $_nWave3 34943.251924 -snap {("dut" 9)}
+debExit

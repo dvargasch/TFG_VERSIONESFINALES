@@ -1,0 +1,58 @@
+
+                                  PYDB_Server 
+
+          Version U-2022.12-SP4 for linux64 - Aug 28, 2023 cl#9133772
+
+                    Copyright (c) 2007 - 2023 Synopsys, Inc.
+   This software and the associated documentation are proprietary to Synopsys,
+ Inc. This software may only be used in accordance with the terms and conditions
+ of a written license agreement with Synopsys, Inc. All other use, reproduction,
+   or distribution of this software is strictly prohibited.  Licensed Products
+     communicate with Synopsys servers for the purpose of providing software
+    updates, detecting software piracy and verifying that customers are using
+    Licensed Products in conformity with the applicable License Key for such
+  Licensed Products. Synopsys will use information gathered in connection with
+    this process to deliver software updates and pursue software pirates and
+                                   infringers.
+
+ Inclusivity & Diversity - Visit SolvNetPlus to read the "Synopsys Statement on
+            Inclusivity and Diversity" (Refer to article 000036315 at
+                        https://solvnetplus.synopsys.com)
+
+variable width coordinate support enabled.
+Listening for connections on port 52933
+PYDB_Server Started on host redhat003, Sun 05/25/2025 01:47:37
+Verified current licenses.
+Creating file:/mnt/vol_NFS_rh003/estudiantes/DANIELA_VARGAS/Version_final/0516/versiones_finales/semana14/Registro_Hamming/Hamming_64/FLOW/fc_flow/flow/work/signoff_drc_run/run_details/pydb/PYDB_top?nolock=1
+SQLite page_size=65536
+SQLite cache_size=65536
+SQLite mmap_size=0
+SQLite journal_mode=OFF
+SQLite version 3.33.0
+Client redhat003(3239151):29 connected (1 total client)
+Client redhat003(3239210):30 connected (2 total clients)
+Client redhat003(3239211):31 connected (3 total clients)
+Client redhat003(3239211):31 connection closed
+Client redhat003(3239211):31 disconnected (2 clients remain)
+Client redhat003(3239211):31 connected (3 total clients)
+Client redhat003(3239210):30 connection closed
+Client redhat003(3239210):30 disconnected (2 clients remain)
+Client redhat003(3239210):30 connected (3 total clients)
+Client redhat003(3239211):31 connection closed
+Client redhat003(3239211):31 disconnected (2 clients remain)
+Client redhat003(3239211):31 connected (3 total clients)
+Client redhat003(3239211):31 connection closed
+Client redhat003(3239211):31 disconnected (2 clients remain)
+Client redhat003(3239211):31 connected (3 total clients)
+Client redhat003(3239211):31 connection closed
+Client redhat003(3239211):31 disconnected (2 clients remain)
+Client redhat003(3239210):30 connection closed
+Client redhat003(3239210):30 disconnected (1 client remains)
+Generating /mnt/vol_NFS_rh003/estudiantes/DANIELA_VARGAS/Version_final/0516/versiones_finales/semana14/Registro_Hamming/Hamming_64/FLOW/fc_flow/flow/work/signoff_drc_run/top.LAYOUT_ERRORS
+  Generation Time=0:00:00  User=0.00 Sys=0.00 Mem=0.001 GB
+Flushing database cache
+  Flush Time=0:00:00  User=0.00 Sys=0.00 Mem=0.000 GB SQLite=0.007 GB Unpooled=0.000 GB
+Shutdown requested by client redhat003(3239151):29
+0 clients remain connected
+Client redhat003(3239151):29 connection closed
+Overall server Time=0:00:29  User=0.04 Sys=0.10 Mem=0.001 GB SQLite=0.007 GB Unpooled=0.000 GB

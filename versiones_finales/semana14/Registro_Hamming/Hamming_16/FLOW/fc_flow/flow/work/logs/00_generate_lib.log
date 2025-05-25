@@ -1,0 +1,217 @@
+
+
+
+                              Fusion Compiler (TM)
+
+             Version U-2022.12-SP6 for linux64 - Aug 25, 2023 -SLE
+
+                    Copyright (c) 1988 - 2023 Synopsys, Inc.
+   This software and the associated documentation are proprietary to Synopsys,
+ Inc. This software may only be used in accordance with the terms and conditions
+ of a written license agreement with Synopsys, Inc. All other use, reproduction,
+   or distribution of this software is strictly prohibited.  Licensed Products
+     communicate with Synopsys servers for the purpose of providing software
+    updates, detecting software piracy and verifying that customers are using
+    Licensed Products in conformity with the applicable License Key for such
+  Licensed Products. Synopsys will use information gathered in connection with
+    this process to deliver software updates and pursue software pirates and
+                                   infringers.
+
+ Inclusivity & Diversity - Visit SolvNetPlus to read the "Synopsys Statement on
+            Inclusivity and Diversity" (Refer to article 000036315 at
+                        https://solvnetplus.synopsys.com)
+ 
+Information: Term was not able to be set up using xterm-256color . Using "xterm" by default instead. (CLE-10)
+##########################################
+####          Create New Lib          ####
+##########################################
+# Sourcing setup script
+source -echo ../../setup/icc2_dp_setup.tcl
+set CURR_DIR  [pwd]
+set PROY_HOME ${CURR_DIR}/../..;
+set TSMC_HOME "/mnt/vol_NFS_rh003/profesores/pmendoza/KITS/TSMCHOME";
+############################
+## RTL file name and type ##
+############################
+set DESIGN_NAME "top"
+set HDL "sverilog"
+set DESIGN_LIBRARY "${DESIGN_NAME}_lib"
+#################################
+set time [get_date]
+puts "Command Start at: ${time}"
+Command Start at: Sun May 25 01:00:12 2025
+####################################
+### 1. Variables for design prep ###
+####################################
+### SDC File
+set SDCNAME "${DESIGN_NAME}"
+### Ref Libs
+set NDM_LIBS_PATH "../../setup/ndm_libraries/ndm/"
+set STD_TIME_FRAME "../../setup/ndm_libraries/ndm/tcbn65lphpbwp_1.ndm"
+set REFERENCE_LIBRARY "{${STD_TIME_FRAME} }"
+set REFERENCE_LIBRARY 		[list   ${NDM_LIBS_PATH}/tcbn65lphpbwpcghvt_1_physical_only.ndm \
+									${NDM_LIBS_PATH}/tcbn65lphpbwp_1_physical_only.ndm \
+									${NDM_LIBS_PATH}/tpdn65lpgv2od3_sd_physical_only.ndm \
+									${NDM_LIBS_PATH}/tpfn65lpgv2od3_physical_only.ndm \
+									${NDM_LIBS_PATH}/tpbn65v_physical_only.ndm \
+									${NDM_LIBS_PATH}/tpin65gv_physical_only.ndm \
+									${NDM_LIBS_PATH}/tcbn65lphpbwpcghvt_1.ndm \
+									${NDM_LIBS_PATH}/tcbn65lphpbwp_1.ndm \
+									${NDM_LIBS_PATH}/tpdn65lpgv2od3_sdml.ndm \
+									${NDM_LIBS_PATH}/tpfn65lpgv2od3ml.ndm \
+									${NDM_LIBS_PATH}/ts1n65lpa2048x32m4_140a_5m.ndm ];
+################################
+### 2. Tech files and setup ####
+################################
+set TECH_FILE "${TSMC_HOME}/digital/Back_End/milkyway/tcbn65lphpbwp_140a/techfiles/tsmcn65_9lmT2.tf"
+set TECH_LIB ""
+#######################
+## Layers and widths ##
+#######################
+set STANDARD_CELLS_WIDTH 0.42
+set MAX_ROUTING_LAYER   "M6"
+set MIN_ROUTING_LAYER   "M2"
+set TARGET_SKEW         0.1
+set RTL_PATH		"${CURR_DIR}/../../../common/rtl"
+set SDC_PATH		"${CURR_DIR}/../../../common/sdc"
+set SDC_FILE		"${CURR_DIR}/${DESIGN_NAME}.sdc"
+####################################################
+set VERILOG_PATH	"${RTL_PATH}/verilog"
+set SVERILOG_PATH	"${RTL_PATH}/sverilog" 
+set VHDL_PATH		"${RTL_PATH}/vhdl"
+set RESULTS_PATH	"${CURR_DIR}/../../results"
+set REPORTS_PATH	"${CURR_DIR}/../../reports"
+###########
+## Paths ##
+###########
+set DRC_RUNSET_FILE	"${CURR_DIR}/../../DRC/ICVLN65S_9M_6X2Z.26_1a"
+set GDS_MAP_FILE        "${TSMC_HOME}/digital/Back_End/milkyway/tcbn65lphpbwpcg_200a/gdsout_6X2Z.map"
+set ICV                "-I /mnt/vol_synopsys2023/pdks/xfab/design/xkit/xh018/synopsys/v9_0/ICValidator/v9_0_2"
+####################
+## Auto-floorplan ##
+####################
+set CONTROL_AUTO           "core"
+# Percentage of cell area usage
+set CORE_UTILIZATION_AUTO  0.5
+# Move the nucleus 10 units
+set CORE_OFFSET_AUTO       10
+# Core shape
+set SHAPE_AUTO             "R"
+# Aspect ratio
+set SIDE_RATIO_AUTO        {1 1.5}
+# Flip the first row of the cell
+set FFR_AUTO               "true"
+# Using the M3 layer for pins
+set LAYER_PIN_AUTO         {M3}
+# Allows pins on all sides of the cell
+set SIDES_AUTO             {1 2 3 4}
+# Distance between pins
+set PIN_SPACE_AUTO         4
+######################
+## Floorplan manual ##
+######################
+set CONTROL_M            "core"
+# Percentage of cell area usage
+set CORE_UTILIZATION_M   0.5
+# Move the nucleus 10 units 
+set CORE_OFFSET_M        10
+# Core shape
+set SHAPE_M              "R"
+# Aspect ratio 
+set SIDE_RATIO_M         {1.5 1}
+# Flip the first row of the cell
+set FFR_M                "true" 
+# Using the M3 layer for pins
+set LAYER_PIN_M          {M3}
+# Allows pins on all sides of the cell
+set SIDES_M              {1 2 3 4}
+# Distance between pins
+set PIN_SPACE_M          4 
+#########################
+## Configure MultiCore ##
+#########################
+set_host_options -name Oculi -max_cores 2
+#report_host_options
+source ${CURR_DIR}/../../setup/utilities.tcl
+set UNSELECT_RULES "PO.DN.2* OD.DN.2* M*.DN.1* CSR.R.1* DM*.R.1*"
+PO.DN.2* OD.DN.2* M*.DN.1* CSR.R.1* DM*.R.1*
+#### ----- New design lib based on REF_NDM ----- ####
+if {[file exists $DESIGN_LIBRARY]} {
+  puts "Library Exist - Skip Creation" 
+  open_lib $DESIGN_LIBRARY
+} else {
+  if {$TECH_FILE != ""} {
+      create_lib -tech $TECH_FILE -ref_libs $REFERENCE_LIBRARY  $DESIGN_LIBRARY
+  } elseif {$TECH_LIB != ""} {
+      create_lib -use_technology_lib $TECH_LIB -ref_libs $REFERENCE_LIBRARY  $DESIGN_LIBRARY
+  } else { 
+      create_lib -ref_libs $REFERENCE_LIBRARY  $DESIGN_LIBRARY
+  }
+}
+Warning: Layer 'AP' is missing the attribute 'minArea'. (tsmcn65_9lmT2.tf line 699) (TECH-026)
+Warning: Layer 'VIA1' is missing the attribute 'cutNameTbl'. (tsmcn65_9lmT2.tf line 768) (TECH-026)
+Warning: Layer 'VIA2' is missing the attribute 'cutNameTbl'. (tsmcn65_9lmT2.tf line 798) (TECH-026)
+Warning: Layer 'VIA3' is missing the attribute 'cutNameTbl'. (tsmcn65_9lmT2.tf line 828) (TECH-026)
+Warning: Layer 'VIA4' is missing the attribute 'cutNameTbl'. (tsmcn65_9lmT2.tf line 857) (TECH-026)
+Warning: Layer 'VIA2' is missing the attribute 'cutNameTbl'. (tsmcn65_9lmT2.tf line 798) (TECH-026)
+Warning: Layer 'VIA3' is missing the attribute 'cutNameTbl'. (tsmcn65_9lmT2.tf line 828) (TECH-026)
+Warning: Layer 'VIA4' is missing the attribute 'cutNameTbl'. (tsmcn65_9lmT2.tf line 857) (TECH-026)
+Warning: Layer 'VIA5' is missing the attribute 'cutNameTbl'. (tsmcn65_9lmT2.tf line 886) (TECH-026)
+Warning: Layer 'AP' is missing the attribute 'minArea'. ( line 735) (TECH-026)
+Warning: Layer 'VIA1' is missing the attribute 'fatTblExtensionRangeDimension'. (tsmcn65_9lmT2.tf line 788) (TECH-026)
+Warning: Layer 'VIA2' is missing the attribute 'fatTblExtensionRangeDimension'. (tsmcn65_9lmT2.tf line 818) (TECH-026)
+Warning: Layer 'VIA3' is missing the attribute 'fatTblExtensionRangeDimension'. (tsmcn65_9lmT2.tf line 847) (TECH-026)
+Warning: Layer 'VIA4' is missing the attribute 'fatTblExtensionRangeDimension'. (tsmcn65_9lmT2.tf line 876) (TECH-026)
+Warning: Layer 'VIA5' is missing the attribute 'fatTblExtensionRangeDimension'. (tsmcn65_9lmT2.tf line 905) (TECH-026)
+Warning: Layer 'VIA6' is missing the attribute 'fatTblExtensionRangeDimension'. (tsmcn65_9lmT2.tf line 934) (TECH-026)
+Warning: Layer 'VIA7' is missing the attribute 'fatTblExtensionRangeDimension'. (tsmcn65_9lmT2.tf line 961) (TECH-026)
+Warning: Layer 'VIA8' is missing the attribute 'fatTblExtensionRangeDimension'. (tsmcn65_9lmT2.tf line 988) (TECH-026)
+Warning: Cut layer 'VIA1' has a non-cross primary default ContactCode 'VIA12'. (line 1185) (TECH-083w)
+Information: Loading technology file '/mnt/vol_NFS_rh003/profesores/pmendoza/KITS/TSMCHOME/digital/Back_End/milkyway/tcbn65lphpbwp_140a/techfiles/tsmcn65_9lmT2.tf' (FILE-007)
+Warning: Technology used to create frame-view and current technology have inconsistency: Fat table contents are different. (FRAM-054)
+Warning: Technology 'tcbn65lphpbwpcghvt.tf' used for frame-view creation in library 'tcbn65lphpbwpcghvt_1_physical_only', is inconsistent with the current technology 'tsmcn65_9lmT2.tf' of library 'top_lib'. Please run derive_design_level_via_regions to generate up-do-date via region in the design library. (NDM-102)
+Warning: Technology used to create frame-view and current technology have inconsistency: Fat table contents are different. (FRAM-054)
+Warning: Technology 'tpdn65lpgv2od3_sd.tf' used for frame-view creation in library 'tpdn65lpgv2od3_sd_physical_only', is inconsistent with the current technology 'tsmcn65_9lmT2.tf' of library 'top_lib'. Please run derive_design_level_via_regions to generate up-do-date via region in the design library. (NDM-102)
+Warning: Technology used to create frame-view and current technology have inconsistency: Fat table contents are different. (FRAM-054)
+Warning: Technology 'tpfn65lpgv2od3.tf' used for frame-view creation in library 'tpfn65lpgv2od3_physical_only', is inconsistent with the current technology 'tsmcn65_9lmT2.tf' of library 'top_lib'. Please run derive_design_level_via_regions to generate up-do-date via region in the design library. (NDM-102)
+Warning: Technology used to create frame-view and current technology have inconsistency: Fat table contents are different. (FRAM-054)
+Warning: Technology 'tcbn65lphpbwpcghvt.tf' used for frame-view creation in library 'tcbn65lphpbwpcghvt_1', is inconsistent with the current technology 'tsmcn65_9lmT2.tf' of library 'top_lib'. Please run derive_design_level_via_regions to generate up-do-date via region in the design library. (NDM-102)
+Warning: Technology used to create frame-view and current technology have inconsistency: Fat table contents are different. (FRAM-054)
+Warning: Technology 'tpdn65lpgv2od3_sd.tf' used for frame-view creation in library 'tpdn65lpgv2od3_sdml', is inconsistent with the current technology 'tsmcn65_9lmT2.tf' of library 'top_lib'. Please run derive_design_level_via_regions to generate up-do-date via region in the design library. (NDM-102)
+Warning: Technology used to create frame-view and current technology have inconsistency: Fat table contents are different. (FRAM-054)
+Warning: Technology 'tpfn65lpgv2od3.tf' used for frame-view creation in library 'tpfn65lpgv2od3ml', is inconsistent with the current technology 'tsmcn65_9lmT2.tf' of library 'top_lib'. Please run derive_design_level_via_regions to generate up-do-date via region in the design library. (NDM-102)
+{top_lib}
+# Report reference libraries to check correct creation of lib
+report_ref_libs
+****************************************
+Report : Reference Library Report
+Library: top_lib
+Version: U-2022.12-SP6
+Date   : Sun May 25 01:00:13 2025
+****************************************
+
+    Name                               Path                                                                                                                                                                                                Location
+    -----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+*+  tcbn65lphpbwpcghvt_1_physical_only /mnt/vol_NFS_rh003/estudiantes/DANIELA_VARGAS/Version_final/0516/versiones_finales/semana14/Registro_Hamming/Hamming_16/FLOW/fc_flow/setup/ndm_libraries/ndm/tcbn65lphpbwpcghvt_1_physical_only.ndm /mnt/vol_NFS_rh003/estudiantes/DANIELA_VARGAS/Version_final/0516/versiones_finales/semana14/Registro_Hamming/Hamming_16/FLOW/fc_flow/setup/ndm_libraries/ndm/tcbn65lphpbwpcghvt_1_physical_only.ndm
+*+  tcbn65lphpbwp_1_physical_only      /mnt/vol_NFS_rh003/estudiantes/DANIELA_VARGAS/Version_final/0516/versiones_finales/semana14/Registro_Hamming/Hamming_16/FLOW/fc_flow/setup/ndm_libraries/ndm/tcbn65lphpbwp_1_physical_only.ndm      /mnt/vol_NFS_rh003/estudiantes/DANIELA_VARGAS/Version_final/0516/versiones_finales/semana14/Registro_Hamming/Hamming_16/FLOW/fc_flow/setup/ndm_libraries/ndm/tcbn65lphpbwp_1_physical_only.ndm
+*+  tpdn65lpgv2od3_sd_physical_only    /mnt/vol_NFS_rh003/estudiantes/DANIELA_VARGAS/Version_final/0516/versiones_finales/semana14/Registro_Hamming/Hamming_16/FLOW/fc_flow/setup/ndm_libraries/ndm/tpdn65lpgv2od3_sd_physical_only.ndm    /mnt/vol_NFS_rh003/estudiantes/DANIELA_VARGAS/Version_final/0516/versiones_finales/semana14/Registro_Hamming/Hamming_16/FLOW/fc_flow/setup/ndm_libraries/ndm/tpdn65lpgv2od3_sd_physical_only.ndm
+*+  tpfn65lpgv2od3_physical_only       /mnt/vol_NFS_rh003/estudiantes/DANIELA_VARGAS/Version_final/0516/versiones_finales/semana14/Registro_Hamming/Hamming_16/FLOW/fc_flow/setup/ndm_libraries/ndm/tpfn65lpgv2od3_physical_only.ndm       /mnt/vol_NFS_rh003/estudiantes/DANIELA_VARGAS/Version_final/0516/versiones_finales/semana14/Registro_Hamming/Hamming_16/FLOW/fc_flow/setup/ndm_libraries/ndm/tpfn65lpgv2od3_physical_only.ndm
+*+  tpbn65v_physical_only              /mnt/vol_NFS_rh003/estudiantes/DANIELA_VARGAS/Version_final/0516/versiones_finales/semana14/Registro_Hamming/Hamming_16/FLOW/fc_flow/setup/ndm_libraries/ndm/tpbn65v_physical_only.ndm              /mnt/vol_NFS_rh003/estudiantes/DANIELA_VARGAS/Version_final/0516/versiones_finales/semana14/Registro_Hamming/Hamming_16/FLOW/fc_flow/setup/ndm_libraries/ndm/tpbn65v_physical_only.ndm
+*+  tpin65gv_physical_only             /mnt/vol_NFS_rh003/estudiantes/DANIELA_VARGAS/Version_final/0516/versiones_finales/semana14/Registro_Hamming/Hamming_16/FLOW/fc_flow/setup/ndm_libraries/ndm/tpin65gv_physical_only.ndm             /mnt/vol_NFS_rh003/estudiantes/DANIELA_VARGAS/Version_final/0516/versiones_finales/semana14/Registro_Hamming/Hamming_16/FLOW/fc_flow/setup/ndm_libraries/ndm/tpin65gv_physical_only.ndm
+*+  tcbn65lphpbwpcghvt_1               /mnt/vol_NFS_rh003/estudiantes/DANIELA_VARGAS/Version_final/0516/versiones_finales/semana14/Registro_Hamming/Hamming_16/FLOW/fc_flow/setup/ndm_libraries/ndm/tcbn65lphpbwpcghvt_1.ndm               /mnt/vol_NFS_rh003/estudiantes/DANIELA_VARGAS/Version_final/0516/versiones_finales/semana14/Registro_Hamming/Hamming_16/FLOW/fc_flow/setup/ndm_libraries/ndm/tcbn65lphpbwpcghvt_1.ndm
+*+  tcbn65lphpbwp_1                    /mnt/vol_NFS_rh003/estudiantes/DANIELA_VARGAS/Version_final/0516/versiones_finales/semana14/Registro_Hamming/Hamming_16/FLOW/fc_flow/setup/ndm_libraries/ndm/tcbn65lphpbwp_1.ndm                    /mnt/vol_NFS_rh003/estudiantes/DANIELA_VARGAS/Version_final/0516/versiones_finales/semana14/Registro_Hamming/Hamming_16/FLOW/fc_flow/setup/ndm_libraries/ndm/tcbn65lphpbwp_1.ndm
+*+  tpdn65lpgv2od3_sdml                /mnt/vol_NFS_rh003/estudiantes/DANIELA_VARGAS/Version_final/0516/versiones_finales/semana14/Registro_Hamming/Hamming_16/FLOW/fc_flow/setup/ndm_libraries/ndm/tpdn65lpgv2od3_sdml.ndm                /mnt/vol_NFS_rh003/estudiantes/DANIELA_VARGAS/Version_final/0516/versiones_finales/semana14/Registro_Hamming/Hamming_16/FLOW/fc_flow/setup/ndm_libraries/ndm/tpdn65lpgv2od3_sdml.ndm
+*+  tpfn65lpgv2od3ml                   /mnt/vol_NFS_rh003/estudiantes/DANIELA_VARGAS/Version_final/0516/versiones_finales/semana14/Registro_Hamming/Hamming_16/FLOW/fc_flow/setup/ndm_libraries/ndm/tpfn65lpgv2od3ml.ndm                   /mnt/vol_NFS_rh003/estudiantes/DANIELA_VARGAS/Version_final/0516/versiones_finales/semana14/Registro_Hamming/Hamming_16/FLOW/fc_flow/setup/ndm_libraries/ndm/tpfn65lpgv2od3ml.ndm
+*+  ts1n65lpa2048x32m4_140a_5m         /mnt/vol_NFS_rh003/estudiantes/DANIELA_VARGAS/Version_final/0516/versiones_finales/semana14/Registro_Hamming/Hamming_16/FLOW/fc_flow/setup/ndm_libraries/ndm/ts1n65lpa2048x32m4_140a_5m.ndm         /mnt/vol_NFS_rh003/estudiantes/DANIELA_VARGAS/Version_final/0516/versiones_finales/semana14/Registro_Hamming/Hamming_16/FLOW/fc_flow/setup/ndm_libraries/ndm/ts1n65lpa2048x32m4_140a_5m.ndm
+    "*" = Library currently open
+    "+" = Library has technology information
+1
+save_lib
+Saving library 'top_lib'
+1
+exit
+Maximum memory usage for this session: 383.84 MB
+Maximum memory usage for this session including child processes: 383.84 MB
+CPU usage for this session:      8 seconds (  0.00 hours)
+Elapsed time for this session:     13 seconds (  0.00 hours)
+Thank you for using Fusion Compiler.

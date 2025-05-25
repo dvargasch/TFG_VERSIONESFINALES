@@ -1,39 +1,62 @@
 Invoking simulator...
 
-./results -sml=verdi +UVM_VERDI_TRACE=UVM_AWARE +fsdb+gate=off -ucli2Proc -ucli
-debImport "-i" "-simflow" "-dbdir" "./results.daidir"
-*Verdi* Loading libsscore_vcs202303.so
+./prueba_1 -sml=verdi +UVM_VERDI_TRACE=UVM_AWARE +fsdb+gate=off -ucli2Proc -ucli
+debImport "-i" "-simflow" "-dbdir" "./prueba_1.daidir"
+*Verdi* Loading libsscore_vcs202012.so
 
-*Verdi* : Enable RPC Server(3645934)
+*Verdi* : Enable RPC Server(296073)
 
 srcTBInvokeSim
-Chronologic VCS simulator copyright 1991-2023
+Chronologic VCS simulator copyright 1991-2020
 Contains Synopsys proprietary information.
-Compiler version U-2023.03-SP2_Full64; Runtime version U-2023.03-SP2_Full64;  May 17 17:57 2025
+Compiler version R-2020.12-SP2_Full64; Runtime version R-2020.12-SP2_Full64;  May 21 15:24 2025
 xterm-256color is Not a valid terminal...
-Verdi>fsdbDumpvars 1 "universal_register_8bit_tb.dut.clk"  +all +trace_process;fsdbDumpvars 1 "universal_register_8bit_tb.dut.parallel_out"  +all +trace_process;fsdbDumpvars 1 "universal_register_8bit_tb.dut.load"  +all +trace_process;fsdbDumpvars 1 "universal_register_8bit_tb.dut.rst"  +all +trace_process;fsdbDumpvars 1 "universal_register_8bit_tb.dut.mode"  +all +trace_process;fsdbDumpvars 1 "universal_register_8bit_tb.dut.enable"  +all +trace_process;fsdbDumpvars 1 "universal_register_8bit_tb.dut.serial_out"  +all +trace_process;fsdbDumpvars 1 "universal_register_8bit_tb.dut.parallel_in"  +all +trace_process;fsdbDumpvars 1 "universal_register_8bit_tb.dut.serial_in"  +all +trace_process;fsdbDumpflush 
+Verdi>fsdbDumpvars 1 "universal_register_4bit_tb.dut.clk"  +all +trace_process;fsdbDumpvars 1 "universal_register_4bit_tb.dut.rst"  +all +trace_process;fsdbDumpvars 1 "universal_register_4bit_tb.dut.mode"  +all +trace_process;fsdbDumpvars 1 "universal_register_4bit_tb.dut.p2"  +all +trace_process;fsdbDumpvars 1 "universal_register_4bit_tb.dut.p1"  +all +trace_process;fsdbDumpvars 1 "universal_register_4bit_tb.dut.reg_data"  +all +trace_process;fsdbDumpvars 1 "universal_register_4bit_tb.dut.p3"  +all +trace_process;fsdbDumpvars 1 "universal_register_4bit_tb.dut.parallel_out"  +all +trace_process;fsdbDumpvars 1 "universal_register_4bit_tb.dut.serial_out"  +all +trace_process;fsdbDumpvars 1 "universal_register_4bit_tb.dut.parallel_in"  +all +trace_process;fsdbDumpvars 1 "universal_register_4bit_tb.dut.serial_in"  +all +trace_process;fsdbDumpvars 1 "universal_register_4bit_tb.dut.load"  +all +trace_process;fsdbDumpvars 1 "universal_register_4bit_tb.dut.enable"  +all +trace_process;fsdbDumpflush 
 
-*Verdi* : Dumping the signal (universal_register_8bit_tb.dut.clk).
-*Verdi* : Dumping the signal (universal_register_8bit_tb.dut.parallel_out).
-*Verdi* : Dumping the signal (universal_register_8bit_tb.dut.load).
-*Verdi* : Dumping the signal (universal_register_8bit_tb.dut.rst).
-*Verdi* : Dumping the signal (universal_register_8bit_tb.dut.mode).
-*Verdi* : Dumping the signal (universal_register_8bit_tb.dut.enable).
-*Verdi* : Dumping the signal (universal_register_8bit_tb.dut.serial_out).
-*Verdi* : Dumping the signal (universal_register_8bit_tb.dut.parallel_in).
-*Verdi* : Dumping the signal (universal_register_8bit_tb.dut.serial_in).
+*Verdi* : Dumping the signal (universal_register_4bit_tb.dut.clk).
+*Verdi* : Dumping the signal (universal_register_4bit_tb.dut.rst).
+*Verdi* : Dumping the signal (universal_register_4bit_tb.dut.mode).
+*Verdi* : Dumping the signal (universal_register_4bit_tb.dut.p2).
+*Verdi* : Dumping the signal (universal_register_4bit_tb.dut.p1).
+*Verdi* : Dumping the signal (universal_register_4bit_tb.dut.reg_data).
+*Verdi* : Dumping the signal (universal_register_4bit_tb.dut.p3).
+*Verdi* : Dumping the signal (universal_register_4bit_tb.dut.parallel_out).
+*Verdi* : Dumping the signal (universal_register_4bit_tb.dut.serial_out).
+*Verdi* : Dumping the signal (universal_register_4bit_tb.dut.parallel_in).
+*Verdi* : Dumping the signal (universal_register_4bit_tb.dut.serial_in).
+*Verdi* : Dumping the signal (universal_register_4bit_tb.dut.load).
+*Verdi* : Dumping the signal (universal_register_4bit_tb.dut.enable).
 *Verdi* : Flush all FSDB Files at 0 ps.
 
 Verdi>run
-Test 1: Modo SISO (00)
-Test 2: Modo SIPO (01)
-Test 3: Modo PISO (10)
-$finish called from file "tb.sv", line 123.
-$finish at simulation time               415000
-Simulation complete, time is 415000 ps.
-tb.sv, 123 :     #20 $finish;
+
+Test 1: Modo SISO
+
+Test 2: Modo SIPO
+
+Test 3: Modo PISO
+
+Test 4: Modo PIPO
+Inyectando errores en reg_parallel de u0 y u2 antes de la carga
+$finish called from file "tb.sv", line 99.
+$finish at simulation time               355000
+Simulation complete, time is 355000 ps.
+tb.sv, 99 :      $finish;
+Verdi>fsdbDumpvars 1 "universal_register_4bit_tb.dut.\\p2_reg\[0\] "  +all +trace_process;fsdbDumpvars 1 "universal_register_4bit_tb.dut.\\p1_reg\[0\] "  +all +trace_process;fsdbDumpvars 1 "universal_register_4bit_tb.dut.\\p3_reg\[0\] "  +all +trace_process;fsdbDumpflush 
+
+*Verdi* : Begin traversing the scope (universal_register_4bit_tb.dut.\p2_reg[0] ), layer (1).
+*Verdi* : Enable +trace_process and +all dumping.
+*Verdi* : End of traversing.
+*Verdi* : Begin traversing the scope (universal_register_4bit_tb.dut.\p1_reg[0] ), layer (1).
+*Verdi* : Enable +trace_process and +all dumping.
+*Verdi* : End of traversing.
+*Verdi* : Begin traversing the scope (universal_register_4bit_tb.dut.\p3_reg[0] ), layer (1).
+*Verdi* : Enable +trace_process and +all dumping.
+*Verdi* : End of traversing.
+*Verdi* : Flush all FSDB Files at 355,000 ps.
+
            V C S   S i m u l a t i o n   R e p o r t 
-Time: 415000 ps
-CPU Time:      0.400 seconds;       Data structure size:   0.0Mb
-Sat May 17 18:00:21 2025
+Time: 355000 ps
+CPU Time:      0.120 seconds;       Data structure size:   0.0Mb
+Wed May 21 17:00:57 2025
 debExit

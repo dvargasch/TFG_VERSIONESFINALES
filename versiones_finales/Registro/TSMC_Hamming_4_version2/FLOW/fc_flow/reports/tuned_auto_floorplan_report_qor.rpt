@@ -2,7 +2,7 @@
 Report : qor
 Design : top
 Version: U-2022.12-SP6
-Date   : Tue May 20 15:52:08 2025
+Date   : Wed May 21 15:18:17 2025
 ****************************************
 
 
@@ -42,7 +42,7 @@ Scenario           'scenarioSS'
 Timing Path Group  '**in2reg_default**'
 ----------------------------------------
 Levels of Logic:                      8
-Critical Path Length:              1.79
+Critical Path Length:              1.78
 Critical Path Slack:               7.81
 Critical Path Clk Period:         10.00
 Total Negative Slack:              0.00
@@ -75,7 +75,7 @@ Scenario           'scenarioSS'
 Timing Path Group  'SYS_CLK'
 ----------------------------------------
 Levels of Logic:                      6
-Critical Path Length:              1.52
+Critical Path Length:              1.53
 Critical Path Slack:               8.10
 Critical Path Clk Period:         10.00
 Total Negative Slack:              0.00
@@ -114,19 +114,19 @@ Macro Count:                          0
 
 Area
 ----------------------------------------
-Combinational Area:              154.80
+Combinational Area:              153.60
 Noncombinational Area:            90.40
 Buf/Inv Area:                     12.00
 Total Buffer Area:                 0.00
 Total Inverter Area:              12.00
 Macro/Black Box Area:              0.00
 Net Area:                             0
-Net XLength:                     560.01
-Net YLength:                     533.59
+Net XLength:                     600.57
+Net YLength:                     525.04
 ----------------------------------------
-Cell Area (netlist):                            245.20
-Cell Area (netlist and physical only):          245.20
-Net Length:                     1093.59
+Cell Area (netlist):                            244.00
+Cell Area (netlist and physical only):          244.00
+Net Length:                     1125.61
 
 
 Design Rules

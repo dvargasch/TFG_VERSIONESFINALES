@@ -1,0 +1,948 @@
+$date
+	Wed May 21 14:35:02 2025
+$end
+
+$version
+	Synopsys VCS version R-2020.12-SP2_Full64
+$end
+
+$timescale
+	1ps
+$end
+
+$comment Csum: 1 267b326b74d6c7be $end
+
+
+$scope module universal_register_4bit_tb $end
+$var reg 1 ! clk $end
+$var reg 1 " rst $end
+$var reg 1 # enable $end
+$var reg 2 $ mode [1:0] $end
+$var reg 1 % load $end
+$var reg 1 & serial_in $end
+$var reg 4 ' parallel_in [3:0] $end
+$var reg 1 ( serial_out $end
+$var reg 4 ) parallel_out [3:0] $end
+
+$scope module dut $end
+$var reg 1 * clk $end
+$var reg 1 + rst $end
+$var reg 1 , enable $end
+$var reg 1 - load $end
+$var reg 1 . serial_in $end
+$var reg 2 / mode [1:0] $end
+$var reg 4 0 parallel_in [3:0] $end
+$var reg 1 1 serial_out $end
+$var reg 4 2 parallel_out [3:0] $end
+$var reg 4 3 reg_data_1 [3:0] $end
+$var reg 4 4 reg_data_2 [3:0] $end
+$var reg 4 5 reg_data_3 [3:0] $end
+$var reg 4 6 next_1 [3:0] $end
+$var reg 4 7 next_2 [3:0] $end
+$var reg 4 8 next_3 [3:0] $end
+$var reg 4 9 voted_data [3:0] $end
+$var reg 1 : serial_out_1 $end
+$var reg 1 ; serial_out_2 $end
+$var reg 1 < serial_out_3 $end
+$var reg 1 = voted_serial $end
+
+$scope module register_1 $end
+$var reg 4 > reg_data [3:0] $end
+$var reg 2 ? mode [1:0] $end
+$var reg 1 @ serial_in $end
+$var reg 1 A load $end
+$var reg 4 B parallel_in [3:0] $end
+$var reg 4 C next_data [3:0] $end
+$upscope $end
+
+
+$scope module register_2 $end
+$var reg 4 D reg_data [3:0] $end
+$var reg 2 E mode [1:0] $end
+$var reg 1 F serial_in $end
+$var reg 1 G load $end
+$var reg 4 H parallel_in [3:0] $end
+$var reg 4 I next_data [3:0] $end
+$upscope $end
+
+
+$scope module register_3 $end
+$var reg 4 J reg_data [3:0] $end
+$var reg 2 K mode [1:0] $end
+$var reg 1 L serial_in $end
+$var reg 1 M load $end
+$var reg 4 N parallel_in [3:0] $end
+$var reg 4 O next_data [3:0] $end
+$upscope $end
+
+
+$scope module voter_inst $end
+$var reg 4 P parallel_out_1 [3:0] $end
+$var reg 4 Q parallel_out_2 [3:0] $end
+$var reg 4 R parallel_out_3 [3:0] $end
+$var reg 1 S serial_out_1 $end
+$var reg 1 T serial_out_2 $end
+$var reg 1 U serial_out_3 $end
+$var reg 4 V parallel_out_voted [3:0] $end
+$var reg 1 W serial_out_voted $end
+$upscope $end
+
+$upscope $end
+
+$upscope $end
+
+$enddefinitions $end
+
+#0
+$dumpvars
+0!
+0,
+0+
+01
+0#
+0%
+0"
+0&
+0(
+0:
+0;
+0<
+0W
+0=
+0S
+0T
+0U
+b00 /
+b0000 0
+b0000 2
+b00 $
+b0000 6
+b0000 7
+b0000 8
+b0000 '
+b0000 )
+b0000 P
+b0000 Q
+b0000 R
+b0000 V
+b0000 3
+b0000 4
+b0000 5
+b0000 9
+b00 ?
+b0000 C
+b0000 B
+b0000 >
+b00 E
+b0000 I
+b0000 H
+b0000 D
+b00 K
+b0000 O
+b0000 N
+b0000 J
+0-
+0A
+0G
+0M
+0.
+0@
+0F
+0L
+0*
+$end
+#5000
+1!
+1*
+1"
+1+
+1#
+1,
+#10000
+0!
+0*
+#15000
+1!
+1*
+1&
+1.
+1@
+1F
+1L
+b1000 C
+b1000 6
+b1000 P
+b1000 I
+b1000 7
+b1000 Q
+b1000 O
+b1000 8
+b1000 R
+b1000 V
+b1000 9
+b1000 2
+b1000 )
+#20000
+0!
+0*
+#25000
+1!
+1*
+b1111 J
+b1111 O
+b1111 8
+b1111 R
+b1000 3
+b1000 >
+b1000 4
+b1000 D
+b1000 5
+b1100 C
+b1100 6
+b1100 P
+b1100 I
+b1100 7
+b1100 Q
+b1100 V
+b1100 9
+b1100 2
+b1100 )
+#30000
+0!
+0*
+#35000
+1!
+1*
+b1000 J
+b1100 O
+b1100 8
+b1100 R
+b1100 3
+b1100 >
+b1100 4
+b1100 D
+b1100 5
+b1100 J
+b1110 C
+b1110 6
+b1110 P
+b1110 I
+b1110 7
+b1110 Q
+b1110 O
+b1110 8
+b1110 R
+b1110 V
+b1110 9
+b1110 2
+b1110 )
+#40000
+0!
+0*
+#45000
+1!
+1*
+b1110 3
+b1110 >
+b1110 4
+b1110 D
+b1110 5
+b1110 J
+b1111 C
+b1111 6
+b1111 P
+b1111 I
+b1111 7
+b1111 Q
+b1111 O
+b1111 8
+b1111 R
+b1111 V
+b1111 9
+b1111 2
+b1111 )
+#50000
+0!
+0*
+#55000
+1!
+1*
+b1111 3
+b1111 >
+b1111 4
+b1111 D
+b1111 5
+b1111 J
+1:
+1S
+1;
+1T
+1<
+1U
+1W
+1=
+11
+1(
+#60000
+0!
+0*
+#65000
+1!
+1*
+#70000
+0!
+0*
+#75000
+1!
+1*
+#80000
+0!
+0*
+#85000
+1!
+1*
+#90000
+0!
+0*
+#95000
+1!
+1*
+0&
+0.
+0@
+0F
+0L
+b0111 C
+b0111 6
+b0111 P
+b0111 I
+b0111 7
+b0111 Q
+b0111 O
+b0111 8
+b0111 R
+b0111 V
+b0111 9
+b0111 2
+b0111 )
+#100000
+0!
+0*
+#105000
+1!
+1*
+b0111 3
+b0111 >
+b0111 4
+b0111 D
+b0111 5
+b0111 J
+b0011 C
+b0011 6
+b0011 P
+b0011 I
+b0011 7
+b0011 Q
+b0011 O
+b0011 8
+b0011 R
+b0011 V
+b0011 9
+b0011 2
+b0011 )
+#110000
+0!
+0*
+#115000
+1!
+1*
+b0011 3
+b0011 >
+b0011 4
+b0011 D
+b0011 5
+b0011 J
+b0001 C
+b0001 6
+b0001 P
+b0001 I
+b0001 7
+b0001 Q
+b0001 O
+b0001 8
+b0001 R
+b0001 V
+b0001 9
+b0001 2
+b0001 )
+#120000
+0!
+0*
+#125000
+1!
+1*
+b0001 3
+b0001 >
+b0001 4
+b0001 D
+b0001 5
+b0001 J
+b0000 C
+b0000 6
+b0000 P
+b0000 I
+b0000 7
+b0000 Q
+b0000 O
+b0000 8
+b0000 R
+b0000 V
+b0000 9
+b0000 2
+b0000 )
+#130000
+0!
+0*
+#135000
+1!
+1*
+b0000 3
+b0000 >
+b0000 4
+b0000 D
+b0000 5
+b0000 J
+0:
+0S
+0;
+0T
+0<
+0U
+0W
+0=
+01
+0(
+#140000
+0!
+0*
+#145000
+1!
+1*
+b01 $
+b01 /
+b01 K
+b01 E
+b01 ?
+1&
+1.
+1@
+1F
+1L
+b0001 O
+b0001 8
+b0001 R
+b0001 I
+b0001 7
+b0001 Q
+b0001 C
+b0001 6
+b0001 P
+b0001 V
+b0001 9
+b0001 2
+b0001 )
+#150000
+0!
+0*
+#155000
+1!
+1*
+b1111 J
+b0000 J
+0&
+0.
+0@
+0F
+0L
+b0001 3
+b0001 >
+b0001 4
+b0001 D
+b0001 5
+b0001 J
+b0010 C
+b0010 6
+b0010 P
+b0010 I
+b0010 7
+b0010 Q
+b0010 O
+b0010 8
+b0010 R
+b0010 V
+b0010 9
+b0010 2
+b0010 )
+#160000
+0!
+0*
+#165000
+1!
+1*
+0#
+0,
+b0010 3
+b0010 >
+b0010 4
+b0010 D
+b0010 5
+b0010 J
+b0100 C
+b0100 6
+b0100 P
+b0100 I
+b0100 7
+b0100 Q
+b0100 O
+b0100 8
+b0100 R
+b0100 V
+b0100 9
+b0100 2
+b0100 )
+#170000
+0!
+0*
+#175000
+1!
+1*
+#180000
+0!
+0*
+#185000
+1!
+1*
+#190000
+0!
+0*
+#195000
+1!
+1*
+#200000
+0!
+0*
+#205000
+1!
+1*
+#210000
+0!
+0*
+#215000
+1!
+1*
+#220000
+0!
+0*
+#225000
+1!
+1*
+1#
+1,
+b0100 3
+b0100 >
+b0100 4
+b0100 D
+b0100 5
+b0100 J
+b1000 C
+b1000 6
+b1000 P
+b1000 I
+b1000 7
+b1000 Q
+b1000 O
+b1000 8
+b1000 R
+b1000 V
+b1000 9
+b1000 2
+b1000 )
+#230000
+0!
+0*
+#235000
+1!
+1*
+b1000 3
+b1000 >
+b1000 4
+b1000 D
+b1000 5
+b1000 J
+b0000 C
+b0000 6
+b0000 P
+1:
+1S
+b0000 I
+b0000 7
+b0000 Q
+1;
+1T
+b0000 O
+b0000 8
+b0000 R
+1<
+1U
+b0000 V
+b0000 9
+b0000 2
+b0000 )
+1W
+1=
+11
+1(
+#240000
+0!
+0*
+#245000
+1!
+1*
+b0000 3
+b0000 >
+b0000 4
+b0000 D
+b0000 5
+b0000 J
+0:
+0S
+0;
+0T
+0<
+0U
+0W
+0=
+01
+0(
+#250000
+0!
+0*
+#255000
+1!
+1*
+#260000
+0!
+0*
+#265000
+1!
+1*
+#270000
+0!
+0*
+#275000
+1!
+1*
+#280000
+0!
+0*
+#285000
+1!
+1*
+b10 $
+b10 /
+b10 K
+b10 E
+b10 ?
+1%
+1-
+1A
+1G
+1M
+b1011 '
+b1011 0
+b1011 N
+b1011 H
+b1011 B
+b1011 O
+b1011 8
+b1011 R
+b1011 I
+b1011 7
+b1011 Q
+b1011 C
+b1011 6
+b1011 P
+b1011 V
+b1011 9
+b1011 2
+b1011 )
+#290000
+0!
+0*
+#295000
+1!
+1*
+0%
+0-
+0A
+0G
+0M
+b0000 C
+b0000 6
+b0000 P
+b0000 I
+b0000 7
+b0000 Q
+b0000 O
+b0000 8
+b0000 R
+b0000 V
+b0000 9
+b0000 2
+b0000 )
+b1011 3
+b1011 >
+b1011 4
+b1011 D
+b1011 5
+b1011 J
+b0101 C
+b0101 6
+b0101 P
+1:
+1S
+b0101 I
+b0101 7
+b0101 Q
+1;
+1T
+b0101 O
+b0101 8
+b0101 R
+1<
+1U
+b0101 V
+b0101 9
+b0101 2
+b0101 )
+1W
+1=
+11
+1(
+#300000
+0!
+0*
+#305000
+1!
+1*
+b0101 3
+b0101 >
+b0101 4
+b0101 D
+b0101 5
+b0101 J
+b0010 C
+b0010 6
+b0010 P
+b0010 I
+b0010 7
+b0010 Q
+b0010 O
+b0010 8
+b0010 R
+b0010 V
+b0010 9
+b0010 2
+b0010 )
+#310000
+0!
+0*
+#315000
+1!
+1*
+b1111 J
+b0111 O
+b0111 8
+b0111 R
+b0010 3
+b0010 >
+b0010 4
+b0010 D
+b0010 5
+b0001 C
+b0001 6
+b0001 P
+0:
+0S
+b0001 I
+b0001 7
+b0001 Q
+0;
+0T
+0<
+0U
+b0001 V
+b0001 9
+b0001 2
+b0001 )
+0W
+0=
+01
+0(
+#320000
+0!
+0*
+#325000
+1!
+1*
+b0010 J
+b0001 O
+b0001 8
+b0001 R
+b0001 3
+b0001 >
+b0001 4
+b0001 D
+b0001 5
+b0001 J
+b0000 C
+b0000 6
+b0000 P
+1:
+1S
+b0000 I
+b0000 7
+b0000 Q
+1;
+1T
+b0000 O
+b0000 8
+b0000 R
+1<
+1U
+b0000 V
+b0000 9
+b0000 2
+b0000 )
+1W
+1=
+11
+1(
+#330000
+0!
+0*
+#335000
+1!
+1*
+b11 $
+b11 /
+b11 K
+b11 E
+b11 ?
+1%
+1-
+1A
+1G
+1M
+b1110 '
+b1110 0
+b1110 N
+b1110 H
+b1110 B
+b1110 O
+b1110 8
+b1110 R
+b1110 I
+b1110 7
+b1110 Q
+b1110 C
+b1110 6
+b1110 P
+0<
+0U
+0;
+0T
+0:
+0S
+b1110 V
+b1110 9
+b1110 2
+b1110 )
+0W
+0=
+01
+0(
+b0000 3
+b0000 >
+b0000 4
+b0000 D
+b0000 5
+b0000 J
+#340000
+0!
+0*
+#345000
+1!
+1*
+0%
+0-
+0A
+0G
+0M
+b0000 C
+b0000 6
+b0000 P
+b0000 I
+b0000 7
+b0000 Q
+b0000 O
+b0000 8
+b0000 R
+b0000 V
+b0000 9
+b0000 2
+b0000 )
+b1110 3
+b1110 >
+b1110 4
+b1110 D
+b1110 5
+b1110 J
+b1110 C
+b1110 6
+b1110 P
+1:
+1S
+b1110 I
+b1110 7
+b1110 Q
+1;
+1T
+b1110 O
+b1110 8
+b1110 R
+1<
+1U
+b1110 V
+b1110 9
+b1110 2
+b1110 )
+1W
+1=
+11
+1(
+#350000
+0!
+0*
+#355000
+1!
+1*
+#360000
+0!
+0*
+#365000
+1!
+1*
+#370000
+0!
+0*

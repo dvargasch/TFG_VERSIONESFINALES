@@ -1,0 +1,157 @@
+Information: Timer using 1 threads
+Information: Corner cornerFF: no PVT mismatches. (PVT-032)
+Information: Corner cornerSS: no PVT mismatches. (PVT-032)
+****************************************
+Report : power
+        -significant_digits 2
+Design : top
+Version: U-2022.12-SP6
+Date   : Sun May 25 02:11:32 2025
+****************************************
+Information: Activity propagation will be performed for scenario scenarioFF.
+Warning: Mapping to scan cell 'GSDFCNQD1HPBWP' in library is not possible because cell has 'dont_use' attribute. (SQM-1067)
+Information: Doing activity propagation for mode 'mode1' and corner 'cornerFF' with effort level 'medium'. (POW-024)
+Information: Timer-derived activity data is cached on scenario scenarioFF (POW-052)
+Infomation: Fast mode activity propagation power.rtl_activity_annotation setup is ignored. Always use accurate mode.
+Information: Running switching activity propagation in scalar mode!
+
+ **** Information : No. of simulation cycles = 6 ****
+Information: Propagated activity on scenario scenarioSS identical to that on scenarioFF (POW-006)
+Information: The stitching and editing of coupling caps is turned OFF for design 'top_lib:top/signoff.design'. (TIM-125)
+Information: Design top has 1963 nets, 0 global routed, 1961 detail routed. (NEX-024)
+Information: The RC mode used is DR for design 'top'. (NEX-022)
+---extraction options---
+Corner: cornerSS
+ late_cap_scale                : 1
+ late_res_scale                : 1
+ early_cap_scale               : 1
+ early_res_scale               : 1
+Corner: cornerFF
+ late_cap_scale                : 1
+ late_res_scale                : 1
+ early_cap_scale               : 1
+ early_res_scale               : 1
+Global options:
+ reference_direction       : use_from_tluplus
+ real_metalfill_extraction : none
+ virtual_shield_extraction : true
+---app options---
+ host.max_cores                   : 1
+ extract.connect_open           : true
+ extract.enable_coupling_cap    : false
+Extracting design: top 
+NEX: virtual shield is applied in extraction.
+Information: coupling capacitance is lumped to ground. (NEX-030)
+Information: 1961 nets are successfully extracted. (NEX-028)
+Warning: Advanced receiver model has not been enabled for detailed routed design. (TIM-204)
+Information: Update timing completed net estimation for all the timing graph nets (TIM-111)
+Information: Net estimation statistics: timing graph nets = 1961, routed nets = 1961, across physical hierarchy nets = 0, parasitics cached nets = 1961, delay annotated nets = 0, parasitics annotated nets = 0, multi-voltage nets = 0. (TIM-112)
+************************************************************
+Timer Settings:
+Delay Calculation Style:                   auto
+Signal Integrity Analysis:                 disabled
+Timing Window Analysis:                    disabled
+Advanced Waveform Propagation:             disabled
+Variation Type:                            fixed_derate
+Clock Reconvergence Pessimism Removal:     disabled
+Advanced Receiver Model:                   disabled
+ML Acceleration:                           off
+************************************************************
+Mode: mode1
+Corner: cornerFF
+Scenario: scenarioFF
+Voltage: 1.32
+Temperature: 125.00
+
+Voltage Unit         : 1V
+Capacitance Unit     : 1pF
+Time Unit            : 1ns
+Temperature Unit     : 1C
+Dynamic Power Unit   : 1nW
+Leakage Power Unit   : 1nW
+
+Switched supply net power scaling:
+scaling for leakage power
+
+Supply nets:
+VDD (power) probability 1.00 (default)
+VSS (ground) probability 1.00 (default)
+Warning: Power table extrapolation (extrapolation mode) for port ZN on cell ctmi_4723 for parameter Tinp. Lowest table value = 0.004000, highest table value = 0.331200, value = 0.003757 (POW-046)
+Warning: Power table extrapolation (extrapolation mode) for port Z on cell place_optctmTdsLR_2_4217_roptpi_4241 for parameter Tinp. Lowest table value = 0.004000, highest table value = 0.331200, value = 0.001183 (POW-046)
+Warning: Power table extrapolation (extrapolation mode) for port ZN on cell phfnr_buf_711 for parameter Tinp. Lowest table value = 0.004000, highest table value = 0.331200, value = 0.003757 (POW-046)
+Warning: Power table extrapolation (extrapolation mode) for port ZN on cell phfnr_buf_710 for parameter Tinp. Lowest table value = 0.004000, highest table value = 0.331200, value = 0.000839 (POW-046)
+Warning: Power table extrapolation (extrapolation mode) for port Z on cell ctmi_231 for parameter Tinp. Lowest table value = 0.004000, highest table value = 0.331200, value = 0.000515 (POW-046)
+Warning: Power table extrapolation (extrapolation mode) for port Z on cell ctmi_232 for parameter Tinp. Lowest table value = 0.004000, highest table value = 0.331200, value = 0.003357 (POW-046)
+Warning: Power table extrapolation (extrapolation mode) for port Z on cell ctmi_5455 for parameter Tinp. Lowest table value = 0.004000, highest table value = 0.331200, value = 0.332794 (POW-046)
+Warning: Power table extrapolation (extrapolation mode) for port CDN on cell reg_data_reg[50] for parameter Tinp. Lowest table value = 0.004000, highest table value = 0.331200, value = 0.003929 (POW-046)
+Warning: Power table extrapolation (extrapolation mode) for port Q on cell reg_data_reg[50] for parameter Tinp. Lowest table value = 0.004000, highest table value = 0.331200, value = 0.003891 (POW-046)
+Warning: Power table extrapolation (extrapolation mode) for port QN on cell reg_data_reg[50] for parameter Tinp. Lowest table value = 0.004000, highest table value = 0.331200, value = 0.003891 (POW-046)
+Note - message 'POW-046' limit (10) exceeded. Remainder will be suppressed.
+
+  Cell Internal Power    = 2.72e+05 nW ( 66.0%)
+  Net Switching Power    = 1.40e+05 nW ( 34.0%)
+Total Dynamic Power      = 4.11e+05 nW (100.0%)
+
+Cell Leakage Power       = 1.69e+05 nW
+
+
+  Attributes
+  ----------
+      u  -  User defined power group
+      i  -  Includes clock pin internal power
+
+Power Group         Internal Power        Switching Power          Leakage Power            Total Power    (   %  )    Attrs
+-----------------------------------------------------------------------------------------------------------------------------
+io_pad                    0.00e+00               0.00e+00               0.00e+00               0.00e+00    (  0.0%)         
+memory                    0.00e+00               0.00e+00               0.00e+00               0.00e+00    (  0.0%)         
+black_box                 0.00e+00               0.00e+00               9.78e+02               9.78e+02    (  0.2%)         
+clock_network             2.14e+05               6.76e+04               4.53e+03               2.86e+05    ( 49.3%)        i
+register                  2.60e+04               1.19e+04               5.86e+04               9.64e+04    ( 16.6%)         
+sequential                0.00e+00               0.00e+00               0.00e+00               0.00e+00    (  0.0%)         
+combinational             3.13e+04               6.05e+04               1.05e+05               1.97e+05    ( 33.9%)         
+-----------------------------------------------------------------------------------------------------------------------------
+Total                     2.72e+05 nW            1.40e+05 nW            1.69e+05 nW            5.81e+05 nW
+Mode: mode1
+Corner: cornerSS
+Scenario: scenarioSS
+Voltage: 1.08
+Temperature: 125.00
+
+Voltage Unit         : 1V
+Capacitance Unit     : 1pF
+Time Unit            : 1ns
+Temperature Unit     : 1C
+Dynamic Power Unit   : 1nW
+Leakage Power Unit   : 1nW
+
+Switched supply net power scaling:
+scaling for leakage power
+
+Supply nets:
+VDD (power) probability 1.00 (default)
+VSS (ground) probability 1.00 (default)
+
+  Cell Internal Power    = 1.56e+05 nW ( 62.1%)
+  Net Switching Power    = 9.55e+04 nW ( 37.9%)
+Total Dynamic Power      = 2.52e+05 nW (100.0%)
+
+Cell Leakage Power       = 1.91e+03 nW
+
+
+  Attributes
+  ----------
+      u  -  User defined power group
+      i  -  Includes clock pin internal power
+
+Power Group         Internal Power        Switching Power          Leakage Power            Total Power    (   %  )    Attrs
+-----------------------------------------------------------------------------------------------------------------------------
+io_pad                    0.00e+00               0.00e+00               0.00e+00               0.00e+00    (  0.0%)         
+memory                    0.00e+00               0.00e+00               0.00e+00               0.00e+00    (  0.0%)         
+black_box                 0.00e+00               0.00e+00               5.04e+01               5.04e+01    (  0.0%)         
+clock_network             1.24e+05               4.66e+04               6.28e+01               1.71e+05    ( 67.5%)        i
+register                  1.50e+04               7.99e+03               6.62e+02               2.37e+04    (  9.3%)         
+sequential                0.00e+00               0.00e+00               0.00e+00               0.00e+00    (  0.0%)         
+combinational             1.67e+04               4.09e+04               1.13e+03               5.87e+04    ( 23.1%)         
+-----------------------------------------------------------------------------------------------------------------------------
+Total                     1.56e+05 nW            9.55e+04 nW            1.91e+03 nW            2.54e+05 nW
+1

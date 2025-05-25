@@ -1,0 +1,75 @@
+****************************************
+Report : design
+Design : top
+Version: U-2022.12-SP6
+Date   : Sun May 25 02:11:38 2025
+****************************************
+
+Total number of std cells in library : 896
+Total number of dont_use lib cells   : 72
+Total number of dont_touch lib cells : 71
+Total number of buffers              : 44
+Total number of inverters            : 35
+Total number of flip-flops           : 249
+Total number of latches              : 84
+Total number of ICGs                 : 20
+
+Cell Instance Type  Count         Area
+--------------------------------------
+TOTAL LEAF CELLS     4704    12683.200
+unit                 3638    12256.800
+Standard cells       3638    12256.800
+unit                 3638    12256.800
+Hard macro cells        0        0.000
+unit                 3638    12256.800
+Soft macro cells        0        0.000
+unit                 3638    12256.800
+Always on cells         0        0.000
+unit                 3638    12256.800
+Physical only        3026     5491.600
+unit                 3638    12256.800
+Fixed cells           696      787.200
+unit                 3638    12256.800
+Moveable cells       4008    11896.000
+unit                 3638    12256.800
+Placed cells         3630    12205.600
+unit                 3638    12256.800
+Sequential            225     2728.800
+unit                 3638    12256.800
+Buffer/inverter       107      183.600
+unit                 3638    12256.800
+ICG cells               1       12.000
+unit                 3638    12256.800
+
+Logic Hierarchies                    : 0
+Design Masters count                 : 62
+Total Flat nets count                : 1963
+Total FloatingNets count             : 0
+Total no of Ports                    : 266
+Number of Master Clocks in design    : 1
+Number of Generated Clocks in design : 0
+Number of Path Groups in design      : 7 (1 of them Non Default)
+Number of Scan Chains in design      : 0
+List of Modes                        : mode1
+List of Corners                      : cornerSS, cornerFF
+List of Scenarios                    : scenarioFF, scenarioSS
+
+Core Area                            : 13939.200
+Chip Area                            : 19163.200
+Total Site Row Area                  : 13939.200
+Number of Blockages                  : 0
+Total area of Blockages              : 0.000
+Number of Power Domains              : 1
+Number of Voltage Areas              : 1
+Number of Group Bounds               : 0
+Number of Exclusive MoveBounds       : 0
+Number of Hard or Soft MoveBounds    : 0
+Number of Multibit Registers         : 0
+Number of Multibit LS/ISO Cells      : 0
+Number of Top Level RP Groups        : 0
+Number of Tech Layers                : 37 (27 of them have unknown routing dir.)
+
+Total wire length                    : 55842.66 micron
+Total number of wires                : 26142
+Total number of contacts             : 27037
+1

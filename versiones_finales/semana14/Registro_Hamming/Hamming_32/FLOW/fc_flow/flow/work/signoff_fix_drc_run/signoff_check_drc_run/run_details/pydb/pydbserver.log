@@ -1,0 +1,104 @@
+
+                                  PYDB_Server 
+
+          Version U-2022.12-SP4 for linux64 - Aug 28, 2023 cl#9133772
+
+                    Copyright (c) 2007 - 2023 Synopsys, Inc.
+   This software and the associated documentation are proprietary to Synopsys,
+ Inc. This software may only be used in accordance with the terms and conditions
+ of a written license agreement with Synopsys, Inc. All other use, reproduction,
+   or distribution of this software is strictly prohibited.  Licensed Products
+     communicate with Synopsys servers for the purpose of providing software
+    updates, detecting software piracy and verifying that customers are using
+    Licensed Products in conformity with the applicable License Key for such
+  Licensed Products. Synopsys will use information gathered in connection with
+    this process to deliver software updates and pursue software pirates and
+                                   infringers.
+
+ Inclusivity & Diversity - Visit SolvNetPlus to read the "Synopsys Statement on
+            Inclusivity and Diversity" (Refer to article 000036315 at
+                        https://solvnetplus.synopsys.com)
+
+variable width coordinate support enabled.
+Listening for connections on port 34009
+PYDB_Server Started on host redhat003, Sun 05/25/2025 01:27:49
+Verified current licenses.
+Creating file:/mnt/vol_NFS_rh003/estudiantes/DANIELA_VARGAS/Version_final/0516/versiones_finales/semana14/Registro_Hamming/Hamming_32/FLOW/fc_flow/flow/work/signoff_fix_drc_run/signoff_check_drc_run/run_details/pydb/PYDB_top?nolock=1
+SQLite page_size=65536
+SQLite cache_size=65536
+SQLite mmap_size=0
+SQLite journal_mode=OFF
+SQLite version 3.33.0
+Client redhat003(3234224):29 connected (1 total client)
+Client redhat003(3234291):30 connected (2 total clients)
+Client redhat003(3234290):31 connected (3 total clients)
+Client redhat003(3234291):30 connection closed
+Client redhat003(3234291):30 disconnected (2 clients remain)
+Client redhat003(3234291):30 connected (3 total clients)
+Client redhat003(3234290):31 connection closed
+Client redhat003(3234290):31 disconnected (2 clients remain)
+Client redhat003(3234290):31 connected (3 total clients)
+Client redhat003(3234291):30 connection closed
+Client redhat003(3234291):30 disconnected (2 clients remain)
+Client redhat003(3234291):30 connected (3 total clients)
+Client redhat003(3234290):31 connection closed
+Client redhat003(3234290):31 disconnected (2 clients remain)
+Client redhat003(3234290):31 connected (3 total clients)
+Begin error insertion: /mnt/vol_NFS_rh003/estudiantes/DANIELA_VARGAS/Version_final/0516/versiones_finales/semana14/Registro_Hamming/Hamming_32/FLOW/fc_flow/DRC/ICVLN65S_9M_6X2Z.26_1a:9399:density
+Error insertion complete: /mnt/vol_NFS_rh003/estudiantes/DANIELA_VARGAS/Version_final/0516/versiones_finales/semana14/Registro_Hamming/Hamming_32/FLOW/fc_flow/DRC/ICVLN65S_9M_6X2Z.26_1a:9399:density
+  Error Insertion Time=0:00:00  User=0.01 Sys=0.00 Mem=0.001 GB SQLite=0.008 GB Unpooled=0.000 GB
+Begin error insertion: /mnt/vol_NFS_rh003/estudiantes/DANIELA_VARGAS/Version_final/0516/versiones_finales/semana14/Registro_Hamming/Hamming_32/FLOW/fc_flow/DRC/ICVLN65S_9M_6X2Z.26_1a:12973:not
+Error insertion complete: /mnt/vol_NFS_rh003/estudiantes/DANIELA_VARGAS/Version_final/0516/versiones_finales/semana14/Registro_Hamming/Hamming_32/FLOW/fc_flow/DRC/ICVLN65S_9M_6X2Z.26_1a:12973:not
+  Error Insertion Time=0:00:00  User=0.00 Sys=0.00 Mem=0.001 GB SQLite=0.008 GB Unpooled=0.000 GB
+Client redhat003(3234291):30 connection closed
+Client redhat003(3234291):30 disconnected (2 clients remain)
+Client redhat003(3234290):31 connection closed
+Client redhat003(3234290):31 disconnected (1 client remains)
+ Total error insertion Time=0:00:16  User=0.01 Sys=0.00 Mem=0.001 GB SQLite=0.008 GB Unpooled=0.000 GB
+  Total Commands: 2
+  Total Errors: 14
+  Avg Time/Cmd: Wall=0 User=0.01 Sys=0.00 Mem=0.001 GB MySQL Mem=0.000 GB
+Generating /mnt/vol_NFS_rh003/estudiantes/DANIELA_VARGAS/Version_final/0516/versiones_finales/semana14/Registro_Hamming/Hamming_32/FLOW/fc_flow/flow/work/signoff_fix_drc_run/signoff_check_drc_run/top.LAYOUT_ERRORS
+  Generation Time=0:00:00  User=0.00 Sys=0.00 Mem=0.001 GB
+Flushing database cache
+  Flush Time=0:00:00  User=0.00 Sys=0.00 Mem=0.001 GB SQLite=0.008 GB Unpooled=0.000 GB
+Shutdown requested by client redhat003(3234224):29
+0 clients remain connected
+Client redhat003(3234224):29 connection closed
+Overall server Time=0:00:26  User=0.06 Sys=0.08 Mem=0.001 GB SQLite=0.008 GB Unpooled=0.000 GB
+
+                                  PYDB_Server 
+
+          Version U-2022.12-SP4 for linux64 - Aug 28, 2023 cl#9133772
+
+                    Copyright (c) 2007 - 2023 Synopsys, Inc.
+   This software and the associated documentation are proprietary to Synopsys,
+ Inc. This software may only be used in accordance with the terms and conditions
+ of a written license agreement with Synopsys, Inc. All other use, reproduction,
+   or distribution of this software is strictly prohibited.  Licensed Products
+     communicate with Synopsys servers for the purpose of providing software
+    updates, detecting software piracy and verifying that customers are using
+    Licensed Products in conformity with the applicable License Key for such
+  Licensed Products. Synopsys will use information gathered in connection with
+    this process to deliver software updates and pursue software pirates and
+                                   infringers.
+
+ Inclusivity & Diversity - Visit SolvNetPlus to read the "Synopsys Statement on
+            Inclusivity and Diversity" (Refer to article 000036315 at
+                        https://solvnetplus.synopsys.com)
+
+variable width coordinate support enabled.
+Listening for connections on port 33059
+PYDB_Server Started on host redhat003, Sun 05/25/2025 01:28:15
+Client redhat003(3234626):6 connected (1 total client)
+Verified current licenses.
+Opening file:/mnt/vol_NFS_rh003/estudiantes/DANIELA_VARGAS/Version_final/0516/versiones_finales/semana14/Registro_Hamming/Hamming_32/FLOW/fc_flow/flow/work/signoff_fix_drc_run/signoff_check_drc_run/run_details/pydb/PYDB_top?nolock=1 in read-write mode
+SQLite page_size=65536
+SQLite cache_size=65536
+SQLite mmap_size=0
+SQLite journal_mode=OFF
+SQLite version 3.33.0
+Shutdown requested by client redhat003(3234626):6
+0 clients remain connected
+Client redhat003(3234626):6 connection closed
+Overall server Time=0:00:00  User=0.00 Sys=0.00 Mem=0.000 GB SQLite=0.002 GB Unpooled=0.000 GB

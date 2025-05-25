@@ -39,7 +39,7 @@ set DESIGN_LIBRARY "${DESIGN_NAME}_lib"
 #################################
 set time [get_date]
 puts "Command Start at: ${time}"
-Command Start at: Tue May 20 15:50:57 2025
+Command Start at: Wed May 21 15:17:07 2025
 ####################################
 ### 1. Variables for design prep ###
 ####################################
@@ -566,8 +566,8 @@ Warning: No site rows found in floorplan. (LGL-397)
 INFO: compile_fusion is running in balanced flow mode.
 Warning: No site rows found in floorplan. (LGL-397)
 Information: Starting 'compile_fusion -check_only' (FLW-8000)
-Information: Time: 2025-05-20 15:50:58 / Session: 0.00 hr / Command: 0.00 hr / Memory: 433 MB (FLW-8100)
-CPU Load: 1%, Ram Free: 0 GB, Swap Free: 7 GB, Work Disk Free: 155 GB, Tmp Disk Free: 53 GB
+Information: Time: 2025-05-21 15:17:07 / Session: 0.00 hr / Command: 0.00 hr / Memory: 433 MB (FLW-8100)
+CPU Load: 2%, Ram Free: 0 GB, Swap Free: 7 GB, Work Disk Free: 188 GB, Tmp Disk Free: 53 GB
 Warning: No site rows found in floorplan. (LGL-397)
 INFO: Start environment monitoring: recipes
 INFO: compile_fusion is running in balanced flow mode.
@@ -586,8 +586,8 @@ Information:    10     9  0 LGL-397   WARNING   Warning: No site rows found in f
 Information:    10     9  0        1  <------   Total sum of messages (MSG-3038)
 Information: >>>>>>> Summary: 9 error&warning MSGs observed during checkOnly (MSG-3103)
 Information: Ending   'compile_fusion -check_only' (FLW-8001)
-Information: Time: 2025-05-20 15:51:00 / Session: 0.00 hr / Command: 0.00 hr / Memory: 596 MB (FLW-8100)
-CPU Load: 1%, Ram Free: 0 GB, Swap Free: 7 GB, Work Disk Free: 155 GB, Tmp Disk Free: 53 GB
+Information: Time: 2025-05-21 15:17:08 / Session: 0.00 hr / Command: 0.00 hr / Memory: 586 MB (FLW-8100)
+CPU Load: 2%, Ram Free: 0 GB, Swap Free: 7 GB, Work Disk Free: 188 GB, Tmp Disk Free: 53 GB
 1
 # Initial auto floorplan creation
 compile_fusion -to logic_opto 
@@ -595,8 +595,8 @@ Warning: No site rows found in floorplan. (LGL-397)
 INFO: compile_fusion is running in balanced flow mode.
 Warning: No site rows found in floorplan. (LGL-397)
 Information: Starting 'compile_fusion -to logic_opto' (FLW-8000)
-Information: Time: 2025-05-20 15:51:00 / Session: 0.00 hr / Command: 0.00 hr / Memory: 596 MB (FLW-8100)
-CPU Load: 1%, Ram Free: 0 GB, Swap Free: 7 GB, Work Disk Free: 155 GB, Tmp Disk Free: 53 GB
+Information: Time: 2025-05-21 15:17:09 / Session: 0.00 hr / Command: 0.00 hr / Memory: 586 MB (FLW-8100)
+CPU Load: 2%, Ram Free: 0 GB, Swap Free: 7 GB, Work Disk Free: 188 GB, Tmp Disk Free: 53 GB
 Warning: No site rows found in floorplan. (LGL-397)
 INFO: Start environment monitoring: recipes
 INFO: compile_fusion is running in balanced flow mode.
@@ -612,7 +612,7 @@ Information: The automatic clock gate timing flow is activated. Clock latencies 
 Warning: Mapping to scan cell 'GSDFCNQD1HPBWP' in library is not possible because cell has 'dont_use' attribute. (SQM-1067)
 ----------------------------------------------------------------------------------------------------------
 Information: Starting compile_fusion / initial_map (FLW-8000)
-Information: Time: 2025-05-20 15:51:04 / Session: 0.00 hr / Command: 0.00 hr / Memory: 688 MB (FLW-8100)
+Information: Time: 2025-05-21 15:17:13 / Session: 0.00 hr / Command: 0.00 hr / Memory: 688 MB (FLW-8100)
 ----------------------------------------------------------------------------------------------------------
 Warning: Mapping to scan cell 'GSDFCNQD1HPBWP' in library is not possible because cell has 'dont_use' attribute. (SQM-1067)
 Warning: No site rows found in floorplan. (LGL-397)
@@ -628,15 +628,15 @@ Warning: No site rows found in floorplan. (LGL-397)
 Warning: No site rows found in floorplan. (LGL-397)
 Warning: No site rows found in floorplan. (LGL-397)
 Information: Starting compile_fusion / initial_map / MV Cell Insertion (FLW-8000)
-Information: Time: 2025-05-20 15:51:05 / Session: 0.00 hr / Command: 0.00 hr / Memory: 698 MB (FLW-8100)
+Information: Time: 2025-05-21 15:17:14 / Session: 0.00 hr / Command: 0.00 hr / Memory: 698 MB (FLW-8100)
 Information: Result of compile_fusion / initial_map / MV Cell Insertion (FLW-8500)
 Information: Total number of MV cells in the design. (MV-334)
 Information: Ending   compile_fusion / initial_map / MV Cell Insertion (FLW-8001)
-Information: Time: 2025-05-20 15:51:05 / Session: 0.00 hr / Command: 0.00 hr / Memory: 698 MB (FLW-8100)
+Information: Time: 2025-05-21 15:17:14 / Session: 0.00 hr / Command: 0.00 hr / Memory: 698 MB (FLW-8100)
 
 Information: Starting compile_fusion / initial_map / Logic Simplification (1) (FLW-8000)
-Information: Time: 2025-05-20 15:51:05 / Session: 0.00 hr / Command: 0.00 hr / Memory: 698 MB (FLW-8100)
-Information: The hierarchy syndrome_inst is ungrouped due to auto_ungrouping. (UNG-1001)
+Information: Time: 2025-05-21 15:17:14 / Session: 0.00 hr / Command: 0.00 hr / Memory: 698 MB (FLW-8100)
+Information: The hierarchy syndrome_gen[0].syndrome_inst is ungrouped due to auto_ungrouping. (UNG-1001)
 Information: 1 of 1 hierarchies are ungrouped. Use report_ungroup for a list. (UNG-1003)
 Information: Result of compile_fusion / initial_map / Auto Ungroup (FLW-8500)
 Information: Ungroup Summary Report (UNG-1007)
@@ -659,30 +659,30 @@ Warning: No site rows found in floorplan. (LGL-397)
 Warning: No site rows found in floorplan. (LGL-397)
 Warning: No site rows found in floorplan. (LGL-397)
 Information: Ending   compile_fusion / initial_map / Logic Simplification (1) (FLW-8001)
-Information: Time: 2025-05-20 15:51:06 / Session: 0.00 hr / Command: 0.00 hr / Memory: 736 MB (FLW-8100)
+Information: Time: 2025-05-21 15:17:15 / Session: 0.00 hr / Command: 0.00 hr / Memory: 736 MB (FLW-8100)
 
 Warning: No site rows found in floorplan. (LGL-397)
 Warning: No site rows found in floorplan. (LGL-397)
 Warning: No site rows found in floorplan. (LGL-397)
 Warning: No site rows found in floorplan. (LGL-397)
 Information: Starting compile_fusion / initial_map / Early Logic Optimization (FLW-8000)
-Information: Time: 2025-05-20 15:51:07 / Session: 0.01 hr / Command: 0.00 hr / Memory: 736 MB (FLW-8100)
+Information: Time: 2025-05-21 15:17:15 / Session: 0.00 hr / Command: 0.00 hr / Memory: 736 MB (FLW-8100)
 Information: Timer using 1 threads
 Information: Ending   compile_fusion / initial_map / Early Logic Optimization (FLW-8001)
-Information: Time: 2025-05-20 15:51:10 / Session: 0.01 hr / Command: 0.00 hr / Memory: 736 MB (FLW-8100)
+Information: Time: 2025-05-21 15:17:19 / Session: 0.01 hr / Command: 0.00 hr / Memory: 736 MB (FLW-8100)
 
 Information: Starting compile_fusion / initial_map / High-Level Optimization and Technology Mapping (FLW-8000)
-Information: Time: 2025-05-20 15:51:10 / Session: 0.01 hr / Command: 0.00 hr / Memory: 736 MB (FLW-8100)
+Information: Time: 2025-05-21 15:17:19 / Session: 0.01 hr / Command: 0.00 hr / Memory: 736 MB (FLW-8100)
 Warning: No cell bus will be mapped to multibit because there is no multibit cells in the cell libraries. (SQM-1040)
 Warning: Shift register Inferencing is enabled so only head flop will be replaced with scan cell and not all registers in shift register chains are scan replaced. (SQM-1074)
 Information: Ending   compile_fusion / initial_map / High-Level Optimization and Technology Mapping (FLW-8001)
-Information: Time: 2025-05-20 15:51:11 / Session: 0.01 hr / Command: 0.00 hr / Memory: 736 MB (FLW-8100)
+Information: Time: 2025-05-21 15:17:19 / Session: 0.01 hr / Command: 0.00 hr / Memory: 736 MB (FLW-8100)
 
 Information: Register Bits Before Sharing = 7, After Sharing = 7, Savings = 0 (SQM-2000)
 Information: Starting compile_fusion / initial_map / Logic Simplification (2) (FLW-8000)
-Information: Time: 2025-05-20 15:51:11 / Session: 0.01 hr / Command: 0.00 hr / Memory: 736 MB (FLW-8100)
+Information: Time: 2025-05-21 15:17:20 / Session: 0.01 hr / Command: 0.00 hr / Memory: 736 MB (FLW-8100)
 Information: Ending   compile_fusion / initial_map / Logic Simplification (2) (FLW-8001)
-Information: Time: 2025-05-20 15:51:11 / Session: 0.01 hr / Command: 0.00 hr / Memory: 736 MB (FLW-8100)
+Information: Time: 2025-05-21 15:17:20 / Session: 0.01 hr / Command: 0.00 hr / Memory: 736 MB (FLW-8100)
 
 Information: Result of compile_fusion / initial_map / Clock Gate Insertion (FLW-8500)
 Number of Pre-Existing Clock Gates with dont touch attribute: 0
@@ -698,8 +698,8 @@ Regular Clock Gating                |           1 |              7 |          7
 Compile-fusion optimization summary            SETUP-COST    R2R-COST HOLD-COST LDRC-COST          AREA     LEAKAGE     INSTCNT            ELAPSE       MEM
 Compile-fusion                                          -           -         -         -        242.80           -          65              0.01       736
 Information: Ending   compile_fusion / initial_map (FLW-8001)
-Information: Time: 2025-05-20 15:51:11 / Session: 0.01 hr / Command: 0.00 hr / Memory: 736 MB (FLW-8100)
-CPU Load: 1%, Ram Free: 0 GB, Swap Free: 7 GB, Work Disk Free: 155 GB, Tmp Disk Free: 53 GB
+Information: Time: 2025-05-21 15:17:20 / Session: 0.01 hr / Command: 0.00 hr / Memory: 736 MB (FLW-8100)
+CPU Load: 3%, Ram Free: 0 GB, Swap Free: 7 GB, Work Disk Free: 188 GB, Tmp Disk Free: 53 GB
 
 Information: >>>>>>> 4 unique error and warning message tags while observing compile_fusion / initial_map: (MSG-3100)
 Information: #prnt #trgr #lmt    Tag  Level     Format (or last printed message)                                (MSG-3036)
@@ -712,7 +712,7 @@ Information: >>>>>>> Summary: 31 error&warning MSGs observed during compile_fusi
 
 ----------------------------------------------------------------------------------------------------------
 Information: Starting compile_fusion / logic_opto (FLW-8000)
-Information: Time: 2025-05-20 15:51:11 / Session: 0.01 hr / Command: 0.00 hr / Memory: 736 MB (FLW-8100)
+Information: Time: 2025-05-21 15:17:20 / Session: 0.01 hr / Command: 0.00 hr / Memory: 736 MB (FLW-8100)
 ----------------------------------------------------------------------------------------------------------
 Warning: Auto deriving 'vertical' routing direction for layer 'AP'. (DMM-115)
 Information: Initializing core and die (AFP-1001)
@@ -723,7 +723,7 @@ Information: Generated core boundary = { {0 0} {0 18} {18.6 18} {18.6 0} } (AFP-
 Information: Change threshold for extractor is reset. (FLW-1300)
 Information: The stitching and editing of coupling caps is turned OFF for design 'top_lib:top/auto_floorplan.design'. (TIM-125)
 Information: Starting compile_fusion / logic_opto / Clock Gate Re-structuring (FLW-8000)
-Information: Time: 2025-05-20 15:51:11 / Session: 0.01 hr / Command: 0.00 hr / Memory: 746 MB (FLW-8100)
+Information: Time: 2025-05-21 15:17:20 / Session: 0.01 hr / Command: 0.00 hr / Memory: 746 MB (FLW-8100)
 Information: Result of compile_fusion / logic_opto / Clock Gate Re-structuring (FLW-8500)
 Number of Pre-Existing Clock Gates with dont touch attribute: 0
 Number of ICG library cells with CTS purpose: 16
@@ -736,7 +736,7 @@ Clock Gating Type                   | Number of   | Register Count | Equivalent
 Regular Clock Gating                |           1 |              7 |          7
 --------------------------------------------------------------------------------
 Information: Ending   compile_fusion / logic_opto / Clock Gate Re-structuring (FLW-8001)
-Information: Time: 2025-05-20 15:51:11 / Session: 0.01 hr / Command: 0.00 hr / Memory: 756 MB (FLW-8100)
+Information: Time: 2025-05-21 15:17:20 / Session: 0.01 hr / Command: 0.00 hr / Memory: 756 MB (FLW-8100)
 
 Warning: No clock routing rules were specified. Use set_clock_routing_rules to specify routing rules for accurate clock latency estimation. (OPT-902)
 Warning: No clock routing rules were specified. Use set_clock_routing_rules to specify routing rules for accurate clock latency estimation. (OPT-902)
@@ -744,7 +744,7 @@ Information: Estimating clock gate latencies for scenario 'scenarioSS'. (OPT-909
 Warning: Duplicate callback function set for step 'fc/logic_opto/dwProcessPrecond1' (FLW-2224)
 Warning: Duplicate callback function set for step 'fc/logic_opto/dwProcessPrecond1' (FLW-2224)
 Information: Starting compile_fusion / logic_opto / Optimization (1) (FLW-8000)
-Information: Time: 2025-05-20 15:51:12 / Session: 0.01 hr / Command: 0.00 hr / Memory: 774 MB (FLW-8100)
+Information: Time: 2025-05-21 15:17:20 / Session: 0.01 hr / Command: 0.00 hr / Memory: 774 MB (FLW-8100)
 Warning: Mapping to scan cell 'GSDFCNQD1HPBWP' in library is not possible because cell has 'dont_use' attribute. (SQM-1067)
 Warning: No clock routing rules were specified. Use set_clock_routing_rules to specify routing rules for accurate clock latency estimation. (OPT-902)
 Warning: No clock routing rules were specified. Use set_clock_routing_rules to specify routing rules for accurate clock latency estimation. (OPT-902)
@@ -753,10 +753,10 @@ Warning: Mapping to scan cell 'GSDFCNQD1HPBWP' in library is not possible becaus
 Information: The stitching and editing of coupling caps is turned OFF for design 'top_lib:top/auto_floorplan.design'. (TIM-125)
 Warning: Mapping to scan cell 'GSDFCNQD1HPBWP' in library is not possible because cell has 'dont_use' attribute. (SQM-1067)
 Information: Ending   compile_fusion / logic_opto / Optimization (1) (FLW-8001)
-Information: Time: 2025-05-20 15:51:14 / Session: 0.01 hr / Command: 0.00 hr / Memory: 809 MB (FLW-8100)
+Information: Time: 2025-05-21 15:17:22 / Session: 0.01 hr / Command: 0.00 hr / Memory: 809 MB (FLW-8100)
 
 Information: Starting compile_fusion / logic_opto / Register Retiming (FLW-8000)
-Information: Time: 2025-05-20 15:51:14 / Session: 0.01 hr / Command: 0.00 hr / Memory: 809 MB (FLW-8100)
+Information: Time: 2025-05-21 15:17:22 / Session: 0.01 hr / Command: 0.00 hr / Memory: 809 MB (FLW-8100)
 Warning: Mapping to scan cell 'GSDFCNQD1HPBWP' in library is not possible because cell has 'dont_use' attribute. (SQM-1067)
 Warning: Mapping to scan cell 'GSDFCNQD1HPBWP' in library is not possible because cell has 'dont_use' attribute. (SQM-1067)
 Warning: Mapping to scan cell 'GSDFCNQD1HPBWP' in library is not possible because cell has 'dont_use' attribute. (SQM-1067)
@@ -764,20 +764,20 @@ Information: Result of compile_fusion / logic_opto / Register Retiming (FLW-8500
 Information: No instance marked for retiming. (RTM-1031)
 Warning: Mapping to scan cell 'GSDFCNQD1HPBWP' in library is not possible because cell has 'dont_use' attribute. (SQM-1067)
 Information: Ending   compile_fusion / logic_opto / Register Retiming (FLW-8001)
-Information: Time: 2025-05-20 15:51:28 / Session: 0.01 hr / Command: 0.01 hr / Memory: 817 MB (FLW-8100)
+Information: Time: 2025-05-21 15:17:36 / Session: 0.01 hr / Command: 0.01 hr / Memory: 817 MB (FLW-8100)
 
 Warning: Mapping to scan cell 'GSDFCNQD1HPBWP' in library is not possible because cell has 'dont_use' attribute. (SQM-1067)
 Information: Register Bits Before Sharing = 0, After Sharing = 0, Savings = 0 (SQM-2000)
 Information: Starting compile_fusion / logic_opto / Optimization (2) (FLW-8000)
-Information: Time: 2025-05-20 15:51:31 / Session: 0.01 hr / Command: 0.01 hr / Memory: 855 MB (FLW-8100)
+Information: Time: 2025-05-21 15:17:40 / Session: 0.01 hr / Command: 0.01 hr / Memory: 856 MB (FLW-8100)
 Warning: No clock routing rules were specified. Use set_clock_routing_rules to specify routing rules for accurate clock latency estimation. (OPT-902)
 Warning: No clock routing rules were specified. Use set_clock_routing_rules to specify routing rules for accurate clock latency estimation. (OPT-902)
 Information: Estimating clock gate latencies for scenario 'scenarioSS'. (OPT-909)
 Information: Ending   compile_fusion / logic_opto / Optimization (2) (FLW-8001)
-Information: Time: 2025-05-20 15:51:32 / Session: 0.01 hr / Command: 0.01 hr / Memory: 855 MB (FLW-8100)
+Information: Time: 2025-05-21 15:17:40 / Session: 0.01 hr / Command: 0.01 hr / Memory: 856 MB (FLW-8100)
 
 Information: Starting compile_fusion / logic_opto / Auto-Floorplan (1) (FLW-8000)
-Information: Time: 2025-05-20 15:51:32 / Session: 0.01 hr / Command: 0.01 hr / Memory: 855 MB (FLW-8100)
+Information: Time: 2025-05-21 15:17:40 / Session: 0.01 hr / Command: 0.01 hr / Memory: 856 MB (FLW-8100)
 Information: Initializing core and die (AFP-1001)
 Information: Initializing rows (AFP-1003)
 Information: Initializing tracks (AFP-1004)
@@ -801,10 +801,10 @@ macros                  0                 0                 0                 0
 pins                   16                16                16                 0
 -------------------------------------------------------------------------------
 Information: Ending   compile_fusion / logic_opto / Auto-Floorplan (1) (FLW-8001)
-Information: Time: 2025-05-20 15:51:32 / Session: 0.01 hr / Command: 0.01 hr / Memory: 855 MB (FLW-8100)
+Information: Time: 2025-05-21 15:17:40 / Session: 0.01 hr / Command: 0.01 hr / Memory: 856 MB (FLW-8100)
 
 Information: Starting compile_fusion / logic_opto / Early Placement (FLW-8000)
-Information: Time: 2025-05-20 15:51:32 / Session: 0.01 hr / Command: 0.01 hr / Memory: 855 MB (FLW-8100)
+Information: Time: 2025-05-21 15:17:40 / Session: 0.01 hr / Command: 0.01 hr / Memory: 856 MB (FLW-8100)
 ----------------------------------------------------------------
 running create_placement
 Corner Scaling is off, multiplier is 1.000000
@@ -854,7 +854,7 @@ Creating placement from scratch.
 coarse place 0% done.
 coarse place 50% done.
 coarse place 100% done.
-Information: Coarse placer weighted wire length estimate = 7.57263e+06
+Information: Coarse placer weighted wire length estimate = 7.58994e+06
 Information: Extraction observers are detached as design net change threshold is reached.
 Transferred 0 BTSR attributes to NDM.
 Warning: No clock routing rules were specified. Use set_clock_routing_rules to specify routing rules for accurate clock latency estimation. (OPT-902)
@@ -862,38 +862,38 @@ Warning: No clock routing rules were specified. Use set_clock_routing_rules to s
 Information: Estimating clock gate latencies for scenario 'scenarioSS'. (OPT-909)
 ----------------------------------------------------------------
 Information: Ending   compile_fusion / logic_opto / Early Placement (FLW-8001)
-Information: Time: 2025-05-20 15:51:32 / Session: 0.01 hr / Command: 0.01 hr / Memory: 855 MB (FLW-8100)
+Information: Time: 2025-05-21 15:17:41 / Session: 0.01 hr / Command: 0.01 hr / Memory: 856 MB (FLW-8100)
 
 Information: The stitching and editing of coupling caps is turned OFF for design 'top_lib:top/auto_floorplan.design'. (TIM-125)
 Warning: No clock routing rules were specified. Use set_clock_routing_rules to specify routing rules for accurate clock latency estimation. (OPT-902)
 Warning: No clock routing rules were specified. Use set_clock_routing_rules to specify routing rules for accurate clock latency estimation. (OPT-902)
 Information: Estimating clock gate latencies for scenario 'scenarioSS'. (OPT-909)
 Information: Starting compile_fusion / logic_opto / Optimization (3) (FLW-8000)
-Information: Time: 2025-05-20 15:51:33 / Session: 0.01 hr / Command: 0.01 hr / Memory: 855 MB (FLW-8100)
+Information: Time: 2025-05-21 15:17:42 / Session: 0.01 hr / Command: 0.01 hr / Memory: 856 MB (FLW-8100)
 Warning: Mapping to scan cell 'GSDFCNQD1HPBWP' in library is not possible because cell has 'dont_use' attribute. (SQM-1067)
 Information: Ending   compile_fusion / logic_opto / Optimization (3) (FLW-8001)
-Information: Time: 2025-05-20 15:51:33 / Session: 0.01 hr / Command: 0.01 hr / Memory: 855 MB (FLW-8100)
+Information: Time: 2025-05-21 15:17:42 / Session: 0.01 hr / Command: 0.01 hr / Memory: 856 MB (FLW-8100)
 
 Information: Starting compile_fusion / logic_opto / Logic Simplification (1) (FLW-8000)
-Information: Time: 2025-05-20 15:51:33 / Session: 0.01 hr / Command: 0.01 hr / Memory: 855 MB (FLW-8100)
+Information: Time: 2025-05-21 15:17:42 / Session: 0.01 hr / Command: 0.01 hr / Memory: 856 MB (FLW-8100)
 Information: Ending   compile_fusion / logic_opto / Logic Simplification (1) (FLW-8001)
-Information: Time: 2025-05-20 15:51:33 / Session: 0.01 hr / Command: 0.01 hr / Memory: 855 MB (FLW-8100)
+Information: Time: 2025-05-21 15:17:42 / Session: 0.01 hr / Command: 0.01 hr / Memory: 856 MB (FLW-8100)
 
 Information: Starting compile_fusion / logic_opto / Optimization (4) (FLW-8000)
-Information: Time: 2025-05-20 15:51:33 / Session: 0.01 hr / Command: 0.01 hr / Memory: 855 MB (FLW-8100)
+Information: Time: 2025-05-21 15:17:42 / Session: 0.01 hr / Command: 0.01 hr / Memory: 856 MB (FLW-8100)
 Information: Ending   compile_fusion / logic_opto / Optimization (4) (FLW-8001)
-Information: Time: 2025-05-20 15:51:35 / Session: 0.01 hr / Command: 0.01 hr / Memory: 855 MB (FLW-8100)
+Information: Time: 2025-05-21 15:17:44 / Session: 0.01 hr / Command: 0.01 hr / Memory: 856 MB (FLW-8100)
 
 Information: Starting compile_fusion / logic_opto / Logic Simplification (2) (FLW-8000)
-Information: Time: 2025-05-20 15:51:35 / Session: 0.01 hr / Command: 0.01 hr / Memory: 855 MB (FLW-8100)
+Information: Time: 2025-05-21 15:17:44 / Session: 0.01 hr / Command: 0.01 hr / Memory: 856 MB (FLW-8100)
 Information: Ending   compile_fusion / logic_opto / Logic Simplification (2) (FLW-8001)
-Information: Time: 2025-05-20 15:51:35 / Session: 0.01 hr / Command: 0.01 hr / Memory: 855 MB (FLW-8100)
+Information: Time: 2025-05-21 15:17:44 / Session: 0.01 hr / Command: 0.01 hr / Memory: 856 MB (FLW-8100)
 
 Warning: No clock routing rules were specified. Use set_clock_routing_rules to specify routing rules for accurate clock latency estimation. (OPT-902)
 Warning: No clock routing rules were specified. Use set_clock_routing_rules to specify routing rules for accurate clock latency estimation. (OPT-902)
 Information: Estimating clock gate latencies for scenario 'scenarioSS'. (OPT-909)
 Information: Starting compile_fusion / logic_opto / Auto-Floorplan (2) (FLW-8000)
-Information: Time: 2025-05-20 15:51:35 / Session: 0.01 hr / Command: 0.01 hr / Memory: 855 MB (FLW-8100)
+Information: Time: 2025-05-21 15:17:44 / Session: 0.01 hr / Command: 0.01 hr / Memory: 856 MB (FLW-8100)
 Information: Initializing core and die (AFP-1001)
 Information: Initializing rows (AFP-1003)
 Information: Initializing tracks (AFP-1004)
@@ -998,18 +998,18 @@ Warning: Layer M9 pitch 0.800 may be too small: wire/via-down 0.800, wire/via-up
 Information: When applicable Min-max layer allow_pin_connection mode will allow paths of length 3.35 outside the layer range. (ZRT-707)
 Information: When applicable Min-max layer allow_pin_connection mode will allow paths of length 3.35 outside the layer range on clock nets. (ZRT-718)
 Information: When applicable layer based tapering will taper up to 0.00 in distance from the pin. (ZRT-706)
+Warning: Master cell top has duplicated redundant library pin shapes at {0.005 -1.800} {18.595 -1.600} on layer M2. (ZRT-625)
 Warning: Master cell top has duplicated redundant library pin shapes at {0.005 19.600} {18.595 19.800} on layer M2. (ZRT-625)
 Warning: Master cell top has duplicated redundant library pin shapes at {0.005 19.600} {18.595 19.800} on layer M2. (ZRT-625)
 Warning: Master cell top has duplicated redundant library pin shapes at {0.005 19.600} {18.595 19.800} on layer M2. (ZRT-625)
 Warning: Master cell top has duplicated redundant library pin shapes at {0.005 19.600} {18.595 19.800} on layer M2. (ZRT-625)
-Warning: Master cell top has duplicated redundant library pin shapes at {-1.800 0.005} {-1.600 17.995} on layer M3. (ZRT-625)
 Warning: Master cell top has duplicated redundant library pin shapes at {-1.800 0.005} {-1.600 17.995} on layer M3. (ZRT-625)
 Warning: Master cell top has duplicated redundant library pin shapes at {-1.800 0.005} {-1.600 17.995} on layer M3. (ZRT-625)
 Warning: Master cell top has duplicated redundant library pin shapes at {-1.800 0.005} {-1.600 17.995} on layer M3. (ZRT-625)
 Warning: Master cell top has duplicated redundant library pin shapes at {20.200 0.005} {20.400 17.995} on layer M3. (ZRT-625)
 Warning: Master cell top has duplicated redundant library pin shapes at {20.200 0.005} {20.400 17.995} on layer M3. (ZRT-625)
 Note - message 'ZRT-625' limit (10) exceeded. Remainder will be suppressed.
-Warning: Cell reg_data_reg[2] is placed overlapping with other cells at {{1.950 11.121} {8.150 13.121}}. (ZRT-763)
+Warning: Cell ctmi_169 is placed overlapping with other cells at {{14.082 11.457} {15.682 13.457}}. (ZRT-763)
 Start Global Route ... 
 [Init] Elapsed real time: 0:00:00 
 [Init] Elapsed cpu  time: sys=0:00:00 usr=0:00:00 total=0:00:00
@@ -1142,10 +1142,10 @@ Initial. M8         Overflow =     0 Max = 0 (GRCs =  0) GRCs =     0 (0.00%)
 Initial. M9         Overflow =     0 Max = 0 (GRCs =  0) GRCs =     0 (0.00%)
 Initial. AP         Overflow =     0 Max = 0 (GRCs =  0) GRCs =     0 (0.00%)
 
-Initial. Total Wire Length = 84.27
+Initial. Total Wire Length = 74.90
 Initial. Layer M1 wire length = 0.00
-Initial. Layer M2 wire length = 22.77
-Initial. Layer M3 wire length = 61.51
+Initial. Layer M2 wire length = 24.94
+Initial. Layer M3 wire length = 49.96
 Initial. Layer M4 wire length = 0.00
 Initial. Layer M5 wire length = 0.00
 Initial. Layer M6 wire length = 0.00
@@ -1153,9 +1153,9 @@ Initial. Layer M7 wire length = 0.00
 Initial. Layer M8 wire length = 0.00
 Initial. Layer M9 wire length = 0.00
 Initial. Layer AP wire length = 0.00
-Initial. Total Number of Contacts = 26
+Initial. Total Number of Contacts = 25
 Initial. Via VIA12 count = 16
-Initial. Via VIA23 count = 10
+Initial. Via VIA23 count = 9
 Initial. Via VIA34 count = 0
 Initial. Via VIA45 count = 0
 Initial. Via VIA56 count = 0
@@ -1176,14 +1176,14 @@ Initial. completed.
 [End of dbOut] Elapsed cpu  time: sys=0:00:00 usr=0:00:00 total=0:00:00
 [End of dbOut] Stage (MB): Used    0  Alloctr    0  Proc    0 
 [End of dbOut] Total (MB): Used   49  Alloctr   50  Proc 7835 
-CPU Time for Global Route: 00:00:00.10u 00:00:00.01s 00:00:00.11e: 
+CPU Time for Global Route: 00:00:00.09u 00:00:00.00s 00:00:00.10e: 
 Number of block ports: 16
 Number of block pin locations assigned from router: 16
 CPU Time for Pin Preparation: 00:00:00.00u 00:00:00.00s 00:00:00.00e: 
 Number of PG ports on blocks: 0
 Number of pins created: 16
 CPU Time for Pin Creation: 00:00:00.00u 00:00:00.00s 00:00:00.00e: 
-Total Pin Placement CPU Time: 00:00:00.10u 00:00:00.01s 00:00:00.11e: 
+Total Pin Placement CPU Time: 00:00:00.10u 00:00:00.00s 00:00:00.10e: 
 Information: Result of compile_fusion / logic_opto / Auto-Floorplan (2) (FLW-8500)
 Information: Auto-Floorplan Summary (AFP-2023)
 -------------------------------------------------------------------------------
@@ -1200,14 +1200,14 @@ macros                  0                 0                 0                 0
 pins                   16                16                15                 1
 -------------------------------------------------------------------------------
 Information: Ending   compile_fusion / logic_opto / Auto-Floorplan (2) (FLW-8001)
-Information: Time: 2025-05-20 15:51:35 / Session: 0.01 hr / Command: 0.01 hr / Memory: 858 MB (FLW-8100)
+Information: Time: 2025-05-21 15:17:44 / Session: 0.01 hr / Command: 0.01 hr / Memory: 858 MB (FLW-8100)
 
 Information: Secondary PG:  Secondary PG connections skipped because it is not a UPF design (FLW-1247)
 Compile-fusion optimization summary            SETUP-COST    R2R-COST HOLD-COST LDRC-COST          AREA     LEAKAGE     INSTCNT            ELAPSE       MEM
 Compile-fusion                                          -           -         -         -        245.20           -          65              0.01       857
 Information: Ending   compile_fusion / logic_opto (FLW-8001)
-Information: Time: 2025-05-20 15:51:35 / Session: 0.01 hr / Command: 0.01 hr / Memory: 858 MB (FLW-8100)
-CPU Load: 2%, Ram Free: 0 GB, Swap Free: 7 GB, Work Disk Free: 155 GB, Tmp Disk Free: 53 GB
+Information: Time: 2025-05-21 15:17:44 / Session: 0.01 hr / Command: 0.01 hr / Memory: 858 MB (FLW-8100)
+CPU Load: 3%, Ram Free: 0 GB, Swap Free: 7 GB, Work Disk Free: 188 GB, Tmp Disk Free: 53 GB
 
 Information: >>>>>>> 8 unique error and warning message tags while observing compile_fusion / logic_opto: (MSG-3100)
 Information: #prnt #trgr #lmt    Tag  Level     Format (or last printed message)                                (MSG-3036)
@@ -1216,7 +1216,7 @@ Information:    12     9  3 SQM-1067  WARNING   Warning: Mapping to scan cell 'G
 Information:     1     1  0 ZRT-511   WARNING   Warning: Cell contains tie connections which are not connect... (MSG-3032)
 Information:     3     3  0 ZRT-026   WARNING   Warning: Layer M9 pitch 0.800 may be too small: wire/via-dow... (MSG-3032)
 Information:     1     1  0 DMM-115   WARNING   Warning: Auto deriving 'vertical' routing direction for laye... (MSG-3032)
-Information:     1     1  0 ZRT-763   WARNING   Warning: Cell reg_data_reg[2] is placed overlapping with oth... (MSG-3032)
+Information:     1     1  0 ZRT-763   WARNING   Warning: Cell ctmi_169 is placed overlapping with other cell... (MSG-3032)
 Information:    10    10  0 ZRT-625   WARNING   Warning: Master cell top has duplicated redundant library pi... (MSG-3032)
 Information:    12    12  0 OPT-902   WARNING   Warning: No clock routing rules were specified. Use set_cloc... (MSG-3032)
 Information:    42    39  1        8  <------   Total sum of messages (MSG-3038)
@@ -1249,15 +1249,15 @@ Information:     1     1  1 SQM-1040  WARNING   Warning: No cell bus will be map
 Information:     1     1  0 ZRT-511   WARNING   Warning: Cell contains tie connections which are not connect... (MSG-3032)
 Information:     3     3  0 ZRT-026   WARNING   Warning: Layer M9 pitch 0.800 may be too small: wire/via-dow... (MSG-3032)
 Information:     1     1  0 DMM-115   WARNING   Warning: Auto deriving 'vertical' routing direction for laye... (MSG-3032)
-Information:     1     1  0 ZRT-763   WARNING   Warning: Cell reg_data_reg[2] is placed overlapping with oth... (MSG-3032)
+Information:     1     1  0 ZRT-763   WARNING   Warning: Cell ctmi_169 is placed overlapping with other cell... (MSG-3032)
 Information:    48    37  0 LGL-397   WARNING   Warning: No site rows found in floorplan. (LGL-397)             (MSG-3032)
 Information:    10    10  0 ZRT-625   WARNING   Warning: Master cell top has duplicated redundant library pi... (MSG-3032)
 Information:    15    15  0 OPT-902   WARNING   Warning: No clock routing rules were specified. Use set_cloc... (MSG-3032)
 Information:    95    84  3       11  <------   Total sum of messages (MSG-3038)
 Information: >>>>>>> Summary: 84 error&warning MSGs observed during fusion (MSG-3103)
 Information: Ending   'compile_fusion -to logic_opto' (FLW-8001)
-Information: Time: 2025-05-20 15:51:36 / Session: 0.01 hr / Command: 0.01 hr / Memory: 858 MB (FLW-8100)
-CPU Load: 2%, Ram Free: 0 GB, Swap Free: 7 GB, Work Disk Free: 155 GB, Tmp Disk Free: 53 GB
+Information: Time: 2025-05-21 15:17:45 / Session: 0.01 hr / Command: 0.01 hr / Memory: 858 MB (FLW-8100)
+CPU Load: 3%, Ram Free: 0 GB, Swap Free: 7 GB, Work Disk Free: 188 GB, Tmp Disk Free: 53 GB
 1
 # Auto floorplan constraints
 set_auto_floorplan_constraints \
@@ -1297,7 +1297,7 @@ connect_pg_net
 Report : Power/Ground Connection Summary
 Design : top
 Version: U-2022.12-SP6
-Date   : Tue May 20 15:51:36 2025
+Date   : Wed May 21 15:17:45 2025
 ****************************************
 P/G net name                  P/G pin count(previous/current)
 --------------------------------------------------------------------------------
@@ -1333,7 +1333,7 @@ report_block_pin_constraints -self
 Report : report_block_pin_constraints
 Design : top
 Version: U-2022.12-SP6
-Date   : Tue May 20 15:51:36 2025
+Date   : Wed May 21 15:17:45 2025
 ****************************************
 
   Pin constraints report on blocks 
@@ -1355,49 +1355,49 @@ Date   : Tue May 20 15:51:36 2025
 compile_fusion -to logic_opto
 INFO: compile_fusion is running in balanced flow mode.
 Information: Starting 'compile_fusion -to logic_opto' (FLW-8000)
-Information: Time: 2025-05-20 15:51:36 / Session: 0.01 hr / Command: 0.00 hr / Memory: 858 MB (FLW-8100)
-CPU Load: 2%, Ram Free: 0 GB, Swap Free: 7 GB, Work Disk Free: 155 GB, Tmp Disk Free: 53 GB
+Information: Time: 2025-05-21 15:17:45 / Session: 0.01 hr / Command: 0.00 hr / Memory: 858 MB (FLW-8100)
+CPU Load: 3%, Ram Free: 0 GB, Swap Free: 7 GB, Work Disk Free: 188 GB, Tmp Disk Free: 53 GB
 INFO: Start environment monitoring: recipes
 INFO: compile_fusion is running in balanced flow mode.
 Warning: Mapping to scan cell 'GSDFCNQD1HPBWP' in library is not possible because cell has 'dont_use' attribute. (SQM-1067)
 Information: The automatic clock gate timing flow is activated. Clock latencies set on clock gate cells will be automatically adjusted by an estimate for latency. (CGT-4005)
 ----------------------------------------------------------------------------------------------------------
 Information: Starting compile_fusion / initial_map (FLW-8000)
-Information: Time: 2025-05-20 15:51:37 / Session: 0.01 hr / Command: 0.00 hr / Memory: 858 MB (FLW-8100)
+Information: Time: 2025-05-21 15:17:46 / Session: 0.01 hr / Command: 0.00 hr / Memory: 858 MB (FLW-8100)
 ----------------------------------------------------------------------------------------------------------
 Warning: Mapping to scan cell 'GSDFCNQD1HPBWP' in library is not possible because cell has 'dont_use' attribute. (SQM-1067)
 Information: Starting compile_fusion / initial_map / MV Cell Insertion (FLW-8000)
-Information: Time: 2025-05-20 15:51:38 / Session: 0.01 hr / Command: 0.00 hr / Memory: 858 MB (FLW-8100)
+Information: Time: 2025-05-21 15:17:46 / Session: 0.01 hr / Command: 0.00 hr / Memory: 858 MB (FLW-8100)
 Information: Result of compile_fusion / initial_map / MV Cell Insertion (FLW-8500)
 Information: Total number of MV cells in the design. (MV-334)
 Information: Ending   compile_fusion / initial_map / MV Cell Insertion (FLW-8001)
-Information: Time: 2025-05-20 15:51:38 / Session: 0.01 hr / Command: 0.00 hr / Memory: 858 MB (FLW-8100)
+Information: Time: 2025-05-21 15:17:46 / Session: 0.01 hr / Command: 0.00 hr / Memory: 858 MB (FLW-8100)
 
 Information: Starting compile_fusion / initial_map / Logic Simplification (1) (FLW-8000)
-Information: Time: 2025-05-20 15:51:38 / Session: 0.01 hr / Command: 0.00 hr / Memory: 858 MB (FLW-8100)
+Information: Time: 2025-05-21 15:17:46 / Session: 0.01 hr / Command: 0.00 hr / Memory: 858 MB (FLW-8100)
 Information: Register Bits Before Sharing = 7, After Sharing = 7, Savings = 0 (SQM-2000)
 Information: Ending   compile_fusion / initial_map / Logic Simplification (1) (FLW-8001)
-Information: Time: 2025-05-20 15:51:42 / Session: 0.01 hr / Command: 0.00 hr / Memory: 858 MB (FLW-8100)
+Information: Time: 2025-05-21 15:17:51 / Session: 0.01 hr / Command: 0.00 hr / Memory: 858 MB (FLW-8100)
 
 Information: Starting compile_fusion / initial_map / Early Logic Optimization (FLW-8000)
-Information: Time: 2025-05-20 15:51:42 / Session: 0.02 hr / Command: 0.00 hr / Memory: 858 MB (FLW-8100)
+Information: Time: 2025-05-21 15:17:51 / Session: 0.01 hr / Command: 0.00 hr / Memory: 858 MB (FLW-8100)
 Information: Extraction observers are detached as design net change threshold is reached.
 Information: Timer using 1 threads
 Information: Ending   compile_fusion / initial_map / Early Logic Optimization (FLW-8001)
-Information: Time: 2025-05-20 15:51:43 / Session: 0.02 hr / Command: 0.00 hr / Memory: 858 MB (FLW-8100)
+Information: Time: 2025-05-21 15:17:51 / Session: 0.01 hr / Command: 0.00 hr / Memory: 858 MB (FLW-8100)
 
 Information: Starting compile_fusion / initial_map / High-Level Optimization and Technology Mapping (FLW-8000)
-Information: Time: 2025-05-20 15:51:43 / Session: 0.02 hr / Command: 0.00 hr / Memory: 858 MB (FLW-8100)
+Information: Time: 2025-05-21 15:17:51 / Session: 0.01 hr / Command: 0.00 hr / Memory: 858 MB (FLW-8100)
 Warning: No cell bus will be mapped to multibit because there is no multibit cells in the cell libraries. (SQM-1040)
 Warning: Shift register Inferencing is enabled so only head flop will be replaced with scan cell and not all registers in shift register chains are scan replaced. (SQM-1074)
 Information: Ending   compile_fusion / initial_map / High-Level Optimization and Technology Mapping (FLW-8001)
-Information: Time: 2025-05-20 15:51:43 / Session: 0.02 hr / Command: 0.00 hr / Memory: 858 MB (FLW-8100)
+Information: Time: 2025-05-21 15:17:51 / Session: 0.01 hr / Command: 0.00 hr / Memory: 858 MB (FLW-8100)
 
 Information: Register Bits Before Sharing = 7, After Sharing = 7, Savings = 0 (SQM-2000)
 Information: Starting compile_fusion / initial_map / Logic Simplification (2) (FLW-8000)
-Information: Time: 2025-05-20 15:51:43 / Session: 0.02 hr / Command: 0.00 hr / Memory: 858 MB (FLW-8100)
+Information: Time: 2025-05-21 15:17:52 / Session: 0.01 hr / Command: 0.00 hr / Memory: 858 MB (FLW-8100)
 Information: Ending   compile_fusion / initial_map / Logic Simplification (2) (FLW-8001)
-Information: Time: 2025-05-20 15:51:43 / Session: 0.02 hr / Command: 0.00 hr / Memory: 858 MB (FLW-8100)
+Information: Time: 2025-05-21 15:17:52 / Session: 0.01 hr / Command: 0.00 hr / Memory: 858 MB (FLW-8100)
 
 Information: Result of compile_fusion / initial_map / Clock Gate Insertion (FLW-8500)
 Number of Pre-Existing Clock Gates with dont touch attribute: 0
@@ -1411,10 +1411,10 @@ Clock Gating Type                   | Number of   | Register Count | Equivalent
 Regular Clock Gating                |           1 |              7 |          7
 --------------------------------------------------------------------------------
 Compile-fusion optimization summary            SETUP-COST    R2R-COST HOLD-COST LDRC-COST          AREA     LEAKAGE     INSTCNT            ELAPSE       MEM
-Compile-fusion                                          -           -         -         -        245.20           -          65              0.02       857
+Compile-fusion                                          -           -         -         -        245.20           -          65              0.01       857
 Information: Ending   compile_fusion / initial_map (FLW-8001)
-Information: Time: 2025-05-20 15:51:43 / Session: 0.02 hr / Command: 0.00 hr / Memory: 858 MB (FLW-8100)
-CPU Load: 2%, Ram Free: 0 GB, Swap Free: 7 GB, Work Disk Free: 155 GB, Tmp Disk Free: 53 GB
+Information: Time: 2025-05-21 15:17:52 / Session: 0.01 hr / Command: 0.00 hr / Memory: 858 MB (FLW-8100)
+CPU Load: 3%, Ram Free: 0 GB, Swap Free: 7 GB, Work Disk Free: 188 GB, Tmp Disk Free: 53 GB
 
 Information: >>>>>>> 3 unique error and warning message tags while observing compile_fusion / initial_map: (MSG-3100)
 Information: #prnt #trgr #lmt    Tag  Level     Format (or last printed message)                                (MSG-3036)
@@ -1426,7 +1426,7 @@ Information: >>>>>>> Summary: 3 error&warning MSGs observed during compile_fusio
 
 ----------------------------------------------------------------------------------------------------------
 Information: Starting compile_fusion / logic_opto (FLW-8000)
-Information: Time: 2025-05-20 15:51:43 / Session: 0.02 hr / Command: 0.00 hr / Memory: 858 MB (FLW-8100)
+Information: Time: 2025-05-21 15:17:52 / Session: 0.01 hr / Command: 0.00 hr / Memory: 858 MB (FLW-8100)
 ----------------------------------------------------------------------------------------------------------
 Information: Initializing core and die (AFP-1001)
 Information: Initializing rows (AFP-1003)
@@ -1436,7 +1436,7 @@ Information: Generated core boundary = { {10 10} {10 36} {28 36} {28 10} } (AFP-
 Information: Change threshold for extractor is reset. (FLW-1300)
 Information: The stitching and editing of coupling caps is turned OFF for design 'top_lib:top/auto_floorplan.design'. (TIM-125)
 Information: Starting compile_fusion / logic_opto / Clock Gate Re-structuring (FLW-8000)
-Information: Time: 2025-05-20 15:51:43 / Session: 0.02 hr / Command: 0.00 hr / Memory: 858 MB (FLW-8100)
+Information: Time: 2025-05-21 15:17:52 / Session: 0.02 hr / Command: 0.00 hr / Memory: 858 MB (FLW-8100)
 Information: Result of compile_fusion / logic_opto / Clock Gate Re-structuring (FLW-8500)
 Number of Pre-Existing Clock Gates with dont touch attribute: 0
 Number of ICG library cells with CTS purpose: 16
@@ -1449,7 +1449,7 @@ Clock Gating Type                   | Number of   | Register Count | Equivalent
 Regular Clock Gating                |           1 |              7 |          7
 --------------------------------------------------------------------------------
 Information: Ending   compile_fusion / logic_opto / Clock Gate Re-structuring (FLW-8001)
-Information: Time: 2025-05-20 15:51:43 / Session: 0.02 hr / Command: 0.00 hr / Memory: 858 MB (FLW-8100)
+Information: Time: 2025-05-21 15:17:52 / Session: 0.02 hr / Command: 0.00 hr / Memory: 858 MB (FLW-8100)
 
 Warning: No clock routing rules were specified. Use set_clock_routing_rules to specify routing rules for accurate clock latency estimation. (OPT-902)
 Warning: No clock routing rules were specified. Use set_clock_routing_rules to specify routing rules for accurate clock latency estimation. (OPT-902)
@@ -1457,7 +1457,7 @@ Information: Estimating clock gate latencies for scenario 'scenarioSS'. (OPT-909
 Warning: Duplicate callback function set for step 'fc/logic_opto/dwProcessPrecond1' (FLW-2224)
 Warning: Duplicate callback function set for step 'fc/logic_opto/dwProcessPrecond1' (FLW-2224)
 Information: Starting compile_fusion / logic_opto / Optimization (1) (FLW-8000)
-Information: Time: 2025-05-20 15:51:43 / Session: 0.02 hr / Command: 0.00 hr / Memory: 858 MB (FLW-8100)
+Information: Time: 2025-05-21 15:17:52 / Session: 0.02 hr / Command: 0.00 hr / Memory: 858 MB (FLW-8100)
 Warning: Mapping to scan cell 'GSDFCNQD1HPBWP' in library is not possible because cell has 'dont_use' attribute. (SQM-1067)
 Warning: No clock routing rules were specified. Use set_clock_routing_rules to specify routing rules for accurate clock latency estimation. (OPT-902)
 Warning: No clock routing rules were specified. Use set_clock_routing_rules to specify routing rules for accurate clock latency estimation. (OPT-902)
@@ -1466,10 +1466,10 @@ Warning: Mapping to scan cell 'GSDFCNQD1HPBWP' in library is not possible becaus
 Information: The stitching and editing of coupling caps is turned OFF for design 'top_lib:top/auto_floorplan.design'. (TIM-125)
 Warning: Mapping to scan cell 'GSDFCNQD1HPBWP' in library is not possible because cell has 'dont_use' attribute. (SQM-1067)
 Information: Ending   compile_fusion / logic_opto / Optimization (1) (FLW-8001)
-Information: Time: 2025-05-20 15:51:45 / Session: 0.02 hr / Command: 0.00 hr / Memory: 858 MB (FLW-8100)
+Information: Time: 2025-05-21 15:17:54 / Session: 0.02 hr / Command: 0.00 hr / Memory: 858 MB (FLW-8100)
 
 Information: Starting compile_fusion / logic_opto / Register Retiming (FLW-8000)
-Information: Time: 2025-05-20 15:51:45 / Session: 0.02 hr / Command: 0.00 hr / Memory: 858 MB (FLW-8100)
+Information: Time: 2025-05-21 15:17:54 / Session: 0.02 hr / Command: 0.00 hr / Memory: 858 MB (FLW-8100)
 Warning: Mapping to scan cell 'GSDFCNQD1HPBWP' in library is not possible because cell has 'dont_use' attribute. (SQM-1067)
 Warning: Mapping to scan cell 'GSDFCNQD1HPBWP' in library is not possible because cell has 'dont_use' attribute. (SQM-1067)
 Warning: Mapping to scan cell 'GSDFCNQD1HPBWP' in library is not possible because cell has 'dont_use' attribute. (SQM-1067)
@@ -1477,20 +1477,20 @@ Information: Result of compile_fusion / logic_opto / Register Retiming (FLW-8500
 Information: No instance marked for retiming. (RTM-1031)
 Warning: Mapping to scan cell 'GSDFCNQD1HPBWP' in library is not possible because cell has 'dont_use' attribute. (SQM-1067)
 Information: Ending   compile_fusion / logic_opto / Register Retiming (FLW-8001)
-Information: Time: 2025-05-20 15:51:59 / Session: 0.02 hr / Command: 0.01 hr / Memory: 858 MB (FLW-8100)
+Information: Time: 2025-05-21 15:18:08 / Session: 0.02 hr / Command: 0.01 hr / Memory: 858 MB (FLW-8100)
 
 Warning: Mapping to scan cell 'GSDFCNQD1HPBWP' in library is not possible because cell has 'dont_use' attribute. (SQM-1067)
 Information: Register Bits Before Sharing = 0, After Sharing = 0, Savings = 0 (SQM-2000)
 Information: Starting compile_fusion / logic_opto / Optimization (2) (FLW-8000)
-Information: Time: 2025-05-20 15:52:02 / Session: 0.02 hr / Command: 0.01 hr / Memory: 877 MB (FLW-8100)
+Information: Time: 2025-05-21 15:18:11 / Session: 0.02 hr / Command: 0.01 hr / Memory: 877 MB (FLW-8100)
 Warning: No clock routing rules were specified. Use set_clock_routing_rules to specify routing rules for accurate clock latency estimation. (OPT-902)
 Warning: No clock routing rules were specified. Use set_clock_routing_rules to specify routing rules for accurate clock latency estimation. (OPT-902)
 Information: Estimating clock gate latencies for scenario 'scenarioSS'. (OPT-909)
 Information: Ending   compile_fusion / logic_opto / Optimization (2) (FLW-8001)
-Information: Time: 2025-05-20 15:52:03 / Session: 0.02 hr / Command: 0.01 hr / Memory: 877 MB (FLW-8100)
+Information: Time: 2025-05-21 15:18:12 / Session: 0.02 hr / Command: 0.01 hr / Memory: 877 MB (FLW-8100)
 
 Information: Starting compile_fusion / logic_opto / Auto-Floorplan (1) (FLW-8000)
-Information: Time: 2025-05-20 15:52:03 / Session: 0.02 hr / Command: 0.01 hr / Memory: 877 MB (FLW-8100)
+Information: Time: 2025-05-21 15:18:12 / Session: 0.02 hr / Command: 0.01 hr / Memory: 877 MB (FLW-8100)
 Information: Initializing core and die (AFP-1001)
 Information: Initializing rows (AFP-1003)
 Information: Initializing tracks (AFP-1004)
@@ -1505,7 +1505,7 @@ Warning: Layer M9 pitch 0.800 may be too small: wire/via-down 0.800, wire/via-up
 Information: When applicable Min-max layer allow_pin_connection mode will allow paths of length 3.35 outside the layer range. (ZRT-707)
 Information: When applicable Min-max layer allow_pin_connection mode will allow paths of length 3.35 outside the layer range on clock nets. (ZRT-718)
 Information: When applicable layer based tapering will taper up to 0.00 in distance from the pin. (ZRT-706)
-Warning: Cell reg_data_reg[2] is placed overlapping with other cells at {{1.950 11.121} {8.150 13.121}}. (ZRT-763)
+Warning: Cell ctmi_204 is placed overlapping with other cells at {{0.818 13.882} {2.418 15.882}}. (ZRT-763)
 Information: The net parasitics of block top are cleared. (TIM-123)
 Warning: Pin mode[1] of net mode[1] has no valid shapes to connect. (ZRT-100)
 Warning: Pin parallel_in[3] of net parallel_in[3] has no valid shapes to connect. (ZRT-100)
@@ -1527,13 +1527,13 @@ objects             total        candidates          modified         preserved
 voltage areas           0                 0                 0                 0
 ios                     0                 0                 0                 0
 macros                  0                 0                 0                 0
-pins                   16                16                15                 1
+pins                   16                16                14                 2
 -------------------------------------------------------------------------------
 Information: Ending   compile_fusion / logic_opto / Auto-Floorplan (1) (FLW-8001)
-Information: Time: 2025-05-20 15:52:03 / Session: 0.02 hr / Command: 0.01 hr / Memory: 877 MB (FLW-8100)
+Information: Time: 2025-05-21 15:18:12 / Session: 0.02 hr / Command: 0.01 hr / Memory: 877 MB (FLW-8100)
 
 Information: Starting compile_fusion / logic_opto / Early Placement (FLW-8000)
-Information: Time: 2025-05-20 15:52:03 / Session: 0.02 hr / Command: 0.01 hr / Memory: 877 MB (FLW-8100)
+Information: Time: 2025-05-21 15:18:12 / Session: 0.02 hr / Command: 0.01 hr / Memory: 877 MB (FLW-8100)
 ----------------------------------------------------------------
 running create_placement
 Information: The stitching and editing of coupling caps is turned OFF for design 'top_lib:top/auto_floorplan.design'. (TIM-125)
@@ -1584,7 +1584,7 @@ Creating placement from scratch.
 coarse place 0% done.
 coarse place 50% done.
 coarse place 100% done.
-Information: Coarse placer weighted wire length estimate = 9.57364e+06
+Information: Coarse placer weighted wire length estimate = 9.97309e+06
 Information: Extraction observers are detached as design net change threshold is reached.
 Transferred 0 BTSR attributes to NDM.
 Warning: No clock routing rules were specified. Use set_clock_routing_rules to specify routing rules for accurate clock latency estimation. (OPT-902)
@@ -1592,44 +1592,44 @@ Warning: No clock routing rules were specified. Use set_clock_routing_rules to s
 Information: Estimating clock gate latencies for scenario 'scenarioSS'. (OPT-909)
 ----------------------------------------------------------------
 Information: Ending   compile_fusion / logic_opto / Early Placement (FLW-8001)
-Information: Time: 2025-05-20 15:52:04 / Session: 0.02 hr / Command: 0.01 hr / Memory: 877 MB (FLW-8100)
+Information: Time: 2025-05-21 15:18:13 / Session: 0.02 hr / Command: 0.01 hr / Memory: 877 MB (FLW-8100)
 
 Information: The stitching and editing of coupling caps is turned OFF for design 'top_lib:top/auto_floorplan.design'. (TIM-125)
 Warning: No clock routing rules were specified. Use set_clock_routing_rules to specify routing rules for accurate clock latency estimation. (OPT-902)
 Warning: No clock routing rules were specified. Use set_clock_routing_rules to specify routing rules for accurate clock latency estimation. (OPT-902)
 Information: Estimating clock gate latencies for scenario 'scenarioSS'. (OPT-909)
 Information: Starting compile_fusion / logic_opto / Optimization (3) (FLW-8000)
-Information: Time: 2025-05-20 15:52:05 / Session: 0.02 hr / Command: 0.01 hr / Memory: 877 MB (FLW-8100)
+Information: Time: 2025-05-21 15:18:14 / Session: 0.02 hr / Command: 0.01 hr / Memory: 877 MB (FLW-8100)
 Warning: Mapping to scan cell 'GSDFCNQD1HPBWP' in library is not possible because cell has 'dont_use' attribute. (SQM-1067)
 Information: Ending   compile_fusion / logic_opto / Optimization (3) (FLW-8001)
-Information: Time: 2025-05-20 15:52:05 / Session: 0.02 hr / Command: 0.01 hr / Memory: 877 MB (FLW-8100)
+Information: Time: 2025-05-21 15:18:14 / Session: 0.02 hr / Command: 0.01 hr / Memory: 877 MB (FLW-8100)
 
 Information: Starting compile_fusion / logic_opto / Logic Simplification (1) (FLW-8000)
-Information: Time: 2025-05-20 15:52:05 / Session: 0.02 hr / Command: 0.01 hr / Memory: 877 MB (FLW-8100)
+Information: Time: 2025-05-21 15:18:14 / Session: 0.02 hr / Command: 0.01 hr / Memory: 877 MB (FLW-8100)
 Information: Ending   compile_fusion / logic_opto / Logic Simplification (1) (FLW-8001)
-Information: Time: 2025-05-20 15:52:05 / Session: 0.02 hr / Command: 0.01 hr / Memory: 877 MB (FLW-8100)
+Information: Time: 2025-05-21 15:18:14 / Session: 0.02 hr / Command: 0.01 hr / Memory: 877 MB (FLW-8100)
 
 Information: Starting compile_fusion / logic_opto / Optimization (4) (FLW-8000)
-Information: Time: 2025-05-20 15:52:05 / Session: 0.02 hr / Command: 0.01 hr / Memory: 877 MB (FLW-8100)
+Information: Time: 2025-05-21 15:18:14 / Session: 0.02 hr / Command: 0.01 hr / Memory: 877 MB (FLW-8100)
 Information: Ending   compile_fusion / logic_opto / Optimization (4) (FLW-8001)
-Information: Time: 2025-05-20 15:52:07 / Session: 0.02 hr / Command: 0.01 hr / Memory: 877 MB (FLW-8100)
+Information: Time: 2025-05-21 15:18:16 / Session: 0.02 hr / Command: 0.01 hr / Memory: 877 MB (FLW-8100)
 
 Information: Starting compile_fusion / logic_opto / Logic Simplification (2) (FLW-8000)
-Information: Time: 2025-05-20 15:52:07 / Session: 0.02 hr / Command: 0.01 hr / Memory: 877 MB (FLW-8100)
+Information: Time: 2025-05-21 15:18:16 / Session: 0.02 hr / Command: 0.01 hr / Memory: 877 MB (FLW-8100)
 Information: Ending   compile_fusion / logic_opto / Logic Simplification (2) (FLW-8001)
-Information: Time: 2025-05-20 15:52:07 / Session: 0.02 hr / Command: 0.01 hr / Memory: 877 MB (FLW-8100)
+Information: Time: 2025-05-21 15:18:16 / Session: 0.02 hr / Command: 0.01 hr / Memory: 877 MB (FLW-8100)
 
 Warning: No clock routing rules were specified. Use set_clock_routing_rules to specify routing rules for accurate clock latency estimation. (OPT-902)
 Warning: No clock routing rules were specified. Use set_clock_routing_rules to specify routing rules for accurate clock latency estimation. (OPT-902)
 Information: Estimating clock gate latencies for scenario 'scenarioSS'. (OPT-909)
 Information: Starting compile_fusion / logic_opto / Auto-Floorplan (2) (FLW-8000)
-Information: Time: 2025-05-20 15:52:07 / Session: 0.02 hr / Command: 0.01 hr / Memory: 877 MB (FLW-8100)
+Information: Time: 2025-05-21 15:18:16 / Session: 0.02 hr / Command: 0.01 hr / Memory: 877 MB (FLW-8100)
 Information: Initializing core and die (AFP-1001)
 Information: Initializing rows (AFP-1003)
 Information: Initializing tracks (AFP-1004)
 Removing existing floorplan objects
 Creating core...
-Core utilization ratio = 52.39%
+Core utilization ratio = 52.14%
 Unplacing all cells...
 Creating site array...
 Creating routing tracks...
@@ -1731,11 +1731,12 @@ Warning: Layer M9 pitch 0.800 may be too small: wire/via-down 0.800, wire/via-up
 Information: When applicable Min-max layer allow_pin_connection mode will allow paths of length 3.35 outside the layer range. (ZRT-707)
 Information: When applicable Min-max layer allow_pin_connection mode will allow paths of length 3.35 outside the layer range on clock nets. (ZRT-718)
 Information: When applicable layer based tapering will taper up to 0.00 in distance from the pin. (ZRT-706)
+Warning: Cell ctmi_210 is placed overlapping with other cells at {{13.438 17.953} {15.038 19.953}}. (ZRT-763)
 Start Global Route ... 
 [Init] Elapsed real time: 0:00:00 
 [Init] Elapsed cpu  time: sys=0:00:00 usr=0:00:00 total=0:00:00
 [Init] Stage (MB): Used    0  Alloctr    0  Proc    0 
-[Init] Total (MB): Used   42  Alloctr   42  Proc 7854 
+[Init] Total (MB): Used   41  Alloctr   42  Proc 7854 
 Printing options for 'route.common.*'
 common.clock_topology                                   :	 normal              
 common.single_connection_to_pins                        :	 off                 
@@ -1764,16 +1765,18 @@ Current Stage stats:
 [End of Build Tech Data] Elapsed cpu  time: sys=0:00:00 usr=0:00:00 total=0:00:00
 [End of Build Tech Data] Stage (MB): Used    0  Alloctr    0  Proc    0 
 [End of Build Tech Data] Total (MB): Used   46  Alloctr   46  Proc 7854 
-Warning: Pin mode[0] of net mode[0] has no valid shapes to connect. (ZRT-100)
+Warning: Pin mode[1] of net mode[1] has no valid shapes to connect. (ZRT-100)
 Warning: Pin parallel_in[3] of net parallel_in[3] has no valid shapes to connect. (ZRT-100)
-Warning: Pin parallel_in[2] of net parallel_in[2] has no valid shapes to connect. (ZRT-100)
-Warning: Pin parallel_out[0] of net parallel_out[0] has no valid shapes to connect. (ZRT-100)
+Warning: Pin parallel_in[1] of net parallel_in[1] has no valid shapes to connect. (ZRT-100)
+Warning: Pin parallel_in[0] of net parallel_in[0] has no valid shapes to connect. (ZRT-100)
+Warning: Pin load of net load has no valid shapes to connect. (ZRT-100)
+Warning: Pin serial_in of net serial_in has no valid shapes to connect. (ZRT-100)
 Net statistics:
 Total number of nets to route for block pin placement     = 16
 Number of interface nets to route for block pin placement = 16
 Net length statistics: 
-Net Count(Ignore Fully Rted) 32, Total Half Perimeter Wire Length (HPWL) 689 microns
-HPWL   0 ~   50 microns: Net Count       32	Total HPWL          689 microns
+Net Count(Ignore Fully Rted) 32, Total Half Perimeter Wire Length (HPWL) 573 microns
+HPWL   0 ~   50 microns: Net Count       32	Total HPWL          573 microns
 HPWL  50 ~  100 microns: Net Count        0	Total HPWL            0 microns
 HPWL 100 ~  200 microns: Net Count        0	Total HPWL            0 microns
 HPWL 200 ~  300 microns: Net Count        0	Total HPWL            0 microns
@@ -1789,7 +1792,7 @@ Current Stage stats:
 [End of Build All Nets] Elapsed real time: 0:00:00 
 [End of Build All Nets] Elapsed cpu  time: sys=0:00:00 usr=0:00:00 total=0:00:00
 [End of Build All Nets] Stage (MB): Used    0  Alloctr    0  Proc    0 
-[End of Build All Nets] Total (MB): Used   46  Alloctr   47  Proc 7854 
+[End of Build All Nets] Total (MB): Used   46  Alloctr   46  Proc 7854 
 Number of partitions: 1 (1 x 1)
 Size of partitions: 12 gCells x 14 gCells
 Average gCell capacity  17.71	 on layer (1)	 M1
@@ -1867,10 +1870,10 @@ Initial. M8         Overflow =     0 Max = 0 (GRCs =  0) GRCs =     0 (0.00%)
 Initial. M9         Overflow =     0 Max = 0 (GRCs =  0) GRCs =     0 (0.00%)
 Initial. AP         Overflow =     0 Max = 0 (GRCs =  0) GRCs =     0 (0.00%)
 
-Initial. Total Wire Length = 183.53
+Initial. Total Wire Length = 145.78
 Initial. Layer M1 wire length = 0.00
 Initial. Layer M2 wire length = 0.00
-Initial. Layer M3 wire length = 183.53
+Initial. Layer M3 wire length = 145.78
 Initial. Layer M4 wire length = 0.00
 Initial. Layer M5 wire length = 0.00
 Initial. Layer M6 wire length = 0.00
@@ -1878,9 +1881,9 @@ Initial. Layer M7 wire length = 0.00
 Initial. Layer M8 wire length = 0.00
 Initial. Layer M9 wire length = 0.00
 Initial. Layer AP wire length = 0.00
-Initial. Total Number of Contacts = 24
-Initial. Via VIA12 count = 12
-Initial. Via VIA23 count = 12
+Initial. Total Number of Contacts = 20
+Initial. Via VIA12 count = 10
+Initial. Via VIA23 count = 10
 Initial. Via VIA34 count = 0
 Initial. Via VIA45 count = 0
 Initial. Via VIA56 count = 0
@@ -1900,10 +1903,10 @@ Initial. completed.
 [End of dbOut] Elapsed real time: 0:00:00 
 [End of dbOut] Elapsed cpu  time: sys=0:00:00 usr=0:00:00 total=0:00:00
 [End of dbOut] Stage (MB): Used    0  Alloctr    0  Proc    0 
-[End of dbOut] Total (MB): Used   50  Alloctr   50  Proc 7854 
+[End of dbOut] Total (MB): Used   49  Alloctr   50  Proc 7854 
 CPU Time for Global Route: 00:00:00.10u 00:00:00.00s 00:00:00.10e: 
 Number of block ports: 16
-Number of block pin locations assigned from router: 12
+Number of block pin locations assigned from router: 10
 CPU Time for Pin Preparation: 00:00:00.00u 00:00:00.00s 00:00:00.00e: 
 Number of PG ports on blocks: 0
 Number of pins created: 16
@@ -1922,28 +1925,28 @@ objects             total        candidates          modified         preserved
 voltage areas           0                 0                 0                 0
 ios                     0                 0                 0                 0
 macros                  0                 0                 0                 0
-pins                   16                16                16                 0
+pins                   16                16                15                 1
 -------------------------------------------------------------------------------
 Information: Ending   compile_fusion / logic_opto / Auto-Floorplan (2) (FLW-8001)
-Information: Time: 2025-05-20 15:52:07 / Session: 0.02 hr / Command: 0.01 hr / Memory: 877 MB (FLW-8100)
+Information: Time: 2025-05-21 15:18:16 / Session: 0.02 hr / Command: 0.01 hr / Memory: 877 MB (FLW-8100)
 
 Information: Secondary PG:  Secondary PG connections skipped because it is not a UPF design (FLW-1247)
 Compile-fusion optimization summary            SETUP-COST    R2R-COST HOLD-COST LDRC-COST          AREA     LEAKAGE     INSTCNT            ELAPSE       MEM
-Compile-fusion                                          -           -         -         -        245.20           -          65              0.02       876
+Compile-fusion                                          -           -         -         -        244.00           -          65              0.02       876
 Information: Ending   compile_fusion / logic_opto (FLW-8001)
-Information: Time: 2025-05-20 15:52:07 / Session: 0.02 hr / Command: 0.01 hr / Memory: 877 MB (FLW-8100)
-CPU Load: 3%, Ram Free: 0 GB, Swap Free: 7 GB, Work Disk Free: 155 GB, Tmp Disk Free: 53 GB
+Information: Time: 2025-05-21 15:18:16 / Session: 0.02 hr / Command: 0.01 hr / Memory: 877 MB (FLW-8100)
+CPU Load: 4%, Ram Free: 0 GB, Swap Free: 7 GB, Work Disk Free: 188 GB, Tmp Disk Free: 53 GB
 
 Information: >>>>>>> 6 unique error and warning message tags while observing compile_fusion / logic_opto: (MSG-3100)
 Information: #prnt #trgr #lmt    Tag  Level     Format (or last printed message)                                (MSG-3036)
 Information:     4     2  0 FLW-2224  WARNING   Warning: Duplicate callback function set for step 'fc/logic_... (MSG-3032)
 Information:    23     9  3 SQM-1067  WARNING   Warning: Mapping to scan cell 'GSDFCNQD1HPBWP' in library is... (MSG-3032)
 Information:     9     6  0 ZRT-026   WARNING   Warning: Layer M9 pitch 0.800 may be too small: wire/via-dow... (MSG-3032)
-Information:     2     1  0 ZRT-763   WARNING   Warning: Cell reg_data_reg[2] is placed overlapping with oth... (MSG-3032)
-Information:    10    10  0 ZRT-100   WARNING   Warning: Pin parallel_out[0] of net parallel_out[0] has no v... (MSG-3032)
+Information:     3     2  0 ZRT-763   WARNING   Warning: Cell ctmi_210 is placed overlapping with other cell... (MSG-3032)
+Information:    12    12  0 ZRT-100   WARNING   Warning: Pin serial_in of net serial_in has no valid shapes ... (MSG-3032)
 Information:    27    12  0 OPT-902   WARNING   Warning: No clock routing rules were specified. Use set_cloc... (MSG-3032)
-Information:    75    40  1        6  <------   Total sum of messages (MSG-3038)
-Information: >>>>>>> Summary: 40 error&warning MSGs observed during compile_fusion / logic_opto (MSG-3103)
+Information:    78    43  1        6  <------   Total sum of messages (MSG-3038)
+Information: >>>>>>> Summary: 43 error&warning MSGs observed during compile_fusion / logic_opto (MSG-3103)
 
 Warning: No clock routing rules were specified. Use set_clock_routing_rules to specify routing rules for accurate clock latency estimation. (OPT-902)
 Warning: No clock routing rules were specified. Use set_clock_routing_rules to specify routing rules for accurate clock latency estimation. (OPT-902)
@@ -1970,14 +1973,14 @@ Information:     2     1  1 SQM-1074  WARNING   Warning: Shift register Inferenc
 Information:    23    11  3 SQM-1067  WARNING   Warning: Mapping to scan cell 'GSDFCNQD1HPBWP' in library is... (MSG-3032)
 Information:     2     1  1 SQM-1040  WARNING   Warning: No cell bus will be mapped to multibit because ther... (MSG-3032)
 Information:     9     6  0 ZRT-026   WARNING   Warning: Layer M9 pitch 0.800 may be too small: wire/via-dow... (MSG-3032)
-Information:     2     1  0 ZRT-763   WARNING   Warning: Cell reg_data_reg[2] is placed overlapping with oth... (MSG-3032)
-Information:    10    10  0 ZRT-100   WARNING   Warning: Pin parallel_out[0] of net parallel_out[0] has no v... (MSG-3032)
+Information:     3     2  0 ZRT-763   WARNING   Warning: Cell ctmi_210 is placed overlapping with other cell... (MSG-3032)
+Information:    12    12  0 ZRT-100   WARNING   Warning: Pin serial_in of net serial_in has no valid shapes ... (MSG-3032)
 Information:    30    15  0 OPT-902   WARNING   Warning: No clock routing rules were specified. Use set_cloc... (MSG-3032)
-Information:    82    47  3        8  <------   Total sum of messages (MSG-3038)
-Information: >>>>>>> Summary: 47 error&warning MSGs observed during fusion (MSG-3103)
+Information:    85    50  3        8  <------   Total sum of messages (MSG-3038)
+Information: >>>>>>> Summary: 50 error&warning MSGs observed during fusion (MSG-3103)
 Information: Ending   'compile_fusion -to logic_opto' (FLW-8001)
-Information: Time: 2025-05-20 15:52:08 / Session: 0.02 hr / Command: 0.01 hr / Memory: 877 MB (FLW-8100)
-CPU Load: 3%, Ram Free: 0 GB, Swap Free: 7 GB, Work Disk Free: 155 GB, Tmp Disk Free: 53 GB
+Information: Time: 2025-05-21 15:18:17 / Session: 0.02 hr / Command: 0.01 hr / Memory: 877 MB (FLW-8100)
+CPU Load: 4%, Ram Free: 0 GB, Swap Free: 7 GB, Work Disk Free: 188 GB, Tmp Disk Free: 53 GB
 1
 #### -----  Analyze the design and collect reports ----- ####
 report_congestion -rerun_global_router
@@ -2075,7 +2078,7 @@ Warning: Layer M9 pitch 0.800 may be too small: wire/via-down 0.800, wire/via-up
 Information: When applicable Min-max layer allow_pin_connection mode will allow paths of length 3.35 outside the layer range. (ZRT-707)
 Information: When applicable Min-max layer allow_pin_connection mode will allow paths of length 3.35 outside the layer range on clock nets. (ZRT-718)
 Information: When applicable layer based tapering will taper up to 0.00 in distance from the pin. (ZRT-706)
-Warning: Cell ctmi_208 is placed overlapping with other cells at {{17.641 13.890} {18.441 15.890}}. (ZRT-763)
+Warning: Cell ctmi_210 is placed overlapping with other cells at {{13.438 17.953} {15.038 19.953}}. (ZRT-763)
 Current Stage stats:
 [End of Read DB] Elapsed real time: 0:00:00 
 [End of Read DB] Elapsed cpu  time: sys=0:00:00 usr=0:00:00 total=0:00:00
@@ -2107,8 +2110,8 @@ Number of nets to route  = 78
 2 nets are fully connected,
  of which 2 are detail routed and 0 are global routed.
 Net length statistics: 
-Net Count(Ignore Fully Rted) 78, Total Half Perimeter Wire Length (HPWL) 1181 microns
-HPWL   0 ~   50 microns: Net Count       77	Total HPWL         1097 microns
+Net Count(Ignore Fully Rted) 78, Total Half Perimeter Wire Length (HPWL) 1180 microns
+HPWL   0 ~   50 microns: Net Count       77	Total HPWL         1096 microns
 HPWL  50 ~  100 microns: Net Count        1	Total HPWL           84 microns
 HPWL 100 ~  200 microns: Net Count        0	Total HPWL            0 microns
 HPWL 200 ~  300 microns: Net Count        0	Total HPWL            0 microns
@@ -2127,7 +2130,7 @@ Current Stage stats:
 [End of Build All Nets] Total (MB): Used   27  Alloctr   27  Proc 7854 
 Number of partitions: 1 (1 x 1)
 Size of partitions: 19 gCells x 23 gCells
-Average gCell capacity  7.58	 on layer (1)	 M1
+Average gCell capacity  7.70	 on layer (1)	 M1
 Average gCell capacity  9.95	 on layer (2)	 M2
 Average gCell capacity  9.92	 on layer (3)	 M3
 Average gCell capacity  9.95	 on layer (4)	 M4
@@ -2169,8 +2172,8 @@ Size of partitions: 19 gCells x 23 gCells
 Current Stage stats:
 [End of Blocked Pin Detection] Elapsed real time: 0:00:00 
 [End of Blocked Pin Detection] Elapsed cpu  time: sys=0:00:00 usr=0:00:00 total=0:00:00
-[End of Blocked Pin Detection] Stage (MB): Used  176  Alloctr  176  Proc  128 
-[End of Blocked Pin Detection] Total (MB): Used  203  Alloctr  203  Proc 7982 
+[End of Blocked Pin Detection] Stage (MB): Used  176  Alloctr  176  Proc   96 
+[End of Blocked Pin Detection] Total (MB): Used  203  Alloctr  203  Proc 7950 
 Information: Using 1 threads for routing. (ZRT-444)
 Information: Multiple gcell levels ON
 Information: Buffer distance is estimated to be ~1417.0000um (708 gCells)
@@ -2186,7 +2189,7 @@ Current Stage stats:
 [End of Initial Routing] Elapsed real time: 0:00:00 
 [End of Initial Routing] Elapsed cpu  time: sys=0:00:00 usr=0:00:00 total=0:00:00
 [End of Initial Routing] Stage (MB): Used    0  Alloctr    0  Proc    0 
-[End of Initial Routing] Total (MB): Used  203  Alloctr  204  Proc 7982 
+[End of Initial Routing] Total (MB): Used  203  Alloctr  203  Proc 7950 
 Initial. Routing result:
 Initial. Both Dirs: Dmd-Cap  =     0 Max = 0 GRCs =     0 (0.00%)
 Initial. H routing: Dmd-Cap  =     0 Max = 0 (GRCs =  0) GRCs =     0 (0.00%)
@@ -2205,10 +2208,10 @@ Initial. M8         Overflow =     0 Max = 0 (GRCs =  0) GRCs =     0 (0.00%)
 Initial. M9         Overflow =     0 Max = 0 (GRCs =  0) GRCs =     0 (0.00%)
 Initial. AP         Overflow =     0 Max = 0 (GRCs =  0) GRCs =     0 (0.00%)
 
-Initial. Total Wire Length = 999.59
+Initial. Total Wire Length = 1049.54
 Initial. Layer M1 wire length = 0.00
-Initial. Layer M2 wire length = 485.65
-Initial. Layer M3 wire length = 513.94
+Initial. Layer M2 wire length = 494.01
+Initial. Layer M3 wire length = 555.53
 Initial. Layer M4 wire length = 0.00
 Initial. Layer M5 wire length = 0.00
 Initial. Layer M6 wire length = 0.00
@@ -2216,9 +2219,9 @@ Initial. Layer M7 wire length = 0.00
 Initial. Layer M8 wire length = 0.00
 Initial. Layer M9 wire length = 0.00
 Initial. Layer AP wire length = 0.00
-Initial. Total Number of Contacts = 442
-Initial. Via VIA12 count = 243
-Initial. Via VIA23 count = 199
+Initial. Total Number of Contacts = 433
+Initial. Via VIA12 count = 237
+Initial. Via VIA23 count = 196
 Initial. Via VIA34 count = 0
 Initial. Via VIA45 count = 0
 Initial. Via VIA56 count = 0
@@ -2229,7 +2232,7 @@ Initial. Via VIA910 count = 0
 Initial. completed.
 
 Start GR phase 1
-Tue May 20 15:52:08 2025
+Wed May 21 15:18:17 2025
 Number of partitions: 1 (1 x 1)
 Size of partitions: 19 gCells x 23 gCells
 [rtAllParts] Elapsed real time: 0:00:00 
@@ -2238,7 +2241,7 @@ Current Stage stats:
 [End of Phase1 Routing] Elapsed real time: 0:00:00 
 [End of Phase1 Routing] Elapsed cpu  time: sys=0:00:00 usr=0:00:00 total=0:00:00
 [End of Phase1 Routing] Stage (MB): Used    0  Alloctr    0  Proc    0 
-[End of Phase1 Routing] Total (MB): Used  203  Alloctr  204  Proc 7982 
+[End of Phase1 Routing] Total (MB): Used  203  Alloctr  203  Proc 7950 
 phase1. Routing result:
 phase1. Both Dirs: Dmd-Cap  =     0 Max = 0 GRCs =     0 (0.00%)
 phase1. H routing: Dmd-Cap  =     0 Max = 0 (GRCs =  0) GRCs =     0 (0.00%)
@@ -2257,10 +2260,10 @@ phase1. M8         Overflow =     0 Max = 0 (GRCs =  0) GRCs =     0 (0.00%)
 phase1. M9         Overflow =     0 Max = 0 (GRCs =  0) GRCs =     0 (0.00%)
 phase1. AP         Overflow =     0 Max = 0 (GRCs =  0) GRCs =     0 (0.00%)
 
-phase1. Total Wire Length = 999.59
+phase1. Total Wire Length = 1049.54
 phase1. Layer M1 wire length = 0.00
-phase1. Layer M2 wire length = 485.65
-phase1. Layer M3 wire length = 513.94
+phase1. Layer M2 wire length = 494.01
+phase1. Layer M3 wire length = 555.53
 phase1. Layer M4 wire length = 0.00
 phase1. Layer M5 wire length = 0.00
 phase1. Layer M6 wire length = 0.00
@@ -2268,9 +2271,9 @@ phase1. Layer M7 wire length = 0.00
 phase1. Layer M8 wire length = 0.00
 phase1. Layer M9 wire length = 0.00
 phase1. Layer AP wire length = 0.00
-phase1. Total Number of Contacts = 442
-phase1. Via VIA12 count = 243
-phase1. Via VIA23 count = 199
+phase1. Total Number of Contacts = 433
+phase1. Via VIA12 count = 237
+phase1. Via VIA23 count = 196
 phase1. Via VIA34 count = 0
 phase1. Via VIA45 count = 0
 phase1. Via VIA56 count = 0
@@ -2282,36 +2285,36 @@ phase1. completed.
 Warning: Net VSS has unused floating user-enter shapes. (ZRT-113)
 [End of Whole Chip Routing] Elapsed real time: 0:00:00 
 [End of Whole Chip Routing] Elapsed cpu  time: sys=0:00:00 usr=0:00:00 total=0:00:00
-[End of Whole Chip Routing] Stage (MB): Used  177  Alloctr  177  Proc  128 
-[End of Whole Chip Routing] Total (MB): Used  203  Alloctr  204  Proc 7982 
+[End of Whole Chip Routing] Stage (MB): Used  177  Alloctr  177  Proc   96 
+[End of Whole Chip Routing] Total (MB): Used  203  Alloctr  203  Proc 7950 
 
 Congestion utilization per direction:
-Average vertical track utilization   =  3.47 %
+Average vertical track utilization   =  3.48 %
 Peak    vertical track utilization   = 33.33 %
-Average horizontal track utilization =  2.06 %
-Peak    horizontal track utilization = 20.00 %
+Average horizontal track utilization =  2.11 %
+Peak    horizontal track utilization = 29.03 %
 
 [End of Global Routing] Elapsed real time: 0:00:00 
 [End of Global Routing] Elapsed cpu  time: sys=0:00:00 usr=0:00:00 total=0:00:00
-[End of Global Routing] Stage (MB): Used  177  Alloctr  177  Proc  128 
-[End of Global Routing] Total (MB): Used  203  Alloctr  203  Proc 7982 
+[End of Global Routing] Stage (MB): Used  177  Alloctr  177  Proc   96 
+[End of Global Routing] Total (MB): Used  203  Alloctr  203  Proc 7950 
 Writing out congestion map...
 Updating congestion ...
 Updating congestion ...
 [DBOUT] Elapsed real time: 0:00:00 
 [DBOUT] Elapsed cpu  time: sys=0:00:00 usr=0:00:00 total=0:00:00
 [DBOUT] Stage (MB): Used  -18  Alloctr  -18  Proc    0 
-[DBOUT] Total (MB): Used   36  Alloctr   37  Proc 7982 
+[DBOUT] Total (MB): Used   36  Alloctr   37  Proc 7950 
 [End of dbOut] Elapsed real time: 0:00:00 
 [End of dbOut] Elapsed cpu  time: sys=0:00:00 usr=0:00:00 total=0:00:00
 [End of dbOut] Stage (MB): Used  -18  Alloctr  -18  Proc    0 
-[End of dbOut] Total (MB): Used   36  Alloctr   37  Proc 7982 
+[End of dbOut] Total (MB): Used   36  Alloctr   37  Proc 7950 
 
 ****************************************
 Report : congestion
 Design : top
 Version: U-2022.12-SP6
-Date   : Tue May 20 15:52:08 2025
+Date   : Wed May 21 15:18:17 2025
 ****************************************
 
 Layer     |    overflow     |              # GRCs has
@@ -2346,9 +2349,9 @@ Load ICV ICCII menu file: /mnt/vol_synopsys2023/synopsys/icvalidator/U-2022.12-S
  + VUE INFO: Found a usable port: 2446
 
 Information: 28 out of 38 POW-046 messages were not printed due to limit 10  (MSG-3913)
-fc_shell> ecit[K[K[Kxit
-Maximum memory usage for this session: 1004.65 MB
-Maximum memory usage for this session including child processes: 1004.65 MB
-CPU usage for this session:     82 seconds (  0.02 hours)
-Elapsed time for this session:    129 seconds (  0.04 hours)
+fc_shell> exit
+Maximum memory usage for this session: 972.69 MB
+Maximum memory usage for this session including child processes: 972.69 MB
+CPU usage for this session:     81 seconds (  0.02 hours)
+Elapsed time for this session:     87 seconds (  0.02 hours)
 Thank you for using Fusion Compiler.

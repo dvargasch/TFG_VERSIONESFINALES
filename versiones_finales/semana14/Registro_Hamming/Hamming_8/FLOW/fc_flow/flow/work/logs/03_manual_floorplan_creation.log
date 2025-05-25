@@ -1,0 +1,383 @@
+
+
+
+                              Fusion Compiler (TM)
+
+             Version U-2022.12-SP6 for linux64 - Aug 25, 2023 -SLE
+
+                    Copyright (c) 1988 - 2023 Synopsys, Inc.
+   This software and the associated documentation are proprietary to Synopsys,
+ Inc. This software may only be used in accordance with the terms and conditions
+ of a written license agreement with Synopsys, Inc. All other use, reproduction,
+   or distribution of this software is strictly prohibited.  Licensed Products
+     communicate with Synopsys servers for the purpose of providing software
+    updates, detecting software piracy and verifying that customers are using
+    Licensed Products in conformity with the applicable License Key for such
+  Licensed Products. Synopsys will use information gathered in connection with
+    this process to deliver software updates and pursue software pirates and
+                                   infringers.
+
+ Inclusivity & Diversity - Visit SolvNetPlus to read the "Synopsys Statement on
+            Inclusivity and Diversity" (Refer to article 000036315 at
+                        https://solvnetplus.synopsys.com)
+ 
+Information: Term was not able to be set up using xterm-256color . Using "xterm" by default instead. (CLE-10)
+#######################################################
+#####          Manual Floorplan Creation          #####
+#######################################################
+# Sourcing setup script
+source -echo ../../setup/icc2_dp_setup.tcl
+set CURR_DIR  [pwd]
+set PROY_HOME ${CURR_DIR}/../..;
+set TSMC_HOME "/mnt/vol_NFS_rh003/profesores/pmendoza/KITS/TSMCHOME";
+############################
+## RTL file name and type ##
+############################
+set DESIGN_NAME "top"
+set HDL "sverilog"
+set DESIGN_LIBRARY "${DESIGN_NAME}_lib"
+#################################
+set time [get_date]
+puts "Command Start at: ${time}"
+Command Start at: Sun May 25 00:31:50 2025
+####################################
+### 1. Variables for design prep ###
+####################################
+### SDC File
+set SDCNAME "${DESIGN_NAME}"
+### Ref Libs
+set NDM_LIBS_PATH "../../setup/ndm_libraries/ndm/"
+set STD_TIME_FRAME "../../setup/ndm_libraries/ndm/tcbn65lphpbwp_1.ndm"
+set REFERENCE_LIBRARY "{${STD_TIME_FRAME} }"
+set REFERENCE_LIBRARY 		[list   ${NDM_LIBS_PATH}/tcbn65lphpbwpcghvt_1_physical_only.ndm \
+									${NDM_LIBS_PATH}/tcbn65lphpbwp_1_physical_only.ndm \
+									${NDM_LIBS_PATH}/tpdn65lpgv2od3_sd_physical_only.ndm \
+									${NDM_LIBS_PATH}/tpfn65lpgv2od3_physical_only.ndm \
+									${NDM_LIBS_PATH}/tpbn65v_physical_only.ndm \
+									${NDM_LIBS_PATH}/tpin65gv_physical_only.ndm \
+									${NDM_LIBS_PATH}/tcbn65lphpbwpcghvt_1.ndm \
+									${NDM_LIBS_PATH}/tcbn65lphpbwp_1.ndm \
+									${NDM_LIBS_PATH}/tpdn65lpgv2od3_sdml.ndm \
+									${NDM_LIBS_PATH}/tpfn65lpgv2od3ml.ndm \
+									${NDM_LIBS_PATH}/ts1n65lpa2048x32m4_140a_5m.ndm ];
+################################
+### 2. Tech files and setup ####
+################################
+set TECH_FILE "${TSMC_HOME}/digital/Back_End/milkyway/tcbn65lphpbwp_140a/techfiles/tsmcn65_9lmT2.tf"
+set TECH_LIB ""
+#######################
+## Layers and widths ##
+#######################
+set STANDARD_CELLS_WIDTH 0.42
+set MAX_ROUTING_LAYER   "M6"
+set MIN_ROUTING_LAYER   "M2"
+set TARGET_SKEW         0.1
+set RTL_PATH		"${CURR_DIR}/../../../common/rtl"
+set SDC_PATH		"${CURR_DIR}/../../../common/sdc"
+set SDC_FILE		"${CURR_DIR}/${DESIGN_NAME}.sdc"
+####################################################
+set VERILOG_PATH	"${RTL_PATH}/verilog"
+set SVERILOG_PATH	"${RTL_PATH}/sverilog" 
+set VHDL_PATH		"${RTL_PATH}/vhdl"
+set RESULTS_PATH	"${CURR_DIR}/../../results"
+set REPORTS_PATH	"${CURR_DIR}/../../reports"
+###########
+## Paths ##
+###########
+set DRC_RUNSET_FILE	"${CURR_DIR}/../../DRC/ICVLN65S_9M_6X2Z.26_1a"
+set GDS_MAP_FILE        "${TSMC_HOME}/digital/Back_End/milkyway/tcbn65lphpbwpcg_200a/gdsout_6X2Z.map"
+set ICV                "-I /mnt/vol_synopsys2023/pdks/xfab/design/xkit/xh018/synopsys/v9_0/ICValidator/v9_0_2"
+####################
+## Auto-floorplan ##
+####################
+set CONTROL_AUTO           "core"
+# Percentage of cell area usage
+set CORE_UTILIZATION_AUTO  0.5
+# Move the nucleus 10 units
+set CORE_OFFSET_AUTO       10
+# Core shape
+set SHAPE_AUTO             "R"
+# Aspect ratio
+set SIDE_RATIO_AUTO        {1 1.5}
+# Flip the first row of the cell
+set FFR_AUTO               "true"
+# Using the M3 layer for pins
+set LAYER_PIN_AUTO         {M3}
+# Allows pins on all sides of the cell
+set SIDES_AUTO             {1 2 3 4}
+# Distance between pins
+set PIN_SPACE_AUTO         4
+######################
+## Floorplan manual ##
+######################
+set CONTROL_M            "core"
+# Percentage of cell area usage
+set CORE_UTILIZATION_M   0.5
+# Move the nucleus 10 units 
+set CORE_OFFSET_M        10
+# Core shape
+set SHAPE_M              "R"
+# Aspect ratio 
+set SIDE_RATIO_M         {1.5 1}
+# Flip the first row of the cell
+set FFR_M                "true" 
+# Using the M3 layer for pins
+set LAYER_PIN_M          {M3}
+# Allows pins on all sides of the cell
+set SIDES_M              {1 2 3 4}
+# Distance between pins
+set PIN_SPACE_M          4 
+#########################
+## Configure MultiCore ##
+#########################
+set_host_options -name Oculi -max_cores 2
+#report_host_options
+source ${CURR_DIR}/../../setup/utilities.tcl
+set UNSELECT_RULES "PO.DN.2* OD.DN.2* M*.DN.1* CSR.R.1* DM*.R.1*"
+PO.DN.2* OD.DN.2* M*.DN.1* CSR.R.1* DM*.R.1*
+#### ----- Open lib and create new block from previous script (02_auto_floorplan.tcl) ----- ####
+# Open the design library
+open_lib ${DESIGN_LIBRARY}
+Information: Loading library file '/mnt/vol_NFS_rh003/estudiantes/DANIELA_VARGAS/Version_final/0516/versiones_finales/semana14/Registro_Hamming/Hamming_8/FLOW/fc_flow/flow/work/top_lib' (FILE-007)
+Information: Loading library file '/mnt/vol_NFS_rh003/estudiantes/DANIELA_VARGAS/Version_final/0516/versiones_finales/semana14/Registro_Hamming/Hamming_8/FLOW/fc_flow/setup/ndm_libraries/ndm/tcbn65lphpbwpcghvt_1_physical_only.ndm' (FILE-007)
+Information: Loading library file '/mnt/vol_NFS_rh003/estudiantes/DANIELA_VARGAS/Version_final/0516/versiones_finales/semana14/Registro_Hamming/Hamming_8/FLOW/fc_flow/setup/ndm_libraries/ndm/tcbn65lphpbwp_1_physical_only.ndm' (FILE-007)
+Information: Loading library file '/mnt/vol_NFS_rh003/estudiantes/DANIELA_VARGAS/Version_final/0516/versiones_finales/semana14/Registro_Hamming/Hamming_8/FLOW/fc_flow/setup/ndm_libraries/ndm/tpdn65lpgv2od3_sd_physical_only.ndm' (FILE-007)
+Information: Loading library file '/mnt/vol_NFS_rh003/estudiantes/DANIELA_VARGAS/Version_final/0516/versiones_finales/semana14/Registro_Hamming/Hamming_8/FLOW/fc_flow/setup/ndm_libraries/ndm/tpfn65lpgv2od3_physical_only.ndm' (FILE-007)
+Information: Loading library file '/mnt/vol_NFS_rh003/estudiantes/DANIELA_VARGAS/Version_final/0516/versiones_finales/semana14/Registro_Hamming/Hamming_8/FLOW/fc_flow/setup/ndm_libraries/ndm/tpbn65v_physical_only.ndm' (FILE-007)
+Information: Loading library file '/mnt/vol_NFS_rh003/estudiantes/DANIELA_VARGAS/Version_final/0516/versiones_finales/semana14/Registro_Hamming/Hamming_8/FLOW/fc_flow/setup/ndm_libraries/ndm/tpin65gv_physical_only.ndm' (FILE-007)
+Information: Loading library file '/mnt/vol_NFS_rh003/estudiantes/DANIELA_VARGAS/Version_final/0516/versiones_finales/semana14/Registro_Hamming/Hamming_8/FLOW/fc_flow/setup/ndm_libraries/ndm/tcbn65lphpbwpcghvt_1.ndm' (FILE-007)
+Information: Loading library file '/mnt/vol_NFS_rh003/estudiantes/DANIELA_VARGAS/Version_final/0516/versiones_finales/semana14/Registro_Hamming/Hamming_8/FLOW/fc_flow/setup/ndm_libraries/ndm/tcbn65lphpbwp_1.ndm' (FILE-007)
+Information: Loading library file '/mnt/vol_NFS_rh003/estudiantes/DANIELA_VARGAS/Version_final/0516/versiones_finales/semana14/Registro_Hamming/Hamming_8/FLOW/fc_flow/setup/ndm_libraries/ndm/tpdn65lpgv2od3_sdml.ndm' (FILE-007)
+Information: Loading library file '/mnt/vol_NFS_rh003/estudiantes/DANIELA_VARGAS/Version_final/0516/versiones_finales/semana14/Registro_Hamming/Hamming_8/FLOW/fc_flow/setup/ndm_libraries/ndm/tpfn65lpgv2od3ml.ndm' (FILE-007)
+Information: Loading library file '/mnt/vol_NFS_rh003/estudiantes/DANIELA_VARGAS/Version_final/0516/versiones_finales/semana14/Registro_Hamming/Hamming_8/FLOW/fc_flow/setup/ndm_libraries/ndm/ts1n65lpa2048x32m4_140a_5m.ndm' (FILE-007)
+Warning: Technology used to create frame-view and current technology have inconsistency: Fat table contents are different. (FRAM-054)
+Warning: Technology 'tcbn65lphpbwpcghvt.tf' used for frame-view creation in library 'tcbn65lphpbwpcghvt_1_physical_only', is inconsistent with the current technology 'tsmcn65_9lmT2.tf' of library 'top_lib'. Please run derive_design_level_via_regions to generate up-do-date via region in the design library. (NDM-102)
+Warning: Technology used to create frame-view and current technology have inconsistency: Fat table contents are different. (FRAM-054)
+Warning: Technology 'tpdn65lpgv2od3_sd.tf' used for frame-view creation in library 'tpdn65lpgv2od3_sd_physical_only', is inconsistent with the current technology 'tsmcn65_9lmT2.tf' of library 'top_lib'. Please run derive_design_level_via_regions to generate up-do-date via region in the design library. (NDM-102)
+Warning: Technology used to create frame-view and current technology have inconsistency: Fat table contents are different. (FRAM-054)
+Warning: Technology 'tpfn65lpgv2od3.tf' used for frame-view creation in library 'tpfn65lpgv2od3_physical_only', is inconsistent with the current technology 'tsmcn65_9lmT2.tf' of library 'top_lib'. Please run derive_design_level_via_regions to generate up-do-date via region in the design library. (NDM-102)
+Warning: Technology used to create frame-view and current technology have inconsistency: Fat table contents are different. (FRAM-054)
+Warning: Technology 'tcbn65lphpbwpcghvt.tf' used for frame-view creation in library 'tcbn65lphpbwpcghvt_1', is inconsistent with the current technology 'tsmcn65_9lmT2.tf' of library 'top_lib'. Please run derive_design_level_via_regions to generate up-do-date via region in the design library. (NDM-102)
+Warning: Technology used to create frame-view and current technology have inconsistency: Fat table contents are different. (FRAM-054)
+Warning: Technology 'tpdn65lpgv2od3_sd.tf' used for frame-view creation in library 'tpdn65lpgv2od3_sdml', is inconsistent with the current technology 'tsmcn65_9lmT2.tf' of library 'top_lib'. Please run derive_design_level_via_regions to generate up-do-date via region in the design library. (NDM-102)
+Warning: Technology used to create frame-view and current technology have inconsistency: Fat table contents are different. (FRAM-054)
+Warning: Technology 'tpfn65lpgv2od3.tf' used for frame-view creation in library 'tpfn65lpgv2od3ml', is inconsistent with the current technology 'tsmcn65_9lmT2.tf' of library 'top_lib'. Please run derive_design_level_via_regions to generate up-do-date via region in the design library. (NDM-102)
+{top_lib}
+# Copy and open block
+copy_block -from ${DESIGN_NAME}/auto_floorplan -to ${DESIGN_NAME}/manual_floorplan
+Information: User units loaded from library 'tcbn65lphpbwpcghvt_1' (LNK-040)
+{top_lib:top/manual_floorplan.design}
+open_block ${DESIGN_NAME}/manual_floorplan
+Information: Incrementing open_count of block 'top_lib:top/manual_floorplan.design' to 2. (DES-021)
+{top_lib:top/manual_floorplan.design}
+#### ----- Manual floorplan ----- ####
+# Initialize the floorplan
+initialize_floorplan  \
+	-control_type $CONTROL_M \
+	-core_utilization $CORE_UTILIZATION_M \
+	-core_offset $CORE_OFFSET_M \
+	-shape $SHAPE_M \
+	-side_ratio $SIDE_RATIO_M \
+	-flip_first_row $FFR_M 
+Using libraries: top_lib tcbn65lphpbwpcghvt_1_physical_only tcbn65lphpbwp_1_physical_only tpdn65lpgv2od3_sd_physical_only tpfn65lpgv2od3_physical_only tpbn65v_physical_only tpin65gv_physical_only tcbn65lphpbwpcghvt_1 tcbn65lphpbwp_1 tpdn65lpgv2od3_sdml tpfn65lpgv2od3ml ts1n65lpa2048x32m4_140a_5m
+Visiting block top_lib:top/manual_floorplan.design
+Information: Total 1 mismatches are found on block 'top_lib:top/manual_floorplan.design'. (DMM-116)
+Design 'top' was successfully linked.
+Removing existing floorplan objects
+Creating core...
+Core utilization ratio = 51.94%
+Unplacing all cells...
+Creating site array...
+Creating routing tracks...
+Initializing floorplan completed.
+#-site_def hdll \
+# Pin placement
+set ports [remove_from_collection [get_ports] {VDD VSS}]
+{clk rst enable load serial_in {mode[1]} {mode[0]} {parallel_in[7]} {parallel_in[6]} {parallel_in[5]} {parallel_in[4]} {parallel_in[3]} {parallel_in[2]} {parallel_in[1]} {parallel_in[0]} serial_out {parallel_out[7]} {parallel_out[6]} {parallel_out[5]} {parallel_out[4]} {parallel_out[3]} {parallel_out[2]} {parallel_out[1]} {parallel_out[0]}}
+# Global pin constraints 
+set_block_pin_constraints -self \
+	-allowed_layers $LAYER_PIN_M \
+	-sides $SIDES_M \
+	-pin_spacing_distance $PIN_SPACE_M 
+Information: The command 'set_block_pin_constraints' cleared the undo history. (UNDO-016)
+Information: Block pin constraints pin_spacing_distance, allowed_layers, sides are set for top block top/manual_floorplan. (DPPA-403)
+1
+#	-width 0.5 \
+	#	-length 0.5 
+# Individual pin constraints (If necessary)
+#set_individual_pin_constraints \
+#	-ports [get_ports <pin_name>] \
+#	-sides 1 \
+#	-allowed_layers MET1
+# Place pins
+place_pins -self -ports ${ports}
+Information: Starting 'place_pins' (FLW-8000)
+Information: Time: 2025-05-25 00:31:50 / Session: 0.00 hr / Command: 0.00 hr / Memory: 409 MB (FLW-8100)
+Load DB...
+CPU Time for load db: 00:00:00.00u 00:00:00.00s 00:00:00.00e: 
+
+Min routing layer: M2
+Max routing layer: M6
+
+Non default block pin constraint setting(s) of top block: top
+pin_spacing_distance: 4.0000
+allowed_layers:       M3 
+sides:                1 2 3 4
+
+CPU Time for Top Level Pre-Route Processing: 00:00:00.00u 00:00:00.00s 00:00:00.00e: 
+Number of block ports: 24
+Number of block pin locations assigned from router: 0
+CPU Time for Pin Preparation: 00:00:00.00u 00:00:00.00s 00:00:00.00e: 
+Warning: Not enough slots available for pin placement. Ignore pin spacing constraints. (DPPA-004)
+Warning: Pin load is placed with relaxed spacing constraint. (DPPA-379)
+Warning: Pin enable is placed with relaxed spacing constraint. (DPPA-379)
+Warning: Pin rst is placed with relaxed spacing constraint. (DPPA-379)
+Warning: Pin clk is placed with relaxed spacing constraint. (DPPA-379)
+Number of PG ports on blocks: 0
+Number of pins created: 24
+Warning: 4 pins on block top have been placed with relaxed pin spacing constraint(s). (DPPA-089)
+CPU Time for Pin Creation: 00:00:00.00u 00:00:00.00s 00:00:00.00e: 
+Total Pin Placement CPU Time: 00:00:00.00u 00:00:00.00s 00:00:00.01e: 
+Information: Ending 'place_pins' (FLW-8001)
+Information: Time: 2025-05-25 00:31:50 / Session: 0.00 hr / Command: 0.00 hr / Memory: 409 MB (FLW-8100)
+1
+#### ----- Insert Boundary/TAP cells in the design ----- ####
+# Sourcing Boundary/Tap script
+source -echo ../scripts/03_01_insert_boundary_and_tap_cells.tcl
+#########################################################
+#####          Boundary/TAP cell insertion          #####
+#########################################################
+# Inserting boundary cells
+set_boundary_cell_rules  \
+        -top_boundary_cells                tcbn65lphpbwp_1/DCAPHPBWP  \
+        -bottom_boundary_cells             tcbn65lphpbwp_1/DCAPHPBWP  \
+	-left_boundary_cell                tcbn65lphpbwp_1/DCAPHPBWP \
+	-right_boundary_cell               tcbn65lphpbwp_1/DCAPHPBWP \
+        -top_left_outside_corner_cell      tcbn65lphpbwp_1/DCAPHPBWP \
+        -top_right_outside_corner_cell     tcbn65lphpbwp_1/DCAPHPBWP \
+        -bottom_left_outside_corner_cell   tcbn65lphpbwp_1/DCAPHPBWP \
+        -bottom_right_outside_corner_cell  tcbn65lphpbwp_1/DCAPHPBWP  
+#	-mirror_left_outside_corner_cell \
+#	-mirror_right_outside_corner_cell 
+compile_boundary_cells
+Warning: Detected use of obsolete/unsupported feature.  The following
+        	will not be available in a future release of the application:
+        	compile_boundary_cells. Use compile_targeted_boundary_cells instead (CMD-100)
+Using AL to insert boundary cells
+Warning: Site master "unit" has neither X-Symmetry nor Y-Symmetry. The "legal orientations" for the standard cells will be limited. (LGL-031)
+Warning: Routing direction of metal layer PO is neither "horizontal" nor "vertical".  PDC checks will not be performed on this layer. (PDC-003)
+PDC app_options settings =========
+	place.legalize.enable_prerouted_net_check: 1
+	place.legalize.num_tracks_for_access_check: 1
+	place.legalize.use_eol_spacing_for_access_check: 0
+	place.legalize.allow_touch_track_for_access_check: 1
+	place.legalize.reduce_conservatism_in_eol_check: 0
+	place.legalize.preroute_shape_merge_distance: 0.0
+	place.legalize.enable_non_preferred_direction_span_check: 0
+
+Layer M1: cached 0 shapes out of 0 total shapes.
+Layer M2: cached 0 shapes out of 0 total shapes.
+Cached 0 vias out of 0 total vias.
+Warning: No 1x or 2x + 3x wide cells provided for top or bottom option. (CHF-125)
+Information: Starting boundary cell insertion into top/manual_floorplan using site master "unit". (CHF-200)
+	40% complete ...
+	50% complete ...
+Information: Total 10 left cells inserted successfully into top/manual_floorplan. (CHF-100)
+Information: Total 0 bottom cells inserted successfully into top/manual_floorplan. (CHF-100)
+Information: Total 10 right cells inserted successfully into top/manual_floorplan. (CHF-100)
+Information: Total 118 top cells inserted successfully into top/manual_floorplan. (CHF-100)
+Information: Total 0 bottom left outside cells inserted successfully into top/manual_floorplan. (CHF-100)
+Information: Total 0 bottom right outside cells inserted successfully into top/manual_floorplan. (CHF-100)
+Information: Total 2 top left outside cells inserted successfully into top/manual_floorplan. (CHF-100)
+Information: Total 2 top right outside cells inserted successfully into top/manual_floorplan. (CHF-100)
+Information: Total 142 boundary cells inserted successfully into top/manual_floorplan. (CHF-100)
+# Inserting TAP cells
+create_tap_cells   \
+         -lib_cell  [get_lib_cells TAPCELLHPBWP] \
+         -distance 60  \
+         -pattern stagger \
+         -skip_fixed_cells
+* Disjointed site row process : FALSE
+Using AL to insert tap cells
+Information: tap_to_tap_distance is not a hard rule at tap insertion stage. Please set place.legalize.ignore_tap_to_tap_distance_rule to true to bypass the check.
+Warning: Site master "unit" has neither X-Symmetry nor Y-Symmetry. The "legal orientations" for the standard cells will be limited. (LGL-031)
+Warning: Routing direction of metal layer PO is neither "horizontal" nor "vertical".  PDC checks will not be performed on this layer. (PDC-003)
+PDC app_options settings =========
+	place.legalize.enable_prerouted_net_check: 1
+	place.legalize.num_tracks_for_access_check: 1
+	place.legalize.use_eol_spacing_for_access_check: 0
+	place.legalize.allow_touch_track_for_access_check: 1
+	place.legalize.reduce_conservatism_in_eol_check: 0
+	place.legalize.preroute_shape_merge_distance: 0.0
+	place.legalize.enable_non_preferred_direction_span_check: 0
+
+Layer M1: cached 0 shapes out of 0 total shapes.
+Layer M2: cached 0 shapes out of 0 total shapes.
+Cached 0 vias out of 0 total vias.
+Information: Starting tap cell insertion into top/manual_floorplan using site master "unit". (CHF-200)
+	40% complete ...
+	50% complete ...
+Information: Total 13 tap cells inserted successfully into top/manual_floorplan. (CHF-100)
+#### ---- Write out the created floorplan  ----- ####
+# Write as .tcl
+write_floorplan -output ${RESULTS_PATH}/write_floorplan_files -exclude {cells nets} 
+Writing floorplan for top.design
+Since nets are selected, cells will be added as well, to satisfy DEF dependency.
+1
+# Write as .def
+write_def -exclude {cells nets} ${RESULTS_PATH}/floorplan.def
+****************************************
+Report : Data Mismatches
+Version: U-2022.12-SP6
+Date   : Sun May 25 00:31:52 2025
+****************************************
+
+==============================
+Design : top
+==============================
+Mismatch Type                        Total Count   Repaired  Unrepaired
+--------------------------------------------------------------------------------
+layer_missing_prefer_direction       1             0         1
+---------------------------------------
+Number of Written DEF Constructs
+---------------------------------------
+VERSION                        : 1
+DIVIDERCHAR                    : 1
+BUSBITCHARS                    : 1
+DESIGN                         : 1
+UNITS                          : 1
+PROPERTYDEFINITIONS            : 1
+DIEAREA                        : 1
+ROW                            : 12
+TRACKS                         : 20
+PINS                           : 26
+PINPROPERTIES                  : 24
+SPECIALNETS                    : 2
+1
+#### ---- Save and exit ----- ####
+get_blocks -all
+{top_lib:top.design top_lib:top/rtl_read.design top_lib:top/inital_syn.design top_lib:top/auto_floorplan.design top_lib:top/manual_floorplan.design}
+save_block
+Information: The command 'save_block' cleared the undo history. (UNDO-016)
+Information: Saving block 'top_lib:top/manual_floorplan.design'
+1
+save_lib
+Saving library 'top_lib'
+1
+if {[info exists ::env(NO_GUI)]} {
+    exit
+} else {
+	gui_start
+}
+Load ICV ICCII menu file: /mnt/vol_synopsys2023/synopsys/icvalidator/U-2022.12-SP4/etc/tcl-u/Icc2Menu.tcl
+ + VUE INFO: Please click View->IC Validator VUE in LayoutWindow menu
+            to launch VUE.
+
+ + VUE INFO: Found a usable port: 2446
+
+fc_shell> exit
+Maximum memory usage for this session: 496.16 MB
+Maximum memory usage for this session including child processes: 496.16 MB
+CPU usage for this session:     14 seconds (  0.00 hours)
+Elapsed time for this session:     39 seconds (  0.01 hours)
+Thank you for using Fusion Compiler.

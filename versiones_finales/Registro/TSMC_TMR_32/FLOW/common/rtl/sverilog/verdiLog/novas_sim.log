@@ -1,0 +1,48 @@
+Invoking simulator...
+
+./prueba_1 -sml=verdi +UVM_VERDI_TRACE=UVM_AWARE +fsdb+gate=off -ucli2Proc -ucli
+debImport "-i" "-simflow" "-dbdir" "./prueba_1.daidir"
+*Verdi* Loading libsscore_vcs202012.so
+
+*Verdi* : Enable RPC Server(256282)
+
+srcTBInvokeSim
+Chronologic VCS simulator copyright 1991-2020
+Contains Synopsys proprietary information.
+Compiler version R-2020.12-SP2_Full64; Runtime version R-2020.12-SP2_Full64;  May 21 11:17 2025
+xterm-256color is Not a valid terminal...
+Verdi>fsdbDumpvars 1 "universal_register_4bit_tb.dut.register_1"  +all +trace_process;fsdbDumpvars 1 "universal_register_4bit_tb.dut.register_2"  +all +trace_process;fsdbDumpvars 1 "universal_register_4bit_tb.dut.register_3"  +all +trace_process;fsdbDumpvars 1 "universal_register_4bit_tb.dut.voter"  +all +trace_process;fsdbDumpflush 
+
+*Verdi* : Begin traversing the scope (universal_register_4bit_tb.dut.register_1), layer (1).
+*Verdi* : Enable +trace_process and +all dumping.
+*Verdi* : End of traversing.
+*Verdi* : Begin traversing the scope (universal_register_4bit_tb.dut.register_2), layer (1).
+*Verdi* : Enable +trace_process and +all dumping.
+*Verdi* : End of traversing.
+*Verdi* : Begin traversing the scope (universal_register_4bit_tb.dut.register_3), layer (1).
+*Verdi* : Enable +trace_process and +all dumping.
+*Verdi* : End of traversing.
+*Verdi* : Begin traversing the scope (universal_register_4bit_tb.dut.voter), layer (1).
+*Verdi* : Enable +trace_process and +all dumping.
+*Verdi* : End of traversing.
+*Verdi* : Flush all FSDB Files at 0 ps.
+
+Verdi>run
+
+Test 1: Modo SISO
+
+Test 2: Modo SIPO
+
+Test 3: Modo PISO
+
+Test 4: Modo PIPO
+Inyectando errores en reg_parallel de u0 y u2 antes de la carga
+$finish called from file "tb.sv", line 119.
+$finish at simulation time               425000
+Simulation complete, time is 425000 ps.
+tb.sv, 119 :     #20 $finish;
+           V C S   S i m u l a t i o n   R e p o r t 
+Time: 425000 ps
+CPU Time:      0.090 seconds;       Data structure size:   0.0Mb
+Wed May 21 11:42:55 2025
+debExit

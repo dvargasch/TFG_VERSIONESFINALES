@@ -1,0 +1,103 @@
+* Description of frequently used terms in hierarchy_analysis files*
+M indicates that the value of that column is in millions
+Hier Plc Count(Hierarchical Placement Count) : Number of unique instances of the cell in another cell (Parent)
+Flat Plc Count(Flat Placement Count)         : Total number of instances of the cell in the layout
+
+Example : 
+                               A                     
+                              / \                   Cell  Hier Plc Count Flat Plc Count 
+                             /   \                     A               1              1 
+                            B     B                    B               2              2 
+                           / \  /  \                   C               2              4 
+                          C   C C   C                
+------------------------------------------------------------------------------------------------------ 
+
+
+* Cells with flat area > 0.01 of top cell *
+Reports cells with flat area > 0.01 of top cell
+
+Flat A(Flat Area) : Total area covered by this cell in the layout(cell area * flat placement count)
+Cell A(Cell Area) : Area of this cell
+Percent of top    : Percentage of area of this cell w.r.t area of top cell
+This table contains 15 entries
+Original table contains 15 entries
+
+ Name                                          | Flat A (mm^2), Cell A (mm^2), Flat Plc Count, Hier Plc Count, Percent of top
+-----------------------------------------------
+ top                                           |         0.011,         0.011,              1,              1,       100.00 %
+ DCAP16HPBWP                                   |         0.002,         0.000,            202,            202,        14.48 %
+ SDFCND0HPBWP                                  |         0.001,         0.000,             72,             72,        10.00 %
+ DCAP4HPBWP                                    |         0.001,         0.000,            368,            368,         6.59 %
+ DCAPHPBWP                                     |         0.001,         0.000,            467,            467,         6.27 %
+ SDFCNQD0HPBWP                                 |         0.001,         0.000,             40,             40,         5.20 %
+ XNR3D0HPBWP                                   |         0.000,         0.000,             39,             39,         2.97 %
+ MUX2ND0HPBWP                                  |         0.000,         0.000,             80,             80,         2.87 %
+ FILL1HPBWP                                    |         0.000,         0.000,            591,            591,         2.65 %
+ AO22D0HPBWP                                   |         0.000,         0.000,             63,             63,         2.26 %
+ OAI221D0HPBWP                                 |         0.000,         0.000,             62,             62,         2.22 %
+ AOI22D0HPBWP                                  |         0.000,         0.000,             63,             63,         1.98 %
+ IOA22D0HPBWP                                  |         0.000,         0.000,             45,             45,         1.81 %
+ OAI22D0HPBWP                                  |         0.000,         0.000,             56,             56,         1.76 %
+ MAOI22D0HPBWP                                 |         0.000,         0.000,             28,             28,         1.00 %
+===============================================
+
+* Large-Area cells and child area ratio *
+This table reports cells with large areas and ratio of its area with total area covered by its children
+
+Num Inst(Number of instances) : Total Number of instances of the cell
+Child A(Child Area)           : Total area covered by all the children of the cell
+Pct of parent(Percent of area): Percentage of total area covered by its childern w.r.t area of this cell
+This table contains 15 entries
+Original table contains 15 entries
+
+ Name                                          | Flat A (mm^2), Cell A (mm^2), Num Inst (M), Child A (mm^2), Pct of parent
+-----------------------------------------------
+ top                                           |         0.011,         0.011,        0.003,         0.008,       70.74 %
+ DCAP16HPBWP                                   |         0.002,         0.000,        0.000,         0.000,        0.00 %
+ SDFCND0HPBWP                                  |         0.001,         0.000,        0.000,         0.000,        0.00 %
+ DCAP4HPBWP                                    |         0.001,         0.000,        0.000,         0.000,        0.00 %
+ DCAPHPBWP                                     |         0.001,         0.000,        0.000,         0.000,        0.00 %
+ SDFCNQD0HPBWP                                 |         0.001,         0.000,        0.000,         0.000,        0.00 %
+ XNR3D0HPBWP                                   |         0.000,         0.000,        0.000,         0.000,        0.00 %
+ MUX2ND0HPBWP                                  |         0.000,         0.000,        0.000,         0.000,        0.00 %
+ FILL1HPBWP                                    |         0.000,         0.000,        0.000,         0.000,        0.00 %
+ AO22D0HPBWP                                   |         0.000,         0.000,        0.000,         0.000,        0.00 %
+ OAI221D0HPBWP                                 |         0.000,         0.000,        0.000,         0.000,        0.00 %
+ AOI22D0HPBWP                                  |         0.000,         0.000,        0.000,         0.000,        0.00 %
+ IOA22D0HPBWP                                  |         0.000,         0.000,        0.000,         0.000,        0.00 %
+ OAI22D0HPBWP                                  |         0.000,         0.000,        0.000,         0.000,        0.00 %
+ MAOI22D0HPBWP                                 |         0.000,         0.000,        0.000,         0.000,        0.00 %
+===============================================
+
+* Layer Report with Estimated Data *
+Reports information of layers present in the layout
+
+Trap        : Number of hierarchical trapezoids in the layer
+Poly        : Number of hierarchical polygons in the layer
+Text        : Number of hierarchical text primitives in the layer
+Flat Trap   : Number of flat trapezoids 
+Flat Poly   : Number of flat polygons
+Flat Text   : Number of flat text primitives 
+Trap F/H    : Ratio of flat and hierarchical placements of the trapezoids
+Base, Metal, Via, Fill, Colored : Indicates layer intent
+This table contains 14 entries
+Original table contains 14 entries
+
+ Name                                          | Trap (M), Poly (M), Text (M), Flat Trap (M), Flat Poly (M), Flat Text (M), Trap F/H, Base, Metal, Via, Fill, Colored
+-----------------------------------------------
+ M2I                                           |    0.014,    0.014,    0.000,         0.014,         0.014,         0.000,     1.00,    0,     1,   1,    0,       0
+ VIA1I                                         |    0.014,    0.014,    0.000,         0.014,         0.014,         0.000,     1.00,    0,     1,   1,    0,       0
+ VIA2I                                         |    0.013,    0.013,    0.000,         0.013,         0.013,         0.000,     1.00,    0,     1,   1,    0,       0
+ M3I                                           |    0.009,    0.009,    0.000,         0.009,         0.009,         0.000,     1.00,    0,     1,   1,    0,       0
+ M4I                                           |    0.008,    0.008,    0.000,         0.008,         0.008,         0.000,     1.00,    0,     1,   1,    0,       0
+ M1I                                           |    0.006,    0.006,    0.000,         0.050,         0.030,         0.000,     7.94,    0,     1,   0,    0,       0
+ VIA3I                                         |    0.005,    0.005,    0.000,         0.005,         0.005,         0.000,     1.00,    0,     1,   1,    0,       0
+ VIA4I                                         |    0.004,    0.004,    0.000,         0.004,         0.004,         0.000,     1.00,    0,     1,   1,    0,       0
+ M5I                                           |    0.004,    0.004,    0.000,         0.004,         0.004,         0.000,     1.00,    0,     1,   1,    0,       0
+ COI                                           |    0.001,    0.001,    0.000,         0.033,         0.033,         0.000,    34.51,    1,     0,   0,    0,       0
+ VIA5I                                         |    0.001,    0.001,    0.000,         0.001,         0.001,         0.000,     1.00,    0,     1,   1,    0,       0
+ M6I                                           |    0.000,    0.000,    0.000,         0.000,         0.000,         0.000,     1.00,    0,     1,   1,    0,       0
+ NDM_BOUNDARY                                  |    0.000,    0.000,    0.000,         0.000,         0.000,         0.000,     1.00,    0,     0,   0,    0,       0
+ DNWI                                          |    0.000,    0.000,    0.000,         0.000,         0.000,         0.000,     0.00,    1,     0,   0,    0,       0
+===============================================
+

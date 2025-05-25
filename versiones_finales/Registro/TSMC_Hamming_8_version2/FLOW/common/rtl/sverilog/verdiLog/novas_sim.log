@@ -1,16 +1,45 @@
-Verdi>restart
-*Verdi* Loading libsscore_vcs202303.so
-FSDB Dumper for VCS, Release Verdi_U-2023.03-SP2, Linux x86_64/64bit, 08/28/2023
-(C) 1996 - 2023 by Synopsys, Inc.
-*Verdi* FSDB WARNING: The FSDB file already exists. Overwriting the FSDB file may crash the programs that are using this file.
-*Verdi* : Create FSDB file '/mnt/vol_NFS_rh003/estudiantes/DANIELA_VARGAS/Version_final/0516/versiones_finales/Registro/TSMC_Hamming_8_version2/FLOW/common/rtl/sverilog/inter.fsdb'
-*Verdi* : Flush all FSDB Files at 0 ps.
-*Verdi* : Enable RPC Server(115068)
-*Verdi* : Flush all FSDB Files at 0 ps.
-Chronologic VCS simulator copyright 1991-2023
+Invoking simulator...
+
+./prueba3 -sml=verdi +UVM_VERDI_TRACE=UVM_AWARE +fsdb+gate=off -ucli2Proc -ucli
+debImport "-i" "-simflow" "-dbdir" "./prueba3.daidir"
+*Verdi* Loading libsscore_vcs202012.so
+
+*Verdi* : Enable RPC Server(3211250)
+
+srcTBInvokeSim
+Chronologic VCS simulator copyright 1991-2020
 Contains Synopsys proprietary information.
-Compiler version U-2023.03-SP2_Full64; Runtime version U-2023.03-SP2_Full64;  May 20 03:03 2025
+Compiler version R-2020.12-SP2_Full64; Runtime version R-2020.12-SP2_Full64;  May 24 21:42 2025
 xterm-256color is Not a valid terminal...
+Verdi>fsdbDumpvars 1 "universal_register_4bit_tb.dut.clk"  +all +trace_process;fsdbDumpvars 1 "universal_register_4bit_tb.dut.rst"  +all +trace_process;fsdbDumpvars 1 "universal_register_4bit_tb.dut.enable"  +all +trace_process;fsdbDumpvars 1 "universal_register_4bit_tb.dut.mode"  +all +trace_process;fsdbDumpvars 1 "universal_register_4bit_tb.dut.load"  +all +trace_process;fsdbDumpvars 1 "universal_register_4bit_tb.dut.serial_in"  +all +trace_process;fsdbDumpvars 1 "universal_register_4bit_tb.dut.parallel_in"  +all +trace_process;fsdbDumpvars 1 "universal_register_4bit_tb.dut.serial_out"  +all +trace_process;fsdbDumpvars 1 "universal_register_4bit_tb.dut.parallel_out"  +all +trace_process;fsdbDumpvars 1 "universal_register_4bit_tb.dut.width"  +all +trace_process;fsdbDumpvars 1 "universal_register_4bit_tb.dut.blocks"  +all +trace_process;fsdbDumpvars 1 "universal_register_4bit_tb.dut.reg_data"  +all +trace_process;fsdbDumpvars 1 "universal_register_4bit_tb.dut.reg_data_next"  +all +trace_process;fsdbDumpvars 1 "universal_register_4bit_tb.dut.corrected_data"  +all +trace_process;fsdbDumpvars 1 "universal_register_4bit_tb.dut.syndrome"  +all +trace_process;fsdbDumpvars 1 "universal_register_4bit_tb.dut.fault"  +all +trace_process;fsdbDumpvars 1 "universal_register_4bit_tb.dut.p1"  +all +trace_process;fsdbDumpvars 1 "universal_register_4bit_tb.dut.p2"  +all +trace_process;fsdbDumpvars 1 "universal_register_4bit_tb.dut.p3"  +all +trace_process;fsdbDumpvars 1 "universal_register_4bit_tb.dut.p1_next"  +all +trace_process;fsdbDumpvars 1 "universal_register_4bit_tb.dut.p2_next"  +all +trace_process;fsdbDumpvars 1 "universal_register_4bit_tb.dut.p3_next"  +all +trace_process;fsdbDumpvars 1 "universal_register_4bit_tb.dut.p1_corr"  +all +trace_process;fsdbDumpvars 1 "universal_register_4bit_tb.dut.p2_corr"  +all +trace_process;fsdbDumpvars 1 "universal_register_4bit_tb.dut.p3_corr"  +all +trace_process;fsdbDumpflush 
+
+*Verdi* : Dumping the signal (universal_register_4bit_tb.dut.clk).
+*Verdi* : Dumping the signal (universal_register_4bit_tb.dut.rst).
+*Verdi* : Dumping the signal (universal_register_4bit_tb.dut.enable).
+*Verdi* : Dumping the signal (universal_register_4bit_tb.dut.mode).
+*Verdi* : Dumping the signal (universal_register_4bit_tb.dut.load).
+*Verdi* : Dumping the signal (universal_register_4bit_tb.dut.serial_in).
+*Verdi* : Dumping the signal (universal_register_4bit_tb.dut.parallel_in).
+*Verdi* : Dumping the signal (universal_register_4bit_tb.dut.serial_out).
+*Verdi* : Dumping the signal (universal_register_4bit_tb.dut.parallel_out).
+*Verdi* : Dumping the signal (universal_register_4bit_tb.dut.width).
+*Verdi* : Dumping the signal (universal_register_4bit_tb.dut.blocks).
+*Verdi* : Dumping the signal (universal_register_4bit_tb.dut.reg_data).
+*Verdi* : Dumping the signal (universal_register_4bit_tb.dut.reg_data_next).
+*Verdi* : Dumping the signal (universal_register_4bit_tb.dut.corrected_data).
+*Verdi* : Dumping the signal (universal_register_4bit_tb.dut.syndrome).
+*Verdi* : Dumping the signal (universal_register_4bit_tb.dut.fault).
+*Verdi* : Dumping the signal (universal_register_4bit_tb.dut.p1).
+*Verdi* : Dumping the signal (universal_register_4bit_tb.dut.p2).
+*Verdi* : Dumping the signal (universal_register_4bit_tb.dut.p3).
+*Verdi* : Dumping the signal (universal_register_4bit_tb.dut.p1_next).
+*Verdi* : Dumping the signal (universal_register_4bit_tb.dut.p2_next).
+*Verdi* : Dumping the signal (universal_register_4bit_tb.dut.p3_next).
+*Verdi* : Dumping the signal (universal_register_4bit_tb.dut.p1_corr).
+*Verdi* : Dumping the signal (universal_register_4bit_tb.dut.p2_corr).
+*Verdi* : Dumping the signal (universal_register_4bit_tb.dut.p3_corr).
+*Verdi* : Flush all FSDB Files at 0 ps.
+
 Verdi>run
 
 Test 1: Modo SISO
@@ -27,6 +56,6 @@ Simulation complete, time is 555000 ps.
 tb_3.sv, 147 :      $finish;
            V C S   S i m u l a t i o n   R e p o r t 
 Time: 555000 ps
-CPU Time:      0.130 seconds;       Data structure size:   0.0Mb
-Tue May 20 03:07:48 2025
+CPU Time:      0.310 seconds;       Data structure size:   0.0Mb
+Sun May 25 00:13:46 2025
 debExit

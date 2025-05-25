@@ -1,0 +1,10 @@
+Invoking simulator...
+
+./prueba_1_a -sml=verdi +UVM_VERDI_TRACE=UVM_AWARE +fsdb+gate=off -ucli2Proc -ucli
+debImport "-i" "-simflow" "-dbdir" "./prueba_1_a.daidir"
+*Verdi* Loading libsscore_vcs202303.so
+
+*Verdi* : Task do NOT Support.
+
+Waiting for Verdi design importing...
+debExit

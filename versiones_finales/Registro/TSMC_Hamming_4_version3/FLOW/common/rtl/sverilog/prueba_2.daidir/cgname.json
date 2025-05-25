@@ -1,0 +1,26 @@
+{
+    "std": [
+        "std",
+        "reYIK",
+        "module",
+        1
+    ],
+    "syndrome_calc": [
+        "syndrome_calc",
+        "bZWRE",
+        "module",
+        2
+    ],
+    "universal_register_4bit_tb": [
+        "universal_register_4bit_tb",
+        "jSmY1",
+        "module",
+        3
+    ],
+    "...MASTER...": [
+        "SIM",
+        "amcQw",
+        "module",
+        4
+    ]
+}

@@ -1,0 +1,86 @@
+********************************************************************
+
+Preprocess Step 11 : Vcell_pass Pairs Iteration   0 (   0 )
+
+ count    shift nameA                 nameB                overlaps shift      VCELL    overlap_area
+       61  _Y   DCAP16HPBWP           DCAP16HPBWP            16  16 (  -2.000) VCELLR1         (1) 1.818
+       55  _Y   DCAP16HPBWP           DCAP16HPBWP            16  16 (   2.000) VCELLR2         (2) 1.818
+      129  X_   DCAP16HPBWP           -                       0   0 (  -3.200) VCELLR3             0.407
+      341  X_   DCAPHPBWP             -                       0   0 (  -0.600) VCELLR4             0.076
+ 3 New Array_id vcells
+
+      132  X_   DCAP4HPBWP            DCAP4HPBWP              0   0  VCELLA5              0.102
+ 1 New Pair vcells
+
+********************************************************************
+
+Preprocess Step 12 : Vcell_pass Pairs Iteration   0 (   1 )
+
+ count    shift nameA                 nameB                overlaps shift      VCELL    overlap_area
+       54  _Y   VCELLR1               -                       9   9 (  -4.000) VCELLR6             2.154
+       44  X_   VCELLR1               -                       0   0 (  -3.200) VCELLR7             0.743
+      166  X_   VCELLR4               -                       0   0 (  -1.200) VCELLR8             0.152
+ 3 New Array_id vcells
+
+       29  _Y   DCAPHPBWP             DCAPHPBWP              16  16  VCELLA9              0.341
+ 1 New Pair vcells
+
+********************************************************************
+
+Preprocess Step 13 : Vcell_pass Pairs Iteration   0 (   2 )
+
+ count    shift nameA                 nameB                overlaps shift      VCELL    overlap_area
+       25  _Y   VCELLR6               -                       4   4 (  -8.000) VCELLR10            2.826
+       21  X_   VCELLR6               -                       0   0 (  -3.200) VCELLR11            1.415
+       82  X_   VCELLR8               -                       0   0 (  -2.400) VCELLR12            0.305
+       26  _Y   VCELLA9               -                       9   9 (  -4.000) VCELLR13            0.404
+ 4 New Array_id vcells
+
+       29  X_   DCAP4HPBWP            VCELLA5                 0   0  VCELLA14             0.102
+ 1 New Pair vcells
+
+********************************************************************
+
+Preprocess Step 14 : Vcell_pass Pairs Iteration   0 (   3 )
+
+ count    shift nameA                 nameB                overlaps shift      VCELL    overlap_area
+       10  _Y   VCELLR10              -                       2   2 ( -16.000) VCELLR15            4.170
+       10  X_   VCELLR10              -                       0   0 (  -3.200) VCELLR16            2.759
+       40  X_   VCELLR12              -                       0   0 (  -4.800) VCELLR17            0.610
+       11  _Y   VCELLR13              -                       4   4 (  -8.000) VCELLR18            0.530
+ 4 New Array_id vcells
+
+       16  X_   OAI22D0HPBWP          DCAP4HPBWP              0   0  VCELLA19             0.102
+ 1 New Pair vcells
+
+********************************************************************
+
+Preprocess Step 15 : Vcell_pass Pairs Iteration   0 (   4 )
+
+ count    shift nameA                 nameB                overlaps shift      VCELL    overlap_area
+       18  X_   VCELLR17              -                       0   0 (  -9.600) VCELLR20            1.220
+ 1 New Array_id vcells
+
+       13  X_   DCAP16HPBWP           DCAP4HPBWP              0   0  VCELLA21             0.102
+ 1 New Pair vcells
+
+********************************************************************
+
+Preprocess Step 16 : Vcell_pass Pairs Iteration   0 (   5 )
+
+ count    shift nameA                 nameB                overlaps shift      VCELL    overlap_area
+ 0 New Array_id vcells
+
+       11  X_   OAI221D0HPBWP         DCAPHPBWP               0   0  VCELLA22             0.076
+ 1 New Pair vcells
+
+********************************************************************
+
+Preprocess Step 17 : Vcell_pass Pairs Iteration   0 (   6 )
+
+ count    shift nameA                 nameB                overlaps shift      VCELL    overlap_area
+ 0 New Array_id vcells
+
+       10  X_   DCAP4HPBWP            DCAPHPBWP               0   0  VCELLA23             0.076
+ 1 New Pair vcells
+

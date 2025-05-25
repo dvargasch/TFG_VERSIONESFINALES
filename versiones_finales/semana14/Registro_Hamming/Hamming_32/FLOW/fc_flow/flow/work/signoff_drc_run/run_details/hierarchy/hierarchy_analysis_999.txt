@@ -1,0 +1,247 @@
+* Description of frequently used terms in hierarchy_analysis files*
+M indicates that the value of that column is in millions
+Hier Plc Count(Hierarchical Placement Count) : Number of unique instances of the cell in another cell (Parent)
+Flat Plc Count(Flat Placement Count)         : Total number of instances of the cell in the layout
+
+Example : 
+                               A                     
+                              / \                   Cell  Hier Plc Count Flat Plc Count 
+                             /   \                     A               1              1 
+                            B     B                    B               2              2 
+                           / \  /  \                   C               2              4 
+                          C   C C   C                
+------------------------------------------------------------------------------------------------------ 
+
+
+* Cells with flat area > 0.01 of top cell *
+Reports cells with flat area > 0.01 of top cell
+
+Flat A(Flat Area) : Total area covered by this cell in the layout(cell area * flat placement count)
+Cell A(Cell Area) : Area of this cell
+Percent of top    : Percentage of area of this cell w.r.t area of top cell
+This table contains 17 entries
+Original table contains 17 entries
+
+ Name                                          | Flat A (mm^2), Cell A (mm^2), Flat Plc Count, Hier Plc Count, Percent of top
+-----------------------------------------------
+ top                                           |         0.006,         0.006,              1,              1,       100.00 %
+ SDFCND0HPBWP                                  |         0.001,         0.000,             38,             38,         9.02 %
+ VCELLA2                                       |         0.000,         0.000,             23,             23,         5.63 %
+ VCELLR10                                      |         0.000,         0.000,             14,             14,         5.14 %
+ SDFCNQD0HPBWP                                 |         0.000,         0.000,             18,             18,         4.00 %
+ MUX2ND0HPBWP                                  |         0.000,         0.000,             43,             43,         2.63 %
+ XNR3D0HPBWP                                   |         0.000,         0.000,             20,             20,         2.60 %
+ VCELLA6                                       |         0.000,         0.000,             38,             38,         2.33 %
+ DCAP4HPBWP                                    |         0.000,         0.000,             70,             70,         2.14 %
+ VCELLA9                                       |         0.000,         0.000,             11,             11,         2.02 %
+ AO22D0HPBWP                                   |         0.000,         0.000,             31,             31,         1.90 %
+ VCELLA11                                      |         0.000,         0.000,             11,             11,         1.68 %
+ AOI22D0HPBWP                                  |         0.000,         0.000,             31,             31,         1.66 %
+ DCAP16HPBWP                                   |         0.000,         0.000,             11,             11,         1.35 %
+ OAI22D0HPBWP                                  |         0.000,         0.000,             25,             25,         1.34 %
+ IOA22D0HPBWP                                  |         0.000,         0.000,             19,             19,         1.31 %
+ XOR3D0HPBWP                                   |         0.000,         0.000,              9,              9,         1.17 %
+===============================================
+
+* Large-Area cells and child area ratio *
+This table reports cells with large areas and ratio of its area with total area covered by its children
+
+Num Inst(Number of instances) : Total Number of instances of the cell
+Child A(Child Area)           : Total area covered by all the children of the cell
+Pct of parent(Percent of area): Percentage of total area covered by its childern w.r.t area of this cell
+This table contains 17 entries
+Original table contains 17 entries
+
+ Name                                          | Flat A (mm^2), Cell A (mm^2), Num Inst (M), Child A (mm^2), Pct of parent
+-----------------------------------------------
+ top                                           |         0.006,         0.006,        0.001,         0.003,       54.75 %
+ SDFCND0HPBWP                                  |         0.001,         0.000,        0.000,         0.000,        0.00 %
+ VCELLA2                                       |         0.000,         0.000,        0.000,         0.000,        0.00 %
+ VCELLR10                                      |         0.000,         0.000,        0.000,         0.000,        0.00 %
+ SDFCNQD0HPBWP                                 |         0.000,         0.000,        0.000,         0.000,        0.00 %
+ MUX2ND0HPBWP                                  |         0.000,         0.000,        0.000,         0.000,        0.00 %
+ XNR3D0HPBWP                                   |         0.000,         0.000,        0.000,         0.000,        0.00 %
+ VCELLA6                                       |         0.000,         0.000,        0.000,         0.000,        0.00 %
+ DCAP4HPBWP                                    |         0.000,         0.000,        0.000,         0.000,        0.00 %
+ VCELLA9                                       |         0.000,         0.000,        0.000,         0.000,        0.00 %
+ AO22D0HPBWP                                   |         0.000,         0.000,        0.000,         0.000,        0.00 %
+ VCELLA11                                      |         0.000,         0.000,        0.000,         0.000,        0.00 %
+ AOI22D0HPBWP                                  |         0.000,         0.000,        0.000,         0.000,        0.00 %
+ DCAP16HPBWP                                   |         0.000,         0.000,        0.000,         0.000,        0.00 %
+ OAI22D0HPBWP                                  |         0.000,         0.000,        0.000,         0.000,        0.00 %
+ IOA22D0HPBWP                                  |         0.000,         0.000,        0.000,         0.000,        0.00 %
+ XOR3D0HPBWP                                   |         0.000,         0.000,        0.000,         0.000,        0.00 %
+===============================================
+
+* Exploded Cell Information *
+Displays information of exploded cells
+
+Parent cell           : Name of the parent cell the cell has exploded into
+Exploded Inst Count   : Total number of instances of the cell that has expldoed to the parent cell
+Parent Flat Plc Count : Parent cell flat placement count
+Parent Hier Plc Count : Parent cell hierarchical placement count
+This table contains 30 entries
+Original table contains 30 entries
+
+ Exploded Cell                                 | Parent Cell                                   | Exploded Inst Count, Parent Flat Plc Count, Parent Hier Plc Count
+----------------------------------------------- -----------------------------------------------
+ FILL1HPBWP                                    | top                                           |                 282,                     1,                     1
+ TAPCELLHPBWP                                  | top                                           |                  37,                     1,                     1
+ CKND2D0HPBWP                                  | top                                           |                  26,                     1,                     1
+ DCAPHPBWP                                     | VCELLR10                                      |                  16,                    14,                    14
+ CKND0HPBWP                                    | top                                           |                  13,                     1,                     1
+ DCAPHPBWP                                     | VCELLR3                                       |                   4,                     2,                     2
+ DCAPHPBWP                                     | VCELLR8                                       |                   4,                     5,                     5
+ DCAP16HPBWP                                   | VCELLA2                                       |                   2,                    23,                    23
+ DCAP4HPBWP                                    | VCELLA6                                       |                   2,                    38,                    38
+ DCAP4HPBWP                                    | VCELLA9                                       |                   2,                    11,                    11
+ DCAPHPBWP                                     | VCELLR1                                       |                   2,                     6,                     6
+ DCAPHPBWP                                     | VCELL_HOLD_VCELLR5_1R                         |                   2,                     9,                     9
+ DCAPHPBWP                                     | top                                           |                   2,                     1,                     1
+ DCAP16HPBWP                                   | VCELLA11                                      |                   1,                    11,                    11
+ DCAP4HPBWP                                    | VCELLA11                                      |                   1,                    11,                    11
+ DCAP16HPBWP                                   | VCELLA9                                       |                   1,                    11,                    11
+ AO32D0HPBWP                                   | top                                           |                   1,                     1,                     1
+ AOI221D0HPBWP                                 | top                                           |                   1,                     1,                     1
+ BUFFD3HPBWP                                   | top                                           |                   1,                     1,                     1
+ CKAN2D2HPBWP                                  | top                                           |                   1,                     1,                     1
+ CKAN2D4HPBWP                                  | top                                           |                   1,                     1,                     1
+ CKBD6HPBWP                                    | top                                           |                   1,                     1,                     1
+ CKLNQD1HPBWP                                  | top                                           |                   1,                     1,                     1
+ CKND2HPBWP                                    | top                                           |                   1,                     1,                     1
+ IND3D0HPBWP                                   | top                                           |                   1,                     1,                     1
+ INR2D0HPBWP                                   | top                                           |                   1,                     1,                     1
+ INR3D0HPBWP                                   | top                                           |                   1,                     1,                     1
+ INVD2HPBWP                                    | top                                           |                   1,                     1,                     1
+ ND4D0HPBWP                                    | top                                           |                   1,                     1,                     1
+ OR2D2HPBWP                                    | top                                           |                   1,                     1,                     1
+=============================================== ===============================================
+
+* Layer Report with Estimated Data *
+Reports information of layers present in the layout
+
+Trap        : Number of hierarchical trapezoids in the layer
+Poly        : Number of hierarchical polygons in the layer
+Text        : Number of hierarchical text primitives in the layer
+Flat Trap   : Number of flat trapezoids 
+Flat Poly   : Number of flat polygons
+Flat Text   : Number of flat text primitives 
+Trap F/H    : Ratio of flat and hierarchical placements of the trapezoids
+Base, Metal, Via, Fill, Colored : Indicates layer intent
+This table contains 14 entries
+Original table contains 14 entries
+
+ Name                                          | Trap (M), Poly (M), Text (M), Flat Trap (M), Flat Poly (M), Flat Text (M), Trap F/H, Base, Metal, Via, Fill, Colored
+-----------------------------------------------
+ VIA1I                                         |    0.008,    0.008,    0.000,         0.008,         0.008,         0.000,     1.00,    0,     1,   1,    0,       0
+ M2I                                           |    0.007,    0.007,    0.000,         0.007,         0.007,         0.000,     1.00,    0,     1,   1,    0,       0
+ VIA2I                                         |    0.007,    0.007,    0.000,         0.007,         0.007,         0.000,     1.00,    0,     1,   1,    0,       0
+ M1I                                           |    0.006,    0.004,    0.000,         0.025,         0.016,         0.000,     4.59,    0,     1,   0,    0,       0
+ M3I                                           |    0.005,    0.005,    0.000,         0.005,         0.005,         0.000,     1.00,    0,     1,   1,    0,       0
+ M4I                                           |    0.004,    0.004,    0.000,         0.004,         0.004,         0.000,     1.00,    0,     1,   1,    0,       0
+ VIA3I                                         |    0.003,    0.003,    0.000,         0.003,         0.003,         0.000,     1.00,    0,     1,   1,    0,       0
+ VIA4I                                         |    0.002,    0.002,    0.000,         0.002,         0.002,         0.000,     1.00,    0,     1,   1,    0,       0
+ M5I                                           |    0.002,    0.002,    0.000,         0.002,         0.002,         0.000,     1.00,    0,     1,   1,    0,       0
+ COI                                           |    0.002,    0.002,    0.000,         0.017,         0.017,         0.000,     9.72,    1,     0,   0,    0,       0
+ VIA5I                                         |    0.000,    0.000,    0.000,         0.000,         0.000,         0.000,     1.00,    0,     1,   1,    0,       0
+ M6I                                           |    0.000,    0.000,    0.000,         0.000,         0.000,         0.000,     1.00,    0,     1,   1,    0,       0
+ NDM_BOUNDARY                                  |    0.000,    0.000,    0.000,         0.000,         0.000,         0.000,     1.00,    0,     0,   0,    0,       0
+ DNWI                                          |    0.000,    0.000,    0.000,         0.000,         0.000,         0.000,     0.00,    1,     0,   0,    0,       0
+===============================================
+
+* Top cells pushing ref->ref data *
+Reports cells sorted on count of pushed references
+Cell Snum           : Indicates an unique structure number to identify the cell
+Reference Count     : Indicates the number of references pushed by the cell
+This table contains 37 entries
+Original table contains 37 entries
+
+ Name                                          |    Reference Count,     Cell Snum
+-----------------------------------------------
+ SDFCND0HPBWP                                  |                234,             2
+ DCAP4HPBWP                                    |                171,            27
+ MUX2ND0HPBWP                                  |                122,             1
+ VCELLA6                                       |                113,            32
+ OAI221D0HPBWP                                 |                 97,             7
+ SDFCNQD0HPBWP                                 |                 94,             4
+ VCELLA2                                       |                 90,            30
+ XNR3D0HPBWP                                   |                 89,            12
+ AO22D0HPBWP                                   |                 88,             6
+ AOI22D0HPBWP                                  |                 86,            18
+ OAI22D0HPBWP                                  |                 76,             3
+ DCAPHPBWP                                     |                 74,            28
+ IOA22D0HPBWP                                  |                 63,            10
+ VCELLA9                                       |                 58,            34
+ NR2D0HPBWP                                    |                 55,            17
+ IND2D0HPBWP                                   |                 54,            15
+ MAOI22D0HPBWP                                 |                 44,            20
+ DCAP16HPBWP                                   |                 44,            23
+ XOR3D0HPBWP                                   |                 43,            19
+ VCELLA11                                      |                 42,            36
+ MOAI22D0HPBWP                                 |                 29,             9
+ VCELLR10                                      |                 29,            35
+ TIELHPBWP                                     |                 25,            16
+ ND3D0HPBWP                                    |                 22,            11
+ MUX2D0HPBWP                                   |                 22,            24
+ VCELLR8                                       |                 22,            33
+ NR3D0HPBWP                                    |                 19,             5
+ MUX3ND0HPBWP                                  |                 17,             8
+ VCELLR1                                       |                 13,            29
+ IAO22D0HPBWP                                  |                 12,            22
+ XNR4D0HPBWP                                   |                 11,            26
+ VCELL_HOLD_VCELLR5_1R                         |                 11,            37
+ CKAN2D0HPBWP                                  |                  7,            14
+ CKBD2HPBWP                                    |                  7,            21
+ NR4D0HPBWP                                    |                  7,            25
+ BUFFD1HPBWP                                   |                  6,            13
+ VCELLR3                                       |                  4,            31
+===============================================
+
+* Top cells accepting ref->ref data *
+Reports cells sorted on count of accepted references
+Cell Snum           : Indicates an unique structure number to identify the cell
+Reference Count     : Indicates the number of references accepted by the cell
+This table contains 37 entries
+Original table contains 37 entries
+
+ Name                                          |    Reference Count,     Cell Snum
+-----------------------------------------------
+ SDFCND0HPBWP                                  |                234,             2
+ DCAP4HPBWP                                    |                171,            27
+ MUX2ND0HPBWP                                  |                122,             1
+ VCELLA6                                       |                113,            32
+ OAI221D0HPBWP                                 |                 97,             7
+ SDFCNQD0HPBWP                                 |                 94,             4
+ VCELLA2                                       |                 90,            30
+ XNR3D0HPBWP                                   |                 89,            12
+ AO22D0HPBWP                                   |                 88,             6
+ AOI22D0HPBWP                                  |                 86,            18
+ OAI22D0HPBWP                                  |                 76,             3
+ DCAPHPBWP                                     |                 74,            28
+ IOA22D0HPBWP                                  |                 63,            10
+ VCELLA9                                       |                 58,            34
+ NR2D0HPBWP                                    |                 55,            17
+ IND2D0HPBWP                                   |                 54,            15
+ MAOI22D0HPBWP                                 |                 44,            20
+ DCAP16HPBWP                                   |                 44,            23
+ XOR3D0HPBWP                                   |                 43,            19
+ VCELLA11                                      |                 42,            36
+ MOAI22D0HPBWP                                 |                 29,             9
+ VCELLR10                                      |                 29,            35
+ TIELHPBWP                                     |                 25,            16
+ ND3D0HPBWP                                    |                 22,            11
+ MUX2D0HPBWP                                   |                 22,            24
+ VCELLR8                                       |                 22,            33
+ NR3D0HPBWP                                    |                 19,             5
+ MUX3ND0HPBWP                                  |                 17,             8
+ VCELLR1                                       |                 13,            29
+ IAO22D0HPBWP                                  |                 12,            22
+ XNR4D0HPBWP                                   |                 11,            26
+ VCELL_HOLD_VCELLR5_1R                         |                 11,            37
+ CKAN2D0HPBWP                                  |                  7,            14
+ CKBD2HPBWP                                    |                  7,            21
+ NR4D0HPBWP                                    |                  7,            25
+ BUFFD1HPBWP                                   |                  6,            13
+ VCELLR3                                       |                  4,            31
+===============================================
+

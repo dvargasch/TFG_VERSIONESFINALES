@@ -1,0 +1,20 @@
+*design* DebussyLib (btIdent Verdi_R-2020.12-SP2)
+Command arguments:  -elab  ./prueba_1_a.daidir/kdb.elab++ 
+*design* DebussyLib (btIdent Verdi_R-2020.12-SP2)
+
+*Error* Failed to open the cell (universal_register_4bit_tb hdl) in library work.
+
+
+
+*Error* Failed to open the cell (top hdl) in library work.
+
+
+
+*Error* Failed to open the cell (syndrome_calc hdl) in library work.
+
+
+
+*Error* Failed to open the cell (std hdl) in library work.
+
+
+Total	4 error(s),   0 warning(s)

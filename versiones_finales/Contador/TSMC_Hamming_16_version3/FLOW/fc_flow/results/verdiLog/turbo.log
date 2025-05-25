@@ -1,3 +1,3 @@
-Command Line: /mnt/vol_synopsys2023/synopsys/verdi/U-2023.03-SP2/platform/LINUXAMD64/bin/Novas -i -simflow -simBin ./results -simOpt  
+Command Line: /mnt/vol_NFS_rh003/tools/verdi/R-2020.12-SP2/platform/LINUXAMD64/bin/Novas -i -simflow -simBin ./prueba -simOpt  
 uname(Linux redhat003 4.18.0-553.51.1.el8_10.x86_64 #1 SMP Fri Apr 25 00:55:37 EDT 2025 x86_64)
-au time 1671.755500 20.691576 14.554786 delta 263340032 263340032 total 840192000 840192000
+au time 6008.496810 148.302700 64.204502 delta 359727104 359727104 total 848375808 848375808

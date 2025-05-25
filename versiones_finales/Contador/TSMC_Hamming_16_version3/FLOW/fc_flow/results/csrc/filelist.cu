@@ -1,20 +1,19 @@
+PIC_LD=ld
 LDVERSION= $(shell $(PIC_LD) -v | grep -q 2.30 ;echo $$?)
 ifeq ($(LDVERSION), 0)
      LD_NORELAX_FLAG= --no-relax
 endif
 
 ARCHIVE_OBJS=
-ARCHIVE_OBJS += _65721_archive_1.so
-_65721_archive_1.so : archive.0/_65721_archive_1.a
+ARCHIVE_OBJS += _1146510_archive_1.so
+_1146510_archive_1.so : archive.1/_1146510_archive_1.a
 	@$(AR) -s $<
-	@$(PIC_LD) -shared  -Bsymbolic $(LD_NORELAX_FLAG)  -o .//../results.daidir//_65721_archive_1.so --whole-archive $< --no-whole-archive
+	@$(PIC_LD) -shared  -Bsymbolic $(LD_NORELAX_FLAG)  -o .//../prueba.daidir//_1146510_archive_1.so --whole-archive $< --no-whole-archive
 	@rm -f $@
-	@ln -sf .//../results.daidir//_65721_archive_1.so $@
+	@ln -sf .//../prueba.daidir//_1146510_archive_1.so $@
 
 
 
-
-VCS_CU_ARC_OBJS = 
 
 
 O0_OBJS =
@@ -25,11 +24,9 @@ $(O0_OBJS) : %.o: %.c
 
 %.o: %.c
 	$(CC_CG) $(CFLAGS_CG) -c -o $@ $<
-
 CU_UDP_OBJS = \
 objs/udps/JvR1L.o objs/udps/m6zeg.o objs/udps/df3ii.o objs/udps/HWVx0.o 
 
-CU_UDP_OBJS += 
 CU_LVL_OBJS = \
 SIM_l.o 
 

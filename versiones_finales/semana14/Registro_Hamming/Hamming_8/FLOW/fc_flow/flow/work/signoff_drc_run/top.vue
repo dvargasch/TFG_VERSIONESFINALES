@@ -1,0 +1,15 @@
+ICV_HOME_DIR      = /mnt/vol_synopsys2023/synopsys/icvalidator/U-2022.12-SP4
+ICV_COORDS_BIT    = 32
+WORKING_DIR       = .
+INLIB             = top_lib
+INLIB_PATH        = /mnt/vol_NFS_rh003/estudiantes/DANIELA_VARGAS/Version_final/0516/versiones_finales/semana14/Registro_Hamming/Hamming_8/FLOW/fc_flow/flow/work
+BLOCK             = top
+CREATE_VUE_OUTPUT = TRUE
+PYDB_PATH         = run_details/pydb
+RUN_DETAILS_DIR   = run_details
+NDB_PATH          = run_details/.ndb
+REPORT_LAYOUT_ERRORS = HIERARCHICAL
+FORMAT            = NDM
+SCHEMATIC_FORMAT  = ICV
+GROUP_PATH        = run_details/group
+RUNSET_FILE_NAME  = ICVLN65S_9M_6X2Z.26_1a

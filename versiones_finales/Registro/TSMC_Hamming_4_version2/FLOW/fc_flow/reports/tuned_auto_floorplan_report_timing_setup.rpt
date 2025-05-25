@@ -7,11 +7,11 @@ Report : timing
         -report_by design
 Design : top
 Version: U-2022.12-SP6
-Date   : Tue May 20 15:52:08 2025
+Date   : Wed May 21 15:18:17 2025
 ****************************************
 
   Startpoint: reg_data_reg[0] (rising edge-triggered flip-flop clocked by SYS_CLK)
-  Endpoint: parallel_out[2] (output port clocked by SYS_CLK)
+  Endpoint: parallel_out[0] (output port clocked by SYS_CLK)
   Mode: mode1
   Corner: cornerSS
   Scenario: scenarioSS
@@ -26,11 +26,11 @@ Date   : Tue May 20 15:52:08 2025
   reg_data_reg[0]/CP (SDFCNQD0HPBWP)               0.00      0.00 r
   reg_data_reg[0]/Q (SDFCNQD0HPBWP)                0.41      0.41 r
   ctmi_159/ZN (MAOI22D0HPBWP)                      0.22      0.63 r
-  ctmi_161/ZN (XNR3D0HPBWP)                        0.42      1.05 r
-  ctmi_165/ZN (NR2XD0HPBWP)                        0.10      1.15 f
-  ctmi_164/ZN (CKND2D1HPBWP)                       0.07      1.23 r
-  ctmi_162/ZN (MUX2ND0HPBWP)                       0.15      1.37 f
-  parallel_out[2] (out)                            0.00      1.37 f
+  ctmi_161/ZN (XNR3D0HPBWP)                        0.41      1.04 r
+  ctmi_165/ZN (NR2XD0HPBWP)                        0.12      1.16 f
+  ctmi_208/ZN (ND2D1HPBWP)                         0.06      1.22 r
+  ctmi_207/ZN (MOAI22D0HPBWP)                      0.14      1.37 r
+  parallel_out[0] (out)                            0.00      1.37 r
   data arrival time                                          1.37
 
   clock SYS_CLK (rise edge)                       10.00     10.00

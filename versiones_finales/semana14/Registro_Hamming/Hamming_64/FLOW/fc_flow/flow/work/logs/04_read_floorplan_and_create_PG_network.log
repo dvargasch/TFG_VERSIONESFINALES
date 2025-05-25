@@ -1,0 +1,1241 @@
+
+
+
+                              Fusion Compiler (TM)
+
+             Version U-2022.12-SP6 for linux64 - Aug 25, 2023 -SLE
+
+                    Copyright (c) 1988 - 2023 Synopsys, Inc.
+   This software and the associated documentation are proprietary to Synopsys,
+ Inc. This software may only be used in accordance with the terms and conditions
+ of a written license agreement with Synopsys, Inc. All other use, reproduction,
+   or distribution of this software is strictly prohibited.  Licensed Products
+     communicate with Synopsys servers for the purpose of providing software
+    updates, detecting software piracy and verifying that customers are using
+    Licensed Products in conformity with the applicable License Key for such
+  Licensed Products. Synopsys will use information gathered in connection with
+    this process to deliver software updates and pursue software pirates and
+                                   infringers.
+
+ Inclusivity & Diversity - Visit SolvNetPlus to read the "Synopsys Statement on
+            Inclusivity and Diversity" (Refer to article 000036315 at
+                        https://solvnetplus.synopsys.com)
+ 
+Information: Term was not able to be set up using xterm-256color . Using "xterm" by default instead. (CLE-10)
+##################################################################
+#####          Read Floorplan and create PG network          #####
+##################################################################
+# Sourcing  setup script
+source -echo ../../setup/icc2_dp_setup.tcl
+set CURR_DIR  [pwd]
+set PROY_HOME ${CURR_DIR}/../..;
+set TSMC_HOME "/mnt/vol_NFS_rh003/profesores/pmendoza/KITS/TSMCHOME";
+############################
+## RTL file name and type ##
+############################
+set DESIGN_NAME "top"
+set HDL "sverilog"
+set DESIGN_LIBRARY "${DESIGN_NAME}_lib"
+#################################
+set time [get_date]
+puts "Command Start at: ${time}"
+Command Start at: Sun May 25 01:36:33 2025
+####################################
+### 1. Variables for design prep ###
+####################################
+### SDC File
+set SDCNAME "${DESIGN_NAME}"
+### Ref Libs
+set NDM_LIBS_PATH "../../setup/ndm_libraries/ndm/"
+set STD_TIME_FRAME "../../setup/ndm_libraries/ndm/tcbn65lphpbwp_1.ndm"
+set REFERENCE_LIBRARY "{${STD_TIME_FRAME} }"
+set REFERENCE_LIBRARY 		[list   ${NDM_LIBS_PATH}/tcbn65lphpbwpcghvt_1_physical_only.ndm \
+									${NDM_LIBS_PATH}/tcbn65lphpbwp_1_physical_only.ndm \
+									${NDM_LIBS_PATH}/tpdn65lpgv2od3_sd_physical_only.ndm \
+									${NDM_LIBS_PATH}/tpfn65lpgv2od3_physical_only.ndm \
+									${NDM_LIBS_PATH}/tpbn65v_physical_only.ndm \
+									${NDM_LIBS_PATH}/tpin65gv_physical_only.ndm \
+									${NDM_LIBS_PATH}/tcbn65lphpbwpcghvt_1.ndm \
+									${NDM_LIBS_PATH}/tcbn65lphpbwp_1.ndm \
+									${NDM_LIBS_PATH}/tpdn65lpgv2od3_sdml.ndm \
+									${NDM_LIBS_PATH}/tpfn65lpgv2od3ml.ndm \
+									${NDM_LIBS_PATH}/ts1n65lpa2048x32m4_140a_5m.ndm ];
+################################
+### 2. Tech files and setup ####
+################################
+set TECH_FILE "${TSMC_HOME}/digital/Back_End/milkyway/tcbn65lphpbwp_140a/techfiles/tsmcn65_9lmT2.tf"
+set TECH_LIB ""
+#######################
+## Layers and widths ##
+#######################
+set STANDARD_CELLS_WIDTH 0.42
+set MAX_ROUTING_LAYER   "M6"
+set MIN_ROUTING_LAYER   "M2"
+set TARGET_SKEW         0.1
+set RTL_PATH		"${CURR_DIR}/../../../common/rtl"
+set SDC_PATH		"${CURR_DIR}/../../../common/sdc"
+set SDC_FILE		"${CURR_DIR}/${DESIGN_NAME}.sdc"
+####################################################
+set VERILOG_PATH	"${RTL_PATH}/verilog"
+set SVERILOG_PATH	"${RTL_PATH}/sverilog" 
+set VHDL_PATH		"${RTL_PATH}/vhdl"
+set RESULTS_PATH	"${CURR_DIR}/../../results"
+set REPORTS_PATH	"${CURR_DIR}/../../reports"
+###########
+## Paths ##
+###########
+set DRC_RUNSET_FILE	"${CURR_DIR}/../../DRC/ICVLN65S_9M_6X2Z.26_1a"
+set GDS_MAP_FILE        "${TSMC_HOME}/digital/Back_End/milkyway/tcbn65lphpbwpcg_200a/gdsout_6X2Z.map"
+set ICV                "-I /mnt/vol_synopsys2023/pdks/xfab/design/xkit/xh018/synopsys/v9_0/ICValidator/v9_0_2"
+####################
+## Auto-floorplan ##
+####################
+set CONTROL_AUTO           "core"
+# Percentage of cell area usage
+set CORE_UTILIZATION_AUTO  0.5
+# Move the nucleus 10 units
+set CORE_OFFSET_AUTO       10
+# Core shape
+set SHAPE_AUTO             "R"
+# Aspect ratio
+set SIDE_RATIO_AUTO        {1 1.5}
+# Flip the first row of the cell
+set FFR_AUTO               "true"
+# Using the M3 layer for pins
+set LAYER_PIN_AUTO         {M3}
+# Allows pins on all sides of the cell
+set SIDES_AUTO             {1 2 3 4}
+# Distance between pins
+set PIN_SPACE_AUTO         4
+######################
+## Floorplan manual ##
+######################
+set CONTROL_M            "core"
+# Percentage of cell area usage
+set CORE_UTILIZATION_M   0.5
+# Move the nucleus 10 units 
+set CORE_OFFSET_M        10
+# Core shape
+set SHAPE_M              "R"
+# Aspect ratio 
+set SIDE_RATIO_M         {1.5 1}
+# Flip the first row of the cell
+set FFR_M                "true" 
+# Using the M3 layer for pins
+set LAYER_PIN_M          {M3}
+# Allows pins on all sides of the cell
+set SIDES_M              {1 2 3 4}
+# Distance between pins
+set PIN_SPACE_M          4 
+#########################
+## Configure MultiCore ##
+#########################
+set_host_options -name Oculi -max_cores 2
+#report_host_options
+source ${CURR_DIR}/../../setup/utilities.tcl
+set UNSELECT_RULES "PO.DN.2* OD.DN.2* M*.DN.1* CSR.R.1* DM*.R.1*"
+PO.DN.2* OD.DN.2* M*.DN.1* CSR.R.1* DM*.R.1*
+#### ----- Open lib and create new block from previous script (01_initial_syn.tcl) ----- ####
+# Open the design library
+open_lib ${DESIGN_LIBRARY}
+Information: Loading library file '/mnt/vol_NFS_rh003/estudiantes/DANIELA_VARGAS/Version_final/0516/versiones_finales/semana14/Registro_Hamming/Hamming_64/FLOW/fc_flow/flow/work/top_lib' (FILE-007)
+Information: Loading library file '/mnt/vol_NFS_rh003/estudiantes/DANIELA_VARGAS/Version_final/0516/versiones_finales/semana14/Registro_Hamming/Hamming_64/FLOW/fc_flow/setup/ndm_libraries/ndm/tcbn65lphpbwpcghvt_1_physical_only.ndm' (FILE-007)
+Information: Loading library file '/mnt/vol_NFS_rh003/estudiantes/DANIELA_VARGAS/Version_final/0516/versiones_finales/semana14/Registro_Hamming/Hamming_64/FLOW/fc_flow/setup/ndm_libraries/ndm/tcbn65lphpbwp_1_physical_only.ndm' (FILE-007)
+Information: Loading library file '/mnt/vol_NFS_rh003/estudiantes/DANIELA_VARGAS/Version_final/0516/versiones_finales/semana14/Registro_Hamming/Hamming_64/FLOW/fc_flow/setup/ndm_libraries/ndm/tpdn65lpgv2od3_sd_physical_only.ndm' (FILE-007)
+Information: Loading library file '/mnt/vol_NFS_rh003/estudiantes/DANIELA_VARGAS/Version_final/0516/versiones_finales/semana14/Registro_Hamming/Hamming_64/FLOW/fc_flow/setup/ndm_libraries/ndm/tpfn65lpgv2od3_physical_only.ndm' (FILE-007)
+Information: Loading library file '/mnt/vol_NFS_rh003/estudiantes/DANIELA_VARGAS/Version_final/0516/versiones_finales/semana14/Registro_Hamming/Hamming_64/FLOW/fc_flow/setup/ndm_libraries/ndm/tpbn65v_physical_only.ndm' (FILE-007)
+Information: Loading library file '/mnt/vol_NFS_rh003/estudiantes/DANIELA_VARGAS/Version_final/0516/versiones_finales/semana14/Registro_Hamming/Hamming_64/FLOW/fc_flow/setup/ndm_libraries/ndm/tpin65gv_physical_only.ndm' (FILE-007)
+Information: Loading library file '/mnt/vol_NFS_rh003/estudiantes/DANIELA_VARGAS/Version_final/0516/versiones_finales/semana14/Registro_Hamming/Hamming_64/FLOW/fc_flow/setup/ndm_libraries/ndm/tcbn65lphpbwpcghvt_1.ndm' (FILE-007)
+Information: Loading library file '/mnt/vol_NFS_rh003/estudiantes/DANIELA_VARGAS/Version_final/0516/versiones_finales/semana14/Registro_Hamming/Hamming_64/FLOW/fc_flow/setup/ndm_libraries/ndm/tcbn65lphpbwp_1.ndm' (FILE-007)
+Information: Loading library file '/mnt/vol_NFS_rh003/estudiantes/DANIELA_VARGAS/Version_final/0516/versiones_finales/semana14/Registro_Hamming/Hamming_64/FLOW/fc_flow/setup/ndm_libraries/ndm/tpdn65lpgv2od3_sdml.ndm' (FILE-007)
+Information: Loading library file '/mnt/vol_NFS_rh003/estudiantes/DANIELA_VARGAS/Version_final/0516/versiones_finales/semana14/Registro_Hamming/Hamming_64/FLOW/fc_flow/setup/ndm_libraries/ndm/tpfn65lpgv2od3ml.ndm' (FILE-007)
+Information: Loading library file '/mnt/vol_NFS_rh003/estudiantes/DANIELA_VARGAS/Version_final/0516/versiones_finales/semana14/Registro_Hamming/Hamming_64/FLOW/fc_flow/setup/ndm_libraries/ndm/ts1n65lpa2048x32m4_140a_5m.ndm' (FILE-007)
+Warning: Technology used to create frame-view and current technology have inconsistency: Fat table contents are different. (FRAM-054)
+Warning: Technology 'tcbn65lphpbwpcghvt.tf' used for frame-view creation in library 'tcbn65lphpbwpcghvt_1_physical_only', is inconsistent with the current technology 'tsmcn65_9lmT2.tf' of library 'top_lib'. Please run derive_design_level_via_regions to generate up-do-date via region in the design library. (NDM-102)
+Warning: Technology used to create frame-view and current technology have inconsistency: Fat table contents are different. (FRAM-054)
+Warning: Technology 'tpdn65lpgv2od3_sd.tf' used for frame-view creation in library 'tpdn65lpgv2od3_sd_physical_only', is inconsistent with the current technology 'tsmcn65_9lmT2.tf' of library 'top_lib'. Please run derive_design_level_via_regions to generate up-do-date via region in the design library. (NDM-102)
+Warning: Technology used to create frame-view and current technology have inconsistency: Fat table contents are different. (FRAM-054)
+Warning: Technology 'tpfn65lpgv2od3.tf' used for frame-view creation in library 'tpfn65lpgv2od3_physical_only', is inconsistent with the current technology 'tsmcn65_9lmT2.tf' of library 'top_lib'. Please run derive_design_level_via_regions to generate up-do-date via region in the design library. (NDM-102)
+Warning: Technology used to create frame-view and current technology have inconsistency: Fat table contents are different. (FRAM-054)
+Warning: Technology 'tcbn65lphpbwpcghvt.tf' used for frame-view creation in library 'tcbn65lphpbwpcghvt_1', is inconsistent with the current technology 'tsmcn65_9lmT2.tf' of library 'top_lib'. Please run derive_design_level_via_regions to generate up-do-date via region in the design library. (NDM-102)
+Warning: Technology used to create frame-view and current technology have inconsistency: Fat table contents are different. (FRAM-054)
+Warning: Technology 'tpdn65lpgv2od3_sd.tf' used for frame-view creation in library 'tpdn65lpgv2od3_sdml', is inconsistent with the current technology 'tsmcn65_9lmT2.tf' of library 'top_lib'. Please run derive_design_level_via_regions to generate up-do-date via region in the design library. (NDM-102)
+Warning: Technology used to create frame-view and current technology have inconsistency: Fat table contents are different. (FRAM-054)
+Warning: Technology 'tpfn65lpgv2od3.tf' used for frame-view creation in library 'tpfn65lpgv2od3ml', is inconsistent with the current technology 'tsmcn65_9lmT2.tf' of library 'top_lib'. Please run derive_design_level_via_regions to generate up-do-date via region in the design library. (NDM-102)
+{top_lib}
+# Copy and open block
+copy_block -from ${DESIGN_NAME}/rtl_read -to ${DESIGN_NAME}/final_floorplan
+Information: User units loaded from library 'tcbn65lphpbwpcghvt_1' (LNK-040)
+{top_lib:top/final_floorplan.design}
+open_block ${DESIGN_NAME}/final_floorplan
+Information: Incrementing open_count of block 'top_lib:top/final_floorplan.design' to 2. (DES-021)
+{top_lib:top/final_floorplan.design}
+#### ----- Sourcing tech, sdc and  MCMM setup ----- ####
+#LOAD PARASITIC INFORMATION
+read_parasitic_tech -name {RC_Worst} -tlup [list ${TSMC_HOME}/digital/Back_End/milkyway/tcbn65lphpbwp_140a/techfiles/tluplus/cln65lp_1p09m+alrdl_cworst_top2.tluplus] -layermap [list ${TSMC_HOME}/digital/Back_End/milkyway/tcbn65lphpbwp_140a/techfiles/tluplus/star.map_9M]
+Warning: Layer mapping file warning. Tech layer 'metal1' mapped in layer mapping file is mask name of 'M1'. (TLUP-011)
+Warning: Layer mapping file warning. Tech layer 'metal10' mapped in layer mapping file is mask name of 'AP'. (TLUP-011)
+Warning: Layer mapping file warning. Tech layer 'metal2' mapped in layer mapping file is mask name of 'M2'. (TLUP-011)
+Warning: Layer mapping file warning. Tech layer 'metal3' mapped in layer mapping file is mask name of 'M3'. (TLUP-011)
+Warning: Layer mapping file warning. Tech layer 'metal4' mapped in layer mapping file is mask name of 'M4'. (TLUP-011)
+Warning: Layer mapping file warning. Tech layer 'metal5' mapped in layer mapping file is mask name of 'M5'. (TLUP-011)
+Warning: Layer mapping file warning. Tech layer 'metal6' mapped in layer mapping file is mask name of 'M6'. (TLUP-011)
+Warning: Layer mapping file warning. Tech layer 'metal7' mapped in layer mapping file is mask name of 'M7'. (TLUP-011)
+Warning: Layer mapping file warning. Tech layer 'metal8' mapped in layer mapping file is mask name of 'M8'. (TLUP-011)
+Warning: Layer mapping file warning. Tech layer 'metal9' mapped in layer mapping file is mask name of 'M9'. (TLUP-011)
+Warning: Layer mapping file warning. Tech layer 'poly' mapped in layer mapping file is mask name of 'PO'. (TLUP-011)
+Warning: Layer mapping file warning. Tech layer 'polyCont' mapped in layer mapping file is mask name of 'CO'. (TLUP-011)
+Warning: Layer mapping file warning. Tech layer 'via1' mapped in layer mapping file is mask name of 'VIA1'. (TLUP-011)
+Warning: Layer mapping file warning. Tech layer 'via2' mapped in layer mapping file is mask name of 'VIA2'. (TLUP-011)
+Warning: Layer mapping file warning. Tech layer 'via3' mapped in layer mapping file is mask name of 'VIA3'. (TLUP-011)
+Warning: Layer mapping file warning. Tech layer 'via4' mapped in layer mapping file is mask name of 'VIA4'. (TLUP-011)
+Warning: Layer mapping file warning. Tech layer 'via5' mapped in layer mapping file is mask name of 'VIA5'. (TLUP-011)
+Warning: Layer mapping file warning. Tech layer 'via6' mapped in layer mapping file is mask name of 'VIA6'. (TLUP-011)
+Warning: Layer mapping file warning. Tech layer 'via7' mapped in layer mapping file is mask name of 'VIA7'. (TLUP-011)
+Warning: Layer mapping file warning. Tech layer 'via8' mapped in layer mapping file is mask name of 'VIA8'. (TLUP-011)
+Warning: Layer mapping file warning. Tech layer 'via9' mapped in layer mapping file is mask name of 'RV'. (TLUP-011)
+NEX(WARNING): parasitic_tech file: /mnt/vol_NFS_rh003/profesores/pmendoza/KITS/TSMCHOME/digital/Back_End/milkyway/tcbn65lphpbwp_140a/techfiles/tluplus/cln65lp_1p09m+alrdl_cworst_top2.tluplus already read in, mandatory 1-to-1 map between tluplus file and paraTech
+1
+read_parasitic_tech -name {RC_Best} -tlup  [list ${TSMC_HOME}/digital/Back_End/milkyway/tcbn65lphpbwp_140a/techfiles/tluplus/cln65lp_1p09m+alrdl_rcbest_top2.tluplus] -layermap [list ${TSMC_HOME}/digital/Back_End/milkyway/tcbn65lphpbwp_140a/techfiles/tluplus/star.map_9M]
+Warning: Layer mapping file warning. Tech layer 'metal1' mapped in layer mapping file is mask name of 'M1'. (TLUP-011)
+Warning: Layer mapping file warning. Tech layer 'metal10' mapped in layer mapping file is mask name of 'AP'. (TLUP-011)
+Warning: Layer mapping file warning. Tech layer 'metal2' mapped in layer mapping file is mask name of 'M2'. (TLUP-011)
+Warning: Layer mapping file warning. Tech layer 'metal3' mapped in layer mapping file is mask name of 'M3'. (TLUP-011)
+Warning: Layer mapping file warning. Tech layer 'metal4' mapped in layer mapping file is mask name of 'M4'. (TLUP-011)
+Warning: Layer mapping file warning. Tech layer 'metal5' mapped in layer mapping file is mask name of 'M5'. (TLUP-011)
+Warning: Layer mapping file warning. Tech layer 'metal6' mapped in layer mapping file is mask name of 'M6'. (TLUP-011)
+Warning: Layer mapping file warning. Tech layer 'metal7' mapped in layer mapping file is mask name of 'M7'. (TLUP-011)
+Warning: Layer mapping file warning. Tech layer 'metal8' mapped in layer mapping file is mask name of 'M8'. (TLUP-011)
+Warning: Layer mapping file warning. Tech layer 'metal9' mapped in layer mapping file is mask name of 'M9'. (TLUP-011)
+Warning: Layer mapping file warning. Tech layer 'poly' mapped in layer mapping file is mask name of 'PO'. (TLUP-011)
+Warning: Layer mapping file warning. Tech layer 'polyCont' mapped in layer mapping file is mask name of 'CO'. (TLUP-011)
+Warning: Layer mapping file warning. Tech layer 'via1' mapped in layer mapping file is mask name of 'VIA1'. (TLUP-011)
+Warning: Layer mapping file warning. Tech layer 'via2' mapped in layer mapping file is mask name of 'VIA2'. (TLUP-011)
+Warning: Layer mapping file warning. Tech layer 'via3' mapped in layer mapping file is mask name of 'VIA3'. (TLUP-011)
+Warning: Layer mapping file warning. Tech layer 'via4' mapped in layer mapping file is mask name of 'VIA4'. (TLUP-011)
+Warning: Layer mapping file warning. Tech layer 'via5' mapped in layer mapping file is mask name of 'VIA5'. (TLUP-011)
+Warning: Layer mapping file warning. Tech layer 'via6' mapped in layer mapping file is mask name of 'VIA6'. (TLUP-011)
+Warning: Layer mapping file warning. Tech layer 'via7' mapped in layer mapping file is mask name of 'VIA7'. (TLUP-011)
+Warning: Layer mapping file warning. Tech layer 'via8' mapped in layer mapping file is mask name of 'VIA8'. (TLUP-011)
+Warning: Layer mapping file warning. Tech layer 'via9' mapped in layer mapping file is mask name of 'RV'. (TLUP-011)
+NEX(WARNING): parasitic_tech file: /mnt/vol_NFS_rh003/profesores/pmendoza/KITS/TSMCHOME/digital/Back_End/milkyway/tcbn65lphpbwp_140a/techfiles/tluplus/cln65lp_1p09m+alrdl_rcbest_top2.tluplus already read in, mandatory 1-to-1 map between tluplus file and paraTech
+1
+#### ----- Routing settings -----  ####
+# Set max routing layer
+if {$MAX_ROUTING_LAYER != ""} {set_ignored_layers -max_routing_layer $MAX_ROUTING_LAYER}
+Using libraries: top_lib tcbn65lphpbwpcghvt_1_physical_only tcbn65lphpbwp_1_physical_only tpdn65lpgv2od3_sd_physical_only tpfn65lpgv2od3_physical_only tpbn65v_physical_only tpin65gv_physical_only tcbn65lphpbwpcghvt_1 tcbn65lphpbwp_1 tpdn65lpgv2od3_sdml tpfn65lpgv2od3ml ts1n65lpa2048x32m4_140a_5m
+Visiting block top_lib:top/final_floorplan.design
+Design 'top' was successfully linked.
+1
+# Set min routing layer
+if {$MIN_ROUTING_LAYER != ""} {set_ignored_layers -min_routing_layer $MIN_ROUTING_LAYER}
+1
+# How to see routing directions of interconnect layers:
+set layers [get_layers -filter "layer_type==interconnect"]
+{M1 M2 M3 M4 M5 M6 M7 M8 M9 AP}
+foreach_in_collection layer $layers {
+   set att [get_attribute [get_layers $layer] routing_direction]
+   echo "The routing direction for [get_object_name $layer] is $att"
+}
+The routing direction for M1 is unknown
+The routing direction for M2 is unknown
+The routing direction for M3 is unknown
+The routing direction for M4 is unknown
+The routing direction for M5 is unknown
+The routing direction for M6 is unknown
+The routing direction for M7 is unknown
+The routing direction for M8 is unknown
+The routing direction for M9 is unknown
+The routing direction for AP is unknown
+set_attribute -objects [get_layers M1] -name routing_direction -value horizontal
+Information: The design specific attribute override for layer 'M1' is set in the current block 'top', because the actual library setting may not be overwritten. (ATTR-12)
+{M1}
+set_attribute -objects [get_layers M2] -name routing_direction -value vertical
+Information: The design specific attribute override for layer 'M2' is set in the current block 'top', because the actual library setting may not be overwritten. (ATTR-12)
+{M2}
+set_attribute -objects [get_layers M3] -name routing_direction -value horizontal
+Information: The design specific attribute override for layer 'M3' is set in the current block 'top', because the actual library setting may not be overwritten. (ATTR-12)
+{M3}
+set_attribute -objects [get_layers M4] -name routing_direction -value vertical
+Information: The design specific attribute override for layer 'M4' is set in the current block 'top', because the actual library setting may not be overwritten. (ATTR-12)
+{M4}
+set_attribute -objects [get_layers M5] -name routing_direction -value horizontal
+Information: The design specific attribute override for layer 'M5' is set in the current block 'top', because the actual library setting may not be overwritten. (ATTR-12)
+{M5}
+set_attribute -objects [get_layers M6] -name routing_direction -value vertical
+Information: The design specific attribute override for layer 'M6' is set in the current block 'top', because the actual library setting may not be overwritten. (ATTR-12)
+{M6}
+set_attribute -objects [get_layers M7] -name routing_direction -value horizontal
+Information: The design specific attribute override for layer 'M7' is set in the current block 'top', because the actual library setting may not be overwritten. (ATTR-12)
+{M7}
+set_attribute -objects [get_layers M8] -name routing_direction -value vertical
+Information: The design specific attribute override for layer 'M8' is set in the current block 'top', because the actual library setting may not be overwritten. (ATTR-12)
+{M8}
+set_attribute -objects [get_layers M9] -name routing_direction -value horizontal
+Information: The design specific attribute override for layer 'M9' is set in the current block 'top', because the actual library setting may not be overwritten. (ATTR-12)
+{M9}
+#set_attribute -objects [get_layers AP] -name routing_direction -value horizontal
+#### ----- Sourcing antenna rules and corner scenario  setup ----- ####
+set_app_options -name opt.tie_cell.add_to_highest_hierarchy -value false
+opt.tie_cell.add_to_highest_hierarchy false
+set_attribute [get_lib_cells */TIE*] dont_touch false
+Information: The design specific attribute override for lib_cell 'tcbn65lphpbwp_1:TIEHHPBWP.timing' is set in the current block 'top', because the actual library setting may not be overwritten. (ATTR-12)
+Information: The design specific attribute override for lib_cell 'tcbn65lphpbwp_1:TIELHPBWP.timing' is set in the current block 'top', because the actual library setting may not be overwritten. (ATTR-12)
+{tcbn65lphpbwp_1/TIEHHPBWP tcbn65lphpbwp_1/TIELHPBWP}
+set_lib_cell_purpose -include optimization [get_lib_cells */TIE*]
+Information: The command 'set_lib_cell_purpose' cleared the undo history. (UNDO-016)
+Information: The design specific attribute override for lib_cell 'tcbn65lphpbwp_1:TIEHHPBWP.timing' is set in the current block 'top', because the actual library setting may not be overwritten. (ATTR-12)
+Information: The design specific attribute override for lib_cell 'tcbn65lphpbwp_1:TIELHPBWP.timing' is set in the current block 'top', because the actual library setting may not be overwritten. (ATTR-12)
+1
+source -echo ../scripts/set_antenna_rules.tcl
+#read_clf_antenna_properties /mnt/vol_NFS_rh003/profesores/pmendoza/KITS/TSMCHOME/digital/Back_End/milkyway/tcbn65lphpbwp_140a/clf/antenna_tcbn65lphpbwp.clf -library my_workspace_tcbn65lphpbwp
+#read_clf_antenna_properties /mnt/vol_NFS_rh003/profesores/pmendoza/KITS/TSMCHOME/digital/Back_End/milkyway/tcbn65lphpbwp_140a/clf/antenna_tcbn65lphpbwp.clf -library tcbn65lphpbwp_1
+#string read_clf_antenna_properties
+#[-library library_name]
+#clf_file_name
+#
+#write_clf_antenna_properties -library tcbn65lphpbwp_1 tcbn65lphpbwp_1c.clf
+#
+#write_clf_antenna_properties
+#[-library library_name]
+#clf_file_name
+#
+#--------------------
+set_parameter -name doAntennaConx -value 4
+Warning: Command set_parameter is obsolete. See the command's man page for alternatives. (CMD-108)
+set lib [current_lib];
+remove_antenna_rules -library $lib
+set topMetalLayer 9;
+set RDLMetal AP;
+set RDLVia RV;
+##### Single metal layer sidewall area rule #####
+define_antenna_rule $lib \
+  -mode 4 \
+  -diode_mode 4 \
+  -metal_ratio 0 \
+  -cut_ratio 0
+define_antenna_layer_rule $lib \
+  -mode 4 \
+  -layer "$RDLMetal" \
+  -ratio 2000 \
+  -diode_ratio {0.06 0 8000 30000}
+##### Single metal/via layer area rule #####
+define_antenna_rule $lib \
+  -mode 1 \
+  -diode_mode 4 \
+  -metal_ratio 0 \
+  -cut_ratio 20
+define_antenna_layer_rule $lib \
+            -mode 1 \
+            -layer "M$topMetalLayer" \
+            -ratio 5000 \
+            -diode_ratio {0.06 0 8000 50000}
+define_antenna_layer_rule $lib \
+            -mode 1 \
+            -layer "$RDLVia" \
+            -ratio 200 \
+            -diode_ratio {0.06 0 83 400}
+##### Cumulative metal/via layer area rule #####
+define_antenna_rule $lib \
+  -mode 2 \
+  -diode_mode 4 \
+  -metal_ratio 0 \
+  -cut_ratio 0
+for {set i 1} {$i < $topMetalLayer} {incr i} {
+  define_antenna_layer_rule $lib \
+    -mode 2 \
+    -layer "M$i" \
+    -ratio 5000 \
+    -diode_ratio {0.06 0 456 43000}
+}
+define_antenna_layer_rule $lib \
+    -mode 2 \
+    -layer "M$topMetalLayer" \
+    -ratio 5000 \
+    -diode_ratio {0 1 0 0}
+for {set i 1} {$i < $topMetalLayer} {incr i} {
+  define_antenna_layer_rule $lib \
+    -mode 2 \
+    -layer "VIA$i" \
+    -ratio 900 \
+    -diode_ratio {0.06 0 210 900}
+}
+##### Routing Option Related to Antenna Fixing #####
+set_parameter -name doAntennaConx -value 4 -module droute
+Warning: Command set_parameter is obsolete. See the command's man page for alternatives. (CMD-108)
+report_antenna_rules > antenna.rule
+source -echo ../scripts/mode_corner_scenario.tcl
+puts " ################################################## "
+ ################################################## 
+puts " ## 1. Define Corners "
+ ## 1. Define Corners 
+puts " ################################################## "
+ ################################################## 
+puts ""
+
+set LIB_MAX_CORNER WCCOM
+set LIB_MIN_CORNER MLCOM
+puts ""
+
+puts ""
+
+puts " Corner - Worst case "
+ Corner - Worst case 
+create_corner cornerSS
+current_corner cornerSS
+set_parasitic_parameters -early_spec RC_Worst -late_spec RC_Worst
+set_operating_conditions -max_library tcbn65lphpbwp_1 -max ${LIB_MAX_CORNER} -min_library tcbn65lphpbwp_1 -min ${LIB_MAX_CORNER}
+puts ""
+
+puts "  Corner - Best case "
+  Corner - Best case 
+create_corner cornerFF
+current_corner cornerFF
+set_parasitic_parameters -early_spec RC_Best -late_spec RC_Best
+set_operating_conditions -max_library tcbn65lphpbwp_1 -max ${LIB_MIN_CORNER} -min_library tcbn65lphpbwp_1 -min ${LIB_MIN_CORNER}
+puts ""
+
+puts ""
+
+puts ""
+
+puts " ################################################## "
+ ################################################## 
+puts " ## 1. Define Modes "
+ ## 1. Define Modes 
+puts " ################################################## "
+ ################################################## 
+puts ""
+
+puts ""
+
+create_mode mode1
+current_mode mode1
+puts ""
+
+puts ""
+
+puts " ################################################## "
+ ################################################## 
+puts " ## 2. Define Scenarios "
+ ## 2. Define Scenarios 
+puts " ################################################## "
+ ################################################## 
+puts ""
+
+puts ""
+
+puts "***************************"
+***************************
+puts "CREATE SCENARIO SLOW"
+CREATE SCENARIO SLOW
+puts "***************************"
+***************************
+puts ""
+
+puts ""
+
+create_scenario -mode mode1 -corner cornerSS -name scenarioSS
+Created scenario scenarioSS for mode mode1 and corner cornerSS
+All analysis types are activated.
+current_scenario scenarioSS
+set_scenario_status -hold false scenarioSS
+Scenario scenarioSS (mode mode1 corner cornerSS) is active for setup/leakage_power/dynamic_power/max_transition/max_capacitance/min_capacitance analysis.
+set_app_options -name time.convert_constraint_from_bc_wc -value wc_only
+puts ""
+
+puts ""
+
+#source ${SOURCE_PATH}/Contador.sdc
+source -echo ../scripts/02_01_sdc_processing.tcl
+############################################
+#####          SDC processing          #####
+############################################
+# Read the constraints of the sdc file
+read_sdc -echo ../../../common/sdc/$SDCNAME.sdc
+Information: Loading SDC version 2.1 file '/mnt/vol_NFS_rh003/estudiantes/DANIELA_VARGAS/Version_final/0516/versiones_finales/semana14/Registro_Hamming/Hamming_64/FLOW/common/sdc/top.sdc' (FILE-007)
+set PERIOD  10
+set CLOCK_NAME SYS_CLK
+set CLOCK_PIN clk
+set TRANSITION 0.53
+set TRANSITION 0.2
+set UNCERTAINTY 0.3
+create_clock -period $PERIOD -name $CLOCK_NAME [get_ports $CLOCK_PIN]
+set_clock_uncertainty -setup $UNCERTAINTY [get_clocks $CLOCK_NAME]
+set_clock_transition -rise $TRANSITION [get_clocks $CLOCK_NAME]
+set_clock_transition -fall $TRANSITION [get_clocks $CLOCK_NAME]
+set all_input_pins [remove_from_collection [all_inputs] [get_port clk]]
+#set single_load [load_of */INHDLLX0/A]
+#set multi_load [expr 10 * $single_load]
+set INPUT_DELAY  0.8
+set OUTPUT_DELAY  1
+set CLOCK_NAME SYS_CLK
+# IO properties
+set_input_delay $INPUT_DELAY -clock $CLOCK_NAME $all_input_pins
+Information: Timer using 1 threads
+set_output_delay $OUTPUT_DELAY -clock $CLOCK_NAME [all_outputs]
+#set_load -pin_load $multi_load [all_outputs]
+puts ""
+
+puts ""
+
+puts ""
+
+puts ""
+
+puts ""
+
+puts "***************************"
+***************************
+puts "CREATE SCENARIO FAST"
+CREATE SCENARIO FAST
+puts "***************************"
+***************************
+puts ""
+
+puts ""
+
+create_scenario -mode mode1 -corner cornerFF -name scenarioFF
+Created scenario scenarioFF for mode mode1 and corner cornerFF
+All analysis types are activated.
+current_scenario scenarioFF
+set_scenario_status -setup false scenarioFF
+Scenario scenarioFF (mode mode1 corner cornerFF) is active for hold/leakage_power/dynamic_power/max_transition/max_capacitance/min_capacitance analysis.
+set_app_options -name time.convert_constraint_from_bc_wc -value bc_only
+puts ""
+
+puts ""
+
+#source ${SOURCE_PATH}/Contador.sdc
+source -echo ../scripts/02_01_sdc_processing.tcl
+############################################
+#####          SDC processing          #####
+############################################
+# Read the constraints of the sdc file
+read_sdc -echo ../../../common/sdc/$SDCNAME.sdc
+Information: Loading SDC version 2.1 file '/mnt/vol_NFS_rh003/estudiantes/DANIELA_VARGAS/Version_final/0516/versiones_finales/semana14/Registro_Hamming/Hamming_64/FLOW/common/sdc/top.sdc' (FILE-007)
+set PERIOD  10
+set CLOCK_NAME SYS_CLK
+set CLOCK_PIN clk
+set TRANSITION 0.53
+set TRANSITION 0.2
+set UNCERTAINTY 0.3
+create_clock -period $PERIOD -name $CLOCK_NAME [get_ports $CLOCK_PIN]
+Warning: Redefining clock 'SYS_CLK'.  
+        Previously defined at: /mnt/vol_NFS_rh003/estudiantes/DANIELA_VARGAS/Version_final/0516/versiones_finales/semana14/Registro_Hamming/Hamming_64/FLOW/common/sdc/top.sdc, line 11 (UIC-034)
+set_clock_uncertainty -setup $UNCERTAINTY [get_clocks $CLOCK_NAME]
+set_clock_transition -rise $TRANSITION [get_clocks $CLOCK_NAME]
+set_clock_transition -fall $TRANSITION [get_clocks $CLOCK_NAME]
+set all_input_pins [remove_from_collection [all_inputs] [get_port clk]]
+#set single_load [load_of */INHDLLX0/A]
+#set multi_load [expr 10 * $single_load]
+set INPUT_DELAY  0.8
+set OUTPUT_DELAY  1
+set CLOCK_NAME SYS_CLK
+# IO properties
+set_input_delay $INPUT_DELAY -clock $CLOCK_NAME $all_input_pins
+set_output_delay $OUTPUT_DELAY -clock $CLOCK_NAME [all_outputs]
+#set_load -pin_load $multi_load [all_outputs]
+#source ${PROYECT_PATH}/pnr/dig_filter.sdc
+puts ""
+
+puts ""
+
+puts "fast scenario created"
+fast scenario created
+puts ""
+
+puts ""
+
+puts " Reset the time.convert_constraint_from_bc_wc application option to none. "
+ Reset the time.convert_constraint_from_bc_wc application option to none. 
+set_app_options -name time.convert_constraint_from_bc_wc -value none
+puts ""
+
+puts ""
+
+# report_corners -verbose
+#### ----- Open previous DEF file to add Boundary/TAP cells and PG Net ----- ####
+# Read floorplan from DEF
+read_def ${RESULTS_PATH}/floorplan.def
+Information: Loading DEF file '/mnt/vol_NFS_rh003/estudiantes/DANIELA_VARGAS/Version_final/0516/versiones_finales/semana14/Registro_Hamming/Hamming_64/FLOW/fc_flow/results/floorplan.def' (FILE-007)
+Information: Reading 'VERSION' statement. (DEFR-016)
+Information: Reading 'DIVIDERCHAR' statement. (DEFR-016)
+Information: Reading 'BUSBITCHARS' statement. (DEFR-016)
+Information: Reading 'DESIGN' statement. (DEFR-016)
+Information: Reading 'UNITS' statement. (DEFR-016)
+Information: Reading 'PROPERTYDEFINITIONS' section. (DEFR-016)
+Information: Reading 'DIEAREA' statement. (DEFR-016)
+Information: Reading 'ROW' statements. (DEFR-016)
+Information: Reading 'TRACKS' statements. (DEFR-016)
+Information: Reading 'PINS' section. (DEFR-016)
+Information: Reading 'PINPROPERTIES' section. (DEFR-016)
+Information: Reading 'SPECIALNETS' section. (DEFR-016)
+Error: Cannot find pin 'VDD' of instance 'reg_data_reg[63]'. (DEFR-021)
+Error: Cannot find pin 'VDD' of instance 'reg_data_reg[62]'. (DEFR-021)
+Error: Cannot find pin 'VDD' of instance 'p3_reg[14]'. (DEFR-021)
+Error: Cannot find pin 'VDD' of instance 'p3_reg[13]'. (DEFR-021)
+Error: Cannot find pin 'VDD' of instance 'p3_reg[12]'. (DEFR-021)
+Error: Cannot find pin 'VDD' of instance 'p3_reg[11]'. (DEFR-021)
+Error: Cannot find pin 'VDD' of instance 'p3_reg[10]'. (DEFR-021)
+Error: Cannot find pin 'VDD' of instance 'p3_reg[9]'. (DEFR-021)
+Error: Cannot find pin 'VDD' of instance 'p3_reg[8]'. (DEFR-021)
+Error: Cannot find pin 'VDD' of instance 'p3_reg[7]'. (DEFR-021)
+Error: Cannot find pin 'VDD' of instance 'p3_reg[6]'. (DEFR-021)
+Error: Cannot find pin 'VDD' of instance 'p3_reg[5]'. (DEFR-021)
+Error: Cannot find pin 'VDD' of instance 'p3_reg[4]'. (DEFR-021)
+Error: Cannot find pin 'VDD' of instance 'p3_reg[3]'. (DEFR-021)
+Error: Cannot find pin 'VDD' of instance 'p3_reg[2]'. (DEFR-021)
+Error: Cannot find pin 'VDD' of instance 'p3_reg[1]'. (DEFR-021)
+Error: Cannot find pin 'VDD' of instance 'p3_reg[0]'. (DEFR-021)
+Error: Cannot find pin 'VDD' of instance 'reg_data_reg[61]'. (DEFR-021)
+Error: Cannot find pin 'VDD' of instance 'reg_data_reg[60]'. (DEFR-021)
+Error: Cannot find pin 'VDD' of instance 'reg_data_reg[59]'. (DEFR-021)
+Error: Cannot find pin 'VDD' of instance 'reg_data_reg[58]'. (DEFR-021)
+Error: Cannot find pin 'VDD' of instance 'reg_data_reg[57]'. (DEFR-021)
+Error: Cannot find pin 'VDD' of instance 'reg_data_reg[56]'. (DEFR-021)
+Error: Cannot find pin 'VDD' of instance 'reg_data_reg[55]'. (DEFR-021)
+Error: Cannot find pin 'VDD' of instance 'reg_data_reg[54]'. (DEFR-021)
+Error: Cannot find pin 'VDD' of instance 'reg_data_reg[53]'. (DEFR-021)
+Error: Cannot find pin 'VDD' of instance 'reg_data_reg[52]'. (DEFR-021)
+Error: Cannot find pin 'VDD' of instance 'reg_data_reg[51]'. (DEFR-021)
+Error: Cannot find pin 'VDD' of instance 'reg_data_reg[50]'. (DEFR-021)
+Error: Cannot find pin 'VDD' of instance 'reg_data_reg[49]'. (DEFR-021)
+Error: Cannot find pin 'VDD' of instance 'reg_data_reg[48]'. (DEFR-021)
+Error: Cannot find pin 'VDD' of instance 'p1_reg[12]'. (DEFR-021)
+Error: Cannot find pin 'VDD' of instance 'p1_reg[11]'. (DEFR-021)
+Error: Cannot find pin 'VDD' of instance 'p1_reg[5]'. (DEFR-021)
+Error: Cannot find pin 'VDD' of instance 'p1_reg[3]'. (DEFR-021)
+Error: Cannot find pin 'VDD' of instance 'reg_data_reg[43]'. (DEFR-021)
+Error: Cannot find pin 'VDD' of instance 'reg_data_reg[42]'. (DEFR-021)
+Error: Cannot find pin 'VDD' of instance 'reg_data_reg[41]'. (DEFR-021)
+Error: Cannot find pin 'VDD' of instance 'reg_data_reg[40]'. (DEFR-021)
+Error: Cannot find pin 'VDD' of instance 'reg_data_reg[39]'. (DEFR-021)
+Error: Cannot find pin 'VDD' of instance 'reg_data_reg[38]'. (DEFR-021)
+Error: Cannot find pin 'VDD' of instance 'reg_data_reg[37]'. (DEFR-021)
+Error: Cannot find pin 'VDD' of instance 'reg_data_reg[36]'. (DEFR-021)
+Error: Cannot find pin 'VDD' of instance 'reg_data_reg[35]'. (DEFR-021)
+Error: Cannot find pin 'VDD' of instance 'reg_data_reg[33]'. (DEFR-021)
+Error: Cannot find pin 'VDD' of instance 'reg_data_reg[32]'. (DEFR-021)
+Error: Cannot find pin 'VDD' of instance 'reg_data_reg[31]'. (DEFR-021)
+Error: Cannot find pin 'VDD' of instance 'reg_data_reg[30]'. (DEFR-021)
+Error: Cannot find pin 'VDD' of instance 'reg_data_reg[29]'. (DEFR-021)
+Error: Cannot find pin 'VDD' of instance 'reg_data_reg[28]'. (DEFR-021)
+Error: Cannot find pin 'VDD' of instance 'reg_data_reg[27]'. (DEFR-021)
+Error: Cannot find pin 'VDD' of instance 'reg_data_reg[26]'. (DEFR-021)
+Error: Cannot find pin 'VDD' of instance 'reg_data_reg[25]'. (DEFR-021)
+Error: Cannot find pin 'VDD' of instance 'reg_data_reg[24]'. (DEFR-021)
+Error: Cannot find pin 'VDD' of instance 'reg_data_reg[23]'. (DEFR-021)
+Error: Cannot find pin 'VDD' of instance 'reg_data_reg[21]'. (DEFR-021)
+Error: Cannot find pin 'VDD' of instance 'reg_data_reg[20]'. (DEFR-021)
+Error: Cannot find pin 'VDD' of instance 'reg_data_reg[19]'. (DEFR-021)
+Error: Cannot find pin 'VDD' of instance 'reg_data_reg[18]'. (DEFR-021)
+Error: Cannot find pin 'VDD' of instance 'reg_data_reg[17]'. (DEFR-021)
+Error: Cannot find pin 'VDD' of instance 'reg_data_reg[16]'. (DEFR-021)
+Error: Cannot find pin 'VDD' of instance 'reg_data_reg[15]'. (DEFR-021)
+Error: Cannot find pin 'VDD' of instance 'reg_data_reg[14]'. (DEFR-021)
+Error: Cannot find pin 'VDD' of instance 'reg_data_reg[13]'. (DEFR-021)
+Error: Cannot find pin 'VDD' of instance 'reg_data_reg[12]'. (DEFR-021)
+Error: Cannot find pin 'VDD' of instance 'reg_data_reg[11]'. (DEFR-021)
+Error: Cannot find pin 'VDD' of instance 'reg_data_reg[9]'. (DEFR-021)
+Error: Cannot find pin 'VDD' of instance 'reg_data_reg[8]'. (DEFR-021)
+Error: Cannot find pin 'VDD' of instance 'reg_data_reg[7]'. (DEFR-021)
+Error: Cannot find pin 'VDD' of instance 'reg_data_reg[6]'. (DEFR-021)
+Error: Cannot find pin 'VDD' of instance 'reg_data_reg[5]'. (DEFR-021)
+Error: Cannot find pin 'VDD' of instance 'reg_data_reg[4]'. (DEFR-021)
+Error: Cannot find pin 'VDD' of instance 'reg_data_reg[3]'. (DEFR-021)
+Error: Cannot find pin 'VDD' of instance 'reg_data_reg[2]'. (DEFR-021)
+Error: Cannot find pin 'VDD' of instance 'reg_data_reg[1]'. (DEFR-021)
+Error: Cannot find pin 'VDD' of instance 'reg_data_reg[0]'. (DEFR-021)
+Error: Cannot find pin 'VDD' of instance 'p1_reg[14]'. (DEFR-021)
+Error: Cannot find pin 'VDD' of instance 'p1_reg[13]'. (DEFR-021)
+Error: Cannot find pin 'VDD' of instance 'p1_reg[10]'. (DEFR-021)
+Error: Cannot find pin 'VDD' of instance 'p1_reg[15]'. (DEFR-021)
+Error: Cannot find pin 'VDD' of instance 'p1_reg[9]'. (DEFR-021)
+Error: Cannot find pin 'VDD' of instance 'p1_reg[8]'. (DEFR-021)
+Error: Cannot find pin 'VDD' of instance 'p1_reg[7]'. (DEFR-021)
+Error: Cannot find pin 'VDD' of instance 'p1_reg[6]'. (DEFR-021)
+Error: Cannot find pin 'VDD' of instance 'p1_reg[4]'. (DEFR-021)
+Error: Cannot find pin 'VDD' of instance 'reg_data_reg[47]'. (DEFR-021)
+Error: Cannot find pin 'VDD' of instance 'reg_data_reg[46]'. (DEFR-021)
+Error: Cannot find pin 'VDD' of instance 'p1_reg[2]'. (DEFR-021)
+Error: Cannot find pin 'VDD' of instance 'p1_reg[1]'. (DEFR-021)
+Error: Cannot find pin 'VDD' of instance 'p1_reg[0]'. (DEFR-021)
+Error: Cannot find pin 'VDD' of instance 'p2_reg[15]'. (DEFR-021)
+Error: Cannot find pin 'VDD' of instance 'p2_reg[14]'. (DEFR-021)
+Error: Cannot find pin 'VDD' of instance 'p2_reg[13]'. (DEFR-021)
+Error: Cannot find pin 'VDD' of instance 'p2_reg[12]'. (DEFR-021)
+Error: Cannot find pin 'VDD' of instance 'p2_reg[11]'. (DEFR-021)
+Error: Cannot find pin 'VDD' of instance 'p2_reg[10]'. (DEFR-021)
+Error: Cannot find pin 'VDD' of instance 'p2_reg[9]'. (DEFR-021)
+Error: Cannot find pin 'VDD' of instance 'p2_reg[8]'. (DEFR-021)
+Error: Cannot find pin 'VDD' of instance 'p2_reg[7]'. (DEFR-021)
+Error: Cannot find pin 'VDD' of instance 'p2_reg[6]'. (DEFR-021)
+Error: Cannot find pin 'VDD' of instance 'p2_reg[5]'. (DEFR-021)
+Error: Cannot find pin 'VDD' of instance 'p2_reg[4]'. (DEFR-021)
+Error: Cannot find pin 'VDD' of instance 'p2_reg[3]'. (DEFR-021)
+Error: Cannot find pin 'VDD' of instance 'p2_reg[2]'. (DEFR-021)
+Error: Cannot find pin 'VDD' of instance 'p2_reg[1]'. (DEFR-021)
+Error: Cannot find pin 'VDD' of instance 'p2_reg[0]'. (DEFR-021)
+Error: Cannot find pin 'VDD' of instance 'reg_data_reg[45]'. (DEFR-021)
+Error: Cannot find pin 'VDD' of instance 'reg_data_reg[44]'. (DEFR-021)
+Error: Cannot find pin 'VDD' of instance 'reg_data_reg[34]'. (DEFR-021)
+Error: Cannot find pin 'VDD' of instance 'reg_data_reg[22]'. (DEFR-021)
+Error: Cannot find pin 'VDD' of instance 'reg_data_reg[10]'. (DEFR-021)
+Error: Cannot find pin 'VDD' of instance 'p3_reg[15]'. (DEFR-021)
+Error: Cannot find pin 'VSS' of instance 'reg_data_reg[63]'. (DEFR-021)
+Error: Cannot find pin 'VSS' of instance 'reg_data_reg[62]'. (DEFR-021)
+Error: Cannot find pin 'VSS' of instance 'p3_reg[14]'. (DEFR-021)
+Error: Cannot find pin 'VSS' of instance 'p3_reg[13]'. (DEFR-021)
+Error: Cannot find pin 'VSS' of instance 'p3_reg[12]'. (DEFR-021)
+Error: Cannot find pin 'VSS' of instance 'p3_reg[11]'. (DEFR-021)
+Error: Cannot find pin 'VSS' of instance 'p3_reg[10]'. (DEFR-021)
+Error: Cannot find pin 'VSS' of instance 'p3_reg[9]'. (DEFR-021)
+Error: Cannot find pin 'VSS' of instance 'p3_reg[8]'. (DEFR-021)
+Error: Cannot find pin 'VSS' of instance 'p3_reg[7]'. (DEFR-021)
+Error: Cannot find pin 'VSS' of instance 'p3_reg[6]'. (DEFR-021)
+Error: Cannot find pin 'VSS' of instance 'p3_reg[5]'. (DEFR-021)
+Error: Cannot find pin 'VSS' of instance 'p3_reg[4]'. (DEFR-021)
+Error: Cannot find pin 'VSS' of instance 'p3_reg[3]'. (DEFR-021)
+Error: Cannot find pin 'VSS' of instance 'p3_reg[2]'. (DEFR-021)
+Error: Cannot find pin 'VSS' of instance 'p3_reg[1]'. (DEFR-021)
+Error: Cannot find pin 'VSS' of instance 'p3_reg[0]'. (DEFR-021)
+Error: Cannot find pin 'VSS' of instance 'reg_data_reg[61]'. (DEFR-021)
+Error: Cannot find pin 'VSS' of instance 'reg_data_reg[60]'. (DEFR-021)
+Error: Cannot find pin 'VSS' of instance 'reg_data_reg[59]'. (DEFR-021)
+Error: Cannot find pin 'VSS' of instance 'reg_data_reg[58]'. (DEFR-021)
+Error: Cannot find pin 'VSS' of instance 'reg_data_reg[57]'. (DEFR-021)
+Error: Cannot find pin 'VSS' of instance 'reg_data_reg[56]'. (DEFR-021)
+Error: Cannot find pin 'VSS' of instance 'reg_data_reg[55]'. (DEFR-021)
+Error: Cannot find pin 'VSS' of instance 'reg_data_reg[54]'. (DEFR-021)
+Error: Cannot find pin 'VSS' of instance 'reg_data_reg[53]'. (DEFR-021)
+Error: Cannot find pin 'VSS' of instance 'reg_data_reg[52]'. (DEFR-021)
+Error: Cannot find pin 'VSS' of instance 'reg_data_reg[51]'. (DEFR-021)
+Error: Cannot find pin 'VSS' of instance 'reg_data_reg[50]'. (DEFR-021)
+Error: Cannot find pin 'VSS' of instance 'reg_data_reg[49]'. (DEFR-021)
+Error: Cannot find pin 'VSS' of instance 'reg_data_reg[48]'. (DEFR-021)
+Error: Cannot find pin 'VSS' of instance 'p1_reg[12]'. (DEFR-021)
+Error: Cannot find pin 'VSS' of instance 'p1_reg[11]'. (DEFR-021)
+Error: Cannot find pin 'VSS' of instance 'p1_reg[5]'. (DEFR-021)
+Error: Cannot find pin 'VSS' of instance 'p1_reg[3]'. (DEFR-021)
+Error: Cannot find pin 'VSS' of instance 'reg_data_reg[43]'. (DEFR-021)
+Error: Cannot find pin 'VSS' of instance 'reg_data_reg[42]'. (DEFR-021)
+Error: Cannot find pin 'VSS' of instance 'reg_data_reg[41]'. (DEFR-021)
+Error: Cannot find pin 'VSS' of instance 'reg_data_reg[40]'. (DEFR-021)
+Error: Cannot find pin 'VSS' of instance 'reg_data_reg[39]'. (DEFR-021)
+Error: Cannot find pin 'VSS' of instance 'reg_data_reg[38]'. (DEFR-021)
+Error: Cannot find pin 'VSS' of instance 'reg_data_reg[37]'. (DEFR-021)
+Error: Cannot find pin 'VSS' of instance 'reg_data_reg[36]'. (DEFR-021)
+Error: Cannot find pin 'VSS' of instance 'reg_data_reg[35]'. (DEFR-021)
+Error: Cannot find pin 'VSS' of instance 'reg_data_reg[33]'. (DEFR-021)
+Error: Cannot find pin 'VSS' of instance 'reg_data_reg[32]'. (DEFR-021)
+Error: Cannot find pin 'VSS' of instance 'reg_data_reg[31]'. (DEFR-021)
+Error: Cannot find pin 'VSS' of instance 'reg_data_reg[30]'. (DEFR-021)
+Error: Cannot find pin 'VSS' of instance 'reg_data_reg[29]'. (DEFR-021)
+Error: Cannot find pin 'VSS' of instance 'reg_data_reg[28]'. (DEFR-021)
+Error: Cannot find pin 'VSS' of instance 'reg_data_reg[27]'. (DEFR-021)
+Error: Cannot find pin 'VSS' of instance 'reg_data_reg[26]'. (DEFR-021)
+Error: Cannot find pin 'VSS' of instance 'reg_data_reg[25]'. (DEFR-021)
+Error: Cannot find pin 'VSS' of instance 'reg_data_reg[24]'. (DEFR-021)
+Error: Cannot find pin 'VSS' of instance 'reg_data_reg[23]'. (DEFR-021)
+Error: Cannot find pin 'VSS' of instance 'reg_data_reg[21]'. (DEFR-021)
+Error: Cannot find pin 'VSS' of instance 'reg_data_reg[20]'. (DEFR-021)
+Error: Cannot find pin 'VSS' of instance 'reg_data_reg[19]'. (DEFR-021)
+Error: Cannot find pin 'VSS' of instance 'reg_data_reg[18]'. (DEFR-021)
+Error: Cannot find pin 'VSS' of instance 'reg_data_reg[17]'. (DEFR-021)
+Error: Cannot find pin 'VSS' of instance 'reg_data_reg[16]'. (DEFR-021)
+Error: Cannot find pin 'VSS' of instance 'reg_data_reg[15]'. (DEFR-021)
+Error: Cannot find pin 'VSS' of instance 'reg_data_reg[14]'. (DEFR-021)
+Error: Cannot find pin 'VSS' of instance 'reg_data_reg[13]'. (DEFR-021)
+Error: Cannot find pin 'VSS' of instance 'reg_data_reg[12]'. (DEFR-021)
+Error: Cannot find pin 'VSS' of instance 'reg_data_reg[11]'. (DEFR-021)
+Error: Cannot find pin 'VSS' of instance 'reg_data_reg[9]'. (DEFR-021)
+Error: Cannot find pin 'VSS' of instance 'reg_data_reg[8]'. (DEFR-021)
+Error: Cannot find pin 'VSS' of instance 'reg_data_reg[7]'. (DEFR-021)
+Error: Cannot find pin 'VSS' of instance 'reg_data_reg[6]'. (DEFR-021)
+Error: Cannot find pin 'VSS' of instance 'reg_data_reg[5]'. (DEFR-021)
+Error: Cannot find pin 'VSS' of instance 'reg_data_reg[4]'. (DEFR-021)
+Error: Cannot find pin 'VSS' of instance 'reg_data_reg[3]'. (DEFR-021)
+Error: Cannot find pin 'VSS' of instance 'reg_data_reg[2]'. (DEFR-021)
+Error: Cannot find pin 'VSS' of instance 'reg_data_reg[1]'. (DEFR-021)
+Error: Cannot find pin 'VSS' of instance 'reg_data_reg[0]'. (DEFR-021)
+Error: Cannot find pin 'VSS' of instance 'p1_reg[14]'. (DEFR-021)
+Error: Cannot find pin 'VSS' of instance 'p1_reg[13]'. (DEFR-021)
+Error: Cannot find pin 'VSS' of instance 'p1_reg[10]'. (DEFR-021)
+Error: Cannot find pin 'VSS' of instance 'p1_reg[15]'. (DEFR-021)
+Error: Cannot find pin 'VSS' of instance 'p1_reg[9]'. (DEFR-021)
+Error: Cannot find pin 'VSS' of instance 'p1_reg[8]'. (DEFR-021)
+Error: Cannot find pin 'VSS' of instance 'p1_reg[7]'. (DEFR-021)
+Error: Cannot find pin 'VSS' of instance 'p1_reg[6]'. (DEFR-021)
+Error: Cannot find pin 'VSS' of instance 'p1_reg[4]'. (DEFR-021)
+Error: Cannot find pin 'VSS' of instance 'reg_data_reg[47]'. (DEFR-021)
+Error: Cannot find pin 'VSS' of instance 'reg_data_reg[46]'. (DEFR-021)
+Error: Cannot find pin 'VSS' of instance 'p1_reg[2]'. (DEFR-021)
+Error: Cannot find pin 'VSS' of instance 'p1_reg[1]'. (DEFR-021)
+Error: Cannot find pin 'VSS' of instance 'p1_reg[0]'. (DEFR-021)
+Error: Cannot find pin 'VSS' of instance 'p2_reg[15]'. (DEFR-021)
+Error: Cannot find pin 'VSS' of instance 'p2_reg[14]'. (DEFR-021)
+Error: Cannot find pin 'VSS' of instance 'p2_reg[13]'. (DEFR-021)
+Error: Cannot find pin 'VSS' of instance 'p2_reg[12]'. (DEFR-021)
+Error: Cannot find pin 'VSS' of instance 'p2_reg[11]'. (DEFR-021)
+Error: Cannot find pin 'VSS' of instance 'p2_reg[10]'. (DEFR-021)
+Error: Cannot find pin 'VSS' of instance 'p2_reg[9]'. (DEFR-021)
+Error: Cannot find pin 'VSS' of instance 'p2_reg[8]'. (DEFR-021)
+Error: Cannot find pin 'VSS' of instance 'p2_reg[7]'. (DEFR-021)
+Error: Cannot find pin 'VSS' of instance 'p2_reg[6]'. (DEFR-021)
+Error: Cannot find pin 'VSS' of instance 'p2_reg[5]'. (DEFR-021)
+Error: Cannot find pin 'VSS' of instance 'p2_reg[4]'. (DEFR-021)
+Error: Cannot find pin 'VSS' of instance 'p2_reg[3]'. (DEFR-021)
+Error: Cannot find pin 'VSS' of instance 'p2_reg[2]'. (DEFR-021)
+Error: Cannot find pin 'VSS' of instance 'p2_reg[1]'. (DEFR-021)
+Error: Cannot find pin 'VSS' of instance 'p2_reg[0]'. (DEFR-021)
+Error: Cannot find pin 'VSS' of instance 'reg_data_reg[45]'. (DEFR-021)
+Error: Cannot find pin 'VSS' of instance 'reg_data_reg[44]'. (DEFR-021)
+Error: Cannot find pin 'VSS' of instance 'reg_data_reg[34]'. (DEFR-021)
+Error: Cannot find pin 'VSS' of instance 'reg_data_reg[22]'. (DEFR-021)
+Error: Cannot find pin 'VSS' of instance 'reg_data_reg[10]'. (DEFR-021)
+Error: Cannot find pin 'VSS' of instance 'p3_reg[15]'. (DEFR-021)
+--------------------------------
+Number of Ignored DEF Constructs
+--------------------------------
+PROPERTYDEFINITIONS            : 0/1
+---------------------------------------
+Number of Processed/Read DEF Constructs
+---------------------------------------
+VERSION                        : 1/1
+DIVIDERCHAR                    : 1/1
+BUSBITCHARS                    : 1/1
+DESIGN                         : 1/1
+UNITS                          : 1/1
+PROPERTYDEFINITIONS            : 1/1
+DIEAREA                        : 1/1
+ROW                            : 34/34
+TRACKS                         : 20/20
+PINS                           : 138/138
+PINPROPERTIES                  : 136/136
+SPECIALNETS                    : 2/2
+1
+# Insert Boundary/TAP cells in the design
+source -echo ../scripts/03_01_insert_boundary_and_tap_cells.tcl
+#########################################################
+#####          Boundary/TAP cell insertion          #####
+#########################################################
+# Inserting boundary cells
+set_boundary_cell_rules  \
+        -top_boundary_cells                tcbn65lphpbwp_1/DCAPHPBWP  \
+        -bottom_boundary_cells             tcbn65lphpbwp_1/DCAPHPBWP  \
+	-left_boundary_cell                tcbn65lphpbwp_1/DCAPHPBWP \
+	-right_boundary_cell               tcbn65lphpbwp_1/DCAPHPBWP \
+        -top_left_outside_corner_cell      tcbn65lphpbwp_1/DCAPHPBWP \
+        -top_right_outside_corner_cell     tcbn65lphpbwp_1/DCAPHPBWP \
+        -bottom_left_outside_corner_cell   tcbn65lphpbwp_1/DCAPHPBWP \
+        -bottom_right_outside_corner_cell  tcbn65lphpbwp_1/DCAPHPBWP  
+Information: The command 'set_boundary_cell_rules' cleared the undo history. (UNDO-016)
+#	-mirror_left_outside_corner_cell \
+#	-mirror_right_outside_corner_cell 
+compile_boundary_cells
+Warning: Detected use of obsolete/unsupported feature.  The following
+        	will not be available in a future release of the application:
+        	compile_boundary_cells. Use compile_targeted_boundary_cells instead (CMD-100)
+Using AL to insert boundary cells
+Warning: Site master "unit" has neither X-Symmetry nor Y-Symmetry. The "legal orientations" for the standard cells will be limited. (LGL-031)
+Warning: Routing direction of metal layer PO is neither "horizontal" nor "vertical".  PDC checks will not be performed on this layer. (PDC-003)
+Warning: Routing direction of metal layer AP is neither "horizontal" nor "vertical".  PDC checks will not be performed on this layer. (PDC-003)
+PDC app_options settings =========
+	place.legalize.enable_prerouted_net_check: 1
+	place.legalize.num_tracks_for_access_check: 1
+	place.legalize.use_eol_spacing_for_access_check: 0
+	place.legalize.allow_touch_track_for_access_check: 1
+	place.legalize.reduce_conservatism_in_eol_check: 0
+	place.legalize.preroute_shape_merge_distance: 0.0
+	place.legalize.enable_non_preferred_direction_span_check: 0
+
+Layer M1: cached 0 shapes out of 0 total shapes.
+Layer M2: cached 0 shapes out of 0 total shapes.
+Cached 0 vias out of 0 total vias.
+Warning: No 1x or 2x + 3x wide cells provided for top or bottom option. (CHF-125)
+Information: Starting boundary cell insertion into top/final_floorplan using site master "unit". (CHF-200)
+	20% complete ...
+	40% complete ...
+	50% complete ...
+	70% complete ...
+Information: Total 32 left cells inserted successfully into top/final_floorplan. (CHF-100)
+Information: Total 0 bottom cells inserted successfully into top/final_floorplan. (CHF-100)
+Information: Total 32 right cells inserted successfully into top/final_floorplan. (CHF-100)
+Information: Total 338 top cells inserted successfully into top/final_floorplan. (CHF-100)
+Information: Total 0 bottom left outside cells inserted successfully into top/final_floorplan. (CHF-100)
+Information: Total 0 bottom right outside cells inserted successfully into top/final_floorplan. (CHF-100)
+Information: Total 2 top left outside cells inserted successfully into top/final_floorplan. (CHF-100)
+Information: Total 2 top right outside cells inserted successfully into top/final_floorplan. (CHF-100)
+Information: Total 406 boundary cells inserted successfully into top/final_floorplan. (CHF-100)
+# Inserting TAP cells
+create_tap_cells   \
+         -lib_cell  [get_lib_cells TAPCELLHPBWP] \
+         -distance 60  \
+         -pattern stagger \
+         -skip_fixed_cells
+* Disjointed site row process : FALSE
+Using AL to insert tap cells
+Information: tap_to_tap_distance is not a hard rule at tap insertion stage. Please set place.legalize.ignore_tap_to_tap_distance_rule to true to bypass the check.
+Warning: Site master "unit" has neither X-Symmetry nor Y-Symmetry. The "legal orientations" for the standard cells will be limited. (LGL-031)
+Warning: Routing direction of metal layer PO is neither "horizontal" nor "vertical".  PDC checks will not be performed on this layer. (PDC-003)
+Warning: Routing direction of metal layer AP is neither "horizontal" nor "vertical".  PDC checks will not be performed on this layer. (PDC-003)
+PDC app_options settings =========
+	place.legalize.enable_prerouted_net_check: 1
+	place.legalize.num_tracks_for_access_check: 1
+	place.legalize.use_eol_spacing_for_access_check: 0
+	place.legalize.allow_touch_track_for_access_check: 1
+	place.legalize.reduce_conservatism_in_eol_check: 0
+	place.legalize.preroute_shape_merge_distance: 0.0
+	place.legalize.enable_non_preferred_direction_span_check: 0
+
+Cached 0 vias out of 0 total vias.
+Information: Starting tap cell insertion into top/final_floorplan using site master "unit". (CHF-200)
+	20% complete ...
+	40% complete ...
+	50% complete ...
+	70% complete ...
+Information: Total 69 tap cells inserted successfully into top/final_floorplan. (CHF-100)
+# Create Power/Ground Network
+source -echo ../scripts/04_01_create_pg_network.tcl
+######################################################
+#####          Create PG Network Script          #####
+######################################################
+# Remove PG related data
+remove_pg_via_master_rules -all
+No via def rule is found.
+remove_pg_patterns -all
+No pattern is found.
+remove_pg_strategies -all
+All strategies have been removed.
+remove_pg_strategy_via_rules -all
+All strategy via rules have been removed.
+remove_routes -ring -stripe -lib_cell_pin_connect 
+Remove no route shapes with specified net types and shape uses.
+# New PG Net 
+connect_pg_net
+Information: Power and ground nets will be connected to mapped cells only. Unmapped instances and switch placeholder cells in the design are skipped. (MV-341)
+****************************************
+Report : Power/Ground Connection Summary
+Design : top
+Version: U-2022.12-SP6
+Date   : Sun May 25 01:36:35 2025
+****************************************
+P/G net name                  P/G pin count(previous/current)
+--------------------------------------------------------------------------------
+Power net VDD                 0/475
+Ground net VSS                0/475
+--------------------------------------------------------------------------------
+Information: connections of 950 power/ground pin(s) are created or changed.
+# Set PG net attribute
+set_attribute -objects [get_nets VDD] -name net_type -value power
+set_attribute -objects [get_nets VSS] -name net_type -value ground
+# Create VIA strategy rule VIA_NIL
+set_pg_strategy_via_rule VIA_NIL -via_rule { {intersection: undefined} {via_master: NIL} }
+Information: The command 'set_pg_strategy_via_rule' cleared the undo history. (UNDO-016)
+Successfully set strategy via rule VIA_NIL.
+# Create PG Rails for standard cells
+create_pg_std_cell_conn_pattern M1_rail -layers {M1} -rail_width {@wtop @wbottom} -parameters {wtop wbottom}
+Successfully create standard cell rail pattern M1_rail.
+set_pg_strategy M1_rail_strategy_pwr -core -pattern {{name: M1_rail} {nets: VDD} {parameters: {$STANDARD_CELLS_WIDTH $STANDARD_CELLS_WIDTH}}}
+Successfully set PG strategy M1_rail_strategy_pwr.
+set_pg_strategy M1_rail_strategy_gnd -core -pattern {{name: M1_rail} {nets: VSS} {parameters: {$STANDARD_CELLS_WIDTH $STANDARD_CELLS_WIDTH}}}
+Successfully set PG strategy M1_rail_strategy_gnd.
+compile_pg -strategies M1_rail_strategy_pwr -ignore_drc
+Sanity check for inputs.
+No strategy-level via rule is specified, the default rule will be applied.
+DRC checking and fixing will be skipped for created shapes.
+Automatic PG net connection through connect_pg_net is disabled.
+Updating PG strategies.
+Updating strategy M1_rail_strategy_pwr.
+Loading library and design information.
+Number of Standard Cells: 475
+Number of Hard Macros: 0
+Number of Pads: 0
+Creating standard cell rails.
+Creating standard cell rails for strategy M1_rail_strategy_pwr.
+Creating via connection between strategies and existing shapes.
+via connection runtime: 0 seconds.
+Commiting wires and vias.
+Committing wires takes 0.00 seconds.
+Committing vias takes 0.00 seconds.
+Committed 18 wires.
+Committed 0 vias.
+Committed 0 wires for via creation.
+Overall PG creation runtime: 0 seconds.
+Successfully compiled PG.
+Overall runtime: 0 seconds.
+compile_pg -strategies M1_rail_strategy_gnd -ignore_drc
+Sanity check for inputs.
+No strategy-level via rule is specified, the default rule will be applied.
+DRC checking and fixing will be skipped for created shapes.
+Automatic PG net connection through connect_pg_net is disabled.
+Updating PG strategies.
+Updating strategy M1_rail_strategy_gnd.
+Loading library and design information.
+Number of Standard Cells: 475
+Number of Hard Macros: 0
+Number of Pads: 0
+Creating standard cell rails.
+Creating standard cell rails for strategy M1_rail_strategy_gnd.
+Creating via connection between strategies and existing shapes.
+via connection runtime: 0 seconds.
+Commiting wires and vias.
+Committing wires takes 0.00 seconds.
+Committing vias takes 0.00 seconds.
+Committed 17 wires.
+Committed 0 vias.
+Committed 0 wires for via creation.
+Overall PG creation runtime: 0 seconds.
+Successfully compiled PG.
+Overall runtime: 0 seconds.
+# Create METTP Vertical PG Straps
+create_pg_mesh_pattern METTP_PG \
+	-layers { {vertical_layer: M3}   {width: 1} {spacing: interleaving} {pitch: 6} {offset: 0.5} } 
+Successfully create mesh pattern METTP_PG.
+set_pg_strategy METTP_PG_Strategy \
+	-core \
+	-pattern   { {name: METTP_PG} {nets:{VSS VDD}} } \
+	-extension { {stop: design_boundary_and_generate_pin} }
+Successfully set PG strategy METTP_PG_Strategy.
+compile_pg -strategies {METTP_PG_Strategy} -via_rule VIA_NIL
+Sanity check for inputs.
+Automatic PG net connection through connect_pg_net is disabled.
+Updating PG strategies.
+Updating strategy METTP_PG_Strategy.
+Loading library and design information.
+Number of Standard Cells: 475
+Number of Hard Macros: 0
+Number of Pads: 0
+Creating straps and vias in power plan.
+Creating wire shapes for strategies METTP_PG_Strategy .
+Creating wire shapes runtime: 0 seconds
+Blockage cutting and DRC fixing for wire shapes for strategies METTP_PG_Strategy .
+Check and fix DRC for 34 wires for strategy METTP_PG_Strategy.
+Number of threads: 1
+Number of partitions: 4
+Direction of partitions: vertical
+Number of wires: 34
+Checking DRC for 34 wires:5% 10% 15% 20% 25% 35% 40% 45% 50% 55% 60% 70% 75% 80% 85% 90% 100%
+Creating 34 wires after DRC fixing.
+Wire DRC checking runtime 0.00 seconds.
+Creating via shapes for strategies METTP_PG_Strategy .
+Working on strategy METTP_PG_Strategy.
+Number of detected intersections: 0
+Total runtime of via shapes creation: 0 seconds
+Runtime of via DRC checking for strategy METTP_PG_Strategy: 0.00 seconds.
+Removing dangling/floating wire/vias after DRC check.
+Start iteration 1:
+Checking potential dangling/floating power plan wires.
+Finish removing all dangling or floating wires and vias.
+Commiting wires and vias.
+Committing wires takes 0.00 seconds.
+Committing vias takes 0.00 seconds.
+Committed 102 wires.
+Committed 0 vias.
+Committed 0 wires for via creation.
+Created 68 pins at design boundary.
+Overall PG creation runtime: 0 seconds.
+Successfully compiled PG.
+Overall runtime: 0 seconds.
+#### Create METTPL Horizontal PG Straps 
+#create_pg_mesh_pattern METTPL_PG \
+#	-layers { {horizontal_layer: METTPL}   {width: 4} {spacing: interleaving} {pitch: 10} {offset: 0.5} }
+#set_pg_strategy METTPL_PG_Strategy \
+#	-core \
+#	-pattern   { {name: METTPL_PG} {nets:{VSS VDD}} } \
+#	-extension { {stop: design_boundary_and_generate_pin} }
+#compile_pg -strategies {METTPL_PG_Strategy} -via_rule VIA_NIL
+# Create PG Rings
+create_pg_ring_pattern \
+                 PG_Ring \
+                 -horizontal_layer M1  -vertical_layer M2 \
+                 -horizontal_width 1.5 -vertical_width 1.5 \
+                 -horizontal_spacing 1 -vertical_spacing 1
+Successfully create PG ring pattern PG_Ring.
+set_pg_strategy PG_Ring_Strategy -core -pattern {{ name: PG_Ring} { nets: "VDD VSS" } {offset: 1}}
+Successfully set PG strategy PG_Ring_Strategy.
+compile_pg -strategies PG_Ring_Strategy -via_rule VIA_NIL
+Sanity check for inputs.
+Automatic PG net connection through connect_pg_net is disabled.
+Updating PG strategies.
+Updating strategy PG_Ring_Strategy.
+Loading library and design information.
+Number of Standard Cells: 475
+Number of Hard Macros: 0
+Number of Pads: 0
+Creating rings.
+Removing dangling/floating wire/vias after DRC check.
+Start iteration 1:
+Checking potential dangling/floating power plan wires.
+Checking dangling/floating vias inside strategy PG_Ring_Strategy.
+Checking 8 stacked vias:0% 10% 20% 30% 50% 60% 70% 80% 100%
+Finish removing all dangling or floating wires and vias.
+Commiting wires and vias.
+Committing wires takes 0.00 seconds.
+Committing vias takes 0.00 seconds.
+Committed 8 wires.
+Committed 8 vias.
+Committed 0 wires for via creation.
+Overall PG creation runtime: 0 seconds.
+Successfully compiled PG.
+Overall runtime: 0 seconds.
+# Create PG VIAs
+create_pg_vias -from_layers M3 -to_layers M1 -via_masters default -nets {VDD VSS}
+Query intersections and create vias.
+Object query runtime: 0 seconds.
+Determining intersections for 77 shapes starts
+Intersection detection runtime: 0 seconds.
+Instantiating vias for 663 intersections starts
+Via instantiation runtime: 0 seconds.
+Starting via DRC checking ...
+Number of threads: 1
+Number of partitions: 4
+Direction of partitions: horizontal
+Number of vias: 663
+Checking DRC for 663 stacked vias:5% 10% 15% 20% 25% 30% 35% 40% 45% 50% 55% 60% 65% 70% 75% 80% 85% 90% 95% 100%
+Overall via DRC checking runtime: 1 seconds.
+Checking dangling/floating vias.
+Start iteration 1: Checking 663 stacked vias:0% 10% 20% 30% 40% 50% 60% 70% 80% 90% 100%
+Committed 1326 vias.
+Committing vias takes 0.00 seconds.
+Overall runtime: 1 seconds.
+Successfully created PG Vias.
+create_pg_vias -from_layers M3 -to_layers M2 -via_masters default -nets {VDD VSS}
+Query intersections and create vias.
+Object query runtime: 0 seconds.
+Determining intersections for 77 shapes starts
+Intersection detection runtime: 0 seconds.
+Instantiating vias for 0 intersections starts
+Via instantiation runtime: 0 seconds.
+Committed 0 vias.
+Error: Failed to find intersecting PG objects for specified nets in specified regions. (PGR-049)
+Overall runtime: 0 seconds.
+Failed to create PG vias.
+create_pg_vias -from_layers M2 -to_layers M1 -via_masters default -nets {VDD VSS}
+Query intersections and create vias.
+Object query runtime: 0 seconds.
+Determining intersections for 145 shapes starts
+Intersection detection runtime: 0 seconds.
+Instantiating vias for 0 intersections starts
+Via instantiation runtime: 0 seconds.
+Committed 0 vias.
+Error: Existing vias prevented new vias to be inserted. (PGR-050)
+Overall runtime: 0 seconds.
+Failed to create PG vias.
+#create_pg_vias -from_layers M7 -to_layers M6 -via_masters default -nets {VDD VSS}
+# Connect PG nets
+connect_pg_net -net VDD [get_pins -hierarchical  */VDD]
+connect_pg_net -net VSS [get_pins -hierarchical  */VSS]
+#connect_pg_net -net VDD [get_pins -hierarchical  */vdd]
+#connect_pg_net -net VSS [get_pins -hierarchical  */gnd]
+# Check created PG structure
+check_pg_connectivity
+Information: The command 'check_pg_connectivity' cleared the undo history. (UNDO-016)
+Checking secondary net through power switch is enabled. 
+Secondary net will be checked together from primary net. They will be treated as the same net
+Primary Net : VDD    Secondary Net:
+Primary Net : VSS    Secondary Net:
+Loading cell instances...
+Number of Standard Cells: 1625
+Number of Macro Cells: 0
+Number of IO Pad Cells: 0
+Number of Blocks: 0
+Loading P/G wires and vias...
+Number of VDD Wires: 39
+Number of VDD Vias: 684
+Number of VDD Terminals: 34
+**************Verify net VDD connectivity*****************
+  Number of floating wires: 0
+  Number of floating vias: 0
+  Number of floating std cells: 0
+  Number of floating hard macros: 0
+  Number of floating I/O pads: 0
+  Number of floating terminals: 0
+  Number of floating hierarchical blocks: 0
+************************************************************
+Loading cell instances...
+Loading P/G wires and vias...
+Number of VSS Wires: 38
+Number of VSS Vias: 650
+Number of VSS Terminals: 34
+**************Verify net VSS connectivity*****************
+  Number of floating wires: 0
+  Number of floating vias: 0
+  Number of floating std cells: 0
+  Number of floating hard macros: 0
+  Number of floating I/O pads: 0
+  Number of floating terminals: 0
+  Number of floating hierarchical blocks: 0
+************************************************************
+Overall runtime: 0 seconds.
+check_pg_drc
+Command check_pg_drc started  at Sun May 25 01:36:36 2025
+Command check_pg_drc finished at Sun May 25 01:36:36 2025
+CPU usage for check_pg_drc: 0.07 seconds ( 0.00 hours)
+Elapsed time for check_pg_drc: 0.07 seconds ( 0.00 hours)
+No errors found.
+#### ----- Check DRCs now that the Boundary/TAP cells and PG Net are ready ----- ####
+# DRCs
+check_pg_drc
+Command check_pg_drc started  at Sun May 25 01:36:36 2025
+Command check_pg_drc finished at Sun May 25 01:36:36 2025
+CPU usage for check_pg_drc: 0.06 seconds ( 0.00 hours)
+Elapsed time for check_pg_drc: 0.06 seconds ( 0.00 hours)
+No errors found.
+#PG net
+check_pg_connectivity
+Checking secondary net through power switch is enabled. 
+Secondary net will be checked together from primary net. They will be treated as the same net
+Primary Net : VDD    Secondary Net:
+Primary Net : VSS    Secondary Net:
+Loading cell instances...
+Number of Standard Cells: 1625
+Number of Macro Cells: 0
+Number of IO Pad Cells: 0
+Number of Blocks: 0
+Loading P/G wires and vias...
+Number of VDD Wires: 39
+Number of VDD Vias: 684
+Number of VDD Terminals: 34
+**************Verify net VDD connectivity*****************
+  Number of floating wires: 0
+  Number of floating vias: 0
+  Number of floating std cells: 0
+  Number of floating hard macros: 0
+  Number of floating I/O pads: 0
+  Number of floating terminals: 0
+  Number of floating hierarchical blocks: 0
+************************************************************
+Loading cell instances...
+Loading P/G wires and vias...
+Number of VSS Wires: 38
+Number of VSS Vias: 650
+Number of VSS Terminals: 34
+**************Verify net VSS connectivity*****************
+  Number of floating wires: 0
+  Number of floating vias: 0
+  Number of floating std cells: 0
+  Number of floating hard macros: 0
+  Number of floating I/O pads: 0
+  Number of floating terminals: 0
+  Number of floating hierarchical blocks: 0
+************************************************************
+Overall runtime: 0 seconds.
+#### ---- Save and exit ----- ####
+save_block
+Information: Saving block 'top_lib:top/final_floorplan.design'
+1
+save_lib
+Saving library 'top_lib'
+1
+if {[info exists ::env(NO_GUI)]} {
+    exit
+} else {
+	gui_start
+}
+Maximum memory usage for this session: 440.52 MB
+Maximum memory usage for this session including child processes: 440.52 MB
+CPU usage for this session:     11 seconds (  0.00 hours)
+Elapsed time for this session:     12 seconds (  0.00 hours)
+Thank you for using Fusion Compiler.

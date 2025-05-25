@@ -1,0 +1,6 @@
+
+-------------------------------------------------------------------------------
+Rule: OD.DN.2 : Min. OD density over window 150 step 75 >= 20%	              1 error
+Rule: PO.DN.2 : {OD OR DOD OR PO OR DPO } local density (minimun) over window 20um x 20um stepping 10um >= 0.1%	             46 errors
+-------------------------------------------------------------------------------
+NOTE: TRANSLATE_ERROR_INST is ON

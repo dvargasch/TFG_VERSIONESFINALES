@@ -1,0 +1,110 @@
+Information: Deserialized np data
+INFO: timer data loaded from /tmp/top_3245344_598643968.timdat
+Information: Freeing timing information from routing. (ZRT-574)
+****************************************
+Report : power
+        -significant_digits 2
+Design : top
+Version: U-2022.12-SP6
+Date   : Sun May 25 02:35:43 2025
+****************************************
+Information: Activity for scenario scenarioFF was cached, no propagation required. (POW-005)
+Information: Activity for scenario scenarioSS was cached, no propagation required. (POW-005)
+Mode: mode1
+Corner: cornerFF
+Scenario: scenarioFF
+Voltage: 1.32
+Temperature: 125.00
+
+Voltage Unit         : 1V
+Capacitance Unit     : 1pF
+Time Unit            : 1ns
+Temperature Unit     : 1C
+Dynamic Power Unit   : 1nW
+Leakage Power Unit   : 1nW
+
+Switched supply net power scaling:
+scaling for leakage power
+
+Supply nets:
+VDD (power) probability 1.00 (default)
+VSS (ground) probability 1.00 (default)
+Warning: Power table extrapolation (extrapolation mode) for port CDN on cell p2_reg[0] for parameter Tinp. Lowest table value = 0.004000, highest table value = 0.331200, value = 0.000496 (POW-046)
+Warning: Power table extrapolation (extrapolation mode) for port Q on cell p2_reg[0] for parameter Tinp. Lowest table value = 0.004000, highest table value = 0.331200, value = 0.000496 (POW-046)
+Warning: Power table extrapolation (extrapolation mode) for port CDN on cell reg_data_reg[0] for parameter Tinp. Lowest table value = 0.004000, highest table value = 0.331200, value = 0.000839 (POW-046)
+Warning: Power table extrapolation (extrapolation mode) for port Q on cell reg_data_reg[0] for parameter Tinp. Lowest table value = 0.004000, highest table value = 0.331200, value = 0.000820 (POW-046)
+Warning: Power table extrapolation (extrapolation mode) for port ZN on cell ctmi_7 for parameter Tinp. Lowest table value = 0.004000, highest table value = 0.331200, value = 0.000076 (POW-046)
+Warning: Power table extrapolation (extrapolation mode) for port CDN on cell p3_reg[0] for parameter Tinp. Lowest table value = 0.004000, highest table value = 0.331200, value = 0.000591 (POW-046)
+Warning: Power table extrapolation (extrapolation mode) for port Q on cell p3_reg[0] for parameter Tinp. Lowest table value = 0.004000, highest table value = 0.331200, value = 0.000572 (POW-046)
+Warning: Power table extrapolation (extrapolation mode) for port Z on cell ctmi_210 for parameter Tinp. Lowest table value = 0.004000, highest table value = 0.331200, value = 0.000629 (POW-046)
+Warning: Power table extrapolation (extrapolation mode) for port CDN on cell p1_reg[0] for parameter Tinp. Lowest table value = 0.004000, highest table value = 0.331200, value = 0.000477 (POW-046)
+Warning: Power table extrapolation (extrapolation mode) for port Q on cell p1_reg[0] for parameter Tinp. Lowest table value = 0.004000, highest table value = 0.331200, value = 0.000477 (POW-046)
+Note - message 'POW-046' limit (10) exceeded. Remainder will be suppressed.
+
+  Cell Internal Power    = 1.09e+04 nW ( 72.5%)
+  Net Switching Power    = 4.13e+03 nW ( 27.5%)
+Total Dynamic Power      = 1.50e+04 nW (100.0%)
+
+Cell Leakage Power       = 5.59e+03 nW
+
+
+  Attributes
+  ----------
+      u  -  User defined power group
+      i  -  Includes clock pin internal power
+
+Power Group         Internal Power        Switching Power          Leakage Power            Total Power    (   %  )    Attrs
+-----------------------------------------------------------------------------------------------------------------------------
+io_pad                    0.00e+00               0.00e+00               0.00e+00               0.00e+00    (  0.0%)         
+memory                    0.00e+00               0.00e+00               0.00e+00               0.00e+00    (  0.0%)         
+black_box                 0.00e+00               0.00e+00               5.55e+00               5.55e+00    (  0.0%)         
+clock_network             8.18e+03               1.60e+03               2.16e+02               9.99e+03    ( 48.4%)        i
+register                  1.20e+03               4.92e+02               1.76e+03               3.45e+03    ( 16.7%)         
+sequential                0.00e+00               0.00e+00               0.00e+00               0.00e+00    (  0.0%)         
+combinational             1.53e+03               2.04e+03               3.60e+03               7.18e+03    ( 34.8%)         
+-----------------------------------------------------------------------------------------------------------------------------
+Total                     1.09e+04 nW            4.13e+03 nW            5.59e+03 nW            2.06e+04 nW
+Mode: mode1
+Corner: cornerSS
+Scenario: scenarioSS
+Voltage: 1.08
+Temperature: 125.00
+
+Voltage Unit         : 1V
+Capacitance Unit     : 1pF
+Time Unit            : 1ns
+Temperature Unit     : 1C
+Dynamic Power Unit   : 1nW
+Leakage Power Unit   : 1nW
+
+Switched supply net power scaling:
+scaling for leakage power
+
+Supply nets:
+VDD (power) probability 1.00 (default)
+VSS (ground) probability 1.00 (default)
+
+  Cell Internal Power    = 6.33e+03 nW ( 69.3%)
+  Net Switching Power    = 2.80e+03 nW ( 30.7%)
+Total Dynamic Power      = 9.13e+03 nW (100.0%)
+
+Cell Leakage Power       = 5.85e+01 nW
+
+
+  Attributes
+  ----------
+      u  -  User defined power group
+      i  -  Includes clock pin internal power
+
+Power Group         Internal Power        Switching Power          Leakage Power            Total Power    (   %  )    Attrs
+-----------------------------------------------------------------------------------------------------------------------------
+io_pad                    0.00e+00               0.00e+00               0.00e+00               0.00e+00    (  0.0%)         
+memory                    0.00e+00               0.00e+00               0.00e+00               0.00e+00    (  0.0%)         
+black_box                 0.00e+00               0.00e+00               3.12e-01               3.12e-01    (  0.0%)         
+clock_network             4.80e+03               1.11e+03               2.75e+00               5.91e+03    ( 64.2%)        i
+register                  6.97e+02               3.30e+02               1.94e+01               1.05e+03    ( 11.4%)         
+sequential                0.00e+00               0.00e+00               0.00e+00               0.00e+00    (  0.0%)         
+combinational             8.39e+02               1.37e+03               3.61e+01               2.24e+03    ( 24.4%)         
+-----------------------------------------------------------------------------------------------------------------------------
+Total                     6.33e+03 nW            2.80e+03 nW            5.85e+01 nW            9.19e+03 nW
+1

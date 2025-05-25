@@ -1,0 +1,47 @@
+Warning: Scenario scenarioFF is not configured for setup analysis: skipping. (UIC-058)
+****************************************
+Report : timing
+        -path_type full
+        -delay_type max
+        -max_paths 1
+        -report_by design
+Design : top
+Version: U-2022.12-SP6
+Date   : Sun May 25 01:56:01 2025
+****************************************
+
+  Startpoint: enable (input port clocked by SYS_CLK)
+  Endpoint: clock_gate_p1_reg (rising clock gating-check end-point clocked by SYS_CLK)
+  Mode: mode1
+  Corner: cornerSS
+  Scenario: scenarioSS
+  Path Group: **in2reg_default**
+  Path Type: max
+
+  Point                                            Incr      Path  
+  ------------------------------------------------------------------------
+  clock SYS_CLK (rise edge)                        0.00      0.00
+  clock network delay (ideal)                      0.00      0.00
+  input external delay                             0.80      0.80 f
+  enable (in)                                      0.00      0.80 f
+  phfnr_buf_514/ZN (INVD1HPBWP)                    2.17      2.97 r
+  ctmi_4271/ZN (ND4D1HPBWP)                        0.77      3.74 f
+  ctmi_4246/ZN (NR4D1HPBWP)                        0.31      4.05 r
+  ctmi_3987/ZN (ND4D1HPBWP)                        0.18      4.23 f
+  clock_gate_p1_reg/E (CKLNQD1HPBWP)               0.00      4.23 f
+  data arrival time                                          4.23
+
+  clock SYS_CLK (rise edge)                       10.00     10.00
+  clock network delay (ideal)                     -0.20      9.80
+  clock_gate_p1_reg/CP (CKLNQD1HPBWP)              0.00      9.80 r
+  clock uncertainty                               -0.30      9.50
+  library setup time                              -0.03      9.47
+  data required time                                         9.47
+  ------------------------------------------------------------------------
+  data required time                                         9.47
+  data arrival time                                         -4.23
+  ------------------------------------------------------------------------
+  slack (MET)                                                5.24
+
+
+1

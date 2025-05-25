@@ -1,0 +1,5 @@
+
+-------------------------------------------------------------------------------
+Rule: VIA3.R.4:M3 : At least two VIAx must be used for a connection that is <= 0.8 um (D) away from a metal plate (either Mx or Mx+1) with length > 0.3 um (L) and width > 0.3 um (W). (It is allowed to use one VIAx for a connection that is > 0.8 um (D) away from a metal plate (either Mx or Mx+1) with length > 0.3 um (L) and width > 0.3 um (W).)	              1 error
+-------------------------------------------------------------------------------
+NOTE: TRANSLATE_ERROR_INST is ON

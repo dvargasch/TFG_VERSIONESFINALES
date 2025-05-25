@@ -1,0 +1,47 @@
+Warning: Scenario scenarioFF is not configured for setup analysis: skipping. (UIC-058)
+****************************************
+Report : timing
+        -path_type full
+        -delay_type max
+        -max_paths 1
+        -report_by design
+Design : top
+Version: U-2022.12-SP6
+Date   : Thu May 22 11:58:35 2025
+****************************************
+
+  Startpoint: reg_data_reg[4] (rising edge-triggered flip-flop clocked by SYS_CLK)
+  Endpoint: parallel_out[7] (output port clocked by SYS_CLK)
+  Mode: mode1
+  Corner: cornerSS
+  Scenario: scenarioSS
+  Path Group: **reg2out_default**
+  Path Type: max
+
+  Point                                            Incr      Path  
+  ------------------------------------------------------------------------
+  clock SYS_CLK (rise edge)                        0.00      0.00
+  clock network delay (ideal)                      0.00      0.00
+
+  reg_data_reg[4]/CP (SDFCND0HPBWP)                0.00      0.00 r
+  reg_data_reg[4]/Q (SDFCND0HPBWP)                 0.35      0.35 r
+  ctmi_1067/ZN (XNR3D0HPBWP)                       0.36      0.71 r
+  ctmi_1065/ZN (MUX2ND0HPBWP)                      0.25      0.96 r
+  ctmi_1127/ZN (ND3D1HPBWP)                        0.17      1.13 f
+  ctmi_1126/ZN (MUX2ND0HPBWP)                      0.33      1.46 f
+  parallel_out[7] (out)                            0.00      1.46 f
+  data arrival time                                          1.46
+
+  clock SYS_CLK (rise edge)                       10.00     10.00
+  clock network delay (ideal)                      0.00     10.00
+  clock uncertainty                               -0.30      9.70
+  output external delay                           -1.00      8.70
+  data required time                                         8.70
+  ------------------------------------------------------------------------
+  data required time                                         8.70
+  data arrival time                                         -1.46
+  ------------------------------------------------------------------------
+  slack (MET)                                                7.24
+
+
+1

@@ -1,0 +1,31 @@
+Command: /mnt/vol_NFS_rh003/estudiantes/DANIELA_VARGAS/Version_final/0516/versiones_finales/Registro/TSMC_Hamming_8_version2/FLOW/common/rtl/sverilog/prueba_1_a -sml=verdi +UVM_VERDI_TRACE=UVM_AWARE +fsdb+gate=off -ucli2Proc -ucli -l /mnt/vol_NFS_rh003/estudiantes/DANIELA_VARGAS/Version_final/0516/versiones_finales/Registro/TSMC_Hamming_8_version2/FLOW/common/rtl/sverilog/verdiLog/sim.log
+Chronologic VCS simulator copyright 1991-2023
+Contains Synopsys proprietary information.
+Compiler version U-2023.03-SP2_Full64; Runtime version U-2023.03-SP2_Full64;  May 21 14:44 2025
+
+ucli% synUtils::getArch
+linux64
+ucli% loaddl -simv /mnt/vol_NFS_rh003/tools/verdi/R-2020.12-SP2/share/PLI/VCS/LINUXAMD64/libnovas.so LoadFSDBDumpCmd;LoadFSDBDumpCmd
+LoadFSDBDumpCmd success
+ucli% config ckptfsdbcheck off;config endofsim noexit;config onfail {enable all};config followactivescope on;catch {setUcliVerdiConnected};set watch::resultTagsForVerdiBP {<ucli_break_bp_status_begin> <ucli_break_bp_status_end>};set ucliCore::support_restore_through_stask_in_verdi 1;cbug::config pretty_print auto;fsdbDumpfile {/mnt/vol_NFS_rh003/estudiantes/DANIELA_VARGAS/Version_final/0516/versiones_finales/Registro/TSMC_Hamming_8_version2/FLOW/common/rtl/sverilog/inter.fsdb} ;fsdbDumpflush ; 
+*Verdi* Loading libsscore_vcs202303.so
+*Verdi* Cannot load libsscore_vcs202303.so from following VERDI_HOME or NOVAS_HOME
+/mnt/vol_NFS_rh003/tools/verdi/R-2020.12-SP2/share/PLI/lib/LINUXAMD64/
+*Verdi* Failed to load FSDB dumper.
+*Verdi* : Task do NOT Support.
+*Verdi* : Task do NOT Support.
+
+ucli% synEnv::hasFataled
+0
+ucli% ucliCore::getToolPID
+286869
+ucli% sps_interactive
+*Verdi* : Task do NOT Support.
+
+ucli% ucliCore::getToolPID
+286869
+ucli% ucliCore::getToolPID
+286869
+ucli% if {[catch {ucliCore::setFocus tool}]} {}
+
+ucli% 

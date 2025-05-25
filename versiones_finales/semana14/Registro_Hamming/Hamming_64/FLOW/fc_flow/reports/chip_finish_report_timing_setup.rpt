@@ -1,0 +1,51 @@
+Warning: Scenario scenarioFF is not configured for setup analysis: skipping. (UIC-058)
+****************************************
+Report : timing
+        -path_type full
+        -delay_type max
+        -max_paths 1
+        -report_by design
+Design : top
+Version: U-2022.12-SP6
+Date   : Sun May 25 01:48:12 2025
+****************************************
+
+  Startpoint: load (input port clocked by SYS_CLK)
+  Endpoint: p2_reg[12] (rising edge-triggered flip-flop clocked by SYS_CLK)
+  Mode: mode1
+  Corner: cornerSS
+  Scenario: scenarioSS
+  Path Group: **in2reg_default**
+  Path Type: max
+
+  Point                                            Incr      Path  
+  ------------------------------------------------------------------------
+  clock SYS_CLK (rise edge)                        0.00      0.00
+  clock network delay (propagated)                 0.32      0.32
+  input external delay                             0.80      1.12 f
+  load (in)                                        0.00      1.12 f
+  ctmi_116/ZN (IND3D0HPBWP)                        0.32      1.44 f
+  place_optcopt_gre_mt_inst_3453/Z (CKBD2HPBWP)    0.39      1.82 f
+  place_optHFSINV_455_374/ZN (CKND0HPBWP)          0.20      2.02 r
+  place_optHFSINV_427_373/ZN (CKND2HPBWP)          0.40      2.42 f
+  ctmi_2422/ZN (OAI221D0HPBWP)                     0.42      2.84 r
+  ctmi_2421/ZN (MAOI22D0HPBWP)                     0.32      3.16 r
+  ctmi_2582/ZN (IOA22D0HPBWP)                      0.17      3.33 f
+  ctmi_2581/ZN (OAI22D0HPBWP)                      0.16      3.49 r
+  p2_reg[12]/D (SDFCNQD0HPBWP)                     0.00      3.49 r
+  data arrival time                                          3.49
+
+  clock SYS_CLK (rise edge)                       10.00     10.00
+  clock network delay (propagated)                 0.34     10.34
+  p2_reg[12]/CP (SDFCNQD0HPBWP)                    0.00     10.34 r
+  clock uncertainty                               -0.30     10.04
+  library setup time                              -0.11      9.93
+  data required time                                         9.93
+  ------------------------------------------------------------------------
+  data required time                                         9.93
+  data arrival time                                         -3.49
+  ------------------------------------------------------------------------
+  slack (MET)                                                6.45
+
+
+1

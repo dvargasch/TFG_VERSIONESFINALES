@@ -40,7 +40,7 @@ set DESIGN_LIBRARY "${DESIGN_NAME}_lib"
 #################################
 set time [get_date]
 puts "Command Start at: ${time}"
-Command Start at: Sun May 18 01:42:20 2025
+Command Start at: Thu May 22 17:30:24 2025
 ####################################
 ### 1. Variables for design prep ###
 ####################################
@@ -176,8 +176,14 @@ if {[string equal verilog ${HDL}]} {
 Information: By default, the HDL template library is 'WORK' (LBR-??).
 Running PRESTO HDLC
 Compiling source file /mnt/vol_NFS_rh003/estudiantes/DANIELA_VARGAS/Version_final/0516/versiones_finales/Contador/TSMC_TMR_8/FLOW/fc_flow/flow/work/../../../common/rtl/sverilog/top.sv
+Compiling source file /mnt/vol_NFS_rh003/estudiantes/DANIELA_VARGAS/Version_final/0516/versiones_finales/Contador/TSMC_TMR_8/FLOW/fc_flow/flow/work/../../../common/rtl/sverilog/tb.sv
+Opening include file /mnt/vol_NFS_rh003/estudiantes/DANIELA_VARGAS/Version_final/0516/versiones_finales/Contador/TSMC_TMR_8/FLOW/fc_flow/flow/work/../../../common/rtl/sverilog/top.sv
+Warning:  /mnt/vol_NFS_rh003/estudiantes/DANIELA_VARGAS/Version_final/0516/versiones_finales/Contador/TSMC_TMR_8/FLOW/fc_flow/flow/work/../../../common/rtl/sverilog/top.sv:1: Overwriting existing design element 'top' with newer version. (VER-64)
+Warning:  /mnt/vol_NFS_rh003/estudiantes/DANIELA_VARGAS/Version_final/0516/versiones_finales/Contador/TSMC_TMR_8/FLOW/fc_flow/flow/work/../../../common/rtl/sverilog/top.sv:53: Overwriting existing design element 'counter' with newer version. (VER-64)
+Warning:  /mnt/vol_NFS_rh003/estudiantes/DANIELA_VARGAS/Version_final/0516/versiones_finales/Contador/TSMC_TMR_8/FLOW/fc_flow/flow/work/../../../common/rtl/sverilog/top.sv:82: Overwriting existing design element 'voter' with newer version. (VER-64)
+Warning:  /mnt/vol_NFS_rh003/estudiantes/DANIELA_VARGAS/Version_final/0516/versiones_finales/Contador/TSMC_TMR_8/FLOW/fc_flow/flow/work/../../../common/rtl/sverilog/tb.sv:15: delay controls are ignored for synthesis. (VER-176)
 Presto compilation completed successfully.
-Elapsed = 00:00:00.05, CPU = 00:00:00.01
+Elapsed = 00:00:00.70, CPU = 00:00:00.02
 1
 #### ----- Elaborate and hierarchize the design ----- ####
 # Elaborate
@@ -202,20 +208,20 @@ Total in all modules
   Ports:                63
   Nets:                 162
   Instances:            65
-Elapsed = 00:00:00.15, CPU = 00:00:00.10
+Elapsed = 00:00:00.38, CPU = 00:00:00.09
 1
 # Set top module in the design
 set_top_module ${DESIGN_NAME}
 Information: User units loaded from library 'tcbn65lphpbwpcghvt_1' (LNK-040)
 Information: Added key list 'DesignWare' to design 'top'. (DWS-0216)
-Elapsed = 00:00:00.51, CPU = 00:00:00.27
+Elapsed = 00:00:00.36, CPU = 00:00:00.26
 1
 # Save block after RTL setup
 save_block -as ${DESIGN_NAME}/rtl_read
 Information: Saving 'top_lib:top.design' to 'top_lib:top/rtl_read.design'. (DES-028)
 1
 #### ----- Initial mapping ----- ####
-set_dont_touch [get_nets q*] true
+set_dont_touch [get_nets q_*] true
 1
 # Just to inital map
 compile_fusion -to initial_map  
@@ -224,8 +230,8 @@ Information: Timer using 1 threads
 INFO: compile_fusion is running in balanced flow mode.
 Warning: No site rows found in floorplan. (LGL-397)
 Information: Starting 'compile_fusion -to initial_map' (FLW-8000)
-Information: Time: 2025-05-18 01:42:21 / Session: 0.00 hr / Command: 0.00 hr / Memory: 489 MB (FLW-8100)
-CPU Load: 2%, Ram Free: 0 GB, Swap Free: 0 GB, Work Disk Free: 246 GB, Tmp Disk Free: 53 GB
+Information: Time: 2025-05-22 17:30:26 / Session: 0.00 hr / Command: 0.00 hr / Memory: 489 MB (FLW-8100)
+CPU Load: 1%, Ram Free: 0 GB, Swap Free: 7 GB, Work Disk Free: 169 GB, Tmp Disk Free: 53 GB
 Warning: No site rows found in floorplan. (LGL-397)
 INFO: Start environment monitoring: recipes
 INFO: compile_fusion is running in balanced flow mode.
@@ -245,7 +251,7 @@ Warning: Mapping to scan cell 'GSDFCNQD1HPBWP' in library is not possible becaus
 Information: The automatic clock gate timing flow is activated. Clock latencies set on clock gate cells will be automatically adjusted by an estimate for latency. (CGT-4005)
 ----------------------------------------------------------------------------------------------------------
 Information: Starting compile_fusion / initial_map (FLW-8000)
-Information: Time: 2025-05-18 01:42:23 / Session: 0.00 hr / Command: 0.00 hr / Memory: 624 MB (FLW-8100)
+Information: Time: 2025-05-22 17:30:27 / Session: 0.00 hr / Command: 0.00 hr / Memory: 624 MB (FLW-8100)
 ----------------------------------------------------------------------------------------------------------
 Warning: Mapping to scan cell 'GSDFCNQD1HPBWP' in library is not possible because cell has 'dont_use' attribute. (SQM-1067)
 Warning: No site rows found in floorplan. (LGL-397)
@@ -264,14 +270,14 @@ Warning: No valid clocks available in mode 'default'. Setting clock frequency to
 Warning: No site rows found in floorplan. (LGL-397)
 Warning: No site rows found in floorplan. (LGL-397)
 Information: Starting compile_fusion / initial_map / MV Cell Insertion (FLW-8000)
-Information: Time: 2025-05-18 01:42:23 / Session: 0.00 hr / Command: 0.00 hr / Memory: 671 MB (FLW-8100)
+Information: Time: 2025-05-22 17:30:28 / Session: 0.00 hr / Command: 0.00 hr / Memory: 671 MB (FLW-8100)
 Information: Result of compile_fusion / initial_map / MV Cell Insertion (FLW-8500)
 Information: Total number of MV cells in the design. (MV-334)
 Information: Ending   compile_fusion / initial_map / MV Cell Insertion (FLW-8001)
-Information: Time: 2025-05-18 01:42:23 / Session: 0.00 hr / Command: 0.00 hr / Memory: 671 MB (FLW-8100)
+Information: Time: 2025-05-22 17:30:28 / Session: 0.00 hr / Command: 0.00 hr / Memory: 671 MB (FLW-8100)
 
 Information: Starting compile_fusion / initial_map / Logic Simplification (1) (FLW-8000)
-Information: Time: 2025-05-18 01:42:23 / Session: 0.00 hr / Command: 0.00 hr / Memory: 671 MB (FLW-8100)
+Information: Time: 2025-05-22 17:30:28 / Session: 0.00 hr / Command: 0.00 hr / Memory: 671 MB (FLW-8100)
 Information: The hierarchy counter_1 is not ungrouped due to restrictions. (UNG-1004)
 Information: The hierarchy counter_2 is not ungrouped due to restrictions. (UNG-1004)
 Information: The hierarchy counter_3 is not ungrouped due to restrictions. (UNG-1004)
@@ -295,7 +301,7 @@ Warning: No valid clocks available in mode 'default'. Setting clock frequency to
 Warning: No site rows found in floorplan. (LGL-397)
 Warning: No site rows found in floorplan. (LGL-397)
 Information: Ending   compile_fusion / initial_map / Logic Simplification (1) (FLW-8001)
-Information: Time: 2025-05-18 01:42:28 / Session: 0.00 hr / Command: 0.00 hr / Memory: 723 MB (FLW-8100)
+Information: Time: 2025-05-22 17:30:33 / Session: 0.00 hr / Command: 0.00 hr / Memory: 733 MB (FLW-8100)
 
 Warning: No site rows found in floorplan. (LGL-397)
 Warning: No site rows found in floorplan. (LGL-397)
@@ -303,15 +309,15 @@ Warning: No valid clocks available in mode 'default'. Setting clock frequency to
 Warning: No site rows found in floorplan. (LGL-397)
 Warning: No site rows found in floorplan. (LGL-397)
 Information: Starting compile_fusion / initial_map / Early Logic Optimization (FLW-8000)
-Information: Time: 2025-05-18 01:42:28 / Session: 0.00 hr / Command: 0.00 hr / Memory: 723 MB (FLW-8100)
+Information: Time: 2025-05-22 17:30:33 / Session: 0.01 hr / Command: 0.00 hr / Memory: 733 MB (FLW-8100)
 Warning: No valid clocks available in mode 'default'. Setting clock frequency to 1 GHz. (POW-034)
 Information: Timer using 1 threads
 Information: Ending   compile_fusion / initial_map / Early Logic Optimization (FLW-8001)
-Information: Time: 2025-05-18 01:42:32 / Session: 0.01 hr / Command: 0.00 hr / Memory: 723 MB (FLW-8100)
+Information: Time: 2025-05-22 17:30:36 / Session: 0.01 hr / Command: 0.00 hr / Memory: 733 MB (FLW-8100)
 
 Warning: No valid clocks available in mode 'default'. Setting clock frequency to 1 GHz. (POW-034)
 Information: Starting compile_fusion / initial_map / High-Level Optimization and Technology Mapping (FLW-8000)
-Information: Time: 2025-05-18 01:42:32 / Session: 0.01 hr / Command: 0.00 hr / Memory: 723 MB (FLW-8100)
+Information: Time: 2025-05-22 17:30:36 / Session: 0.01 hr / Command: 0.00 hr / Memory: 733 MB (FLW-8100)
 Information: Added key list 'DesignWare' to design 'top'. (DWS-0216)
 Warning: No cell bus will be mapped to multibit because there is no multibit cells in the cell libraries. (SQM-1040)
 Warning: Shift register Inferencing is enabled so only head flop will be replaced with scan cell and not all registers in shift register chains are scan replaced. (SQM-1074)
@@ -323,13 +329,13 @@ Information: Constraints set on instance 'ne_48' may be ignored. (HDL-128)
 Warning: No cell bus will be mapped to multibit because there is no multibit cells in the cell libraries. (SQM-1040)
 Warning: Shift register Inferencing is enabled so only head flop will be replaced with scan cell and not all registers in shift register chains are scan replaced. (SQM-1074)
 Information: Ending   compile_fusion / initial_map / High-Level Optimization and Technology Mapping (FLW-8001)
-Information: Time: 2025-05-18 01:42:33 / Session: 0.01 hr / Command: 0.00 hr / Memory: 723 MB (FLW-8100)
+Information: Time: 2025-05-22 17:30:37 / Session: 0.01 hr / Command: 0.00 hr / Memory: 733 MB (FLW-8100)
 
 Information: Register Bits Before Sharing = 24, After Sharing = 24, Savings = 0 (SQM-2000)
 Information: Starting compile_fusion / initial_map / Logic Simplification (2) (FLW-8000)
-Information: Time: 2025-05-18 01:42:33 / Session: 0.01 hr / Command: 0.00 hr / Memory: 742 MB (FLW-8100)
+Information: Time: 2025-05-22 17:30:37 / Session: 0.01 hr / Command: 0.00 hr / Memory: 733 MB (FLW-8100)
 Information: Ending   compile_fusion / initial_map / Logic Simplification (2) (FLW-8001)
-Information: Time: 2025-05-18 01:42:33 / Session: 0.01 hr / Command: 0.00 hr / Memory: 742 MB (FLW-8100)
+Information: Time: 2025-05-22 17:30:37 / Session: 0.01 hr / Command: 0.00 hr / Memory: 733 MB (FLW-8100)
 
 Information: Result of compile_fusion / initial_map / Clock Gate Insertion (FLW-8500)
 Number of Pre-Existing Clock Gates with dont touch attribute: 0
@@ -343,10 +349,10 @@ Clock Gating Type                   | Number of   | Register Count | Equivalent
 Regular Clock Gating                |           3 |             24 |         24
 --------------------------------------------------------------------------------
 Compile-fusion optimization summary            SETUP-COST    R2R-COST HOLD-COST LDRC-COST          AREA     LEAKAGE     INSTCNT            ELAPSE       MEM
-Compile-fusion                                          -           -         -         -        697.60           -         184              0.01       741
+Compile-fusion                                          -           -         -         -        697.60           -         184              0.01       732
 Information: Ending   compile_fusion / initial_map (FLW-8001)
-Information: Time: 2025-05-18 01:42:33 / Session: 0.01 hr / Command: 0.00 hr / Memory: 742 MB (FLW-8100)
-CPU Load: 2%, Ram Free: 0 GB, Swap Free: 0 GB, Work Disk Free: 246 GB, Tmp Disk Free: 53 GB
+Information: Time: 2025-05-22 17:30:37 / Session: 0.01 hr / Command: 0.00 hr / Memory: 733 MB (FLW-8100)
+CPU Load: 2%, Ram Free: 0 GB, Swap Free: 7 GB, Work Disk Free: 169 GB, Tmp Disk Free: 53 GB
 
 Information: >>>>>>> 5 unique error and warning message tags while observing compile_fusion / initial_map: (MSG-3100)
 Information: #prnt #trgr #lmt    Tag  Level     Format (or last printed message)                                (MSG-3036)
@@ -417,8 +423,8 @@ Information:    30    30  0 NEX-001   WARNING   Warning: Technology layer 'AP' s
 Information:    95    94  4        7  <------   Total sum of messages (MSG-3038)
 Information: >>>>>>> Summary: 94 error&warning MSGs observed during fusion (MSG-3103)
 Information: Ending   'compile_fusion -to initial_map' (FLW-8001)
-Information: Time: 2025-05-18 01:42:33 / Session: 0.01 hr / Command: 0.00 hr / Memory: 742 MB (FLW-8100)
-CPU Load: 2%, Ram Free: 0 GB, Swap Free: 0 GB, Work Disk Free: 246 GB, Tmp Disk Free: 53 GB
+Information: Time: 2025-05-22 17:30:38 / Session: 0.01 hr / Command: 0.00 hr / Memory: 733 MB (FLW-8100)
+CPU Load: 2%, Ram Free: 0 GB, Swap Free: 7 GB, Work Disk Free: 169 GB, Tmp Disk Free: 53 GB
 1
 # Collect the reports
 report_timing
@@ -451,7 +457,7 @@ Report : timing
         -report_by design
 Design : top
 Version: U-2022.12-SP6
-Date   : Sun May 18 01:42:33 2025
+Date   : Thu May 22 17:30:38 2025
 ****************************************
 No paths.
 1
@@ -462,7 +468,7 @@ Report : power
         -significant_digits 2
 Design : top
 Version: U-2022.12-SP6
-Date   : Sun May 18 01:42:33 2025
+Date   : Thu May 22 17:30:38 2025
 ****************************************
 Information: Activity propagation will be performed for scenario default.
 Information: Doing activity propagation for mode 'default' and corner 'default' with effort level 'medium'. (POW-024)
@@ -532,7 +538,7 @@ report_area
 Report : area
 Design : top
 Version: U-2022.12-SP6
-Date   : Sun May 18 01:42:33 2025
+Date   : Thu May 22 17:30:38 2025
 ****************************************
 
 Number of ports:                          172
@@ -589,8 +595,8 @@ Load ICV ICCII menu file: /mnt/vol_synopsys2023/synopsys/icvalidator/U-2022.12-S
 
 Information: 2 out of 12 POW-046 messages were not printed due to limit 10  (MSG-3913)
 fc_shell> exit
-Maximum memory usage for this session: 741.93 MB
-Maximum memory usage for this session including child processes: 741.93 MB
-CPU usage for this session:     24 seconds (  0.01 hours)
-Elapsed time for this session:     40 seconds (  0.01 hours)
+Maximum memory usage for this session: 732.79 MB
+Maximum memory usage for this session including child processes: 732.79 MB
+CPU usage for this session:     25 seconds (  0.01 hours)
+Elapsed time for this session:     55 seconds (  0.02 hours)
 Thank you for using Fusion Compiler.
