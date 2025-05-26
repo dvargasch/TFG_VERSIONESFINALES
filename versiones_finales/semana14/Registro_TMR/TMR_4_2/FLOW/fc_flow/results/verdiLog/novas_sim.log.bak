@@ -1,0 +1,62 @@
+Invoking simulator...
+
+./prueba3 -sml=verdi +UVM_VERDI_TRACE=UVM_AWARE +fsdb+gate=off -ucli2Proc -ucli
+debImport "-i" "-simflow" "-dbdir" "./prueba3.daidir"
+*Verdi* Loading libsscore_vcs202012.so
+
+*Verdi* : Enable RPC Server(3442104)
+
+srcTBInvokeSim
+Chronologic VCS simulator copyright 1991-2020
+Contains Synopsys proprietary information.
+Compiler version R-2020.12-SP2_Full64; Runtime version R-2020.12-SP2_Full64;  May 26 00:12 2025
+xterm-256color is Not a valid terminal...
+Verdi>fsdbDumpvars 1 "universal_register_4bit_tb.dut.register_1"  +all +trace_process;fsdbDumpflush 
+
+*Verdi* : Begin traversing the scope (universal_register_4bit_tb.dut.register_1), layer (1).
+*Verdi* : Enable +trace_process and +all dumping.
+*Verdi* : End of traversing.
+*Verdi* : Flush all FSDB Files at 0 ps.
+
+Verdi>fsdbDumpvars 1 "universal_register_4bit_tb.dut.register_2"  +all +trace_process;fsdbDumpflush 
+
+*Verdi* : Begin traversing the scope (universal_register_4bit_tb.dut.register_2), layer (1).
+*Verdi* : Enable +trace_process and +all dumping.
+*Verdi* : End of traversing.
+*Verdi* : Flush all FSDB Files at 0 ps.
+
+Verdi>fsdbDumpvars 1 "universal_register_4bit_tb.dut.voter_inst"  +all +trace_process;fsdbDumpflush 
+
+*Verdi* : Begin traversing the scope (universal_register_4bit_tb.dut.voter_inst), layer (1).
+*Verdi* : Enable +trace_process and +all dumping.
+*Verdi* : End of traversing.
+*Verdi* : Flush all FSDB Files at 0 ps.
+
+Verdi>run
+
+Test 1: Modo SISO
+
+Test 2: Modo SIPO
+
+Test 3: Modo PISO
+
+Test 4: Modo PIPO
+Inyectando errores en reg_parallel de u0 y u2 antes de la carga
+
+Test 2: Modo SIPO
+$finish called from file "tb.sv", line 113.
+$finish at simulation time               405000
+Simulation complete, time is 405000 ps.
+tb.sv, 113 :     #20 $finish;
+Verdi>fsdbDumpvars 1 "universal_register_4bit_tb.dut.register_3"  +all +trace_process;fsdbDumpflush 
+
+*Verdi* : Begin traversing the scope (universal_register_4bit_tb.dut.register_3), layer (1).
+*Verdi* : Enable +trace_process and +all dumping.
+*Verdi* : End of traversing.
+*Verdi* : Flush all FSDB Files at 405,000 ps.
+
+           V C S   S i m u l a t i o n   R e p o r t 
+Time: 405000 ps
+CPU Time:      0.100 seconds;       Data structure size:   0.1Mb
+Mon May 26 00:18:35 2025
+debExit

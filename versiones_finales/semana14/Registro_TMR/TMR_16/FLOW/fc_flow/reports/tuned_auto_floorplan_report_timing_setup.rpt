@@ -1,0 +1,53 @@
+Warning: Scenario scenarioFF is not configured for setup analysis: skipping. (UIC-058)
+****************************************
+Report : timing
+        -path_type full
+        -delay_type max
+        -max_paths 1
+        -report_by design
+Design : top
+Version: U-2022.12-SP6
+Date   : Sun May 25 23:23:45 2025
+****************************************
+
+  Startpoint: register_2/reg_data_reg[6] (rising edge-triggered flip-flop clocked by SYS_CLK)
+  Endpoint: register_1/reg_data_reg[4] (rising edge-triggered flip-flop clocked by SYS_CLK)
+  Mode: mode1
+  Corner: cornerSS
+  Scenario: scenarioSS
+  Path Group: SYS_CLK
+  Path Type: max
+
+  Point                                            Incr      Path  
+  ------------------------------------------------------------------------
+  clock SYS_CLK (rise edge)                        0.00      0.00
+  clock network delay (ideal)                      0.00      0.00
+
+  register_2/reg_data_reg[6]/CP (SDFCNQD0HPBWP)    0.00      0.00 r
+  register_2/reg_data_reg[6]/Q (SDFCNQD0HPBWP)     0.38      0.38 f
+  voter_inst/ctmi_154/ZN (MAOI222D1HPBWP)          0.14      0.53 r
+  voter_inst/ctmi_25/ZN (CKND0HPBWP)               0.39      0.92 f
+  ne_30/ctmi_195/ZN (MOAI22D0HPBWP)                0.28      1.19 r
+  ne_30/ctmi_194/ZN (ND4D1HPBWP)                   0.20      1.39 f
+  ne_30/ctmi_183/Z (OR4D2HPBWP)                    0.35      1.74 f
+  register_1/phfnr_buf_72/ZN (INVD1HPBWP)          0.44      2.18 r
+  register_1/ctmi_269/ZN (OAI22D1HPBWP)            0.25      2.42 f
+  register_1/ctmi_268/ZN (MAOI22D0HPBWP)           0.20      2.62 f
+  register_1/ctmi_144/ZN (OAI221D0HPBWP)           0.12      2.74 r
+  register_1/reg_data_reg[4]/D (SDFCNQD0HPBWP)     0.00      2.74 r
+  data arrival time                                          2.74
+
+  clock SYS_CLK (rise edge)                       10.00     10.00
+  clock network delay (ideal)                      0.00     10.00
+  register_1/reg_data_reg[4]/CP (SDFCNQD0HPBWP)    0.00     10.00 r
+  clock uncertainty                               -0.30      9.70
+  library setup time                              -0.10      9.60
+  data required time                                         9.60
+  ------------------------------------------------------------------------
+  data required time                                         9.60
+  data arrival time                                         -2.74
+  ------------------------------------------------------------------------
+  slack (MET)                                                6.85
+
+
+1

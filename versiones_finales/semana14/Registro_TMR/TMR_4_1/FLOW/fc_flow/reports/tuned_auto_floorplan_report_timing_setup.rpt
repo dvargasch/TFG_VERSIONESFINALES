@@ -1,0 +1,44 @@
+Warning: Scenario scenarioFF is not configured for setup analysis: skipping. (UIC-058)
+****************************************
+Report : timing
+        -path_type full
+        -delay_type max
+        -max_paths 1
+        -report_by design
+Design : top
+Version: U-2022.12-SP6
+Date   : Sun May 25 22:35:01 2025
+****************************************
+
+  Startpoint: mode[0] (input port clocked by SYS_CLK)
+  Endpoint: serial_out (output port clocked by SYS_CLK)
+  Mode: mode1
+  Corner: cornerSS
+  Scenario: scenarioSS
+  Path Group: **in2out_default**
+  Path Type: max
+
+  Point                                            Incr      Path  
+  ------------------------------------------------------------------------
+  clock SYS_CLK (rise edge)                        0.00      0.00
+  clock network delay (ideal)                      0.00      0.00
+  input external delay                             0.80      0.80 r
+  mode[0] (in)                                     0.00      0.80 r
+  phfnr_buf_12/ZN (CKND1HPBWP)                     0.05      0.85 f
+  ctmi_74/Z (AO22D0HPBWP)                          0.13      0.98 f
+  serial_out (out)                                 0.00      0.98 f
+  data arrival time                                          0.98
+
+  clock SYS_CLK (rise edge)                       10.00     10.00
+  clock network delay (ideal)                      0.00     10.00
+  clock uncertainty                               -0.30      9.70
+  output external delay                           -1.00      8.70
+  data required time                                         8.70
+  ------------------------------------------------------------------------
+  data required time                                         8.70
+  data arrival time                                         -0.98
+  ------------------------------------------------------------------------
+  slack (MET)                                                7.72
+
+
+1

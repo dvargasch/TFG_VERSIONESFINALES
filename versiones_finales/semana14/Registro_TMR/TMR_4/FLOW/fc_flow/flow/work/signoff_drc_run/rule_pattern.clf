@@ -1,0 +1,5 @@
+-uvc "PO.DN.2*"
+-uvc "OD.DN.2*"
+-uvc "M*.DN.1*"
+-uvc "CSR.R.1*"
+-uvc "DM*.R.1*"

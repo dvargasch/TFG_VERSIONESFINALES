@@ -1,0 +1,55 @@
+Warning: Scenario scenarioFF is not configured for setup analysis: skipping. (UIC-058)
+****************************************
+Report : timing
+        -path_type full
+        -delay_type max
+        -max_paths 1
+        -report_by design
+Design : top
+Version: U-2022.12-SP6
+Date   : Mon May 26 00:00:01 2025
+****************************************
+
+  Startpoint: register_1/reg_data_reg[42] (rising edge-triggered flip-flop clocked by SYS_CLK)
+  Endpoint: register_2/reg_data_reg[22] (rising edge-triggered flip-flop clocked by SYS_CLK)
+  Mode: mode1
+  Corner: cornerSS
+  Scenario: scenarioSS
+  Path Group: SYS_CLK
+  Path Type: max
+
+  Point                                            Incr      Path  
+  ------------------------------------------------------------------------
+  clock SYS_CLK (rise edge)                        0.00      0.00
+  clock network delay (ideal)                      0.00      0.00
+
+  register_1/reg_data_reg[42]/CP (SDFCNQD0HPBWP)   0.00      0.00 r
+  register_1/reg_data_reg[42]/Q (SDFCNQD0HPBWP)    0.36      0.36 f
+  voter_inst/ctmi_562/ZN (MAOI222D1HPBWP)          0.12      0.49 r
+  voter_inst/ctmi_85/ZN (CKND0HPBWP)               0.31      0.80 f
+  ne_31/ctmi_636/ZN (MOAI22D0HPBWP)                0.25      1.05 r
+  ne_31/ctmi_632/ZN (ND4D1HPBWP)                   0.20      1.26 f
+  ne_31/ctmi_616/ZN (NR4D0HPBWP)                   0.32      1.58 r
+  ne_31/ctmi_80/Z (AN4D0HPBWP)                     0.26      1.84 r
+  ne_31/ctmi_81/ZN (CKND0HPBWP)                    2.42      4.27 f
+  register_2/phfnr_buf_131/ZN (INVD1HPBWP)         2.99      7.26 r
+  register_2/ctmi_995/ZN (OAI22D1HPBWP)            0.31      7.57 f
+  register_2/ctmi_994/ZN (MAOI22D0HPBWP)           0.26      7.83 f
+  register_2/ctmi_566/ZN (OAI221D1HPBWP)           0.13      7.96 r
+  register_2/reg_data_reg[22]/D (SDFCNQD0HPBWP)    0.00      7.96 r
+  data arrival time                                          7.96
+
+  clock SYS_CLK (rise edge)                       10.00     10.00
+  clock network delay (ideal)                      0.00     10.00
+  register_2/reg_data_reg[22]/CP (SDFCNQD0HPBWP)   0.00     10.00 r
+  clock uncertainty                               -0.30      9.70
+  library setup time                              -0.13      9.57
+  data required time                                         9.57
+  ------------------------------------------------------------------------
+  data required time                                         9.57
+  data arrival time                                         -7.96
+  ------------------------------------------------------------------------
+  slack (MET)                                                1.60
+
+
+1

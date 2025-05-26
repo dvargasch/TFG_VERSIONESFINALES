@@ -1,0 +1,490 @@
+
+
+
+                              Fusion Compiler (TM)
+
+             Version U-2022.12-SP6 for linux64 - Aug 25, 2023 -SLE
+
+                    Copyright (c) 1988 - 2023 Synopsys, Inc.
+   This software and the associated documentation are proprietary to Synopsys,
+ Inc. This software may only be used in accordance with the terms and conditions
+ of a written license agreement with Synopsys, Inc. All other use, reproduction,
+   or distribution of this software is strictly prohibited.  Licensed Products
+     communicate with Synopsys servers for the purpose of providing software
+    updates, detecting software piracy and verifying that customers are using
+    Licensed Products in conformity with the applicable License Key for such
+  Licensed Products. Synopsys will use information gathered in connection with
+    this process to deliver software updates and pursue software pirates and
+                                   infringers.
+
+ Inclusivity & Diversity - Visit SolvNetPlus to read the "Synopsys Statement on
+            Inclusivity and Diversity" (Refer to article 000036315 at
+                        https://solvnetplus.synopsys.com)
+ 
+Information: Term was not able to be set up using xterm-256color . Using "xterm" by default instead. (CLE-10)
+########################################################
+#####          Placement and Optimization          #####
+########################################################
+# Sourcing setup script
+source -echo ../../setup/icc2_dp_setup.tcl
+set CURR_DIR  [pwd]
+set PROY_HOME ${CURR_DIR}/../..;
+set TSMC_HOME "/mnt/vol_NFS_rh003/profesores/pmendoza/KITS/TSMCHOME";
+############################
+## RTL file name and type ##
+############################
+set DESIGN_NAME "top"
+set HDL "sverilog"
+set DESIGN_LIBRARY "${DESIGN_NAME}_lib"
+#################################
+set time [get_date]
+puts "Command Start at: ${time}"
+Command Start at: Sun May 25 22:37:26 2025
+####################################
+### 1. Variables for design prep ###
+####################################
+### SDC File
+set SDCNAME "${DESIGN_NAME}"
+### Ref Libs
+set NDM_LIBS_PATH "../../setup/ndm_libraries/ndm/"
+set STD_TIME_FRAME "../../setup/ndm_libraries/ndm/tcbn65lphpbwp_1.ndm"
+set REFERENCE_LIBRARY "{${STD_TIME_FRAME} }"
+set REFERENCE_LIBRARY 		[list   ${NDM_LIBS_PATH}/tcbn65lphpbwpcghvt_1_physical_only.ndm \
+									${NDM_LIBS_PATH}/tcbn65lphpbwp_1_physical_only.ndm \
+									${NDM_LIBS_PATH}/tpdn65lpgv2od3_sd_physical_only.ndm \
+									${NDM_LIBS_PATH}/tpfn65lpgv2od3_physical_only.ndm \
+									${NDM_LIBS_PATH}/tpbn65v_physical_only.ndm \
+									${NDM_LIBS_PATH}/tpin65gv_physical_only.ndm \
+									${NDM_LIBS_PATH}/tcbn65lphpbwpcghvt_1.ndm \
+									${NDM_LIBS_PATH}/tcbn65lphpbwp_1.ndm \
+									${NDM_LIBS_PATH}/tpdn65lpgv2od3_sdml.ndm \
+									${NDM_LIBS_PATH}/tpfn65lpgv2od3ml.ndm \
+									${NDM_LIBS_PATH}/ts1n65lpa2048x32m4_140a_5m.ndm ];
+################################
+### 2. Tech files and setup ####
+################################
+set TECH_FILE "${TSMC_HOME}/digital/Back_End/milkyway/tcbn65lphpbwp_140a/techfiles/tsmcn65_9lmT2.tf"
+set TECH_LIB ""
+#######################
+## Layers and widths ##
+#######################
+set STANDARD_CELLS_WIDTH 0.42
+set MAX_ROUTING_LAYER   "M6"
+set MIN_ROUTING_LAYER   "M2"
+set TARGET_SKEW         0.1
+set RTL_PATH		"${CURR_DIR}/../../../common/rtl"
+set SDC_PATH		"${CURR_DIR}/../../../common/sdc"
+set SDC_FILE		"${CURR_DIR}/${DESIGN_NAME}.sdc"
+####################################################
+set VERILOG_PATH	"${RTL_PATH}/verilog"
+set SVERILOG_PATH	"${RTL_PATH}/sverilog" 
+set VHDL_PATH		"${RTL_PATH}/vhdl"
+set RESULTS_PATH	"${CURR_DIR}/../../results"
+set REPORTS_PATH	"${CURR_DIR}/../../reports"
+###########
+## Paths ##
+###########
+set DRC_RUNSET_FILE	"${CURR_DIR}/../../DRC/ICVLN65S_9M_6X2Z.26_1a"
+set GDS_MAP_FILE        "${TSMC_HOME}/digital/Back_End/milkyway/tcbn65lphpbwpcg_200a/gdsout_6X2Z.map"
+set ICV                "-I /mnt/vol_synopsys2023/pdks/xfab/design/xkit/xh018/synopsys/v9_0/ICValidator/v9_0_2"
+####################
+## Auto-floorplan ##
+####################
+set CONTROL_AUTO           "core"
+# Percentage of cell area usage
+set CORE_UTILIZATION_AUTO  0.5
+# Move the nucleus 10 units
+set CORE_OFFSET_AUTO       10
+# Core shape
+set SHAPE_AUTO             "R"
+# Aspect ratio
+set SIDE_RATIO_AUTO        {1 1.5}
+# Flip the first row of the cell
+set FFR_AUTO               "true"
+# Using the M3 layer for pins
+set LAYER_PIN_AUTO         {M3}
+# Allows pins on all sides of the cell
+set SIDES_AUTO             {1 2 3 4}
+# Distance between pins
+set PIN_SPACE_AUTO         4
+######################
+## Floorplan manual ##
+######################
+set CONTROL_M            "core"
+# Percentage of cell area usage
+set CORE_UTILIZATION_M   0.5
+# Move the nucleus 10 units 
+set CORE_OFFSET_M        10
+# Core shape
+set SHAPE_M              "R"
+# Aspect ratio 
+set SIDE_RATIO_M         {1.5 1}
+# Flip the first row of the cell
+set FFR_M                "true" 
+# Using the M3 layer for pins
+set LAYER_PIN_M          {M3}
+# Allows pins on all sides of the cell
+set SIDES_M              {1 2 3 4}
+# Distance between pins
+set PIN_SPACE_M          4 
+#########################
+## Configure MultiCore ##
+#########################
+set_host_options -name Oculi -max_cores 2
+#report_host_options
+source ${CURR_DIR}/../../setup/utilities.tcl
+set UNSELECT_RULES "PO.DN.2* OD.DN.2* M*.DN.1* CSR.R.1* DM*.R.1*"
+PO.DN.2* OD.DN.2* M*.DN.1* CSR.R.1* DM*.R.1*
+#### ----- Open lib and create new block from previous script (04_read_floorplan_....tcl) ----- ####
+# Open the design library
+open_lib ${DESIGN_LIBRARY}
+Information: Loading library file '/mnt/vol_NFS_rh003/estudiantes/DANIELA_VARGAS/Version_final/0516/versiones_finales/semana14/Registro_TMR/TMR_4_1/FLOW/fc_flow/flow/work/top_lib' (FILE-007)
+Information: Loading library file '/mnt/vol_NFS_rh003/estudiantes/DANIELA_VARGAS/Version_final/0516/versiones_finales/semana14/Registro_TMR/TMR_4_1/FLOW/fc_flow/setup/ndm_libraries/ndm/tcbn65lphpbwpcghvt_1_physical_only.ndm' (FILE-007)
+Information: Loading library file '/mnt/vol_NFS_rh003/estudiantes/DANIELA_VARGAS/Version_final/0516/versiones_finales/semana14/Registro_TMR/TMR_4_1/FLOW/fc_flow/setup/ndm_libraries/ndm/tcbn65lphpbwp_1_physical_only.ndm' (FILE-007)
+Information: Loading library file '/mnt/vol_NFS_rh003/estudiantes/DANIELA_VARGAS/Version_final/0516/versiones_finales/semana14/Registro_TMR/TMR_4_1/FLOW/fc_flow/setup/ndm_libraries/ndm/tpdn65lpgv2od3_sd_physical_only.ndm' (FILE-007)
+Information: Loading library file '/mnt/vol_NFS_rh003/estudiantes/DANIELA_VARGAS/Version_final/0516/versiones_finales/semana14/Registro_TMR/TMR_4_1/FLOW/fc_flow/setup/ndm_libraries/ndm/tpfn65lpgv2od3_physical_only.ndm' (FILE-007)
+Information: Loading library file '/mnt/vol_NFS_rh003/estudiantes/DANIELA_VARGAS/Version_final/0516/versiones_finales/semana14/Registro_TMR/TMR_4_1/FLOW/fc_flow/setup/ndm_libraries/ndm/tpbn65v_physical_only.ndm' (FILE-007)
+Information: Loading library file '/mnt/vol_NFS_rh003/estudiantes/DANIELA_VARGAS/Version_final/0516/versiones_finales/semana14/Registro_TMR/TMR_4_1/FLOW/fc_flow/setup/ndm_libraries/ndm/tpin65gv_physical_only.ndm' (FILE-007)
+Information: Loading library file '/mnt/vol_NFS_rh003/estudiantes/DANIELA_VARGAS/Version_final/0516/versiones_finales/semana14/Registro_TMR/TMR_4_1/FLOW/fc_flow/setup/ndm_libraries/ndm/tcbn65lphpbwpcghvt_1.ndm' (FILE-007)
+Information: Loading library file '/mnt/vol_NFS_rh003/estudiantes/DANIELA_VARGAS/Version_final/0516/versiones_finales/semana14/Registro_TMR/TMR_4_1/FLOW/fc_flow/setup/ndm_libraries/ndm/tcbn65lphpbwp_1.ndm' (FILE-007)
+Information: Loading library file '/mnt/vol_NFS_rh003/estudiantes/DANIELA_VARGAS/Version_final/0516/versiones_finales/semana14/Registro_TMR/TMR_4_1/FLOW/fc_flow/setup/ndm_libraries/ndm/tpdn65lpgv2od3_sdml.ndm' (FILE-007)
+Information: Loading library file '/mnt/vol_NFS_rh003/estudiantes/DANIELA_VARGAS/Version_final/0516/versiones_finales/semana14/Registro_TMR/TMR_4_1/FLOW/fc_flow/setup/ndm_libraries/ndm/tpfn65lpgv2od3ml.ndm' (FILE-007)
+Information: Loading library file '/mnt/vol_NFS_rh003/estudiantes/DANIELA_VARGAS/Version_final/0516/versiones_finales/semana14/Registro_TMR/TMR_4_1/FLOW/fc_flow/setup/ndm_libraries/ndm/ts1n65lpa2048x32m4_140a_5m.ndm' (FILE-007)
+Warning: Technology used to create frame-view and current technology have inconsistency: Fat table contents are different. (FRAM-054)
+Warning: Technology 'tcbn65lphpbwpcghvt.tf' used for frame-view creation in library 'tcbn65lphpbwpcghvt_1_physical_only', is inconsistent with the current technology 'tsmcn65_9lmT2.tf' of library 'top_lib'. Please run derive_design_level_via_regions to generate up-do-date via region in the design library. (NDM-102)
+Warning: Technology used to create frame-view and current technology have inconsistency: Fat table contents are different. (FRAM-054)
+Warning: Technology 'tpdn65lpgv2od3_sd.tf' used for frame-view creation in library 'tpdn65lpgv2od3_sd_physical_only', is inconsistent with the current technology 'tsmcn65_9lmT2.tf' of library 'top_lib'. Please run derive_design_level_via_regions to generate up-do-date via region in the design library. (NDM-102)
+Warning: Technology used to create frame-view and current technology have inconsistency: Fat table contents are different. (FRAM-054)
+Warning: Technology 'tpfn65lpgv2od3.tf' used for frame-view creation in library 'tpfn65lpgv2od3_physical_only', is inconsistent with the current technology 'tsmcn65_9lmT2.tf' of library 'top_lib'. Please run derive_design_level_via_regions to generate up-do-date via region in the design library. (NDM-102)
+Warning: Technology used to create frame-view and current technology have inconsistency: Fat table contents are different. (FRAM-054)
+Warning: Technology 'tcbn65lphpbwpcghvt.tf' used for frame-view creation in library 'tcbn65lphpbwpcghvt_1', is inconsistent with the current technology 'tsmcn65_9lmT2.tf' of library 'top_lib'. Please run derive_design_level_via_regions to generate up-do-date via region in the design library. (NDM-102)
+Warning: Technology used to create frame-view and current technology have inconsistency: Fat table contents are different. (FRAM-054)
+Warning: Technology 'tpdn65lpgv2od3_sd.tf' used for frame-view creation in library 'tpdn65lpgv2od3_sdml', is inconsistent with the current technology 'tsmcn65_9lmT2.tf' of library 'top_lib'. Please run derive_design_level_via_regions to generate up-do-date via region in the design library. (NDM-102)
+Warning: Technology used to create frame-view and current technology have inconsistency: Fat table contents are different. (FRAM-054)
+Warning: Technology 'tpfn65lpgv2od3.tf' used for frame-view creation in library 'tpfn65lpgv2od3ml', is inconsistent with the current technology 'tsmcn65_9lmT2.tf' of library 'top_lib'. Please run derive_design_level_via_regions to generate up-do-date via region in the design library. (NDM-102)
+{top_lib}
+# Copy and open block
+copy_block -from ${DESIGN_NAME}/final_floorplan -to ${DESIGN_NAME}/place_opt
+Information: User units loaded from library 'tcbn65lphpbwpcghvt_1' (LNK-040)
+{top_lib:top/place_opt.design}
+open_block ${DESIGN_NAME}/place_opt
+Information: Incrementing open_count of block 'top_lib:top/place_opt.design' to 2. (DES-021)
+{top_lib:top/place_opt.design}
+#### -----  Setup application options ----- ####
+# Enable floorplan without scandef
+set_app_options -name place.coarse.continue_on_missing_scandef -value true
+place.coarse.continue_on_missing_scandef true
+# Place and congestion effort set to high
+set_app_options -name place_opt.final_place.effort -value high
+place_opt.final_place.effort high
+set_app_options -name place_opt.place.congestion_effort -value high
+place_opt.place.congestion_effort high
+set_app_options -name opt.common.user_instance_name_prefix -value place_opt
+opt.common.user_instance_name_prefix place_opt
+#### -----  Compile_fusion to initial_opto stage to get the design ready for placement and optimization ----- ####
+#set_lib_cell_purpose -include none {*/SDF* */ANTENNA* */MPROBE* */SIGNALHOLDDHDLL}
+compile_fusion -to initial_opto
+Using libraries: top_lib tcbn65lphpbwpcghvt_1_physical_only tcbn65lphpbwp_1_physical_only tpdn65lpgv2od3_sd_physical_only tpfn65lpgv2od3_physical_only tpbn65v_physical_only tpin65gv_physical_only tcbn65lphpbwpcghvt_1 tcbn65lphpbwp_1 tpdn65lpgv2od3_sdml tpfn65lpgv2od3ml ts1n65lpa2048x32m4_140a_5m
+Visiting block top_lib:top/place_opt.design
+Design 'top' was successfully linked.
+Information: Timer using 1 threads
+Warning: Technology layer 'AP' setting 'routing-direction' is not valid (NEX-001)
+INFO: compile_fusion is running in balanced flow mode.
+Information: Starting 'compile_fusion -to initial_opto' (FLW-8000)
+Information: Time: 2025-05-25 22:37:26 / Session: 0.00 hr / Command: 0.00 hr / Memory: 449 MB (FLW-8100)
+CPU Load: 3%, Ram Free: 0 GB, Swap Free: 4 GB, Work Disk Free: 215 GB, Tmp Disk Free: 53 GB
+INFO: Start environment monitoring: recipes
+INFO: compile_fusion is running in balanced flow mode.
+Warning: Mapping to scan cell 'GSDFCNQD1HPBWP' in library is not possible because cell has 'dont_use' attribute. (SQM-1067)
+Information: The automatic clock gate timing flow is activated. Clock latencies set on clock gate cells will be automatically adjusted by an estimate for latency. (CGT-4005)
+----------------------------------------------------------------------------------------------------------
+Information: Starting compile_fusion / initial_map (FLW-8000)
+Information: Time: 2025-05-25 22:37:28 / Session: 0.00 hr / Command: 0.00 hr / Memory: 628 MB (FLW-8100)
+----------------------------------------------------------------------------------------------------------
+Warning: Mapping to scan cell 'GSDFCNQD1HPBWP' in library is not possible because cell has 'dont_use' attribute. (SQM-1067)
+Information: Starting compile_fusion / initial_map / MV Cell Insertion (FLW-8000)
+Information: Time: 2025-05-25 22:37:28 / Session: 0.00 hr / Command: 0.00 hr / Memory: 675 MB (FLW-8100)
+Information: Result of compile_fusion / initial_map / MV Cell Insertion (FLW-8500)
+Information: Total number of MV cells in the design. (MV-334)
+Information: Ending   compile_fusion / initial_map / MV Cell Insertion (FLW-8001)
+Information: Time: 2025-05-25 22:37:28 / Session: 0.00 hr / Command: 0.00 hr / Memory: 675 MB (FLW-8100)
+
+Information: Starting compile_fusion / initial_map / Logic Simplification (1) (FLW-8000)
+Information: Time: 2025-05-25 22:37:28 / Session: 0.00 hr / Command: 0.00 hr / Memory: 675 MB (FLW-8100)
+Information: The hierarchy voter_inst is ungrouped due to auto_ungrouping. (UNG-1001)
+Information: The hierarchy register_1 is ungrouped due to auto_ungrouping. (UNG-1001)
+Information: The hierarchy register_2 is ungrouped due to auto_ungrouping. (UNG-1001)
+Information: The hierarchy register_3 is ungrouped due to auto_ungrouping. (UNG-1001)
+Information: 4 of 4 hierarchies are ungrouped. Use report_ungroup for a list. (UNG-1003)
+Information: Result of compile_fusion / initial_map / Auto Ungroup (FLW-8500)
+Information: Ungroup Summary Report (UNG-1007)
+-------------------------------------------------------------------
+Hierarchy                                                 Count
+-------------------------------------------------------------------
+Auto ungrouped hierarchies                                  4
+-------------------------------------------------------------------
+Warning: Mapping to scan cell 'GSDFCNQD1HPBWP' in library is not possible because cell has 'dont_use' attribute. (SQM-1067)
+Information: The register register_2/reg_data_reg[2] is removed because it is merged to register register_1/reg_data_reg[2]. (SQM-4102)
+Information: The register register_3/reg_data_reg[2] is removed because it is merged to register register_1/reg_data_reg[2]. (SQM-4102)
+Information: The register register_2/reg_data_reg[3] is removed because it is merged to register register_1/reg_data_reg[3]. (SQM-4102)
+Information: The register register_3/reg_data_reg[3] is removed because it is merged to register register_1/reg_data_reg[3]. (SQM-4102)
+Information: The register register_2/reg_data_reg[0] is removed because it is merged to register register_1/reg_data_reg[0]. (SQM-4102)
+Information: The register register_3/reg_data_reg[0] is removed because it is merged to register register_1/reg_data_reg[0]. (SQM-4102)
+Information: The register register_2/reg_data_reg[1] is removed because it is merged to register register_1/reg_data_reg[1]. (SQM-4102)
+Information: The register register_3/reg_data_reg[1] is removed because it is merged to register register_1/reg_data_reg[1]. (SQM-4102)
+Information: Register Bits Before Sharing = 12, After Sharing = 4, Savings = 8 (SQM-2000)
+Information: Ending   compile_fusion / initial_map / Logic Simplification (1) (FLW-8001)
+Information: Time: 2025-05-25 22:37:33 / Session: 0.00 hr / Command: 0.00 hr / Memory: 737 MB (FLW-8100)
+
+Information: Starting compile_fusion / initial_map / Early Logic Optimization (FLW-8000)
+Information: Time: 2025-05-25 22:37:33 / Session: 0.00 hr / Command: 0.00 hr / Memory: 737 MB (FLW-8100)
+Information: Timer using 1 threads
+Information: Ending   compile_fusion / initial_map / Early Logic Optimization (FLW-8001)
+Information: Time: 2025-05-25 22:37:37 / Session: 0.01 hr / Command: 0.00 hr / Memory: 739 MB (FLW-8100)
+
+Information: Starting compile_fusion / initial_map / High-Level Optimization and Technology Mapping (FLW-8000)
+Information: Time: 2025-05-25 22:37:37 / Session: 0.01 hr / Command: 0.00 hr / Memory: 739 MB (FLW-8100)
+Warning: No cell bus will be mapped to multibit because there is no multibit cells in the cell libraries. (SQM-1040)
+Warning: Shift register Inferencing is enabled so only head flop will be replaced with scan cell and not all registers in shift register chains are scan replaced. (SQM-1074)
+Information: Ending   compile_fusion / initial_map / High-Level Optimization and Technology Mapping (FLW-8001)
+Information: Time: 2025-05-25 22:37:37 / Session: 0.01 hr / Command: 0.00 hr / Memory: 739 MB (FLW-8100)
+
+Information: Register Bits Before Sharing = 4, After Sharing = 4, Savings = 0 (SQM-2000)
+Information: Starting compile_fusion / initial_map / Logic Simplification (2) (FLW-8000)
+Information: Time: 2025-05-25 22:37:37 / Session: 0.01 hr / Command: 0.00 hr / Memory: 739 MB (FLW-8100)
+Information: Ending   compile_fusion / initial_map / Logic Simplification (2) (FLW-8001)
+Information: Time: 2025-05-25 22:37:37 / Session: 0.01 hr / Command: 0.00 hr / Memory: 739 MB (FLW-8100)
+
+Information: Result of compile_fusion / initial_map / Clock Gate Insertion (FLW-8500)
+Number of Pre-Existing Clock Gates with dont touch attribute: 0
+Number of ICG library cells with CTS purpose: 16
+--------------------------------------------------------------------------------
+                          Tool Gated Register Summary                           
+--------------------------------------------------------------------------------
+Clock Gating Type                   | Number of   | Register Count | Equivalent 
+                                    | Clock Gates |                | Bitwidth   
+--------------------------------------------------------------------------------
+Regular Clock Gating                |           1 |              4 |          4
+--------------------------------------------------------------------------------
+Compile-fusion optimization summary            SETUP-COST    R2R-COST HOLD-COST LDRC-COST          AREA     LEAKAGE     INSTCNT            ELAPSE       MEM
+Compile-fusion                                          -           -         -         -         88.80           -          17              0.01       738
+Information: Ending   compile_fusion / initial_map (FLW-8001)
+Information: Time: 2025-05-25 22:37:37 / Session: 0.01 hr / Command: 0.00 hr / Memory: 739 MB (FLW-8100)
+CPU Load: 3%, Ram Free: 0 GB, Swap Free: 4 GB, Work Disk Free: 215 GB, Tmp Disk Free: 53 GB
+
+Information: >>>>>>> 3 unique error and warning message tags while observing compile_fusion / initial_map: (MSG-3100)
+Information: #prnt #trgr #lmt    Tag  Level     Format (or last printed message)                                (MSG-3036)
+Information:     1     1  1 SQM-1074  WARNING   Warning: Shift register Inferencing is enabled so only head ... (MSG-3032)
+Information:     3     2  3 SQM-1067  WARNING   Warning: Mapping to scan cell 'GSDFCNQD1HPBWP' in library is... (MSG-3032)
+Information:     1     1  1 SQM-1040  WARNING   Warning: No cell bus will be mapped to multibit because ther... (MSG-3032)
+Information:     5     4  3        3  <------   Total sum of messages (MSG-3038)
+Information: >>>>>>> Summary: 4 error&warning MSGs observed during compile_fusion / initial_map (MSG-3103)
+
+----------------------------------------------------------------------------------------------------------
+Information: Starting compile_fusion / logic_opto (FLW-8000)
+Information: Time: 2025-05-25 22:37:37 / Session: 0.01 hr / Command: 0.00 hr / Memory: 739 MB (FLW-8100)
+----------------------------------------------------------------------------------------------------------
+Warning: Auto deriving 'vertical' routing direction for layer 'AP'. (DMM-115)
+Information: Change threshold for extractor is reset. (FLW-1300)
+Information: The stitching and editing of coupling caps is turned OFF for design 'top_lib:top/place_opt.design'. (TIM-125)
+Information: Starting compile_fusion / logic_opto / Clock Gate Re-structuring (FLW-8000)
+Information: Time: 2025-05-25 22:37:38 / Session: 0.01 hr / Command: 0.00 hr / Memory: 741 MB (FLW-8100)
+Information: Result of compile_fusion / logic_opto / Clock Gate Re-structuring (FLW-8500)
+Number of Pre-Existing Clock Gates with dont touch attribute: 0
+Number of ICG library cells with CTS purpose: 16
+--------------------------------------------------------------------------------
+                          Tool Gated Register Summary                           
+--------------------------------------------------------------------------------
+Clock Gating Type                   | Number of   | Register Count | Equivalent 
+                                    | Clock Gates |                | Bitwidth   
+--------------------------------------------------------------------------------
+Regular Clock Gating                |           1 |              4 |          4
+--------------------------------------------------------------------------------
+Information: Ending   compile_fusion / logic_opto / Clock Gate Re-structuring (FLW-8001)
+Information: Time: 2025-05-25 22:37:38 / Session: 0.01 hr / Command: 0.00 hr / Memory: 753 MB (FLW-8100)
+
+Warning: No clock routing rules were specified. Use set_clock_routing_rules to specify routing rules for accurate clock latency estimation. (OPT-902)
+Warning: No clock routing rules were specified. Use set_clock_routing_rules to specify routing rules for accurate clock latency estimation. (OPT-902)
+Information: Estimating clock gate latencies for scenario 'scenarioSS'. (OPT-909)
+Warning: Duplicate callback function set for step 'fc/logic_opto/dwProcessPrecond1' (FLW-2224)
+Warning: Duplicate callback function set for step 'fc/logic_opto/dwProcessPrecond1' (FLW-2224)
+Information: Starting compile_fusion / logic_opto / Optimization (1) (FLW-8000)
+Information: Time: 2025-05-25 22:37:38 / Session: 0.01 hr / Command: 0.00 hr / Memory: 773 MB (FLW-8100)
+Warning: Mapping to scan cell 'GSDFCNQD1HPBWP' in library is not possible because cell has 'dont_use' attribute. (SQM-1067)
+Warning: No clock routing rules were specified. Use set_clock_routing_rules to specify routing rules for accurate clock latency estimation. (OPT-902)
+Warning: No clock routing rules were specified. Use set_clock_routing_rules to specify routing rules for accurate clock latency estimation. (OPT-902)
+Information: Estimating clock gate latencies for scenario 'scenarioSS'. (OPT-909)
+Warning: Mapping to scan cell 'GSDFCNQD1HPBWP' in library is not possible because cell has 'dont_use' attribute. (SQM-1067)
+Information: The stitching and editing of coupling caps is turned OFF for design 'top_lib:top/place_opt.design'. (TIM-125)
+Warning: Mapping to scan cell 'GSDFCNQD1HPBWP' in library is not possible because cell has 'dont_use' attribute. (SQM-1067)
+Information: Ending   compile_fusion / logic_opto / Optimization (1) (FLW-8001)
+Information: Time: 2025-05-25 22:37:40 / Session: 0.01 hr / Command: 0.00 hr / Memory: 808 MB (FLW-8100)
+
+Information: Starting compile_fusion / logic_opto / Register Retiming (FLW-8000)
+Information: Time: 2025-05-25 22:37:40 / Session: 0.01 hr / Command: 0.00 hr / Memory: 808 MB (FLW-8100)
+Warning: Mapping to scan cell 'GSDFCNQD1HPBWP' in library is not possible because cell has 'dont_use' attribute. (SQM-1067)
+Warning: Mapping to scan cell 'GSDFCNQD1HPBWP' in library is not possible because cell has 'dont_use' attribute. (SQM-1067)
+Warning: Mapping to scan cell 'GSDFCNQD1HPBWP' in library is not possible because cell has 'dont_use' attribute. (SQM-1067)
+Information: Result of compile_fusion / logic_opto / Register Retiming (FLW-8500)
+Information: No instance marked for retiming. (RTM-1031)
+Warning: Mapping to scan cell 'GSDFCNQD1HPBWP' in library is not possible because cell has 'dont_use' attribute. (SQM-1067)
+Information: Ending   compile_fusion / logic_opto / Register Retiming (FLW-8001)
+Information: Time: 2025-05-25 22:37:54 / Session: 0.01 hr / Command: 0.01 hr / Memory: 816 MB (FLW-8100)
+
+Warning: Mapping to scan cell 'GSDFCNQD1HPBWP' in library is not possible because cell has 'dont_use' attribute. (SQM-1067)
+Information: Register Bits Before Sharing = 4, After Sharing = 4, Savings = 0 (SQM-2000)
+Information: Starting compile_fusion / logic_opto / Optimization (2) (FLW-8000)
+Information: Time: 2025-05-25 22:37:58 / Session: 0.01 hr / Command: 0.01 hr / Memory: 854 MB (FLW-8100)
+Warning: No clock routing rules were specified. Use set_clock_routing_rules to specify routing rules for accurate clock latency estimation. (OPT-902)
+Warning: No clock routing rules were specified. Use set_clock_routing_rules to specify routing rules for accurate clock latency estimation. (OPT-902)
+Information: Estimating clock gate latencies for scenario 'scenarioSS'. (OPT-909)
+Information: Ending   compile_fusion / logic_opto / Optimization (2) (FLW-8001)
+Information: Time: 2025-05-25 22:37:58 / Session: 0.01 hr / Command: 0.01 hr / Memory: 854 MB (FLW-8100)
+
+Information: Starting compile_fusion / logic_opto / Auto-Floorplan (1) (FLW-8000)
+Information: Time: 2025-05-25 22:37:58 / Session: 0.01 hr / Command: 0.01 hr / Memory: 854 MB (FLW-8100)
+Information: Shaping unshaped voltage areas (AFP-1011)
+Information: Placing unplaced pins (AFP-1007)
+Information: Result of compile_fusion / logic_opto / Auto-Floorplan (1) (FLW-8500)
+Information: Auto-Floorplan Summary (AFP-2023)
+-------------------------------------------------------------------------------
+              origin           area     boundary
+core            user            162   { {10 10} {10 20} {26.2 20} {26.2 10} }
+die             user           1086   { {0 0} {0 30} {36.2 30} {36.2 0} }
+-------------------------------------------------------------------------------
+
+-------------------------------------------------------------------------------
+objects             total        candidates          modified         preserved                 
+voltage areas           0                 0                 0                 0
+ios                     0                 0                 0                 0
+macros                  0                 0                 0                 0
+pins                   16                 0                 0                 0
+-------------------------------------------------------------------------------
+Information: Ending   compile_fusion / logic_opto / Auto-Floorplan (1) (FLW-8001)
+Information: Time: 2025-05-25 22:37:58 / Session: 0.01 hr / Command: 0.01 hr / Memory: 854 MB (FLW-8100)
+
+Information: Starting compile_fusion / logic_opto / Early Placement (FLW-8000)
+Information: Time: 2025-05-25 22:37:58 / Session: 0.01 hr / Command: 0.01 hr / Memory: 854 MB (FLW-8100)
+----------------------------------------------------------------
+running create_placement
+Corner Scaling is off, multiplier is 1.000000
+ORB: timingScenario scenarioSS timingCorner cornerSS
+INFO: Using corner cornerFF for worst leakage corner
+Using default layer M5
+new cutoff lpd: 2.83746e-05
+maxCornerId = 2
+corner=cornerSS, tran factor=1.0000 (0.3302 / 0.3302)
+corner=cornerFF, tran factor=0.9350 (0.3087 / 0.3302)
+ORB: Nominal = 0.0586595  Design MT = inf  Target = 0.3301510 (5.628 nominal)  MaxRC = 0.189509
+ORB: Fast Target = 0.114003 ( 1.943 nominal )
+ORB: stageDelay=0.17419, stageLength=5470569
+nplLib: default vr hor dist = 1094
+nplLib: default vr ver dist = 1094
+nplLib: default vr buf size = 6
+nplLib: default vr buf size = 2
+
+Placement Options:
+Effort:                        medium_effort       
+Timing Driven:                 false               
+Buffering Aware Timing Driven: false               
+Seed locs:                     false               
+Incremental:                   false               
+Congestion:                    false               
+Fix Macros:                    true                
+Place Macros:                  false               
+Channel Size Macros:           false               
+
+Printing options for 'place.coarse.*' (non-default only)
+place.coarse.continue_on_missing_scandef                :	 true                
+
+Start transferring placement data.
+****** Net weight manager: report ******
+Weights included: Timing  
+Number of nets with non-default weights: 28
+Timing factor = 1
+Non-default weight range: (1, 1)
+Information: Automatic repeater spreading is enabled.
+Completed transferring placement data.
+Running placement using 1 thread(s)
+Information: Enhanced Auto Density Control is used. (PLACE-098)
+Information: Enhanced auto density configuration is 13179.
+Information: Automatic density control has selected the following settings: max_density 0.55, congestion_driven_max_util 0.87. (PLACE-027)
+Warning: Utilization of default plane is 100.45%. (PLACE-074)
+cgpl: dumping available area file <over_utilization_default.tcl>.
+Warning: Utilization of default plane (highest utilized region in the design) is 100.45%. (PLACE-074)
+Error: Over utilization detected while processing block top (PLACE-006)
+Error: Over utilization of 100.45% for default plane. Required area is 88.8 um^2 while the available area is 88.4 um^2. Please source script over_utilization_default.tcl in the GUI to display the available placement area. (PLACE-006)
+Error: Fail in placement: Over Utilization (PLACE-004)
+Warning: No clock routing rules were specified. Use set_clock_routing_rules to specify routing rules for accurate clock latency estimation. (OPT-902)
+Warning: No clock routing rules were specified. Use set_clock_routing_rules to specify routing rules for accurate clock latency estimation. (OPT-902)
+Information: Estimating clock gate latencies for scenario 'scenarioSS'. (OPT-909)
+Error: Optimization failed at create_placement
+Warning: Flow step returns Error: fc/logic_opto/preCond2Placement (FLW-2543)
+Error: Flow status set to Error by step: fc/logic_opto/preCond2Placement (FLW-1762)
+Information: Ending   compile_fusion / logic_opto / Early Placement (FLW-8001)
+Information: Time: 2025-05-25 22:37:59 / Session: 0.01 hr / Command: 0.01 hr / Memory: 854 MB (FLW-8100)
+
+Warning: Attempt to run step fc/logic_opto/muxHierCollapse with flow status in error. (FLW-2306)
+Error: Flow status set to Error by step: fc/logic_opto/muxHierCollapse (FLW-1762)
+Information: Ending   compile_fusion / logic_opto (FLW-8001)
+Information: Time: 2025-05-25 22:37:59 / Session: 0.01 hr / Command: 0.01 hr / Memory: 854 MB (FLW-8100)
+CPU Load: 3%, Ram Free: 0 GB, Swap Free: 4 GB, Work Disk Free: 215 GB, Tmp Disk Free: 53 GB
+
+Information: >>>>>>> 10 unique error and warning message tags while observing compile_fusion / logic_opto: (MSG-3100)
+Information: #prnt #trgr #lmt    Tag  Level     Format (or last printed message)                                (MSG-3036)
+Information:     1     1  0 FLW-2306  WARNING   Warning: Attempt to run step fc/logic_opto/muxHierCollapse w... (MSG-3032)
+Information:     1     1  0 FLW-2543  WARNING   Warning: Flow step returns Error: fc/logic_opto/preCond2Plac... (MSG-3032)
+Information:     2     2  0 FLW-2224  WARNING   Warning: Duplicate callback function set for step 'fc/logic_... (MSG-3032)
+Information:    11     8  3 SQM-1067  WARNING   Warning: Mapping to scan cell 'GSDFCNQD1HPBWP' in library is... (MSG-3032)
+Information:     1     1  0 DMM-115   WARNING   Warning: Auto deriving 'vertical' routing direction for laye... (MSG-3032)
+Information:     8     8  0 OPT-902   WARNING   Warning: No clock routing rules were specified. Use set_cloc... (MSG-3032)
+Information:     2     2  0 PLACE-074 WARNING   Warning: Utilization of default plane (highest utilized regi... (MSG-3032)
+Information:     2     2  0 FLW-1762  ERROR     Error: Flow status set to Error by step: fc/logic_opto/muxHi... (MSG-3032)
+Information:     2     2  0 PLACE-006 ERROR     Error: Over utilization of 100.45% for default plane. Requir... (MSG-3032)
+Information:     1     1  0 PLACE-004 ERROR     Error: Fail in placement: Over Utilization (PLACE-004)          (MSG-3032)
+Information:    31    28  1       10  <------   Total sum of messages (MSG-3038)
+Information: >>>>>>> Summary: 28 error&warning MSGs observed during compile_fusion / logic_opto (MSG-3103)
+
+Warning: No clock routing rules were specified. Use set_clock_routing_rules to specify routing rules for accurate clock latency estimation. (OPT-902)
+Warning: No clock routing rules were specified. Use set_clock_routing_rules to specify routing rules for accurate clock latency estimation. (OPT-902)
+Information: Estimating clock gate latencies for scenario 'scenarioSS'. (OPT-909)
+Warning: No clock routing rules were specified. Use set_clock_routing_rules to specify routing rules for accurate clock latency estimation. (OPT-902)
+Information: Estimating clock gate latencies for scenario 'scenarioFF'. (OPT-909)
+INFO: End environment monitoring: recipes
+INFO: Restored 0 timer status, 8 app options, 0 tcl gvars, 0 env vars
+Information: >>>>>>> 13 unique error and warning message tags while observing fusion: (MSG-3100)
+Information: #prnt #trgr #lmt    Tag  Level     Format (or last printed message)                                (MSG-3036)
+Information:     1     1  0 FLW-2306  WARNING   Warning: Attempt to run step fc/logic_opto/muxHierCollapse w... (MSG-3032)
+Information:     1     1  0 FLW-2543  WARNING   Warning: Flow step returns Error: fc/logic_opto/preCond2Plac... (MSG-3032)
+Information:     2     2  0 FLW-2224  WARNING   Warning: Duplicate callback function set for step 'fc/logic_... (MSG-3032)
+Information:     1     1  1 SQM-1074  WARNING   Warning: Shift register Inferencing is enabled so only head ... (MSG-3032)
+Information:    11    11  3 SQM-1067  WARNING   Warning: Mapping to scan cell 'GSDFCNQD1HPBWP' in library is... (MSG-3032)
+Information:     1     1  1 SQM-1040  WARNING   Warning: No cell bus will be mapped to multibit because ther... (MSG-3032)
+Information:     1     1  0 DMM-115   WARNING   Warning: Auto deriving 'vertical' routing direction for laye... (MSG-3032)
+Information:     1     1  0 NEX-001   WARNING   Warning: Technology layer 'AP' setting 'routing-direction' i... (MSG-3032)
+Information:    11    11  0 OPT-902   WARNING   Warning: No clock routing rules were specified. Use set_cloc... (MSG-3032)
+Information:     2     2  0 PLACE-074 WARNING   Warning: Utilization of default plane (highest utilized regi... (MSG-3032)
+Information:     2     2  0 FLW-1762  ERROR     Error: Flow status set to Error by step: fc/logic_opto/muxHi... (MSG-3032)
+Information:     2     2  0 PLACE-006 ERROR     Error: Over utilization of 100.45% for default plane. Requir... (MSG-3032)
+Information:     1     1  0 PLACE-004 ERROR     Error: Fail in placement: Over Utilization (PLACE-004)          (MSG-3032)
+Information:    37    37  3       13  <------   Total sum of messages (MSG-3038)
+Information: >>>>>>> Summary: 37 error&warning MSGs observed during fusion (MSG-3103)
+Information: Ending   'compile_fusion -to initial_opto' (FLW-8001)
+Information: Time: 2025-05-25 22:37:59 / Session: 0.01 hr / Command: 0.01 hr / Memory: 854 MB (FLW-8100)
+CPU Load: 3%, Ram Free: 0 GB, Swap Free: 4 GB, Work Disk Free: 215 GB, Tmp Disk Free: 53 GB
+Error: 0
+      	Use error_info for more info. (CMD-013)
+Information: script '/mnt/vol_NFS_rh003/estudiantes/DANIELA_VARGAS/Version_final/0516/versiones_finales/semana14/Registro_TMR/TMR_4_1/FLOW/fc_flow/flow/scripts/05_place_opt.tcl'
+            	stopped at line 33 due to error. (CMD-081)
+Extended error info:
+0
+    while executing
+"compile_fusion -to initial_opto"
+    (file "/mnt/vol_NFS_rh003/estudiantes/DANIELA_VARGAS/Version_final/0516/versiones_finales/semana14/Registro_TMR/TMR_4_1/FLOW/fc_flow/flow/scripts/05_place_op" line 33)
+ -- End Extended Error Info
+fc_shell> exit
+Maximum memory usage for this session: 854.30 MB
+Maximum memory usage for this session including child processes: 854.30 MB
+CPU usage for this session:     41 seconds (  0.01 hours)
+Elapsed time for this session:     93 seconds (  0.03 hours)
+Thank you for using Fusion Compiler.

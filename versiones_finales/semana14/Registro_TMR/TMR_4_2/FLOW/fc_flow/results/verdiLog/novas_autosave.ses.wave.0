@@ -1,0 +1,76 @@
+Magic 271485
+Revision Verdi_R-2020.12-SP2
+
+; Window Layout <x> <y> <width> <height> <signalwidth> <valuewidth>
+viewPort 0 25 1393 592 325 65
+
+; File list:
+; openDirFile [-d delimiter] [-s time_offset] [-rf auto_bus_rule_file] path_name file_name
+openDirFile -d / "" "/mnt/vol_NFS_rh003/estudiantes/DANIELA_VARGAS/Version_final/0516/versiones_finales/semana14/Registro_TMR/TMR_4_2/FLOW/fc_flow/results/inter.fsdb"
+
+; file time scale:
+; fileTimeScale ### s|ms|us|ns|ps
+
+; signal spacing:
+signalSpacing 5
+
+; windowTimeUnit is used for zoom, cursor & marker
+; waveform viewport range
+zoom 0.000000 234879.273286
+cursor 405000.000000
+marker 0.000000
+
+; user define markers
+; userMarker time_pos marker_name color linestyle
+; visible top row signal index
+top 0
+; marker line index
+markerPos 22
+
+; event list
+; addEvent event_name event_expression
+; curEvent event_name
+
+
+
+COMPLEX_EVENT_BEGIN
+
+
+COMPLEX_EVENT_END
+
+
+
+; toolbar current search type
+; curSTATUS search_type
+curSTATUS ByChange
+
+
+addGroup "G5"
+activeDirFile "" "/mnt/vol_NFS_rh003/estudiantes/DANIELA_VARGAS/Version_final/0516/versiones_finales/semana14/Registro_TMR/TMR_4_2/FLOW/fc_flow/results/inter.fsdb"
+addSignal -h 15 /universal_register_4bit_tb/dut/clk
+addSignal -h 15 /universal_register_4bit_tb/dut/rst
+addSignal -h 15 /universal_register_4bit_tb/dut/enable
+addSignal -h 15 /universal_register_4bit_tb/dut/load
+addSignal -h 15 /universal_register_4bit_tb/dut/serial_in
+addSignal -h 15 -UNSIGNED -BIN /universal_register_4bit_tb/dut/mode[1:0]
+addSignal -h 15 -UNSIGNED -BIN /universal_register_4bit_tb/dut/parallel_in[3:0]
+addGroup "register_1"
+addSignal -h 15 /universal_register_4bit_tb/dut/register_1/fault
+addSignal -h 15 /universal_register_4bit_tb/dut/register_1/serial_out
+addSignal -h 15 -UNSIGNED -BIN /universal_register_4bit_tb/dut/register_1/parallel_out[3:0]
+addGroup "register_2"
+addSignal -h 15 /universal_register_4bit_tb/dut/register_2/fault
+addSignal -h 15 /universal_register_4bit_tb/dut/register_2/serial_out
+addSignal -h 15 -UNSIGNED -BIN /universal_register_4bit_tb/dut/register_2/parallel_out[3:0]
+addGroup "register_3"
+addSignal -h 15 /universal_register_4bit_tb/dut/register_3/fault
+addSignal -h 15 /universal_register_4bit_tb/dut/register_3/serial_out
+addSignal -h 15 -UNSIGNED -BIN /universal_register_4bit_tb/dut/register_3/parallel_out[3:0]
+addGroup "voter_inst"
+addSignal -h 15 -UNSIGNED -BIN /universal_register_4bit_tb/dut/voter_inst/parallel_out_voted[3:0]
+addSignal -h 15 /universal_register_4bit_tb/dut/voter_inst/serial_out_voted
+addGroup "G10"
+
+; getSignalForm Scope Hierarchy Status
+; active file of getSignalForm
+

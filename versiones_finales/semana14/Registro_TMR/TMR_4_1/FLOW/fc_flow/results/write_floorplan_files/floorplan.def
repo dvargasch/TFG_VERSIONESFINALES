@@ -1,0 +1,102 @@
+# 
+# Fusion Compiler write_def
+# Release      : U-2022.12-SP6
+# User Name    : VARGAS_CHAVARRIA_2025
+# Date         : Sun May 25 22:36:24 2025
+# 
+VERSION 5.8 ;
+DIVIDERCHAR "/" ;
+BUSBITCHARS "[]" ;
+DESIGN top ;
+UNITS DISTANCE MICRONS 1000 ;
+PROPERTYDEFINITIONS
+COMPONENTPIN ACCESS_DIRECTION STRING ;
+END PROPERTYDEFINITIONS
+DIEAREA ( 0 0 ) ( 0 30000 ) ( 36200 30000 ) ( 36200 0 ) ;
+PINS 18 ;
+ - clk + NET clk + DIRECTION INPUT + USE SIGNAL
+   + LAYER M3 ( 0 0 ) ( 520 100 )
+   + PLACED ( 35680 26350 ) N ;
+ - rst + NET rst + DIRECTION INPUT + USE SIGNAL
+   + LAYER M3 ( 0 0 ) ( 520 100 )
+   + PLACED ( 35680 22750 ) N ;
+ - enable + NET enable + DIRECTION INPUT + USE SIGNAL
+   + LAYER M3 ( 0 0 ) ( 520 100 )
+   + PLACED ( 35680 19150 ) N ;
+ - load + NET load + DIRECTION INPUT + USE SIGNAL
+   + LAYER M3 ( 0 0 ) ( 520 100 )
+   + PLACED ( 35680 18550 ) N ;
+ - serial_in + NET serial_in + DIRECTION INPUT + USE SIGNAL
+   + LAYER M3 ( 0 0 ) ( 520 100 )
+   + PLACED ( 35680 14350 ) N ;
+ - mode[1] + NET mode[1] + DIRECTION INPUT + USE SIGNAL
+   + LAYER M3 ( 0 0 ) ( 520 100 )
+   + PLACED ( 35680 10150 ) N ;
+ - mode[0] + NET mode[0] + DIRECTION INPUT + USE SIGNAL
+   + LAYER M3 ( 0 0 ) ( 520 100 )
+   + PLACED ( 35680 5950 ) N ;
+ - parallel_in[3] + NET parallel_in[3] + DIRECTION INPUT + USE SIGNAL
+   + LAYER M3 ( 0 0 ) ( 520 100 )
+   + PLACED ( 35680 1750 ) N ;
+ - parallel_in[2] + NET parallel_in[2] + DIRECTION INPUT + USE SIGNAL
+   + LAYER M3 ( 0 0 ) ( 520 100 )
+   + PLACED ( 35680 26150 ) N ;
+ - parallel_in[1] + NET parallel_in[1] + DIRECTION INPUT + USE SIGNAL
+   + LAYER M3 ( 0 0 ) ( 520 100 )
+   + PLACED ( 0 26950 ) N ;
+ - parallel_in[0] + NET parallel_in[0] + DIRECTION INPUT + USE SIGNAL
+   + LAYER M3 ( 0 0 ) ( 520 100 )
+   + PLACED ( 0 22750 ) N ;
+ - serial_out + NET serial_out + DIRECTION OUTPUT + USE SIGNAL
+   + LAYER M3 ( 0 0 ) ( 520 100 )
+   + PLACED ( 0 18550 ) N ;
+ - parallel_out[3] + NET parallel_out_1[3] + DIRECTION OUTPUT + USE SIGNAL
+   + LAYER M3 ( 0 0 ) ( 520 100 )
+   + PLACED ( 0 14350 ) N ;
+ - parallel_out[2] + NET parallel_out_1[2] + DIRECTION OUTPUT + USE SIGNAL
+   + LAYER M3 ( 0 0 ) ( 520 100 )
+   + PLACED ( 0 10150 ) N ;
+ - parallel_out[1] + NET parallel_out_1[1] + DIRECTION OUTPUT + USE SIGNAL
+   + LAYER M3 ( 0 0 ) ( 520 100 )
+   + PLACED ( 0 5950 ) N ;
+ - parallel_out[0] + NET parallel_out_1[0] + DIRECTION OUTPUT + USE SIGNAL
+   + LAYER M3 ( 0 0 ) ( 520 100 )
+   + PLACED ( 0 1750 ) N ;
+ - VDD + NET VDD + SPECIAL + DIRECTION INPUT + USE POWER ;
+ - VSS + NET VSS + SPECIAL + DIRECTION INPUT + USE GROUND ;
+END PINS
+PINPROPERTIES 16 ;
+ - PIN clk
+   + PROPERTY ACCESS_DIRECTION "0 right" ;
+ - PIN rst
+   + PROPERTY ACCESS_DIRECTION "0 right" ;
+ - PIN enable
+   + PROPERTY ACCESS_DIRECTION "0 right" ;
+ - PIN load
+   + PROPERTY ACCESS_DIRECTION "0 right" ;
+ - PIN serial_in
+   + PROPERTY ACCESS_DIRECTION "0 right" ;
+ - PIN mode[1]
+   + PROPERTY ACCESS_DIRECTION "0 right" ;
+ - PIN mode[0]
+   + PROPERTY ACCESS_DIRECTION "0 right" ;
+ - PIN parallel_in[3]
+   + PROPERTY ACCESS_DIRECTION "0 right" ;
+ - PIN parallel_in[2]
+   + PROPERTY ACCESS_DIRECTION "0 right" ;
+ - PIN parallel_in[1]
+   + PROPERTY ACCESS_DIRECTION "0 left" ;
+ - PIN parallel_in[0]
+   + PROPERTY ACCESS_DIRECTION "0 left" ;
+ - PIN serial_out
+   + PROPERTY ACCESS_DIRECTION "0 left" ;
+ - PIN parallel_out[3]
+   + PROPERTY ACCESS_DIRECTION "0 left" ;
+ - PIN parallel_out[2]
+   + PROPERTY ACCESS_DIRECTION "0 left" ;
+ - PIN parallel_out[1]
+   + PROPERTY ACCESS_DIRECTION "0 left" ;
+ - PIN parallel_out[0]
+   + PROPERTY ACCESS_DIRECTION "0 left" ;
+END PINPROPERTIES
+END DESIGN

@@ -1,0 +1,243 @@
+# 
+# Fusion Compiler write_def
+# Release      : U-2022.12-SP6
+# User Name    : VARGAS_CHAVARRIA_2025
+# Date         : Sun May 25 02:30:36 2025
+# 
+VERSION 5.8 ;
+DIVIDERCHAR "/" ;
+BUSBITCHARS "[]" ;
+DESIGN top ;
+UNITS DISTANCE MICRONS 1000 ;
+PROPERTYDEFINITIONS
+COMPONENTPIN ACCESS_DIRECTION STRING ;
+END PROPERTYDEFINITIONS
+DIEAREA ( 0 0 ) ( 0 38000 ) ( 47000 38000 ) ( 47000 0 ) ;
+ROW unit_row_1 unit 10000 10000 FS DO 135 BY 1 STEP 200 0 ;
+ROW unit_row_2 unit 10000 12000 N DO 135 BY 1 STEP 200 0 ;
+ROW unit_row_3 unit 10000 14000 FS DO 135 BY 1 STEP 200 0 ;
+ROW unit_row_4 unit 10000 16000 N DO 135 BY 1 STEP 200 0 ;
+ROW unit_row_5 unit 10000 18000 FS DO 135 BY 1 STEP 200 0 ;
+ROW unit_row_6 unit 10000 20000 N DO 135 BY 1 STEP 200 0 ;
+ROW unit_row_7 unit 10000 22000 FS DO 135 BY 1 STEP 200 0 ;
+ROW unit_row_8 unit 10000 24000 N DO 135 BY 1 STEP 200 0 ;
+ROW unit_row_9 unit 10000 26000 FS DO 135 BY 1 STEP 200 0 ;
+TRACKS Y 0 DO 191 STEP 200 LAYER M1 ;
+TRACKS X 0 DO 236 STEP 200 LAYER M1 ;
+TRACKS Y 0 DO 191 STEP 200 LAYER M2 ;
+TRACKS X 0 DO 236 STEP 200 LAYER M2 ;
+TRACKS Y 0 DO 191 STEP 200 LAYER M3 ;
+TRACKS X 0 DO 236 STEP 200 LAYER M3 ;
+TRACKS Y 0 DO 191 STEP 200 LAYER M4 ;
+TRACKS X 0 DO 236 STEP 200 LAYER M4 ;
+TRACKS Y 0 DO 191 STEP 200 LAYER M5 ;
+TRACKS X 0 DO 236 STEP 200 LAYER M5 ;
+TRACKS Y 0 DO 191 STEP 200 LAYER M6 ;
+TRACKS X 0 DO 236 STEP 200 LAYER M6 ;
+TRACKS Y 0 DO 191 STEP 200 LAYER M7 ;
+TRACKS X 0 DO 236 STEP 200 LAYER M7 ;
+TRACKS Y 400 DO 48 STEP 800 LAYER M8 ;
+TRACKS X 400 DO 59 STEP 800 LAYER M8 ;
+TRACKS Y 400 DO 48 STEP 800 LAYER M9 ;
+TRACKS X 400 DO 59 STEP 800 LAYER M9 ;
+TRACKS Y 3500 DO 6 STEP 6500 LAYER AP ;
+TRACKS X 3500 DO 7 STEP 6500 LAYER AP ;
+PINS 18 ;
+ - clk + NET clk + DIRECTION INPUT + USE SIGNAL
+   + LAYER M3 ( 0 0 ) ( 520 100 )
+   + PLACED ( 46480 33750 ) N ;
+ - rst + NET rst + DIRECTION INPUT + USE SIGNAL
+   + LAYER M3 ( 0 0 ) ( 520 100 )
+   + PLACED ( 46480 29150 ) N ;
+ - enable + NET enable + DIRECTION INPUT + USE SIGNAL
+   + LAYER M3 ( 0 0 ) ( 520 100 )
+   + PLACED ( 46480 24750 ) N ;
+ - load + NET load + DIRECTION INPUT + USE SIGNAL
+   + LAYER M3 ( 0 0 ) ( 520 100 )
+   + PLACED ( 46480 20150 ) N ;
+ - serial_in + NET serial_in + DIRECTION INPUT + USE SIGNAL
+   + LAYER M3 ( 0 0 ) ( 520 100 )
+   + PLACED ( 46480 15750 ) N ;
+ - mode[1] + NET mode[1] + DIRECTION INPUT + USE SIGNAL
+   + LAYER M3 ( 0 0 ) ( 520 100 )
+   + PLACED ( 46480 11150 ) N ;
+ - mode[0] + NET mode[0] + DIRECTION INPUT + USE SIGNAL
+   + LAYER M3 ( 0 0 ) ( 520 100 )
+   + PLACED ( 46480 6750 ) N ;
+ - parallel_in[3] + NET parallel_in[3] + DIRECTION INPUT + USE SIGNAL
+   + LAYER M3 ( 0 0 ) ( 520 100 )
+   + PLACED ( 46480 2150 ) N ;
+ - parallel_in[2] + NET parallel_in[2] + DIRECTION INPUT + USE SIGNAL
+   + LAYER M3 ( 0 0 ) ( 520 100 )
+   + PLACED ( 0 33750 ) N ;
+ - parallel_in[1] + NET parallel_in[1] + DIRECTION INPUT + USE SIGNAL
+   + LAYER M3 ( 0 0 ) ( 520 100 )
+   + PLACED ( 0 29150 ) N ;
+ - parallel_in[0] + NET parallel_in[0] + DIRECTION INPUT + USE SIGNAL
+   + LAYER M3 ( 0 0 ) ( 520 100 )
+   + PLACED ( 0 24750 ) N ;
+ - serial_out + NET serial_out + DIRECTION OUTPUT + USE SIGNAL
+   + LAYER M3 ( 0 0 ) ( 520 100 )
+   + PLACED ( 0 20150 ) N ;
+ - parallel_out[3] + NET parallel_out[3] + DIRECTION OUTPUT + USE SIGNAL
+   + LAYER M3 ( 0 0 ) ( 520 100 )
+   + PLACED ( 0 15750 ) N ;
+ - parallel_out[2] + NET parallel_out[2] + DIRECTION OUTPUT + USE SIGNAL
+   + LAYER M3 ( 0 0 ) ( 520 100 )
+   + PLACED ( 0 11150 ) N ;
+ - parallel_out[1] + NET parallel_out[1] + DIRECTION OUTPUT + USE SIGNAL
+   + LAYER M3 ( 0 0 ) ( 520 100 )
+   + PLACED ( 0 6750 ) N ;
+ - parallel_out[0] + NET parallel_out[0] + DIRECTION OUTPUT + USE SIGNAL
+   + LAYER M3 ( 0 0 ) ( 520 100 )
+   + PLACED ( 0 2150 ) N ;
+ - VDD + NET VDD + SPECIAL + DIRECTION INPUT + USE POWER ;
+ - VSS + NET VSS + SPECIAL + DIRECTION INPUT + USE GROUND ;
+END PINS
+PINPROPERTIES 16 ;
+ - PIN clk
+   + PROPERTY ACCESS_DIRECTION "0 right" ;
+ - PIN rst
+   + PROPERTY ACCESS_DIRECTION "0 right" ;
+ - PIN enable
+   + PROPERTY ACCESS_DIRECTION "0 right" ;
+ - PIN load
+   + PROPERTY ACCESS_DIRECTION "0 right" ;
+ - PIN serial_in
+   + PROPERTY ACCESS_DIRECTION "0 right" ;
+ - PIN mode[1]
+   + PROPERTY ACCESS_DIRECTION "0 right" ;
+ - PIN mode[0]
+   + PROPERTY ACCESS_DIRECTION "0 right" ;
+ - PIN parallel_in[3]
+   + PROPERTY ACCESS_DIRECTION "0 right" ;
+ - PIN parallel_in[2]
+   + PROPERTY ACCESS_DIRECTION "0 left" ;
+ - PIN parallel_in[1]
+   + PROPERTY ACCESS_DIRECTION "0 left" ;
+ - PIN parallel_in[0]
+   + PROPERTY ACCESS_DIRECTION "0 left" ;
+ - PIN serial_out
+   + PROPERTY ACCESS_DIRECTION "0 left" ;
+ - PIN parallel_out[3]
+   + PROPERTY ACCESS_DIRECTION "0 left" ;
+ - PIN parallel_out[2]
+   + PROPERTY ACCESS_DIRECTION "0 left" ;
+ - PIN parallel_out[1]
+   + PROPERTY ACCESS_DIRECTION "0 left" ;
+ - PIN parallel_out[0]
+   + PROPERTY ACCESS_DIRECTION "0 left" ;
+END PINPROPERTIES
+SPECIALNETS 2 ;
+ - VDD
+   ( PIN VDD )
+   ( clock_gate_reg_data_reg VDD )
+   ( reg_data_reg\[3\] VDD )
+   ( ctmi_192 VDD )
+   ( ctmi_191 VDD )
+   ( ctmi_190 VDD )
+   ( ctmi_188 VDD )
+   ( ctmi_187 VDD )
+   ( ctmi_185 VDD )
+   ( ctmi_184 VDD )
+   ( ctmi_175 VDD )
+   ( ctmi_174 VDD )
+   ( ctmi_173 VDD )
+   ( ctmi_172 VDD )
+   ( ctmi_169 VDD )
+   ( ctmi_161 VDD )
+   ( ctmi_159 VDD )
+   ( ctmi_158 VDD )
+   ( ctmi_152 VDD )
+   ( ctmi_182 VDD )
+   ( ctmi_165 VDD )
+   ( ctmi_164 VDD )
+   ( ctmi_198 VDD )
+   ( ctmi_168 VDD )
+   ( ctmi_196 VDD )
+   ( ctmi_203 VDD )
+   ( ctmi_181 VDD )
+   ( ctmi_180 VDD )
+   ( ctmi_202 VDD )
+   ( ctmi_195 VDD )
+   ( ctmi_194 VDD )
+   ( ctmi_179 VDD )
+   ( ctmi_177 VDD )
+   ( ctmi_176 VDD )
+   ( ctmi_167 VDD )
+   ( ctmi_162 VDD )
+   ( ctmi_200 VDD )
+   ( ctmi_193 VDD )
+   ( ctmi_209 VDD )
+   ( ctmi_208 VDD )
+   ( reg_data_reg\[1\] VDD )
+   ( reg_data_reg\[2\] VDD )
+   ( ctmi_204 VDD )
+   ( p1_reg\[0\] VDD )
+   ( ctmi_210 VDD )
+   ( p3_reg\[0\] VDD )
+   ( ctmi_207 VDD )
+   ( ctmi_206 VDD )
+   ( reg_data_reg\[0\] VDD )
+   ( p2_reg\[0\] VDD )
+   ( ctmi_155 VDD )
+   ( ctmi_154 VDD )
+   ( ctmi_205 VDD )
+   + USE POWER ;
+ - VSS
+   ( PIN VSS )
+   ( clock_gate_reg_data_reg VSS )
+   ( reg_data_reg\[3\] VSS )
+   ( ctmi_192 VSS )
+   ( ctmi_191 VSS )
+   ( ctmi_190 VSS )
+   ( ctmi_188 VSS )
+   ( ctmi_187 VSS )
+   ( ctmi_185 VSS )
+   ( ctmi_184 VSS )
+   ( ctmi_175 VSS )
+   ( ctmi_174 VSS )
+   ( ctmi_173 VSS )
+   ( ctmi_172 VSS )
+   ( ctmi_169 VSS )
+   ( ctmi_161 VSS )
+   ( ctmi_159 VSS )
+   ( ctmi_158 VSS )
+   ( ctmi_152 VSS )
+   ( ctmi_182 VSS )
+   ( ctmi_165 VSS )
+   ( ctmi_164 VSS )
+   ( ctmi_198 VSS )
+   ( ctmi_168 VSS )
+   ( ctmi_196 VSS )
+   ( ctmi_203 VSS )
+   ( ctmi_181 VSS )
+   ( ctmi_180 VSS )
+   ( ctmi_202 VSS )
+   ( ctmi_195 VSS )
+   ( ctmi_194 VSS )
+   ( ctmi_179 VSS )
+   ( ctmi_177 VSS )
+   ( ctmi_176 VSS )
+   ( ctmi_167 VSS )
+   ( ctmi_162 VSS )
+   ( ctmi_200 VSS )
+   ( ctmi_193 VSS )
+   ( ctmi_209 VSS )
+   ( ctmi_208 VSS )
+   ( reg_data_reg\[1\] VSS )
+   ( reg_data_reg\[2\] VSS )
+   ( ctmi_204 VSS )
+   ( p1_reg\[0\] VSS )
+   ( ctmi_210 VSS )
+   ( p3_reg\[0\] VSS )
+   ( ctmi_207 VSS )
+   ( ctmi_206 VSS )
+   ( reg_data_reg\[0\] VSS )
+   ( p2_reg\[0\] VSS )
+   ( ctmi_155 VSS )
+   ( ctmi_154 VSS )
+   ( ctmi_205 VSS )
+   + USE GROUND ;
+END SPECIALNETS
+END DESIGN

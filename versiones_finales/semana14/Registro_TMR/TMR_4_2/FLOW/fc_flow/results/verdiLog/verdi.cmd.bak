@@ -1,0 +1,236 @@
+simSetSimulator "-vcssv" -exec "./prueba3" -args " " -uvmDebug on
+debImport "-i" "-simflow" "-dbdir" "./prueba3.daidir"
+srcTBInvokeSim
+wvCreateWindow
+verdiShowWindow -win $_Verdi_1 -switchFS
+srcHBSelect "universal_register_4bit_tb.dut.register_2" -win $_nTrace1
+srcHBSelect "universal_register_4bit_tb.dut.register_1" -win $_nTrace1
+srcHBDrag -win $_nTrace1
+wvDumpScope "universal_register_4bit_tb.dut.register_1"
+wvRenameGroup -win $_nWave3 {G1} {register_1}
+wvAddSignal -win $_nWave3 "/universal_register_4bit_tb/dut/register_1/clk" \
+           "/universal_register_4bit_tb/dut/register_1/rst" \
+           "/universal_register_4bit_tb/dut/register_1/enable" \
+           "/universal_register_4bit_tb/dut/register_1/load" \
+           "/universal_register_4bit_tb/dut/register_1/serial_in" \
+           "/universal_register_4bit_tb/dut/register_1/mode\[1:0\]" \
+           "/universal_register_4bit_tb/dut/register_1/parallel_in\[3:0\]" \
+           "/universal_register_4bit_tb/dut/register_1/fault" \
+           "/universal_register_4bit_tb/dut/register_1/corrected_data\[3:0\]" \
+           "/universal_register_4bit_tb/dut/register_1/serial_out" \
+           "/universal_register_4bit_tb/dut/register_1/parallel_out\[3:0\]"
+wvSetPosition -win $_nWave3 {("register_1" 0)}
+wvSetPosition -win $_nWave3 {("register_1" 11)}
+wvSetPosition -win $_nWave3 {("register_1" 11)}
+srcHBSelect "universal_register_4bit_tb.dut.register_2" -win $_nTrace1
+srcHBSelect "universal_register_4bit_tb.dut.register_2" -win $_nTrace1
+srcHBDrag -win $_nTrace1
+wvSetPosition -win $_nWave3 {("register_1" 0)}
+wvSetPosition -win $_nWave3 {("register_1" 5)}
+wvSetPosition -win $_nWave3 {("register_1" 6)}
+wvSetPosition -win $_nWave3 {("register_1" 7)}
+wvSetPosition -win $_nWave3 {("register_1" 8)}
+wvSetPosition -win $_nWave3 {("register_1" 9)}
+wvSetPosition -win $_nWave3 {("register_1" 10)}
+wvSetPosition -win $_nWave3 {("register_1" 11)}
+wvSetPosition -win $_nWave3 {("G2" 0)}
+wvDumpScope "universal_register_4bit_tb.dut.register_2"
+wvRenameGroup -win $_nWave3 {G2} {register_2}
+wvAddSignal -win $_nWave3 "/universal_register_4bit_tb/dut/register_2/clk" \
+           "/universal_register_4bit_tb/dut/register_2/rst" \
+           "/universal_register_4bit_tb/dut/register_2/enable" \
+           "/universal_register_4bit_tb/dut/register_2/load" \
+           "/universal_register_4bit_tb/dut/register_2/serial_in" \
+           "/universal_register_4bit_tb/dut/register_2/mode\[1:0\]" \
+           "/universal_register_4bit_tb/dut/register_2/parallel_in\[3:0\]" \
+           "/universal_register_4bit_tb/dut/register_2/fault" \
+           "/universal_register_4bit_tb/dut/register_2/corrected_data\[3:0\]" \
+           "/universal_register_4bit_tb/dut/register_2/serial_out" \
+           "/universal_register_4bit_tb/dut/register_2/parallel_out\[3:0\]"
+wvSetPosition -win $_nWave3 {("register_2" 0)}
+wvSetPosition -win $_nWave3 {("register_2" 11)}
+wvSetPosition -win $_nWave3 {("register_2" 11)}
+srcHBSelect "universal_register_4bit_tb.dut.register_3" -win $_nTrace1
+srcHBDrag -win $_nTrace1
+wvSetPosition -win $_nWave3 {("register_1" 7)}
+wvSetPosition -win $_nWave3 {("register_1" 11)}
+wvSetPosition -win $_nWave3 {("register_2" 1)}
+wvSetPosition -win $_nWave3 {("register_2" 2)}
+wvSetPosition -win $_nWave3 {("register_2" 3)}
+wvSetPosition -win $_nWave3 {("register_2" 4)}
+wvSetPosition -win $_nWave3 {("register_2" 5)}
+wvSetPosition -win $_nWave3 {("register_2" 6)}
+wvSetPosition -win $_nWave3 {("register_2" 7)}
+wvSetPosition -win $_nWave3 {("register_2" 8)}
+wvSetPosition -win $_nWave3 {("register_2" 9)}
+wvSetPosition -win $_nWave3 {("register_2" 10)}
+wvSetPosition -win $_nWave3 {("register_2" 11)}
+wvSetPosition -win $_nWave3 {("G3" 0)}
+wvSetPosition -win $_nWave3 {("register_1" 0)}
+srcHBSelect "universal_register_4bit_tb.dut.ne_30" -win $_nTrace1
+wvScrollDown -win $_nWave3 0
+srcHBSelect "universal_register_4bit_tb.dut.voter_inst" -win $_nTrace1
+srcHBDrag -win $_nTrace1
+wvSetPosition -win $_nWave3 {("register_1" 8)}
+wvSetPosition -win $_nWave3 {("register_2" 1)}
+wvSetPosition -win $_nWave3 {("register_2" 4)}
+wvSetPosition -win $_nWave3 {("register_2" 6)}
+wvSetPosition -win $_nWave3 {("register_2" 7)}
+wvSetPosition -win $_nWave3 {("register_2" 8)}
+wvSetPosition -win $_nWave3 {("register_2" 9)}
+wvSetPosition -win $_nWave3 {("register_2" 10)}
+wvSetPosition -win $_nWave3 {("register_2" 11)}
+wvSetPosition -win $_nWave3 {("G3" 0)}
+wvDumpScope "universal_register_4bit_tb.dut.voter_inst"
+wvRenameGroup -win $_nWave3 {G3} {voter_inst}
+wvAddSignal -win $_nWave3 \
+           "/universal_register_4bit_tb/dut/voter_inst/parallel_out_1\[3:0\]" \
+           "/universal_register_4bit_tb/dut/voter_inst/parallel_out_2\[3:0\]" \
+           "/universal_register_4bit_tb/dut/voter_inst/parallel_out_3\[3:0\]" \
+           "/universal_register_4bit_tb/dut/voter_inst/serial_out_1" \
+           "/universal_register_4bit_tb/dut/voter_inst/serial_out_2" \
+           "/universal_register_4bit_tb/dut/voter_inst/serial_out_3" \
+           "/universal_register_4bit_tb/dut/voter_inst/parallel_out_voted\[3:0\]" \
+           "/universal_register_4bit_tb/dut/voter_inst/serial_out_voted"
+wvSetPosition -win $_nWave3 {("voter_inst" 0)}
+wvSetPosition -win $_nWave3 {("voter_inst" 8)}
+wvSetPosition -win $_nWave3 {("voter_inst" 8)}
+wvScrollUp -win $_nWave3 17
+wvScrollDown -win $_nWave3 0
+wvSelectSignal -win $_nWave3 {( "register_1" 1 )} 
+srcTBRunSim
+wvZoomAll -win $_nWave3
+wvScrollDown -win $_nWave3 0
+wvScrollDown -win $_nWave3 0
+wvSelectSignal -win $_nWave3 {( "register_1" 10 )} 
+wvSelectGroup -win $_nWave3 {register_2}
+wvSelectSignal -win $_nWave3 {( "register_1" 1 )} 
+wvSelectSignal -win $_nWave3 {( "register_2" 5 )} 
+wvSelectSignal -win $_nWave3 {( "register_2" 1 )} 
+wvScrollDown -win $_nWave3 0
+wvSelectSignal -win $_nWave3 {( "register_1" 6 )} 
+wvSelectSignal -win $_nWave3 {( "register_1" 1 )} 
+wvCut -win $_nWave3
+wvSetPosition -win $_nWave3 {("G4" 0)}
+wvSetPosition -win $_nWave3 {("voter_inst" 8)}
+wvSelectSignal -win $_nWave3 {( "register_1" 1 )} 
+wvCut -win $_nWave3
+wvSetPosition -win $_nWave3 {("G4" 0)}
+wvSetPosition -win $_nWave3 {("voter_inst" 8)}
+wvSelectSignal -win $_nWave3 {( "register_1" 1 )} 
+wvCut -win $_nWave3
+wvSetPosition -win $_nWave3 {("G4" 0)}
+wvSetPosition -win $_nWave3 {("voter_inst" 8)}
+wvSelectSignal -win $_nWave3 {( "register_1" 1 )} 
+wvCut -win $_nWave3
+wvSetPosition -win $_nWave3 {("G4" 0)}
+wvSetPosition -win $_nWave3 {("voter_inst" 8)}
+wvSelectSignal -win $_nWave3 {( "register_1" 2 )} 
+wvCut -win $_nWave3
+wvSetPosition -win $_nWave3 {("G4" 0)}
+wvSetPosition -win $_nWave3 {("voter_inst" 8)}
+wvSelectSignal -win $_nWave3 {( "register_1" 4 )} 
+wvSelectSignal -win $_nWave3 {( "register_2" 1 )} 
+wvCut -win $_nWave3
+wvSetPosition -win $_nWave3 {("G4" 0)}
+wvSetPosition -win $_nWave3 {("voter_inst" 8)}
+wvSelectSignal -win $_nWave3 {( "register_2" 1 )} 
+wvCut -win $_nWave3
+wvSetPosition -win $_nWave3 {("G4" 0)}
+wvSetPosition -win $_nWave3 {("voter_inst" 8)}
+wvSelectSignal -win $_nWave3 {( "register_2" 1 )} 
+wvCut -win $_nWave3
+wvSetPosition -win $_nWave3 {("G4" 0)}
+wvSetPosition -win $_nWave3 {("voter_inst" 8)}
+wvSelectSignal -win $_nWave3 {( "register_2" 1 )} 
+wvCut -win $_nWave3
+wvSetPosition -win $_nWave3 {("G4" 0)}
+wvSetPosition -win $_nWave3 {("voter_inst" 8)}
+wvSelectSignal -win $_nWave3 {( "register_2" 4 )} 
+wvSelectSignal -win $_nWave3 {( "register_2" 2 )} 
+wvCut -win $_nWave3
+wvSetPosition -win $_nWave3 {("G4" 0)}
+wvSetPosition -win $_nWave3 {("voter_inst" 8)}
+wvScrollDown -win $_nWave3 1
+wvScrollUp -win $_nWave3 1
+wvScrollDown -win $_nWave3 0
+srcHBSelect "universal_register_4bit_tb.dut" -win $_nTrace1
+srcSetScope "universal_register_4bit_tb.dut" -delim "." -win $_nTrace1
+srcHBSelect "universal_register_4bit_tb.dut" -win $_nTrace1
+srcHBSelect "universal_register_4bit_tb.dut.register_3" -win $_nTrace1
+srcHBDrag -win $_nTrace1
+wvSetPosition -win $_nWave3 {("register_1" 0)}
+wvSetPosition -win $_nWave3 {("register_1" 1)}
+wvSetPosition -win $_nWave3 {("register_1" 2)}
+wvSetPosition -win $_nWave3 {("register_1" 3)}
+wvSetPosition -win $_nWave3 {("register_1" 4)}
+wvSetPosition -win $_nWave3 {("register_1" 5)}
+wvSetPosition -win $_nWave3 {("register_1" 6)}
+wvSetPosition -win $_nWave3 {("register_2" 6)}
+wvSetPosition -win $_nWave3 {("voter_inst" 0)}
+wvSetPosition -win $_nWave3 {("voter_inst" 1)}
+wvSetPosition -win $_nWave3 {("voter_inst" 2)}
+wvSetPosition -win $_nWave3 {("voter_inst" 3)}
+wvSetPosition -win $_nWave3 {("voter_inst" 4)}
+wvSetPosition -win $_nWave3 {("voter_inst" 5)}
+wvSetPosition -win $_nWave3 {("voter_inst" 6)}
+wvSetPosition -win $_nWave3 {("voter_inst" 7)}
+wvSetPosition -win $_nWave3 {("voter_inst" 8)}
+wvSetPosition -win $_nWave3 {("G4" 0)}
+wvSetPosition -win $_nWave3 {("register_1" 0)}
+wvSetPosition -win $_nWave3 {("G4" 0)}
+wvSetPosition -win $_nWave3 {("register_2" 6)}
+wvDumpScope "universal_register_4bit_tb.dut.register_3"
+wvSetPosition -win $_nWave3 {("register_2" 6)}
+wvSetPosition -win $_nWave3 {("register_2/register_3" 0)}
+wvAddSubGroup -win $_nWave3 -holdpost {register_3}
+wvAddSignal -win $_nWave3 "/universal_register_4bit_tb/dut/register_3/clk" \
+           "/universal_register_4bit_tb/dut/register_3/rst" \
+           "/universal_register_4bit_tb/dut/register_3/enable" \
+           "/universal_register_4bit_tb/dut/register_3/load" \
+           "/universal_register_4bit_tb/dut/register_3/serial_in" \
+           "/universal_register_4bit_tb/dut/register_3/mode\[1:0\]" \
+           "/universal_register_4bit_tb/dut/register_3/parallel_in\[3:0\]" \
+           "/universal_register_4bit_tb/dut/register_3/fault" \
+           "/universal_register_4bit_tb/dut/register_3/corrected_data\[3:0\]" \
+           "/universal_register_4bit_tb/dut/register_3/serial_out" \
+           "/universal_register_4bit_tb/dut/register_3/parallel_out\[3:0\]"
+wvSetPosition -win $_nWave3 {("register_2/register_3" 0)}
+wvSetPosition -win $_nWave3 {("register_2/register_3" 11)}
+wvSelectSignal -win $_nWave3 {( "register_2/register_3" 1 )} 
+wvCut -win $_nWave3
+wvSetPosition -win $_nWave3 {("voter_inst" 0)}
+wvSetPosition -win $_nWave3 {("register_2/register_3" 10)}
+wvSelectSignal -win $_nWave3 {( "register_2/register_3" 1 )} 
+wvCut -win $_nWave3
+wvSetPosition -win $_nWave3 {("voter_inst" 0)}
+wvSetPosition -win $_nWave3 {("register_2/register_3" 9)}
+wvSelectSignal -win $_nWave3 {( "register_2/register_3" 1 )} 
+wvCut -win $_nWave3
+wvSetPosition -win $_nWave3 {("voter_inst" 0)}
+wvSetPosition -win $_nWave3 {("register_2/register_3" 8)}
+wvSelectSignal -win $_nWave3 {( "register_2/register_3" 1 )} 
+wvCut -win $_nWave3
+wvSetPosition -win $_nWave3 {("voter_inst" 0)}
+wvSetPosition -win $_nWave3 {("register_2/register_3" 7)}
+wvSelectSignal -win $_nWave3 {( "register_2/register_3" 2 )} 
+wvCut -win $_nWave3
+wvSetPosition -win $_nWave3 {("voter_inst" 0)}
+wvSetPosition -win $_nWave3 {("register_2/register_3" 6)}
+wvScrollUp -win $_nWave3 2
+wvScrollDown -win $_nWave3 0
+wvSelectSignal -win $_nWave3 {( "register_1" 4 )} 
+wvCut -win $_nWave3
+wvSetPosition -win $_nWave3 {("voter_inst" 0)}
+wvSetPosition -win $_nWave3 {("register_2/register_3" 6)}
+wvSelectSignal -win $_nWave3 {( "register_2" 4 )} 
+wvCut -win $_nWave3
+wvSetPosition -win $_nWave3 {("voter_inst" 0)}
+wvSetPosition -win $_nWave3 {("register_2/register_3" 6)}
+wvSelectSignal -win $_nWave3 {( "register_2/register_3" 4 )} 
+wvCut -win $_nWave3
+wvSetPosition -win $_nWave3 {("voter_inst" 0)}
+wvSetPosition -win $_nWave3 {("register_2/register_3" 5)}
+wvScrollDown -win $_nWave3 1
+wvScrollUp -win $_nWave3 1
+debExit

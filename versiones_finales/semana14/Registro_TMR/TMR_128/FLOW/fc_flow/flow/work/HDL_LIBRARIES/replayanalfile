@@ -1,0 +1,9 @@
+set search_path [list . /mnt/vol_synopsys2023/synopsys/fusioncompiler/U-2022.12-SP6/dw/syn_ver /mnt/vol_synopsys2023/synopsys/fusioncompiler/U-2022.12-SP6/dw/sim_ver /mnt/vol_synopsys2023/synopsys/fusioncompiler/U-2022.12-SP6/libraries/syn ] 
+analyze -format sverilog  "/mnt/vol_NFS_rh003/estudiantes/DANIELA_VARGAS/Version_final/0516/versiones_finales/semana14/Registro_TMR/TMR_128/FLOW/fc_flow/flow/work/../../../common/rtl/sverilog/top.sv" 
+C/mnt/vol_NFS_rh003/estudiantes/DANIELA_VARGAS/Version_final/0516/versiones_finales/semana14/Registro_TMR/TMR_128/FLOW/fc_flow/flow/work
+/mnt/vol_NFS_rh003/estudiantes/DANIELA_VARGAS/Version_final/0516/versiones_finales/semana14/Registro_TMR/TMR_128/FLOW/common/rtl/sverilog/top.sv
+top
+register
+voter
+elaborate top
+set_top_module top
