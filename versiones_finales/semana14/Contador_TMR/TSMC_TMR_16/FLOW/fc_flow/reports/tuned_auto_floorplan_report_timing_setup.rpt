@@ -1,0 +1,62 @@
+Warning: Scenario scenarioFF is not configured for setup analysis: skipping. (UIC-058)
+****************************************
+Report : timing
+        -path_type full
+        -delay_type max
+        -max_paths 1
+        -report_by design
+Design : top
+Version: U-2022.12-SP6
+Date   : Mon May 26 20:40:16 2025
+****************************************
+
+  Startpoint: counter_2/q_reg[0] (rising edge-triggered flip-flop clocked by SYS_CLK)
+  Endpoint: counter_2/q_reg[15] (rising edge-triggered flip-flop clocked by SYS_CLK)
+  Mode: mode1
+  Corner: cornerSS
+  Scenario: scenarioSS
+  Path Group: SYS_CLK
+  Path Type: max
+
+  Point                                            Incr      Path  
+  ------------------------------------------------------------------------
+  clock SYS_CLK (rise edge)                        0.00      0.00
+  clock network delay (ideal)                      0.00      0.00
+
+  counter_2/q_reg[0]/CP (SDFCNQD0HPBWP)            0.00      0.00 r
+  counter_2/q_reg[0]/Q (SDFCNQD0HPBWP)             0.41      0.41 r
+  voter/ctmi_476/ZN (MAOI222D1HPBWP)               0.16      0.57 f
+  voter/ctmi_30/ZN (CKND0HPBWP)                    0.36      0.93 r
+  counter_2/ctmi_423/ZN (ND2D1HPBWP)               0.18      1.12 f
+  counter_2/ctmi_422/ZN (INR2XD0HPBWP)             0.12      1.24 r
+  counter_2/ctmi_421/ZN (ND2D1HPBWP)               0.09      1.33 f
+  counter_2/ctmi_420/ZN (INR2XD0HPBWP)             0.11      1.43 r
+  counter_2/ctmi_419/ZN (ND2D1HPBWP)               0.09      1.52 f
+  counter_2/ctmi_418/ZN (INR2XD0HPBWP)             0.11      1.63 r
+  counter_2/ctmi_417/ZN (ND2D1HPBWP)               0.10      1.73 f
+  counter_2/ctmi_416/ZN (INR2XD0HPBWP)             0.10      1.83 r
+  counter_2/ctmi_415/ZN (ND2D1HPBWP)               0.09      1.92 f
+  counter_2/ctmi_414/ZN (INR2XD0HPBWP)             0.12      2.04 r
+  counter_2/ctmi_413/ZN (ND2D1HPBWP)               0.11      2.15 f
+  counter_2/ctmi_412/ZN (INR2XD0HPBWP)             0.12      2.27 r
+  counter_2/ctmi_411/ZN (ND2D1HPBWP)               0.10      2.37 f
+  counter_2/ctmi_410/ZN (IND2D1HPBWP)              0.13      2.49 f
+  counter_2/ctmi_409/ZN (MAOI22D0HPBWP)            0.14      2.64 f
+  counter_2/ctmi_407/ZN (OAI22D0HPBWP)             0.11      2.75 r
+  counter_2/q_reg[15]/D (SDFCNQD0HPBWP)            0.00      2.75 r
+  data arrival time                                          2.75
+
+  clock SYS_CLK (rise edge)                       10.00     10.00
+  clock network delay (ideal)                      0.00     10.00
+  counter_2/q_reg[15]/CP (SDFCNQD0HPBWP)           0.00     10.00 r
+  clock uncertainty                               -0.30      9.70
+  library setup time                              -0.09      9.61
+  data required time                                         9.61
+  ------------------------------------------------------------------------
+  data required time                                         9.61
+  data arrival time                                         -2.75
+  ------------------------------------------------------------------------
+  slack (MET)                                                6.86
+
+
+1

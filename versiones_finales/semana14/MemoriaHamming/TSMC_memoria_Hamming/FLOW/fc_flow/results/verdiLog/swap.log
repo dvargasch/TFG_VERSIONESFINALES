@@ -1,0 +1,42 @@
+version: (200506)
+
+available memory: 64M bytes
+used memory: 28M bytes [need 28M bytes if disable swap]
+
+used block: 2326 [memory(2326) file(0)]
+                 [ 8K(2160) 64K(166) { total 28M bytes } ]
+overhead: (249600) bytes for (2326) blocks [Average: (107) bytes/block]
+
+write  => 0(times) 0K(bytes) [0K bytes to file]
+read   => 166(times) 10M(bytes) [971K bytes compressed data from file]
+access => 1658161(times) 14221M(bytes)
+          [hit ratio: 99.99%]
+
+time: write(0) read(0.001)  unit: second
+
+swap file directory: (/mnt/vol_NFS_rh003/estudiantes/DANIELA_VARGAS/TFG_SEMANA12/sintesis_0511/versiones_finales/Memoria/TSMC_memoria_Hamming/FLOW/fc_flow/results/verdiLog)
+used swap file number: (3)
+
+
+
+swap file manager:
+arrSize: (256)
+idxCnt: (4)
+closeHead: (1)
+closeTail: (3)
+openCnt: (3)
+fid(3): fd(1073741825) fileName(/mnt/vol_NFS_rh003/estudiantes/DANIELA_VARGAS/TFG_SEMANA12/sintesis_0511/versiones_finales/Memoria/TSMC_memoria_Hamming/FLOW/fc_flow/results/results.daidir/kdb.elab++/work.lib++/top_initial_syn.v#inc___vcs_unit__1__1#.tdc)
+	size(1139476) lastModTime(1747453481) curModTime(1747453481)
+	mode(rb)	hot(0) cool(2) pos(0)
+fid(2): fd(34) fileName(/mnt/vol_NFS_rh003/estudiantes/DANIELA_VARGAS/TFG_SEMANA12/sintesis_0511/versiones_finales/Memoria/TSMC_memoria_Hamming/FLOW/fc_flow/results/verdiLog/_swap_0001#8323328#2963185)
+	size(0) lastModTime(0) curModTime(1747453502)
+	mode(w+b)	hot(3) cool(1) pos(0)
+fid(1): fd(1073741824) fileName(/mnt/vol_NFS_rh003/estudiantes/DANIELA_VARGAS/TFG_SEMANA12/sintesis_0511/versiones_finales/Memoria/TSMC_memoria_Hamming/FLOW/fc_flow/results/results.daidir/kdb.elab++/work.lib++/tb.sv.tdc)
+	size(5150) lastModTime(1747453481) curModTime(1747453481)
+	mode(rb)	hot(2) cool(0) pos(0)
+fid(0): fd(0) fileName(NULL)
+	mode(NULL)	hot(0) cool(0) pos(0)
+==================================================
+mySelf(0x18b4ec00) pre(0x19895b20) next((nil))
+version(200506)
+date(Aug 13 2023 07:34:34)

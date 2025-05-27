@@ -2,7 +2,7 @@ Magic 271485
 Revision Verdi_R-2020.12-SP2
 
 ; Window Layout <x> <y> <width> <height> <signalwidth> <valuewidth>
-viewPort 0 25 1272 592 194 65
+viewPort 0 25 1272 549 194 65
 
 ; File list:
 ; openDirFile [-d delimiter] [-s time_offset] [-rf auto_bus_rule_file] path_name file_name
@@ -16,8 +16,8 @@ signalSpacing 5
 
 ; windowTimeUnit is used for zoom, cursor & marker
 ; waveform viewport range
-zoom 0.000000 200326.899696
-cursor 465000.000000
+zoom 0.000000 318150.000000
+cursor 315000.000000
 marker 0.000000
 
 ; user define markers
@@ -45,7 +45,7 @@ COMPLEX_EVENT_END
 curSTATUS ByChange
 
 
-addGroup "G1"
+addGroup "dut"
 activeDirFile "" "/mnt/vol_NFS_rh003/estudiantes/DANIELA_VARGAS/Version_final/0516/versiones_finales/semana14/Registro_TMR/TMR_4/FLOW/common/rtl/sverilog/inter.fsdb"
 addSignal -h 15 /universal_register_4bit_tb/dut/clk
 addSignal -h 15 /universal_register_4bit_tb/dut/rst
@@ -67,7 +67,7 @@ addSignal -h 15 /universal_register_4bit_tb/dut/voted_serial
 addSignal -h 15 /universal_register_4bit_tb/dut/fault_1
 addSignal -h 15 /universal_register_4bit_tb/dut/fault_2
 addSignal -h 15 /universal_register_4bit_tb/dut/fault_3
-addGroup "G2"
+addGroup "G3"
 
 ; getSignalForm Scope Hierarchy Status
 ; active file of getSignalForm

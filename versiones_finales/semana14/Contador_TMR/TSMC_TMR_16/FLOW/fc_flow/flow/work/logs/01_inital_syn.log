@@ -1,0 +1,599 @@
+
+
+
+                              Fusion Compiler (TM)
+
+             Version U-2022.12-SP6 for linux64 - Aug 25, 2023 -SLE
+
+                    Copyright (c) 1988 - 2023 Synopsys, Inc.
+   This software and the associated documentation are proprietary to Synopsys,
+ Inc. This software may only be used in accordance with the terms and conditions
+ of a written license agreement with Synopsys, Inc. All other use, reproduction,
+   or distribution of this software is strictly prohibited.  Licensed Products
+     communicate with Synopsys servers for the purpose of providing software
+    updates, detecting software piracy and verifying that customers are using
+    Licensed Products in conformity with the applicable License Key for such
+  Licensed Products. Synopsys will use information gathered in connection with
+    this process to deliver software updates and pursue software pirates and
+                                   infringers.
+
+ Inclusivity & Diversity - Visit SolvNetPlus to read the "Synopsys Statement on
+            Inclusivity and Diversity" (Refer to article 000036315 at
+                        https://solvnetplus.synopsys.com)
+ 
+Information: Term was not able to be set up using xterm-256color . Using "xterm" by default instead. (CLE-10)
+##################################################
+####          Inital Logic Synthesis          ####
+##################################################
+#### ----- Paths and reference names ----- #### 
+# Sourcing common setup script
+source -echo ../../setup/icc2_dp_setup.tcl
+set CURR_DIR  [pwd]
+set PROY_HOME ${CURR_DIR}/../..;
+set TSMC_HOME "/mnt/vol_NFS_rh003/profesores/pmendoza/KITS/TSMCHOME";
+############################
+## RTL file name and type ##
+############################
+set DESIGN_NAME "top"
+set HDL "sverilog"
+set DESIGN_LIBRARY "${DESIGN_NAME}_lib"
+#################################
+set time [get_date]
+puts "Command Start at: ${time}"
+Command Start at: Mon May 26 19:46:14 2025
+####################################
+### 1. Variables for design prep ###
+####################################
+### SDC File
+set SDCNAME "${DESIGN_NAME}"
+### Ref Libs
+set NDM_LIBS_PATH "../../setup/ndm_libraries/ndm/"
+set STD_TIME_FRAME "../../setup/ndm_libraries/ndm/tcbn65lphpbwp_1.ndm"
+set REFERENCE_LIBRARY "{${STD_TIME_FRAME} }"
+set REFERENCE_LIBRARY 		[list   ${NDM_LIBS_PATH}/tcbn65lphpbwpcghvt_1_physical_only.ndm \
+									${NDM_LIBS_PATH}/tcbn65lphpbwp_1_physical_only.ndm \
+									${NDM_LIBS_PATH}/tpdn65lpgv2od3_sd_physical_only.ndm \
+									${NDM_LIBS_PATH}/tpfn65lpgv2od3_physical_only.ndm \
+									${NDM_LIBS_PATH}/tpbn65v_physical_only.ndm \
+									${NDM_LIBS_PATH}/tpin65gv_physical_only.ndm \
+									${NDM_LIBS_PATH}/tcbn65lphpbwpcghvt_1.ndm \
+									${NDM_LIBS_PATH}/tcbn65lphpbwp_1.ndm \
+									${NDM_LIBS_PATH}/tpdn65lpgv2od3_sdml.ndm \
+									${NDM_LIBS_PATH}/tpfn65lpgv2od3ml.ndm \
+									${NDM_LIBS_PATH}/ts1n65lpa2048x32m4_140a_5m.ndm ];
+################################
+### 2. Tech files and setup ####
+################################
+set TECH_FILE "${TSMC_HOME}/digital/Back_End/milkyway/tcbn65lphpbwp_140a/techfiles/tsmcn65_9lmT2.tf"
+set TECH_LIB ""
+#######################
+## Layers and widths ##
+#######################
+set STANDARD_CELLS_WIDTH 0.42
+set MAX_ROUTING_LAYER   "M6"
+set MIN_ROUTING_LAYER   "M2"
+set TARGET_SKEW         0.1
+set RTL_PATH		"${CURR_DIR}/../../../common/rtl"
+set SDC_PATH		"${CURR_DIR}/../../../common/sdc"
+set SDC_FILE		"${CURR_DIR}/${DESIGN_NAME}.sdc"
+####################################################
+set VERILOG_PATH	"${RTL_PATH}/verilog"
+set SVERILOG_PATH	"${RTL_PATH}/sverilog" 
+set VHDL_PATH		"${RTL_PATH}/vhdl"
+set RESULTS_PATH	"${CURR_DIR}/../../results"
+set REPORTS_PATH	"${CURR_DIR}/../../reports"
+###########
+## Paths ##
+###########
+set DRC_RUNSET_FILE	"${CURR_DIR}/../../DRC/ICVLN65S_9M_6X2Z.26_1a"
+set GDS_MAP_FILE        "${TSMC_HOME}/digital/Back_End/milkyway/tcbn65lphpbwpcg_200a/gdsout_6X2Z.map"
+set ICV                "-I /mnt/vol_synopsys2023/pdks/xfab/design/xkit/xh018/synopsys/v9_0/ICValidator/v9_0_2"
+####################
+## Auto-floorplan ##
+####################
+set CONTROL_AUTO           "core"
+# Percentage of cell area usage
+set CORE_UTILIZATION_AUTO  0.5
+# Move the nucleus 10 units
+set CORE_OFFSET_AUTO       10
+# Core shape
+set SHAPE_AUTO             "R"
+# Aspect ratio
+set SIDE_RATIO_AUTO        {1 1.5}
+# Flip the first row of the cell
+set FFR_AUTO               "true"
+# Using the M3 layer for pins
+set LAYER_PIN_AUTO         {M3}
+# Allows pins on all sides of the cell
+set SIDES_AUTO             {1 2 3 4}
+# Distance between pins
+set PIN_SPACE_AUTO         4
+######################
+## Floorplan manual ##
+######################
+set CONTROL_M            "core"
+# Percentage of cell area usage
+set CORE_UTILIZATION_M   0.5
+# Move the nucleus 10 units 
+set CORE_OFFSET_M        10
+# Core shape
+set SHAPE_M              "R"
+# Aspect ratio 
+set SIDE_RATIO_M         {1.5 1}
+# Flip the first row of the cell
+set FFR_M                "true" 
+# Using the M3 layer for pins
+set LAYER_PIN_M          {M3}
+# Allows pins on all sides of the cell
+set SIDES_M              {1 2 3 4}
+# Distance between pins
+set PIN_SPACE_M          4 
+#########################
+## Configure MultiCore ##
+#########################
+set_host_options -name Oculi -max_cores 2
+#report_host_options
+source ${CURR_DIR}/../../setup/utilities.tcl
+set UNSELECT_RULES "PO.DN.2* OD.DN.2* M*.DN.1* CSR.R.1* DM*.R.1*"
+PO.DN.2* OD.DN.2* M*.DN.1* CSR.R.1* DM*.R.1*
+# Open the design library
+open_lib ${DESIGN_LIBRARY}
+Information: Loading library file '/mnt/vol_NFS_rh003/estudiantes/DANIELA_VARGAS/Version_final/0516/versiones_finales/semana14/Contador_TMR/TSMC_TMR_16/FLOW/fc_flow/flow/work/top_lib' (FILE-007)
+Information: Loading library file '/mnt/vol_NFS_rh003/estudiantes/DANIELA_VARGAS/Version_final/0516/versiones_finales/semana14/Contador_TMR/TSMC_TMR_16/FLOW/fc_flow/setup/ndm_libraries/ndm/tcbn65lphpbwpcghvt_1_physical_only.ndm' (FILE-007)
+Information: Loading library file '/mnt/vol_NFS_rh003/estudiantes/DANIELA_VARGAS/Version_final/0516/versiones_finales/semana14/Contador_TMR/TSMC_TMR_16/FLOW/fc_flow/setup/ndm_libraries/ndm/tcbn65lphpbwp_1_physical_only.ndm' (FILE-007)
+Information: Loading library file '/mnt/vol_NFS_rh003/estudiantes/DANIELA_VARGAS/Version_final/0516/versiones_finales/semana14/Contador_TMR/TSMC_TMR_16/FLOW/fc_flow/setup/ndm_libraries/ndm/tpdn65lpgv2od3_sd_physical_only.ndm' (FILE-007)
+Information: Loading library file '/mnt/vol_NFS_rh003/estudiantes/DANIELA_VARGAS/Version_final/0516/versiones_finales/semana14/Contador_TMR/TSMC_TMR_16/FLOW/fc_flow/setup/ndm_libraries/ndm/tpfn65lpgv2od3_physical_only.ndm' (FILE-007)
+Information: Loading library file '/mnt/vol_NFS_rh003/estudiantes/DANIELA_VARGAS/Version_final/0516/versiones_finales/semana14/Contador_TMR/TSMC_TMR_16/FLOW/fc_flow/setup/ndm_libraries/ndm/tpbn65v_physical_only.ndm' (FILE-007)
+Information: Loading library file '/mnt/vol_NFS_rh003/estudiantes/DANIELA_VARGAS/Version_final/0516/versiones_finales/semana14/Contador_TMR/TSMC_TMR_16/FLOW/fc_flow/setup/ndm_libraries/ndm/tpin65gv_physical_only.ndm' (FILE-007)
+Information: Loading library file '/mnt/vol_NFS_rh003/estudiantes/DANIELA_VARGAS/Version_final/0516/versiones_finales/semana14/Contador_TMR/TSMC_TMR_16/FLOW/fc_flow/setup/ndm_libraries/ndm/tcbn65lphpbwpcghvt_1.ndm' (FILE-007)
+Information: Loading library file '/mnt/vol_NFS_rh003/estudiantes/DANIELA_VARGAS/Version_final/0516/versiones_finales/semana14/Contador_TMR/TSMC_TMR_16/FLOW/fc_flow/setup/ndm_libraries/ndm/tcbn65lphpbwp_1.ndm' (FILE-007)
+Information: Loading library file '/mnt/vol_NFS_rh003/estudiantes/DANIELA_VARGAS/Version_final/0516/versiones_finales/semana14/Contador_TMR/TSMC_TMR_16/FLOW/fc_flow/setup/ndm_libraries/ndm/tpdn65lpgv2od3_sdml.ndm' (FILE-007)
+Information: Loading library file '/mnt/vol_NFS_rh003/estudiantes/DANIELA_VARGAS/Version_final/0516/versiones_finales/semana14/Contador_TMR/TSMC_TMR_16/FLOW/fc_flow/setup/ndm_libraries/ndm/tpfn65lpgv2od3ml.ndm' (FILE-007)
+Information: Loading library file '/mnt/vol_NFS_rh003/estudiantes/DANIELA_VARGAS/Version_final/0516/versiones_finales/semana14/Contador_TMR/TSMC_TMR_16/FLOW/fc_flow/setup/ndm_libraries/ndm/ts1n65lpa2048x32m4_140a_5m.ndm' (FILE-007)
+Warning: Technology used to create frame-view and current technology have inconsistency: Fat table contents are different. (FRAM-054)
+Warning: Technology 'tcbn65lphpbwpcghvt.tf' used for frame-view creation in library 'tcbn65lphpbwpcghvt_1_physical_only', is inconsistent with the current technology 'tsmcn65_9lmT2.tf' of library 'top_lib'. Please run derive_design_level_via_regions to generate up-do-date via region in the design library. (NDM-102)
+Warning: Technology used to create frame-view and current technology have inconsistency: Fat table contents are different. (FRAM-054)
+Warning: Technology 'tpdn65lpgv2od3_sd.tf' used for frame-view creation in library 'tpdn65lpgv2od3_sd_physical_only', is inconsistent with the current technology 'tsmcn65_9lmT2.tf' of library 'top_lib'. Please run derive_design_level_via_regions to generate up-do-date via region in the design library. (NDM-102)
+Warning: Technology used to create frame-view and current technology have inconsistency: Fat table contents are different. (FRAM-054)
+Warning: Technology 'tpfn65lpgv2od3.tf' used for frame-view creation in library 'tpfn65lpgv2od3_physical_only', is inconsistent with the current technology 'tsmcn65_9lmT2.tf' of library 'top_lib'. Please run derive_design_level_via_regions to generate up-do-date via region in the design library. (NDM-102)
+Warning: Technology used to create frame-view and current technology have inconsistency: Fat table contents are different. (FRAM-054)
+Warning: Technology 'tcbn65lphpbwpcghvt.tf' used for frame-view creation in library 'tcbn65lphpbwpcghvt_1', is inconsistent with the current technology 'tsmcn65_9lmT2.tf' of library 'top_lib'. Please run derive_design_level_via_regions to generate up-do-date via region in the design library. (NDM-102)
+Warning: Technology used to create frame-view and current technology have inconsistency: Fat table contents are different. (FRAM-054)
+Warning: Technology 'tpdn65lpgv2od3_sd.tf' used for frame-view creation in library 'tpdn65lpgv2od3_sdml', is inconsistent with the current technology 'tsmcn65_9lmT2.tf' of library 'top_lib'. Please run derive_design_level_via_regions to generate up-do-date via region in the design library. (NDM-102)
+Warning: Technology used to create frame-view and current technology have inconsistency: Fat table contents are different. (FRAM-054)
+Warning: Technology 'tpfn65lpgv2od3.tf' used for frame-view creation in library 'tpfn65lpgv2od3ml', is inconsistent with the current technology 'tsmcn65_9lmT2.tf' of library 'top_lib'. Please run derive_design_level_via_regions to generate up-do-date via region in the design library. (NDM-102)
+{top_lib}
+#### ----- Reading and analyze the RTL ----- ####
+if {[string equal verilog ${HDL}]} {
+	analyze -format verilog [glob ${VERILOG_PATH}/*.v]
+} elseif {[string equal sverilog ${HDL}]} {
+	analyze -format sverilog [glob ${SVERILOG_PATH}/*.sv]
+} elseif {[string equal vhdl ${HDL}]} {
+	analyze -format vhdl [glob ${VHDL_PATH}/*.vhd]
+} else {
+	echo "Error: HDL variable's value is not verilog or vhdl. Please fix the value."
+}
+Information: By default, the HDL template library is 'WORK' (LBR-??).
+Running PRESTO HDLC
+Compiling source file /mnt/vol_NFS_rh003/estudiantes/DANIELA_VARGAS/Version_final/0516/versiones_finales/semana14/Contador_TMR/TSMC_TMR_16/FLOW/fc_flow/flow/work/../../../common/rtl/sverilog/tb.sv
+Warning:  /mnt/vol_NFS_rh003/estudiantes/DANIELA_VARGAS/Version_final/0516/versiones_finales/semana14/Contador_TMR/TSMC_TMR_16/FLOW/fc_flow/flow/work/../../../common/rtl/sverilog/tb.sv:13: the undeclared symbol 'q_out' assumed to have the default net type, which is 'wire'. (VER-936)
+Compiling source file /mnt/vol_NFS_rh003/estudiantes/DANIELA_VARGAS/Version_final/0516/versiones_finales/semana14/Contador_TMR/TSMC_TMR_16/FLOW/fc_flow/flow/work/../../../common/rtl/sverilog/top.sv
+Warning:  /mnt/vol_NFS_rh003/estudiantes/DANIELA_VARGAS/Version_final/0516/versiones_finales/semana14/Contador_TMR/TSMC_TMR_16/FLOW/fc_flow/flow/work/../../../common/rtl/sverilog/tb.sv:16: delay controls are ignored for synthesis. (VER-176)
+Presto compilation completed successfully.
+Elapsed = 00:00:00.05, CPU = 00:00:00.01
+1
+#### ----- Elaborate and hierarchize the design ----- ####
+# Elaborate
+elaborate ${DESIGN_NAME}
+Presto compilation completed successfully. (top)
+Information: Elaborating HDL template WORK:counter instantiated from 'top'. (ELAB-193)
+
+Inferred memory devices in process
+	in routine counter line 64 in file
+		'/mnt/vol_NFS_rh003/estudiantes/DANIELA_VARGAS/Version_final/0516/versiones_finales/semana14/Contador_TMR/TSMC_TMR_16/FLOW/fc_flow/flow/work/../../../common/rtl/sverilog/top.sv'.
+===============================================================================
+|    Register Name    |   Type    | Width | Bus | MB | AR | AS | SR | SS | ST |
+===============================================================================
+|        q_reg        | Flip-flop |  16   |  Y  | Y  | Y  | N  | N  | N  | N  |
+===============================================================================
+Presto compilation completed successfully. (counter)
+Information: Elaborating HDL template WORK:voter instantiated from 'top'. (ELAB-193)
+Presto compilation completed successfully. (voter)
+Number of modules read: 3
+Top level ports:        19
+Total in all modules
+  Ports:                119
+  Nets:                 317
+  Instances:            124
+Elapsed = 00:00:00.32, CPU = 00:00:00.28
+1
+# Set top module in the design
+set_top_module ${DESIGN_NAME}
+Information: User units loaded from library 'tcbn65lphpbwpcghvt_1' (LNK-040)
+Information: Added key list 'DesignWare' to design 'top'. (DWS-0216)
+Elapsed = 00:00:00.41, CPU = 00:00:00.29
+1
+# Save block after RTL setup
+save_block -as ${DESIGN_NAME}/rtl_read
+Information: Saving 'top_lib:top.design' to 'top_lib:top/rtl_read.design'. (DES-028)
+1
+#### ----- Initial mapping ----- ####
+set_dont_touch [get_nets q*] true
+1
+# Just to inital map
+compile_fusion -to initial_map  
+Warning: No site rows found in floorplan. (LGL-397)
+Information: Timer using 1 threads
+INFO: compile_fusion is running in balanced flow mode.
+Warning: No site rows found in floorplan. (LGL-397)
+Information: Starting 'compile_fusion -to initial_map' (FLW-8000)
+Information: Time: 2025-05-26 19:46:15 / Session: 0.00 hr / Command: 0.00 hr / Memory: 490 MB (FLW-8100)
+CPU Load: 1%, Ram Free: 0 GB, Swap Free: 3 GB, Work Disk Free: 213 GB, Tmp Disk Free: 53 GB
+Warning: No site rows found in floorplan. (LGL-397)
+INFO: Start environment monitoring: recipes
+INFO: compile_fusion is running in balanced flow mode.
+Warning: No site rows found in floorplan. (LGL-397)
+Warning: No site rows found in floorplan. (LGL-397)
+Warning: No site rows found in floorplan. (LGL-397)
+Warning: No valid clocks available in mode 'default'. Setting clock frequency to 1 GHz. (POW-034)
+Warning: No site rows found in floorplan. (LGL-397)
+Warning: No site rows found in floorplan. (LGL-397)
+Warning: No site rows found in floorplan. (LGL-397)
+Warning: No site rows found in floorplan. (LGL-397)
+Warning: No valid clocks available in mode 'default'. Setting clock frequency to 1 GHz. (POW-034)
+Warning: No valid clocks available in mode 'default'. Setting clock frequency to 1 GHz. (POW-034)
+Warning: No valid clocks available in mode 'default'. Setting clock frequency to 1 GHz. (POW-034)
+Warning: No valid clocks available in mode 'default'. Setting clock frequency to 1 GHz. (POW-034)
+Warning: Mapping to scan cell 'GSDFCNQD1HPBWP' in library is not possible because cell has 'dont_use' attribute. (SQM-1067)
+Information: The automatic clock gate timing flow is activated. Clock latencies set on clock gate cells will be automatically adjusted by an estimate for latency. (CGT-4005)
+----------------------------------------------------------------------------------------------------------
+Information: Starting compile_fusion / initial_map (FLW-8000)
+Information: Time: 2025-05-26 19:46:16 / Session: 0.00 hr / Command: 0.00 hr / Memory: 624 MB (FLW-8100)
+----------------------------------------------------------------------------------------------------------
+Warning: Mapping to scan cell 'GSDFCNQD1HPBWP' in library is not possible because cell has 'dont_use' attribute. (SQM-1067)
+Warning: No site rows found in floorplan. (LGL-397)
+Warning: No site rows found in floorplan. (LGL-397)
+Warning: No valid clocks available in mode 'default'. Setting clock frequency to 1 GHz. (POW-034)
+Warning: No site rows found in floorplan. (LGL-397)
+Warning: No site rows found in floorplan. (LGL-397)
+Warning: No site rows found in floorplan. (LGL-397)
+Warning: No site rows found in floorplan. (LGL-397)
+Warning: No valid clocks available in mode 'default'. Setting clock frequency to 1 GHz. (POW-034)
+Warning: No site rows found in floorplan. (LGL-397)
+Warning: No site rows found in floorplan. (LGL-397)
+Warning: No site rows found in floorplan. (LGL-397)
+Warning: No site rows found in floorplan. (LGL-397)
+Warning: No valid clocks available in mode 'default'. Setting clock frequency to 1 GHz. (POW-034)
+Warning: No site rows found in floorplan. (LGL-397)
+Warning: No site rows found in floorplan. (LGL-397)
+Information: Starting compile_fusion / initial_map / MV Cell Insertion (FLW-8000)
+Information: Time: 2025-05-26 19:46:17 / Session: 0.00 hr / Command: 0.00 hr / Memory: 662 MB (FLW-8100)
+Information: Result of compile_fusion / initial_map / MV Cell Insertion (FLW-8500)
+Information: Total number of MV cells in the design. (MV-334)
+Information: Ending   compile_fusion / initial_map / MV Cell Insertion (FLW-8001)
+Information: Time: 2025-05-26 19:46:17 / Session: 0.00 hr / Command: 0.00 hr / Memory: 662 MB (FLW-8100)
+
+Information: Starting compile_fusion / initial_map / Logic Simplification (1) (FLW-8000)
+Information: Time: 2025-05-26 19:46:17 / Session: 0.00 hr / Command: 0.00 hr / Memory: 662 MB (FLW-8100)
+Information: The hierarchy counter_1 is not ungrouped due to restrictions. (UNG-1004)
+Information: The hierarchy counter_2 is not ungrouped due to restrictions. (UNG-1004)
+Information: The hierarchy counter_3 is not ungrouped due to restrictions. (UNG-1004)
+Information: The hierarchy voter is not ungrouped due to restrictions. (UNG-1004)
+Information: 4 of 4 hierarchies are not ungrouped because of restrictions. Use report_ungroup for a list. (UNG-1005)
+Warning: Mapping to scan cell 'GSDFCNQD1HPBWP' in library is not possible because cell has 'dont_use' attribute. (SQM-1067)
+Warning: No site rows found in floorplan. (LGL-397)
+Warning: No site rows found in floorplan. (LGL-397)
+Warning: No valid clocks available in mode 'default'. Setting clock frequency to 1 GHz. (POW-034)
+Warning: No site rows found in floorplan. (LGL-397)
+Warning: No site rows found in floorplan. (LGL-397)
+Information: Register Bits Before Sharing = 48, After Sharing = 48, Savings = 0 (SQM-2000)
+Warning: No site rows found in floorplan. (LGL-397)
+Warning: No site rows found in floorplan. (LGL-397)
+Warning: No valid clocks available in mode 'default'. Setting clock frequency to 1 GHz. (POW-034)
+Warning: No site rows found in floorplan. (LGL-397)
+Warning: No site rows found in floorplan. (LGL-397)
+Warning: No site rows found in floorplan. (LGL-397)
+Warning: No site rows found in floorplan. (LGL-397)
+Warning: No valid clocks available in mode 'default'. Setting clock frequency to 1 GHz. (POW-034)
+Warning: No site rows found in floorplan. (LGL-397)
+Warning: No site rows found in floorplan. (LGL-397)
+Information: Ending   compile_fusion / initial_map / Logic Simplification (1) (FLW-8001)
+Information: Time: 2025-05-26 19:46:22 / Session: 0.00 hr / Command: 0.00 hr / Memory: 733 MB (FLW-8100)
+
+Warning: No site rows found in floorplan. (LGL-397)
+Warning: No site rows found in floorplan. (LGL-397)
+Warning: No valid clocks available in mode 'default'. Setting clock frequency to 1 GHz. (POW-034)
+Warning: No site rows found in floorplan. (LGL-397)
+Warning: No site rows found in floorplan. (LGL-397)
+Information: Starting compile_fusion / initial_map / Early Logic Optimization (FLW-8000)
+Information: Time: 2025-05-26 19:46:22 / Session: 0.00 hr / Command: 0.00 hr / Memory: 733 MB (FLW-8100)
+Warning: No valid clocks available in mode 'default'. Setting clock frequency to 1 GHz. (POW-034)
+Information: Timer using 1 threads
+Information: Ending   compile_fusion / initial_map / Early Logic Optimization (FLW-8001)
+Information: Time: 2025-05-26 19:46:25 / Session: 0.01 hr / Command: 0.00 hr / Memory: 733 MB (FLW-8100)
+
+Warning: No valid clocks available in mode 'default'. Setting clock frequency to 1 GHz. (POW-034)
+Information: Starting compile_fusion / initial_map / High-Level Optimization and Technology Mapping (FLW-8000)
+Information: Time: 2025-05-26 19:46:25 / Session: 0.01 hr / Command: 0.00 hr / Memory: 733 MB (FLW-8100)
+Information: Added key list 'DesignWare' to design 'top'. (DWS-0216)
+Warning: No cell bus will be mapped to multibit because there is no multibit cells in the cell libraries. (SQM-1040)
+Warning: Shift register Inferencing is enabled so only head flop will be replaced with scan cell and not all registers in shift register chains are scan replaced. (SQM-1074)
+Warning: No cell bus will be mapped to multibit because there is no multibit cells in the cell libraries. (SQM-1040)
+Warning: Shift register Inferencing is enabled so only head flop will be replaced with scan cell and not all registers in shift register chains are scan replaced. (SQM-1074)
+Information: Constraints set on instance 'ne_46' may be ignored. (HDL-128)
+Information: Constraints set on instance 'ne_47' may be ignored. (HDL-128)
+Information: Constraints set on instance 'ne_48' may be ignored. (HDL-128)
+Warning: No cell bus will be mapped to multibit because there is no multibit cells in the cell libraries. (SQM-1040)
+Warning: Shift register Inferencing is enabled so only head flop will be replaced with scan cell and not all registers in shift register chains are scan replaced. (SQM-1074)
+Information: Ending   compile_fusion / initial_map / High-Level Optimization and Technology Mapping (FLW-8001)
+Information: Time: 2025-05-26 19:46:27 / Session: 0.01 hr / Command: 0.00 hr / Memory: 733 MB (FLW-8100)
+
+Information: Register Bits Before Sharing = 48, After Sharing = 48, Savings = 0 (SQM-2000)
+Information: Starting compile_fusion / initial_map / Logic Simplification (2) (FLW-8000)
+Information: Time: 2025-05-26 19:46:28 / Session: 0.01 hr / Command: 0.00 hr / Memory: 733 MB (FLW-8100)
+Information: Ending   compile_fusion / initial_map / Logic Simplification (2) (FLW-8001)
+Information: Time: 2025-05-26 19:46:28 / Session: 0.01 hr / Command: 0.00 hr / Memory: 733 MB (FLW-8100)
+
+Information: Result of compile_fusion / initial_map / Clock Gate Insertion (FLW-8500)
+Number of Pre-Existing Clock Gates with dont touch attribute: 0
+Number of ICG library cells with CTS purpose: 16
+--------------------------------------------------------------------------------
+                          Tool Gated Register Summary                           
+--------------------------------------------------------------------------------
+Clock Gating Type                   | Number of   | Register Count | Equivalent 
+                                    | Clock Gates |                | Bitwidth   
+--------------------------------------------------------------------------------
+Regular Clock Gating                |           3 |             48 |         48
+--------------------------------------------------------------------------------
+Compile-fusion optimization summary            SETUP-COST    R2R-COST HOLD-COST LDRC-COST          AREA     LEAKAGE     INSTCNT            ELAPSE       MEM
+Compile-fusion                                          -           -         -         -       1401.20           -         374              0.01       733
+Information: Ending   compile_fusion / initial_map (FLW-8001)
+Information: Time: 2025-05-26 19:46:28 / Session: 0.01 hr / Command: 0.00 hr / Memory: 733 MB (FLW-8100)
+CPU Load: 2%, Ram Free: 0 GB, Swap Free: 3 GB, Work Disk Free: 213 GB, Tmp Disk Free: 53 GB
+
+Information: >>>>>>> 5 unique error and warning message tags while observing compile_fusion / initial_map: (MSG-3100)
+Information: #prnt #trgr #lmt    Tag  Level     Format (or last printed message)                                (MSG-3036)
+Information:     3     3  1 SQM-1074  WARNING   Warning: Shift register Inferencing is enabled so only head ... (MSG-3032)
+Information:     3     2  3 SQM-1067  WARNING   Warning: Mapping to scan cell 'GSDFCNQD1HPBWP' in library is... (MSG-3032)
+Information:     3     3  1 SQM-1040  WARNING   Warning: No cell bus will be mapped to multibit because ther... (MSG-3032)
+Information:    14     9 10 POW-034   WARNING   Warning: No valid clocks available in mode 'default'. Settin... (MSG-3032)
+Information:    38    28  0 LGL-397   WARNING   Warning: No site rows found in floorplan. (LGL-397)             (MSG-3032)
+Information:    61    45  4        5  <------   Total sum of messages (MSG-3038)
+Information: >>>>>>> Summary: 45 error&warning MSGs observed during compile_fusion / initial_map (MSG-3103)
+
+Warning: Duplicate callback function set for step 'fc/logic_opto/dwProcessPrecond1' (FLW-2224)
+Warning: Duplicate callback function set for step 'fc/logic_opto/dwProcessPrecond1' (FLW-2224)
+Warning: No site rows found in floorplan. (LGL-397)
+Warning: Technology layer 'M1' setting 'routing-direction' is not valid (NEX-001)
+Warning: Technology layer 'M2' setting 'routing-direction' is not valid (NEX-001)
+Warning: Technology layer 'M3' setting 'routing-direction' is not valid (NEX-001)
+Warning: Technology layer 'M4' setting 'routing-direction' is not valid (NEX-001)
+Warning: Technology layer 'M5' setting 'routing-direction' is not valid (NEX-001)
+Warning: Technology layer 'M6' setting 'routing-direction' is not valid (NEX-001)
+Warning: Technology layer 'M7' setting 'routing-direction' is not valid (NEX-001)
+Warning: Technology layer 'M8' setting 'routing-direction' is not valid (NEX-001)
+Warning: Technology layer 'M9' setting 'routing-direction' is not valid (NEX-001)
+Warning: Technology layer 'AP' setting 'routing-direction' is not valid (NEX-001)
+Warning: Technology layer 'M1' setting 'routing-direction' is not valid (NEX-001)
+Warning: Technology layer 'M2' setting 'routing-direction' is not valid (NEX-001)
+Warning: Technology layer 'M3' setting 'routing-direction' is not valid (NEX-001)
+Warning: Technology layer 'M4' setting 'routing-direction' is not valid (NEX-001)
+Warning: Technology layer 'M5' setting 'routing-direction' is not valid (NEX-001)
+Warning: Technology layer 'M6' setting 'routing-direction' is not valid (NEX-001)
+Warning: Technology layer 'M7' setting 'routing-direction' is not valid (NEX-001)
+Warning: Technology layer 'M8' setting 'routing-direction' is not valid (NEX-001)
+Warning: Technology layer 'M9' setting 'routing-direction' is not valid (NEX-001)
+Warning: Technology layer 'AP' setting 'routing-direction' is not valid (NEX-001)
+Warning: Technology layer 'M1' setting 'routing-direction' is not valid (NEX-001)
+Warning: Technology layer 'M2' setting 'routing-direction' is not valid (NEX-001)
+Warning: Technology layer 'M3' setting 'routing-direction' is not valid (NEX-001)
+Warning: Technology layer 'M4' setting 'routing-direction' is not valid (NEX-001)
+Warning: Technology layer 'M5' setting 'routing-direction' is not valid (NEX-001)
+Warning: Technology layer 'M6' setting 'routing-direction' is not valid (NEX-001)
+Warning: Technology layer 'M7' setting 'routing-direction' is not valid (NEX-001)
+Warning: Technology layer 'M8' setting 'routing-direction' is not valid (NEX-001)
+Warning: Technology layer 'M9' setting 'routing-direction' is not valid (NEX-001)
+Warning: Technology layer 'AP' setting 'routing-direction' is not valid (NEX-001)
+Warning: No site rows found in floorplan. (LGL-397)
+*******************************************************************************
+                             Summary of UPF Cells                              
+*******************************************************************************
+This is NOT a UPF design.
+UPF is NOT loaded.
+UPF is NOT committed.
+-------------------------------------------------------------------------------
+*******************************************************************************
+                        End of Summary of UPF Cells                            
+*******************************************************************************
+Information: Timer using 1 threads
+INFO: End environment monitoring: recipes
+INFO: Restored 0 timer status, 8 app options, 0 tcl gvars, 0 env vars
+Information: >>>>>>> 7 unique error and warning message tags while observing fusion: (MSG-3100)
+Information: #prnt #trgr #lmt    Tag  Level     Format (or last printed message)                                (MSG-3036)
+Information:     2     2  0 FLW-2224  WARNING   Warning: Duplicate callback function set for step 'fc/logic_... (MSG-3032)
+Information:     3     3  1 SQM-1074  WARNING   Warning: Shift register Inferencing is enabled so only head ... (MSG-3032)
+Information:     3     3  3 SQM-1067  WARNING   Warning: Mapping to scan cell 'GSDFCNQD1HPBWP' in library is... (MSG-3032)
+Information:     3     3  1 SQM-1040  WARNING   Warning: No cell bus will be mapped to multibit because ther... (MSG-3032)
+Information:    14    14 10 POW-034   WARNING   Warning: No valid clocks available in mode 'default'. Settin... (MSG-3032)
+Information:    40    39  0 LGL-397   WARNING   Warning: No site rows found in floorplan. (LGL-397)             (MSG-3032)
+Information:    30    30  0 NEX-001   WARNING   Warning: Technology layer 'AP' setting 'routing-direction' i... (MSG-3032)
+Information:    95    94  4        7  <------   Total sum of messages (MSG-3038)
+Information: >>>>>>> Summary: 94 error&warning MSGs observed during fusion (MSG-3103)
+Information: Ending   'compile_fusion -to initial_map' (FLW-8001)
+Information: Time: 2025-05-26 19:46:28 / Session: 0.01 hr / Command: 0.00 hr / Memory: 733 MB (FLW-8100)
+CPU Load: 2%, Ram Free: 0 GB, Swap Free: 3 GB, Work Disk Free: 213 GB, Tmp Disk Free: 53 GB
+1
+# Collect the reports
+report_timing
+Information: Corner default: no PVT mismatches. (PVT-032)
+Warning: no valid parasitic for default corner(LATE) (NEX-018)
+Warning: no valid parasitic for default corner(EARLY) (NEX-018)
+Warning: no valid parasitic for (all corners) corner((both specs)) (NEX-018)
+Information: The stitching and editing of coupling caps is turned OFF for design 'top_lib:top.design'. (TIM-125)
+Warning: No physical information exists for design 'top'. Zero interconnect delay is used in timing analysis. (TIM-101)
+Warning: The extractor can not be initialized for design 'top'. Zero interconnect delay is used in timing analysis. (TIM-102)
+Warning: Batch extraction is skipped for block "top"
+Information: Update timing completed net estimation for all the timing graph nets (TIM-111)
+Information: Net estimation statistics: timing graph nets = 377, routed nets = 0, across physical hierarchy nets = 0, parasitics cached nets = 0, delay annotated nets = 0, parasitics annotated nets = 0, multi-voltage nets = 0. (TIM-112)
+************************************************************
+Timer Settings:
+Delay Calculation Style:                   auto
+Signal Integrity Analysis:                 disabled
+Timing Window Analysis:                    disabled
+Advanced Waveform Propagation:             disabled
+Variation Type:                            fixed_derate
+Clock Reconvergence Pessimism Removal:     disabled
+Advanced Receiver Model:                   disabled
+ML Acceleration:                           off
+************************************************************
+****************************************
+Report : timing
+        -path_type full
+        -delay_type max
+        -max_paths 1
+        -report_by design
+Design : top
+Version: U-2022.12-SP6
+Date   : Mon May 26 19:46:28 2025
+****************************************
+No paths.
+1
+report_power
+Warning: No valid clocks available in mode 'default'. Setting clock frequency to 1 GHz. (POW-034)
+****************************************
+Report : power
+        -significant_digits 2
+Design : top
+Version: U-2022.12-SP6
+Date   : Mon May 26 19:46:28 2025
+****************************************
+Information: Activity propagation will be performed for scenario default.
+Information: Doing activity propagation for mode 'default' and corner 'default' with effort level 'medium'. (POW-024)
+Information: Timer-derived activity data is cached on scenario default (POW-052)
+Warning: No valid clocks available in mode 'default'. Setting clock frequency to 1 GHz. (POW-034)
+Infomation: Fast mode activity propagation power.rtl_activity_annotation setup is ignored. Always use accurate mode.
+Information: Running switching activity propagation in scalar mode!
+
+ **** Information : No. of simulation cycles = 6 ****
+Mode: default
+Corner: default
+Scenario: default
+Voltage: 1.32
+Temperature: 125.00
+
+Voltage Unit         : 1V
+Capacitance Unit     : 1pF
+Time Unit            : 1ns
+Temperature Unit     : 1C
+Dynamic Power Unit   : 1nW
+Leakage Power Unit   : 1nW
+Warning: No valid clocks available in mode 'default'. Setting clock frequency to 1 GHz. (POW-034)
+
+Switched supply net power scaling:
+scaling for leakage power
+
+Supply nets:
+VDD (power) probability 1.00 (default)
+VSS (ground) probability 1.00 (default)
+Warning: Power table extrapolation (extrapolation mode) for port CP on cell counter_1/clock_gate_q_reg for parameter Tinp. Lowest table value = 0.004000, highest table value = 0.331200, value = 0.000000 (POW-046)
+Warning: Power table extrapolation (extrapolation mode) for port E on cell counter_1/clock_gate_q_reg for parameter Tinp. Lowest table value = 0.004000, highest table value = 0.331200, value = 0.000000 (POW-046)
+Warning: Power table extrapolation (extrapolation mode) for port Q on cell counter_1/clock_gate_q_reg for parameter Tinp. Lowest table value = 0.004000, highest table value = 0.331200, value = 0.000000 (POW-046)
+Warning: Power table extrapolation (extrapolation mode) for port ZN on cell counter_1/ctmi_406 for parameter Tinp. Lowest table value = 0.004000, highest table value = 0.331200, value = 0.000000 (POW-046)
+Warning: Power table extrapolation (extrapolation mode) for port CP on cell counter_2/clock_gate_q_reg for parameter Tinp. Lowest table value = 0.004000, highest table value = 0.331200, value = 0.000000 (POW-046)
+Warning: Power table extrapolation (extrapolation mode) for port E on cell counter_2/clock_gate_q_reg for parameter Tinp. Lowest table value = 0.004000, highest table value = 0.331200, value = 0.000000 (POW-046)
+Warning: Power table extrapolation (extrapolation mode) for port Q on cell counter_2/clock_gate_q_reg for parameter Tinp. Lowest table value = 0.004000, highest table value = 0.331200, value = 0.000000 (POW-046)
+Warning: Power table extrapolation (extrapolation mode) for port ZN on cell counter_2/ctmi_406 for parameter Tinp. Lowest table value = 0.004000, highest table value = 0.331200, value = 0.000000 (POW-046)
+Warning: Power table extrapolation (extrapolation mode) for port CP on cell counter_3/clock_gate_q_reg for parameter Tinp. Lowest table value = 0.004000, highest table value = 0.331200, value = 0.000000 (POW-046)
+Warning: Power table extrapolation (extrapolation mode) for port E on cell counter_3/clock_gate_q_reg for parameter Tinp. Lowest table value = 0.004000, highest table value = 0.331200, value = 0.000000 (POW-046)
+Note - message 'POW-046' limit (10) exceeded. Remainder will be suppressed.
+
+  Cell Internal Power    = 3.63e+04 nW ( 76.4%)
+  Net Switching Power    = 1.12e+04 nW ( 23.6%)
+Total Dynamic Power      = 4.75e+04 nW (100.0%)
+
+Cell Leakage Power       = 2.78e+04 nW
+
+
+  Attributes
+  ----------
+      u  -  User defined power group
+
+Power Group         Internal Power        Switching Power          Leakage Power            Total Power    (   %  )    Attrs
+-----------------------------------------------------------------------------------------------------------------------------
+io_pad                    0.00e+00               0.00e+00               0.00e+00               0.00e+00    (  0.0%)         
+memory                    0.00e+00               0.00e+00               0.00e+00               0.00e+00    (  0.0%)         
+black_box                 0.00e+00               0.00e+00               0.00e+00               0.00e+00    (  0.0%)         
+clock_network             0.00e+00               0.00e+00               0.00e+00               0.00e+00    (  0.0%)         
+register                  0.00e+00               0.00e+00               0.00e+00               0.00e+00    (  0.0%)         
+sequential                3.55e+04               2.03e+03               1.16e+04               4.91e+04    ( 65.2%)         
+combinational             7.17e+02               9.20e+03               1.63e+04               2.62e+04    ( 34.8%)         
+-----------------------------------------------------------------------------------------------------------------------------
+Total                     3.63e+04 nW            1.12e+04 nW            2.78e+04 nW            7.53e+04 nW
+1
+report_area
+****************************************
+Report : area
+Design : top
+Version: U-2022.12-SP6
+Date   : Mon May 26 19:46:28 2025
+****************************************
+
+Number of ports:                          308
+Number of nets:                           652
+Number of cells:                          374
+Number of combinational cells:            323
+Number of sequential cells:                51
+Number of macros/black boxes:               0
+Number of buf/inv:                         22
+Number of references:                      12
+
+Combinational area:                    821.60
+Buf/Inv area:                           26.40
+Noncombinational area:                 579.60
+Macro/Black Box area:                    0.00
+
+Total cell area:                      1401.20
+1
+#### -----  Gate level netlist generation ----- ####
+write_verilog ../../results/${DESIGN_NAME}_initial_syn.v 
+Warning: Net name 'N_139' is omitted from the output file, because the net name does not match a connected port name. The net is implicitly renamed to match one of its connected ports. (VW-007)
+Warning: Net name 'N_139' is omitted from the output file, because the net name does not match a connected port name. The net is implicitly renamed to match one of its connected ports. (VW-007)
+Warning: Net name 'N_139' is omitted from the output file, because the net name does not match a connected port name. The net is implicitly renamed to match one of its connected ports. (VW-007)
+1
+#### ---- Save and exit ----- ####
+# Working with blocks
+current_block
+{top_lib:top.design}
+save_block
+Information: The command 'save_block' cleared the undo history. (UNDO-016)
+Warning: No valid clocks available in mode 'default'. Setting clock frequency to 1 GHz. (POW-034)
+Information: Saving block 'top_lib:top.design'
+1
+save_block -as ${DESIGN_NAME}/inital_syn
+Information: Saving 'top_lib:top.design' to 'top_lib:top/inital_syn.design'. (DES-028)
+Warning: No valid clocks available in mode 'default'. Setting clock frequency to 1 GHz. (POW-034)
+1
+get_blocks -all
+{top_lib:top.design top_lib:top/rtl_read.design top_lib:top/inital_syn.design}
+save_lib
+Saving library 'top_lib'
+Warning: No valid clocks available in mode 'default'. Setting clock frequency to 1 GHz. (POW-034)
+1
+if {[info exists ::env(NO_GUI)]} {
+    exit
+} else {
+	gui_start
+}
+Load ICV ICCII menu file: /mnt/vol_synopsys2023/synopsys/icvalidator/U-2022.12-SP4/etc/tcl-u/Icc2Menu.tcl
+ + VUE INFO: Please click View->IC Validator VUE in LayoutWindow menu
+            to launch VUE.
+
+ + VUE INFO: Found a usable port: 2446
+
+Information: 2 out of 12 POW-046 messages were not printed due to limit 10  (MSG-3913)
+fc_shell> exit
+Maximum memory usage for this session: 733.46 MB
+Maximum memory usage for this session including child processes: 733.46 MB
+CPU usage for this session:     86 seconds (  0.02 hours)
+Elapsed time for this session:   3130 seconds (  0.87 hours)
+Thank you for using Fusion Compiler.

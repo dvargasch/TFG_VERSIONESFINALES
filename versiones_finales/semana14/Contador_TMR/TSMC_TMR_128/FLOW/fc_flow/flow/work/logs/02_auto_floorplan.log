@@ -1,0 +1,2555 @@
+
+
+
+                              Fusion Compiler (TM)
+
+             Version U-2022.12-SP6 for linux64 - Aug 25, 2023 -SLE
+
+                    Copyright (c) 1988 - 2023 Synopsys, Inc.
+   This software and the associated documentation are proprietary to Synopsys,
+ Inc. This software may only be used in accordance with the terms and conditions
+ of a written license agreement with Synopsys, Inc. All other use, reproduction,
+   or distribution of this software is strictly prohibited.  Licensed Products
+     communicate with Synopsys servers for the purpose of providing software
+    updates, detecting software piracy and verifying that customers are using
+    Licensed Products in conformity with the applicable License Key for such
+  Licensed Products. Synopsys will use information gathered in connection with
+    this process to deliver software updates and pursue software pirates and
+                                   infringers.
+
+ Inclusivity & Diversity - Visit SolvNetPlus to read the "Synopsys Statement on
+            Inclusivity and Diversity" (Refer to article 000036315 at
+                        https://solvnetplus.synopsys.com)
+ 
+Information: Term was not able to be set up using xterm-256color . Using "xterm" by default instead. (CLE-10)
+############################################
+#####          Auto Floorplan          #####
+############################################
+# Sourcing setup script
+source -echo ../../setup/icc2_dp_setup.tcl
+set CURR_DIR  [pwd]
+set PROY_HOME ${CURR_DIR}/../..;
+set TSMC_HOME "/mnt/vol_NFS_rh003/profesores/pmendoza/KITS/TSMCHOME";
+############################
+## RTL file name and type ##
+############################
+set DESIGN_NAME "top"
+set HDL "sverilog"
+set DESIGN_LIBRARY "${DESIGN_NAME}_lib"
+#################################
+set time [get_date]
+puts "Command Start at: ${time}"
+Command Start at: Mon May 26 21:43:14 2025
+####################################
+### 1. Variables for design prep ###
+####################################
+### SDC File
+set SDCNAME "${DESIGN_NAME}"
+### Ref Libs
+set NDM_LIBS_PATH "../../setup/ndm_libraries/ndm/"
+set STD_TIME_FRAME "../../setup/ndm_libraries/ndm/tcbn65lphpbwp_1.ndm"
+set REFERENCE_LIBRARY "{${STD_TIME_FRAME} }"
+set REFERENCE_LIBRARY 		[list   ${NDM_LIBS_PATH}/tcbn65lphpbwpcghvt_1_physical_only.ndm \
+									${NDM_LIBS_PATH}/tcbn65lphpbwp_1_physical_only.ndm \
+									${NDM_LIBS_PATH}/tpdn65lpgv2od3_sd_physical_only.ndm \
+									${NDM_LIBS_PATH}/tpfn65lpgv2od3_physical_only.ndm \
+									${NDM_LIBS_PATH}/tpbn65v_physical_only.ndm \
+									${NDM_LIBS_PATH}/tpin65gv_physical_only.ndm \
+									${NDM_LIBS_PATH}/tcbn65lphpbwpcghvt_1.ndm \
+									${NDM_LIBS_PATH}/tcbn65lphpbwp_1.ndm \
+									${NDM_LIBS_PATH}/tpdn65lpgv2od3_sdml.ndm \
+									${NDM_LIBS_PATH}/tpfn65lpgv2od3ml.ndm \
+									${NDM_LIBS_PATH}/ts1n65lpa2048x32m4_140a_5m.ndm ];
+################################
+### 2. Tech files and setup ####
+################################
+set TECH_FILE "${TSMC_HOME}/digital/Back_End/milkyway/tcbn65lphpbwp_140a/techfiles/tsmcn65_9lmT2.tf"
+set TECH_LIB ""
+#######################
+## Layers and widths ##
+#######################
+set STANDARD_CELLS_WIDTH 0.42
+set MAX_ROUTING_LAYER   "M6"
+set MIN_ROUTING_LAYER   "M2"
+set TARGET_SKEW         0.1
+set RTL_PATH		"${CURR_DIR}/../../../common/rtl"
+set SDC_PATH		"${CURR_DIR}/../../../common/sdc"
+set SDC_FILE		"${CURR_DIR}/${DESIGN_NAME}.sdc"
+####################################################
+set VERILOG_PATH	"${RTL_PATH}/verilog"
+set SVERILOG_PATH	"${RTL_PATH}/sverilog" 
+set VHDL_PATH		"${RTL_PATH}/vhdl"
+set RESULTS_PATH	"${CURR_DIR}/../../results"
+set REPORTS_PATH	"${CURR_DIR}/../../reports"
+###########
+## Paths ##
+###########
+set DRC_RUNSET_FILE	"${CURR_DIR}/../../DRC/ICVLN65S_9M_6X2Z.26_1a"
+set GDS_MAP_FILE        "${TSMC_HOME}/digital/Back_End/milkyway/tcbn65lphpbwpcg_200a/gdsout_6X2Z.map"
+set ICV                "-I /mnt/vol_synopsys2023/pdks/xfab/design/xkit/xh018/synopsys/v9_0/ICValidator/v9_0_2"
+####################
+## Auto-floorplan ##
+####################
+set CONTROL_AUTO           "core"
+# Percentage of cell area usage
+set CORE_UTILIZATION_AUTO  0.5
+# Move the nucleus 10 units
+set CORE_OFFSET_AUTO       10
+# Core shape
+set SHAPE_AUTO             "R"
+# Aspect ratio
+set SIDE_RATIO_AUTO        {1 1.5}
+# Flip the first row of the cell
+set FFR_AUTO               "true"
+# Using the M3 layer for pins
+set LAYER_PIN_AUTO         {M3}
+# Allows pins on all sides of the cell
+set SIDES_AUTO             {1 2 3 4}
+# Distance between pins
+set PIN_SPACE_AUTO         4
+######################
+## Floorplan manual ##
+######################
+set CONTROL_M            "core"
+# Percentage of cell area usage
+set CORE_UTILIZATION_M   0.5
+# Move the nucleus 10 units 
+set CORE_OFFSET_M        10
+# Core shape
+set SHAPE_M              "R"
+# Aspect ratio 
+set SIDE_RATIO_M         {1.5 1}
+# Flip the first row of the cell
+set FFR_M                "true" 
+# Using the M3 layer for pins
+set LAYER_PIN_M          {M3}
+# Allows pins on all sides of the cell
+set SIDES_M              {1 2 3 4}
+# Distance between pins
+set PIN_SPACE_M          4 
+#########################
+## Configure MultiCore ##
+#########################
+set_host_options -name Oculi -max_cores 2
+#report_host_options
+source ${CURR_DIR}/../../setup/utilities.tcl
+set UNSELECT_RULES "PO.DN.2* OD.DN.2* M*.DN.1* CSR.R.1* DM*.R.1*"
+PO.DN.2* OD.DN.2* M*.DN.1* CSR.R.1* DM*.R.1*
+#### ----- Open lib and create new block from previous script (01_initial_syn.tcl) ----- ####
+# Open the design library
+open_lib ${DESIGN_LIBRARY}
+Information: Loading library file '/mnt/vol_NFS_rh003/estudiantes/DANIELA_VARGAS/Version_final/0516/versiones_finales/semana14/Contador_TMR/TSMC_TMR_128/FLOW/fc_flow/flow/work/top_lib' (FILE-007)
+Information: Loading library file '/mnt/vol_NFS_rh003/estudiantes/DANIELA_VARGAS/Version_final/0516/versiones_finales/semana14/Contador_TMR/TSMC_TMR_128/FLOW/fc_flow/setup/ndm_libraries/ndm/tcbn65lphpbwpcghvt_1_physical_only.ndm' (FILE-007)
+Information: Loading library file '/mnt/vol_NFS_rh003/estudiantes/DANIELA_VARGAS/Version_final/0516/versiones_finales/semana14/Contador_TMR/TSMC_TMR_128/FLOW/fc_flow/setup/ndm_libraries/ndm/tcbn65lphpbwp_1_physical_only.ndm' (FILE-007)
+Information: Loading library file '/mnt/vol_NFS_rh003/estudiantes/DANIELA_VARGAS/Version_final/0516/versiones_finales/semana14/Contador_TMR/TSMC_TMR_128/FLOW/fc_flow/setup/ndm_libraries/ndm/tpdn65lpgv2od3_sd_physical_only.ndm' (FILE-007)
+Information: Loading library file '/mnt/vol_NFS_rh003/estudiantes/DANIELA_VARGAS/Version_final/0516/versiones_finales/semana14/Contador_TMR/TSMC_TMR_128/FLOW/fc_flow/setup/ndm_libraries/ndm/tpfn65lpgv2od3_physical_only.ndm' (FILE-007)
+Information: Loading library file '/mnt/vol_NFS_rh003/estudiantes/DANIELA_VARGAS/Version_final/0516/versiones_finales/semana14/Contador_TMR/TSMC_TMR_128/FLOW/fc_flow/setup/ndm_libraries/ndm/tpbn65v_physical_only.ndm' (FILE-007)
+Information: Loading library file '/mnt/vol_NFS_rh003/estudiantes/DANIELA_VARGAS/Version_final/0516/versiones_finales/semana14/Contador_TMR/TSMC_TMR_128/FLOW/fc_flow/setup/ndm_libraries/ndm/tpin65gv_physical_only.ndm' (FILE-007)
+Information: Loading library file '/mnt/vol_NFS_rh003/estudiantes/DANIELA_VARGAS/Version_final/0516/versiones_finales/semana14/Contador_TMR/TSMC_TMR_128/FLOW/fc_flow/setup/ndm_libraries/ndm/tcbn65lphpbwpcghvt_1.ndm' (FILE-007)
+Information: Loading library file '/mnt/vol_NFS_rh003/estudiantes/DANIELA_VARGAS/Version_final/0516/versiones_finales/semana14/Contador_TMR/TSMC_TMR_128/FLOW/fc_flow/setup/ndm_libraries/ndm/tcbn65lphpbwp_1.ndm' (FILE-007)
+Information: Loading library file '/mnt/vol_NFS_rh003/estudiantes/DANIELA_VARGAS/Version_final/0516/versiones_finales/semana14/Contador_TMR/TSMC_TMR_128/FLOW/fc_flow/setup/ndm_libraries/ndm/tpdn65lpgv2od3_sdml.ndm' (FILE-007)
+Information: Loading library file '/mnt/vol_NFS_rh003/estudiantes/DANIELA_VARGAS/Version_final/0516/versiones_finales/semana14/Contador_TMR/TSMC_TMR_128/FLOW/fc_flow/setup/ndm_libraries/ndm/tpfn65lpgv2od3ml.ndm' (FILE-007)
+Information: Loading library file '/mnt/vol_NFS_rh003/estudiantes/DANIELA_VARGAS/Version_final/0516/versiones_finales/semana14/Contador_TMR/TSMC_TMR_128/FLOW/fc_flow/setup/ndm_libraries/ndm/ts1n65lpa2048x32m4_140a_5m.ndm' (FILE-007)
+Warning: Technology used to create frame-view and current technology have inconsistency: Fat table contents are different. (FRAM-054)
+Warning: Technology 'tcbn65lphpbwpcghvt.tf' used for frame-view creation in library 'tcbn65lphpbwpcghvt_1_physical_only', is inconsistent with the current technology 'tsmcn65_9lmT2.tf' of library 'top_lib'. Please run derive_design_level_via_regions to generate up-do-date via region in the design library. (NDM-102)
+Warning: Technology used to create frame-view and current technology have inconsistency: Fat table contents are different. (FRAM-054)
+Warning: Technology 'tpdn65lpgv2od3_sd.tf' used for frame-view creation in library 'tpdn65lpgv2od3_sd_physical_only', is inconsistent with the current technology 'tsmcn65_9lmT2.tf' of library 'top_lib'. Please run derive_design_level_via_regions to generate up-do-date via region in the design library. (NDM-102)
+Warning: Technology used to create frame-view and current technology have inconsistency: Fat table contents are different. (FRAM-054)
+Warning: Technology 'tpfn65lpgv2od3.tf' used for frame-view creation in library 'tpfn65lpgv2od3_physical_only', is inconsistent with the current technology 'tsmcn65_9lmT2.tf' of library 'top_lib'. Please run derive_design_level_via_regions to generate up-do-date via region in the design library. (NDM-102)
+Warning: Technology used to create frame-view and current technology have inconsistency: Fat table contents are different. (FRAM-054)
+Warning: Technology 'tcbn65lphpbwpcghvt.tf' used for frame-view creation in library 'tcbn65lphpbwpcghvt_1', is inconsistent with the current technology 'tsmcn65_9lmT2.tf' of library 'top_lib'. Please run derive_design_level_via_regions to generate up-do-date via region in the design library. (NDM-102)
+Warning: Technology used to create frame-view and current technology have inconsistency: Fat table contents are different. (FRAM-054)
+Warning: Technology 'tpdn65lpgv2od3_sd.tf' used for frame-view creation in library 'tpdn65lpgv2od3_sdml', is inconsistent with the current technology 'tsmcn65_9lmT2.tf' of library 'top_lib'. Please run derive_design_level_via_regions to generate up-do-date via region in the design library. (NDM-102)
+Warning: Technology used to create frame-view and current technology have inconsistency: Fat table contents are different. (FRAM-054)
+Warning: Technology 'tpfn65lpgv2od3.tf' used for frame-view creation in library 'tpfn65lpgv2od3ml', is inconsistent with the current technology 'tsmcn65_9lmT2.tf' of library 'top_lib'. Please run derive_design_level_via_regions to generate up-do-date via region in the design library. (NDM-102)
+{top_lib}
+# Copy and open block
+copy_block -from ${DESIGN_NAME}/rtl_read -to ${DESIGN_NAME}/auto_floorplan
+Information: User units loaded from library 'tcbn65lphpbwpcghvt_1' (LNK-040)
+{top_lib:top/auto_floorplan.design}
+open_block ${DESIGN_NAME}/auto_floorplan
+Information: Incrementing open_count of block 'top_lib:top/auto_floorplan.design' to 2. (DES-021)
+{top_lib:top/auto_floorplan.design}
+set_dont_touch [get_nets q*] true
+Using libraries: top_lib tcbn65lphpbwpcghvt_1_physical_only tcbn65lphpbwp_1_physical_only tpdn65lpgv2od3_sd_physical_only tpfn65lpgv2od3_physical_only tpbn65v_physical_only tpin65gv_physical_only tcbn65lphpbwpcghvt_1 tcbn65lphpbwp_1 tpdn65lpgv2od3_sdml tpfn65lpgv2od3ml ts1n65lpa2048x32m4_140a_5m
+Visiting block top_lib:top/auto_floorplan.design
+Design 'top' was successfully linked.
+1
+# LOAD PARASITIC INFORMATION
+read_parasitic_tech -name {RC_Worst} -tlup [list ${TSMC_HOME}/digital/Back_End/milkyway/tcbn65lphpbwp_140a/techfiles/tluplus/cln65lp_1p09m+alrdl_cworst_top2.tluplus] -layermap [list ${TSMC_HOME}/digital/Back_End/milkyway/tcbn65lphpbwp_140a/techfiles/tluplus/star.map_9M]
+Warning: Layer mapping file warning. Tech layer 'metal1' mapped in layer mapping file is mask name of 'M1'. (TLUP-011)
+Warning: Layer mapping file warning. Tech layer 'metal10' mapped in layer mapping file is mask name of 'AP'. (TLUP-011)
+Warning: Layer mapping file warning. Tech layer 'metal2' mapped in layer mapping file is mask name of 'M2'. (TLUP-011)
+Warning: Layer mapping file warning. Tech layer 'metal3' mapped in layer mapping file is mask name of 'M3'. (TLUP-011)
+Warning: Layer mapping file warning. Tech layer 'metal4' mapped in layer mapping file is mask name of 'M4'. (TLUP-011)
+Warning: Layer mapping file warning. Tech layer 'metal5' mapped in layer mapping file is mask name of 'M5'. (TLUP-011)
+Warning: Layer mapping file warning. Tech layer 'metal6' mapped in layer mapping file is mask name of 'M6'. (TLUP-011)
+Warning: Layer mapping file warning. Tech layer 'metal7' mapped in layer mapping file is mask name of 'M7'. (TLUP-011)
+Warning: Layer mapping file warning. Tech layer 'metal8' mapped in layer mapping file is mask name of 'M8'. (TLUP-011)
+Warning: Layer mapping file warning. Tech layer 'metal9' mapped in layer mapping file is mask name of 'M9'. (TLUP-011)
+Warning: Layer mapping file warning. Tech layer 'poly' mapped in layer mapping file is mask name of 'PO'. (TLUP-011)
+Warning: Layer mapping file warning. Tech layer 'polyCont' mapped in layer mapping file is mask name of 'CO'. (TLUP-011)
+Warning: Layer mapping file warning. Tech layer 'via1' mapped in layer mapping file is mask name of 'VIA1'. (TLUP-011)
+Warning: Layer mapping file warning. Tech layer 'via2' mapped in layer mapping file is mask name of 'VIA2'. (TLUP-011)
+Warning: Layer mapping file warning. Tech layer 'via3' mapped in layer mapping file is mask name of 'VIA3'. (TLUP-011)
+Warning: Layer mapping file warning. Tech layer 'via4' mapped in layer mapping file is mask name of 'VIA4'. (TLUP-011)
+Warning: Layer mapping file warning. Tech layer 'via5' mapped in layer mapping file is mask name of 'VIA5'. (TLUP-011)
+Warning: Layer mapping file warning. Tech layer 'via6' mapped in layer mapping file is mask name of 'VIA6'. (TLUP-011)
+Warning: Layer mapping file warning. Tech layer 'via7' mapped in layer mapping file is mask name of 'VIA7'. (TLUP-011)
+Warning: Layer mapping file warning. Tech layer 'via8' mapped in layer mapping file is mask name of 'VIA8'. (TLUP-011)
+Warning: Layer mapping file warning. Tech layer 'via9' mapped in layer mapping file is mask name of 'RV'. (TLUP-011)
+1
+read_parasitic_tech -name {RC_Best} -tlup  [list ${TSMC_HOME}/digital/Back_End/milkyway/tcbn65lphpbwp_140a/techfiles/tluplus/cln65lp_1p09m+alrdl_rcbest_top2.tluplus] -layermap [list ${TSMC_HOME}/digital/Back_End/milkyway/tcbn65lphpbwp_140a/techfiles/tluplus/star.map_9M]
+Warning: Layer mapping file warning. Tech layer 'metal1' mapped in layer mapping file is mask name of 'M1'. (TLUP-011)
+Warning: Layer mapping file warning. Tech layer 'metal10' mapped in layer mapping file is mask name of 'AP'. (TLUP-011)
+Warning: Layer mapping file warning. Tech layer 'metal2' mapped in layer mapping file is mask name of 'M2'. (TLUP-011)
+Warning: Layer mapping file warning. Tech layer 'metal3' mapped in layer mapping file is mask name of 'M3'. (TLUP-011)
+Warning: Layer mapping file warning. Tech layer 'metal4' mapped in layer mapping file is mask name of 'M4'. (TLUP-011)
+Warning: Layer mapping file warning. Tech layer 'metal5' mapped in layer mapping file is mask name of 'M5'. (TLUP-011)
+Warning: Layer mapping file warning. Tech layer 'metal6' mapped in layer mapping file is mask name of 'M6'. (TLUP-011)
+Warning: Layer mapping file warning. Tech layer 'metal7' mapped in layer mapping file is mask name of 'M7'. (TLUP-011)
+Warning: Layer mapping file warning. Tech layer 'metal8' mapped in layer mapping file is mask name of 'M8'. (TLUP-011)
+Warning: Layer mapping file warning. Tech layer 'metal9' mapped in layer mapping file is mask name of 'M9'. (TLUP-011)
+Warning: Layer mapping file warning. Tech layer 'poly' mapped in layer mapping file is mask name of 'PO'. (TLUP-011)
+Warning: Layer mapping file warning. Tech layer 'polyCont' mapped in layer mapping file is mask name of 'CO'. (TLUP-011)
+Warning: Layer mapping file warning. Tech layer 'via1' mapped in layer mapping file is mask name of 'VIA1'. (TLUP-011)
+Warning: Layer mapping file warning. Tech layer 'via2' mapped in layer mapping file is mask name of 'VIA2'. (TLUP-011)
+Warning: Layer mapping file warning. Tech layer 'via3' mapped in layer mapping file is mask name of 'VIA3'. (TLUP-011)
+Warning: Layer mapping file warning. Tech layer 'via4' mapped in layer mapping file is mask name of 'VIA4'. (TLUP-011)
+Warning: Layer mapping file warning. Tech layer 'via5' mapped in layer mapping file is mask name of 'VIA5'. (TLUP-011)
+Warning: Layer mapping file warning. Tech layer 'via6' mapped in layer mapping file is mask name of 'VIA6'. (TLUP-011)
+Warning: Layer mapping file warning. Tech layer 'via7' mapped in layer mapping file is mask name of 'VIA7'. (TLUP-011)
+Warning: Layer mapping file warning. Tech layer 'via8' mapped in layer mapping file is mask name of 'VIA8'. (TLUP-011)
+Warning: Layer mapping file warning. Tech layer 'via9' mapped in layer mapping file is mask name of 'RV'. (TLUP-011)
+1
+#### ----- Routing settings -----  ####
+# Set max routing layer
+if {$MAX_ROUTING_LAYER != ""} {set_ignored_layers -max_routing_layer $MAX_ROUTING_LAYER}
+1
+# Set min routing layer
+if {$MIN_ROUTING_LAYER != ""} {set_ignored_layers -min_routing_layer $MIN_ROUTING_LAYER}
+1
+# How to see routing directions of interconnect layers:
+set layers [get_layers -filter "layer_type==interconnect"]
+{M1 M2 M3 M4 M5 M6 M7 M8 M9 AP}
+foreach_in_collection layer $layers {
+   set att [get_attribute [get_layers $layer] routing_direction]
+   echo "The routing direction for [get_object_name $layer] is $att"
+}
+The routing direction for M1 is unknown
+The routing direction for M2 is unknown
+The routing direction for M3 is unknown
+The routing direction for M4 is unknown
+The routing direction for M5 is unknown
+The routing direction for M6 is unknown
+The routing direction for M7 is unknown
+The routing direction for M8 is unknown
+The routing direction for M9 is unknown
+The routing direction for AP is unknown
+set_attribute -objects [get_layers M1] -name routing_direction -value horizontal
+Information: The design specific attribute override for layer 'M1' is set in the current block 'top', because the actual library setting may not be overwritten. (ATTR-12)
+{M1}
+set_attribute -objects [get_layers M2] -name routing_direction -value vertical
+Information: The design specific attribute override for layer 'M2' is set in the current block 'top', because the actual library setting may not be overwritten. (ATTR-12)
+{M2}
+set_attribute -objects [get_layers M3] -name routing_direction -value horizontal
+Information: The design specific attribute override for layer 'M3' is set in the current block 'top', because the actual library setting may not be overwritten. (ATTR-12)
+{M3}
+set_attribute -objects [get_layers M4] -name routing_direction -value vertical
+Information: The design specific attribute override for layer 'M4' is set in the current block 'top', because the actual library setting may not be overwritten. (ATTR-12)
+{M4}
+set_attribute -objects [get_layers M5] -name routing_direction -value horizontal
+Information: The design specific attribute override for layer 'M5' is set in the current block 'top', because the actual library setting may not be overwritten. (ATTR-12)
+{M5}
+set_attribute -objects [get_layers M6] -name routing_direction -value vertical
+Information: The design specific attribute override for layer 'M6' is set in the current block 'top', because the actual library setting may not be overwritten. (ATTR-12)
+{M6}
+set_attribute -objects [get_layers M7] -name routing_direction -value horizontal
+Information: The design specific attribute override for layer 'M7' is set in the current block 'top', because the actual library setting may not be overwritten. (ATTR-12)
+{M7}
+set_attribute -objects [get_layers M8] -name routing_direction -value vertical
+Information: The design specific attribute override for layer 'M8' is set in the current block 'top', because the actual library setting may not be overwritten. (ATTR-12)
+{M8}
+set_attribute -objects [get_layers M9] -name routing_direction -value horizontal
+Information: The design specific attribute override for layer 'M9' is set in the current block 'top', because the actual library setting may not be overwritten. (ATTR-12)
+{M9}
+#set_attribute -objects [get_layers AP] -name routing_direction -value horizontal
+#### ----- Sourcing antenna rules and corner scenario  setup ----- #### -------------------------- ASK PABLO ABOUT ANTENA AND CORNER SETUP
+set_app_options -name opt.tie_cell.add_to_highest_hierarchy -value false
+opt.tie_cell.add_to_highest_hierarchy false
+set_attribute [get_lib_cells */TIE*] dont_touch false
+Information: The design specific attribute override for lib_cell 'tcbn65lphpbwp_1:TIEHHPBWP.timing' is set in the current block 'top', because the actual library setting may not be overwritten. (ATTR-12)
+Information: The design specific attribute override for lib_cell 'tcbn65lphpbwp_1:TIELHPBWP.timing' is set in the current block 'top', because the actual library setting may not be overwritten. (ATTR-12)
+{tcbn65lphpbwp_1/TIEHHPBWP tcbn65lphpbwp_1/TIELHPBWP}
+set_lib_cell_purpose -include optimization [get_lib_cells */TIE*]
+Information: The command 'set_lib_cell_purpose' cleared the undo history. (UNDO-016)
+Information: The design specific attribute override for lib_cell 'tcbn65lphpbwp_1:TIEHHPBWP.timing' is set in the current block 'top', because the actual library setting may not be overwritten. (ATTR-12)
+Information: The design specific attribute override for lib_cell 'tcbn65lphpbwp_1:TIELHPBWP.timing' is set in the current block 'top', because the actual library setting may not be overwritten. (ATTR-12)
+1
+source -echo ../scripts/set_antenna_rules.tcl
+#read_clf_antenna_properties /mnt/vol_NFS_rh003/profesores/pmendoza/KITS/TSMCHOME/digital/Back_End/milkyway/tcbn65lphpbwp_140a/clf/antenna_tcbn65lphpbwp.clf -library my_workspace_tcbn65lphpbwp
+#read_clf_antenna_properties /mnt/vol_NFS_rh003/profesores/pmendoza/KITS/TSMCHOME/digital/Back_End/milkyway/tcbn65lphpbwp_140a/clf/antenna_tcbn65lphpbwp.clf -library tcbn65lphpbwp_1
+#string read_clf_antenna_properties
+#[-library library_name]
+#clf_file_name
+#
+#write_clf_antenna_properties -library tcbn65lphpbwp_1 tcbn65lphpbwp_1c.clf
+#
+#write_clf_antenna_properties
+#[-library library_name]
+#clf_file_name
+#
+#--------------------
+set_parameter -name doAntennaConx -value 4
+Warning: Command set_parameter is obsolete. See the command's man page for alternatives. (CMD-108)
+set lib [current_lib];
+remove_antenna_rules -library $lib
+set topMetalLayer 9;
+set RDLMetal AP;
+set RDLVia RV;
+##### Single metal layer sidewall area rule #####
+define_antenna_rule $lib \
+  -mode 4 \
+  -diode_mode 4 \
+  -metal_ratio 0 \
+  -cut_ratio 0
+define_antenna_layer_rule $lib \
+  -mode 4 \
+  -layer "$RDLMetal" \
+  -ratio 2000 \
+  -diode_ratio {0.06 0 8000 30000}
+##### Single metal/via layer area rule #####
+define_antenna_rule $lib \
+  -mode 1 \
+  -diode_mode 4 \
+  -metal_ratio 0 \
+  -cut_ratio 20
+define_antenna_layer_rule $lib \
+            -mode 1 \
+            -layer "M$topMetalLayer" \
+            -ratio 5000 \
+            -diode_ratio {0.06 0 8000 50000}
+define_antenna_layer_rule $lib \
+            -mode 1 \
+            -layer "$RDLVia" \
+            -ratio 200 \
+            -diode_ratio {0.06 0 83 400}
+##### Cumulative metal/via layer area rule #####
+define_antenna_rule $lib \
+  -mode 2 \
+  -diode_mode 4 \
+  -metal_ratio 0 \
+  -cut_ratio 0
+for {set i 1} {$i < $topMetalLayer} {incr i} {
+  define_antenna_layer_rule $lib \
+    -mode 2 \
+    -layer "M$i" \
+    -ratio 5000 \
+    -diode_ratio {0.06 0 456 43000}
+}
+define_antenna_layer_rule $lib \
+    -mode 2 \
+    -layer "M$topMetalLayer" \
+    -ratio 5000 \
+    -diode_ratio {0 1 0 0}
+for {set i 1} {$i < $topMetalLayer} {incr i} {
+  define_antenna_layer_rule $lib \
+    -mode 2 \
+    -layer "VIA$i" \
+    -ratio 900 \
+    -diode_ratio {0.06 0 210 900}
+}
+##### Routing Option Related to Antenna Fixing #####
+set_parameter -name doAntennaConx -value 4 -module droute
+Warning: Command set_parameter is obsolete. See the command's man page for alternatives. (CMD-108)
+report_antenna_rules > antenna.rule
+source -echo ../scripts/mode_corner_scenario.tcl
+puts " ################################################## "
+ ################################################## 
+puts " ## 1. Define Corners "
+ ## 1. Define Corners 
+puts " ################################################## "
+ ################################################## 
+puts ""
+
+set LIB_MAX_CORNER WCCOM
+set LIB_MIN_CORNER MLCOM
+puts ""
+
+puts ""
+
+puts " Corner - Worst case "
+ Corner - Worst case 
+create_corner cornerSS
+current_corner cornerSS
+set_parasitic_parameters -early_spec RC_Worst -late_spec RC_Worst
+set_operating_conditions -max_library tcbn65lphpbwp_1 -max ${LIB_MAX_CORNER} -min_library tcbn65lphpbwp_1 -min ${LIB_MAX_CORNER}
+puts ""
+
+puts "  Corner - Best case "
+  Corner - Best case 
+create_corner cornerFF
+current_corner cornerFF
+set_parasitic_parameters -early_spec RC_Best -late_spec RC_Best
+set_operating_conditions -max_library tcbn65lphpbwp_1 -max ${LIB_MIN_CORNER} -min_library tcbn65lphpbwp_1 -min ${LIB_MIN_CORNER}
+puts ""
+
+puts ""
+
+puts ""
+
+puts " ################################################## "
+ ################################################## 
+puts " ## 1. Define Modes "
+ ## 1. Define Modes 
+puts " ################################################## "
+ ################################################## 
+puts ""
+
+puts ""
+
+create_mode mode1
+current_mode mode1
+puts ""
+
+puts ""
+
+puts " ################################################## "
+ ################################################## 
+puts " ## 2. Define Scenarios "
+ ## 2. Define Scenarios 
+puts " ################################################## "
+ ################################################## 
+puts ""
+
+puts ""
+
+puts "***************************"
+***************************
+puts "CREATE SCENARIO SLOW"
+CREATE SCENARIO SLOW
+puts "***************************"
+***************************
+puts ""
+
+puts ""
+
+create_scenario -mode mode1 -corner cornerSS -name scenarioSS
+Created scenario scenarioSS for mode mode1 and corner cornerSS
+All analysis types are activated.
+current_scenario scenarioSS
+set_scenario_status -hold false scenarioSS
+Scenario scenarioSS (mode mode1 corner cornerSS) is active for setup/leakage_power/dynamic_power/max_transition/max_capacitance/min_capacitance analysis.
+set_app_options -name time.convert_constraint_from_bc_wc -value wc_only
+puts ""
+
+puts ""
+
+#source ${SOURCE_PATH}/Contador.sdc
+source -echo ../scripts/02_01_sdc_processing.tcl
+############################################
+#####          SDC processing          #####
+############################################
+# Read the constraints of the sdc file
+read_sdc -echo ../../../common/sdc/$SDCNAME.sdc
+Information: Loading SDC version 2.1 file '/mnt/vol_NFS_rh003/estudiantes/DANIELA_VARGAS/Version_final/0516/versiones_finales/semana14/Contador_TMR/TSMC_TMR_128/FLOW/common/sdc/top.sdc' (FILE-007)
+set PERIOD  10
+set CLOCK_NAME SYS_CLK
+set CLOCK_PIN clk
+set TRANSITION 0.53
+set TRANSITION 0.2
+set UNCERTAINTY 0.3
+create_clock -period $PERIOD -name $CLOCK_NAME [get_ports $CLOCK_PIN]
+set_clock_uncertainty -setup $UNCERTAINTY [get_clocks $CLOCK_NAME]
+set_clock_transition -rise $TRANSITION [get_clocks $CLOCK_NAME]
+set_clock_transition -fall $TRANSITION [get_clocks $CLOCK_NAME]
+set all_input_pins [remove_from_collection [all_inputs] [get_port clk]]
+#set single_load [load_of */INHDLLX0/A]
+#set multi_load [expr 10 * $single_load]
+set INPUT_DELAY  0.8
+set OUTPUT_DELAY  1
+set CLOCK_NAME SYS_CLK
+# IO properties
+set_input_delay $INPUT_DELAY -clock $CLOCK_NAME $all_input_pins
+Information: Timer using 1 threads
+set_output_delay $OUTPUT_DELAY -clock $CLOCK_NAME [all_outputs]
+#set_load -pin_load $multi_load [all_outputs]
+puts ""
+
+puts ""
+
+puts ""
+
+puts ""
+
+puts ""
+
+puts "***************************"
+***************************
+puts "CREATE SCENARIO FAST"
+CREATE SCENARIO FAST
+puts "***************************"
+***************************
+puts ""
+
+puts ""
+
+create_scenario -mode mode1 -corner cornerFF -name scenarioFF
+Created scenario scenarioFF for mode mode1 and corner cornerFF
+All analysis types are activated.
+current_scenario scenarioFF
+set_scenario_status -setup false scenarioFF
+Scenario scenarioFF (mode mode1 corner cornerFF) is active for hold/leakage_power/dynamic_power/max_transition/max_capacitance/min_capacitance analysis.
+set_app_options -name time.convert_constraint_from_bc_wc -value bc_only
+puts ""
+
+puts ""
+
+#source ${SOURCE_PATH}/Contador.sdc
+source -echo ../scripts/02_01_sdc_processing.tcl
+############################################
+#####          SDC processing          #####
+############################################
+# Read the constraints of the sdc file
+read_sdc -echo ../../../common/sdc/$SDCNAME.sdc
+Information: Loading SDC version 2.1 file '/mnt/vol_NFS_rh003/estudiantes/DANIELA_VARGAS/Version_final/0516/versiones_finales/semana14/Contador_TMR/TSMC_TMR_128/FLOW/common/sdc/top.sdc' (FILE-007)
+set PERIOD  10
+set CLOCK_NAME SYS_CLK
+set CLOCK_PIN clk
+set TRANSITION 0.53
+set TRANSITION 0.2
+set UNCERTAINTY 0.3
+create_clock -period $PERIOD -name $CLOCK_NAME [get_ports $CLOCK_PIN]
+Warning: Redefining clock 'SYS_CLK'.  
+        Previously defined at: /mnt/vol_NFS_rh003/estudiantes/DANIELA_VARGAS/Version_final/0516/versiones_finales/semana14/Contador_TMR/TSMC_TMR_128/FLOW/common/sdc/top.sdc, line 11 (UIC-034)
+set_clock_uncertainty -setup $UNCERTAINTY [get_clocks $CLOCK_NAME]
+set_clock_transition -rise $TRANSITION [get_clocks $CLOCK_NAME]
+set_clock_transition -fall $TRANSITION [get_clocks $CLOCK_NAME]
+set all_input_pins [remove_from_collection [all_inputs] [get_port clk]]
+#set single_load [load_of */INHDLLX0/A]
+#set multi_load [expr 10 * $single_load]
+set INPUT_DELAY  0.8
+set OUTPUT_DELAY  1
+set CLOCK_NAME SYS_CLK
+# IO properties
+set_input_delay $INPUT_DELAY -clock $CLOCK_NAME $all_input_pins
+set_output_delay $OUTPUT_DELAY -clock $CLOCK_NAME [all_outputs]
+#set_load -pin_load $multi_load [all_outputs]
+#source ${PROYECT_PATH}/pnr/dig_filter.sdc
+puts ""
+
+puts ""
+
+puts "fast scenario created"
+fast scenario created
+puts ""
+
+puts ""
+
+puts " Reset the time.convert_constraint_from_bc_wc application option to none. "
+ Reset the time.convert_constraint_from_bc_wc application option to none. 
+set_app_options -name time.convert_constraint_from_bc_wc -value none
+puts ""
+
+puts ""
+
+# report_corners -verbose
+#### ----- Setup application options ----- ####
+# Enable floorplan without scandef 
+set_app_options -name place.coarse.continue_on_missing_scandef -value true
+place.coarse.continue_on_missing_scandef true
+# Enable auto floorplan
+set_app_options -name compile.auto_floorplan.enable            -value true
+compile.auto_floorplan.enable true
+#### ----- Auto floorplan ----- ####
+# Check the design before compile_fusion
+compile_fusion -check_only
+Warning: No site rows found in floorplan. (LGL-397)
+INFO: compile_fusion is running in balanced flow mode.
+Warning: No site rows found in floorplan. (LGL-397)
+Information: Starting 'compile_fusion -check_only' (FLW-8000)
+Information: Time: 2025-05-26 21:43:15 / Session: 0.00 hr / Command: 0.00 hr / Memory: 452 MB (FLW-8100)
+CPU Load: 4%, Ram Free: 6 GB, Swap Free: 1 GB, Work Disk Free: 213 GB, Tmp Disk Free: 53 GB
+Warning: No site rows found in floorplan. (LGL-397)
+INFO: Start environment monitoring: recipes
+INFO: compile_fusion is running in balanced flow mode.
+Warning: No site rows found in floorplan. (LGL-397)
+Warning: No site rows found in floorplan. (LGL-397)
+Warning: No site rows found in floorplan. (LGL-397)
+Warning: No site rows found in floorplan. (LGL-397)
+Warning: No site rows found in floorplan. (LGL-397)
+Warning: No site rows found in floorplan. (LGL-397)
+Warning: No site rows found in floorplan. (LGL-397)
+Warning: In design 'counter_1', cell 'counter_1/C806' does not drive any nets. (DCHK-008)
+Warning: In design 'counter_1', cell 'counter_1/C807' does not drive any nets. (DCHK-008)
+Warning: In design 'counter_2', cell 'counter_2/C806' does not drive any nets. (DCHK-008)
+Warning: In design 'counter_2', cell 'counter_2/C807' does not drive any nets. (DCHK-008)
+Warning: In design 'counter_3', cell 'counter_3/C806' does not drive any nets. (DCHK-008)
+Warning: In design 'counter_3', cell 'counter_3/C807' does not drive any nets. (DCHK-008)
+Warning: In design 'counter_1', 'hierarchical' net 'counter_1/N518' driven by leaf pin 'counter_1/C806/Z' has no loads. (DCHK-009)
+Warning: In design 'counter_1', 'hierarchical' net 'counter_1/N519' driven by leaf pin 'counter_1/C807/Z' has no loads. (DCHK-009)
+Warning: In design 'counter_2', 'hierarchical' net 'counter_2/N518' driven by leaf pin 'counter_2/C806/Z' has no loads. (DCHK-009)
+Warning: In design 'counter_2', 'hierarchical' net 'counter_2/N519' driven by leaf pin 'counter_2/C807/Z' has no loads. (DCHK-009)
+Warning: In design 'counter_3', 'hierarchical' net 'counter_3/N518' driven by leaf pin 'counter_3/C806/Z' has no loads. (DCHK-009)
+Warning: In design 'counter_3', 'hierarchical' net 'counter_3/N519' driven by leaf pin 'counter_3/C807/Z' has no loads. (DCHK-009)
+INFO: End environment monitoring: recipes
+INFO: Restored 0 timer status, 8 app options, 0 tcl gvars, 0 env vars
+Information: >>>>>>> 3 unique error and warning message tags while observing checkOnly: (MSG-3100)
+Information: #prnt #trgr #lmt    Tag  Level     Format (or last printed message)                                (MSG-3036)
+Information:     6     6  0 DCHK-009  WARNING   Warning: In design 'counter_3', 'hierarchical' net 'counter_... (MSG-3032)
+Information:     6     6  0 DCHK-008  WARNING   Warning: In design 'counter_3', cell 'counter_3/C807' does n... (MSG-3032)
+Information:    10     9  0 LGL-397   WARNING   Warning: No site rows found in floorplan. (LGL-397)             (MSG-3032)
+Information:    22    21  0        3  <------   Total sum of messages (MSG-3038)
+Information: >>>>>>> Summary: 21 error&warning MSGs observed during checkOnly (MSG-3103)
+Information: Ending   'compile_fusion -check_only' (FLW-8001)
+Information: Time: 2025-05-26 21:43:18 / Session: 0.00 hr / Command: 0.00 hr / Memory: 612 MB (FLW-8100)
+CPU Load: 4%, Ram Free: 6 GB, Swap Free: 1 GB, Work Disk Free: 213 GB, Tmp Disk Free: 53 GB
+1
+# Initial auto floorplan creation
+compile_fusion -to logic_opto 
+Warning: No site rows found in floorplan. (LGL-397)
+INFO: compile_fusion is running in balanced flow mode.
+Warning: No site rows found in floorplan. (LGL-397)
+Information: Starting 'compile_fusion -to logic_opto' (FLW-8000)
+Information: Time: 2025-05-26 21:43:18 / Session: 0.00 hr / Command: 0.00 hr / Memory: 612 MB (FLW-8100)
+CPU Load: 4%, Ram Free: 6 GB, Swap Free: 1 GB, Work Disk Free: 213 GB, Tmp Disk Free: 53 GB
+Warning: No site rows found in floorplan. (LGL-397)
+INFO: Start environment monitoring: recipes
+INFO: compile_fusion is running in balanced flow mode.
+Warning: No site rows found in floorplan. (LGL-397)
+Warning: No site rows found in floorplan. (LGL-397)
+Warning: No site rows found in floorplan. (LGL-397)
+Warning: No site rows found in floorplan. (LGL-397)
+Warning: No site rows found in floorplan. (LGL-397)
+Warning: No site rows found in floorplan. (LGL-397)
+Warning: No site rows found in floorplan. (LGL-397)
+Warning: Mapping to scan cell 'GSDFCNQD1HPBWP' in library is not possible because cell has 'dont_use' attribute. (SQM-1067)
+Information: The automatic clock gate timing flow is activated. Clock latencies set on clock gate cells will be automatically adjusted by an estimate for latency. (CGT-4005)
+----------------------------------------------------------------------------------------------------------
+Information: Starting compile_fusion / initial_map (FLW-8000)
+Information: Time: 2025-05-26 21:43:20 / Session: 0.00 hr / Command: 0.00 hr / Memory: 645 MB (FLW-8100)
+----------------------------------------------------------------------------------------------------------
+Warning: Mapping to scan cell 'GSDFCNQD1HPBWP' in library is not possible because cell has 'dont_use' attribute. (SQM-1067)
+Warning: No site rows found in floorplan. (LGL-397)
+Warning: No site rows found in floorplan. (LGL-397)
+Warning: No site rows found in floorplan. (LGL-397)
+Warning: No site rows found in floorplan. (LGL-397)
+Warning: No site rows found in floorplan. (LGL-397)
+Warning: No site rows found in floorplan. (LGL-397)
+Warning: No site rows found in floorplan. (LGL-397)
+Warning: No site rows found in floorplan. (LGL-397)
+Warning: No site rows found in floorplan. (LGL-397)
+Warning: No site rows found in floorplan. (LGL-397)
+Warning: No site rows found in floorplan. (LGL-397)
+Warning: No site rows found in floorplan. (LGL-397)
+Information: Starting compile_fusion / initial_map / MV Cell Insertion (FLW-8000)
+Information: Time: 2025-05-26 21:43:21 / Session: 0.00 hr / Command: 0.00 hr / Memory: 692 MB (FLW-8100)
+Information: Result of compile_fusion / initial_map / MV Cell Insertion (FLW-8500)
+Information: Total number of MV cells in the design. (MV-334)
+Information: Ending   compile_fusion / initial_map / MV Cell Insertion (FLW-8001)
+Information: Time: 2025-05-26 21:43:21 / Session: 0.00 hr / Command: 0.00 hr / Memory: 692 MB (FLW-8100)
+
+Information: Starting compile_fusion / initial_map / Logic Simplification (1) (FLW-8000)
+Information: Time: 2025-05-26 21:43:21 / Session: 0.00 hr / Command: 0.00 hr / Memory: 692 MB (FLW-8100)
+Information: The hierarchy counter_1 is not ungrouped due to restrictions. (UNG-1004)
+Information: The hierarchy counter_2 is not ungrouped due to restrictions. (UNG-1004)
+Information: The hierarchy counter_3 is not ungrouped due to restrictions. (UNG-1004)
+Information: The hierarchy voter is not ungrouped due to restrictions. (UNG-1004)
+Information: 4 of 4 hierarchies are not ungrouped because of restrictions. Use report_ungroup for a list. (UNG-1005)
+Warning: Mapping to scan cell 'GSDFCNQD1HPBWP' in library is not possible because cell has 'dont_use' attribute. (SQM-1067)
+Warning: No site rows found in floorplan. (LGL-397)
+Warning: No site rows found in floorplan. (LGL-397)
+Warning: No site rows found in floorplan. (LGL-397)
+Warning: No site rows found in floorplan. (LGL-397)
+Information: Register Bits Before Sharing = 384, After Sharing = 384, Savings = 0 (SQM-2000)
+Warning: No site rows found in floorplan. (LGL-397)
+Warning: No site rows found in floorplan. (LGL-397)
+Warning: No site rows found in floorplan. (LGL-397)
+Warning: No site rows found in floorplan. (LGL-397)
+Warning: No site rows found in floorplan. (LGL-397)
+Warning: No site rows found in floorplan. (LGL-397)
+Warning: No site rows found in floorplan. (LGL-397)
+Warning: No site rows found in floorplan. (LGL-397)
+Information: Ending   compile_fusion / initial_map / Logic Simplification (1) (FLW-8001)
+Information: Time: 2025-05-26 21:43:26 / Session: 0.01 hr / Command: 0.00 hr / Memory: 754 MB (FLW-8100)
+
+Warning: No site rows found in floorplan. (LGL-397)
+Warning: No site rows found in floorplan. (LGL-397)
+Warning: No site rows found in floorplan. (LGL-397)
+Warning: No site rows found in floorplan. (LGL-397)
+Information: Starting compile_fusion / initial_map / Early Logic Optimization (FLW-8000)
+Information: Time: 2025-05-26 21:43:26 / Session: 0.01 hr / Command: 0.00 hr / Memory: 754 MB (FLW-8100)
+Information: Timer using 1 threads
+Information: Ending   compile_fusion / initial_map / Early Logic Optimization (FLW-8001)
+Information: Time: 2025-05-26 21:43:30 / Session: 0.01 hr / Command: 0.00 hr / Memory: 754 MB (FLW-8100)
+
+Information: Starting compile_fusion / initial_map / High-Level Optimization and Technology Mapping (FLW-8000)
+Information: Time: 2025-05-26 21:43:30 / Session: 0.01 hr / Command: 0.00 hr / Memory: 754 MB (FLW-8100)
+Information: Added key list 'DesignWare' to design 'top'. (DWS-0216)
+Warning: No cell bus will be mapped to multibit because there is no multibit cells in the cell libraries. (SQM-1040)
+Warning: Shift register Inferencing is enabled so only head flop will be replaced with scan cell and not all registers in shift register chains are scan replaced. (SQM-1074)
+Warning: No cell bus will be mapped to multibit because there is no multibit cells in the cell libraries. (SQM-1040)
+Warning: Shift register Inferencing is enabled so only head flop will be replaced with scan cell and not all registers in shift register chains are scan replaced. (SQM-1074)
+Information: Constraints set on instance 'ne_46' may be ignored. (HDL-128)
+Information: Constraints set on instance 'ne_47' may be ignored. (HDL-128)
+Information: Constraints set on instance 'ne_48' may be ignored. (HDL-128)
+Warning: No cell bus will be mapped to multibit because there is no multibit cells in the cell libraries. (SQM-1040)
+Warning: Shift register Inferencing is enabled so only head flop will be replaced with scan cell and not all registers in shift register chains are scan replaced. (SQM-1074)
+Information: Ending   compile_fusion / initial_map / High-Level Optimization and Technology Mapping (FLW-8001)
+Information: Time: 2025-05-26 21:43:49 / Session: 0.01 hr / Command: 0.01 hr / Memory: 754 MB (FLW-8100)
+
+Information: Register Bits Before Sharing = 384, After Sharing = 384, Savings = 0 (SQM-2000)
+Information: Starting compile_fusion / initial_map / Logic Simplification (2) (FLW-8000)
+Information: Time: 2025-05-26 21:43:49 / Session: 0.01 hr / Command: 0.01 hr / Memory: 754 MB (FLW-8100)
+Information: Ending   compile_fusion / initial_map / Logic Simplification (2) (FLW-8001)
+Information: Time: 2025-05-26 21:43:49 / Session: 0.01 hr / Command: 0.01 hr / Memory: 754 MB (FLW-8100)
+
+Information: Result of compile_fusion / initial_map / Clock Gate Insertion (FLW-8500)
+Number of Pre-Existing Clock Gates with dont touch attribute: 0
+Number of ICG library cells with CTS purpose: 16
+--------------------------------------------------------------------------------
+                          Tool Gated Register Summary                           
+--------------------------------------------------------------------------------
+Clock Gating Type                   | Number of   | Register Count | Equivalent 
+                                    | Clock Gates |                | Bitwidth   
+--------------------------------------------------------------------------------
+Regular Clock Gating                |           3 |            384 |        384
+--------------------------------------------------------------------------------
+Compile-fusion optimization summary            SETUP-COST    R2R-COST HOLD-COST LDRC-COST          AREA     LEAKAGE     INSTCNT            ELAPSE       MEM
+Compile-fusion                                          -           -         -         -      10687.60           -        2065              0.01       754
+Information: Ending   compile_fusion / initial_map (FLW-8001)
+Information: Time: 2025-05-26 21:43:49 / Session: 0.01 hr / Command: 0.01 hr / Memory: 754 MB (FLW-8100)
+CPU Load: 4%, Ram Free: 6 GB, Swap Free: 1 GB, Work Disk Free: 213 GB, Tmp Disk Free: 53 GB
+
+Information: >>>>>>> 4 unique error and warning message tags while observing compile_fusion / initial_map: (MSG-3100)
+Information: #prnt #trgr #lmt    Tag  Level     Format (or last printed message)                                (MSG-3036)
+Information:     3     3  1 SQM-1074  WARNING   Warning: Shift register Inferencing is enabled so only head ... (MSG-3032)
+Information:     3     2  3 SQM-1067  WARNING   Warning: Mapping to scan cell 'GSDFCNQD1HPBWP' in library is... (MSG-3032)
+Information:     3     3  1 SQM-1040  WARNING   Warning: No cell bus will be mapped to multibit because ther... (MSG-3032)
+Information:    48    28  0 LGL-397   WARNING   Warning: No site rows found in floorplan. (LGL-397)             (MSG-3032)
+Information:    57    36  3        4  <------   Total sum of messages (MSG-3038)
+Information: >>>>>>> Summary: 36 error&warning MSGs observed during compile_fusion / initial_map (MSG-3103)
+
+----------------------------------------------------------------------------------------------------------
+Information: Starting compile_fusion / logic_opto (FLW-8000)
+Information: Time: 2025-05-26 21:43:49 / Session: 0.01 hr / Command: 0.01 hr / Memory: 754 MB (FLW-8100)
+----------------------------------------------------------------------------------------------------------
+Warning: Auto deriving 'vertical' routing direction for layer 'AP'. (DMM-115)
+Information: Initializing core and die (AFP-1001)
+Information: Initializing rows (AFP-1003)
+Information: Initializing tracks (AFP-1004)
+Information: Generated core area = 15054.799805 (AFP-2021)
+Information: Generated core boundary = { {0 0} {0 122} {123.4 122} {123.4 0} } (AFP-2022)
+Information: Change threshold for extractor is reset. (FLW-1300)
+Information: The stitching and editing of coupling caps is turned OFF for design 'top_lib:top/auto_floorplan.design'. (TIM-125)
+Information: Starting compile_fusion / logic_opto / Clock Gate Re-structuring (FLW-8000)
+Information: Time: 2025-05-26 21:43:50 / Session: 0.01 hr / Command: 0.01 hr / Memory: 774 MB (FLW-8100)
+Information: Result of compile_fusion / logic_opto / Clock Gate Re-structuring (FLW-8500)
+Number of Pre-Existing Clock Gates with dont touch attribute: 0
+Number of ICG library cells with CTS purpose: 16
+--------------------------------------------------------------------------------
+                          Tool Gated Register Summary                           
+--------------------------------------------------------------------------------
+Clock Gating Type                   | Number of   | Register Count | Equivalent 
+                                    | Clock Gates |                | Bitwidth   
+--------------------------------------------------------------------------------
+Regular Clock Gating                |           1 |            384 |        384
+--------------------------------------------------------------------------------
+Information: Ending   compile_fusion / logic_opto / Clock Gate Re-structuring (FLW-8001)
+Information: Time: 2025-05-26 21:43:50 / Session: 0.01 hr / Command: 0.01 hr / Memory: 786 MB (FLW-8100)
+
+Warning: No clock routing rules were specified. Use set_clock_routing_rules to specify routing rules for accurate clock latency estimation. (OPT-902)
+Warning: No clock routing rules were specified. Use set_clock_routing_rules to specify routing rules for accurate clock latency estimation. (OPT-902)
+Information: Estimating clock gate latencies for scenario 'scenarioSS'. (OPT-909)
+Warning: Duplicate callback function set for step 'fc/logic_opto/dwProcessPrecond1' (FLW-2224)
+Warning: Duplicate callback function set for step 'fc/logic_opto/dwProcessPrecond1' (FLW-2224)
+Information: Starting compile_fusion / logic_opto / Optimization (1) (FLW-8000)
+Information: Time: 2025-05-26 21:43:50 / Session: 0.01 hr / Command: 0.01 hr / Memory: 804 MB (FLW-8100)
+Warning: Mapping to scan cell 'GSDFCNQD1HPBWP' in library is not possible because cell has 'dont_use' attribute. (SQM-1067)
+Warning: No clock routing rules were specified. Use set_clock_routing_rules to specify routing rules for accurate clock latency estimation. (OPT-902)
+Warning: No clock routing rules were specified. Use set_clock_routing_rules to specify routing rules for accurate clock latency estimation. (OPT-902)
+Information: Estimating clock gate latencies for scenario 'scenarioSS'. (OPT-909)
+Warning: Mapping to scan cell 'GSDFCNQD1HPBWP' in library is not possible because cell has 'dont_use' attribute. (SQM-1067)
+Information: The stitching and editing of coupling caps is turned OFF for design 'top_lib:top/auto_floorplan.design'. (TIM-125)
+Warning: Mapping to scan cell 'GSDFCNQD1HPBWP' in library is not possible because cell has 'dont_use' attribute. (SQM-1067)
+Warning: Mapping to scan cell 'GSDFCNQD1HPBWP' in library is not possible because cell has 'dont_use' attribute. (SQM-1067)
+Information: Ending   compile_fusion / logic_opto / Optimization (1) (FLW-8001)
+Information: Time: 2025-05-26 21:44:08 / Session: 0.02 hr / Command: 0.01 hr / Memory: 902 MB (FLW-8100)
+
+Information: Starting compile_fusion / logic_opto / Register Retiming (FLW-8000)
+Information: Time: 2025-05-26 21:44:08 / Session: 0.02 hr / Command: 0.01 hr / Memory: 902 MB (FLW-8100)
+Warning: Mapping to scan cell 'GSDFCNQD1HPBWP' in library is not possible because cell has 'dont_use' attribute. (SQM-1067)
+Warning: Mapping to scan cell 'GSDFCNQD1HPBWP' in library is not possible because cell has 'dont_use' attribute. (SQM-1067)
+Information: Result of compile_fusion / logic_opto / Register Retiming (FLW-8500)
+Information: No instance marked for retiming. (RTM-1031)
+Warning: Mapping to scan cell 'GSDFCNQD1HPBWP' in library is not possible because cell has 'dont_use' attribute. (SQM-1067)
+Information: Ending   compile_fusion / logic_opto / Register Retiming (FLW-8001)
+Information: Time: 2025-05-26 21:44:22 / Session: 0.02 hr / Command: 0.02 hr / Memory: 902 MB (FLW-8100)
+
+Warning: Mapping to scan cell 'GSDFCNQD1HPBWP' in library is not possible because cell has 'dont_use' attribute. (SQM-1067)
+Information: Register Bits Before Sharing = 384, After Sharing = 384, Savings = 0 (SQM-2000)
+Information: Starting compile_fusion / logic_opto / Optimization (2) (FLW-8000)
+Information: Time: 2025-05-26 21:44:26 / Session: 0.02 hr / Command: 0.02 hr / Memory: 941 MB (FLW-8100)
+Warning: No clock routing rules were specified. Use set_clock_routing_rules to specify routing rules for accurate clock latency estimation. (OPT-902)
+Warning: No clock routing rules were specified. Use set_clock_routing_rules to specify routing rules for accurate clock latency estimation. (OPT-902)
+Information: Estimating clock gate latencies for scenario 'scenarioSS'. (OPT-909)
+Information: Ending   compile_fusion / logic_opto / Optimization (2) (FLW-8001)
+Information: Time: 2025-05-26 21:44:27 / Session: 0.02 hr / Command: 0.02 hr / Memory: 941 MB (FLW-8100)
+
+Information: Starting compile_fusion / logic_opto / Auto-Floorplan (1) (FLW-8000)
+Information: Time: 2025-05-26 21:44:27 / Session: 0.02 hr / Command: 0.02 hr / Memory: 941 MB (FLW-8100)
+Information: Initializing core and die (AFP-1001)
+Information: Initializing rows (AFP-1003)
+Information: Initializing tracks (AFP-1004)
+Information: Generated core area = 16102.799805 (AFP-2021)
+Information: Generated core boundary = { {0 0} {0 126} {127.8 126} {127.8 0} } (AFP-2022)
+Information: Shaping unshaped voltage areas (AFP-1011)
+Information: Placing unplaced pins (AFP-1007)
+Information: Result of compile_fusion / logic_opto / Auto-Floorplan (1) (FLW-8500)
+Information: Auto-Floorplan Summary (AFP-2023)
+-------------------------------------------------------------------------------
+              origin           area     boundary
+core  auto-floorplan        16102.8   { {0 0} {0 126} {127.8 126} {127.8 0} }
+die   auto-floorplan        16102.8   { {0 0} {0 126} {127.8 126} {127.8 0} }
+-------------------------------------------------------------------------------
+
+-------------------------------------------------------------------------------
+objects             total        candidates          modified         preserved                 
+voltage areas           0                 0                 0                 0
+ios                     0                 0                 0                 0
+macros                  0                 0                 0                 0
+pins                  131               131               131                 0
+-------------------------------------------------------------------------------
+Information: Ending   compile_fusion / logic_opto / Auto-Floorplan (1) (FLW-8001)
+Information: Time: 2025-05-26 21:44:27 / Session: 0.02 hr / Command: 0.02 hr / Memory: 941 MB (FLW-8100)
+
+Information: Starting compile_fusion / logic_opto / Early Placement (FLW-8000)
+Information: Time: 2025-05-26 21:44:27 / Session: 0.02 hr / Command: 0.02 hr / Memory: 941 MB (FLW-8100)
+----------------------------------------------------------------
+running create_placement
+Information: Extraction observers are detached as design net change threshold is reached.
+Corner Scaling is off, multiplier is 1.000000
+ORB: timingScenario scenarioSS timingCorner cornerSS
+INFO: Using corner cornerFF for worst leakage corner
+Using default layer M5
+new cutoff lpd: 2.83746e-05
+maxCornerId = 2
+corner=cornerSS, tran factor=1.0000 (0.3302 / 0.3302)
+corner=cornerFF, tran factor=0.9350 (0.3087 / 0.3302)
+ORB: Nominal = 0.0586595  Design MT = inf  Target = 0.3301510 (5.628 nominal)  MaxRC = 0.189509
+ORB: Fast Target = 0.114003 ( 1.943 nominal )
+ORB: stageDelay=0.17419, stageLength=5470569
+nplLib: default vr hor dist = 1094
+nplLib: default vr ver dist = 1094
+nplLib: default vr buf size = 6
+nplLib: default vr buf size = 2
+
+Placement Options:
+Effort:                        medium_effort       
+Timing Driven:                 false               
+Buffering Aware Timing Driven: false               
+Seed locs:                     false               
+Incremental:                   false               
+Congestion:                    false               
+Fix Macros:                    true                
+Place Macros:                  false               
+Channel Size Macros:           false               
+
+Printing options for 'place.coarse.*' (non-default only)
+place.coarse.continue_on_missing_scandef                :	 true                
+
+Start transferring placement data.
+****** Net weight manager: report ******
+Weights included: Timing  
+Number of nets with non-default weights: 3085
+Timing factor = 1
+Non-default weight range: (1, 1)
+Information: Automatic repeater spreading is enabled.
+Completed transferring placement data.
+Running placement using 1 thread(s)
+Information: Enhanced Auto Density Control is used. (PLACE-098)
+Information: Enhanced auto density configuration is 13179.
+Information: Automatic density control has selected the following settings: max_density 0.55, congestion_driven_max_util 0.87. (PLACE-027)
+Information: HFW control 'off' invoked.
+Creating placement from scratch.
+coarse place 0% done.
+coarse place 25% done.
+coarse place 50% done.
+coarse place 75% done.
+coarse place 100% done.
+Information: Coarse placer weighted wire length estimate = 4.91935e+08
+Transferred 0 BTSR attributes to NDM.
+Warning: No clock routing rules were specified. Use set_clock_routing_rules to specify routing rules for accurate clock latency estimation. (OPT-902)
+Warning: No clock routing rules were specified. Use set_clock_routing_rules to specify routing rules for accurate clock latency estimation. (OPT-902)
+Information: Estimating clock gate latencies for scenario 'scenarioSS'. (OPT-909)
+----------------------------------------------------------------
+Information: Ending   compile_fusion / logic_opto / Early Placement (FLW-8001)
+Information: Time: 2025-05-26 21:44:28 / Session: 0.02 hr / Command: 0.02 hr / Memory: 941 MB (FLW-8100)
+
+Information: The stitching and editing of coupling caps is turned OFF for design 'top_lib:top/auto_floorplan.design'. (TIM-125)
+Warning: No clock routing rules were specified. Use set_clock_routing_rules to specify routing rules for accurate clock latency estimation. (OPT-902)
+Warning: No clock routing rules were specified. Use set_clock_routing_rules to specify routing rules for accurate clock latency estimation. (OPT-902)
+Information: Estimating clock gate latencies for scenario 'scenarioSS'. (OPT-909)
+Information: Starting compile_fusion / logic_opto / Optimization (3) (FLW-8000)
+Information: Time: 2025-05-26 21:44:30 / Session: 0.02 hr / Command: 0.02 hr / Memory: 941 MB (FLW-8100)
+Warning: Mapping to scan cell 'GSDFCNQD1HPBWP' in library is not possible because cell has 'dont_use' attribute. (SQM-1067)
+Information: Ending   compile_fusion / logic_opto / Optimization (3) (FLW-8001)
+Information: Time: 2025-05-26 21:44:31 / Session: 0.02 hr / Command: 0.02 hr / Memory: 941 MB (FLW-8100)
+
+Information: Starting compile_fusion / logic_opto / Logic Simplification (1) (FLW-8000)
+Information: Time: 2025-05-26 21:44:31 / Session: 0.02 hr / Command: 0.02 hr / Memory: 941 MB (FLW-8100)
+Information: Ending   compile_fusion / logic_opto / Logic Simplification (1) (FLW-8001)
+Information: Time: 2025-05-26 21:44:31 / Session: 0.02 hr / Command: 0.02 hr / Memory: 941 MB (FLW-8100)
+
+Information: Starting compile_fusion / logic_opto / Optimization (4) (FLW-8000)
+Information: Time: 2025-05-26 21:44:31 / Session: 0.02 hr / Command: 0.02 hr / Memory: 941 MB (FLW-8100)
+Information: Ending   compile_fusion / logic_opto / Optimization (4) (FLW-8001)
+Information: Time: 2025-05-26 21:44:34 / Session: 0.02 hr / Command: 0.02 hr / Memory: 941 MB (FLW-8100)
+
+Information: Starting compile_fusion / logic_opto / Logic Simplification (2) (FLW-8000)
+Information: Time: 2025-05-26 21:44:34 / Session: 0.02 hr / Command: 0.02 hr / Memory: 941 MB (FLW-8100)
+Information: Ending   compile_fusion / logic_opto / Logic Simplification (2) (FLW-8001)
+Information: Time: 2025-05-26 21:44:34 / Session: 0.02 hr / Command: 0.02 hr / Memory: 941 MB (FLW-8100)
+
+Warning: No clock routing rules were specified. Use set_clock_routing_rules to specify routing rules for accurate clock latency estimation. (OPT-902)
+Warning: No clock routing rules were specified. Use set_clock_routing_rules to specify routing rules for accurate clock latency estimation. (OPT-902)
+Information: Estimating clock gate latencies for scenario 'scenarioSS'. (OPT-909)
+Information: Starting compile_fusion / logic_opto / Auto-Floorplan (2) (FLW-8000)
+Information: Time: 2025-05-26 21:44:34 / Session: 0.02 hr / Command: 0.02 hr / Memory: 941 MB (FLW-8100)
+Information: Initializing core and die (AFP-1001)
+Information: Initializing rows (AFP-1003)
+Information: Initializing tracks (AFP-1004)
+Removing existing floorplan objects
+Creating core...
+Core utilization ratio = 70.34%
+Unplacing all cells...
+Creating site array...
+Creating routing tracks...
+Initializing floorplan completed.
+Information: Generated core area = 14908.400391 (AFP-2021)
+Information: Generated core boundary = { {0 0} {0 122} {122.2 122} {122.2 0} } (AFP-2022)
+Information: Shaping unshaped voltage areas (AFP-1011)
+Information: Placing unplaced pins (AFP-1007)
+Load DB...
+CPU Time for load db: 00:00:00.01u 00:00:00.00s 00:00:00.01e: 
+
+Min routing layer: M2
+Max routing layer: M6
+
+
+CPU Time for Top Level Pre-Route Processing: 00:00:00.00u 00:00:00.00s 00:00:00.00e: 
+Warning: Cell contains tie connections which are not connected to real PG. (ZRT-511)
+Cell Min-Routing-Layer = M2
+Cell Max-Routing-Layer = M6
+Found antenna rule mode 1, diode mode 4:
+	layer M1: , diode ratio {0 0 1 0 0} 
+	layer M2: , diode ratio {0 0 1 0 0} 
+	layer M3: , diode ratio {0 0 1 0 0} 
+	layer M4: , diode ratio {0 0 1 0 0} 
+	layer M5: , diode ratio {0 0 1 0 0} 
+	layer M6: , diode ratio {0 0 1 0 0} 
+	layer M7: , diode ratio {0 0 1 0 0} 
+	layer M8: , diode ratio {0 0 1 0 0} 
+	layer M9:  max ratio 5000, diode ratio {0.06 0 8000 50000} 
+	layer AP: , diode ratio {0 0 1 0 0} 
+	layer CO: , diode ratio {0 0 1 0 0} 
+	layer VIA1:  max ratio 20, diode ratio {0 0 1 0 0} 
+	layer VIA2:  max ratio 20, diode ratio {0 0 1 0 0} 
+	layer VIA3:  max ratio 20, diode ratio {0 0 1 0 0} 
+	layer VIA4:  max ratio 20, diode ratio {0 0 1 0 0} 
+	layer VIA5:  max ratio 20, diode ratio {0 0 1 0 0} 
+	layer VIA6:  max ratio 20, diode ratio {0 0 1 0 0} 
+	layer VIA7:  max ratio 20, diode ratio {0 0 1 0 0} 
+	layer VIA8:  max ratio 20, diode ratio {0 0 1 0 0} 
+	layer RV:  max ratio 200, diode ratio {0.06 0 83 400} 
+Found antenna rule mode 2, diode mode 4:
+	layer M1:  max ratio 5000 metal scale 1, diode ratio {0.06 0 456 43000} 
+	layer M2:  max ratio 5000 metal scale 1, diode ratio {0.06 0 456 43000} 
+	layer M3:  max ratio 5000 metal scale 1, diode ratio {0.06 0 456 43000} 
+	layer M4:  max ratio 5000 metal scale 1, diode ratio {0.06 0 456 43000} 
+	layer M5:  max ratio 5000 metal scale 1, diode ratio {0.06 0 456 43000} 
+	layer M6:  max ratio 5000 metal scale 1, diode ratio {0.06 0 456 43000} 
+	layer M7:  max ratio 5000 metal scale 1, diode ratio {0.06 0 456 43000} 
+	layer M8:  max ratio 5000 metal scale 1, diode ratio {0.06 0 456 43000} 
+	layer M9:  max ratio 5000 metal scale 1, diode ratio {0 1 0 0} 
+	layer AP:  metal scale 1, diode ratio {0 0 1 0 0} 
+	layer CO: , diode ratio {0 0 1 0 0} 
+	layer VIA1:  max ratio 900 cut scale 1, diode ratio {0.06 0 210 900} 
+	layer VIA2:  max ratio 900 cut scale 1, diode ratio {0.06 0 210 900} 
+	layer VIA3:  max ratio 900 cut scale 1, diode ratio {0.06 0 210 900} 
+	layer VIA4:  max ratio 900 cut scale 1, diode ratio {0.06 0 210 900} 
+	layer VIA5:  max ratio 900 cut scale 1, diode ratio {0.06 0 210 900} 
+	layer VIA6:  max ratio 900 cut scale 1, diode ratio {0.06 0 210 900} 
+	layer VIA7:  max ratio 900 cut scale 1, diode ratio {0.06 0 210 900} 
+	layer VIA8:  max ratio 900 cut scale 1, diode ratio {0.06 0 210 900} 
+	layer RV:  cut scale 1, diode ratio {0 0 1 0 0} 
+Found antenna rule mode 4, diode mode 4:
+	layer M1: , diode ratio {0 0 1 0 0} 
+	layer M2: , diode ratio {0 0 1 0 0} 
+	layer M3: , diode ratio {0 0 1 0 0} 
+	layer M4: , diode ratio {0 0 1 0 0} 
+	layer M5: , diode ratio {0 0 1 0 0} 
+	layer M6: , diode ratio {0 0 1 0 0} 
+	layer M7: , diode ratio {0 0 1 0 0} 
+	layer M8: , diode ratio {0 0 1 0 0} 
+	layer M9: , diode ratio {0 0 1 0 0} 
+	layer AP:  max ratio 2000, diode ratio {0.06 0 8000 30000} 
+	layer CO: , diode ratio {0 0 1 0 0} 
+	layer VIA1: , diode ratio {0 0 1 0 0} 
+	layer VIA2: , diode ratio {0 0 1 0 0} 
+	layer VIA3: , diode ratio {0 0 1 0 0} 
+	layer VIA4: , diode ratio {0 0 1 0 0} 
+	layer VIA5: , diode ratio {0 0 1 0 0} 
+	layer VIA6: , diode ratio {0 0 1 0 0} 
+	layer VIA7: , diode ratio {0 0 1 0 0} 
+	layer VIA8: , diode ratio {0 0 1 0 0} 
+	layer RV: , diode ratio {0 0 1 0 0} 
+Information: Option route.detail.force_end_on_preferred_grid will be ignored since none of the layers have preferred grid. (ZRT-703)
+
+Block Pin Constraint   Min Pin Max Pin Reserve
+                       Layer   Layer   Layer    Feedthroughs
+--------------------   ------  ------  ------   ------------
+top                    M2      M6      AP       Not allowed
+
+Warning: Port  A1 at {{124.791,36.416} {124.906,36.796}} is out of boundary. Cannot be routed. (ZRT-720)
+Warning: Port  A2 at {{124.401,36.416} {124.521,36.796}} is out of boundary. Cannot be routed. (ZRT-720)
+Warning: Port  B2 at {{124.191,36.416} {124.306,36.796}} is out of boundary. Cannot be routed. (ZRT-720)
+Warning: Port  ZN at {{123.821,36.016} {125.101,37.016}} is out of boundary. Cannot be routed. (ZRT-720)
+Warning: Port  VDD at {{123.751,37.106} {125.151,37.916}} is out of boundary. Cannot be routed. (ZRT-720)
+Warning: Port  VSS at {{123.751,35.496} {125.151,36.086}} is out of boundary. Cannot be routed. (ZRT-720)
+Warning: Port  A2 at {{124.082,31.743} {124.302,32.183}} is out of boundary. Cannot be routed. (ZRT-720)
+Warning: Port  B1 at {{123.877,31.543} {124.617,32.183}} is out of boundary. Cannot be routed. (ZRT-720)
+Warning: Port  Z at {{124.777,31.343} {124.987,32.723}} is out of boundary. Cannot be routed. (ZRT-720)
+Warning: Port  VDD at {{123.437,32.308} {125.037,33.243}} is out of boundary. Cannot be routed. (ZRT-720)
+Skipping 11 ectangle_only route guides because they don't cover the design boundary in the layer's  preferred direction.
+Via on layer (VIA1) needs more than one tracks
+Warning: Layer M1 pitch 0.200 may be too small: wire/via-down 0.180, wire/via-up 0.225. (ZRT-026)
+Via on layer (VIA7) needs more than one tracks
+Warning: Layer M7 pitch 0.200 may be too small: wire/via-down 0.200, wire/via-up 0.350. (ZRT-026)
+Via on layer (RV) needs more than one tracks
+Warning: Layer M9 pitch 0.800 may be too small: wire/via-down 0.800, wire/via-up 3.600. (ZRT-026)
+Information: When applicable Min-max layer allow_pin_connection mode will allow paths of length 3.35 outside the layer range. (ZRT-707)
+Information: When applicable Min-max layer allow_pin_connection mode will allow paths of length 3.35 outside the layer range on clock nets. (ZRT-718)
+Information: When applicable layer based tapering will taper up to 0.00 in distance from the pin. (ZRT-706)
+Warning: Master cell top has duplicated redundant library pin shapes at {0.005 -1.800} {122.195 -1.600} on layer M2. (ZRT-625)
+Warning: Master cell top has duplicated redundant library pin shapes at {0.005 -1.800} {122.195 -1.600} on layer M2. (ZRT-625)
+Warning: Master cell top has duplicated redundant library pin shapes at {0.005 -1.800} {122.195 -1.600} on layer M2. (ZRT-625)
+Warning: Master cell top has duplicated redundant library pin shapes at {0.005 -1.800} {122.195 -1.600} on layer M2. (ZRT-625)
+Warning: Master cell top has duplicated redundant library pin shapes at {0.005 -1.800} {122.195 -1.600} on layer M2. (ZRT-625)
+Warning: Master cell top has duplicated redundant library pin shapes at {0.005 -1.800} {122.195 -1.600} on layer M2. (ZRT-625)
+Warning: Master cell top has duplicated redundant library pin shapes at {0.005 -1.800} {122.195 -1.600} on layer M2. (ZRT-625)
+Warning: Master cell top has duplicated redundant library pin shapes at {0.005 -1.800} {122.195 -1.600} on layer M2. (ZRT-625)
+Warning: Master cell top has duplicated redundant library pin shapes at {0.005 -1.800} {122.195 -1.600} on layer M2. (ZRT-625)
+Warning: Master cell top has duplicated redundant library pin shapes at {0.005 -1.800} {122.195 -1.600} on layer M2. (ZRT-625)
+Note - message 'ZRT-625' limit (10) exceeded. Remainder will be suppressed.
+Warning: Cell voter/A133 is placed overlapping with other cells at {{25.527 9.311} {26.327 11.311}}. (ZRT-763)
+Warning: Cell voter/A187 is placed overlapping with other cells at {{83.628 11.029} {85.028 13.029}}. (ZRT-763)
+Warning: Cell ne_48/ctmi_2442 is placed overlapping with other cells at {{50.714 107.203} {52.114 109.203}}. (ZRT-763)
+Start Global Route ... 
+[Init] Elapsed real time: 0:00:00 
+[Init] Elapsed cpu  time: sys=0:00:00 usr=0:00:00 total=0:00:00
+[Init] Stage (MB): Used    0  Alloctr    0  Proc    0 
+[Init] Total (MB): Used   44  Alloctr   45  Proc 7918 
+Printing options for 'route.common.*'
+common.clock_topology                                   :	 normal              
+common.single_connection_to_pins                        :	 off                 
+
+Printing options for 'route.global.*'
+global.crosstalk_driven                                 :	 false               
+global.deterministic                                    :	 on                  
+
+Begin global routing.
+Constructing data structure ...
+Design statistics:
+Design Bounding Box (-2.00um,-2.00um,124.20um,124.00um)
+Number of routing layers = 10
+layer M1, dir Hor, min width = 0.09um, min space = 0.09um pitch = 0.2um
+layer M2, dir Ver, min width = 0.1um, min space = 0.1um pitch = 0.2um
+layer M3, dir Hor, min width = 0.1um, min space = 0.1um pitch = 0.2um
+layer M4, dir Ver, min width = 0.1um, min space = 0.1um pitch = 0.2um
+layer M5, dir Hor, min width = 0.1um, min space = 0.1um pitch = 0.2um
+layer M6, dir Ver, min width = 0.1um, min space = 0.1um pitch = 0.2um
+layer M7, dir Hor, min width = 0.1um, min space = 0.1um pitch = 0.2um
+layer M8, dir Ver, min width = 0.4um, min space = 0.4um pitch = 0.8um
+layer M9, dir Hor, min width = 0.4um, min space = 0.4um pitch = 0.8um
+layer AP, dir Ver, min width = 3um, min space = 2um pitch = 6.5um
+Current Stage stats:
+[End of Build Tech Data] Elapsed real time: 0:00:00 
+[End of Build Tech Data] Elapsed cpu  time: sys=0:00:00 usr=0:00:00 total=0:00:00
+[End of Build Tech Data] Stage (MB): Used    1  Alloctr    1  Proc    0 
+[End of Build Tech Data] Total (MB): Used   49  Alloctr   49  Proc 7918 
+Net statistics:
+Total number of nets to route for block pin placement     = 131
+Number of interface nets to route for block pin placement = 131
+Net length statistics: 
+Net Count(Ignore Fully Rted) 262, Total Half Perimeter Wire Length (HPWL) 19397 microns
+HPWL   0 ~   50 microns: Net Count      129	Total HPWL         3242 microns
+HPWL  50 ~  100 microns: Net Count        2	Total HPWL          136 microns
+HPWL 100 ~  200 microns: Net Count      131	Total HPWL        16019 microns
+HPWL 200 ~  300 microns: Net Count        0	Total HPWL            0 microns
+HPWL 300 ~  400 microns: Net Count        0	Total HPWL            0 microns
+HPWL 400 ~  500 microns: Net Count        0	Total HPWL            0 microns
+HPWL 500 ~  600 microns: Net Count        0	Total HPWL            0 microns
+HPWL 600 ~  700 microns: Net Count        0	Total HPWL            0 microns
+HPWL 700 ~  800 microns: Net Count        0	Total HPWL            0 microns
+HPWL 800 ~  900 microns: Net Count        0	Total HPWL            0 microns
+HPWL 900 ~ 1000 microns: Net Count        0	Total HPWL            0 microns
+HPWL     > 1000 microns: Net Count        0	Total HPWL            0 microns
+Current Stage stats:
+[End of Build All Nets] Elapsed real time: 0:00:00 
+[End of Build All Nets] Elapsed cpu  time: sys=0:00:00 usr=0:00:00 total=0:00:00
+[End of Build All Nets] Stage (MB): Used    0  Alloctr    0  Proc    0 
+[End of Build All Nets] Total (MB): Used   49  Alloctr   50  Proc 7918 
+Number of partitions: 1 (1 x 1)
+Size of partitions: 33 gCells x 33 gCells
+Average gCell capacity  19.03	 on layer (1)	 M1
+Average gCell capacity  19.06	 on layer (2)	 M2
+Average gCell capacity  19.03	 on layer (3)	 M3
+Average gCell capacity  19.06	 on layer (4)	 M4
+Average gCell capacity  19.03	 on layer (5)	 M5
+Average gCell capacity  19.06	 on layer (6)	 M6
+Average gCell capacity  19.03	 on layer (7)	 M7
+Average gCell capacity  0.00	 on layer (8)	 M8
+Average gCell capacity  0.00	 on layer (9)	 M9
+Average gCell capacity  0.00	 on layer (10)	 AP
+Average number of tracks per gCell 19.09	 on layer (1)	 M1
+Average number of tracks per gCell 19.12	 on layer (2)	 M2
+Average number of tracks per gCell 19.09	 on layer (3)	 M3
+Average number of tracks per gCell 19.12	 on layer (4)	 M4
+Average number of tracks per gCell 19.09	 on layer (5)	 M5
+Average number of tracks per gCell 19.12	 on layer (6)	 M6
+Average number of tracks per gCell 19.09	 on layer (7)	 M7
+Average number of tracks per gCell 4.82	 on layer (8)	 M8
+Average number of tracks per gCell 4.79	 on layer (9)	 M9
+Average number of tracks per gCell 0.64	 on layer (10)	 AP
+Number of gCells = 10890
+Current Stage stats:
+[End of Build Congestion Map] Elapsed real time: 0:00:00 
+[End of Build Congestion Map] Elapsed cpu  time: sys=0:00:00 usr=0:00:00 total=0:00:00
+[End of Build Congestion Map] Stage (MB): Used    0  Alloctr    0  Proc    0 
+[End of Build Congestion Map] Total (MB): Used   50  Alloctr   50  Proc 7918 
+Current Stage stats:
+[End of Add Nets Demand] Elapsed real time: 0:00:00 
+[End of Add Nets Demand] Elapsed cpu  time: sys=0:00:00 usr=0:00:00 total=0:00:00
+[End of Add Nets Demand] Stage (MB): Used    0  Alloctr    0  Proc    0 
+[End of Add Nets Demand] Total (MB): Used   50  Alloctr   50  Proc 7918 
+Number of user frozen nets = 0
+Total stats:
+[End of Build Data] Elapsed real time: 0:00:00 
+[End of Build Data] Elapsed cpu  time: sys=0:00:00 usr=0:00:00 total=0:00:00
+[End of Build Data] Stage (MB): Used    1  Alloctr    1  Proc    0 
+[End of Build Data] Total (MB): Used   50  Alloctr   50  Proc 7918 
+Number of partitions: 1 (1 x 1)
+Size of partitions: 33 gCells x 33 gCells
+Current Stage stats:
+[End of Blocked Pin Detection] Elapsed real time: 0:00:00 
+[End of Blocked Pin Detection] Elapsed cpu  time: sys=0:00:00 usr=0:00:00 total=0:00:00
+[End of Blocked Pin Detection] Stage (MB): Used   12  Alloctr   12  Proc    0 
+[End of Blocked Pin Detection] Total (MB): Used   62  Alloctr   62  Proc 7918 
+Information: Using 1 threads for routing. (ZRT-444)
+Information: Buffer distance is estimated to be ~1417.0000um (354 gCells)
+
+Start GR phase 0
+Number of partitions: 1 (1 x 1)
+Size of partitions: 33 gCells x 33 gCells
+[rtTop] Elapsed real time: 0:00:00 
+[rtTop] Elapsed cpu  time: sys=0:00:00 usr=0:00:00 total=0:00:00
+Current Stage stats:
+[End of Initial Routing] Elapsed real time: 0:00:00 
+[End of Initial Routing] Elapsed cpu  time: sys=0:00:00 usr=0:00:00 total=0:00:00
+[End of Initial Routing] Stage (MB): Used    0  Alloctr    0  Proc    0 
+[End of Initial Routing] Total (MB): Used   62  Alloctr   62  Proc 7918 
+Initial. Routing result:
+Initial. Both Dirs: Dmd-Cap  =     0 Max = 0 GRCs =     0 (0.00%)
+Initial. H routing: Dmd-Cap  =     0 Max = 0 (GRCs =  0) GRCs =     0 (0.00%)
+Initial. V routing: Dmd-Cap  =     0 Max = 0 (GRCs =  0) GRCs =     0 (0.00%)
+Initial. Both Dirs: Overflow =     0 Max = 0 GRCs =     0 (0.00%)
+Initial. H routing: Overflow =     0 Max = 0 (GRCs =  0) GRCs =     0 (0.00%)
+Initial. V routing: Overflow =     0 Max = 0 (GRCs =  0) GRCs =     0 (0.00%)
+Initial. M1         Overflow =     0 Max = 0 (GRCs =  0) GRCs =     0 (0.00%)
+Initial. M2         Overflow =     0 Max = 0 (GRCs =  0) GRCs =     0 (0.00%)
+Initial. M3         Overflow =     0 Max = 0 (GRCs =  0) GRCs =     0 (0.00%)
+Initial. M4         Overflow =     0 Max = 0 (GRCs =  0) GRCs =     0 (0.00%)
+Initial. M5         Overflow =     0 Max = 0 (GRCs =  0) GRCs =     0 (0.00%)
+Initial. M6         Overflow =     0 Max = 0 (GRCs =  0) GRCs =     0 (0.00%)
+Initial. M7         Overflow =     0 Max = 0 (GRCs =  0) GRCs =     0 (0.00%)
+Initial. M8         Overflow =     0 Max = 0 (GRCs =  0) GRCs =     0 (0.00%)
+Initial. M9         Overflow =     0 Max = 0 (GRCs =  0) GRCs =     0 (0.00%)
+Initial. AP         Overflow =     0 Max = 0 (GRCs =  0) GRCs =     0 (0.00%)
+
+Initial. Total Wire Length = 2903.36
+Initial. Layer M1 wire length = 0.00
+Initial. Layer M2 wire length = 814.40
+Initial. Layer M3 wire length = 1734.19
+Initial. Layer M4 wire length = 354.78
+Initial. Layer M5 wire length = 0.00
+Initial. Layer M6 wire length = 0.00
+Initial. Layer M7 wire length = 0.00
+Initial. Layer M8 wire length = 0.00
+Initial. Layer M9 wire length = 0.00
+Initial. Layer AP wire length = 0.00
+Initial. Total Number of Contacts = 234
+Initial. Via VIA12 count = 131
+Initial. Via VIA23 count = 87
+Initial. Via VIA34 count = 16
+Initial. Via VIA45 count = 0
+Initial. Via VIA56 count = 0
+Initial. Via VIA67 count = 0
+Initial. Via VIA78 count = 0
+Initial. Via VIA89 count = 0
+Initial. Via VIA910 count = 0
+Initial. completed.
+[End of Whole Chip Routing] Elapsed real time: 0:00:00 
+[End of Whole Chip Routing] Elapsed cpu  time: sys=0:00:00 usr=0:00:00 total=0:00:00
+[End of Whole Chip Routing] Stage (MB): Used   13  Alloctr   13  Proc    0 
+[End of Whole Chip Routing] Total (MB): Used   62  Alloctr   62  Proc 7918 
+[End of Global Routing] Elapsed real time: 0:00:00 
+[End of Global Routing] Elapsed cpu  time: sys=0:00:00 usr=0:00:00 total=0:00:00
+[End of Global Routing] Stage (MB): Used   13  Alloctr   13  Proc    0 
+[End of Global Routing] Total (MB): Used   61  Alloctr   62  Proc 7918 
+[End of dbOut] Elapsed real time: 0:00:00 
+[End of dbOut] Elapsed cpu  time: sys=0:00:00 usr=0:00:00 total=0:00:00
+[End of dbOut] Stage (MB): Used    0  Alloctr    0  Proc    0 
+[End of dbOut] Total (MB): Used   52  Alloctr   53  Proc 7918 
+CPU Time for Global Route: 00:00:00.28u 00:00:00.00s 00:00:00.28e: 
+Number of block ports: 131
+Number of block pin locations assigned from router: 131
+CPU Time for Pin Preparation: 00:00:00.00u 00:00:00.00s 00:00:00.00e: 
+Number of PG ports on blocks: 0
+Number of pins created: 131
+CPU Time for Pin Creation: 00:00:00.01u 00:00:00.00s 00:00:00.01e: 
+Total Pin Placement CPU Time: 00:00:00.29u 00:00:00.00s 00:00:00.30e: 
+Information: Result of compile_fusion / logic_opto / Auto-Floorplan (2) (FLW-8500)
+Information: Auto-Floorplan Summary (AFP-2023)
+-------------------------------------------------------------------------------
+              origin           area     boundary
+core  auto-floorplan        14908.4   { {0 0} {0 122} {122.2 122} {122.2 0} }
+die   auto-floorplan        14908.4   { {0 0} {0 122} {122.2 122} {122.2 0} }
+-------------------------------------------------------------------------------
+
+-------------------------------------------------------------------------------
+objects             total        candidates          modified         preserved                 
+voltage areas           0                 0                 0                 0
+ios                     0                 0                 0                 0
+macros                  0                 0                 0                 0
+pins                  131               131               131                 0
+-------------------------------------------------------------------------------
+Information: Ending   compile_fusion / logic_opto / Auto-Floorplan (2) (FLW-8001)
+Information: Time: 2025-05-26 21:44:35 / Session: 0.03 hr / Command: 0.02 hr / Memory: 941 MB (FLW-8100)
+
+Information: Secondary PG:  Secondary PG connections skipped because it is not a UPF design (FLW-1247)
+Compile-fusion optimization summary            SETUP-COST    R2R-COST HOLD-COST LDRC-COST          AREA     LEAKAGE     INSTCNT            ELAPSE       MEM
+Compile-fusion                                          -           -         -         -      10486.80           -        2950              0.03       940
+Information: Ending   compile_fusion / logic_opto (FLW-8001)
+Information: Time: 2025-05-26 21:44:35 / Session: 0.03 hr / Command: 0.02 hr / Memory: 941 MB (FLW-8100)
+CPU Load: 5%, Ram Free: 5 GB, Swap Free: 1 GB, Work Disk Free: 213 GB, Tmp Disk Free: 53 GB
+
+Information: >>>>>>> 9 unique error and warning message tags while observing compile_fusion / logic_opto: (MSG-3100)
+Information: #prnt #trgr #lmt    Tag  Level     Format (or last printed message)                                (MSG-3036)
+Information:     2     2  0 FLW-2224  WARNING   Warning: Duplicate callback function set for step 'fc/logic_... (MSG-3032)
+Information:    12     9  3 SQM-1067  WARNING   Warning: Mapping to scan cell 'GSDFCNQD1HPBWP' in library is... (MSG-3032)
+Information:     1     1  0 ZRT-511   WARNING   Warning: Cell contains tie connections which are not connect... (MSG-3032)
+Information:     3     3  0 ZRT-026   WARNING   Warning: Layer M9 pitch 0.800 may be too small: wire/via-dow... (MSG-3032)
+Information:     1     1  0 DMM-115   WARNING   Warning: Auto deriving 'vertical' routing direction for laye... (MSG-3032)
+Information:    10    10  0 ZRT-720   WARNING   Warning: Port  VDD at {{123.437,32.308} {125.037,33.243}} is... (MSG-3032)
+Information:     3     3  0 ZRT-763   WARNING   Warning: Cell ne_48/ctmi_2442 is placed overlapping with oth... (MSG-3032)
+Information:    10    10  0 ZRT-625   WARNING   Warning: Master cell top has duplicated redundant library pi... (MSG-3032)
+Information:    12    12  0 OPT-902   WARNING   Warning: No clock routing rules were specified. Use set_cloc... (MSG-3032)
+Information:    54    51  1        9  <------   Total sum of messages (MSG-3038)
+Information: >>>>>>> Summary: 51 error&warning MSGs observed during compile_fusion / logic_opto (MSG-3103)
+
+Warning: No clock routing rules were specified. Use set_clock_routing_rules to specify routing rules for accurate clock latency estimation. (OPT-902)
+Warning: No clock routing rules were specified. Use set_clock_routing_rules to specify routing rules for accurate clock latency estimation. (OPT-902)
+Information: Estimating clock gate latencies for scenario 'scenarioSS'. (OPT-909)
+Warning: No clock routing rules were specified. Use set_clock_routing_rules to specify routing rules for accurate clock latency estimation. (OPT-902)
+Information: Estimating clock gate latencies for scenario 'scenarioFF'. (OPT-909)
+*******************************************************************************
+                             Summary of UPF Cells                              
+*******************************************************************************
+This is NOT a UPF design.
+UPF is NOT loaded.
+UPF is NOT committed.
+-------------------------------------------------------------------------------
+*******************************************************************************
+                        End of Summary of UPF Cells                            
+*******************************************************************************
+Information: Timer using 1 threads
+INFO: End environment monitoring: recipes
+INFO: Restored 0 timer status, 3 app options, 0 tcl gvars, 0 env vars
+Information: >>>>>>> 12 unique error and warning message tags while observing fusion: (MSG-3100)
+Information: #prnt #trgr #lmt    Tag  Level     Format (or last printed message)                                (MSG-3036)
+Information:     2     2  0 FLW-2224  WARNING   Warning: Duplicate callback function set for step 'fc/logic_... (MSG-3032)
+Information:     3     3  1 SQM-1074  WARNING   Warning: Shift register Inferencing is enabled so only head ... (MSG-3032)
+Information:    12    12  3 SQM-1067  WARNING   Warning: Mapping to scan cell 'GSDFCNQD1HPBWP' in library is... (MSG-3032)
+Information:     3     3  1 SQM-1040  WARNING   Warning: No cell bus will be mapped to multibit because ther... (MSG-3032)
+Information:     1     1  0 ZRT-511   WARNING   Warning: Cell contains tie connections which are not connect... (MSG-3032)
+Information:     3     3  0 ZRT-026   WARNING   Warning: Layer M9 pitch 0.800 may be too small: wire/via-dow... (MSG-3032)
+Information:     1     1  0 DMM-115   WARNING   Warning: Auto deriving 'vertical' routing direction for laye... (MSG-3032)
+Information:    10    10  0 ZRT-720   WARNING   Warning: Port  VDD at {{123.437,32.308} {125.037,33.243}} is... (MSG-3032)
+Information:     3     3  0 ZRT-763   WARNING   Warning: Cell ne_48/ctmi_2442 is placed overlapping with oth... (MSG-3032)
+Information:    48    37  0 LGL-397   WARNING   Warning: No site rows found in floorplan. (LGL-397)             (MSG-3032)
+Information:    10    10  0 ZRT-625   WARNING   Warning: Master cell top has duplicated redundant library pi... (MSG-3032)
+Information:    15    15  0 OPT-902   WARNING   Warning: No clock routing rules were specified. Use set_cloc... (MSG-3032)
+Information:   111   100  3       12  <------   Total sum of messages (MSG-3038)
+Information: >>>>>>> Summary: 100 error&warning MSGs observed during fusion (MSG-3103)
+Information: Ending   'compile_fusion -to logic_opto' (FLW-8001)
+Information: Time: 2025-05-26 21:44:35 / Session: 0.03 hr / Command: 0.02 hr / Memory: 941 MB (FLW-8100)
+CPU Load: 5%, Ram Free: 5 GB, Swap Free: 1 GB, Work Disk Free: 213 GB, Tmp Disk Free: 53 GB
+1
+# Auto floorplan constraints
+set_auto_floorplan_constraints \
+	-control_type $CONTROL_AUTO \
+	-core_utilization $CORE_UTILIZATION_AUTO \
+	-core_offset $CORE_OFFSET_AUTO \
+	-shape $SHAPE_AUTO \
+	-side_ratio $SIDE_RATIO_AUTO \
+        -flip_first_row $FFR_AUTO \
+
+1
+#-site_def hdll \ ---------------- GOTTA CHECK THIS
+# Check previous constraints
+report_auto_floorplan_constraints
+Option Names                   Option Values
+side_ratio:                    1.0000 1.5000 
+side_length:                   
+core_utilization:              0.5000
+control_type:                  core
+boundary:                      
+shape:                         R
+orientation:                   N
+coincident_boundary:           true
+flip_first_row:                true
+core_offset:                   10.0000 
+row_core_ratio:                1.0
+honor_pad_limit:               false
+use_site_row:                  false
+site_def:                      
+origin_offset:                 0.0000 0.0000
+row_pattern:                   
+track_script:                  
+1
+# PG Network
+connect_pg_net
+****************************************
+Report : Power/Ground Connection Summary
+Design : top
+Version: U-2022.12-SP6
+Date   : Mon May 26 21:44:35 2025
+****************************************
+P/G net name                  P/G pin count(previous/current)
+--------------------------------------------------------------------------------
+Power net VDD                 0/2050
+Ground net VSS                0/2050
+--------------------------------------------------------------------------------
+Information: connections of 4100 power/ground pin(s) are created or changed.
+1
+# Pin placemment
+set_app_options -name compile.auto_floorplan.place_pins -value all
+compile.auto_floorplan.place_pins all
+set ports [remove_from_collection [get_ports] {VDD VSS}]
+{clk rst enable {q_out[127]} {q_out[126]} {q_out[125]} {q_out[124]} {q_out[123]} {q_out[122]} {q_out[121]} {q_out[120]} {q_out[119]} {q_out[118]} {q_out[117]} {q_out[116]} {q_out[115]} {q_out[114]} {q_out[113]} {q_out[112]} {q_out[111]} {q_out[110]} {q_out[109]} {q_out[108]} {q_out[107]} {q_out[106]} {q_out[105]} {q_out[104]} {q_out[103]} {q_out[102]} {q_out[101]} {q_out[100]} {q_out[99]} {q_out[98]} {q_out[97]} {q_out[96]} {q_out[95]} {q_out[94]} {q_out[93]} {q_out[92]} {q_out[91]} {q_out[90]} {q_out[89]} {q_out[88]} {q_out[87]} {q_out[86]} {q_out[85]} {q_out[84]} {q_out[83]} {q_out[82]} {q_out[81]} {q_out[80]} {q_out[79]} {q_out[78]} {q_out[77]} {q_out[76]} {q_out[75]} {q_out[74]} {q_out[73]} {q_out[72]} {q_out[71]} {q_out[70]} {q_out[69]} {q_out[68]} {q_out[67]} {q_out[66]} {q_out[65]} {q_out[64]} {q_out[63]} {q_out[62]} {q_out[61]} {q_out[60]} {q_out[59]} {q_out[58]} {q_out[57]} {q_out[56]} {q_out[55]} {q_out[54]} {q_out[53]} {q_out[52]} {q_out[51]} {q_out[50]} {q_out[49]} {q_out[48]} {q_out[47]} {q_out[46]} {q_out[45]} {q_out[44]} {q_out[43]} {q_out[42]} {q_out[41]} {q_out[40]} {q_out[39]} {q_out[38]} {q_out[37]} {q_out[36]} {q_out[35]} {q_out[34]} {q_out[33]} {q_out[32]} {q_out[31]} ...}
+# Global pin constraints 
+set_block_pin_constraints -self \
+	-allowed_layers $LAYER_PIN_AUTO \
+	-sides $SIDES_AUTO \
+	-pin_spacing_distance $PIN_SPACE_AUTO 
+Information: The command 'set_block_pin_constraints' cleared the undo history. (UNDO-016)
+Information: Block pin constraints pin_spacing_distance, allowed_layers, sides are set for top block top/auto_floorplan. (DPPA-403)
+1
+# \
+	#-width 0.19 \
+	#-length 0.19 
+# Individual pin constraints (If necessary)
+#set_individual_pin_constraints \
+#	-ports [get_ports <pin_name>] \
+#	-sides 1 \
+#	-allowed_layers MET1
+# Check previous pin constraints
+report_block_pin_constraints -self
+****************************************
+Report : report_block_pin_constraints
+Design : top
+Version: U-2022.12-SP6
+Date   : Mon May 26 21:44:35 2025
+****************************************
+
+  Pin constraints report on blocks 
+  ========================================
+
+    block top :
+      feedthroughs allowed: false
+      corner_keepout_num_tracks: 5
+      pin_spacing_distance: 4.0000 
+      allowed_layers: M3
+      sides: 1 2 3 4
+      hard_constraints: off
+      stacking_allowed: any
+
+1
+# Tuned auto floorplan creation ----------------------------------------------------------  ASK PABLO
+#set_lib_cell_purpose -include none {*/SDF* */ANTENNA* */MPROBE* */SIGNALHOLDDHDLL}
+# Final auto floorplan
+compile_fusion -to logic_opto
+INFO: compile_fusion is running in balanced flow mode.
+Information: Starting 'compile_fusion -to logic_opto' (FLW-8000)
+Information: Time: 2025-05-26 21:44:36 / Session: 0.03 hr / Command: 0.00 hr / Memory: 941 MB (FLW-8100)
+CPU Load: 5%, Ram Free: 5 GB, Swap Free: 1 GB, Work Disk Free: 213 GB, Tmp Disk Free: 53 GB
+INFO: Start environment monitoring: recipes
+INFO: compile_fusion is running in balanced flow mode.
+Warning: Mapping to scan cell 'GSDFCNQD1HPBWP' in library is not possible because cell has 'dont_use' attribute. (SQM-1067)
+Information: The automatic clock gate timing flow is activated. Clock latencies set on clock gate cells will be automatically adjusted by an estimate for latency. (CGT-4005)
+----------------------------------------------------------------------------------------------------------
+Information: Starting compile_fusion / initial_map (FLW-8000)
+Information: Time: 2025-05-26 21:44:37 / Session: 0.03 hr / Command: 0.00 hr / Memory: 941 MB (FLW-8100)
+----------------------------------------------------------------------------------------------------------
+Warning: Mapping to scan cell 'GSDFCNQD1HPBWP' in library is not possible because cell has 'dont_use' attribute. (SQM-1067)
+Information: Starting compile_fusion / initial_map / MV Cell Insertion (FLW-8000)
+Information: Time: 2025-05-26 21:44:37 / Session: 0.03 hr / Command: 0.00 hr / Memory: 941 MB (FLW-8100)
+Information: Result of compile_fusion / initial_map / MV Cell Insertion (FLW-8500)
+Information: Total number of MV cells in the design. (MV-334)
+Information: Ending   compile_fusion / initial_map / MV Cell Insertion (FLW-8001)
+Information: Time: 2025-05-26 21:44:37 / Session: 0.03 hr / Command: 0.00 hr / Memory: 941 MB (FLW-8100)
+
+Information: Starting compile_fusion / initial_map / Logic Simplification (1) (FLW-8000)
+Information: Time: 2025-05-26 21:44:37 / Session: 0.03 hr / Command: 0.00 hr / Memory: 941 MB (FLW-8100)
+Information: The hierarchy voter is not ungrouped due to restrictions. (UNG-1004)
+Information: The hierarchy counter_2 is not ungrouped due to restrictions. (UNG-1004)
+Information: The hierarchy counter_3 is not ungrouped due to restrictions. (UNG-1004)
+Information: The hierarchy counter_1 is not ungrouped due to restrictions. (UNG-1004)
+Information: 4 of 7 hierarchies are not ungrouped because of restrictions. Use report_ungroup for a list. (UNG-1005)
+Information: Register Bits Before Sharing = 384, After Sharing = 384, Savings = 0 (SQM-2000)
+Information: Ending   compile_fusion / initial_map / Logic Simplification (1) (FLW-8001)
+Information: Time: 2025-05-26 21:44:42 / Session: 0.03 hr / Command: 0.00 hr / Memory: 941 MB (FLW-8100)
+
+Information: Starting compile_fusion / initial_map / Early Logic Optimization (FLW-8000)
+Information: Time: 2025-05-26 21:44:42 / Session: 0.03 hr / Command: 0.00 hr / Memory: 941 MB (FLW-8100)
+Information: Extraction observers are detached as design net change threshold is reached.
+Information: Timer using 1 threads
+Information: Ending   compile_fusion / initial_map / Early Logic Optimization (FLW-8001)
+Information: Time: 2025-05-26 21:44:43 / Session: 0.03 hr / Command: 0.00 hr / Memory: 941 MB (FLW-8100)
+
+Information: Starting compile_fusion / initial_map / High-Level Optimization and Technology Mapping (FLW-8000)
+Information: Time: 2025-05-26 21:44:43 / Session: 0.03 hr / Command: 0.00 hr / Memory: 941 MB (FLW-8100)
+Warning: No cell bus will be mapped to multibit because there is no multibit cells in the cell libraries. (SQM-1040)
+Warning: Shift register Inferencing is enabled so only head flop will be replaced with scan cell and not all registers in shift register chains are scan replaced. (SQM-1074)
+Warning: No cell bus will be mapped to multibit because there is no multibit cells in the cell libraries. (SQM-1040)
+Warning: Shift register Inferencing is enabled so only head flop will be replaced with scan cell and not all registers in shift register chains are scan replaced. (SQM-1074)
+Warning: No cell bus will be mapped to multibit because there is no multibit cells in the cell libraries. (SQM-1040)
+Warning: Shift register Inferencing is enabled so only head flop will be replaced with scan cell and not all registers in shift register chains are scan replaced. (SQM-1074)
+Warning: No cell bus will be mapped to multibit because there is no multibit cells in the cell libraries. (SQM-1040)
+Warning: Shift register Inferencing is enabled so only head flop will be replaced with scan cell and not all registers in shift register chains are scan replaced. (SQM-1074)
+Warning: No cell bus will be mapped to multibit because there is no multibit cells in the cell libraries. (SQM-1040)
+Warning: Shift register Inferencing is enabled so only head flop will be replaced with scan cell and not all registers in shift register chains are scan replaced. (SQM-1074)
+Information: Ending   compile_fusion / initial_map / High-Level Optimization and Technology Mapping (FLW-8001)
+Information: Time: 2025-05-26 21:44:44 / Session: 0.03 hr / Command: 0.00 hr / Memory: 941 MB (FLW-8100)
+
+Information: Register Bits Before Sharing = 384, After Sharing = 384, Savings = 0 (SQM-2000)
+Information: Starting compile_fusion / initial_map / Logic Simplification (2) (FLW-8000)
+Information: Time: 2025-05-26 21:44:45 / Session: 0.03 hr / Command: 0.00 hr / Memory: 941 MB (FLW-8100)
+Information: Ending   compile_fusion / initial_map / Logic Simplification (2) (FLW-8001)
+Information: Time: 2025-05-26 21:44:45 / Session: 0.03 hr / Command: 0.00 hr / Memory: 941 MB (FLW-8100)
+
+Information: Result of compile_fusion / initial_map / Clock Gate Insertion (FLW-8500)
+Number of Pre-Existing Clock Gates with dont touch attribute: 0
+Number of ICG library cells with CTS purpose: 16
+--------------------------------------------------------------------------------
+                          Tool Gated Register Summary                           
+--------------------------------------------------------------------------------
+Clock Gating Type                   | Number of   | Register Count | Equivalent 
+                                    | Clock Gates |                | Bitwidth   
+--------------------------------------------------------------------------------
+Regular Clock Gating                |           4 |            384 |        384
+--------------------------------------------------------------------------------
+Compile-fusion optimization summary            SETUP-COST    R2R-COST HOLD-COST LDRC-COST          AREA     LEAKAGE     INSTCNT            ELAPSE       MEM
+Compile-fusion                                          -           -         -         -      10513.60           -        2956              0.03       940
+Information: Ending   compile_fusion / initial_map (FLW-8001)
+Information: Time: 2025-05-26 21:44:45 / Session: 0.03 hr / Command: 0.00 hr / Memory: 941 MB (FLW-8100)
+CPU Load: 5%, Ram Free: 5 GB, Swap Free: 1 GB, Work Disk Free: 213 GB, Tmp Disk Free: 53 GB
+
+Information: >>>>>>> 3 unique error and warning message tags while observing compile_fusion / initial_map: (MSG-3100)
+Information: #prnt #trgr #lmt    Tag  Level     Format (or last printed message)                                (MSG-3036)
+Information:     8     5  1 SQM-1074  WARNING   Warning: Shift register Inferencing is enabled so only head ... (MSG-3032)
+Information:    14     1  3 SQM-1067  WARNING   Warning: Mapping to scan cell 'GSDFCNQD1HPBWP' in library is... (MSG-3032)
+Information:     8     5  1 SQM-1040  WARNING   Warning: No cell bus will be mapped to multibit because ther... (MSG-3032)
+Information:    30    11  3        3  <------   Total sum of messages (MSG-3038)
+Information: >>>>>>> Summary: 11 error&warning MSGs observed during compile_fusion / initial_map (MSG-3103)
+
+----------------------------------------------------------------------------------------------------------
+Information: Starting compile_fusion / logic_opto (FLW-8000)
+Information: Time: 2025-05-26 21:44:45 / Session: 0.03 hr / Command: 0.00 hr / Memory: 941 MB (FLW-8100)
+----------------------------------------------------------------------------------------------------------
+Information: Initializing core and die (AFP-1001)
+Information: Initializing rows (AFP-1003)
+Information: Initializing tracks (AFP-1004)
+Information: Generated core area = 20803.199219 (AFP-2021)
+Information: Generated core boundary = { {10 10} {10 186} {128.2 186} {128.2 10} } (AFP-2022)
+Information: Change threshold for extractor is reset. (FLW-1300)
+Information: The stitching and editing of coupling caps is turned OFF for design 'top_lib:top/auto_floorplan.design'. (TIM-125)
+Information: Starting compile_fusion / logic_opto / Clock Gate Re-structuring (FLW-8000)
+Information: Time: 2025-05-26 21:44:46 / Session: 0.03 hr / Command: 0.00 hr / Memory: 941 MB (FLW-8100)
+Information: Result of compile_fusion / logic_opto / Clock Gate Re-structuring (FLW-8500)
+Number of Pre-Existing Clock Gates with dont touch attribute: 0
+Number of ICG library cells with CTS purpose: 16
+--------------------------------------------------------------------------------
+                          Tool Gated Register Summary                           
+--------------------------------------------------------------------------------
+Clock Gating Type                   | Number of   | Register Count | Equivalent 
+                                    | Clock Gates |                | Bitwidth   
+--------------------------------------------------------------------------------
+Regular Clock Gating                |           4 |            384 |        384
+--------------------------------------------------------------------------------
+Information: Ending   compile_fusion / logic_opto / Clock Gate Re-structuring (FLW-8001)
+Information: Time: 2025-05-26 21:44:47 / Session: 0.03 hr / Command: 0.00 hr / Memory: 981 MB (FLW-8100)
+
+Warning: No clock routing rules were specified. Use set_clock_routing_rules to specify routing rules for accurate clock latency estimation. (OPT-902)
+Warning: No clock routing rules were specified. Use set_clock_routing_rules to specify routing rules for accurate clock latency estimation. (OPT-902)
+Information: Estimating clock gate latencies for scenario 'scenarioSS'. (OPT-909)
+Warning: Duplicate callback function set for step 'fc/logic_opto/dwProcessPrecond1' (FLW-2224)
+Warning: Duplicate callback function set for step 'fc/logic_opto/dwProcessPrecond1' (FLW-2224)
+Information: Starting compile_fusion / logic_opto / Optimization (1) (FLW-8000)
+Information: Time: 2025-05-26 21:44:47 / Session: 0.03 hr / Command: 0.00 hr / Memory: 981 MB (FLW-8100)
+Warning: Mapping to scan cell 'GSDFCNQD1HPBWP' in library is not possible because cell has 'dont_use' attribute. (SQM-1067)
+Warning: No clock routing rules were specified. Use set_clock_routing_rules to specify routing rules for accurate clock latency estimation. (OPT-902)
+Warning: No clock routing rules were specified. Use set_clock_routing_rules to specify routing rules for accurate clock latency estimation. (OPT-902)
+Information: Estimating clock gate latencies for scenario 'scenarioSS'. (OPT-909)
+Warning: Mapping to scan cell 'GSDFCNQD1HPBWP' in library is not possible because cell has 'dont_use' attribute. (SQM-1067)
+Information: The stitching and editing of coupling caps is turned OFF for design 'top_lib:top/auto_floorplan.design'. (TIM-125)
+Warning: Mapping to scan cell 'GSDFCNQD1HPBWP' in library is not possible because cell has 'dont_use' attribute. (SQM-1067)
+Warning: Mapping to scan cell 'GSDFCNQD1HPBWP' in library is not possible because cell has 'dont_use' attribute. (SQM-1067)
+Information: Added key list 'DesignWare' to design 'top'. (DWS-0216)
+Information: Ending   compile_fusion / logic_opto / Optimization (1) (FLW-8001)
+Information: Time: 2025-05-26 21:44:51 / Session: 0.03 hr / Command: 0.00 hr / Memory: 981 MB (FLW-8100)
+
+Information: Starting compile_fusion / logic_opto / Register Retiming (FLW-8000)
+Information: Time: 2025-05-26 21:44:51 / Session: 0.03 hr / Command: 0.00 hr / Memory: 981 MB (FLW-8100)
+Warning: Mapping to scan cell 'GSDFCNQD1HPBWP' in library is not possible because cell has 'dont_use' attribute. (SQM-1067)
+Warning: Mapping to scan cell 'GSDFCNQD1HPBWP' in library is not possible because cell has 'dont_use' attribute. (SQM-1067)
+Information: Result of compile_fusion / logic_opto / Register Retiming (FLW-8500)
+Information: No instance marked for retiming. (RTM-1031)
+Warning: Mapping to scan cell 'GSDFCNQD1HPBWP' in library is not possible because cell has 'dont_use' attribute. (SQM-1067)
+Information: Ending   compile_fusion / logic_opto / Register Retiming (FLW-8001)
+Information: Time: 2025-05-26 21:45:05 / Session: 0.03 hr / Command: 0.01 hr / Memory: 981 MB (FLW-8100)
+
+Warning: Mapping to scan cell 'GSDFCNQD1HPBWP' in library is not possible because cell has 'dont_use' attribute. (SQM-1067)
+Information: Register Bits Before Sharing = 384, After Sharing = 384, Savings = 0 (SQM-2000)
+Information: Starting compile_fusion / logic_opto / Optimization (2) (FLW-8000)
+Information: Time: 2025-05-26 21:45:09 / Session: 0.03 hr / Command: 0.01 hr / Memory: 981 MB (FLW-8100)
+Warning: No clock routing rules were specified. Use set_clock_routing_rules to specify routing rules for accurate clock latency estimation. (OPT-902)
+Warning: No clock routing rules were specified. Use set_clock_routing_rules to specify routing rules for accurate clock latency estimation. (OPT-902)
+Information: Estimating clock gate latencies for scenario 'scenarioSS'. (OPT-909)
+Information: Ending   compile_fusion / logic_opto / Optimization (2) (FLW-8001)
+Information: Time: 2025-05-26 21:45:09 / Session: 0.03 hr / Command: 0.01 hr / Memory: 981 MB (FLW-8100)
+
+Information: Starting compile_fusion / logic_opto / Auto-Floorplan (1) (FLW-8000)
+Information: Time: 2025-05-26 21:45:09 / Session: 0.03 hr / Command: 0.01 hr / Memory: 981 MB (FLW-8100)
+Information: Initializing core and die (AFP-1001)
+Information: Initializing rows (AFP-1003)
+Information: Initializing tracks (AFP-1004)
+Information: Generated core area = 20803.199219 (AFP-2021)
+Information: Generated core boundary = { {10 10} {10 186} {128.2 186} {128.2 10} } (AFP-2022)
+Information: Shaping unshaped voltage areas (AFP-1011)
+Information: Placing all pins (AFP-1007)
+Warning: Cell contains tie connections which are not connected to real PG. (ZRT-511)
+Information: Option route.detail.force_end_on_preferred_grid will be ignored since none of the layers have preferred grid. (ZRT-703)
+Warning: Layer M1 pitch 0.200 may be too small: wire/via-down 0.180, wire/via-up 0.225. (ZRT-026)
+Warning: Layer M7 pitch 0.200 may be too small: wire/via-down 0.200, wire/via-up 0.350. (ZRT-026)
+Warning: Layer M9 pitch 0.800 may be too small: wire/via-down 0.800, wire/via-up 3.600. (ZRT-026)
+Information: When applicable Min-max layer allow_pin_connection mode will allow paths of length 3.35 outside the layer range. (ZRT-707)
+Information: When applicable Min-max layer allow_pin_connection mode will allow paths of length 3.35 outside the layer range on clock nets. (ZRT-718)
+Information: When applicable layer based tapering will taper up to 0.00 in distance from the pin. (ZRT-706)
+Warning: Cell voter/A133 is placed overlapping with other cells at {{25.527 9.311} {26.327 11.311}}. (ZRT-763)
+Warning: Cell voter/A187 is placed overlapping with other cells at {{83.628 11.029} {85.028 13.029}}. (ZRT-763)
+Warning: Cell ne_48/ctmi_2445 is placed overlapping with other cells at {{45.860 107.066} {47.260 109.066}}. (ZRT-763)
+Information: The net parasitics of block top are cleared. (TIM-123)
+Warning: Pin q_out[127] of net q_out[127] has no valid shapes to connect. (ZRT-100)
+Warning: Pin q_out[126] of net q_out[126] has no valid shapes to connect. (ZRT-100)
+Warning: Pin q_out[125] of net q_out[125] has no valid shapes to connect. (ZRT-100)
+Warning: Pin q_out[124] of net q_out[124] has no valid shapes to connect. (ZRT-100)
+Warning: Pin q_out[123] of net q_out[123] has no valid shapes to connect. (ZRT-100)
+Warning: Pin q_out[122] of net q_out[122] has no valid shapes to connect. (ZRT-100)
+Warning: Pin q_out[121] of net q_out[121] has no valid shapes to connect. (ZRT-100)
+Warning: Pin q_out[120] of net q_out[120] has no valid shapes to connect. (ZRT-100)
+Warning: Pin q_out[119] of net q_out[119] has no valid shapes to connect. (ZRT-100)
+Warning: Pin q_out[118] of net q_out[118] has no valid shapes to connect. (ZRT-100)
+Warning: Pin q_out[117] of net q_out[117] has no valid shapes to connect. (ZRT-100)
+Warning: Pin q_out[116] of net q_out[116] has no valid shapes to connect. (ZRT-100)
+Warning: Pin q_out[115] of net q_out[115] has no valid shapes to connect. (ZRT-100)
+Warning: Pin q_out[114] of net q_out[114] has no valid shapes to connect. (ZRT-100)
+Warning: Pin q_out[113] of net q_out[113] has no valid shapes to connect. (ZRT-100)
+Warning: Pin q_out[112] of net q_out[112] has no valid shapes to connect. (ZRT-100)
+Warning: Pin q_out[111] of net q_out[111] has no valid shapes to connect. (ZRT-100)
+Warning: Pin q_out[110] of net q_out[110] has no valid shapes to connect. (ZRT-100)
+Warning: Pin q_out[109] of net q_out[109] has no valid shapes to connect. (ZRT-100)
+Warning: Pin q_out[108] of net q_out[108] has no valid shapes to connect. (ZRT-100)
+Warning: Pin q_out[107] of net q_out[107] has no valid shapes to connect. (ZRT-100)
+Warning: Pin q_out[105] of net q_out[105] has no valid shapes to connect. (ZRT-100)
+Warning: Pin q_out[98] of net q_out[98] has no valid shapes to connect. (ZRT-100)
+Warning: Pin q_out[97] of net q_out[97] has no valid shapes to connect. (ZRT-100)
+Warning: Pin q_out[96] of net q_out[96] has no valid shapes to connect. (ZRT-100)
+Warning: Pin q_out[72] of net q_out[72] has no valid shapes to connect. (ZRT-100)
+Warning: Pin q_out[71] of net q_out[71] has no valid shapes to connect. (ZRT-100)
+Warning: Pin q_out[70] of net q_out[70] has no valid shapes to connect. (ZRT-100)
+Warning: Pin q_out[69] of net q_out[69] has no valid shapes to connect. (ZRT-100)
+Warning: Pin q_out[68] of net q_out[68] has no valid shapes to connect. (ZRT-100)
+Warning: Pin q_out[4] of net q_out[4] has no valid shapes to connect. (ZRT-100)
+Warning: Pin q_out[3] of net q_out[3] has no valid shapes to connect. (ZRT-100)
+Warning: Pin q_out[2] of net q_out[2] has no valid shapes to connect. (ZRT-100)
+Warning: Pin q_out[1] of net q_out[1] has no valid shapes to connect. (ZRT-100)
+Warning: Pin q_out[0] of net q_out[0] has no valid shapes to connect. (ZRT-100)
+Warning: Pin clk of net clk has no valid shapes to connect. (ZRT-100)
+Warning: Pin enable of net enable has no valid shapes to connect. (ZRT-100)
+Information: Using 1 threads for routing. (ZRT-444)
+Warning: Not enough slots available for pin placement. Ignore pin spacing constraints. (DPPA-004)
+Warning: Pin q_out[50] is placed with relaxed spacing constraint. (DPPA-379)
+Warning: Pin q_out[28] is placed with relaxed spacing constraint. (DPPA-379)
+Warning: Pin q_out[87] is placed with relaxed spacing constraint. (DPPA-379)
+Warning: Pin q_out[32] is placed with relaxed spacing constraint. (DPPA-379)
+Warning: Pin q_out[44] is placed with relaxed spacing constraint. (DPPA-379)
+Warning: Pin q_out[42] is placed with relaxed spacing constraint. (DPPA-379)
+Warning: Pin q_out[7] is placed with relaxed spacing constraint. (DPPA-379)
+Warning: Pin q_out[23] is placed with relaxed spacing constraint. (DPPA-379)
+Warning: Pin q_out[95] is placed with relaxed spacing constraint. (DPPA-379)
+Warning: Pin q_out[31] is placed with relaxed spacing constraint. (DPPA-379)
+Warning: 49 pins on block top have been placed with relaxed pin spacing constraint(s). (DPPA-089)
+Information: Result of compile_fusion / logic_opto / Auto-Floorplan (1) (FLW-8500)
+Information: Auto-Floorplan Summary (AFP-2023)
+-------------------------------------------------------------------------------
+              origin           area     boundary
+core  auto-floorplan        20803.2   { {10 10} {10 186} {128.2 186} {128.2 10} }
+die   auto-floorplan        27087.2   { {0 0} {0 196} {138.2 196} {138.2 0} }
+-------------------------------------------------------------------------------
+
+-------------------------------------------------------------------------------
+objects             total        candidates          modified         preserved                 
+voltage areas           0                 0                 0                 0
+ios                     0                 0                 0                 0
+macros                  0                 0                 0                 0
+pins                  131               131               124                 7
+-------------------------------------------------------------------------------
+Information: Ending   compile_fusion / logic_opto / Auto-Floorplan (1) (FLW-8001)
+Information: Time: 2025-05-26 21:45:10 / Session: 0.03 hr / Command: 0.01 hr / Memory: 981 MB (FLW-8100)
+
+Information: Starting compile_fusion / logic_opto / Early Placement (FLW-8000)
+Information: Time: 2025-05-26 21:45:10 / Session: 0.03 hr / Command: 0.01 hr / Memory: 981 MB (FLW-8100)
+----------------------------------------------------------------
+running create_placement
+Information: The stitching and editing of coupling caps is turned OFF for design 'top_lib:top/auto_floorplan.design'. (TIM-125)
+Corner Scaling is off, multiplier is 1.000000
+ORB: timingScenario scenarioSS timingCorner cornerSS
+INFO: Using corner cornerFF for worst leakage corner
+Using default layer M5
+new cutoff lpd: 2.83746e-05
+maxCornerId = 2
+corner=cornerSS, tran factor=1.0000 (0.3302 / 0.3302)
+corner=cornerFF, tran factor=0.9350 (0.3087 / 0.3302)
+ORB: Nominal = 0.0586595  Design MT = inf  Target = 0.3301510 (5.628 nominal)  MaxRC = 0.189509
+ORB: Fast Target = 0.114003 ( 1.943 nominal )
+ORB: stageDelay=0.17419, stageLength=5470569
+nplLib: default vr hor dist = 1094
+nplLib: default vr ver dist = 1094
+nplLib: default vr buf size = 6
+nplLib: default vr buf size = 2
+
+Placement Options:
+Effort:                        medium_effort       
+Timing Driven:                 false               
+Buffering Aware Timing Driven: false               
+Seed locs:                     false               
+Incremental:                   false               
+Congestion:                    false               
+Fix Macros:                    true                
+Place Macros:                  false               
+Channel Size Macros:           false               
+
+Printing options for 'place.coarse.*' (non-default only)
+place.coarse.continue_on_missing_scandef                :	 true                
+
+Start transferring placement data.
+****** Net weight manager: report ******
+Weights included: Timing  
+Number of nets with non-default weights: 2959
+Timing factor = 1
+Non-default weight range: (1, 1)
+Information: Automatic repeater spreading is enabled.
+Completed transferring placement data.
+Running placement using 1 thread(s)
+Information: Enhanced Auto Density Control is used. (PLACE-098)
+Information: Enhanced auto density configuration is 13179.
+Information: Automatic density control has selected the following settings: max_density 0.55, congestion_driven_max_util 0.87. (PLACE-027)
+Information: HFW control 'off' invoked.
+Creating placement from scratch.
+coarse place 0% done.
+coarse place 25% done.
+coarse place 50% done.
+coarse place 75% done.
+coarse place 100% done.
+Information: Coarse placer weighted wire length estimate = 5.71863e+08
+Information: Extraction observers are detached as design net change threshold is reached.
+Transferred 0 BTSR attributes to NDM.
+Warning: No clock routing rules were specified. Use set_clock_routing_rules to specify routing rules for accurate clock latency estimation. (OPT-902)
+Warning: No clock routing rules were specified. Use set_clock_routing_rules to specify routing rules for accurate clock latency estimation. (OPT-902)
+Information: Estimating clock gate latencies for scenario 'scenarioSS'. (OPT-909)
+----------------------------------------------------------------
+Information: Ending   compile_fusion / logic_opto / Early Placement (FLW-8001)
+Information: Time: 2025-05-26 21:45:12 / Session: 0.04 hr / Command: 0.01 hr / Memory: 981 MB (FLW-8100)
+
+Information: The stitching and editing of coupling caps is turned OFF for design 'top_lib:top/auto_floorplan.design'. (TIM-125)
+Warning: No clock routing rules were specified. Use set_clock_routing_rules to specify routing rules for accurate clock latency estimation. (OPT-902)
+Warning: No clock routing rules were specified. Use set_clock_routing_rules to specify routing rules for accurate clock latency estimation. (OPT-902)
+Information: Estimating clock gate latencies for scenario 'scenarioSS'. (OPT-909)
+Information: Starting compile_fusion / logic_opto / Optimization (3) (FLW-8000)
+Information: Time: 2025-05-26 21:45:13 / Session: 0.04 hr / Command: 0.01 hr / Memory: 981 MB (FLW-8100)
+Warning: Mapping to scan cell 'GSDFCNQD1HPBWP' in library is not possible because cell has 'dont_use' attribute. (SQM-1067)
+Information: Ending   compile_fusion / logic_opto / Optimization (3) (FLW-8001)
+Information: Time: 2025-05-26 21:45:14 / Session: 0.04 hr / Command: 0.01 hr / Memory: 981 MB (FLW-8100)
+
+Information: Starting compile_fusion / logic_opto / Logic Simplification (1) (FLW-8000)
+Information: Time: 2025-05-26 21:45:14 / Session: 0.04 hr / Command: 0.01 hr / Memory: 981 MB (FLW-8100)
+Information: Ending   compile_fusion / logic_opto / Logic Simplification (1) (FLW-8001)
+Information: Time: 2025-05-26 21:45:14 / Session: 0.04 hr / Command: 0.01 hr / Memory: 981 MB (FLW-8100)
+
+Information: Starting compile_fusion / logic_opto / Optimization (4) (FLW-8000)
+Information: Time: 2025-05-26 21:45:14 / Session: 0.04 hr / Command: 0.01 hr / Memory: 981 MB (FLW-8100)
+Information: Ending   compile_fusion / logic_opto / Optimization (4) (FLW-8001)
+Information: Time: 2025-05-26 21:45:17 / Session: 0.04 hr / Command: 0.01 hr / Memory: 981 MB (FLW-8100)
+
+Information: Starting compile_fusion / logic_opto / Logic Simplification (2) (FLW-8000)
+Information: Time: 2025-05-26 21:45:17 / Session: 0.04 hr / Command: 0.01 hr / Memory: 981 MB (FLW-8100)
+Information: Ending   compile_fusion / logic_opto / Logic Simplification (2) (FLW-8001)
+Information: Time: 2025-05-26 21:45:17 / Session: 0.04 hr / Command: 0.01 hr / Memory: 981 MB (FLW-8100)
+
+Warning: No clock routing rules were specified. Use set_clock_routing_rules to specify routing rules for accurate clock latency estimation. (OPT-902)
+Warning: No clock routing rules were specified. Use set_clock_routing_rules to specify routing rules for accurate clock latency estimation. (OPT-902)
+Information: Estimating clock gate latencies for scenario 'scenarioSS'. (OPT-909)
+Information: Starting compile_fusion / logic_opto / Auto-Floorplan (2) (FLW-8000)
+Information: Time: 2025-05-26 21:45:17 / Session: 0.04 hr / Command: 0.01 hr / Memory: 981 MB (FLW-8100)
+Information: Initializing core and die (AFP-1001)
+Information: Initializing rows (AFP-1003)
+Information: Initializing tracks (AFP-1004)
+Removing existing floorplan objects
+Creating core...
+Core utilization ratio = 50.59%
+Unplacing all cells...
+Creating site array...
+Creating routing tracks...
+Initializing floorplan completed.
+Information: Generated core area = 20838.400391 (AFP-2021)
+Information: Generated core boundary = { {10 10} {10 186} {128.4 186} {128.4 10} } (AFP-2022)
+Information: Shaping unshaped voltage areas (AFP-1011)
+Information: Placing all pins (AFP-1007)
+Load DB...
+CPU Time for load db: 00:00:00.01u 00:00:00.00s 00:00:00.01e: 
+
+Min routing layer: M2
+Max routing layer: M6
+
+Non default block pin constraint setting(s) of top block: top
+pin_spacing_distance: 4.0000
+allowed_layers:       M3 
+sides:                1 2 3 4
+
+CPU Time for Top Level Pre-Route Processing: 00:00:00.00u 00:00:00.00s 00:00:00.00e: 
+Warning: Cell contains tie connections which are not connected to real PG. (ZRT-511)
+Cell Min-Routing-Layer = M2
+Cell Max-Routing-Layer = M6
+Found antenna rule mode 1, diode mode 4:
+	layer M1: , diode ratio {0 0 1 0 0} 
+	layer M2: , diode ratio {0 0 1 0 0} 
+	layer M3: , diode ratio {0 0 1 0 0} 
+	layer M4: , diode ratio {0 0 1 0 0} 
+	layer M5: , diode ratio {0 0 1 0 0} 
+	layer M6: , diode ratio {0 0 1 0 0} 
+	layer M7: , diode ratio {0 0 1 0 0} 
+	layer M8: , diode ratio {0 0 1 0 0} 
+	layer M9:  max ratio 5000, diode ratio {0.06 0 8000 50000} 
+	layer AP: , diode ratio {0 0 1 0 0} 
+	layer CO: , diode ratio {0 0 1 0 0} 
+	layer VIA1:  max ratio 20, diode ratio {0 0 1 0 0} 
+	layer VIA2:  max ratio 20, diode ratio {0 0 1 0 0} 
+	layer VIA3:  max ratio 20, diode ratio {0 0 1 0 0} 
+	layer VIA4:  max ratio 20, diode ratio {0 0 1 0 0} 
+	layer VIA5:  max ratio 20, diode ratio {0 0 1 0 0} 
+	layer VIA6:  max ratio 20, diode ratio {0 0 1 0 0} 
+	layer VIA7:  max ratio 20, diode ratio {0 0 1 0 0} 
+	layer VIA8:  max ratio 20, diode ratio {0 0 1 0 0} 
+	layer RV:  max ratio 200, diode ratio {0.06 0 83 400} 
+Found antenna rule mode 2, diode mode 4:
+	layer M1:  max ratio 5000 metal scale 1, diode ratio {0.06 0 456 43000} 
+	layer M2:  max ratio 5000 metal scale 1, diode ratio {0.06 0 456 43000} 
+	layer M3:  max ratio 5000 metal scale 1, diode ratio {0.06 0 456 43000} 
+	layer M4:  max ratio 5000 metal scale 1, diode ratio {0.06 0 456 43000} 
+	layer M5:  max ratio 5000 metal scale 1, diode ratio {0.06 0 456 43000} 
+	layer M6:  max ratio 5000 metal scale 1, diode ratio {0.06 0 456 43000} 
+	layer M7:  max ratio 5000 metal scale 1, diode ratio {0.06 0 456 43000} 
+	layer M8:  max ratio 5000 metal scale 1, diode ratio {0.06 0 456 43000} 
+	layer M9:  max ratio 5000 metal scale 1, diode ratio {0 1 0 0} 
+	layer AP:  metal scale 1, diode ratio {0 0 1 0 0} 
+	layer CO: , diode ratio {0 0 1 0 0} 
+	layer VIA1:  max ratio 900 cut scale 1, diode ratio {0.06 0 210 900} 
+	layer VIA2:  max ratio 900 cut scale 1, diode ratio {0.06 0 210 900} 
+	layer VIA3:  max ratio 900 cut scale 1, diode ratio {0.06 0 210 900} 
+	layer VIA4:  max ratio 900 cut scale 1, diode ratio {0.06 0 210 900} 
+	layer VIA5:  max ratio 900 cut scale 1, diode ratio {0.06 0 210 900} 
+	layer VIA6:  max ratio 900 cut scale 1, diode ratio {0.06 0 210 900} 
+	layer VIA7:  max ratio 900 cut scale 1, diode ratio {0.06 0 210 900} 
+	layer VIA8:  max ratio 900 cut scale 1, diode ratio {0.06 0 210 900} 
+	layer RV:  cut scale 1, diode ratio {0 0 1 0 0} 
+Found antenna rule mode 4, diode mode 4:
+	layer M1: , diode ratio {0 0 1 0 0} 
+	layer M2: , diode ratio {0 0 1 0 0} 
+	layer M3: , diode ratio {0 0 1 0 0} 
+	layer M4: , diode ratio {0 0 1 0 0} 
+	layer M5: , diode ratio {0 0 1 0 0} 
+	layer M6: , diode ratio {0 0 1 0 0} 
+	layer M7: , diode ratio {0 0 1 0 0} 
+	layer M8: , diode ratio {0 0 1 0 0} 
+	layer M9: , diode ratio {0 0 1 0 0} 
+	layer AP:  max ratio 2000, diode ratio {0.06 0 8000 30000} 
+	layer CO: , diode ratio {0 0 1 0 0} 
+	layer VIA1: , diode ratio {0 0 1 0 0} 
+	layer VIA2: , diode ratio {0 0 1 0 0} 
+	layer VIA3: , diode ratio {0 0 1 0 0} 
+	layer VIA4: , diode ratio {0 0 1 0 0} 
+	layer VIA5: , diode ratio {0 0 1 0 0} 
+	layer VIA6: , diode ratio {0 0 1 0 0} 
+	layer VIA7: , diode ratio {0 0 1 0 0} 
+	layer VIA8: , diode ratio {0 0 1 0 0} 
+	layer RV: , diode ratio {0 0 1 0 0} 
+Information: Option route.detail.force_end_on_preferred_grid will be ignored since none of the layers have preferred grid. (ZRT-703)
+
+Block Pin Constraint   Min Pin Max Pin Reserve
+                       Layer   Layer   Layer    Feedthroughs
+--------------------   ------  ------  ------   ------------
+top                    M3      M3      AP       Not allowed
+
+Via on layer (VIA1) needs more than one tracks
+Warning: Layer M1 pitch 0.200 may be too small: wire/via-down 0.180, wire/via-up 0.225. (ZRT-026)
+Via on layer (VIA7) needs more than one tracks
+Warning: Layer M7 pitch 0.200 may be too small: wire/via-down 0.200, wire/via-up 0.350. (ZRT-026)
+Via on layer (RV) needs more than one tracks
+Warning: Layer M9 pitch 0.800 may be too small: wire/via-down 0.800, wire/via-up 3.600. (ZRT-026)
+Information: When applicable Min-max layer allow_pin_connection mode will allow paths of length 3.35 outside the layer range. (ZRT-707)
+Information: When applicable Min-max layer allow_pin_connection mode will allow paths of length 3.35 outside the layer range on clock nets. (ZRT-718)
+Information: When applicable layer based tapering will taper up to 0.00 in distance from the pin. (ZRT-706)
+Warning: Cell voter/A307 is placed overlapping with other cells at {{107.541 25.906} {108.341 27.906}}. (ZRT-763)
+Warning: Cell counter_2/DP_OP_6_1157_55635_J2/ctmi_1033 is placed overlapping with other cells at {{32.419 98.278} {33.819 100.278}}. (ZRT-763)
+Start Global Route ... 
+[Init] Elapsed real time: 0:00:00 
+[Init] Elapsed cpu  time: sys=0:00:00 usr=0:00:00 total=0:00:00
+[Init] Stage (MB): Used    0  Alloctr    0  Proc    0 
+[Init] Total (MB): Used   44  Alloctr   44  Proc 7958 
+Printing options for 'route.common.*'
+common.clock_topology                                   :	 normal              
+common.single_connection_to_pins                        :	 off                 
+
+Printing options for 'route.global.*'
+global.crosstalk_driven                                 :	 false               
+global.deterministic                                    :	 on                  
+
+Begin global routing.
+Constructing data structure ...
+Design statistics:
+Design Bounding Box (-2.00um,-2.00um,140.40um,198.00um)
+Number of routing layers = 10
+layer M1, dir Hor, min width = 0.09um, min space = 0.09um pitch = 0.2um
+layer M2, dir Ver, min width = 0.1um, min space = 0.1um pitch = 0.2um
+layer M3, dir Hor, min width = 0.1um, min space = 0.1um pitch = 0.2um
+layer M4, dir Ver, min width = 0.1um, min space = 0.1um pitch = 0.2um
+layer M5, dir Hor, min width = 0.1um, min space = 0.1um pitch = 0.2um
+layer M6, dir Ver, min width = 0.1um, min space = 0.1um pitch = 0.2um
+layer M7, dir Hor, min width = 0.1um, min space = 0.1um pitch = 0.2um
+layer M8, dir Ver, min width = 0.4um, min space = 0.4um pitch = 0.8um
+layer M9, dir Hor, min width = 0.4um, min space = 0.4um pitch = 0.8um
+layer AP, dir Ver, min width = 3um, min space = 2um pitch = 6.5um
+Current Stage stats:
+[End of Build Tech Data] Elapsed real time: 0:00:00 
+[End of Build Tech Data] Elapsed cpu  time: sys=0:00:00 usr=0:00:00 total=0:00:00
+[End of Build Tech Data] Stage (MB): Used    1  Alloctr    1  Proc    0 
+[End of Build Tech Data] Total (MB): Used   49  Alloctr   49  Proc 7958 
+Warning: Pin q_out[127] of net q_out[127] has no valid shapes to connect. (ZRT-100)
+Warning: Pin q_out[126] of net q_out[126] has no valid shapes to connect. (ZRT-100)
+Warning: Pin q_out[125] of net q_out[125] has no valid shapes to connect. (ZRT-100)
+Warning: Pin q_out[124] of net q_out[124] has no valid shapes to connect. (ZRT-100)
+Warning: Pin q_out[123] of net q_out[123] has no valid shapes to connect. (ZRT-100)
+Warning: Pin q_out[122] of net q_out[122] has no valid shapes to connect. (ZRT-100)
+Warning: Pin q_out[121] of net q_out[121] has no valid shapes to connect. (ZRT-100)
+Warning: Pin q_out[120] of net q_out[120] has no valid shapes to connect. (ZRT-100)
+Warning: Pin q_out[119] of net q_out[119] has no valid shapes to connect. (ZRT-100)
+Warning: Pin q_out[118] of net q_out[118] has no valid shapes to connect. (ZRT-100)
+Warning: Pin q_out[117] of net q_out[117] has no valid shapes to connect. (ZRT-100)
+Warning: Pin q_out[116] of net q_out[116] has no valid shapes to connect. (ZRT-100)
+Warning: Pin q_out[115] of net q_out[115] has no valid shapes to connect. (ZRT-100)
+Warning: Pin q_out[114] of net q_out[114] has no valid shapes to connect. (ZRT-100)
+Warning: Pin q_out[113] of net q_out[113] has no valid shapes to connect. (ZRT-100)
+Warning: Pin q_out[112] of net q_out[112] has no valid shapes to connect. (ZRT-100)
+Warning: Pin q_out[102] of net q_out[102] has no valid shapes to connect. (ZRT-100)
+Warning: Pin q_out[101] of net q_out[101] has no valid shapes to connect. (ZRT-100)
+Warning: Pin q_out[98] of net q_out[98] has no valid shapes to connect. (ZRT-100)
+Warning: Pin q_out[97] of net q_out[97] has no valid shapes to connect. (ZRT-100)
+Warning: Pin q_out[96] of net q_out[96] has no valid shapes to connect. (ZRT-100)
+Warning: Pin q_out[71] of net q_out[71] has no valid shapes to connect. (ZRT-100)
+Warning: Pin q_out[70] of net q_out[70] has no valid shapes to connect. (ZRT-100)
+Warning: Pin q_out[51] of net q_out[51] has no valid shapes to connect. (ZRT-100)
+Warning: Pin q_out[40] of net q_out[40] has no valid shapes to connect. (ZRT-100)
+Warning: Pin q_out[39] of net q_out[39] has no valid shapes to connect. (ZRT-100)
+Warning: Pin q_out[38] of net q_out[38] has no valid shapes to connect. (ZRT-100)
+Warning: Pin q_out[37] of net q_out[37] has no valid shapes to connect. (ZRT-100)
+Warning: Pin q_out[36] of net q_out[36] has no valid shapes to connect. (ZRT-100)
+Warning: Pin q_out[35] of net q_out[35] has no valid shapes to connect. (ZRT-100)
+Warning: Pin q_out[34] of net q_out[34] has no valid shapes to connect. (ZRT-100)
+Warning: Pin q_out[33] of net q_out[33] has no valid shapes to connect. (ZRT-100)
+Warning: Pin clk of net clk has no valid shapes to connect. (ZRT-100)
+Warning: Pin enable of net enable has no valid shapes to connect. (ZRT-100)
+Net statistics:
+Total number of nets to route for block pin placement     = 131
+Number of interface nets to route for block pin placement = 131
+Net length statistics: 
+Net Count(Ignore Fully Rted) 262, Total Half Perimeter Wire Length (HPWL) 22412 microns
+HPWL   0 ~   50 microns: Net Count      162	Total HPWL         3208 microns
+HPWL  50 ~  100 microns: Net Count        3	Total HPWL          173 microns
+HPWL 100 ~  200 microns: Net Count       97	Total HPWL        19030 microns
+HPWL 200 ~  300 microns: Net Count        0	Total HPWL            0 microns
+HPWL 300 ~  400 microns: Net Count        0	Total HPWL            0 microns
+HPWL 400 ~  500 microns: Net Count        0	Total HPWL            0 microns
+HPWL 500 ~  600 microns: Net Count        0	Total HPWL            0 microns
+HPWL 600 ~  700 microns: Net Count        0	Total HPWL            0 microns
+HPWL 700 ~  800 microns: Net Count        0	Total HPWL            0 microns
+HPWL 800 ~  900 microns: Net Count        0	Total HPWL            0 microns
+HPWL 900 ~ 1000 microns: Net Count        0	Total HPWL            0 microns
+HPWL     > 1000 microns: Net Count        0	Total HPWL            0 microns
+Current Stage stats:
+[End of Build All Nets] Elapsed real time: 0:00:00 
+[End of Build All Nets] Elapsed cpu  time: sys=0:00:00 usr=0:00:00 total=0:00:00
+[End of Build All Nets] Stage (MB): Used    0  Alloctr    0  Proc    0 
+[End of Build All Nets] Total (MB): Used   49  Alloctr   50  Proc 7958 
+Number of partitions: 1 (1 x 1)
+Size of partitions: 37 gCells x 52 gCells
+Average gCell capacity  19.19	 on layer (1)	 M1
+Average gCell capacity  19.19	 on layer (2)	 M2
+Average gCell capacity  19.19	 on layer (3)	 M3
+Average gCell capacity  19.19	 on layer (4)	 M4
+Average gCell capacity  19.19	 on layer (5)	 M5
+Average gCell capacity  19.19	 on layer (6)	 M6
+Average gCell capacity  19.19	 on layer (7)	 M7
+Average gCell capacity  0.00	 on layer (8)	 M8
+Average gCell capacity  0.00	 on layer (9)	 M9
+Average gCell capacity  0.00	 on layer (10)	 AP
+Average number of tracks per gCell 19.23	 on layer (1)	 M1
+Average number of tracks per gCell 19.24	 on layer (2)	 M2
+Average number of tracks per gCell 19.23	 on layer (3)	 M3
+Average number of tracks per gCell 19.24	 on layer (4)	 M4
+Average number of tracks per gCell 19.23	 on layer (5)	 M5
+Average number of tracks per gCell 19.24	 on layer (6)	 M6
+Average number of tracks per gCell 19.23	 on layer (7)	 M7
+Average number of tracks per gCell 4.81	 on layer (8)	 M8
+Average number of tracks per gCell 4.81	 on layer (9)	 M9
+Average number of tracks per gCell 0.62	 on layer (10)	 AP
+Number of gCells = 19240
+Current Stage stats:
+[End of Build Congestion Map] Elapsed real time: 0:00:00 
+[End of Build Congestion Map] Elapsed cpu  time: sys=0:00:00 usr=0:00:00 total=0:00:00
+[End of Build Congestion Map] Stage (MB): Used    0  Alloctr    0  Proc    0 
+[End of Build Congestion Map] Total (MB): Used   49  Alloctr   50  Proc 7958 
+Current Stage stats:
+[End of Add Nets Demand] Elapsed real time: 0:00:00 
+[End of Add Nets Demand] Elapsed cpu  time: sys=0:00:00 usr=0:00:00 total=0:00:00
+[End of Add Nets Demand] Stage (MB): Used    0  Alloctr    0  Proc    0 
+[End of Add Nets Demand] Total (MB): Used   49  Alloctr   50  Proc 7958 
+Number of user frozen nets = 0
+Total stats:
+[End of Build Data] Elapsed real time: 0:00:00 
+[End of Build Data] Elapsed cpu  time: sys=0:00:00 usr=0:00:00 total=0:00:00
+[End of Build Data] Stage (MB): Used    1  Alloctr    1  Proc    0 
+[End of Build Data] Total (MB): Used   49  Alloctr   50  Proc 7958 
+Number of partitions: 1 (1 x 1)
+Size of partitions: 37 gCells x 52 gCells
+Current Stage stats:
+[End of Blocked Pin Detection] Elapsed real time: 0:00:00 
+[End of Blocked Pin Detection] Elapsed cpu  time: sys=0:00:00 usr=0:00:00 total=0:00:00
+[End of Blocked Pin Detection] Stage (MB): Used   12  Alloctr   12  Proc    0 
+[End of Blocked Pin Detection] Total (MB): Used   61  Alloctr   62  Proc 7958 
+Information: Using 1 threads for routing. (ZRT-444)
+Information: Buffer distance is estimated to be ~1417.0000um (354 gCells)
+
+Start GR phase 0
+Number of partitions: 1 (1 x 1)
+Size of partitions: 37 gCells x 52 gCells
+[rtTop] Elapsed real time: 0:00:00 
+[rtTop] Elapsed cpu  time: sys=0:00:00 usr=0:00:00 total=0:00:00
+Current Stage stats:
+[End of Initial Routing] Elapsed real time: 0:00:00 
+[End of Initial Routing] Elapsed cpu  time: sys=0:00:00 usr=0:00:00 total=0:00:00
+[End of Initial Routing] Stage (MB): Used    0  Alloctr    0  Proc    0 
+[End of Initial Routing] Total (MB): Used   61  Alloctr   62  Proc 7958 
+Initial. Routing result:
+Initial. Both Dirs: Dmd-Cap  =     0 Max = 0 GRCs =     0 (0.00%)
+Initial. H routing: Dmd-Cap  =     0 Max = 0 (GRCs =  0) GRCs =     0 (0.00%)
+Initial. V routing: Dmd-Cap  =     0 Max = 0 (GRCs =  0) GRCs =     0 (0.00%)
+Initial. Both Dirs: Overflow =     0 Max = 0 GRCs =     0 (0.00%)
+Initial. H routing: Overflow =     0 Max = 0 (GRCs =  0) GRCs =     0 (0.00%)
+Initial. V routing: Overflow =     0 Max = 0 (GRCs =  0) GRCs =     0 (0.00%)
+Initial. M1         Overflow =     0 Max = 0 (GRCs =  0) GRCs =     0 (0.00%)
+Initial. M2         Overflow =     0 Max = 0 (GRCs =  0) GRCs =     0 (0.00%)
+Initial. M3         Overflow =     0 Max = 0 (GRCs =  0) GRCs =     0 (0.00%)
+Initial. M4         Overflow =     0 Max = 0 (GRCs =  0) GRCs =     0 (0.00%)
+Initial. M5         Overflow =     0 Max = 0 (GRCs =  0) GRCs =     0 (0.00%)
+Initial. M6         Overflow =     0 Max = 0 (GRCs =  0) GRCs =     0 (0.00%)
+Initial. M7         Overflow =     0 Max = 0 (GRCs =  0) GRCs =     0 (0.00%)
+Initial. M8         Overflow =     0 Max = 0 (GRCs =  0) GRCs =     0 (0.00%)
+Initial. M9         Overflow =     0 Max = 0 (GRCs =  0) GRCs =     0 (0.00%)
+Initial. AP         Overflow =     0 Max = 0 (GRCs =  0) GRCs =     0 (0.00%)
+
+Initial. Total Wire Length = 3556.63
+Initial. Layer M1 wire length = 0.00
+Initial. Layer M2 wire length = 71.43
+Initial. Layer M3 wire length = 3295.23
+Initial. Layer M4 wire length = 72.59
+Initial. Layer M5 wire length = 117.39
+Initial. Layer M6 wire length = 0.00
+Initial. Layer M7 wire length = 0.00
+Initial. Layer M8 wire length = 0.00
+Initial. Layer M9 wire length = 0.00
+Initial. Layer AP wire length = 0.00
+Initial. Total Number of Contacts = 230
+Initial. Via VIA12 count = 97
+Initial. Via VIA23 count = 99
+Initial. Via VIA34 count = 26
+Initial. Via VIA45 count = 8
+Initial. Via VIA56 count = 0
+Initial. Via VIA67 count = 0
+Initial. Via VIA78 count = 0
+Initial. Via VIA89 count = 0
+Initial. Via VIA910 count = 0
+Initial. completed.
+[End of Whole Chip Routing] Elapsed real time: 0:00:00 
+[End of Whole Chip Routing] Elapsed cpu  time: sys=0:00:00 usr=0:00:00 total=0:00:00
+[End of Whole Chip Routing] Stage (MB): Used   13  Alloctr   13  Proc    0 
+[End of Whole Chip Routing] Total (MB): Used   61  Alloctr   62  Proc 7958 
+[End of Global Routing] Elapsed real time: 0:00:00 
+[End of Global Routing] Elapsed cpu  time: sys=0:00:00 usr=0:00:00 total=0:00:00
+[End of Global Routing] Stage (MB): Used   13  Alloctr   13  Proc    0 
+[End of Global Routing] Total (MB): Used   61  Alloctr   61  Proc 7958 
+[End of dbOut] Elapsed real time: 0:00:00 
+[End of dbOut] Elapsed cpu  time: sys=0:00:00 usr=0:00:00 total=0:00:00
+[End of dbOut] Stage (MB): Used    0  Alloctr    0  Proc    0 
+[End of dbOut] Total (MB): Used   52  Alloctr   53  Proc 7958 
+CPU Time for Global Route: 00:00:00.27u 00:00:00.00s 00:00:00.27e: 
+Number of block ports: 131
+Number of block pin locations assigned from router: 97
+CPU Time for Pin Preparation: 00:00:00.00u 00:00:00.00s 00:00:00.00e: 
+Warning: Not enough slots available for pin placement. Ignore pin spacing constraints. (DPPA-004)
+Number of PG ports on blocks: 0
+Number of pins created: 131
+Warning: 58 pins on block top have been placed with relaxed pin spacing constraint(s). (DPPA-089)
+CPU Time for Pin Creation: 00:00:00.03u 00:00:00.00s 00:00:00.03e: 
+Total Pin Placement CPU Time: 00:00:00.31u 00:00:00.00s 00:00:00.31e: 
+Information: Result of compile_fusion / logic_opto / Auto-Floorplan (2) (FLW-8500)
+Information: Auto-Floorplan Summary (AFP-2023)
+-------------------------------------------------------------------------------
+              origin           area     boundary
+core  auto-floorplan        20838.4   { {10 10} {10 186} {128.4 186} {128.4 10} }
+die   auto-floorplan        27126.4   { {0 0} {0 196} {138.4 196} {138.4 0} }
+-------------------------------------------------------------------------------
+
+-------------------------------------------------------------------------------
+objects             total        candidates          modified         preserved                 
+voltage areas           0                 0                 0                 0
+ios                     0                 0                 0                 0
+macros                  0                 0                 0                 0
+pins                  131               131               131                 0
+-------------------------------------------------------------------------------
+Information: Ending   compile_fusion / logic_opto / Auto-Floorplan (2) (FLW-8001)
+Information: Time: 2025-05-26 21:45:17 / Session: 0.04 hr / Command: 0.01 hr / Memory: 981 MB (FLW-8100)
+
+Information: Secondary PG:  Secondary PG connections skipped because it is not a UPF design (FLW-1247)
+Compile-fusion optimization summary            SETUP-COST    R2R-COST HOLD-COST LDRC-COST          AREA     LEAKAGE     INSTCNT            ELAPSE       MEM
+Compile-fusion                                          -           -         -         -      10542.00           -        2956              0.04       980
+Information: Ending   compile_fusion / logic_opto (FLW-8001)
+Information: Time: 2025-05-26 21:45:17 / Session: 0.04 hr / Command: 0.01 hr / Memory: 981 MB (FLW-8100)
+CPU Load: 4%, Ram Free: 5 GB, Swap Free: 1 GB, Work Disk Free: 213 GB, Tmp Disk Free: 53 GB
+
+Information: >>>>>>> 10 unique error and warning message tags while observing compile_fusion / logic_opto: (MSG-3100)
+Information: #prnt #trgr #lmt    Tag  Level     Format (or last printed message)                                (MSG-3036)
+Information:     4     2  0 FLW-2224  WARNING   Warning: Duplicate callback function set for step 'fc/logic_... (MSG-3032)
+Information:    23     9  3 SQM-1067  WARNING   Warning: Mapping to scan cell 'GSDFCNQD1HPBWP' in library is... (MSG-3032)
+Information:     3     2  0 ZRT-511   WARNING   Warning: Cell contains tie connections which are not connect... (MSG-3032)
+Information:     9     6  0 ZRT-026   WARNING   Warning: Layer M9 pitch 0.800 may be too small: wire/via-dow... (MSG-3032)
+Information:     2     2  0 DPPA-089  WARNING   Warning: 58 pins on block top have been placed with relaxed ... (MSG-3032)
+Information:    10    10  0 DPPA-379  WARNING   Warning: Pin q_out[31] is placed with relaxed spacing constr... (MSG-3032)
+Information:     8     5  0 ZRT-763   WARNING   Warning: Cell counter_2/DP_OP_6_1157_55635_J2/ctmi_1033 is p... (MSG-3032)
+Information:    71    71  0 ZRT-100   WARNING   Warning: Pin enable of net enable has no valid shapes to con... (MSG-3032)
+Information:     2     2  0 DPPA-004  WARNING   Warning: Not enough slots available for pin placement. Ignor... (MSG-3032)
+Information:    27    12  0 OPT-902   WARNING   Warning: No clock routing rules were specified. Use set_cloc... (MSG-3032)
+Information:   159   121  1       10  <------   Total sum of messages (MSG-3038)
+Information: >>>>>>> Summary: 121 error&warning MSGs observed during compile_fusion / logic_opto (MSG-3103)
+
+Warning: No clock routing rules were specified. Use set_clock_routing_rules to specify routing rules for accurate clock latency estimation. (OPT-902)
+Warning: No clock routing rules were specified. Use set_clock_routing_rules to specify routing rules for accurate clock latency estimation. (OPT-902)
+Information: Estimating clock gate latencies for scenario 'scenarioSS'. (OPT-909)
+Warning: No clock routing rules were specified. Use set_clock_routing_rules to specify routing rules for accurate clock latency estimation. (OPT-902)
+Information: Estimating clock gate latencies for scenario 'scenarioFF'. (OPT-909)
+*******************************************************************************
+                             Summary of UPF Cells                              
+*******************************************************************************
+This is NOT a UPF design.
+UPF is NOT loaded.
+UPF is NOT committed.
+-------------------------------------------------------------------------------
+*******************************************************************************
+                        End of Summary of UPF Cells                            
+*******************************************************************************
+Information: Timer using 1 threads
+INFO: End environment monitoring: recipes
+INFO: Restored 0 timer status, 3 app options, 0 tcl gvars, 0 env vars
+Information: >>>>>>> 12 unique error and warning message tags while observing fusion: (MSG-3100)
+Information: #prnt #trgr #lmt    Tag  Level     Format (or last printed message)                                (MSG-3036)
+Information:     4     2  0 FLW-2224  WARNING   Warning: Duplicate callback function set for step 'fc/logic_... (MSG-3032)
+Information:     8     5  1 SQM-1074  WARNING   Warning: Shift register Inferencing is enabled so only head ... (MSG-3032)
+Information:    23    11  3 SQM-1067  WARNING   Warning: Mapping to scan cell 'GSDFCNQD1HPBWP' in library is... (MSG-3032)
+Information:     8     5  1 SQM-1040  WARNING   Warning: No cell bus will be mapped to multibit because ther... (MSG-3032)
+Information:     3     2  0 ZRT-511   WARNING   Warning: Cell contains tie connections which are not connect... (MSG-3032)
+Information:     9     6  0 ZRT-026   WARNING   Warning: Layer M9 pitch 0.800 may be too small: wire/via-dow... (MSG-3032)
+Information:     2     2  0 DPPA-089  WARNING   Warning: 58 pins on block top have been placed with relaxed ... (MSG-3032)
+Information:    10    10  0 DPPA-379  WARNING   Warning: Pin q_out[31] is placed with relaxed spacing constr... (MSG-3032)
+Information:     8     5  0 ZRT-763   WARNING   Warning: Cell counter_2/DP_OP_6_1157_55635_J2/ctmi_1033 is p... (MSG-3032)
+Information:    71    71  0 ZRT-100   WARNING   Warning: Pin enable of net enable has no valid shapes to con... (MSG-3032)
+Information:     2     2  0 DPPA-004  WARNING   Warning: Not enough slots available for pin placement. Ignor... (MSG-3032)
+Information:    30    15  0 OPT-902   WARNING   Warning: No clock routing rules were specified. Use set_cloc... (MSG-3032)
+Information:   178   136  3       12  <------   Total sum of messages (MSG-3038)
+Information: >>>>>>> Summary: 136 error&warning MSGs observed during fusion (MSG-3103)
+Information: Ending   'compile_fusion -to logic_opto' (FLW-8001)
+Information: Time: 2025-05-26 21:45:18 / Session: 0.04 hr / Command: 0.01 hr / Memory: 981 MB (FLW-8100)
+CPU Load: 4%, Ram Free: 5 GB, Swap Free: 1 GB, Work Disk Free: 213 GB, Tmp Disk Free: 53 GB
+1
+#### -----  Analyze the design and collect reports ----- ####
+report_congestion -rerun_global_router
+
+Running global router for congestion map ...
+Info: Set app option 'route.global.deterministic' to on
+
+Start Global Route ... 
+[Init] Elapsed real time: 0:00:00 
+[Init] Elapsed cpu  time: sys=0:00:00 usr=0:00:00 total=0:00:00
+[Init] Stage (MB): Used    0  Alloctr    0  Proc    0 
+[Init] Total (MB): Used    7  Alloctr    7  Proc 7958 
+Printing options for 'route.common.*'
+
+Printing options for 'route.global.*'
+global.deterministic                                    :	 on                  
+
+Begin global routing.
+Warning: Cell contains tie connections which are not connected to real PG. (ZRT-511)
+Cell Min-Routing-Layer = M2
+Cell Max-Routing-Layer = M6
+Found antenna rule mode 1, diode mode 4:
+	layer M1: , diode ratio {0 0 1 0 0} 
+	layer M2: , diode ratio {0 0 1 0 0} 
+	layer M3: , diode ratio {0 0 1 0 0} 
+	layer M4: , diode ratio {0 0 1 0 0} 
+	layer M5: , diode ratio {0 0 1 0 0} 
+	layer M6: , diode ratio {0 0 1 0 0} 
+	layer M7: , diode ratio {0 0 1 0 0} 
+	layer M8: , diode ratio {0 0 1 0 0} 
+	layer M9:  max ratio 5000, diode ratio {0.06 0 8000 50000} 
+	layer AP: , diode ratio {0 0 1 0 0} 
+	layer CO: , diode ratio {0 0 1 0 0} 
+	layer VIA1:  max ratio 20, diode ratio {0 0 1 0 0} 
+	layer VIA2:  max ratio 20, diode ratio {0 0 1 0 0} 
+	layer VIA3:  max ratio 20, diode ratio {0 0 1 0 0} 
+	layer VIA4:  max ratio 20, diode ratio {0 0 1 0 0} 
+	layer VIA5:  max ratio 20, diode ratio {0 0 1 0 0} 
+	layer VIA6:  max ratio 20, diode ratio {0 0 1 0 0} 
+	layer VIA7:  max ratio 20, diode ratio {0 0 1 0 0} 
+	layer VIA8:  max ratio 20, diode ratio {0 0 1 0 0} 
+	layer RV:  max ratio 200, diode ratio {0.06 0 83 400} 
+Found antenna rule mode 2, diode mode 4:
+	layer M1:  max ratio 5000 metal scale 1, diode ratio {0.06 0 456 43000} 
+	layer M2:  max ratio 5000 metal scale 1, diode ratio {0.06 0 456 43000} 
+	layer M3:  max ratio 5000 metal scale 1, diode ratio {0.06 0 456 43000} 
+	layer M4:  max ratio 5000 metal scale 1, diode ratio {0.06 0 456 43000} 
+	layer M5:  max ratio 5000 metal scale 1, diode ratio {0.06 0 456 43000} 
+	layer M6:  max ratio 5000 metal scale 1, diode ratio {0.06 0 456 43000} 
+	layer M7:  max ratio 5000 metal scale 1, diode ratio {0.06 0 456 43000} 
+	layer M8:  max ratio 5000 metal scale 1, diode ratio {0.06 0 456 43000} 
+	layer M9:  max ratio 5000 metal scale 1, diode ratio {0 1 0 0} 
+	layer AP:  metal scale 1, diode ratio {0 0 1 0 0} 
+	layer CO: , diode ratio {0 0 1 0 0} 
+	layer VIA1:  max ratio 900 cut scale 1, diode ratio {0.06 0 210 900} 
+	layer VIA2:  max ratio 900 cut scale 1, diode ratio {0.06 0 210 900} 
+	layer VIA3:  max ratio 900 cut scale 1, diode ratio {0.06 0 210 900} 
+	layer VIA4:  max ratio 900 cut scale 1, diode ratio {0.06 0 210 900} 
+	layer VIA5:  max ratio 900 cut scale 1, diode ratio {0.06 0 210 900} 
+	layer VIA6:  max ratio 900 cut scale 1, diode ratio {0.06 0 210 900} 
+	layer VIA7:  max ratio 900 cut scale 1, diode ratio {0.06 0 210 900} 
+	layer VIA8:  max ratio 900 cut scale 1, diode ratio {0.06 0 210 900} 
+	layer RV:  cut scale 1, diode ratio {0 0 1 0 0} 
+Found antenna rule mode 4, diode mode 4:
+	layer M1: , diode ratio {0 0 1 0 0} 
+	layer M2: , diode ratio {0 0 1 0 0} 
+	layer M3: , diode ratio {0 0 1 0 0} 
+	layer M4: , diode ratio {0 0 1 0 0} 
+	layer M5: , diode ratio {0 0 1 0 0} 
+	layer M6: , diode ratio {0 0 1 0 0} 
+	layer M7: , diode ratio {0 0 1 0 0} 
+	layer M8: , diode ratio {0 0 1 0 0} 
+	layer M9: , diode ratio {0 0 1 0 0} 
+	layer AP:  max ratio 2000, diode ratio {0.06 0 8000 30000} 
+	layer CO: , diode ratio {0 0 1 0 0} 
+	layer VIA1: , diode ratio {0 0 1 0 0} 
+	layer VIA2: , diode ratio {0 0 1 0 0} 
+	layer VIA3: , diode ratio {0 0 1 0 0} 
+	layer VIA4: , diode ratio {0 0 1 0 0} 
+	layer VIA5: , diode ratio {0 0 1 0 0} 
+	layer VIA6: , diode ratio {0 0 1 0 0} 
+	layer VIA7: , diode ratio {0 0 1 0 0} 
+	layer VIA8: , diode ratio {0 0 1 0 0} 
+	layer RV: , diode ratio {0 0 1 0 0} 
+Information: Option route.detail.force_end_on_preferred_grid will be ignored since none of the layers have preferred grid. (ZRT-703)
+Warning: Ignore 2 top cell ports with no pins. (ZRT-027)
+Skipping 1 internal pins that are not physical. Set route.common.verbose_level to > 0 and run routing command to get skipped pin names.
+Info: number of net_type_blockage: 0 
+Information: Via ladder engine would be activated for pattern must join connection in certain commands. Please refer to man-page for the command list. (ZRT-619)
+Via on layer (VIA1) needs more than one tracks
+Warning: Layer M1 pitch 0.200 may be too small: wire/via-down 0.180, wire/via-up 0.225. (ZRT-026)
+Via on layer (VIA7) needs more than one tracks
+Warning: Layer M7 pitch 0.200 may be too small: wire/via-down 0.200, wire/via-up 0.350. (ZRT-026)
+Via on layer (RV) needs more than one tracks
+Warning: Layer M9 pitch 0.800 may be too small: wire/via-down 0.800, wire/via-up 3.600. (ZRT-026)
+Information: When applicable Min-max layer allow_pin_connection mode will allow paths of length 3.35 outside the layer range. (ZRT-707)
+Information: When applicable Min-max layer allow_pin_connection mode will allow paths of length 3.35 outside the layer range on clock nets. (ZRT-718)
+Information: When applicable layer based tapering will taper up to 0.00 in distance from the pin. (ZRT-706)
+Warning: Cell counter_3/ctmi_3145 is placed overlapping with other cells at {{34.442 30.133} {35.642 32.133}}. (ZRT-763)
+Warning: Cell voter/A302 is placed overlapping with other cells at {{127.299 20.499} {128.099 22.499}}. (ZRT-763)
+Warning: Cell ne_46/phfnr_buf_4949 is placed overlapping with other cells at {{32.905 79.887} {33.505 81.887}}. (ZRT-763)
+Warning: Cell ne_48/phfnr_buf_4999 is placed overlapping with other cells at {{117.093 82.060} {117.693 84.060}}. (ZRT-763)
+Current Stage stats:
+[End of Read DB] Elapsed real time: 0:00:00 
+[End of Read DB] Elapsed cpu  time: sys=0:00:00 usr=0:00:00 total=0:00:00
+[End of Read DB] Stage (MB): Used   23  Alloctr   23  Proc    0 
+[End of Read DB] Total (MB): Used   30  Alloctr   31  Proc 7958 
+Constructing data structure ...
+Design statistics:
+Design Bounding Box (0.00um,0.00um,138.40um,196.00um)
+Number of routing layers = 10
+layer M1, dir Hor, min width = 0.09um, min space = 0.09um pitch = 0.2um
+layer M2, dir Ver, min width = 0.1um, min space = 0.1um pitch = 0.2um
+layer M3, dir Hor, min width = 0.1um, min space = 0.1um pitch = 0.2um
+layer M4, dir Ver, min width = 0.1um, min space = 0.1um pitch = 0.2um
+layer M5, dir Hor, min width = 0.1um, min space = 0.1um pitch = 0.2um
+layer M6, dir Ver, min width = 0.1um, min space = 0.1um pitch = 0.2um
+layer M7, dir Hor, min width = 0.1um, min space = 0.1um pitch = 0.2um
+layer M8, dir Ver, min width = 0.4um, min space = 0.4um pitch = 0.8um
+layer M9, dir Hor, min width = 0.4um, min space = 0.4um pitch = 0.8um
+layer AP, dir Ver, min width = 3um, min space = 2um pitch = 6.5um
+Current Stage stats:
+[End of Build Tech Data] Elapsed real time: 0:00:00 
+[End of Build Tech Data] Elapsed cpu  time: sys=0:00:00 usr=0:00:00 total=0:00:00
+[End of Build Tech Data] Stage (MB): Used    1  Alloctr    0  Proc    0 
+[End of Build Tech Data] Total (MB): Used   31  Alloctr   32  Proc 7958 
+Warning: Power net VSS has no power preroutes, skip tie-off. (ZRT-101)
+Net statistics:
+Total number of nets     = 2964
+Number of nets to route  = 2953
+Number of single or zero port nets = 3
+8 nets are fully connected,
+ of which 8 are detail routed and 0 are global routed.
+Net length statistics: 
+Net Count(Ignore Fully Rted) 2953, Total Half Perimeter Wire Length (HPWL) 46772 microns
+HPWL   0 ~   50 microns: Net Count     2815	Total HPWL        33835 microns
+HPWL  50 ~  100 microns: Net Count      110	Total HPWL         7518 microns
+HPWL 100 ~  200 microns: Net Count       15	Total HPWL         2030 microns
+HPWL 200 ~  300 microns: Net Count       12	Total HPWL         3054 microns
+HPWL 300 ~  400 microns: Net Count        1	Total HPWL          334 microns
+HPWL 400 ~  500 microns: Net Count        0	Total HPWL            0 microns
+HPWL 500 ~  600 microns: Net Count        0	Total HPWL            0 microns
+HPWL 600 ~  700 microns: Net Count        0	Total HPWL            0 microns
+HPWL 700 ~  800 microns: Net Count        0	Total HPWL            0 microns
+HPWL 800 ~  900 microns: Net Count        0	Total HPWL            0 microns
+HPWL 900 ~ 1000 microns: Net Count        0	Total HPWL            0 microns
+HPWL     > 1000 microns: Net Count        0	Total HPWL            0 microns
+Current Stage stats:
+[End of Build All Nets] Elapsed real time: 0:00:00 
+[End of Build All Nets] Elapsed cpu  time: sys=0:00:00 usr=0:00:00 total=0:00:00
+[End of Build All Nets] Stage (MB): Used    2  Alloctr    2  Proc    0 
+[End of Build All Nets] Total (MB): Used   33  Alloctr   34  Proc 7958 
+Number of partitions: 1 (1 x 1)
+Size of partitions: 69 gCells x 98 gCells
+Average gCell capacity  3.54	 on layer (1)	 M1
+Average gCell capacity  10.01	 on layer (2)	 M2
+Average gCell capacity  9.97	 on layer (3)	 M3
+Average gCell capacity  10.01	 on layer (4)	 M4
+Average gCell capacity  9.99	 on layer (5)	 M5
+Average gCell capacity  10.01	 on layer (6)	 M6
+Average gCell capacity  9.99	 on layer (7)	 M7
+Average gCell capacity  0.00	 on layer (8)	 M8
+Average gCell capacity  0.00	 on layer (9)	 M9
+Average gCell capacity  0.00	 on layer (10)	 AP
+Average number of tracks per gCell 10.01	 on layer (1)	 M1
+Average number of tracks per gCell 10.04	 on layer (2)	 M2
+Average number of tracks per gCell 10.01	 on layer (3)	 M3
+Average number of tracks per gCell 10.04	 on layer (4)	 M4
+Average number of tracks per gCell 10.01	 on layer (5)	 M5
+Average number of tracks per gCell 10.04	 on layer (6)	 M6
+Average number of tracks per gCell 10.01	 on layer (7)	 M7
+Average number of tracks per gCell 2.52	 on layer (8)	 M8
+Average number of tracks per gCell 2.51	 on layer (9)	 M9
+Average number of tracks per gCell 0.32	 on layer (10)	 AP
+Number of gCells = 67620
+Current Stage stats:
+[End of Build Congestion Map] Elapsed real time: 0:00:00 
+[End of Build Congestion Map] Elapsed cpu  time: sys=0:00:00 usr=0:00:00 total=0:00:00
+[End of Build Congestion Map] Stage (MB): Used    1  Alloctr    1  Proc    0 
+[End of Build Congestion Map] Total (MB): Used   35  Alloctr   35  Proc 7958 
+Current Stage stats:
+[End of Add Nets Demand] Elapsed real time: 0:00:00 
+[End of Add Nets Demand] Elapsed cpu  time: sys=0:00:00 usr=0:00:00 total=0:00:00
+[End of Add Nets Demand] Stage (MB): Used    0  Alloctr    0  Proc    0 
+[End of Add Nets Demand] Total (MB): Used   35  Alloctr   35  Proc 7958 
+Number of user frozen nets = 0
+Total stats:
+[End of Build Data] Elapsed real time: 0:00:00 
+[End of Build Data] Elapsed cpu  time: sys=0:00:00 usr=0:00:00 total=0:00:00
+[End of Build Data] Stage (MB): Used    4  Alloctr    4  Proc    0 
+[End of Build Data] Total (MB): Used   35  Alloctr   35  Proc 7958 
+Number of partitions: 1 (1 x 1)
+Size of partitions: 69 gCells x 98 gCells
+Current Stage stats:
+[End of Blocked Pin Detection] Elapsed real time: 0:00:00 
+[End of Blocked Pin Detection] Elapsed cpu  time: sys=0:00:00 usr=0:00:00 total=0:00:00
+[End of Blocked Pin Detection] Stage (MB): Used  176  Alloctr  176  Proc   48 
+[End of Blocked Pin Detection] Total (MB): Used  211  Alloctr  211  Proc 8006 
+Information: Using 1 threads for routing. (ZRT-444)
+Information: Multiple gcell levels ON
+Information: Buffer distance is estimated to be ~1417.0000um (708 gCells)
+
+Start GR phase 0
+Number of partitions: 1 (1 x 1)
+Size of partitions: 69 gCells x 98 gCells
+[rtAllBotParts] Elapsed real time: 0:00:00 
+[rtAllBotParts] Elapsed cpu  time: sys=0:00:00 usr=0:00:00 total=0:00:00
+[rtTop] Elapsed real time: 0:00:00 
+[rtTop] Elapsed cpu  time: sys=0:00:00 usr=0:00:00 total=0:00:00
+Current Stage stats:
+[End of Initial Routing] Elapsed real time: 0:00:00 
+[End of Initial Routing] Elapsed cpu  time: sys=0:00:00 usr=0:00:00 total=0:00:00
+[End of Initial Routing] Stage (MB): Used    2  Alloctr    2  Proc    0 
+[End of Initial Routing] Total (MB): Used  213  Alloctr  214  Proc 8006 
+Initial. Routing result:
+Initial. Both Dirs: Dmd-Cap  =     0 Max = 0 GRCs =     0 (0.00%)
+Initial. H routing: Dmd-Cap  =     0 Max = 0 (GRCs =  0) GRCs =     0 (0.00%)
+Initial. V routing: Dmd-Cap  =     0 Max = 0 (GRCs =  0) GRCs =     0 (0.00%)
+Initial. Both Dirs: Overflow =    10 Max = 2 GRCs =    17 (0.13%)
+Initial. H routing: Overflow =     0 Max = 0 (GRCs =  0) GRCs =     0 (0.00%)
+Initial. V routing: Overflow =    10 Max = 2 (GRCs =  3) GRCs =    17 (0.25%)
+Initial. M1         Overflow =     0 Max = 0 (GRCs =  0) GRCs =     0 (0.00%)
+Initial. M2         Overflow =    10 Max = 2 (GRCs =  3) GRCs =    17 (0.25%)
+Initial. M3         Overflow =     0 Max = 0 (GRCs =  0) GRCs =     0 (0.00%)
+Initial. M4         Overflow =     0 Max = 0 (GRCs =  0) GRCs =     0 (0.00%)
+Initial. M5         Overflow =     0 Max = 0 (GRCs =  0) GRCs =     0 (0.00%)
+Initial. M6         Overflow =     0 Max = 0 (GRCs =  0) GRCs =     0 (0.00%)
+Initial. M7         Overflow =     0 Max = 0 (GRCs =  0) GRCs =     0 (0.00%)
+Initial. M8         Overflow =     0 Max = 0 (GRCs =  0) GRCs =     0 (0.00%)
+Initial. M9         Overflow =     0 Max = 0 (GRCs =  0) GRCs =     0 (0.00%)
+Initial. AP         Overflow =     0 Max = 0 (GRCs =  0) GRCs =     0 (0.00%)
+
+Initial. Total Wire Length = 51811.09
+Initial. Layer M1 wire length = 8.72
+Initial. Layer M2 wire length = 23869.37
+Initial. Layer M3 wire length = 26209.62
+Initial. Layer M4 wire length = 1723.38
+Initial. Layer M5 wire length = 0.00
+Initial. Layer M6 wire length = 0.00
+Initial. Layer M7 wire length = 0.00
+Initial. Layer M8 wire length = 0.00
+Initial. Layer M9 wire length = 0.00
+Initial. Layer AP wire length = 0.00
+Initial. Total Number of Contacts = 20499
+Initial. Via VIA12 count = 10867
+Initial. Via VIA23 count = 9502
+Initial. Via VIA34 count = 130
+Initial. Via VIA45 count = 0
+Initial. Via VIA56 count = 0
+Initial. Via VIA67 count = 0
+Initial. Via VIA78 count = 0
+Initial. Via VIA89 count = 0
+Initial. Via VIA910 count = 0
+Initial. completed.
+
+Start GR phase 1
+Mon May 26 21:45:19 2025
+Number of partitions: 1 (1 x 1)
+Size of partitions: 69 gCells x 98 gCells
+[rtAllParts] Elapsed real time: 0:00:00 
+[rtAllParts] Elapsed cpu  time: sys=0:00:00 usr=0:00:00 total=0:00:00
+Current Stage stats:
+[End of Phase1 Routing] Elapsed real time: 0:00:00 
+[End of Phase1 Routing] Elapsed cpu  time: sys=0:00:00 usr=0:00:00 total=0:00:00
+[End of Phase1 Routing] Stage (MB): Used    0  Alloctr    0  Proc    0 
+[End of Phase1 Routing] Total (MB): Used  213  Alloctr  214  Proc 8006 
+phase1. Routing result:
+phase1. Both Dirs: Dmd-Cap  =     0 Max = 0 GRCs =     0 (0.00%)
+phase1. H routing: Dmd-Cap  =     0 Max = 0 (GRCs =  0) GRCs =     0 (0.00%)
+phase1. V routing: Dmd-Cap  =     0 Max = 0 (GRCs =  0) GRCs =     0 (0.00%)
+phase1. Both Dirs: Overflow =     0 Max = 0 GRCs =     0 (0.00%)
+phase1. H routing: Overflow =     0 Max = 0 (GRCs =  0) GRCs =     0 (0.00%)
+phase1. V routing: Overflow =     0 Max = 0 (GRCs =  0) GRCs =     0 (0.00%)
+phase1. M1         Overflow =     0 Max = 0 (GRCs =  0) GRCs =     0 (0.00%)
+phase1. M2         Overflow =     0 Max = 0 (GRCs =  0) GRCs =     0 (0.00%)
+phase1. M3         Overflow =     0 Max = 0 (GRCs =  0) GRCs =     0 (0.00%)
+phase1. M4         Overflow =     0 Max = 0 (GRCs =  0) GRCs =     0 (0.00%)
+phase1. M5         Overflow =     0 Max = 0 (GRCs =  0) GRCs =     0 (0.00%)
+phase1. M6         Overflow =     0 Max = 0 (GRCs =  0) GRCs =     0 (0.00%)
+phase1. M7         Overflow =     0 Max = 0 (GRCs =  0) GRCs =     0 (0.00%)
+phase1. M8         Overflow =     0 Max = 0 (GRCs =  0) GRCs =     0 (0.00%)
+phase1. M9         Overflow =     0 Max = 0 (GRCs =  0) GRCs =     0 (0.00%)
+phase1. AP         Overflow =     0 Max = 0 (GRCs =  0) GRCs =     0 (0.00%)
+
+phase1. Total Wire Length = 51815.41
+phase1. Layer M1 wire length = 8.72
+phase1. Layer M2 wire length = 23826.09
+phase1. Layer M3 wire length = 26208.62
+phase1. Layer M4 wire length = 1771.98
+phase1. Layer M5 wire length = 0.00
+phase1. Layer M6 wire length = 0.00
+phase1. Layer M7 wire length = 0.00
+phase1. Layer M8 wire length = 0.00
+phase1. Layer M9 wire length = 0.00
+phase1. Layer AP wire length = 0.00
+phase1. Total Number of Contacts = 20524
+phase1. Via VIA12 count = 10869
+phase1. Via VIA23 count = 9509
+phase1. Via VIA34 count = 146
+phase1. Via VIA45 count = 0
+phase1. Via VIA56 count = 0
+phase1. Via VIA67 count = 0
+phase1. Via VIA78 count = 0
+phase1. Via VIA89 count = 0
+phase1. Via VIA910 count = 0
+phase1. completed.
+
+Start GR phase 2
+Mon May 26 21:45:19 2025
+Number of partitions: 1 (1 x 1)
+Size of partitions: 69 gCells x 98 gCells
+[rtAllParts] Elapsed real time: 0:00:00 
+[rtAllParts] Elapsed cpu  time: sys=0:00:00 usr=0:00:00 total=0:00:00
+[updNetsDmd] Elapsed real time: 0:00:00 
+[updNetsDmd] Elapsed cpu  time: sys=0:00:00 usr=0:00:00 total=0:00:00
+Current Stage stats:
+[End of Phase2 Routing] Elapsed real time: 0:00:00 
+[End of Phase2 Routing] Elapsed cpu  time: sys=0:00:00 usr=0:00:00 total=0:00:00
+[End of Phase2 Routing] Stage (MB): Used    0  Alloctr    0  Proc    0 
+[End of Phase2 Routing] Total (MB): Used  213  Alloctr  214  Proc 8006 
+phase2. Routing result:
+phase2. Both Dirs: Dmd-Cap  =     0 Max = 0 GRCs =     0 (0.00%)
+phase2. H routing: Dmd-Cap  =     0 Max = 0 (GRCs =  0) GRCs =     0 (0.00%)
+phase2. V routing: Dmd-Cap  =     0 Max = 0 (GRCs =  0) GRCs =     0 (0.00%)
+phase2. Both Dirs: Overflow =     0 Max = 0 GRCs =     0 (0.00%)
+phase2. H routing: Overflow =     0 Max = 0 (GRCs =  0) GRCs =     0 (0.00%)
+phase2. V routing: Overflow =     0 Max = 0 (GRCs =  0) GRCs =     0 (0.00%)
+phase2. M1         Overflow =     0 Max = 0 (GRCs =  0) GRCs =     0 (0.00%)
+phase2. M2         Overflow =     0 Max = 0 (GRCs =  0) GRCs =     0 (0.00%)
+phase2. M3         Overflow =     0 Max = 0 (GRCs =  0) GRCs =     0 (0.00%)
+phase2. M4         Overflow =     0 Max = 0 (GRCs =  0) GRCs =     0 (0.00%)
+phase2. M5         Overflow =     0 Max = 0 (GRCs =  0) GRCs =     0 (0.00%)
+phase2. M6         Overflow =     0 Max = 0 (GRCs =  0) GRCs =     0 (0.00%)
+phase2. M7         Overflow =     0 Max = 0 (GRCs =  0) GRCs =     0 (0.00%)
+phase2. M8         Overflow =     0 Max = 0 (GRCs =  0) GRCs =     0 (0.00%)
+phase2. M9         Overflow =     0 Max = 0 (GRCs =  0) GRCs =     0 (0.00%)
+phase2. AP         Overflow =     0 Max = 0 (GRCs =  0) GRCs =     0 (0.00%)
+
+phase2. Total Wire Length = 51815.41
+phase2. Layer M1 wire length = 8.72
+phase2. Layer M2 wire length = 23826.09
+phase2. Layer M3 wire length = 26208.62
+phase2. Layer M4 wire length = 1771.98
+phase2. Layer M5 wire length = 0.00
+phase2. Layer M6 wire length = 0.00
+phase2. Layer M7 wire length = 0.00
+phase2. Layer M8 wire length = 0.00
+phase2. Layer M9 wire length = 0.00
+phase2. Layer AP wire length = 0.00
+phase2. Total Number of Contacts = 20524
+phase2. Via VIA12 count = 10869
+phase2. Via VIA23 count = 9509
+phase2. Via VIA34 count = 146
+phase2. Via VIA45 count = 0
+phase2. Via VIA56 count = 0
+phase2. Via VIA67 count = 0
+phase2. Via VIA78 count = 0
+phase2. Via VIA89 count = 0
+phase2. Via VIA910 count = 0
+phase2. completed.
+Warning: Net VSS has unused floating user-enter shapes. (ZRT-113)
+[End of Whole Chip Routing] Elapsed real time: 0:00:01 
+[End of Whole Chip Routing] Elapsed cpu  time: sys=0:00:00 usr=0:00:01 total=0:00:01
+[End of Whole Chip Routing] Stage (MB): Used  182  Alloctr  182  Proc   48 
+[End of Whole Chip Routing] Total (MB): Used  213  Alloctr  214  Proc 8006 
+
+Congestion utilization per direction:
+Average vertical track utilization   = 10.35 %
+Peak    vertical track utilization   = 40.00 %
+Average horizontal track utilization =  7.59 %
+Peak    horizontal track utilization = 33.33 %
+
+[End of Global Routing] Elapsed real time: 0:00:01 
+[End of Global Routing] Elapsed cpu  time: sys=0:00:00 usr=0:00:01 total=0:00:01
+[End of Global Routing] Stage (MB): Used  181  Alloctr  181  Proc   48 
+[End of Global Routing] Total (MB): Used  212  Alloctr  213  Proc 8006 
+Writing out congestion map...
+Updating congestion ...
+Updating congestion ...
+[DBOUT] Elapsed real time: 0:00:00 
+[DBOUT] Elapsed cpu  time: sys=0:00:00 usr=0:00:00 total=0:00:00
+[DBOUT] Stage (MB): Used  -25  Alloctr  -25  Proc    0 
+[DBOUT] Total (MB): Used   36  Alloctr   37  Proc 8006 
+[End of dbOut] Elapsed real time: 0:00:00 
+[End of dbOut] Elapsed cpu  time: sys=0:00:00 usr=0:00:00 total=0:00:00
+[End of dbOut] Stage (MB): Used  -25  Alloctr  -25  Proc    0 
+[End of dbOut] Total (MB): Used   36  Alloctr   37  Proc 8006 
+
+****************************************
+Report : congestion
+Design : top
+Version: U-2022.12-SP6
+Date   : Mon May 26 21:45:19 2025
+****************************************
+
+Layer     |    overflow     |              # GRCs has
+Name      |  total  |  max  | overflow (%)      | max overflow
+---------------------------------------------------------------
+Both Dirs |       0 |     0 |       0  ( 0.00%) |       0
+H routing |       0 |     0 |       0  ( 0.00%) |       0
+V routing |       0 |     0 |       0  ( 0.00%) |       0
+
+1
+collect_reports tuned_auto_floorplan 
+Collecting reports for tuned_auto_floorplan stage...
+Reports are generated for tuned_auto_floorplan stage.
+#### ---- Save and exit ----- ####
+get_blocks -all
+{top_lib:top.design top_lib:top/rtl_read.design top_lib:top/inital_syn.design top_lib:top/auto_floorplan.design}
+save_block
+Information: Saving block 'top_lib:top/auto_floorplan.design'
+1
+save_lib
+Saving library 'top_lib'
+1
+if {[info exists ::env(NO_GUI)]} {
+    exit
+} else {
+	gui_start
+}
+Load ICV ICCII menu file: /mnt/vol_synopsys2023/synopsys/icvalidator/U-2022.12-SP4/etc/tcl-u/Icc2Menu.tcl
+ + VUE INFO: Please click View->IC Validator VUE in LayoutWindow menu
+            to launch VUE.
+
+ + VUE INFO: Found a usable port: 2446
+
+Information: 435 out of 445 POW-046 messages were not printed due to limit 10  (MSG-3913)
+fc_shell> exit
+Maximum memory usage for this session: 1028.69 MB
+Maximum memory usage for this session including child processes: 1028.69 MB
+CPU usage for this session:    137 seconds (  0.04 hours)
+Elapsed time for this session:    202 seconds (  0.06 hours)
+Thank you for using Fusion Compiler.

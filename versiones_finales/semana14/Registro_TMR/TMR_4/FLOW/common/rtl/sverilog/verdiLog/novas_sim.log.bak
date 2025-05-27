@@ -1,38 +1,108 @@
 Invoking simulator...
 
-./prueba5 -sml=verdi +UVM_VERDI_TRACE=UVM_AWARE +fsdb+gate=off -ucli2Proc -ucli
-debImport "-i" "-simflow" "-dbdir" "./prueba5.daidir"
+./results -sml=verdi +UVM_VERDI_TRACE=UVM_AWARE +fsdb+gate=off -ucli2Proc -ucli
+debImport "-i" "-simflow" "-dbdir" "./results.daidir"
 *Verdi* Loading libsscore_vcs202012.so
 
-*Verdi* : Enable RPC Server(3367954)
+*Verdi* : Enable RPC Server(3930613)
 
 srcTBInvokeSim
 Chronologic VCS simulator copyright 1991-2020
 Contains Synopsys proprietary information.
-Compiler version R-2020.12-SP2_Full64; Runtime version R-2020.12-SP2_Full64;  May 25 20:41 2025
+Compiler version R-2020.12-SP2_Full64; Runtime version R-2020.12-SP2_Full64;  May 26 22:27 2025
 xterm-256color is Not a valid terminal...
-Verdi>fsdbDumpvars 1 "universal_register_4bit_tb.dut.clk"  +all +trace_process;fsdbDumpvars 1 "universal_register_4bit_tb.dut.rst"  +all +trace_process;fsdbDumpvars 1 "universal_register_4bit_tb.dut.enable"  +all +trace_process;fsdbDumpvars 1 "universal_register_4bit_tb.dut.load"  +all +trace_process;fsdbDumpvars 1 "universal_register_4bit_tb.dut.serial_in"  +all +trace_process;fsdbDumpvars 1 "universal_register_4bit_tb.dut.mode"  +all +trace_process;fsdbDumpvars 1 "universal_register_4bit_tb.dut.parallel_in"  +all +trace_process;fsdbDumpvars 1 "universal_register_4bit_tb.dut.serial_out"  +all +trace_process;fsdbDumpvars 1 "universal_register_4bit_tb.dut.parallel_out"  +all +trace_process;fsdbDumpvars 1 "universal_register_4bit_tb.dut.parallel_out_1"  +all +trace_process;fsdbDumpvars 1 "universal_register_4bit_tb.dut.parallel_out_2"  +all +trace_process;fsdbDumpvars 1 "universal_register_4bit_tb.dut.parallel_out_3"  +all +trace_process;fsdbDumpvars 1 "universal_register_4bit_tb.dut.serial_out_1"  +all +trace_process;fsdbDumpvars 1 "universal_register_4bit_tb.dut.serial_out_2"  +all +trace_process;fsdbDumpvars 1 "universal_register_4bit_tb.dut.serial_out_3"  +all +trace_process;fsdbDumpvars 1 "universal_register_4bit_tb.dut.voted_parallel"  +all +trace_process;fsdbDumpvars 1 "universal_register_4bit_tb.dut.voted_serial"  +all +trace_process;fsdbDumpvars 1 "universal_register_4bit_tb.dut.fault_1"  +all +trace_process;fsdbDumpvars 1 "universal_register_4bit_tb.dut.fault_3"  +all +trace_process;fsdbDumpvars 1 "universal_register_4bit_tb.dut.fault_2"  +all +trace_process;fsdbDumpflush 
+Verdi>fsdbDumpvars 1 "universal_register_4bit_tb.dut.register_1.clk"  +all +trace_process;fsdbDumpvars 1 "universal_register_4bit_tb.dut.register_1.rst"  +all +trace_process;fsdbDumpvars 1 "universal_register_4bit_tb.dut.register_1.enable"  +all +trace_process;fsdbDumpvars 1 "universal_register_4bit_tb.dut.register_1.load"  +all +trace_process;fsdbDumpvars 1 "universal_register_4bit_tb.dut.register_1.serial_in"  +all +trace_process;fsdbDumpvars 1 "universal_register_4bit_tb.dut.register_1.mode"  +all +trace_process;fsdbDumpvars 1 "universal_register_4bit_tb.dut.register_1.parallel_in"  +all +trace_process;fsdbDumpvars 1 "universal_register_4bit_tb.dut.register_1.fault"  +all +trace_process;fsdbDumpvars 1 "universal_register_4bit_tb.dut.register_1.corrected_data"  +all +trace_process;fsdbDumpvars 1 "universal_register_4bit_tb.dut.register_1.serial_out"  +all +trace_process;fsdbDumpvars 1 "universal_register_4bit_tb.dut.register_1.parallel_out"  +all +trace_process;fsdbDumpvars 1 "universal_register_4bit_tb.dut.register_1.width"  +all +trace_process;fsdbDumpvars 1 "universal_register_4bit_tb.dut.register_1.reg_data"  +all +trace_process;fsdbDumpvars 1 "universal_register_4bit_tb.dut.register_1.base_data"  +all +trace_process;fsdbDumpvars 1 "universal_register_4bit_tb.dut.register_1.reg_data_next"  +all +trace_process;fsdbDumpflush 
 
-*Verdi* : Dumping the signal (universal_register_4bit_tb.dut.clk).
-*Verdi* : Dumping the signal (universal_register_4bit_tb.dut.rst).
-*Verdi* : Dumping the signal (universal_register_4bit_tb.dut.enable).
-*Verdi* : Dumping the signal (universal_register_4bit_tb.dut.load).
-*Verdi* : Dumping the signal (universal_register_4bit_tb.dut.serial_in).
-*Verdi* : Dumping the signal (universal_register_4bit_tb.dut.mode).
-*Verdi* : Dumping the signal (universal_register_4bit_tb.dut.parallel_in).
-*Verdi* : Dumping the signal (universal_register_4bit_tb.dut.serial_out).
-*Verdi* : Dumping the signal (universal_register_4bit_tb.dut.parallel_out).
-*Verdi* : Dumping the signal (universal_register_4bit_tb.dut.parallel_out_1).
-*Verdi* : Dumping the signal (universal_register_4bit_tb.dut.parallel_out_2).
-*Verdi* : Dumping the signal (universal_register_4bit_tb.dut.parallel_out_3).
-*Verdi* : Dumping the signal (universal_register_4bit_tb.dut.serial_out_1).
-*Verdi* : Dumping the signal (universal_register_4bit_tb.dut.serial_out_2).
-*Verdi* : Dumping the signal (universal_register_4bit_tb.dut.serial_out_3).
-*Verdi* : Dumping the signal (universal_register_4bit_tb.dut.voted_parallel).
-*Verdi* : Dumping the signal (universal_register_4bit_tb.dut.voted_serial).
-*Verdi* : Dumping the signal (universal_register_4bit_tb.dut.fault_1).
+*Verdi* : Dumping the signal (universal_register_4bit_tb.dut.register_1.clk).
+*Verdi* : Dumping the signal (universal_register_4bit_tb.dut.register_1.rst).
+*Verdi* : Dumping the signal (universal_register_4bit_tb.dut.register_1.enable).
+*Verdi* : Dumping the signal (universal_register_4bit_tb.dut.register_1.load).
+*Verdi* : Dumping the signal (universal_register_4bit_tb.dut.register_1.serial_in).
+*Verdi* : Dumping the signal (universal_register_4bit_tb.dut.register_1.mode).
+*Verdi* : Dumping the signal (universal_register_4bit_tb.dut.register_1.parallel_in).
+*Verdi* : Dumping the signal (universal_register_4bit_tb.dut.register_1.fault).
+*Verdi* : Dumping the signal (universal_register_4bit_tb.dut.register_1.corrected_data).
+*Verdi* : Dumping the signal (universal_register_4bit_tb.dut.register_1.serial_out).
+*Verdi* : Dumping the signal (universal_register_4bit_tb.dut.register_1.parallel_out).
+*Verdi* : Dumping the signal (universal_register_4bit_tb.dut.register_1.width).
+*Verdi* : Dumping the signal (universal_register_4bit_tb.dut.register_1.reg_data).
+*Verdi* : Dumping the signal (universal_register_4bit_tb.dut.register_1.base_data).
+*Verdi* : Dumping the signal (universal_register_4bit_tb.dut.register_1.reg_data_next).
+*Verdi* : Flush all FSDB Files at 0 ps.
+
+Verdi>fsdbDumpvars 1 "universal_register_4bit_tb.dut.register_2.base_data"  +all +trace_process;fsdbDumpvars 1 "universal_register_4bit_tb.dut.register_2.reg_data_next"  +all +trace_process;fsdbDumpvars 1 "universal_register_4bit_tb.dut.register_2.reg_data"  +all +trace_process;fsdbDumpvars 1 "universal_register_4bit_tb.dut.register_2.width"  +all +trace_process;fsdbDumpvars 1 "universal_register_4bit_tb.dut.register_2.parallel_out"  +all +trace_process;fsdbDumpvars 1 "universal_register_4bit_tb.dut.register_2.serial_out"  +all +trace_process;fsdbDumpvars 1 "universal_register_4bit_tb.dut.register_2.corrected_data"  +all +trace_process;fsdbDumpvars 1 "universal_register_4bit_tb.dut.register_2.fault"  +all +trace_process;fsdbDumpvars 1 "universal_register_4bit_tb.dut.register_2.parallel_in"  +all +trace_process;fsdbDumpvars 1 "universal_register_4bit_tb.dut.register_2.mode"  +all +trace_process;fsdbDumpvars 1 "universal_register_4bit_tb.dut.register_2.serial_in"  +all +trace_process;fsdbDumpvars 1 "universal_register_4bit_tb.dut.register_2.load"  +all +trace_process;fsdbDumpvars 1 "universal_register_4bit_tb.dut.register_2.enable"  +all +trace_process;fsdbDumpvars 1 "universal_register_4bit_tb.dut.register_2.rst"  +all +trace_process;fsdbDumpvars 1 "universal_register_4bit_tb.dut.register_2.clk"  +all +trace_process;fsdbDumpflush 
+
+*Verdi* : Dumping the signal (universal_register_4bit_tb.dut.register_2.base_data).
+*Verdi* : Dumping the signal (universal_register_4bit_tb.dut.register_2.reg_data_next).
+*Verdi* : Dumping the signal (universal_register_4bit_tb.dut.register_2.reg_data).
+*Verdi* : Dumping the signal (universal_register_4bit_tb.dut.register_2.width).
+*Verdi* : Dumping the signal (universal_register_4bit_tb.dut.register_2.parallel_out).
+*Verdi* : Dumping the signal (universal_register_4bit_tb.dut.register_2.serial_out).
+*Verdi* : Dumping the signal (universal_register_4bit_tb.dut.register_2.corrected_data).
+*Verdi* : Dumping the signal (universal_register_4bit_tb.dut.register_2.fault).
+*Verdi* : Dumping the signal (universal_register_4bit_tb.dut.register_2.parallel_in).
+*Verdi* : Dumping the signal (universal_register_4bit_tb.dut.register_2.mode).
+*Verdi* : Dumping the signal (universal_register_4bit_tb.dut.register_2.serial_in).
+*Verdi* : Dumping the signal (universal_register_4bit_tb.dut.register_2.load).
+*Verdi* : Dumping the signal (universal_register_4bit_tb.dut.register_2.enable).
+*Verdi* : Dumping the signal (universal_register_4bit_tb.dut.register_2.rst).
+*Verdi* : Dumping the signal (universal_register_4bit_tb.dut.register_2.clk).
+*Verdi* : Flush all FSDB Files at 0 ps.
+
+Verdi>fsdbDumpvars 1 "universal_register_4bit_tb.dut.fault_3"  +all +trace_process;fsdbDumpvars 1 "universal_register_4bit_tb.dut.fault_2"  +all +trace_process;fsdbDumpvars 1 "universal_register_4bit_tb.dut.fault_1"  +all +trace_process;fsdbDumpvars 1 "universal_register_4bit_tb.dut.voted_serial"  +all +trace_process;fsdbDumpvars 1 "universal_register_4bit_tb.dut.voted_parallel"  +all +trace_process;fsdbDumpvars 1 "universal_register_4bit_tb.dut.serial_out_3"  +all +trace_process;fsdbDumpvars 1 "universal_register_4bit_tb.dut.serial_out_2"  +all +trace_process;fsdbDumpvars 1 "universal_register_4bit_tb.dut.serial_out_1"  +all +trace_process;fsdbDumpvars 1 "universal_register_4bit_tb.dut.parallel_out_3"  +all +trace_process;fsdbDumpvars 1 "universal_register_4bit_tb.dut.parallel_out_2"  +all +trace_process;fsdbDumpvars 1 "universal_register_4bit_tb.dut.parallel_out_1"  +all +trace_process;fsdbDumpvars 1 "universal_register_4bit_tb.dut.width"  +all +trace_process;fsdbDumpvars 1 "universal_register_4bit_tb.dut.parallel_out"  +all +trace_process;fsdbDumpvars 1 "universal_register_4bit_tb.dut.serial_out"  +all +trace_process;fsdbDumpvars 1 "universal_register_4bit_tb.dut.parallel_in"  +all +trace_process;fsdbDumpvars 1 "universal_register_4bit_tb.dut.mode"  +all +trace_process;fsdbDumpvars 1 "universal_register_4bit_tb.dut.serial_in"  +all +trace_process;fsdbDumpvars 1 "universal_register_4bit_tb.dut.load"  +all +trace_process;fsdbDumpvars 1 "universal_register_4bit_tb.dut.enable"  +all +trace_process;fsdbDumpvars 1 "universal_register_4bit_tb.dut.rst"  +all +trace_process;fsdbDumpvars 1 "universal_register_4bit_tb.dut.clk"  +all +trace_process;fsdbDumpflush 
+
 *Verdi* : Dumping the signal (universal_register_4bit_tb.dut.fault_3).
 *Verdi* : Dumping the signal (universal_register_4bit_tb.dut.fault_2).
+*Verdi* : Dumping the signal (universal_register_4bit_tb.dut.fault_1).
+*Verdi* : Dumping the signal (universal_register_4bit_tb.dut.voted_serial).
+*Verdi* : Dumping the signal (universal_register_4bit_tb.dut.voted_parallel).
+*Verdi* : Dumping the signal (universal_register_4bit_tb.dut.serial_out_3).
+*Verdi* : Dumping the signal (universal_register_4bit_tb.dut.serial_out_2).
+*Verdi* : Dumping the signal (universal_register_4bit_tb.dut.serial_out_1).
+*Verdi* : Dumping the signal (universal_register_4bit_tb.dut.parallel_out_3).
+*Verdi* : Dumping the signal (universal_register_4bit_tb.dut.parallel_out_2).
+*Verdi* : Dumping the signal (universal_register_4bit_tb.dut.parallel_out_1).
+*Verdi* : Dumping the signal (universal_register_4bit_tb.dut.width).
+*Verdi* : Dumping the signal (universal_register_4bit_tb.dut.parallel_out).
+*Verdi* : Dumping the signal (universal_register_4bit_tb.dut.serial_out).
+*Verdi* : Dumping the signal (universal_register_4bit_tb.dut.parallel_in).
+*Verdi* : Dumping the signal (universal_register_4bit_tb.dut.mode).
+*Verdi* : Dumping the signal (universal_register_4bit_tb.dut.serial_in).
+*Verdi* : Dumping the signal (universal_register_4bit_tb.dut.load).
+*Verdi* : Dumping the signal (universal_register_4bit_tb.dut.enable).
+*Verdi* : Dumping the signal (universal_register_4bit_tb.dut.rst).
+*Verdi* : Dumping the signal (universal_register_4bit_tb.dut.clk).
+*Verdi* : Flush all FSDB Files at 0 ps.
+
+Verdi>fsdbDumpvars 1 "universal_register_4bit_tb.dut.register_3.base_data"  +all +trace_process;fsdbDumpvars 1 "universal_register_4bit_tb.dut.register_3.reg_data_next"  +all +trace_process;fsdbDumpvars 1 "universal_register_4bit_tb.dut.register_3.reg_data"  +all +trace_process;fsdbDumpvars 1 "universal_register_4bit_tb.dut.register_3.width"  +all +trace_process;fsdbDumpvars 1 "universal_register_4bit_tb.dut.register_3.parallel_out"  +all +trace_process;fsdbDumpvars 1 "universal_register_4bit_tb.dut.register_3.serial_out"  +all +trace_process;fsdbDumpvars 1 "universal_register_4bit_tb.dut.register_3.corrected_data"  +all +trace_process;fsdbDumpvars 1 "universal_register_4bit_tb.dut.register_3.fault"  +all +trace_process;fsdbDumpvars 1 "universal_register_4bit_tb.dut.register_3.parallel_in"  +all +trace_process;fsdbDumpvars 1 "universal_register_4bit_tb.dut.register_3.mode"  +all +trace_process;fsdbDumpvars 1 "universal_register_4bit_tb.dut.register_3.serial_in"  +all +trace_process;fsdbDumpvars 1 "universal_register_4bit_tb.dut.register_3.load"  +all +trace_process;fsdbDumpvars 1 "universal_register_4bit_tb.dut.register_3.enable"  +all +trace_process;fsdbDumpvars 1 "universal_register_4bit_tb.dut.register_3.rst"  +all +trace_process;fsdbDumpvars 1 "universal_register_4bit_tb.dut.register_3.clk"  +all +trace_process;fsdbDumpflush 
+
+*Verdi* : Dumping the signal (universal_register_4bit_tb.dut.register_3.base_data).
+*Verdi* : Dumping the signal (universal_register_4bit_tb.dut.register_3.reg_data_next).
+*Verdi* : Dumping the signal (universal_register_4bit_tb.dut.register_3.reg_data).
+*Verdi* : Dumping the signal (universal_register_4bit_tb.dut.register_3.width).
+*Verdi* : Dumping the signal (universal_register_4bit_tb.dut.register_3.parallel_out).
+*Verdi* : Dumping the signal (universal_register_4bit_tb.dut.register_3.serial_out).
+*Verdi* : Dumping the signal (universal_register_4bit_tb.dut.register_3.corrected_data).
+*Verdi* : Dumping the signal (universal_register_4bit_tb.dut.register_3.fault).
+*Verdi* : Dumping the signal (universal_register_4bit_tb.dut.register_3.parallel_in).
+*Verdi* : Dumping the signal (universal_register_4bit_tb.dut.register_3.mode).
+*Verdi* : Dumping the signal (universal_register_4bit_tb.dut.register_3.serial_in).
+*Verdi* : Dumping the signal (universal_register_4bit_tb.dut.register_3.load).
+*Verdi* : Dumping the signal (universal_register_4bit_tb.dut.register_3.enable).
+*Verdi* : Dumping the signal (universal_register_4bit_tb.dut.register_3.rst).
+*Verdi* : Dumping the signal (universal_register_4bit_tb.dut.register_3.clk).
+*Verdi* : Flush all FSDB Files at 0 ps.
+
+Verdi>fsdbDumpvars 1 "universal_register_4bit_tb.dut.voter_inst.parallel_out_1"  +all +trace_process;fsdbDumpvars 1 "universal_register_4bit_tb.dut.voter_inst.parallel_out_2"  +all +trace_process;fsdbDumpvars 1 "universal_register_4bit_tb.dut.voter_inst.parallel_out_3"  +all +trace_process;fsdbDumpvars 1 "universal_register_4bit_tb.dut.voter_inst.serial_out_1"  +all +trace_process;fsdbDumpvars 1 "universal_register_4bit_tb.dut.voter_inst.serial_out_2"  +all +trace_process;fsdbDumpvars 1 "universal_register_4bit_tb.dut.voter_inst.serial_out_3"  +all +trace_process;fsdbDumpvars 1 "universal_register_4bit_tb.dut.voter_inst.parallel_out_voted"  +all +trace_process;fsdbDumpvars 1 "universal_register_4bit_tb.dut.voter_inst.serial_out_voted"  +all +trace_process;fsdbDumpflush 
+
+*Verdi* : Dumping the signal (universal_register_4bit_tb.dut.voter_inst.parallel_out_1).
+*Verdi* : Dumping the signal (universal_register_4bit_tb.dut.voter_inst.parallel_out_2).
+*Verdi* : Dumping the signal (universal_register_4bit_tb.dut.voter_inst.parallel_out_3).
+*Verdi* : Dumping the signal (universal_register_4bit_tb.dut.voter_inst.serial_out_1).
+*Verdi* : Dumping the signal (universal_register_4bit_tb.dut.voter_inst.serial_out_2).
+*Verdi* : Dumping the signal (universal_register_4bit_tb.dut.voter_inst.serial_out_3).
+*Verdi* : Dumping the signal (universal_register_4bit_tb.dut.voter_inst.parallel_out_voted).
+*Verdi* : Dumping the signal (universal_register_4bit_tb.dut.voter_inst.serial_out_voted).
 *Verdi* : Flush all FSDB Files at 0 ps.
 
 Verdi>run
@@ -47,12 +117,36 @@ Test 4: Modo PIPO
 Inyectando errores en reg_parallel de u0 y u2 antes de la carga
 
 Test 2: Modo SIPO
-$finish called from file "tb3.sv", line 140.
-$finish at simulation time               445000
-Simulation complete, time is 445000 ps.
-tb3.sv, 140 :     #20 $finish;
+$finish called from file "tb_sin_errores.sv", line 120.
+$finish at simulation time               455000
+Simulation complete, time is 455000 ps.
+tb_sin_errores.sv, 120 :     #20 $finish;
+Verdi>fsdbDumpvars 1 "universal_register_4bit_tb.dut.register_1"  +all +trace_process;fsdbDumpflush 
+
+*Verdi* : Begin traversing the scope (universal_register_4bit_tb.dut.register_1), layer (1).
+*Verdi* : Enable +trace_process and +all dumping.
+*Verdi* : End of traversing.
+*Verdi* : Flush all FSDB Files at 455,000 ps.
+
+Verdi>fsdbDumpvars 1 "universal_register_4bit_tb.dut.register_2"  +all +trace_process;fsdbDumpflush 
+
+*Verdi* : Begin traversing the scope (universal_register_4bit_tb.dut.register_2), layer (1).
+*Verdi* : Enable +trace_process and +all dumping.
+*Verdi* : End of traversing.
+*Verdi* : Flush all FSDB Files at 455,000 ps.
+
+Verdi>fsdbDumpvars 1 "universal_register_4bit_tb.dut.register_3"  +all +trace_process;fsdbDumpflush 
+
+*Verdi* : Begin traversing the scope (universal_register_4bit_tb.dut.register_3), layer (1).
+*Verdi* : Enable +trace_process and +all dumping.
+*Verdi* : End of traversing.
+*Verdi* : Flush all FSDB Files at 455,000 ps.
+
            V C S   S i m u l a t i o n   R e p o r t 
-Time: 445000 ps
-CPU Time:      0.110 seconds;       Data structure size:   0.0Mb
-Sun May 25 20:47:13 2025
+Time: 455000 ps
+CPU Time:      0.560 seconds;       Data structure size:   0.0Mb
+Mon May 26 22:42:19 2025
+
+<VERDI_Terminated>
+
 debExit

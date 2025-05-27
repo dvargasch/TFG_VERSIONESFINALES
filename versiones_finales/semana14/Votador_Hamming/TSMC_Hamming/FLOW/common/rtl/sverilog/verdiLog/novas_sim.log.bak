@@ -1,0 +1,57 @@
+Invoking simulator...
+
+./prueba_2 -sml=verdi +UVM_VERDI_TRACE=UVM_AWARE +fsdb+gate=off -ucli2Proc -ucli
+debImport "-i" "-simflow" "-dbdir" "./prueba_2.daidir"
+*Verdi* Loading libsscore_vcs202303.so
+
+*Verdi* : Enable RPC Server(152745)
+
+srcTBInvokeSim
+Chronologic VCS simulator copyright 1991-2023
+Contains Synopsys proprietary information.
+Compiler version U-2023.03-SP2_Full64; Runtime version U-2023.03-SP2_Full64;  May 20 13:36 2025
+xterm-256color is Not a valid terminal...
+Verdi>fsdbDumpvars 1 "tb_top_module.data_1"  +all +trace_process;fsdbDumpvars 1 "tb_top_module.data_2"  +all +trace_process;fsdbDumpvars 1 "tb_top_module.data_3"  +all +trace_process;fsdbDumpflush 
+
+*Verdi* : Dumping the signal (tb_top_module.data_1).
+*Verdi* : Dumping the signal (tb_top_module.data_2).
+*Verdi* : Dumping the signal (tb_top_module.data_3).
+*Verdi* : Flush all FSDB Files at 0 ps.
+
+Verdi>fsdbDumpvars 1 "tb_top_module.dut.voter_inst.coded_data_2"  +all +trace_process;fsdbDumpvars 1 "tb_top_module.dut.voter_inst.coded_data_1"  +all +trace_process;fsdbDumpvars 1 "tb_top_module.dut.voter_inst.coded_data_3"  +all +trace_process;fsdbDumpflush 
+
+*Verdi* : Dumping the signal (tb_top_module.dut.voter_inst.coded_data_2).
+*Verdi* : Dumping the signal (tb_top_module.dut.voter_inst.coded_data_1).
+*Verdi* : Dumping the signal (tb_top_module.dut.voter_inst.coded_data_3).
+*Verdi* : Flush all FSDB Files at 0 ps.
+
+Verdi>fsdbDumpvars 1 "tb_top_module.dut.voter_inst.data_voted"  +all +trace_process;fsdbDumpflush 
+
+*Verdi* : Dumping the signal (tb_top_module.dut.voter_inst.data_voted).
+*Verdi* : Flush all FSDB Files at 0 ps.
+
+Verdi>fsdbDumpvars 1 "tb_top_module.dut.fault"  +all +trace_process;fsdbDumpflush 
+
+*Verdi* : Dumping the signal (tb_top_module.dut.fault).
+*Verdi* : Flush all FSDB Files at 0 ps.
+
+Verdi>fsdbDumpvars 1 "tb_top_module.dut.voted_q"  +all +trace_process;fsdbDumpflush 
+
+*Verdi* : Dumping the signal (tb_top_module.dut.voted_q).
+*Verdi* : Flush all FSDB Files at 0 ps.
+
+Verdi>fsdbDumpvars 1 "tb_top_module.dut.decoder_inst.unnamed\$\$_0.syndrome"  +all +trace_process;fsdbDumpflush 
+
+*Verdi* : Dumping the signal (tb_top_module.dut.decoder_inst.unnamed$$_0.syndrome).
+*Verdi* : Flush all FSDB Files at 0 ps.
+
+Verdi>run
+$finish called from file "tb.sv", line 237.
+$finish at simulation time               160000
+Simulation complete, time is 160000 ps.
+tb.sv, 237 :     $finish;
+           V C S   S i m u l a t i o n   R e p o r t 
+Time: 160000 ps
+CPU Time:      0.220 seconds;       Data structure size:   0.0Mb
+Tue May 20 13:39:19 2025
+debExit

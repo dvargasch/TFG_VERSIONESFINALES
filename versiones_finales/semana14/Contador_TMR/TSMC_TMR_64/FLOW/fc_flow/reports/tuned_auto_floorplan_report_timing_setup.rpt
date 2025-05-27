@@ -1,0 +1,110 @@
+Warning: Scenario scenarioFF is not configured for setup analysis: skipping. (UIC-058)
+****************************************
+Report : timing
+        -path_type full
+        -delay_type max
+        -max_paths 1
+        -report_by design
+Design : top
+Version: U-2022.12-SP6
+Date   : Mon May 26 20:54:50 2025
+****************************************
+
+  Startpoint: counter_2/q_reg[0] (rising edge-triggered flip-flop clocked by SYS_CLK)
+  Endpoint: counter_2/q_reg[63] (rising edge-triggered flip-flop clocked by SYS_CLK)
+  Mode: mode1
+  Corner: cornerSS
+  Scenario: scenarioSS
+  Path Group: SYS_CLK
+  Path Type: max
+
+  Point                                            Incr      Path  
+  ------------------------------------------------------------------------
+  clock SYS_CLK (rise edge)                        0.00      0.00
+  clock network delay (ideal)                      0.00      0.00
+
+  counter_2/q_reg[0]/CP (SDFCNQD1HPBWP)            0.00      0.00 r
+  counter_2/q_reg[0]/Q (SDFCNQD1HPBWP)             0.34      0.34 r
+  voter/ctmi_1928/ZN (MAOI222D1HPBWP)              0.14      0.48 f
+  voter/ctmi_126/ZN (CKND0HPBWP)                   0.40      0.88 r
+  counter_2/add_72/U_2/CO (HA1D0HPBWP)             0.21      1.09 r
+  counter_2/add_72/U_5/CO (HA1D0HPBWP)             0.11      1.21 r
+  counter_2/add_72/U_7/CO (HA1D0HPBWP)             0.11      1.32 r
+  counter_2/add_72/U_10/CO (HA1D0HPBWP)            0.11      1.43 r
+  counter_2/add_72/U_12/CO (HA1D0HPBWP)            0.12      1.55 r
+  counter_2/add_72/U_15/CO (HA1D0HPBWP)            0.11      1.66 r
+  counter_2/add_72/U_17/CO (HA1D0HPBWP)            0.11      1.77 r
+  counter_2/add_72/U_20/CO (HA1D0HPBWP)            0.11      1.89 r
+  counter_2/add_72/U_22/CO (HA1D0HPBWP)            0.11      2.00 r
+  counter_2/add_72/U_25/CO (HA1D0HPBWP)            0.11      2.11 r
+  counter_2/add_72/U_27/CO (HA1D0HPBWP)            0.11      2.22 r
+  counter_2/add_72/U_30/CO (HA1D0HPBWP)            0.11      2.33 r
+  counter_2/add_72/U_32/CO (HA1D0HPBWP)            0.11      2.45 r
+  counter_2/add_72/U_35/CO (HA1D0HPBWP)            0.11      2.55 r
+  counter_2/add_72/U_37/CO (HA1D0HPBWP)            0.11      2.66 r
+  counter_2/add_72/U_40/CO (HA1D0HPBWP)            0.11      2.77 r
+  counter_2/add_72/U_42/CO (HA1D0HPBWP)            0.12      2.89 r
+  counter_2/add_72/U_45/CO (HA1D0HPBWP)            0.11      3.00 r
+  counter_2/add_72/U_47/CO (HA1D0HPBWP)            0.11      3.11 r
+  counter_2/add_72/U_50/CO (HA1D0HPBWP)            0.11      3.23 r
+  counter_2/add_72/U_52/CO (HA1D0HPBWP)            0.11      3.34 r
+  counter_2/add_72/U_55/CO (HA1D0HPBWP)            0.12      3.45 r
+  counter_2/add_72/U_57/CO (HA1D0HPBWP)            0.11      3.57 r
+  counter_2/add_72/U_60/CO (HA1D0HPBWP)            0.12      3.69 r
+  counter_2/add_72/U_62/CO (HA1D0HPBWP)            0.12      3.81 r
+  counter_2/add_72/U_65/CO (HA1D0HPBWP)            0.12      3.93 r
+  counter_2/add_72/U_67/CO (HA1D0HPBWP)            0.11      4.04 r
+  counter_2/add_72/U_70/CO (HA1D0HPBWP)            0.11      4.16 r
+  counter_2/add_72/U_72/CO (HA1D0HPBWP)            0.12      4.28 r
+  counter_2/add_72/U_75/CO (HA1D0HPBWP)            0.12      4.39 r
+  counter_2/add_72/U_77/CO (HA1D0HPBWP)            0.12      4.51 r
+  counter_2/add_72/U_80/CO (HA1D0HPBWP)            0.11      4.62 r
+  counter_2/add_72/U_82/CO (HA1D0HPBWP)            0.11      4.74 r
+  counter_2/add_72/U_85/CO (HA1D0HPBWP)            0.11      4.85 r
+  counter_2/add_72/U_87/CO (HA1D0HPBWP)            0.11      4.96 r
+  counter_2/add_72/U_90/CO (HA1D0HPBWP)            0.12      5.08 r
+  counter_2/add_72/U_92/CO (HA1D0HPBWP)            0.11      5.19 r
+  counter_2/add_72/U_95/CO (HA1D0HPBWP)            0.11      5.31 r
+  counter_2/add_72/U_97/CO (HA1D0HPBWP)            0.11      5.42 r
+  counter_2/add_72/U_100/CO (HA1D0HPBWP)           0.12      5.54 r
+  counter_2/add_72/U_102/CO (HA1D0HPBWP)           0.11      5.65 r
+  counter_2/add_72/U_105/CO (HA1D0HPBWP)           0.11      5.76 r
+  counter_2/add_72/U_107/CO (HA1D0HPBWP)           0.12      5.88 r
+  counter_2/add_72/U_110/CO (HA1D0HPBWP)           0.12      6.00 r
+  counter_2/add_72/U_112/CO (HA1D0HPBWP)           0.11      6.12 r
+  counter_2/add_72/U_115/CO (HA1D0HPBWP)           0.11      6.23 r
+  counter_2/add_72/U_117/CO (HA1D0HPBWP)           0.11      6.34 r
+  counter_2/add_72/U_120/CO (HA1D0HPBWP)           0.11      6.45 r
+  counter_2/add_72/U_122/CO (HA1D0HPBWP)           0.12      6.56 r
+  counter_2/add_72/U_125/CO (HA1D0HPBWP)           0.12      6.69 r
+  counter_2/add_72/U_127/CO (HA1D0HPBWP)           0.11      6.80 r
+  counter_2/add_72/U_130/CO (HA1D0HPBWP)           0.12      6.92 r
+  counter_2/add_72/U_132/CO (HA1D0HPBWP)           0.11      7.03 r
+  counter_2/add_72/U_135/CO (HA1D0HPBWP)           0.12      7.15 r
+  counter_2/add_72/U_137/CO (HA1D0HPBWP)           0.12      7.27 r
+  counter_2/add_72/U_140/CO (HA1D0HPBWP)           0.11      7.38 r
+  counter_2/add_72/U_142/CO (HA1D0HPBWP)           0.13      7.50 r
+  counter_2/add_72/U_145/CO (HA1D0HPBWP)           0.13      7.63 r
+  counter_2/add_72/U_147/CO (HA1D0HPBWP)           0.11      7.74 r
+  counter_2/add_72/U_150/CO (HA1D0HPBWP)           0.11      7.85 r
+  counter_2/add_72/U_152/CO (HA1D0HPBWP)           0.12      7.97 r
+  counter_2/add_72/U_155/CO (HA1D0HPBWP)           0.10      8.07 r
+  counter_2/add_72/ctmi_867/ZN (MAOI22D0HPBWP)     0.13      8.19 r
+  counter_2/ctmi_775/Z (AO22D0HPBWP)               0.15      8.34 r
+  counter_2/q_reg[63]/D (SDFCNQD0HPBWP)            0.00      8.34 r
+  data arrival time                                          8.34
+
+  clock SYS_CLK (rise edge)                       10.00     10.00
+  clock network delay (ideal)                      0.00     10.00
+  counter_2/q_reg[63]/CP (SDFCNQD0HPBWP)           0.00     10.00 r
+  clock uncertainty                               -0.30      9.70
+  library setup time                              -0.09      9.61
+  data required time                                         9.61
+  ------------------------------------------------------------------------
+  data required time                                         9.61
+  data arrival time                                         -8.34
+  ------------------------------------------------------------------------
+  slack (MET)                                                1.27
+
+
+1

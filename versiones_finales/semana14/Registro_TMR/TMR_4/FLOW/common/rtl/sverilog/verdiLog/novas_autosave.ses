@@ -26,15 +26,15 @@ fdb_campaign =
 fdb_tool = 
 [hb]
 postSimFile = /mnt/vol_NFS_rh003/estudiantes/DANIELA_VARGAS/Version_final/0516/versiones_finales/semana14/Registro_TMR/TMR_4/FLOW/common/rtl/sverilog/inter.fsdb
-syncTime = 465000
-viewport = 0 0 1920 1016 0 0 564 1270
+syncTime = 315000
+viewport = 0 0 1920 1016 0 0 658 1270
 activeNode = "universal_register_4bit_tb"
 activeScope = "universal_register_4bit_tb"
-activeFile = "tb3.sv"
+activeFile = "tb_sin_errores.sv"
 interactiveMode = False
 viewType = Source
 simulatorMode = False
-sourceBeginLine = 80
+sourceBeginLine = 93
 baMode = False
 srcLineNum = True
 AutoWrap = True
@@ -53,21 +53,23 @@ signalPane = True
 SourceVerticalScrollLines = 5
 Scope1 = "universal_register_4bit_tb"
 Scope2 = "universal_register_4bit_tb.dut"
+Scope3 = "universal_register_4bit_tb.dut.register_1"
+rangeSelection = 105 105 1 7 1 1
 sdfCheckUndef = FALSE
 simFlow = FALSE
 [hb.design]
-importCmd = "-simflow" "-dbdir" "./prueba5.daidir" 
+importCmd = "-simflow" "-dbdir" "./results.daidir" 
 invokeDir = /mnt/vol_NFS_rh003/estudiantes/DANIELA_VARGAS/Version_final/0516/versiones_finales/semana14/Registro_TMR/TMR_4/FLOW/common/rtl/sverilog
 [hb.sourceTab.1]
 scope = universal_register_4bit_tb
-File = /mnt/vol_NFS_rh003/estudiantes/DANIELA_VARGAS/Version_final/0516/versiones_finales/semana14/Registro_TMR/TMR_4/FLOW/common/rtl/sverilog/tb3.sv
-Line = 81
+File = /mnt/vol_NFS_rh003/estudiantes/DANIELA_VARGAS/Version_final/0516/versiones_finales/semana14/Registro_TMR/TMR_4/FLOW/common/rtl/sverilog/tb_sin_errores.sv
+Line = 94
 [nMemoryManager]
 WaveformFile = /mnt/vol_NFS_rh003/estudiantes/DANIELA_VARGAS/Version_final/0516/versiones_finales/semana14/Registro_TMR/TMR_4/FLOW/common/rtl/sverilog/inter.fsdb
 UserActionNum = 0
 nMemWindowNum = 0
 [wave.0]
-viewPort = 0 25 1272 592 194 65
+viewPort = 0 25 1272 549 194 65
 primaryWindow = TRUE
 SessionFile = /mnt/vol_NFS_rh003/estudiantes/DANIELA_VARGAS/Version_final/0516/versiones_finales/semana14/Registro_TMR/TMR_4/FLOW/common/rtl/sverilog/verdiLog/novas_autosave.ses.wave.0
 displayGrid = FALSE

@@ -1,0 +1,34 @@
+Invoking simulator...
+
+./results_3 -sml=verdi +UVM_VERDI_TRACE=UVM_AWARE +fsdb+gate=off -ucli2Proc -ucli
+debImport "-i" "-simflow" "-dbdir" "./results_3.daidir"
+*Verdi* Loading libsscore_vcs202012.so
+
+*Verdi* : Enable RPC Server(3952242)
+
+srcTBInvokeSim
+Chronologic VCS simulator copyright 1991-2020
+Contains Synopsys proprietary information.
+Compiler version R-2020.12-SP2_Full64; Runtime version R-2020.12-SP2_Full64;  May 27 03:47 2025
+xterm-256color is Not a valid terminal...
+Verdi>fsdbDumpvars 1 "tb_top.dut.clk"  +all +trace_process;fsdbDumpvars 1 "tb_top.dut.rst"  +all +trace_process;fsdbDumpvars 1 "tb_top.dut.enable"  +all +trace_process;fsdbDumpvars 1 "tb_top.dut.counter"  +all +trace_process;fsdbDumpvars 1 "tb_top.dut.parity_stored"  +all +trace_process;fsdbDumpvars 1 "tb_top.dut.busy"  +all +trace_process;fsdbDumpvars 1 "tb_top.dut.error_detected"  +all +trace_process;fsdbDumpvars 1 "tb_top.dut.syndrome"  +all +trace_process;fsdbDumpvars 1 "tb_top.dut.corrected_counter"  +all +trace_process;fsdbDumpvars 1 "tb_top.dut.corrected_parity"  +all +trace_process;fsdbDumpflush 
+
+*Verdi* : Dumping the signal (tb_top.dut.clk).
+*Verdi* : Dumping the signal (tb_top.dut.rst).
+*Verdi* : Dumping the signal (tb_top.dut.enable).
+*Verdi* : Dumping the signal (tb_top.dut.counter).
+*Verdi* : Dumping the signal (tb_top.dut.parity_stored).
+*Verdi* : Dumping the signal (tb_top.dut.busy).
+*Verdi* : Dumping the signal (tb_top.dut.error_detected).
+*Verdi* : Dumping the signal (tb_top.dut.syndrome).
+*Verdi* : Dumping the signal (tb_top.dut.corrected_counter).
+*Verdi* : Dumping the signal (tb_top.dut.corrected_parity).
+*Verdi* : Flush all FSDB Files at 0 ps.
+
+Verdi>run
+tb_3.sv, 63 :         $stop;
+           V C S   S i m u l a t i o n   R e p o r t 
+Time: 265000 ps
+CPU Time:      0.100 seconds;       Data structure size:   0.0Mb
+Tue May 27 12:59:07 2025
+debExit
