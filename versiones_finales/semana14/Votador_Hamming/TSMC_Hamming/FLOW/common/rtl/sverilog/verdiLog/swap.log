@@ -9,12 +9,12 @@ overhead: (9538) bytes for (11) blocks [Average: (867) bytes/block]
 
 write  => 0(times) 0K(bytes) [0K bytes to file]
 read   => 2(times) 51K(bytes) [5K bytes compressed data from file]
-access => 397646(times) 3125M(bytes)
-          [hit ratio: 99.9995%]
+access => 180354(times) 1427M(bytes)
+          [hit ratio: 99.9989%]
 
 time: write(0) read(0)  unit: second
 
-swap file directory: (/mnt/vol_NFS_rh003/estudiantes/DANIELA_VARGAS/Version_final/0516/versiones_finales/Votador/TSMC_Hamming/FLOW/common/rtl/sverilog/verdiLog)
+swap file directory: (/mnt/vol_NFS_rh003/estudiantes/DANIELA_VARGAS/Version_final/0516/versiones_finales/semana14/Votador_Hamming/TSMC_Hamming/FLOW/common/rtl/sverilog/verdiLog)
 used swap file number: (3)
 
 
@@ -25,18 +25,18 @@ idxCnt: (4)
 closeHead: (1)
 closeTail: (3)
 openCnt: (3)
-fid(3): fd(1073741825) fileName(/mnt/vol_NFS_rh003/estudiantes/DANIELA_VARGAS/Version_final/0516/versiones_finales/Votador/TSMC_Hamming/FLOW/common/rtl/sverilog/prueba_2.daidir/kdb.elab++/work.lib++/top.sv#inc___vcs_unit__1__1#.tdc)
-	size(3722) lastModTime(1747770018) curModTime(1747770018)
+fid(3): fd(1073741825) fileName(/mnt/vol_NFS_rh003/estudiantes/DANIELA_VARGAS/Version_final/0516/versiones_finales/semana14/Votador_Hamming/TSMC_Hamming/FLOW/common/rtl/sverilog/resultados_sin_errores.daidir/kdb.elab++/work.lib++/top.sv#inc___vcs_unit__1__1#.tdc)
+	size(3755) lastModTime(1748532643) curModTime(1748532643)
 	mode(rb)	hot(0) cool(2) pos(0)
-fid(2): fd(34) fileName(/mnt/vol_NFS_rh003/estudiantes/DANIELA_VARGAS/Version_final/0516/versiones_finales/Votador/TSMC_Hamming/FLOW/common/rtl/sverilog/verdiLog/_swap_0001#8323328#153840)
-	size(0) lastModTime(0) curModTime(1747770050)
+fid(2): fd(33) fileName(/mnt/vol_NFS_rh003/estudiantes/DANIELA_VARGAS/Version_final/0516/versiones_finales/semana14/Votador_Hamming/TSMC_Hamming/FLOW/common/rtl/sverilog/verdiLog/_swap_0001#8323328#4088697)
+	size(0) lastModTime(0) curModTime(1748532740)
 	mode(w+b)	hot(3) cool(1) pos(0)
-fid(1): fd(1073741824) fileName(/mnt/vol_NFS_rh003/estudiantes/DANIELA_VARGAS/Version_final/0516/versiones_finales/Votador/TSMC_Hamming/FLOW/common/rtl/sverilog/prueba_2.daidir/kdb.elab++/work.lib++/tb.sv.tdc)
-	size(7446) lastModTime(1747770018) curModTime(1747770018)
+fid(1): fd(1073741824) fileName(/mnt/vol_NFS_rh003/estudiantes/DANIELA_VARGAS/Version_final/0516/versiones_finales/semana14/Votador_Hamming/TSMC_Hamming/FLOW/common/rtl/sverilog/resultados_sin_errores.daidir/kdb.elab++/work.lib++/tb_sin_errores.sv.tdc)
+	size(7382) lastModTime(1748532643) curModTime(1748532643)
 	mode(rb)	hot(2) cool(0) pos(0)
 fid(0): fd(0) fileName(NULL)
 	mode(NULL)	hot(0) cool(0) pos(0)
 ==================================================
-mySelf(0x1a1524c0) pre(0x1991e400) next((nil))
+mySelf(16f74bb0) pre(16ab8e10) next(0)
 version(200506)
-date(Aug 13 2023 07:34:34)
+date(May 19 2021 05:00:27)

@@ -1,28 +1,19 @@
+PIC_LD=ld
 LDVERSION= $(shell $(PIC_LD) -v | grep -q 2.30 ;echo $$?)
 ifeq ($(LDVERSION), 0)
      LD_NORELAX_FLAG= --no-relax
 endif
 
 ARCHIVE_OBJS=
-ARCHIVE_OBJS += _153587_archive_1.so
-_153587_archive_1.so : archive.4/_153587_archive_1.a
+ARCHIVE_OBJS += _4088436_archive_1.so
+_4088436_archive_1.so : archive.5/_4088436_archive_1.a
 	@$(AR) -s $<
-	@$(PIC_LD) -shared  -Bsymbolic $(LD_NORELAX_FLAG)  -o .//../prueba_2.daidir//_153587_archive_1.so --whole-archive $< --no-whole-archive
+	@$(PIC_LD) -shared  -Bsymbolic $(LD_NORELAX_FLAG)  -o .//../resultados_sin_errores.daidir//_4088436_archive_1.so --whole-archive $< --no-whole-archive
 	@rm -f $@
-	@ln -sf .//../prueba_2.daidir//_153587_archive_1.so $@
-
-
-ARCHIVE_OBJS += _prev_archive_1.so
-_prev_archive_1.so : archive.4/_prev_archive_1.a
-	@$(AR) -s $<
-	@$(PIC_LD) -shared  -Bsymbolic $(LD_NORELAX_FLAG)  -o .//../prueba_2.daidir//_prev_archive_1.so --whole-archive $< --no-whole-archive
-	@rm -f $@
-	@ln -sf .//../prueba_2.daidir//_prev_archive_1.so $@
+	@ln -sf .//../resultados_sin_errores.daidir//_4088436_archive_1.so $@
 
 
 
-
-VCS_CU_ARC_OBJS = 
 
 
 O0_OBJS =
@@ -33,11 +24,9 @@ $(O0_OBJS) : %.o: %.c
 
 %.o: %.c
 	$(CC_CG) $(CFLAGS_CG) -c -o $@ $<
-
 CU_UDP_OBJS = \
 
 
-CU_UDP_OBJS += 
 CU_LVL_OBJS = \
 SIM_l.o 
 

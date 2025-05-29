@@ -1,0 +1,391 @@
+$date
+	Thu May 29 16:45:26 2025
+$end
+
+$version
+	Synopsys VCS version R-2020.12-SP2_Full64
+$end
+
+$timescale
+	1ps
+$end
+
+$comment Csum: 1 6595e5a54ac14293 $end
+
+
+$scope module tb_top $end
+$var reg 1 ! clk $end
+$var reg 1 " rst $end
+$var reg 1 # enable $end
+$var wire 16 $ counter [15:0] $end
+
+$scope module dut $end
+$var reg 1 % clk $end
+$var reg 1 & rst $end
+$var reg 1 ' enable $end
+$var reg 16 ( counter [15:0] $end
+$var reg 12 ) parity_stored [11:0] $end
+$var reg 1 * busy $end
+$var wire 1 + error_detected $end
+$var reg 12 , syndrome [11:0] $end
+$var reg 16 - corrected_counter [15:0] $end
+$var reg 12 . corrected_parity [11:0] $end
+$var reg 1 / enable_last $end
+
+$scope module counter_and_parity $end
+$var wire 1 0 clk $end
+$var wire 1 1 rst $end
+$var wire 1 2 enable $end
+$var wire 16 3 corrected_counter [15:0] $end
+$var wire 12 4 corrected_parity [11:0] $end
+$var reg 16 5 counter [15:0] $end
+$var reg 12 6 parity_stored [11:0] $end
+$var reg 1 7 busy $end
+$var reg 1 8 error_detected $end
+$var reg 1 9 enable_last $end
+$var reg 16 : count_reg [15:0] $end
+$var reg 16 ; counter_stored [15:0] $end
+$var integer 32 < i $end
+$upscope $end
+
+
+$scope module syndrome_inst $end
+$var wire 1 = clk $end
+$var wire 1 > enable $end
+$var wire 12 ? parity_stored [11:0] $end
+$var wire 16 @ counter_reg [15:0] $end
+$var reg 12 A syndrome [11:0] $end
+$var wire 1 B busy $end
+$var reg 16 C corrected_counter [15:0] $end
+$var reg 1 D error_detected $end
+$var reg 12 E corrected_parity [11:0] $end
+$var wire 1 F enable_last $end
+$var wire 1 G rst $end
+$var integer 32 H i $end
+
+$scope begin unnamed$$_0 $end
+$upscope $end
+
+
+$scope begin unnamed$$_1 $end
+$upscope $end
+
+$upscope $end
+
+$upscope $end
+
+$upscope $end
+
+$enddefinitions $end
+
+#0
+$dumpvars
+0*
+0!
+07
+02
+09
+08
+11
+0'
+1&
+0#
+0/
+0+
+1"
+0B
+0>
+0F
+0D
+1G
+b0000000000000000 -
+b000000000000 .
+b0000000000000000 :
+b0000000000000000 $
+b0000000000000000 3
+b000000000000 4
+b0000000000000000 5
+b000000000000 6
+b0000000000000000 @
+b0000000000000000 ;
+b0000000000000000 (
+bxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx <
+b000000000000 )
+b000000000000 ,
+b0000000000000000 C
+b000000000000 E
+b00000000000000000000000000000100 H
+b000000000000 ?
+b000000000000 A
+00
+0=
+0%
+$end
+#5000
+1!
+1%
+10
+1=
+0"
+0&
+0G
+01
+1#
+1'
+1>
+12
+#10000
+0!
+0%
+00
+0=
+#15000
+1!
+1%
+10
+1=
+19
+1/
+1F
+b0000000000000001 :
+b0000000000000001 5
+b0000000000000001 (
+b0000000000000001 $
+b0000000000000001 @
+#20000
+0!
+0%
+00
+0=
+#25000
+1!
+1%
+10
+1=
+b0000000000000010 :
+b0000000000000010 5
+b0000000000000010 (
+b0000000000000010 $
+b0000000000000010 @
+#30000
+0!
+0%
+00
+0=
+#35000
+1!
+1%
+10
+1=
+0#
+0'
+0>
+02
+b0000000000000011 :
+b0000000000000011 5
+b0000000000000011 (
+b0000000000000011 $
+b0000000000000011 @
+#40000
+0!
+0%
+00
+0=
+#45000
+1!
+1%
+10
+1=
+b00000000000000000000000000000100 <
+09
+0/
+0F
+b0000000000000011 ;
+b000000000100 6
+b000000000100 )
+b000000000100 ?
+17
+1*
+1B
+b000000000101 A
+b000000000101 ,
+1D
+x+
+#50000
+0!
+0%
+00
+0=
+#55000
+1!
+1%
+10
+1=
+b0000000000000111 C
+b0000000000000111 -
+b0000000000000111 3
+b000000000100 E
+b000000000100 .
+b000000000100 4
+#60000
+0!
+0%
+00
+0=
+#65000
+1!
+1%
+10
+1=
+b0000000000000111 :
+07
+0*
+0B
+b0000000000000111 5
+b0000000000000111 (
+b0000000000000111 $
+b0000000000000111 @
+b000000000000 A
+b000000000000 ,
+0D
+0+
+#70000
+0!
+0%
+00
+0=
+#75000
+1!
+1%
+10
+1=
+b0000000000000000 C
+b0000000000000000 -
+b0000000000000000 3
+#80000
+0!
+0%
+00
+0=
+#85000
+1!
+1%
+10
+1=
+#90000
+0!
+0%
+00
+0=
+#95000
+1!
+1%
+10
+1=
+#100000
+0!
+0%
+00
+0=
+#105000
+1!
+1%
+10
+1=
+#110000
+0!
+0%
+00
+0=
+#115000
+1!
+1%
+10
+1=
+#120000
+0!
+0%
+00
+0=
+#125000
+1!
+1%
+10
+1=
+1#
+1'
+1>
+12
+#130000
+0!
+0%
+00
+0=
+#135000
+1!
+1%
+10
+1=
+19
+1/
+1F
+b0000000000001000 :
+b0000000000001000 5
+b0000000000001000 (
+b0000000000001000 $
+b0000000000001000 @
+#140000
+0!
+0%
+00
+0=
+#145000
+1!
+1%
+10
+1=
+b0000000000001001 :
+b0000000000001001 5
+b0000000000001001 (
+b0000000000001001 $
+b0000000000001001 @
+#150000
+0!
+0%
+00
+0=
+#155000
+1!
+1%
+10
+1=
+b0000000000001010 :
+b0000000000001010 5
+b0000000000001010 (
+b0000000000001010 $
+b0000000000001010 @
+#160000
+0!
+0%
+00
+0=
+#165000
+1!
+1%
+10
+1=
+b0000000000001011 :
+b0000000000001011 5
+b0000000000001011 (
+b0000000000001011 $
+b0000000000001011 @
+#170000
+0!
+0%
+00
+0=
+#175000
+1!
+1%
+10
+1=

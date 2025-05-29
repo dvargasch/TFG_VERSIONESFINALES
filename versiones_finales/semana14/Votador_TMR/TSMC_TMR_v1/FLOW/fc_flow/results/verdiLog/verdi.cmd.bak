@@ -1,0 +1,105 @@
+simSetSimulator "-vcssv" -exec "./results" -args " " -uvmDebug on
+debImport "-i" "-simflow" "-dbdir" "./results.daidir"
+srcTBInvokeSim
+verdiSetActWin -dock widgetDock_<Member>
+verdiSetActWin -dock widgetDock_MTB_SOURCE_TAB_1
+wvCreateWindow
+wvSelectGroup -win $_nWave3 {G1}
+wvSelectGroup -win $_nWave3 {G1}
+wvSelectGroup -win $_nWave3 {G1}
+srcSignalViewSelect "tb_voter_tmr.tmr_out\[3:0\]"
+srcSignalViewSelect "tb_voter_tmr.data_3\[3:0\]" "tb_voter_tmr.tmr_out\[3:0\]"
+srcSignalViewSelect "tb_voter_tmr.data_2\[3:0\]" "tb_voter_tmr.data_3\[3:0\]" \
+           "tb_voter_tmr.tmr_out\[3:0\]"
+verdiSetActWin -dock widgetDock_<Signal_List>
+srcSignalViewSelect "tb_voter_tmr.data_1\[3:0\]" "tb_voter_tmr.data_2\[3:0\]" \
+           "tb_voter_tmr.data_3\[3:0\]" "tb_voter_tmr.tmr_out\[3:0\]"
+wvAddSignal -win $_nWave3 "/tb_voter_tmr/data_1\[3:0\]" \
+           "/tb_voter_tmr/data_2\[3:0\]" "/tb_voter_tmr/data_3\[3:0\]" \
+           "/tb_voter_tmr/tmr_out\[3:0\]"
+wvSetPosition -win $_nWave3 {("G1" 0)}
+wvSetPosition -win $_nWave3 {("G1" 4)}
+wvSetPosition -win $_nWave3 {("G1" 4)}
+wvSelectSignal -win $_nWave3 {( "G1" 4 )} 
+verdiSetActWin -win $_nWave3
+srcHBSelect "tb_voter_tmr.dut" -win $_nTrace1
+srcSetScope "tb_voter_tmr.dut" -delim "." -win $_nTrace1
+srcHBSelect "tb_voter_tmr.dut" -win $_nTrace1
+verdiSetActWin -dock widgetDock_<Inst._Tree>
+srcSignalViewSelect "tb_voter_tmr.dut.v_3\[3:0\]"
+srcSignalViewSelect "tb_voter_tmr.dut.v_2\[3:0\]" "tb_voter_tmr.dut.v_3\[3:0\]"
+srcSignalViewSelect "tb_voter_tmr.dut.v_1\[3:0\]" "tb_voter_tmr.dut.v_2\[3:0\]" \
+           "tb_voter_tmr.dut.v_3\[3:0\]"
+verdiSetActWin -dock widgetDock_<Signal_List>
+wvSetPosition -win $_nWave3 {("G1" 1)}
+wvSetPosition -win $_nWave3 {("G1" 2)}
+wvSetPosition -win $_nWave3 {("G1" 3)}
+wvSetPosition -win $_nWave3 {("G1" 4)}
+wvSetPosition -win $_nWave3 {("G2" 0)}
+wvSetPosition -win $_nWave3 {("G1" 4)}
+wvAddSignal -win $_nWave3 "/tb_voter_tmr/dut/v_1\[3:0\]" \
+           "/tb_voter_tmr/dut/v_2\[3:0\]" "/tb_voter_tmr/dut/v_3\[3:0\]"
+wvSetPosition -win $_nWave3 {("G1" 4)}
+wvSetPosition -win $_nWave3 {("G1" 7)}
+wvSelectSignal -win $_nWave3 {( "G1" 3 )} 
+verdiSetActWin -win $_nWave3
+srcTBRunSim
+wvZoomAll -win $_nWave3
+wvSetCursor -win $_nWave3 9753.894081 -snap {("G1" 4)}
+srcDeselectAll -win $_nTrace1
+verdiSetActWin -dock widgetDock_MTB_SOURCE_TAB_1
+wvSelectSignal -win $_nWave3 {( "G1" 4 )} 
+verdiSetActWin -win $_nWave3
+wvZoomAll -win $_nWave3
+srcDeselectAll -win $_nTrace1
+verdiSetActWin -dock widgetDock_MTB_SOURCE_TAB_1
+verdiSetActWin -win $_nWave3
+wvSetCursor -win $_nWave3 209.761163 -snap {("G1" 4)}
+wvSetCursor -win $_nWave3 2622.014538 -snap {("G1" 4)}
+srcDeselectAll -win $_nTrace1
+verdiSetActWin -dock widgetDock_MTB_SOURCE_TAB_1
+srcDeselectAll -win $_nTrace1
+srcDeselectAll -win $_nTrace1
+wvSetCursor -win $_nWave3 9124.610592 -snap {("G1" 3)}
+verdiSetActWin -win $_nWave3
+wvSetCursor -win $_nWave3 1363.447560 -snap {("G1" 5)}
+wvZoomAll -win $_nWave3
+srcDeselectAll -win $_nTrace1
+verdiSetActWin -dock widgetDock_MTB_SOURCE_TAB_1
+wvSelectSignal -win $_nWave3 {( "G1" 2 )} 
+verdiSetActWin -win $_nWave3
+wvSelectSignal -win $_nWave3 {( "G1" 1 )} 
+wvSetCursor -win $_nWave3 14735.721703 -snap {("G1" 3)}
+wvSetCursor -win $_nWave3 25957.943925 -snap {("G1" 2)}
+wvSetCursor -win $_nWave3 39644.859813 -snap {("G1" 3)}
+srcHBSelect "tb_voter_tmr.dut.voter_1" -win $_nTrace1
+srcSetScope "tb_voter_tmr.dut.voter_1" -delim "." -win $_nTrace1
+verdiSetActWin -dock widgetDock_<Inst._Tree>
+srcHBSelect "tb_voter_tmr.dut.voter_1" -win $_nTrace1
+srcHBSelect "tb_voter_tmr.dut" -win $_nTrace1
+srcSetScope "tb_voter_tmr.dut" -delim "." -win $_nTrace1
+srcHBSelect "tb_voter_tmr.dut" -win $_nTrace1
+srcHBSelect "tb_voter_tmr" -win $_nTrace1
+srcSetScope "tb_voter_tmr" -delim "." -win $_nTrace1
+srcHBSelect "tb_voter_tmr" -win $_nTrace1
+wvSetCursor -win $_nWave3 30467.808930 -snap {("G1" 3)}
+verdiSetActWin -win $_nWave3
+wvSetCursor -win $_nWave3 19979.750779 -snap {("G1" 4)}
+srcHBSelect "tb_voter_tmr.dut" -win $_nTrace1
+srcSetScope "tb_voter_tmr.dut" -delim "." -win $_nTrace1
+srcHBSelect "tb_voter_tmr.dut" -win $_nTrace1
+verdiSetActWin -dock widgetDock_<Inst._Tree>
+srcHBSelect "tb_voter_tmr.dut.voter_1" -win $_nTrace1
+srcSetScope "tb_voter_tmr.dut.voter_1" -delim "." -win $_nTrace1
+srcHBSelect "tb_voter_tmr.dut.voter_1" -win $_nTrace1
+srcSignalViewSelect "tb_voter_tmr.dut.voter_1.data_1\[3:0\]"
+srcSignalViewSelect "tb_voter_tmr.dut.voter_1.data_1\[3:0\]"
+verdiSetActWin -dock widgetDock_<Signal_List>
+wvSetCursor -win $_nWave3 12795.430945 -snap {("G1" 6)}
+verdiSetActWin -win $_nWave3
+srcHBSelect "tb_voter_tmr.dut.voter_1" -win $_nTrace1
+srcHBSelect "tb_voter_tmr.dut.final_voter" -win $_nTrace1
+verdiSetActWin -dock widgetDock_<Inst._Tree>
+srcSetScope "tb_voter_tmr.dut.final_voter" -delim "." -win $_nTrace1
+srcHBSelect "tb_voter_tmr.dut.final_voter" -win $_nTrace1
+debExit

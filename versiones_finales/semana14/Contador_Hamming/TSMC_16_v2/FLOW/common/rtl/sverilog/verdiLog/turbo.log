@@ -1,0 +1,3 @@
+Command Line: /mnt/vol_NFS_rh003/tools/verdi/R-2020.12-SP2/platform/LINUXAMD64/bin/Novas -i -simflow -simBin ./results -simOpt  
+uname(Linux redhat003 4.18.0-553.51.1.el8_10.x86_64 #1 SMP Fri Apr 25 00:55:37 EDT 2025 x86_64)
+au time 1627.585095 28.799778 15.546458 delta 266002432 266002432 total 754651136 754651136

@@ -26,15 +26,15 @@ fdb_campaign =
 fdb_tool = 
 [hb]
 postSimFile = /mnt/vol_NFS_rh003/estudiantes/DANIELA_VARGAS/Version_final/0516/versiones_finales/semana14/Contador_Hamming/TSMC_16/FLOW/common/rtl/sverilog/inter.fsdb
-syncTime = 415000
-viewport = 0 0 1920 1016 0 0 361 1270
-activeNode = "tb_top"
-activeScope = "tb_top"
-activeFile = "tb.sv"
+syncTime = 125000
+viewport = 0 0 1920 1016 0 0 431 1175
+activeNode = "tb_top.dut.counter_and_parity"
+activeScope = "tb_top.dut.counter_and_parity"
+activeFile = "top.sv#inc___vcs_unit__1__1#"
 interactiveMode = False
 viewType = Source
 simulatorMode = False
-sourceBeginLine = 32
+sourceBeginLine = 44
 baMode = False
 srcLineNum = True
 AutoWrap = True
@@ -51,26 +51,24 @@ DnDtraceCrossHierOnly = True
 leadingZero = False
 signalPane = True
 SourceVerticalScrollLines = 5
-Scope1 = "tb_top"
-Scope2 = "tb_top.dut.syndrome_inst"
-Scope3 = "tb_top.dut.counter_and_parity"
-Scope4 = "tb_top.dut"
-rangeSelection = 52 52 1 4 1 1
+Scope1 = "tb_top.dut.counter_and_parity"
+Scope2 = "tb_top"
+multipleSelection = 1 49 5 0 0
 sdfCheckUndef = FALSE
 simFlow = FALSE
 [hb.design]
-importCmd = "-simflow" "-dbdir" "./results_1.daidir" 
+importCmd = "-simflow" "-dbdir" "./resultados_sin_errores.daidir" 
 invokeDir = /mnt/vol_NFS_rh003/estudiantes/DANIELA_VARGAS/Version_final/0516/versiones_finales/semana14/Contador_Hamming/TSMC_16/FLOW/common/rtl/sverilog
 [hb.sourceTab.1]
-scope = tb_top
-File = /mnt/vol_NFS_rh003/estudiantes/DANIELA_VARGAS/Version_final/0516/versiones_finales/semana14/Contador_Hamming/TSMC_16/FLOW/common/rtl/sverilog/tb.sv
-Line = 33
+scope = tb_top.dut.counter_and_parity
+File = /mnt/vol_NFS_rh003/estudiantes/DANIELA_VARGAS/Version_final/0516/versiones_finales/semana14/Contador_Hamming/TSMC_16/FLOW/common/rtl/sverilog/top.sv#inc___vcs_unit__1__1#
+Line = 45
 [nMemoryManager]
 WaveformFile = /mnt/vol_NFS_rh003/estudiantes/DANIELA_VARGAS/Version_final/0516/versiones_finales/semana14/Contador_Hamming/TSMC_16/FLOW/common/rtl/sverilog/inter.fsdb
 UserActionNum = 0
 nMemWindowNum = 0
 [wave.0]
-viewPort = 0 25 1177 389 405 65
+viewPort = 0 25 759 459 191 1
 primaryWindow = TRUE
 SessionFile = /mnt/vol_NFS_rh003/estudiantes/DANIELA_VARGAS/Version_final/0516/versiones_finales/semana14/Contador_Hamming/TSMC_16/FLOW/common/rtl/sverilog/verdiLog/novas_autosave.ses.wave.0
 displayGrid = FALSE

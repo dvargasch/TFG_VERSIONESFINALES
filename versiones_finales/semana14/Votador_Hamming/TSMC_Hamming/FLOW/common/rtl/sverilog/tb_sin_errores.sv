@@ -22,9 +22,8 @@ module tb_top_module;
     .data_1(data_1),
     .data_2(data_2),
     .data_3(data_3),
-    .voted_q(voted_q),
-    .fault(fault)
-  );
+    .voted_q(voted_q)
+      );
 
   // Inicialización y generación del archivo .VCD
   initial begin

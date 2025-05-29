@@ -1,0 +1,664 @@
+$date
+	Sun May 11 20:40:23 2025
+$end
+
+$version
+	Synopsys VCS version U-2023.03-SP2_Full64
+$end
+
+$timescale
+	1ps
+$end
+
+$comment Csum: 1 d5e76cb5d7323090 $end
+
+
+$scope module tb_voter_tmr $end
+$var reg 4 ! data_1 [3:0] $end
+$var reg 4 " data_2 [3:0] $end
+$var reg 4 # data_3 [3:0] $end
+$var reg 4 $ tmr_out [3:0] $end
+
+$scope module dut $end
+$var wire 4 % data_1 [3:0] $end
+$var wire 4 & data_2 [3:0] $end
+$var wire 4 ' data_3 [3:0] $end
+$var wire 4 ( tmr_out [3:0] $end
+$var wire 4 ) v_1 [3:0] $end
+$var wire 4 * v_2 [3:0] $end
+$var wire 4 + v_3 [3:0] $end
+
+$scope module voter_1 $end
+$var wire 4 % data_1 [3:0] $end
+$var wire 4 & data_2 [3:0] $end
+$var wire 4 ' data_3 [3:0] $end
+$var wire 4 ) voted_data [3:0] $end
+$var wire 1 , ctmn_29 $end
+$var wire 1 - ctmn_30 $end
+$var wire 1 . ctmn_31 $end
+$var wire 1 / ctmn_28 $end
+
+$scope module ctmi_34 $end
+$var wire 1 0 A $end
+$var wire 1 1 B $end
+$var wire 1 2 C $end
+$var wire 1 , ZN $end
+$var wire 1 3 AB $end
+$var wire 1 4 AC $end
+$var wire 1 5 BC $end
+$upscope $end
+
+
+$scope module ctmi_36 $end
+$var wire 1 6 A $end
+$var wire 1 7 B $end
+$var wire 1 8 C $end
+$var wire 1 - ZN $end
+$var wire 1 9 AB $end
+$var wire 1 : AC $end
+$var wire 1 ; BC $end
+$upscope $end
+
+
+$scope module ctmi_38 $end
+$var wire 1 < A $end
+$var wire 1 = B $end
+$var wire 1 > C $end
+$var wire 1 . ZN $end
+$var wire 1 ? AB $end
+$var wire 1 @ AC $end
+$var wire 1 A BC $end
+$upscope $end
+
+
+$scope module ctmi_35 $end
+$var wire 1 , I $end
+$var wire 1 B ZN $end
+$upscope $end
+
+
+$scope module ctmi_37 $end
+$var wire 1 - I $end
+$var wire 1 C ZN $end
+$upscope $end
+
+
+$scope module ctmi_39 $end
+$var wire 1 . I $end
+$var wire 1 D ZN $end
+$upscope $end
+
+
+$scope module ctmi_32 $end
+$var wire 1 E A $end
+$var wire 1 F B $end
+$var wire 1 G C $end
+$var wire 1 / ZN $end
+$var wire 1 H AB $end
+$var wire 1 I AC $end
+$var wire 1 J BC $end
+$upscope $end
+
+
+$scope module ctmi_33 $end
+$var wire 1 / I $end
+$var wire 1 K ZN $end
+$upscope $end
+
+$upscope $end
+
+
+$scope module voter_2 $end
+$var wire 4 % data_1 [3:0] $end
+$var wire 4 & data_2 [3:0] $end
+$var wire 4 ' data_3 [3:0] $end
+$var wire 4 * voted_data [3:0] $end
+$var wire 1 L ctmn_29 $end
+$var wire 1 M ctmn_30 $end
+$var wire 1 N ctmn_31 $end
+$var wire 1 O ctmn_28 $end
+
+$scope module ctmi_34 $end
+$var wire 1 0 A $end
+$var wire 1 1 B $end
+$var wire 1 2 C $end
+$var wire 1 L ZN $end
+$var wire 1 P AB $end
+$var wire 1 Q AC $end
+$var wire 1 R BC $end
+$upscope $end
+
+
+$scope module ctmi_36 $end
+$var wire 1 6 A $end
+$var wire 1 7 B $end
+$var wire 1 8 C $end
+$var wire 1 M ZN $end
+$var wire 1 S AB $end
+$var wire 1 T AC $end
+$var wire 1 U BC $end
+$upscope $end
+
+
+$scope module ctmi_38 $end
+$var wire 1 < A $end
+$var wire 1 = B $end
+$var wire 1 > C $end
+$var wire 1 N ZN $end
+$var wire 1 V AB $end
+$var wire 1 W AC $end
+$var wire 1 X BC $end
+$upscope $end
+
+
+$scope module ctmi_35 $end
+$var wire 1 L I $end
+$var wire 1 Y ZN $end
+$upscope $end
+
+
+$scope module ctmi_37 $end
+$var wire 1 M I $end
+$var wire 1 Z ZN $end
+$upscope $end
+
+
+$scope module ctmi_39 $end
+$var wire 1 N I $end
+$var wire 1 [ ZN $end
+$upscope $end
+
+
+$scope module ctmi_32 $end
+$var wire 1 E A $end
+$var wire 1 F B $end
+$var wire 1 G C $end
+$var wire 1 O ZN $end
+$var wire 1 \ AB $end
+$var wire 1 ] AC $end
+$var wire 1 ^ BC $end
+$upscope $end
+
+
+$scope module ctmi_33 $end
+$var wire 1 O I $end
+$var wire 1 _ ZN $end
+$upscope $end
+
+$upscope $end
+
+
+$scope module voter_3 $end
+$var wire 4 % data_1 [3:0] $end
+$var wire 4 & data_2 [3:0] $end
+$var wire 4 ' data_3 [3:0] $end
+$var wire 4 + voted_data [3:0] $end
+$var wire 1 ` ctmn_29 $end
+$var wire 1 a ctmn_30 $end
+$var wire 1 b ctmn_31 $end
+$var wire 1 c ctmn_28 $end
+
+$scope module ctmi_34 $end
+$var wire 1 0 A $end
+$var wire 1 1 B $end
+$var wire 1 2 C $end
+$var wire 1 ` ZN $end
+$var wire 1 d AB $end
+$var wire 1 e AC $end
+$var wire 1 f BC $end
+$upscope $end
+
+
+$scope module ctmi_36 $end
+$var wire 1 6 A $end
+$var wire 1 7 B $end
+$var wire 1 8 C $end
+$var wire 1 a ZN $end
+$var wire 1 g AB $end
+$var wire 1 h AC $end
+$var wire 1 i BC $end
+$upscope $end
+
+
+$scope module ctmi_38 $end
+$var wire 1 < A $end
+$var wire 1 = B $end
+$var wire 1 > C $end
+$var wire 1 b ZN $end
+$var wire 1 j AB $end
+$var wire 1 k AC $end
+$var wire 1 l BC $end
+$upscope $end
+
+
+$scope module ctmi_35 $end
+$var wire 1 ` I $end
+$var wire 1 m ZN $end
+$upscope $end
+
+
+$scope module ctmi_37 $end
+$var wire 1 a I $end
+$var wire 1 n ZN $end
+$upscope $end
+
+
+$scope module ctmi_39 $end
+$var wire 1 b I $end
+$var wire 1 o ZN $end
+$upscope $end
+
+
+$scope module ctmi_32 $end
+$var wire 1 E A $end
+$var wire 1 F B $end
+$var wire 1 G C $end
+$var wire 1 c ZN $end
+$var wire 1 p AB $end
+$var wire 1 q AC $end
+$var wire 1 r BC $end
+$upscope $end
+
+
+$scope module ctmi_33 $end
+$var wire 1 c I $end
+$var wire 1 s ZN $end
+$upscope $end
+
+$upscope $end
+
+
+$scope module final_voter $end
+$var wire 4 ) data_1 [3:0] $end
+$var wire 4 * data_2 [3:0] $end
+$var wire 4 + data_3 [3:0] $end
+$var wire 4 ( voted_data [3:0] $end
+$var wire 1 t ctmn_29 $end
+$var wire 1 u ctmn_30 $end
+$var wire 1 v ctmn_31 $end
+$var wire 1 w ctmn_28 $end
+
+$scope module ctmi_34 $end
+$var wire 1 x A $end
+$var wire 1 y B $end
+$var wire 1 z C $end
+$var wire 1 t ZN $end
+$var wire 1 { AB $end
+$var wire 1 | AC $end
+$var wire 1 } BC $end
+$upscope $end
+
+
+$scope module ctmi_36 $end
+$var wire 1 ~ A $end
+$var wire 1 "! B $end
+$var wire 1 "" C $end
+$var wire 1 u ZN $end
+$var wire 1 "# AB $end
+$var wire 1 "$ AC $end
+$var wire 1 "% BC $end
+$upscope $end
+
+
+$scope module ctmi_38 $end
+$var wire 1 "& A $end
+$var wire 1 "' B $end
+$var wire 1 "( C $end
+$var wire 1 v ZN $end
+$var wire 1 ") AB $end
+$var wire 1 "* AC $end
+$var wire 1 "+ BC $end
+$upscope $end
+
+
+$scope module ctmi_35 $end
+$var wire 1 t I $end
+$var wire 1 ", ZN $end
+$upscope $end
+
+
+$scope module ctmi_37 $end
+$var wire 1 u I $end
+$var wire 1 "- ZN $end
+$upscope $end
+
+
+$scope module ctmi_39 $end
+$var wire 1 v I $end
+$var wire 1 ". ZN $end
+$upscope $end
+
+
+$scope module ctmi_32 $end
+$var wire 1 "/ A $end
+$var wire 1 "0 B $end
+$var wire 1 "1 C $end
+$var wire 1 w ZN $end
+$var wire 1 "2 AB $end
+$var wire 1 "3 AC $end
+$var wire 1 "4 BC $end
+$upscope $end
+
+
+$scope module ctmi_33 $end
+$var wire 1 w I $end
+$var wire 1 "5 ZN $end
+$upscope $end
+
+$upscope $end
+
+$upscope $end
+
+$upscope $end
+
+$enddefinitions $end
+
+#0
+$dumpvars
+b1111 (
+b1111 !
+b1011 "
+b1111 #
+b1111 $
+03
+14
+05
+19
+1:
+1;
+1?
+1@
+1A
+1H
+1I
+1J
+0P
+1Q
+0R
+1S
+1T
+1U
+1V
+1W
+1X
+1\
+1]
+1^
+0d
+1e
+0f
+1g
+1h
+1i
+1j
+1k
+1l
+1p
+1q
+1r
+1{
+1|
+1}
+1"#
+1"$
+1"%
+1")
+1"*
+1"+
+1"2
+1"3
+1"4
+10
+01
+12
+16
+17
+18
+1<
+1=
+1>
+1E
+1F
+1G
+0,
+0-
+0.
+0/
+0L
+0M
+0N
+0O
+0`
+0a
+0b
+0c
+0t
+0u
+0v
+0w
+1B
+1C
+1D
+1K
+1Y
+1Z
+1[
+1_
+1m
+1n
+1o
+1s
+1",
+1"-
+1".
+1"5
+b1111 '
+b1011 &
+b1111 %
+b1111 +
+b1111 *
+b1111 )
+1x
+1y
+1z
+1~
+1"!
+1""
+1"&
+1"'
+1"(
+1"/
+1"0
+1"1
+$end
+#10000
+b1011 !
+b1011 %
+02
+04
+0Q
+0e
+b1001 "
+b1001 &
+07
+09
+0;
+0S
+0U
+0g
+0i
+b1011 #
+b1011 '
+00
+1`
+1L
+1,
+0B
+0z
+0|
+0}
+0Y
+0y
+0{
+0m
+0x
+b1011 )
+b1011 *
+b1011 +
+1t
+0",
+b1011 (
+b1011 $
+#20000
+b1111 !
+b1111 %
+12
+b1010 "
+b1010 &
+0=
+0?
+0A
+0V
+0X
+0j
+0l
+17
+19
+1;
+1S
+1U
+1g
+1i
+b1111 #
+b1111 '
+10
+14
+1Q
+1e
+0`
+0L
+0,
+1B
+1z
+1Y
+1y
+1}
+1m
+1x
+1|
+1{
+b1111 )
+b1111 *
+b1111 +
+0t
+1",
+b1111 (
+b1111 $
+#30000
+b1011 !
+b1011 %
+02
+04
+0Q
+0e
+b1001 "
+b1001 &
+1=
+1?
+1A
+1V
+1X
+1j
+1l
+07
+09
+0;
+0S
+0U
+0g
+0i
+b1001 #
+b1001 '
+06
+0:
+0T
+0h
+00
+1a
+1M
+1-
+1`
+1L
+1,
+0B
+0z
+0|
+0}
+0Y
+0y
+0{
+0m
+0x
+0C
+0""
+0"$
+0"%
+0Z
+0"!
+0"#
+0n
+0~
+b1001 )
+b1001 *
+b1001 +
+1u
+1t
+0",
+0"-
+b1001 (
+b1001 $
+#40000
+b1010 !
+b1010 %
+0>
+0@
+0A
+0W
+0X
+0k
+0l
+b1011 "
+b1011 &
+17
+1;
+1U
+1i
+b1111 #
+b1111 '
+16
+1:
+19
+1T
+1S
+1h
+1g
+10
+0a
+0M
+0-
+1C
+1""
+1Z
+1"!
+1"%
+1n
+1~
+1"$
+1"#
+b1011 )
+b1011 *
+b1011 +
+0u
+1"-
+b1011 (
+b1011 $

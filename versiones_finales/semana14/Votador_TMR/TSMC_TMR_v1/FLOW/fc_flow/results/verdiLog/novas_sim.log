@@ -1,0 +1,98 @@
+Invoking simulator...
+
+./results -sml=verdi +UVM_VERDI_TRACE=UVM_AWARE +fsdb+gate=off -ucli2Proc -ucli
+debImport "-i" "-simflow" "-dbdir" "./results.daidir"
+Chronologic VCS simulator copyright 1991-2023
+Contains Synopsys proprietary information.
+Compiler version U-2023.03-SP2_Full64; Runtime version U-2023.03-SP2_Full64;  May 11 20:32 2025
+
+*Verdi* Loading libsscore_vcs202303.so
+
+FSDB Dumper for VCS, Release Verdi_U-2023.03-SP2, Linux x86_64/64bit, 08/28/2023
+(C) 1996 - 2023 by Synopsys, Inc.
+
+*Verdi* : Create FSDB file '/mnt/vol_NFS_rh003/estudiantes/DANIELA_VARGAS/TFG_10/TFG/sintesis/Votador/TSMC_TMR/FLOW/fc_flow/results/inter.fsdb'
+
+*Verdi* : Flush all FSDB Files at 0 ps.
+
+*Verdi* : Enable RPC Server(3473521)
+
+srcTBInvokeSim
+xterm-256color is Not a valid terminal...
+Verdi>fsdbDumpvars 1 "tb_voter_tmr.dut.final_voter.data_1"  +all +trace_process;fsdbDumpvars 1 "tb_voter_tmr.dut.final_voter.data_2"  +all +trace_process;fsdbDumpvars 1 "tb_voter_tmr.dut.final_voter.data_3"  +all +trace_process;fsdbDumpflush 
+
+*Verdi* : Dumping the signal (tb_voter_tmr.dut.final_voter.data_1).
+*Verdi* : Dumping the signal (tb_voter_tmr.dut.final_voter.data_2).
+*Verdi* : Dumping the signal (tb_voter_tmr.dut.final_voter.data_3).
+*Verdi* : Flush all FSDB Files at 0 ps.
+
+Verdi>fsdbDumpvars 1 "tb_voter_tmr.dut.final_voter.voted_data"  +all +trace_process;fsdbDumpvars 1 "tb_voter_tmr.dut.final_voter.ctmn_29"  +all +trace_process;fsdbDumpvars 1 "tb_voter_tmr.dut.final_voter.ctmn_30"  +all +trace_process;fsdbDumpvars 1 "tb_voter_tmr.dut.final_voter.ctmn_31"  +all +trace_process;fsdbDumpvars 1 "tb_voter_tmr.dut.final_voter.ctmn_28"  +all +trace_process;fsdbDumpflush 
+
+*Verdi* : Dumping the signal (tb_voter_tmr.dut.final_voter.voted_data).
+*Verdi* : Dumping the signal (tb_voter_tmr.dut.final_voter.ctmn_29).
+*Verdi* : Dumping the signal (tb_voter_tmr.dut.final_voter.ctmn_30).
+*Verdi* : Dumping the signal (tb_voter_tmr.dut.final_voter.ctmn_31).
+*Verdi* : Dumping the signal (tb_voter_tmr.dut.final_voter.ctmn_28).
+*Verdi* : Flush all FSDB Files at 0 ps.
+
+Verdi>fsdbDumpvars 1 "tb_voter_tmr.dut.voter_1.data_1"  +all +trace_process;fsdbDumpvars 1 "tb_voter_tmr.dut.voter_1.data_2"  +all +trace_process;fsdbDumpvars 1 "tb_voter_tmr.dut.voter_1.data_3"  +all +trace_process;fsdbDumpvars 1 "tb_voter_tmr.dut.voter_1.voted_data"  +all +trace_process;fsdbDumpvars 1 "tb_voter_tmr.dut.voter_1.ctmn_29"  +all +trace_process;fsdbDumpvars 1 "tb_voter_tmr.dut.voter_1.ctmn_30"  +all +trace_process;fsdbDumpvars 1 "tb_voter_tmr.dut.voter_1.ctmn_31"  +all +trace_process;fsdbDumpvars 1 "tb_voter_tmr.dut.voter_1.ctmn_28"  +all +trace_process;fsdbDumpflush 
+
+*Verdi* : Dumping the signal (tb_voter_tmr.dut.voter_1.data_1).
+*Verdi* : Dumping the signal (tb_voter_tmr.dut.voter_1.data_2).
+*Verdi* : Dumping the signal (tb_voter_tmr.dut.voter_1.data_3).
+*Verdi* : Dumping the signal (tb_voter_tmr.dut.voter_1.voted_data).
+*Verdi* : Dumping the signal (tb_voter_tmr.dut.voter_1.ctmn_29).
+*Verdi* : Dumping the signal (tb_voter_tmr.dut.voter_1.ctmn_30).
+*Verdi* : Dumping the signal (tb_voter_tmr.dut.voter_1.ctmn_31).
+*Verdi* : Dumping the signal (tb_voter_tmr.dut.voter_1.ctmn_28).
+*Verdi* : Flush all FSDB Files at 0 ps.
+
+Verdi>fsdbDumpvars 1 "tb_voter_tmr.dut.voter_2.data_1"  +all +trace_process;fsdbDumpvars 1 "tb_voter_tmr.dut.voter_2.data_2"  +all +trace_process;fsdbDumpvars 1 "tb_voter_tmr.dut.voter_2.data_3"  +all +trace_process;fsdbDumpvars 1 "tb_voter_tmr.dut.voter_2.voted_data"  +all +trace_process;fsdbDumpvars 1 "tb_voter_tmr.dut.voter_2.ctmn_29"  +all +trace_process;fsdbDumpvars 1 "tb_voter_tmr.dut.voter_2.ctmn_30"  +all +trace_process;fsdbDumpvars 1 "tb_voter_tmr.dut.voter_2.ctmn_31"  +all +trace_process;fsdbDumpvars 1 "tb_voter_tmr.dut.voter_2.ctmn_28"  +all +trace_process;fsdbDumpflush 
+
+*Verdi* : Dumping the signal (tb_voter_tmr.dut.voter_2.data_1).
+*Verdi* : Dumping the signal (tb_voter_tmr.dut.voter_2.data_2).
+*Verdi* : Dumping the signal (tb_voter_tmr.dut.voter_2.data_3).
+*Verdi* : Dumping the signal (tb_voter_tmr.dut.voter_2.voted_data).
+*Verdi* : Dumping the signal (tb_voter_tmr.dut.voter_2.ctmn_29).
+*Verdi* : Dumping the signal (tb_voter_tmr.dut.voter_2.ctmn_30).
+*Verdi* : Dumping the signal (tb_voter_tmr.dut.voter_2.ctmn_31).
+*Verdi* : Dumping the signal (tb_voter_tmr.dut.voter_2.ctmn_28).
+*Verdi* : Flush all FSDB Files at 0 ps.
+
+Verdi>fsdbDumpvars 1 "tb_voter_tmr.dut.voter_3.data_1"  +all +trace_process;fsdbDumpvars 1 "tb_voter_tmr.dut.voter_3.data_2"  +all +trace_process;fsdbDumpvars 1 "tb_voter_tmr.dut.voter_3.data_3"  +all +trace_process;fsdbDumpvars 1 "tb_voter_tmr.dut.voter_3.voted_data"  +all +trace_process;fsdbDumpvars 1 "tb_voter_tmr.dut.voter_3.ctmn_29"  +all +trace_process;fsdbDumpvars 1 "tb_voter_tmr.dut.voter_3.ctmn_30"  +all +trace_process;fsdbDumpvars 1 "tb_voter_tmr.dut.voter_3.ctmn_31"  +all +trace_process;fsdbDumpvars 1 "tb_voter_tmr.dut.voter_3.ctmn_28"  +all +trace_process;fsdbDumpflush 
+
+*Verdi* : Dumping the signal (tb_voter_tmr.dut.voter_3.data_1).
+*Verdi* : Dumping the signal (tb_voter_tmr.dut.voter_3.data_2).
+*Verdi* : Dumping the signal (tb_voter_tmr.dut.voter_3.data_3).
+*Verdi* : Dumping the signal (tb_voter_tmr.dut.voter_3.voted_data).
+*Verdi* : Dumping the signal (tb_voter_tmr.dut.voter_3.ctmn_29).
+*Verdi* : Dumping the signal (tb_voter_tmr.dut.voter_3.ctmn_30).
+*Verdi* : Dumping the signal (tb_voter_tmr.dut.voter_3.ctmn_31).
+*Verdi* : Dumping the signal (tb_voter_tmr.dut.voter_3.ctmn_28).
+*Verdi* : Flush all FSDB Files at 0 ps.
+
+Verdi>run
+$finish called from file "tb.sv", line 45.
+$finish at simulation time                50000
+Simulation complete, time is 50000 ps.
+tb.sv, 45 :         $finish;
+Verdi>fsdbDumpvars 1 "tb_voter_tmr.dut.tmr_out"  +all +trace_process;fsdbDumpvars 1 "tb_voter_tmr.dut.data_3"  +all +trace_process;fsdbDumpvars 1 "tb_voter_tmr.dut.data_2"  +all +trace_process;fsdbDumpvars 1 "tb_voter_tmr.dut.data_1"  +all +trace_process;fsdbDumpflush 
+
+*Verdi* : Dumping the signal (tb_voter_tmr.dut.tmr_out).
+*Verdi* : Dumping the signal (tb_voter_tmr.dut.data_3).
+*Verdi* : Dumping the signal (tb_voter_tmr.dut.data_2).
+*Verdi* : Dumping the signal (tb_voter_tmr.dut.data_1).
+*Verdi* : Flush all FSDB Files at 50,000 ps.
+
+Verdi>fsdbDumpvars 1 "tb_voter_tmr.dut.v_1"  +all +trace_process;fsdbDumpvars 1 "tb_voter_tmr.dut.v_2"  +all +trace_process;fsdbDumpvars 1 "tb_voter_tmr.dut.v_3"  +all +trace_process;fsdbDumpflush 
+
+*Verdi* : Dumping the signal (tb_voter_tmr.dut.v_1).
+*Verdi* : Dumping the signal (tb_voter_tmr.dut.v_2).
+*Verdi* : Dumping the signal (tb_voter_tmr.dut.v_3).
+*Verdi* : Flush all FSDB Files at 50,000 ps.
+
+           V C S   S i m u l a t i o n   R e p o r t 
+Time: 50000 ps
+CPU Time:      0.390 seconds;       Data structure size:   0.0Mb
+Sun May 11 20:51:41 2025
+debExit
