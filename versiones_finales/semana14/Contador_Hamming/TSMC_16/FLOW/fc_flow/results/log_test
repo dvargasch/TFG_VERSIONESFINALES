@@ -1,0 +1,229 @@
+Command: vcs -Mupdate tb.sv -v /mnt/vol_NFS_rh003/profesores/pmendoza/KITS/TSMCHOME/digital/Front_End/verilog/tcbn65lphpbwpcghvt_200a/tcbn65lphpbwpcghvt.v \
+-v /mnt/vol_NFS_rh003/profesores/pmendoza/KITS/TSMCHOME/digital/Front_End/verilog/tcbn65lphpbwp_140a/tcbn65lphpbwp.v \
+-o results -full64 -sverilog -kdb -lca -debug_acc+all -debug_region+cell+encrypt \
+-l log_test +lint=TFIPC-L -cm line+tgl+cond+fsm+branch+assert
+                         Chronologic VCS (TM)
+       Version R-2020.12-SP2_Full64 -- Wed May 28 19:06:09 2025
+
+                    Copyright (c) 1991 - 2021 Synopsys, Inc.
+   This software and the associated documentation are proprietary to Synopsys,
+ Inc. This software may only be used in accordance with the terms and conditions
+ of a written license agreement with Synopsys, Inc. All other use, reproduction,
+            or distribution of this software is strictly prohibited.
+
+
+Warning-[LCA_FEATURES_ENABLED] Usage warning
+  LCA features enabled by '-lca' argument on the command line.  For more 
+  information regarding list of LCA features please refer to Chapter "LCA 
+  features" in the VCS Release Notes
+
+Parsing design file 'tb.sv'
+Parsing included file 'top_initial_syn.v'.
+Back to file 'tb.sv'.
+Parsing library file '/mnt/vol_NFS_rh003/profesores/pmendoza/KITS/TSMCHOME/digital/Front_End/verilog/tcbn65lphpbwpcghvt_200a/tcbn65lphpbwpcghvt.v'
+Parsing library file '/mnt/vol_NFS_rh003/profesores/pmendoza/KITS/TSMCHOME/digital/Front_End/verilog/tcbn65lphpbwp_140a/tcbn65lphpbwp.v'
+Top Level Modules:
+       tb_top
+TimeScale is 1 ns / 1 ps
+
+Lint-[TFIPC-L] Too few instance port connections
+top_initial_syn.v, 26
+top, "SDFNCND0HPBWP \counter_and_parity/count_neg_reg[14] ( .D (counter[14]),  .SI (1'b0),  .SE (1'b0),  .CPN (clk),  .CDN (SEQMAP_NET_294),  .Q (\counter_and_parity/count_neg [14]));"
+  The above instance has fewer port connections than the module definition,
+  There are 7 port(s) in module "SDFNCND0HPBWP" definition, but only 6 port 
+  connect(s) in the instance.
+  output port 'QN' is not connected.
+
+
+Lint-[TFIPC-L] Too few instance port connections
+top_initial_syn.v, 29
+top, "SDFNCND0HPBWP \counter_and_parity/count_neg_reg[13] ( .D (counter[13]),  .SI (1'b0),  .SE (1'b0),  .CPN (clk),  .CDN (SEQMAP_NET_294),  .Q (\counter_and_parity/count_neg [13]));"
+  The above instance has fewer port connections than the module definition,
+  There are 7 port(s) in module "SDFNCND0HPBWP" definition, but only 6 port 
+  connect(s) in the instance.
+  output port 'QN' is not connected.
+
+
+Lint-[TFIPC-L] Too few instance port connections
+top_initial_syn.v, 32
+top, "SDFNCND0HPBWP \counter_and_parity/count_neg_reg[12] ( .D (counter[12]),  .SI (1'b0),  .SE (1'b0),  .CPN (clk),  .CDN (SEQMAP_NET_294),  .Q (\counter_and_parity/count_neg [12]));"
+  The above instance has fewer port connections than the module definition,
+  There are 7 port(s) in module "SDFNCND0HPBWP" definition, but only 6 port 
+  connect(s) in the instance.
+  output port 'QN' is not connected.
+
+
+Lint-[TFIPC-L] Too few instance port connections
+top_initial_syn.v, 35
+top, "SDFNCND0HPBWP \counter_and_parity/count_neg_reg[11] ( .D (counter[11]),  .SI (1'b0),  .SE (1'b0),  .CPN (clk),  .CDN (SEQMAP_NET_294),  .Q (\counter_and_parity/count_neg [11]));"
+  The above instance has fewer port connections than the module definition,
+  There are 7 port(s) in module "SDFNCND0HPBWP" definition, but only 6 port 
+  connect(s) in the instance.
+  output port 'QN' is not connected.
+
+
+Lint-[TFIPC-L] Too few instance port connections
+top_initial_syn.v, 38
+top, "SDFNCND0HPBWP \counter_and_parity/count_neg_reg[10] ( .D (counter[10]),  .SI (1'b0),  .SE (1'b0),  .CPN (clk),  .CDN (SEQMAP_NET_294),  .Q (\counter_and_parity/count_neg [10]));"
+  The above instance has fewer port connections than the module definition,
+  There are 7 port(s) in module "SDFNCND0HPBWP" definition, but only 6 port 
+  connect(s) in the instance.
+  output port 'QN' is not connected.
+
+
+Lint-[TFIPC-L] Too few instance port connections
+top_initial_syn.v, 41
+top, "SDFNCND0HPBWP \counter_and_parity/count_neg_reg[9] ( .D (counter[9]),  .SI (1'b0),  .SE (1'b0),  .CPN (clk),  .CDN (SEQMAP_NET_294),  .Q (\counter_and_parity/count_neg [9]));"
+  The above instance has fewer port connections than the module definition,
+  There are 7 port(s) in module "SDFNCND0HPBWP" definition, but only 6 port 
+  connect(s) in the instance.
+  output port 'QN' is not connected.
+
+
+Lint-[TFIPC-L] Too few instance port connections
+top_initial_syn.v, 44
+top, "SDFNCND0HPBWP \counter_and_parity/count_neg_reg[8] ( .D (counter[8]),  .SI (1'b0),  .SE (1'b0),  .CPN (clk),  .CDN (SEQMAP_NET_294),  .Q (\counter_and_parity/count_neg [8]));"
+  The above instance has fewer port connections than the module definition,
+  There are 7 port(s) in module "SDFNCND0HPBWP" definition, but only 6 port 
+  connect(s) in the instance.
+  output port 'QN' is not connected.
+
+
+Lint-[TFIPC-L] Too few instance port connections
+top_initial_syn.v, 47
+top, "SDFNCND0HPBWP \counter_and_parity/count_neg_reg[7] ( .D (counter[7]),  .SI (1'b0),  .SE (1'b0),  .CPN (clk),  .CDN (SEQMAP_NET_294),  .Q (\counter_and_parity/count_neg [7]));"
+  The above instance has fewer port connections than the module definition,
+  There are 7 port(s) in module "SDFNCND0HPBWP" definition, but only 6 port 
+  connect(s) in the instance.
+  output port 'QN' is not connected.
+
+
+Lint-[TFIPC-L] Too few instance port connections
+top_initial_syn.v, 50
+top, "SDFNCND0HPBWP \counter_and_parity/count_neg_reg[6] ( .D (counter[6]),  .SI (1'b0),  .SE (1'b0),  .CPN (clk),  .CDN (SEQMAP_NET_294),  .Q (\counter_and_parity/count_neg [6]));"
+  The above instance has fewer port connections than the module definition,
+  There are 7 port(s) in module "SDFNCND0HPBWP" definition, but only 6 port 
+  connect(s) in the instance.
+  output port 'QN' is not connected.
+
+
+Lint-[TFIPC-L] Too few instance port connections
+top_initial_syn.v, 53
+top, "SDFNCND0HPBWP \counter_and_parity/count_neg_reg[5] ( .D (counter[5]),  .SI (1'b0),  .SE (1'b0),  .CPN (clk),  .CDN (SEQMAP_NET_294),  .Q (\counter_and_parity/count_neg [5]));"
+  The above instance has fewer port connections than the module definition,
+  There are 7 port(s) in module "SDFNCND0HPBWP" definition, but only 6 port 
+  connect(s) in the instance.
+  output port 'QN' is not connected.
+
+
+Lint-[TFIPC-L] Too few instance port connections
+top_initial_syn.v, 56
+top, "SDFNCND0HPBWP \counter_and_parity/count_neg_reg[4] ( .D (counter[4]),  .SI (1'b0),  .SE (1'b0),  .CPN (clk),  .CDN (SEQMAP_NET_294),  .Q (\counter_and_parity/count_neg [4]));"
+  The above instance has fewer port connections than the module definition,
+  There are 7 port(s) in module "SDFNCND0HPBWP" definition, but only 6 port 
+  connect(s) in the instance.
+  output port 'QN' is not connected.
+
+
+Lint-[TFIPC-L] Too few instance port connections
+top_initial_syn.v, 59
+top, "SDFNCND0HPBWP \counter_and_parity/count_neg_reg[3] ( .D (counter[3]),  .SI (1'b0),  .SE (1'b0),  .CPN (clk),  .CDN (SEQMAP_NET_294),  .Q (\counter_and_parity/count_neg [3]));"
+  The above instance has fewer port connections than the module definition,
+  There are 7 port(s) in module "SDFNCND0HPBWP" definition, but only 6 port 
+  connect(s) in the instance.
+  output port 'QN' is not connected.
+
+
+Lint-[TFIPC-L] Too few instance port connections
+top_initial_syn.v, 62
+top, "SDFNCND0HPBWP \counter_and_parity/count_neg_reg[2] ( .D (counter[2]),  .SI (1'b0),  .SE (1'b0),  .CPN (clk),  .CDN (SEQMAP_NET_294),  .Q (\counter_and_parity/count_neg [2]));"
+  The above instance has fewer port connections than the module definition,
+  There are 7 port(s) in module "SDFNCND0HPBWP" definition, but only 6 port 
+  connect(s) in the instance.
+  output port 'QN' is not connected.
+
+
+Lint-[TFIPC-L] Too few instance port connections
+top_initial_syn.v, 65
+top, "SDFNCND0HPBWP \counter_and_parity/count_neg_reg[1] ( .D (counter[1]),  .SI (1'b0),  .SE (1'b0),  .CPN (clk),  .CDN (SEQMAP_NET_294),  .Q (\counter_and_parity/count_neg [1]));"
+  The above instance has fewer port connections than the module definition,
+  There are 7 port(s) in module "SDFNCND0HPBWP" definition, but only 6 port 
+  connect(s) in the instance.
+  output port 'QN' is not connected.
+
+
+Lint-[TFIPC-L] Too few instance port connections
+top_initial_syn.v, 68
+top, "SDFNCND0HPBWP \counter_and_parity/count_neg_reg[0] ( .D (counter[0]),  .SI (1'b0),  .SE (1'b0),  .CPN (clk),  .CDN (SEQMAP_NET_294),  .Q (\counter_and_parity/count_neg [0]));"
+  The above instance has fewer port connections than the module definition,
+  There are 7 port(s) in module "SDFNCND0HPBWP" definition, but only 6 port 
+  connect(s) in the instance.
+  output port 'QN' is not connected.
+
+
+Lint-[TFIPC-L] Too few instance port connections
+top_initial_syn.v, 884
+top, "SDFNCND0HPBWP \counter_and_parity/count_neg_reg[15] ( .D (counter[15]),  .SI (1'b0),  .SE (1'b0),  .CPN (clk),  .CDN (SEQMAP_NET_294),  .Q (\counter_and_parity/count_neg [15]));"
+  The above instance has fewer port connections than the module definition,
+  There are 7 port(s) in module "SDFNCND0HPBWP" definition, but only 6 port 
+  connect(s) in the instance.
+  output port 'QN' is not connected.
+
+VCS Coverage Metrics Release R-2020.12-SP2_Full64 Copyright (c) 1991-2020 by Synopsys Inc.
+Starting vcs inline pass...
+39 modules and 4 UDPs read.
+recompiling module tb_top
+recompiling module AN3D0HPBWP
+recompiling module AN4D0HPBWP
+recompiling module AO21D0HPBWP
+recompiling module AO22D0HPBWP
+recompiling module AOI211D0HPBWP
+recompiling module AOI21D0HPBWP
+recompiling module AOI221D0HPBWP
+recompiling module AOI22D0HPBWP
+recompiling module AOI31D0HPBWP
+recompiling module CKLNQD1HPBWP
+recompiling module CKND0HPBWP
+recompiling module CKND2D0HPBWP
+recompiling module IND4D0HPBWP
+recompiling module INR2D0HPBWP
+recompiling module IOA21D0HPBWP
+recompiling module LHD1HPBWP
+recompiling module LHQD1HPBWP
+recompiling module MAOI22D0HPBWP
+recompiling module MOAI22D0HPBWP
+recompiling module MUX3D0HPBWP
+recompiling module ND3D0HPBWP
+recompiling module ND4D0HPBWP
+recompiling module NR2D0HPBWP
+recompiling module NR3D0HPBWP
+recompiling module NR4D0HPBWP
+recompiling module OA21D0HPBWP
+recompiling module OAI211D0HPBWP
+recompiling module OAI21D0HPBWP
+recompiling module OAI221D0HPBWP
+recompiling module OAI32D0HPBWP
+recompiling module OR2D0HPBWP
+recompiling module OR4D0HPBWP
+recompiling module SDFCND0HPBWP
+recompiling module SDFNCND0HPBWP
+recompiling module SDFSNQD0HPBWP
+recompiling module SEDFCNQD0HPBWP
+recompiling module XNR3D0HPBWP
+recompiling module XNR4D0HPBWP
+All of 39 modules done
+rm -f _cuarc*.so _csrc*.so pre_vcsobj_*.so share_vcsobj_*.so
+if [ -x ../results ]; then chmod a-x ../results; fi
+g++  -o ../results      -rdynamic  -Wl,-rpath='$ORIGIN'/results.daidir -Wl,-rpath=./results.daidir \
+-Wl,-rpath=/mnt/vol_NFS_rh003/tools/vcs/R-2020.12-SP2/linux64/lib -L/mnt/vol_NFS_rh003/tools/vcs/R-2020.12-SP2/linux64/lib \
+-Wl,-rpath-link=./  /usr/lib64/libnuma.so.1   objs/amcQw_d.o   _4032798_archive_1.so \
+objs/udps/JvR1L.o objs/udps/m6zeg.o objs/udps/df3ii.o objs/udps/HWVx0.o  SIM_l.o \
+rmapats_mop.o rmapats.o rmar.o rmar_nd.o  rmar_llvm_0_1.o rmar_llvm_0_0.o        \
+-lvirsim -lerrorinf -lsnpsmalloc -lvfs    -lvcsnew -lsimprofile -lreader_common /mnt/vol_NFS_rh003/tools/vcs/R-2020.12-SP2/linux64/lib/libBA.a \
+-luclinative /mnt/vol_NFS_rh003/tools/vcs/R-2020.12-SP2/linux64/lib/vcs_tls.o   -Wl,-whole-archive \
+-lvcsucli    -Wl,-no-whole-archive        _vcs_pli_stub_.o   /mnt/vol_NFS_rh003/tools/vcs/R-2020.12-SP2/linux64/lib/vcs_save_restore_new.o \
+/mnt/vol_NFS_rh003/tools/verdi/R-2020.12-SP2/share/PLI/VCS/LINUX64/pli.a -ldl  -lc \
+-lm -lpthread -ldl 
+../results up to date
+CPU time: 1.030 seconds to compile + .355 seconds to elab + .294 seconds to link
+Verdi KDB elaboration done and the database successfully generated: 0 error(s), 0 warning(s)

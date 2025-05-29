@@ -1,0 +1,75 @@
+simSetSimulator "-vcssv" -exec "./results" -args " " -uvmDebug on
+debImport "-i" "-simflow" "-dbdir" "./results.daidir"
+wvCreateWindow
+verdiShowWindow -win $_Verdi_1 -switchFS
+srcTBInvokeSim
+srcHBSelect "tb_top.dut" -win $_nTrace1
+srcHBSelect "tb_top.dut" -win $_nTrace1
+srcSignalView -on
+srcSignalViewSelect "tb_top.counter\[15:0\]"
+srcSignalViewSelect "tb_top.clk" "tb_top.rst" "tb_top.enable" \
+           "tb_top.counter\[15:0\]"
+srcHBSelect "tb_top.dut" -win $_nTrace1
+srcHBSelect "tb_top.dut" -win $_nTrace1
+srcSetScope "tb_top.dut" -delim "." -win $_nTrace1
+srcHBSelect "tb_top.dut" -win $_nTrace1
+srcSignalViewSelect "tb_top.dut.clk"
+srcSignalViewSelect "tb_top.dut.clk" "tb_top.dut.rst"
+srcSignalViewSelect "tb_top.dut.clk" "tb_top.dut.rst" "tb_top.dut.enable"
+srcSignalViewSelect "tb_top.dut.clk" "tb_top.dut.rst" "tb_top.dut.enable" \
+           "tb_top.dut.counter\[15:0\]"
+srcSignalViewSelect "tb_top.dut.clk" "tb_top.dut.rst" "tb_top.dut.enable" \
+           "tb_top.dut.counter\[15:0\]" "tb_top.dut.parity_stored\[11:0\]"
+srcSignalViewSelect "tb_top.dut.clk" "tb_top.dut.rst" "tb_top.dut.enable" \
+           "tb_top.dut.counter\[15:0\]" "tb_top.dut.parity_stored\[11:0\]" \
+           "tb_top.dut.corrected_counter\[15:0\]"
+srcSignalViewSelect "tb_top.dut.clk" "tb_top.dut.rst" "tb_top.dut.enable" \
+           "tb_top.dut.counter\[15:0\]" "tb_top.dut.parity_stored\[11:0\]" \
+           "tb_top.dut.corrected_counter\[15:0\]" \
+           "tb_top.dut.corrected_parity\[11:0\]"
+srcSignalViewSelect "tb_top.dut.clk" "tb_top.dut.rst" "tb_top.dut.enable" \
+           "tb_top.dut.counter\[15:0\]" "tb_top.dut.parity_stored\[11:0\]" \
+           "tb_top.dut.corrected_counter\[15:0\]" \
+           "tb_top.dut.corrected_parity\[11:0\]" "tb_top.dut.syndrome\[11:0\]"
+srcSignalViewSelect "tb_top.dut.clk" "tb_top.dut.rst" "tb_top.dut.enable" \
+           "tb_top.dut.counter\[15:0\]" "tb_top.dut.parity_stored\[11:0\]" \
+           "tb_top.dut.corrected_counter\[15:0\]" \
+           "tb_top.dut.corrected_parity\[11:0\]" "tb_top.dut.syndrome\[11:0\]" \
+           "tb_top.dut.\\counter_and_parity/count_neg \[15:0\]"
+srcSignalViewSelect "tb_top.dut.clk" "tb_top.dut.rst" "tb_top.dut.enable" \
+           "tb_top.dut.counter\[15:0\]" "tb_top.dut.parity_stored\[11:0\]" \
+           "tb_top.dut.corrected_counter\[15:0\]" \
+           "tb_top.dut.corrected_parity\[11:0\]" "tb_top.dut.syndrome\[11:0\]" \
+           "tb_top.dut.\\counter_and_parity/count_neg \[15:0\]" \
+           "tb_top.dut.\\counter_and_parity/counter_stored \[15:0\]"
+srcSignalViewSelect "tb_top.dut.clk" "tb_top.dut.rst" "tb_top.dut.enable" \
+           "tb_top.dut.counter\[15:0\]" "tb_top.dut.parity_stored\[11:0\]" \
+           "tb_top.dut.corrected_counter\[15:0\]" \
+           "tb_top.dut.corrected_parity\[11:0\]" "tb_top.dut.syndrome\[11:0\]" \
+           "tb_top.dut.\\counter_and_parity/count_neg \[15:0\]" \
+           "tb_top.dut.\\counter_and_parity/counter_stored \[15:0\]" \
+           "tb_top.dut.\\counter_and_parity/N19 "
+srcSignalViewSelect "tb_top.dut.clk" "tb_top.dut.rst" "tb_top.dut.enable" \
+           "tb_top.dut.counter\[15:0\]" "tb_top.dut.parity_stored\[11:0\]" \
+           "tb_top.dut.corrected_counter\[15:0\]" \
+           "tb_top.dut.corrected_parity\[11:0\]" "tb_top.dut.syndrome\[11:0\]" \
+           "tb_top.dut.\\counter_and_parity/count_neg \[15:0\]" \
+           "tb_top.dut.\\counter_and_parity/counter_stored \[15:0\]" \
+           "tb_top.dut.\\counter_and_parity/N19 " \
+           "tb_top.dut.\\counter_and_parity/N33 "
+wvAddSignal -win $_nWave3 "/tb_top/dut/clk" "/tb_top/dut/rst" \
+           "/tb_top/dut/enable" "/tb_top/dut/counter\[15:0\]" \
+           "/tb_top/dut/parity_stored\[11:0\]" \
+           "/tb_top/dut/corrected_counter\[15:0\]" \
+           "/tb_top/dut/corrected_parity\[11:0\]" \
+           "/tb_top/dut/syndrome\[11:0\]" \
+           "/tb_top/dut/\\counter_and_parity/count_neg \[15:0\]" \
+           "/tb_top/dut/\\counter_and_parity/counter_stored \[15:0\]" \
+           "/tb_top/dut/\\counter_and_parity/N19 " \
+           "/tb_top/dut/\\counter_and_parity/N33 "
+wvSetPosition -win $_nWave3 {("G1" 0)}
+wvSetPosition -win $_nWave3 {("G1" 12)}
+wvSetPosition -win $_nWave3 {("G1" 12)}
+srcTBRunSim
+wvZoomAll -win $_nWave3
+debExit

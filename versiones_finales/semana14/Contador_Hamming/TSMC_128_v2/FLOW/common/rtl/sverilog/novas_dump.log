@@ -1,0 +1,1765 @@
+#######################################################################################
+# log primitive debug message of FSDB dumping                                         #
+# This is for R&D to analyze when there are issues happening when FSDB dump           #
+#######################################################################################
+ANF: vcsd_get_serial_mode_status('/mnt/vol_NFS_rh003/estudiantes/DANIELA_VARGAS/Version_final/0516/versiones_finales/semana14/Contador_Hamming/TSMC_16/FLOW/common/rtl/sverilog/results_1: undefined symbol: vcsd_get_serial_mode_status')
+ANF: vcsd_enable_sva_success_callback('/mnt/vol_NFS_rh003/estudiantes/DANIELA_VARGAS/Version_final/0516/versiones_finales/semana14/Contador_Hamming/TSMC_16/FLOW/common/rtl/sverilog/results_1: undefined symbol: vcsd_enable_sva_success_callback')
+ANF: vcsd_disable_sva_success_callback('/mnt/vol_NFS_rh003/estudiantes/DANIELA_VARGAS/Version_final/0516/versiones_finales/semana14/Contador_Hamming/TSMC_16/FLOW/common/rtl/sverilog/results_1: undefined symbol: vcsd_disable_sva_success_callback')
+ANF: vcsd_get_power_scope_name('/mnt/vol_NFS_rh003/estudiantes/DANIELA_VARGAS/Version_final/0516/versiones_finales/semana14/Contador_Hamming/TSMC_16/FLOW/common/rtl/sverilog/results_1: undefined symbol: vcsd_get_power_scope_name')
+ANF: vcsd_begin_no_value_var_info('/mnt/vol_NFS_rh003/estudiantes/DANIELA_VARGAS/Version_final/0516/versiones_finales/semana14/Contador_Hamming/TSMC_16/FLOW/common/rtl/sverilog/results_1: undefined symbol: vcsd_begin_no_value_var_info')
+ANF: vcsd_end_no_value_var_info('/mnt/vol_NFS_rh003/estudiantes/DANIELA_VARGAS/Version_final/0516/versiones_finales/semana14/Contador_Hamming/TSMC_16/FLOW/common/rtl/sverilog/results_1: undefined symbol: vcsd_end_no_value_var_info')
+ANF: vcsd_remove_xprop_merge_mode_callback('/mnt/vol_NFS_rh003/estudiantes/DANIELA_VARGAS/Version_final/0516/versiones_finales/semana14/Contador_Hamming/TSMC_16/FLOW/common/rtl/sverilog/results_1: undefined symbol: vcsd_remove_xprop_merge_mode_callback')
+ANF: vhpi_get_cb_info('/mnt/vol_NFS_rh003/estudiantes/DANIELA_VARGAS/Version_final/0516/versiones_finales/semana14/Contador_Hamming/TSMC_16/FLOW/common/rtl/sverilog/results_1: undefined symbol: vhpi_get_cb_info')
+ANF: vhpi_free_handle('/mnt/vol_NFS_rh003/estudiantes/DANIELA_VARGAS/Version_final/0516/versiones_finales/semana14/Contador_Hamming/TSMC_16/FLOW/common/rtl/sverilog/results_1: undefined symbol: vhpi_free_handle')
+ANF: vhpi_fetch_vcsd_handle('/mnt/vol_NFS_rh003/estudiantes/DANIELA_VARGAS/Version_final/0516/versiones_finales/semana14/Contador_Hamming/TSMC_16/FLOW/common/rtl/sverilog/results_1: undefined symbol: vhpi_fetch_vcsd_handle')
+ANF: vhpi_fetch_vpi_handle('/mnt/vol_NFS_rh003/estudiantes/DANIELA_VARGAS/Version_final/0516/versiones_finales/semana14/Contador_Hamming/TSMC_16/FLOW/common/rtl/sverilog/results_1: undefined symbol: vhpi_fetch_vpi_handle')
+ANF: vhpi_has_verilog_parent('/mnt/vol_NFS_rh003/estudiantes/DANIELA_VARGAS/Version_final/0516/versiones_finales/semana14/Contador_Hamming/TSMC_16/FLOW/common/rtl/sverilog/results_1: undefined symbol: vhpi_has_verilog_parent')
+ANF: vhpi_is_verilog_scope('/mnt/vol_NFS_rh003/estudiantes/DANIELA_VARGAS/Version_final/0516/versiones_finales/semana14/Contador_Hamming/TSMC_16/FLOW/common/rtl/sverilog/results_1: undefined symbol: vhpi_is_verilog_scope')
+ANF: scsd_xprop_is_enabled('/mnt/vol_NFS_rh003/estudiantes/DANIELA_VARGAS/Version_final/0516/versiones_finales/semana14/Contador_Hamming/TSMC_16/FLOW/common/rtl/sverilog/results_1: undefined symbol: scsd_xprop_is_enabled')
+ANF: scsd_xprop_sig_is_promoted('/mnt/vol_NFS_rh003/estudiantes/DANIELA_VARGAS/Version_final/0516/versiones_finales/semana14/Contador_Hamming/TSMC_16/FLOW/common/rtl/sverilog/results_1: undefined symbol: scsd_xprop_sig_is_promoted')
+ANF: scsd_xprop_int_xvalue('/mnt/vol_NFS_rh003/estudiantes/DANIELA_VARGAS/Version_final/0516/versiones_finales/semana14/Contador_Hamming/TSMC_16/FLOW/common/rtl/sverilog/results_1: undefined symbol: scsd_xprop_int_xvalue')
+ANF: scsd_xprop_bool_xvalue('/mnt/vol_NFS_rh003/estudiantes/DANIELA_VARGAS/Version_final/0516/versiones_finales/semana14/Contador_Hamming/TSMC_16/FLOW/common/rtl/sverilog/results_1: undefined symbol: scsd_xprop_bool_xvalue')
+ANF: scsd_xprop_enum_xvalue('/mnt/vol_NFS_rh003/estudiantes/DANIELA_VARGAS/Version_final/0516/versiones_finales/semana14/Contador_Hamming/TSMC_16/FLOW/common/rtl/sverilog/results_1: undefined symbol: scsd_xprop_enum_xvalue')
+ANF: scsd_xprop_register_merge_mode_cb('/mnt/vol_NFS_rh003/estudiantes/DANIELA_VARGAS/Version_final/0516/versiones_finales/semana14/Contador_Hamming/TSMC_16/FLOW/common/rtl/sverilog/results_1: undefined symbol: scsd_xprop_register_merge_mode_cb')
+ANF: scsd_xprop_delete_merge_mode_cb('/mnt/vol_NFS_rh003/estudiantes/DANIELA_VARGAS/Version_final/0516/versiones_finales/semana14/Contador_Hamming/TSMC_16/FLOW/common/rtl/sverilog/results_1: undefined symbol: scsd_xprop_delete_merge_mode_cb')
+ANF: scsd_xprop_get_merge_mode('/mnt/vol_NFS_rh003/estudiantes/DANIELA_VARGAS/Version_final/0516/versiones_finales/semana14/Contador_Hamming/TSMC_16/FLOW/common/rtl/sverilog/results_1: undefined symbol: scsd_xprop_get_merge_mode')
+ANF: scsd_thread_get_info('/mnt/vol_NFS_rh003/estudiantes/DANIELA_VARGAS/Version_final/0516/versiones_finales/semana14/Contador_Hamming/TSMC_16/FLOW/common/rtl/sverilog/results_1: undefined symbol: scsd_thread_get_info')
+ANF: scsd_thread_vc_init('/mnt/vol_NFS_rh003/estudiantes/DANIELA_VARGAS/Version_final/0516/versiones_finales/semana14/Contador_Hamming/TSMC_16/FLOW/common/rtl/sverilog/results_1: undefined symbol: scsd_thread_vc_init')
+ANF: scsd_master_set_delta_sync_cbk('/mnt/vol_NFS_rh003/estudiantes/DANIELA_VARGAS/Version_final/0516/versiones_finales/semana14/Contador_Hamming/TSMC_16/FLOW/common/rtl/sverilog/results_1: undefined symbol: scsd_master_set_delta_sync_cbk')
+ANF: scsd_fgp_get_fsdb_cores('/mnt/vol_NFS_rh003/estudiantes/DANIELA_VARGAS/Version_final/0516/versiones_finales/semana14/Contador_Hamming/TSMC_16/FLOW/common/rtl/sverilog/results_1: undefined symbol: scsd_fgp_get_fsdb_cores')
+ANF: vhdi_dt_get_type('/mnt/vol_NFS_rh003/estudiantes/DANIELA_VARGAS/Version_final/0516/versiones_finales/semana14/Contador_Hamming/TSMC_16/FLOW/common/rtl/sverilog/results_1: undefined symbol: vhdi_dt_get_type')
+ANF: vhdi_dt_get_key('/mnt/vol_NFS_rh003/estudiantes/DANIELA_VARGAS/Version_final/0516/versiones_finales/semana14/Contador_Hamming/TSMC_16/FLOW/common/rtl/sverilog/results_1: undefined symbol: vhdi_dt_get_key')
+ANF: vhdi_dt_get_vhdl_enum_info('/mnt/vol_NFS_rh003/estudiantes/DANIELA_VARGAS/Version_final/0516/versiones_finales/semana14/Contador_Hamming/TSMC_16/FLOW/common/rtl/sverilog/results_1: undefined symbol: vhdi_dt_get_vhdl_enum_info')
+ANF: vhdi_dt_get_vhdl_physical_info('/mnt/vol_NFS_rh003/estudiantes/DANIELA_VARGAS/Version_final/0516/versiones_finales/semana14/Contador_Hamming/TSMC_16/FLOW/common/rtl/sverilog/results_1: undefined symbol: vhdi_dt_get_vhdl_physical_info')
+ANF: vhdi_dt_get_vhdl_array_info('/mnt/vol_NFS_rh003/estudiantes/DANIELA_VARGAS/Version_final/0516/versiones_finales/semana14/Contador_Hamming/TSMC_16/FLOW/common/rtl/sverilog/results_1: undefined symbol: vhdi_dt_get_vhdl_array_info')
+ANF: vhdi_dt_get_vhdl_record_info('/mnt/vol_NFS_rh003/estudiantes/DANIELA_VARGAS/Version_final/0516/versiones_finales/semana14/Contador_Hamming/TSMC_16/FLOW/common/rtl/sverilog/results_1: undefined symbol: vhdi_dt_get_vhdl_record_info')
+ANF: vhdi_def_traverse_module('/mnt/vol_NFS_rh003/estudiantes/DANIELA_VARGAS/Version_final/0516/versiones_finales/semana14/Contador_Hamming/TSMC_16/FLOW/common/rtl/sverilog/results_1: undefined symbol: vhdi_def_traverse_module')
+ANF: vhdi_def_traverse_scope('/mnt/vol_NFS_rh003/estudiantes/DANIELA_VARGAS/Version_final/0516/versiones_finales/semana14/Contador_Hamming/TSMC_16/FLOW/common/rtl/sverilog/results_1: undefined symbol: vhdi_def_traverse_scope')
+ANF: vhdi_def_traverse_variable('/mnt/vol_NFS_rh003/estudiantes/DANIELA_VARGAS/Version_final/0516/versiones_finales/semana14/Contador_Hamming/TSMC_16/FLOW/common/rtl/sverilog/results_1: undefined symbol: vhdi_def_traverse_variable')
+ANF: vhdi_def_get_module_id_by_vhpi('/mnt/vol_NFS_rh003/estudiantes/DANIELA_VARGAS/Version_final/0516/versiones_finales/semana14/Contador_Hamming/TSMC_16/FLOW/common/rtl/sverilog/results_1: undefined symbol: vhdi_def_get_module_id_by_vhpi')
+ANF: vhdi_def_get_handle_by_module_id('/mnt/vol_NFS_rh003/estudiantes/DANIELA_VARGAS/Version_final/0516/versiones_finales/semana14/Contador_Hamming/TSMC_16/FLOW/common/rtl/sverilog/results_1: undefined symbol: vhdi_def_get_handle_by_module_id')
+ANF: vhdi_def_get_variable_info_by_vhpi('/mnt/vol_NFS_rh003/estudiantes/DANIELA_VARGAS/Version_final/0516/versiones_finales/semana14/Contador_Hamming/TSMC_16/FLOW/common/rtl/sverilog/results_1: undefined symbol: vhdi_def_get_variable_info_by_vhpi')
+ANF: vhdi_def_free('/mnt/vol_NFS_rh003/estudiantes/DANIELA_VARGAS/Version_final/0516/versiones_finales/semana14/Contador_Hamming/TSMC_16/FLOW/common/rtl/sverilog/results_1: undefined symbol: vhdi_def_free')
+ANF: vhdi_ist_traverse_scope('/mnt/vol_NFS_rh003/estudiantes/DANIELA_VARGAS/Version_final/0516/versiones_finales/semana14/Contador_Hamming/TSMC_16/FLOW/common/rtl/sverilog/results_1: undefined symbol: vhdi_ist_traverse_scope')
+ANF: vhdi_ist_traverse_variable('/mnt/vol_NFS_rh003/estudiantes/DANIELA_VARGAS/Version_final/0516/versiones_finales/semana14/Contador_Hamming/TSMC_16/FLOW/common/rtl/sverilog/results_1: undefined symbol: vhdi_ist_traverse_variable')
+ANF: vhdi_ist_convert_by_vhpi('/mnt/vol_NFS_rh003/estudiantes/DANIELA_VARGAS/Version_final/0516/versiones_finales/semana14/Contador_Hamming/TSMC_16/FLOW/common/rtl/sverilog/results_1: undefined symbol: vhdi_ist_convert_by_vhpi')
+ANF: vhdi_ist_clone('/mnt/vol_NFS_rh003/estudiantes/DANIELA_VARGAS/Version_final/0516/versiones_finales/semana14/Contador_Hamming/TSMC_16/FLOW/common/rtl/sverilog/results_1: undefined symbol: vhdi_ist_clone')
+ANF: vhdi_ist_free('/mnt/vol_NFS_rh003/estudiantes/DANIELA_VARGAS/Version_final/0516/versiones_finales/semana14/Contador_Hamming/TSMC_16/FLOW/common/rtl/sverilog/results_1: undefined symbol: vhdi_ist_free')
+ANF: vhdi_ist_hash_key('/mnt/vol_NFS_rh003/estudiantes/DANIELA_VARGAS/Version_final/0516/versiones_finales/semana14/Contador_Hamming/TSMC_16/FLOW/common/rtl/sverilog/results_1: undefined symbol: vhdi_ist_hash_key')
+ANF: vhdi_ist_compare('/mnt/vol_NFS_rh003/estudiantes/DANIELA_VARGAS/Version_final/0516/versiones_finales/semana14/Contador_Hamming/TSMC_16/FLOW/common/rtl/sverilog/results_1: undefined symbol: vhdi_ist_compare')
+ANF: vhdi_ist_get_value_addr('/mnt/vol_NFS_rh003/estudiantes/DANIELA_VARGAS/Version_final/0516/versiones_finales/semana14/Contador_Hamming/TSMC_16/FLOW/common/rtl/sverilog/results_1: undefined symbol: vhdi_ist_get_value_addr')
+ANF: vhdi_set_scsd_callback('/mnt/vol_NFS_rh003/estudiantes/DANIELA_VARGAS/Version_final/0516/versiones_finales/semana14/Contador_Hamming/TSMC_16/FLOW/common/rtl/sverilog/results_1: undefined symbol: vhdi_set_scsd_callback')
+ANF: vhdi_cbk_set_force_callback('/mnt/vol_NFS_rh003/estudiantes/DANIELA_VARGAS/Version_final/0516/versiones_finales/semana14/Contador_Hamming/TSMC_16/FLOW/common/rtl/sverilog/results_1: undefined symbol: vhdi_cbk_set_force_callback')
+ANF: vhdi_trigger_init_force('/mnt/vol_NFS_rh003/estudiantes/DANIELA_VARGAS/Version_final/0516/versiones_finales/semana14/Contador_Hamming/TSMC_16/FLOW/common/rtl/sverilog/results_1: undefined symbol: vhdi_trigger_init_force')
+ANF: vhdi_ist_check_scsd_callback('/mnt/vol_NFS_rh003/estudiantes/DANIELA_VARGAS/Version_final/0516/versiones_finales/semana14/Contador_Hamming/TSMC_16/FLOW/common/rtl/sverilog/results_1: undefined symbol: vhdi_ist_check_scsd_callback')
+ANF: vhdi_ist_add_scsd_callback('/mnt/vol_NFS_rh003/estudiantes/DANIELA_VARGAS/Version_final/0516/versiones_finales/semana14/Contador_Hamming/TSMC_16/FLOW/common/rtl/sverilog/results_1: undefined symbol: vhdi_ist_add_scsd_callback')
+ANF: vhdi_ist_remove_scsd_callback('/mnt/vol_NFS_rh003/estudiantes/DANIELA_VARGAS/Version_final/0516/versiones_finales/semana14/Contador_Hamming/TSMC_16/FLOW/common/rtl/sverilog/results_1: undefined symbol: vhdi_ist_remove_scsd_callback')
+ANF: vhdi_ist_get_scsd_user_data('/mnt/vol_NFS_rh003/estudiantes/DANIELA_VARGAS/Version_final/0516/versiones_finales/semana14/Contador_Hamming/TSMC_16/FLOW/common/rtl/sverilog/results_1: undefined symbol: vhdi_ist_get_scsd_user_data')
+ANF: vhdi_add_time_change_callback('/mnt/vol_NFS_rh003/estudiantes/DANIELA_VARGAS/Version_final/0516/versiones_finales/semana14/Contador_Hamming/TSMC_16/FLOW/common/rtl/sverilog/results_1: undefined symbol: vhdi_add_time_change_callback')
+ANF: vhdi_get_real_value_by_value_addr('/mnt/vol_NFS_rh003/estudiantes/DANIELA_VARGAS/Version_final/0516/versiones_finales/semana14/Contador_Hamming/TSMC_16/FLOW/common/rtl/sverilog/results_1: undefined symbol: vhdi_get_real_value_by_value_addr')
+ANF: vhdi_get_64_value_by_value_addr('/mnt/vol_NFS_rh003/estudiantes/DANIELA_VARGAS/Version_final/0516/versiones_finales/semana14/Contador_Hamming/TSMC_16/FLOW/common/rtl/sverilog/results_1: undefined symbol: vhdi_get_64_value_by_value_addr')
+ANF: vhdi_xprop_inst_is_promoted('/mnt/vol_NFS_rh003/estudiantes/DANIELA_VARGAS/Version_final/0516/versiones_finales/semana14/Contador_Hamming/TSMC_16/FLOW/common/rtl/sverilog/results_1: undefined symbol: vhdi_xprop_inst_is_promoted')
+ANF: vdi_ist_convert_by_vhdi('/mnt/vol_NFS_rh003/estudiantes/DANIELA_VARGAS/Version_final/0516/versiones_finales/semana14/Contador_Hamming/TSMC_16/FLOW/common/rtl/sverilog/results_1: undefined symbol: vdi_ist_convert_by_vhdi')
+ANF: vhdi_ist_get_module_id('/mnt/vol_NFS_rh003/estudiantes/DANIELA_VARGAS/Version_final/0516/versiones_finales/semana14/Contador_Hamming/TSMC_16/FLOW/common/rtl/sverilog/results_1: undefined symbol: vhdi_ist_get_module_id')
+ANF: vhdi_refine_foreign_scope_type('/mnt/vol_NFS_rh003/estudiantes/DANIELA_VARGAS/Version_final/0516/versiones_finales/semana14/Contador_Hamming/TSMC_16/FLOW/common/rtl/sverilog/results_1: undefined symbol: vhdi_refine_foreign_scope_type')
+ANF: vhdi_flush_callback('/mnt/vol_NFS_rh003/estudiantes/DANIELA_VARGAS/Version_final/0516/versiones_finales/semana14/Contador_Hamming/TSMC_16/FLOW/common/rtl/sverilog/results_1: undefined symbol: vhdi_flush_callback')
+ANF: vhdi_set_orig_name('/mnt/vol_NFS_rh003/estudiantes/DANIELA_VARGAS/Version_final/0516/versiones_finales/semana14/Contador_Hamming/TSMC_16/FLOW/common/rtl/sverilog/results_1: undefined symbol: vhdi_set_orig_name')
+ANF: vhdi_set_dump_pt('/mnt/vol_NFS_rh003/estudiantes/DANIELA_VARGAS/Version_final/0516/versiones_finales/semana14/Contador_Hamming/TSMC_16/FLOW/common/rtl/sverilog/results_1: undefined symbol: vhdi_set_dump_pt')
+ANF: vhdi_get_fsdb_option('/mnt/vol_NFS_rh003/estudiantes/DANIELA_VARGAS/Version_final/0516/versiones_finales/semana14/Contador_Hamming/TSMC_16/FLOW/common/rtl/sverilog/results_1: undefined symbol: vhdi_get_fsdb_option')
+ANF: vhdi_fgp_get_mode('/mnt/vol_NFS_rh003/estudiantes/DANIELA_VARGAS/Version_final/0516/versiones_finales/semana14/Contador_Hamming/TSMC_16/FLOW/common/rtl/sverilog/results_1: undefined symbol: vhdi_fgp_get_mode')
+ANF: vhdi_node_register_composite_var('/mnt/vol_NFS_rh003/estudiantes/DANIELA_VARGAS/Version_final/0516/versiones_finales/semana14/Contador_Hamming/TSMC_16/FLOW/common/rtl/sverilog/results_1: undefined symbol: vhdi_node_register_composite_var')
+ANF: vhdi_node_analysis('/mnt/vol_NFS_rh003/estudiantes/DANIELA_VARGAS/Version_final/0516/versiones_finales/semana14/Contador_Hamming/TSMC_16/FLOW/common/rtl/sverilog/results_1: undefined symbol: vhdi_node_analysis')
+ANF: vhdi_node_id('/mnt/vol_NFS_rh003/estudiantes/DANIELA_VARGAS/Version_final/0516/versiones_finales/semana14/Contador_Hamming/TSMC_16/FLOW/common/rtl/sverilog/results_1: undefined symbol: vhdi_node_id')
+ANF: vhdi_node_ist_check_scsd_callback('/mnt/vol_NFS_rh003/estudiantes/DANIELA_VARGAS/Version_final/0516/versiones_finales/semana14/Contador_Hamming/TSMC_16/FLOW/common/rtl/sverilog/results_1: undefined symbol: vhdi_node_ist_check_scsd_callback')
+ANF: vhdi_node_ist_add_scsd_callback('/mnt/vol_NFS_rh003/estudiantes/DANIELA_VARGAS/Version_final/0516/versiones_finales/semana14/Contador_Hamming/TSMC_16/FLOW/common/rtl/sverilog/results_1: undefined symbol: vhdi_node_ist_add_scsd_callback')
+ANF: vhdi_node_ist_get_value_addr('/mnt/vol_NFS_rh003/estudiantes/DANIELA_VARGAS/Version_final/0516/versiones_finales/semana14/Contador_Hamming/TSMC_16/FLOW/common/rtl/sverilog/results_1: undefined symbol: vhdi_node_ist_get_value_addr')
+ANF: vhdi_enc_def_traverse_module('/mnt/vol_NFS_rh003/estudiantes/DANIELA_VARGAS/Version_final/0516/versiones_finales/semana14/Contador_Hamming/TSMC_16/FLOW/common/rtl/sverilog/results_1: undefined symbol: vhdi_enc_def_traverse_module')
+ANF: vhdi_enc_def_traverse_scope('/mnt/vol_NFS_rh003/estudiantes/DANIELA_VARGAS/Version_final/0516/versiones_finales/semana14/Contador_Hamming/TSMC_16/FLOW/common/rtl/sverilog/results_1: undefined symbol: vhdi_enc_def_traverse_scope')
+ANF: vhdi_enc_def_traverse_variable('/mnt/vol_NFS_rh003/estudiantes/DANIELA_VARGAS/Version_final/0516/versiones_finales/semana14/Contador_Hamming/TSMC_16/FLOW/common/rtl/sverilog/results_1: undefined symbol: vhdi_enc_def_traverse_variable')
+ANF: vhdi_enc_ist_traverse_scope('/mnt/vol_NFS_rh003/estudiantes/DANIELA_VARGAS/Version_final/0516/versiones_finales/semana14/Contador_Hamming/TSMC_16/FLOW/common/rtl/sverilog/results_1: undefined symbol: vhdi_enc_ist_traverse_scope')
+ANF: vhdi_enc_ist_traverse_variable('/mnt/vol_NFS_rh003/estudiantes/DANIELA_VARGAS/Version_final/0516/versiones_finales/semana14/Contador_Hamming/TSMC_16/FLOW/common/rtl/sverilog/results_1: undefined symbol: vhdi_enc_ist_traverse_variable')
+ANF: vhdi_enc_ist_get_module_id('/mnt/vol_NFS_rh003/estudiantes/DANIELA_VARGAS/Version_final/0516/versiones_finales/semana14/Contador_Hamming/TSMC_16/FLOW/common/rtl/sverilog/results_1: undefined symbol: vhdi_enc_ist_get_module_id')
+ANF: vhdi_enc_def_get_handle_by_module_id('/mnt/vol_NFS_rh003/estudiantes/DANIELA_VARGAS/Version_final/0516/versiones_finales/semana14/Contador_Hamming/TSMC_16/FLOW/common/rtl/sverilog/results_1: undefined symbol: vhdi_enc_def_get_handle_by_module_id')
+VCS compile option:
+ option[0]: /mnt/vol_NFS_rh003/estudiantes/DANIELA_VARGAS/Version_final/0516/versiones_finales/semana14/Contador_Hamming/TSMC_16/FLOW/common/rtl/sverilog/results_1
+ option[1]: -sml=verdi
+ option[2]: +UVM_VERDI_TRACE=UVM_AWARE
+ option[3]: +fsdb+gate=off
+ option[4]: -ucli2Proc
+ option[5]: -ucli
+ option[6]: -l
+ option[7]: /mnt/vol_NFS_rh003/estudiantes/DANIELA_VARGAS/Version_final/0516/versiones_finales/semana14/Contador_Hamming/TSMC_16/FLOW/common/rtl/sverilog/verdiLog/sim.log
+ option[8]: /mnt/vol_NFS_rh003/tools/vcs/R-2020.12-SP2/linux64/bin/vcs1
+ option[9]: -Mcc=gcc
+ option[10]: -Mcplusplus=g++
+ option[11]: -Masflags=
+ option[12]: -Mcfl= -pipe -fPIC -O -I/mnt/vol_NFS_rh003/tools/vcs/R-2020.12-SP2/include 
+ option[13]: -Mxllcflags=
+ option[14]: -Mxcflags= -pipe -fPIC -I/mnt/vol_NFS_rh003/tools/vcs/R-2020.12-SP2/include
+ option[15]: -Mldflags= -rdynamic 
+ option[16]: -Mout=results_1
+ option[17]: -Mamsrun=
+ option[18]: -Mvcsaceobjs=
+ option[19]: -Mobjects= /mnt/vol_NFS_rh003/tools/vcs/R-2020.12-SP2/linux64/lib/libvirsim.so /mnt/vol_NFS_rh003/tools/vcs/R-2020.12-SP2/linux64/lib/liberrorinf.so /mnt/vol_NFS_rh003/tools/vcs/R-2020.12-SP2/linux64/lib/libsnpsmalloc.so /mnt/vol_NFS_rh003/tools/vcs/R-2020.12-SP2/linux64/lib/libvfs.so 
+ option[20]: -Mexternalobj=
+ option[21]: -Msaverestoreobj=/mnt/vol_NFS_rh003/tools/vcs/R-2020.12-SP2/linux64/lib/vcs_save_restore_new.o
+ option[22]: -Mcrt0=
+ option[23]: -Mcrtn=
+ option[24]: -Mcsrc=
+ option[25]: -Mupdate
+ option[26]: -Msyslibs=/mnt/vol_NFS_rh003/tools/verdi/R-2020.12-SP2/share/PLI/VCS/LINUX64/pli.a -ldl 
+ option[27]: -l
+ option[28]: log_test
+ option[29]: -o
+ option[30]: results_1
+ option[31]: -full64
+ option[32]: -kdb
+ option[33]: -Xufe=2steps
+ option[34]: -lca
+ option[35]: -debug_acc+all
+ option[36]: +vpi
+ option[37]: +vcsd1
+ option[38]: +itf+/mnt/vol_NFS_rh003/tools/vcs/R-2020.12-SP2/linux64/lib/vcsdp_lite.tab
+ option[39]: -debug_region+cell+encrypt
+ option[40]: +lint=TFIPC-L
+ option[41]: -cm
+ option[42]: line+tgl+cond+fsm+branch+assert
+ option[43]: -picarchive
+ option[44]: -P
+ option[45]: /mnt/vol_NFS_rh003/tools/verdi/R-2020.12-SP2/share/PLI/VCS/LINUX64/verdi.tab
+ option[46]: -fsdb
+ option[47]: -sverilog
+ option[48]: -gen_obj
+ option[49]: tb.sv
+ option[50]: -v
+ option[51]: /mnt/vol_NFS_rh003/profesores/pmendoza/KITS/TSMCHOME/digital/Front_End/verilog/tcbn65lphpbwpcghvt_200a/tcbn65lphpbwpcghvt.v
+ option[52]: -v
+ option[53]: /mnt/vol_NFS_rh003/profesores/pmendoza/KITS/TSMCHOME/digital/Front_End/verilog/tcbn65lphpbwp_140a/tcbn65lphpbwp.v
+ option[54]: -load
+ option[55]: /mnt/vol_NFS_rh003/tools/verdi/R-2020.12-SP2/share/PLI/VCS/LINUX64/libnovas.so:FSDBDumpCmd
+Chronologic Simulation VCS Release R-2020.12-SP2_Full64
+Linux 4.18.0-553.51.1.el8_10.x86_64 #1 SMP Fri Apr 25 00:55:37 EDT 2025 x86_64
+CPU cores: 24
+Limit information:
+======================================
+cputime		unlimited
+filesize		unlimited
+datasize		unlimited
+stacksize		8192 kbytes
+coredumpsize		0 kbytes
+memoryuse		unlimited
+vmemoryuse		unlimited
+descriptors		262144
+memorylocked		64 kbytes
+maxproc		94941
+======================================
+(Special)Runtime environment variables:
+
+Runtime environment variables:
+UVM_HOME=/mnt/vol_NFS_rh003/tools/vcs/R-2020.12-SP2/etc/uvm-1.2
+LC_ALL=C
+LD_LIBRARY_PATH=
+LS_COLORS=rs=0:di=38;5;33:ln=38;5;51:mh=00:pi=40;38;5;11:so=38;5;13:do=38;5;5:bd=48;5;232;38;5;11:cd=48;5;232;38;5;3:or=48;5;232;38;5;9:mi=01;05;37;41:su=48;5;196;38;5;15:sg=48;5;11;38;5;16:ca=48;5;196;38;5;226:tw=48;5;10;38;5;16:ow=48;5;10;38;5;21:st=48;5;21;38;5;15:ex=38;5;40:*.tar=38;5;9:*.tgz=38;5;9:*.arc=38;5;9:*.arj=38;5;9:*.taz=38;5;9:*.lha=38;5;9:*.lz4=38;5;9:*.lzh=38;5;9:*.lzma=38;5;9:*.tlz=38;5;9:*.txz=38;5;9:*.tzo=38;5;9:*.t7z=38;5;9:*.zip=38;5;9:*.z=38;5;9:*.dz=38;5;9:*.gz=38;5;9:*.lrz=38;5;9:*.lz=38;5;9:*.lzo=38;5;9:*.xz=38;5;9:*.zst=38;5;9:*.tzst=38;5;9:*.bz2=38;5;9:*.bz=38;5;9:*.tbz=38;5;9:*.tbz2=38;5;9:*.tz=38;5;9:*.deb=38;5;9:*.rpm=38;5;9:*.jar=38;5;9:*.war=38;5;9:*.ear=38;5;9:*.sar=38;5;9:*.rar=38;5;9:*.alz=38;5;9:*.ace=38;5;9:*.zoo=38;5;9:*.cpio=38;5;9:*.7z=38;5;9:*.rz=38;5;9:*.cab=38;5;9:*.wim=38;5;9:*.swm=38;5;9:*.dwm=38;5;9:*.esd=38;5;9:*.jpg=38;5;13:*.jpeg=38;5;13:*.mjpg=38;5;13:*.mjpeg=38;5;13:*.gif=38;5;13:*.bmp=38;5;13:*.pbm=38;5;13:*.pgm=38;5;13:*.ppm=38;5;13:*.tga=38;5;13:*.xbm=38;5;13:*.xpm=38;5;13:*.tif=38;5;13:*.tiff=38;5;13:*.png=38;5;13:*.svg=38;5;13:*.svgz=38;5;13:*.mng=38;5;13:*.pcx=38;5;13:*.mov=38;5;13:*.mpg=38;5;13:*.mpeg=38;5;13:*.m2v=38;5;13:*.mkv=38;5;13:*.webm=38;5;13:*.ogm=38;5;13:*.mp4=38;5;13:*.m4v=38;5;13:*.mp4v=38;5;13:*.vob=38;5;13:*.qt=38;5;13:*.nuv=38;5;13:*.wmv=38;5;13:*.asf=38;5;13:*.rm=38;5;13:*.rmvb=38;5;13:*.flc=38;5;13:*.avi=38;5;13:*.fli=38;5;13:*.flv=38;5;13:*.gl=38;5;13:*.dl=38;5;13:*.xcf=38;5;13:*.xwd=38;5;13:*.yuv=38;5;13:*.cgm=38;5;13:*.emf=38;5;13:*.ogv=38;5;13:*.ogx=38;5;13:*.aac=38;5;45:*.au=38;5;45:*.flac=38;5;45:*.m4a=38;5;45:*.mid=38;5;45:*.midi=38;5;45:*.mka=38;5;45:*.mp3=38;5;45:*.mpc=38;5;45:*.ogg=38;5;45:*.ra=38;5;45:*.wav=38;5;45:*.oga=38;5;45:*.opus=38;5;45:*.spx=38;5;45:*.xspf=38;5;45:
+SYS_INST_DIR=/mnt/vol_NFS_rh003/tools/verdi/R-2020.12-SP2
+SSH_CONNECTION=172.21.7.108 55380 172.21.8.7 22
+XDG_MENU_PREFIX=gnome-
+MODULES_RUN_QUARANTINE=LD_LIBRARY_PATH LD_PRELOAD
+LANG=C
+HISTCONTROL=ignoredups
+DISPLAY=:2
+VNCDESKTOP=redhat003:2 (VARGAS_CHAVARRIA_2025)
+HOSTNAME=redhat003
+VCS_STACK_EXEC=true
+OLDPWD=/mnt/vol_NFS_rh003/estudiantes/DANIELA_VARGAS/Version_final/0516/versiones_finales/semana14/Contador_Hamming/TSMC_16/FLOW
+EDITOR=gedit
+COLORTERM=truecolor
+SYNOPSYS_HOME=/mnt/vol_NFS_rh003/tools
+SNPSLMD_LICENSE_FILE=27020@172.21.99.41
+SSH_AUTH_SOCK=/run/user/1398/keyring/ssh
+which_declare=declare -f
+XDG_SESSION_ID=6
+NOVAS_SYNC_MOTIF_DISP=
+MODULES_CMD=/usr/share/Modules/libexec/modulecmd.tcl
+USER=VARGAS_CHAVARRIA_2025
+VCS_EXEC_DONE=1
+GNOME_TERMINAL_SCREEN=/org/gnome/Terminal/screen/975d20d9_5ce0_416c_9530_3bda654c4b6a
+VCPS_HOME=/mnt/vol_synopsys2023/synopsys/vcps/U-2023.03-SP2-2
+PWD=/mnt/vol_NFS_rh003/estudiantes/DANIELA_VARGAS/Version_final/0516/versiones_finales/semana14/Contador_Hamming/TSMC_16/FLOW/common/rtl/sverilog
+SSH_ASKPASS=/usr/libexec/openssh/gnome-ssh-askpass
+HOME=/home/VARGAS_CHAVARRIA_2025
+DESIGN_HOME=/mnt/vol_NFS_rh003/estudiantes/DANIELA_VARGAS/Version_final/0516/versiones_finales/Registro/TSMC_Hamming_8_version2/FLOW/fc_flow/flow/work
+SSH_AGENT_PID=15671
+SSH_CLIENT=172.21.7.108 55380 22
+VCS_PATHMAP_PRELOAD_DONE=1
+XNLSPATH=/mnt/vol_NFS_rh003/tools/verdi/R-2020.12-SP2/etc/access/nls
+FINESIM_HOME=/mnt/vol_synopsys2023/synopsys/finesim/U-2023.03-SP2
+XDG_DATA_DIRS=/home/VARGAS_CHAVARRIA_2025/.local/share/flatpak/exports/share:/var/lib/flatpak/exports/share:/usr/local/share:/usr/share:/var/lib/snapd/desktop
+FTK_KIT_DIR=/mnt/vol_synopsys2023/pdks/xfab/design/xkit
+GJS_DEBUG_OUTPUT=stderr
+SPS_XFONT_PATH=/mnt/vol_NFS_rh003/tools/verdi/R-2020.12-SP2/XFont
+LOADEDMODULES=
+SSH_TTY=/dev/pts/4
+SILICONSMART_HOME=/mnt/vol_synopsys2023/synopsys/siliconsmart
+VC_STATIC_HOME=/mnt/vol_synopsys2023/synopsys/vc_static/U-2023.03-SP2
+MAIL=/var/spool/mail/VARGAS_CHAVARRIA_2025
+LD_NOVERSION=1
+QT_PLUGIN_PATH=/mnt/vol_NFS_rh003/tools/verdi/R-2020.12-SP2/platform/LINUXAMD64/lib/Qt/plugins
+SHELL=/bin/bash
+TERM=xterm-256color
+VTE_VERSION=5204
+QT_IM_MODULE=ibus
+XMODIFIERS=@im=none
+ICV_HOME_DIR=/mnt/vol_synopsys2023/synopsys/icvalidator/U-2022.12-SP4
+XDG_CURRENT_DESKTOP=GNOME
+GNOME_TERMINAL_SERVICE=:1.74
+VERDI_HOME=/mnt/vol_NFS_rh003/tools/verdi/R-2020.12-SP2
+SHLVL=4
+MANPATH=:
+SPS_FONT_PATH=/mnt/vol_NFS_rh003/tools/verdi/R-2020.12-SP2/font
+MODULEPATH=/etc/scl/modulefiles:/etc/scl/modulefiles:/usr/share/Modules/modulefiles:/etc/modulefiles:/usr/share/modulefiles
+VERDI_ORIGNAL_LD_LIBRARY_PATH=
+GNOME_DESKTOP_SESSION_ID=this-is-deprecated
+LOGNAME=VARGAS_CHAVARRIA_2025
+DBUS_SESSION_BUS_ADDRESS=unix:abstract=/tmp/dbus-5BomFIFjdg,guid=d009a6d591f12aa5eedf81f9682b9e36
+SPS_RGB_PATH=/mnt/vol_NFS_rh003/tools/verdi/R-2020.12-SP2/etc/rgb
+XDG_RUNTIME_DIR=/run/user/1398
+MODULEPATH_modshare=/usr/share/Modules/modulefiles:2:/etc/modulefiles:2:/usr/share/modulefiles:2
+MALLOC_ARENA_MAX=1
+PATH=/bin:/home/VARGAS_CHAVARRIA_2025/.local/bin:/home/VARGAS_CHAVARRIA_2025/bin:/usr/share/Modules/bin:/usr/lib64/ccache:/usr/local/bin:/usr/bin:/usr/local/sbin:/usr/sbin:/var/lib/snapd/snap/bin:/mnt/vol_synopsys2023/synopsys/asip_designer/U-2023.06-SP1/linux64/bin:/mnt/vol_synopsys2023/synopsys/customcompiler/U-2023.03-SP2/bin:/mnt/vol_synopsys2023/synopsys/syn/U-2022.12-SP6/bin:/mnt/vol_synopsys2023/synopsys/finesim/U-2023.03-SP2/bin:/mnt/vol_synopsys2023/synopsys/fusioncompiler/U-2022.12-SP6/bin:/mnt/vol_synopsys2023/synopsys/hspice/U-2023.03-SP2/hspice/bin:/mnt/vol_synopsys2023/synopsys/icc/U-2022.12-SP6/bin:/mnt/vol_synopsys2023/synopsys/icc2/U-2022.12-SP6/bin:/mnt/vol_synopsys2023/synopsys/icvalidator/U-2022.12-SP4/bin:/mnt/vol_synopsys2023/synopsys/lc/U-2022.12-SP6/bin:/mnt/vol_synopsys2023/synopsys/mw/U-2022.12-SP6/bin:/mnt/vol_synopsys2023/synopsys/primesim/U-2023.03-SP2/bin:/mnt/vol_synopsys2023/synopsys/prime/U-2022.12-SP5/bin:/mnt/vol_synopsys2023/synopsys/primewave/U-2023.03-SP2/bin:/mnt/vol_synopsys2023/synopsys/siliconsmart/U-2022.12-SP5/bin:/mnt/vol_synopsys2023/synopsys/starrc/U-2022.12-SP5/bin:/mnt/vol_synopsys2023/synopsys/scl/2023.03-SP1/linux64/bin:/mnt/vol_synopsys2023/synopsys/vc_static/U-2023.03-SP2/bin:/mnt/vol_synopsys2023/synopsys/vcps/U-2023.03-SP2-2/bin:/mnt/vol_synopsys2023/synopsys/vcs/U-2023.03-SP2/bin:/mnt/vol_synopsys2023/synopsys/verdi/U-2023.03-SP2/bin:/mnt/vol_synopsys2023/synopsys/wv/U-2023.03-SP2/bin:/mnt/vol_synopsys2023/synopsys/xa/U-2023.03-SP2/bin:/mnt/vol_synopsys2023/synopsys/euclide/Euclide-2023.12-SP1-2/linux.gtk.x86_64/eclipse/bin:/mnt/vol_synopsys2023/pdks/xfab/design/xkit/x_all/synopsys/xenv:/mnt/vol_NFS_rh003/tools/vcs/R-2020.12-SP2/bin:/mnt/vol_NFS_rh003/tools/verdi/R-2020.12-SP2/bin:/mnt/vol_NFS_rh003/Silicon_smart_install_Ronny/INSTALL_DIRECTORY/siliconsmart/T-2022.03-SP3-1/bin
+SNPSLMD_QUEUE=TRUE
+VCS_HOME=/mnt/vol_NFS_rh003/tools/vcs/R-2020.12-SP2
+MODULESHOME=/usr/share/Modules
+HISTSIZE=1000
+SNPS_SIM_DEFAULT_GUI=verdi
+GJS_DEBUG_TOPICS=JS ERROR;JS LOG
+SESSION_MANAGER=local/unix:@/tmp/.ICE-unix/15650,unix/unix:/tmp/.ICE-unix/15650
+SYS_PROG_NAME=verdi
+NOVASHLPPATH=/mnt/vol_NFS_rh003/tools/verdi/R-2020.12-SP2/doc
+LESSOPEN=||/usr/bin/lesspipe.sh %s
+BASH_FUNC_which%%=() {  ( alias;
+ eval ${which_declare} ) | /usr/bin/which --tty-only --read-alias --read-functions --show-tilde --show-dot $@
+}
+BASH_FUNC_module%%=() {  _module_raw "$@" 2>&1
+}
+BASH_FUNC__module_raw%%=() {  unset _mlshdbg;
+ if [ "${MODULES_SILENT_SHELL_DEBUG:-0}" = '1' ]; then
+ case "$-" in 
+ *v*x*)
+ set +vx;
+ _mlshdbg='vx'
+ ;;
+ *v*)
+ set +v;
+ _mlshdbg='v'
+ ;;
+ *x*)
+ set +x;
+ _mlshdbg='x'
+ ;;
+ *)
+ _mlshdbg=''
+ ;;
+ esac;
+ fi;
+ unset _mlre _mlIFS;
+ if [ -n "${IFS+x}" ]; then
+ _mlIFS=$IFS;
+ fi;
+ IFS=' ';
+ for _mlv in ${MODULES_RUN_QUARANTINE:-};
+ do
+ if [ "${_mlv}" = "${_mlv##*[!A-Za-z0-9_]}" -a "${_mlv}" = "${_mlv#[0-9]}" ]; then
+ if [ -n "`eval 'echo ${'$_mlv'+x}'`" ]; then
+ _mlre="${_mlre:-}${_mlv}_modquar='`eval 'echo ${'$_mlv'}'`' ";
+ fi;
+ _mlrv="MODULES_RUNENV_${_mlv}";
+ _mlre="${_mlre:-}${_mlv}='`eval 'echo ${'$_mlrv':-}'`' ";
+ fi;
+ done;
+ if [ -n "${_mlre:-}" ]; then
+ eval `eval ${_mlre} /usr/bin/tclsh /usr/share/Modules/libexec/modulecmd.tcl bash '"$@"'`;
+ else
+ eval `/usr/bin/tclsh /usr/share/Modules/libexec/modulecmd.tcl bash "$@"`;
+ fi;
+ _mlstatus=$?;
+ if [ -n "${_mlIFS+x}" ]; then
+ IFS=$_mlIFS;
+ else
+ unset IFS;
+ fi;
+ unset _mlre _mlv _mlrv _mlIFS;
+ if [ -n "${_mlshdbg:-}" ]; then
+ set -$_mlshdbg;
+ fi;
+ unset _mlshdbg;
+ return $_mlstatus
+}
+BASH_FUNC_switchml%%=() {  typeset swfound=1;
+ if [ "${MODULES_USE_COMPAT_VERSION:-0}" = '1' ]; then
+ typeset swname='main';
+ if [ -e /usr/share/Modules/libexec/modulecmd.tcl ]; then
+ typeset swfound=0;
+ unset MODULES_USE_COMPAT_VERSION;
+ fi;
+ else
+ typeset swname='compatibility';
+ if [ -e /usr/share/Modules/libexec/modulecmd-compat ]; then
+ typeset swfound=0;
+ MODULES_USE_COMPAT_VERSION=1;
+ export MODULES_USE_COMPAT_VERSION;
+ fi;
+ fi;
+ if [ $swfound -eq 0 ]; then
+ echo "Switching to Modules $swname version";
+ source /usr/share/Modules/init/bash;
+ else
+ echo "Cannot switch to Modules $swname version, command not found";
+ return 1;
+ fi
+}
+BASH_FUNC_scl%%=() {  if [ "$1" = "load" -o "$1" = "unload" ]; then
+ eval "module $@";
+ else
+ /usr/bin/scl "$@";
+ fi
+}
+BASH_FUNC_ml%%=() {  module ml "$@"
+}
+PS_HWPC=OFF
+NOVAS_LC_ALL=C
+SIMV_DAIDIR_PATH=/mnt/vol_NFS_rh003/estudiantes/DANIELA_VARGAS/Version_final/0516/versiones_finales/semana14/Contador_Hamming/TSMC_16/FLOW/common/rtl/sverilog/./results_1.daidir
+NOVAS_SIGNAL_BASE_EXTRACTION=1
+SIGNAL_BASE_EXTRACTION=1
+NOVAS_VERDI_SVTB_BETA=1
+VERDI_SVTB_BETA=1
+NOVAS_VERDI_SVTB_ALPHA=1
+VERDI_SVTB_ALPHA=1
+NOVAS_VERDI_TB_HT=1
+VERDI_TB_HT=1
+NOVAS_WAVE_REDRAW_ALLVC=1
+WAVE_REDRAW_ALLVC=1
+NOVAS_TCL_LIBRARY=/mnt/vol_NFS_rh003/tools/verdi/R-2020.12-SP2/etc/access/tcl86_library
+TCL_LIBRARY=/mnt/vol_NFS_rh003/tools/verdi/R-2020.12-SP2/etc/access/tcl86_library
+XKEYSYMDB=/mnt/vol_NFS_rh003/tools/verdi/R-2020.12-SP2/etc/access/XKeysymDB2.1
+XLOCALEDIR=/mnt/vol_NFS_rh003/tools/verdi/R-2020.12-SP2/etc/access/locale
+NOVAS_SIGNAL_BASED_BA=0
+SIGNAL_BASED_BA=0
+FSDB_FILE=/mnt/vol_NFS_rh003/estudiantes/DANIELA_VARGAS/Version_final/0516/versiones_finales/semana14/Contador_Hamming/TSMC_16/FLOW/common/rtl/sverilog/inter.fsdb
+VCS_UCLI_STDIN_BLOCKING=1
+FSDB_VHDL_PROTECTED=1
+FSDB_RD_IR_ENABLE=1
+FSDB_SVA_STATUS=1
+VCS_STOP_SAFE=1
+DVE_SIM_SELECT_LOOP=on
+FLEXLM_BORROWFILE=/home/VARGAS_CHAVARRIA_2025/.redhat003-borrow.txt
+Runtime command line arguments:
+argv[0]=/mnt/vol_NFS_rh003/estudiantes/DANIELA_VARGAS/Version_final/0516/versiones_finales/semana14/Contador_Hamming/TSMC_16/FLOW/common/rtl/sverilog/results_1
+argv[1]=-sml=verdi
+argv[2]=+UVM_VERDI_TRACE=UVM_AWARE
+argv[3]=+fsdb+gate=off
+argv[4]=-ucli2Proc
+argv[5]=-ucli
+argv[6]=-l
+argv[7]=/mnt/vol_NFS_rh003/estudiantes/DANIELA_VARGAS/Version_final/0516/versiones_finales/semana14/Contador_Hamming/TSMC_16/FLOW/common/rtl/sverilog/verdiLog/sim.log
+280 profile - 100
+          CPU/Mem usage: 0.010 sys,  0.040 user,  312.21M mem
+281 Elapsed time:    0:00:12    Wed May 28 20:19:52 2025
+282 pliAppInit
+283 ndpGetenv(FSDB_FILE): /mnt/vol_NFS_rh003/estudiantes/DANIELA_VARGAS/Version_final/0516/versiones_finales/semana14/Contador_Hamming/TSMC_16/FLOW/common/rtl/sverilog/inter.fsdb
+284 ndpGetenv(FSDB_SVA_STATUS): 1
+285 ndpGetenv(FSDB_VHDL_PROTECTED): 1
+286 [SC]Init: MemoryConsumed=0.00MB ElapsedTime=0hour 0min. 0sec.
+287 FSDB_GATE & FSDB_RTL is disabled.
+288 FSDB_FIELDTYPE is set.
+289 FSDB_ALIAS_ARRAY_ELEM is set to 4294967295.
+290 Enable Parallel Dumping.
+291 pliAppMiscSet: New Sim Round
+292 pliEntryInit
+293 LIBSSCORE=found /mnt/vol_NFS_rh003/tools/verdi/R-2020.12-SP2/share/PLI/lib/LINUXAMD64/libsscore_vcs202012.so through $NOVAS_HOME setting.
+294 FSDB Dumper for VCS, Release Verdi_R-2020.12-SP2, Linux x86_64/64bit, 05/23/2021
+295 (C) 1996 - 2021 by Synopsys, Inc.
+296 sps_tcl_fsdbDumpfile_main at 0
+297 argv[0]: /mnt/vol_NFS_rh003/estudiantes/DANIELA_VARGAS/Version_final/0516/versiones_finales/semana14/Contador_Hamming/TSMC_16/FLOW/common/rtl/sverilog/inter.fsdb
+298 *Verdi* : Create FSDB file '/mnt/vol_NFS_rh003/estudiantes/DANIELA_VARGAS/Version_final/0516/versiones_finales/semana14/Contador_Hamming/TSMC_16/FLOW/common/rtl/sverilog/inter.fsdb'
+299 [spi_vcs_vd_ppi_create_root]: no upf option
+300 FSDB dumper cannot dump UPF related power signal ($power_tree): no ppiPowerNetwork.
+301 compile option from '/mnt/vol_NFS_rh003/estudiantes/DANIELA_VARGAS/Version_final/0516/versiones_finales/semana14/Contador_Hamming/TSMC_16/FLOW/common/rtl/sverilog/results_1.daidir/vcs_rebuild'.
+302   "vcs '-Mupdate' 'tb.sv' '-v' '/mnt/vol_NFS_rh003/profesores/pmendoza/KITS/TSMCHOME/digital/Front_End/verilog/tcbn65lphpbwpcghvt_200a/tcbn65lphpbwpcghvt.v' '-v' '/mnt/vol_NFS_rh003/profesores/pmendoza/KITS/TSMCHOME/digital/Front_End/verilog/tcbn65lphpbwp_140a/tcbn65lphpbwp.v' '-o' 'results_1' '-full64' '-sverilog' '-kdb' '-lca' '-debug_acc+all' '-debug_region+cell+encrypt' '-l' 'log_test' '+lint=TFIPC-L' '-cm' 'line+tgl+cond+fsm+branch+assert' 2>&1"
+303 sps_tcl_fsdbDumpflush_vd_main at 0 : N/A(0)
+304 *Verdi* : Flush all FSDB Files at 0 ps.
+305 sps_tcl_fsdbDumpflush_vd_main at 0 : N/A(0)
+306 *Verdi* : Flush all FSDB Files at 0 ps.
+307 DVDI_is_vir_unload_enabled is enable
+308 FSDB_VCS_ENABLE_NATIVE_VC is enable
+309 sps_tcl_fsdbDumpvars_vd_main
+310 argv[0]: 1
+311 argv[1]: tb_top.dut.clk
+312 argv[2]: +all
+313 argv[3]: +trace_process
+314 *Verdi* : Dumping the signal (tb_top.dut.clk).
+315 pliAppHDL_DumpVarComplete traverse var: profile - 
+          CPU/Mem usage: 0.020 sys,  0.050 user,  425.24M mem
+                   incr: 0.000 sys,  0.000 user,  18.99M mem
+                   accu: 0.000 sys,  0.000 user,  18.99M mem
+              accu incr: 0.000 sys,  0.000 user,  18.99M mem
+
+          Count usage: 0 var,  1 idcode,  1 callback
+                 incr: 0 var,  1 idcode,  1 callback
+                 accu: 0 var,  1 idcode,  1 callback
+            accu incr: 0 var,  1 idcode,  1 callback
+316 Elapsed time:    0:03:21    Wed May 28 20:23:01 2025
+317 pliAppHDL_DumpVarComplete: profile - 
+          CPU/Mem usage: 0.020 sys,  0.050 user,  426.29M mem
+                   incr: 0.000 sys,  0.000 user,  1.05M mem
+                   accu: 0.000 sys,  0.000 user,  20.05M mem
+              accu incr: 0.000 sys,  0.000 user,  1.05M mem
+
+          Count usage: 0 var,  1 idcode,  1 callback
+                 incr: 0 var,  0 idcode,  0 callback
+                 accu: 0 var,  1 idcode,  1 callback
+            accu incr: 0 var,  0 idcode,  0 callback
+318 Elapsed time:    0:03:21    Wed May 28 20:23:01 2025
+319 sps_tcl_fsdbDumpvars_vd_main
+320 argv[0]: 1
+321 argv[1]: tb_top.dut.rst
+322 argv[2]: +all
+323 argv[3]: +trace_process
+324 *Verdi* : Dumping the signal (tb_top.dut.rst).
+325 pliAppHDL_DumpVarComplete traverse var: profile - 
+          CPU/Mem usage: 0.020 sys,  0.050 user,  426.29M mem
+                   incr: 0.000 sys,  0.000 user,  0.00M mem
+                   accu: 0.000 sys,  0.000 user,  0.00M mem
+              accu incr: 0.000 sys,  0.000 user,  0.00M mem
+
+          Count usage: 0 var,  2 idcode,  2 callback
+                 incr: 0 var,  1 idcode,  1 callback
+                 accu: 0 var,  1 idcode,  1 callback
+            accu incr: 0 var,  1 idcode,  1 callback
+326 Elapsed time:    0:03:21    Wed May 28 20:23:01 2025
+327 pliAppHDL_DumpVarComplete: profile - 
+          CPU/Mem usage: 0.020 sys,  0.050 user,  426.29M mem
+                   incr: 0.000 sys,  0.000 user,  0.00M mem
+                   accu: 0.000 sys,  0.000 user,  0.00M mem
+              accu incr: 0.000 sys,  0.000 user,  0.00M mem
+
+          Count usage: 0 var,  2 idcode,  2 callback
+                 incr: 0 var,  0 idcode,  0 callback
+                 accu: 0 var,  1 idcode,  1 callback
+            accu incr: 0 var,  0 idcode,  0 callback
+328 Elapsed time:    0:03:21    Wed May 28 20:23:01 2025
+329 sps_tcl_fsdbDumpvars_vd_main
+330 argv[0]: 1
+331 argv[1]: tb_top.dut.enable
+332 argv[2]: +all
+333 argv[3]: +trace_process
+334 *Verdi* : Dumping the signal (tb_top.dut.enable).
+335 pliAppHDL_DumpVarComplete traverse var: profile - 
+          CPU/Mem usage: 0.020 sys,  0.050 user,  426.29M mem
+                   incr: 0.000 sys,  0.000 user,  0.00M mem
+                   accu: 0.000 sys,  0.000 user,  0.00M mem
+              accu incr: 0.000 sys,  0.000 user,  0.00M mem
+
+          Count usage: 0 var,  3 idcode,  3 callback
+                 incr: 0 var,  1 idcode,  1 callback
+                 accu: 0 var,  1 idcode,  1 callback
+            accu incr: 0 var,  1 idcode,  1 callback
+336 Elapsed time:    0:03:21    Wed May 28 20:23:01 2025
+337 pliAppHDL_DumpVarComplete: profile - 
+          CPU/Mem usage: 0.020 sys,  0.050 user,  426.29M mem
+                   incr: 0.000 sys,  0.000 user,  0.00M mem
+                   accu: 0.000 sys,  0.000 user,  0.00M mem
+              accu incr: 0.000 sys,  0.000 user,  0.00M mem
+
+          Count usage: 0 var,  3 idcode,  3 callback
+                 incr: 0 var,  0 idcode,  0 callback
+                 accu: 0 var,  1 idcode,  1 callback
+            accu incr: 0 var,  0 idcode,  0 callback
+338 Elapsed time:    0:03:21    Wed May 28 20:23:01 2025
+339 sps_tcl_fsdbDumpvars_vd_main
+340 argv[0]: 1
+341 argv[1]: tb_top.dut.counter
+342 argv[2]: +all
+343 argv[3]: +trace_process
+344 *Verdi* : Dumping the signal (tb_top.dut.counter).
+345 pliAppHDL_DumpVarComplete traverse var: profile - 
+          CPU/Mem usage: 0.020 sys,  0.050 user,  427.34M mem
+                   incr: 0.000 sys,  0.000 user,  1.05M mem
+                   accu: 0.000 sys,  0.000 user,  1.05M mem
+              accu incr: 0.000 sys,  0.000 user,  1.05M mem
+
+          Count usage: 0 var,  4 idcode,  4 callback
+                 incr: 0 var,  1 idcode,  1 callback
+                 accu: 0 var,  1 idcode,  1 callback
+            accu incr: 0 var,  1 idcode,  1 callback
+346 Elapsed time:    0:03:21    Wed May 28 20:23:01 2025
+347 pliAppHDL_DumpVarComplete: profile - 
+          CPU/Mem usage: 0.020 sys,  0.050 user,  427.34M mem
+                   incr: 0.000 sys,  0.000 user,  0.00M mem
+                   accu: 0.000 sys,  0.000 user,  1.05M mem
+              accu incr: 0.000 sys,  0.000 user,  0.00M mem
+
+          Count usage: 0 var,  4 idcode,  4 callback
+                 incr: 0 var,  0 idcode,  0 callback
+                 accu: 0 var,  1 idcode,  1 callback
+            accu incr: 0 var,  0 idcode,  0 callback
+348 Elapsed time:    0:03:21    Wed May 28 20:23:01 2025
+349 sps_tcl_fsdbDumpvars_vd_main
+350 argv[0]: 1
+351 argv[1]: tb_top.dut.width
+352 argv[2]: +all
+353 argv[3]: +trace_process
+354 *Verdi* : Dumping the signal (tb_top.dut.width).
+355 pliAppHDL_DumpVarComplete traverse var: profile - 
+          CPU/Mem usage: 0.020 sys,  0.050 user,  427.57M mem
+                   incr: 0.000 sys,  0.000 user,  0.23M mem
+                   accu: 0.000 sys,  0.000 user,  0.23M mem
+              accu incr: 0.000 sys,  0.000 user,  0.23M mem
+
+          Count usage: 0 var,  5 idcode,  4 callback
+                 incr: 0 var,  1 idcode,  0 callback
+                 accu: 0 var,  1 idcode,  0 callback
+            accu incr: 0 var,  1 idcode,  0 callback
+356 Elapsed time:    0:03:21    Wed May 28 20:23:01 2025
+357 pliAppHDL_DumpVarComplete: profile - 
+          CPU/Mem usage: 0.020 sys,  0.050 user,  427.57M mem
+                   incr: 0.000 sys,  0.000 user,  0.00M mem
+                   accu: 0.000 sys,  0.000 user,  0.23M mem
+              accu incr: 0.000 sys,  0.000 user,  0.00M mem
+
+          Count usage: 0 var,  5 idcode,  4 callback
+                 incr: 0 var,  0 idcode,  0 callback
+                 accu: 0 var,  1 idcode,  0 callback
+            accu incr: 0 var,  0 idcode,  0 callback
+358 Elapsed time:    0:03:21    Wed May 28 20:23:01 2025
+359 sps_tcl_fsdbDumpvars_vd_main
+360 argv[0]: 1
+361 argv[1]: tb_top.dut.blocks
+362 argv[2]: +all
+363 argv[3]: +trace_process
+364 *Verdi* : Dumping the signal (tb_top.dut.blocks).
+365 pliAppHDL_DumpVarComplete traverse var: profile - 
+          CPU/Mem usage: 0.020 sys,  0.050 user,  427.57M mem
+                   incr: 0.000 sys,  0.000 user,  0.00M mem
+                   accu: 0.000 sys,  0.000 user,  0.00M mem
+              accu incr: 0.000 sys,  0.000 user,  0.00M mem
+
+          Count usage: 0 var,  6 idcode,  4 callback
+                 incr: 0 var,  1 idcode,  0 callback
+                 accu: 0 var,  1 idcode,  0 callback
+            accu incr: 0 var,  1 idcode,  0 callback
+366 Elapsed time:    0:03:21    Wed May 28 20:23:01 2025
+367 pliAppHDL_DumpVarComplete: profile - 
+          CPU/Mem usage: 0.020 sys,  0.050 user,  427.57M mem
+                   incr: 0.000 sys,  0.000 user,  0.00M mem
+                   accu: 0.000 sys,  0.000 user,  0.00M mem
+              accu incr: 0.000 sys,  0.000 user,  0.00M mem
+
+          Count usage: 0 var,  6 idcode,  4 callback
+                 incr: 0 var,  0 idcode,  0 callback
+                 accu: 0 var,  1 idcode,  0 callback
+            accu incr: 0 var,  0 idcode,  0 callback
+368 Elapsed time:    0:03:21    Wed May 28 20:23:01 2025
+369 sps_tcl_fsdbDumpvars_vd_main
+370 argv[0]: 1
+371 argv[1]: tb_top.dut.parity_bits
+372 argv[2]: +all
+373 argv[3]: +trace_process
+374 *Verdi* : Dumping the signal (tb_top.dut.parity_bits).
+375 pliAppHDL_DumpVarComplete traverse var: profile - 
+          CPU/Mem usage: 0.020 sys,  0.050 user,  427.57M mem
+                   incr: 0.000 sys,  0.000 user,  0.00M mem
+                   accu: 0.000 sys,  0.000 user,  0.00M mem
+              accu incr: 0.000 sys,  0.000 user,  0.00M mem
+
+          Count usage: 0 var,  7 idcode,  4 callback
+                 incr: 0 var,  1 idcode,  0 callback
+                 accu: 0 var,  1 idcode,  0 callback
+            accu incr: 0 var,  1 idcode,  0 callback
+376 Elapsed time:    0:03:21    Wed May 28 20:23:01 2025
+377 pliAppHDL_DumpVarComplete: profile - 
+          CPU/Mem usage: 0.020 sys,  0.050 user,  427.57M mem
+                   incr: 0.000 sys,  0.000 user,  0.00M mem
+                   accu: 0.000 sys,  0.000 user,  0.00M mem
+              accu incr: 0.000 sys,  0.000 user,  0.00M mem
+
+          Count usage: 0 var,  7 idcode,  4 callback
+                 incr: 0 var,  0 idcode,  0 callback
+                 accu: 0 var,  1 idcode,  0 callback
+            accu incr: 0 var,  0 idcode,  0 callback
+378 Elapsed time:    0:03:21    Wed May 28 20:23:01 2025
+379 sps_tcl_fsdbDumpvars_vd_main
+380 argv[0]: 1
+381 argv[1]: tb_top.dut.parity_stored
+382 argv[2]: +all
+383 argv[3]: +trace_process
+384 *Verdi* : Dumping the signal (tb_top.dut.parity_stored).
+385 pliAppHDL_DumpVarComplete traverse var: profile - 
+          CPU/Mem usage: 0.030 sys,  0.050 user,  427.57M mem
+                   incr: 0.010 sys,  0.000 user,  0.00M mem
+                   accu: 0.010 sys,  0.000 user,  0.00M mem
+              accu incr: 0.010 sys,  0.000 user,  0.00M mem
+
+          Count usage: 0 var,  8 idcode,  5 callback
+                 incr: 0 var,  1 idcode,  1 callback
+                 accu: 0 var,  1 idcode,  1 callback
+            accu incr: 0 var,  1 idcode,  1 callback
+386 Elapsed time:    0:03:21    Wed May 28 20:23:01 2025
+387 pliAppHDL_DumpVarComplete: profile - 
+          CPU/Mem usage: 0.030 sys,  0.050 user,  427.57M mem
+                   incr: 0.000 sys,  0.000 user,  0.00M mem
+                   accu: 0.010 sys,  0.000 user,  0.00M mem
+              accu incr: 0.000 sys,  0.000 user,  0.00M mem
+
+          Count usage: 0 var,  8 idcode,  5 callback
+                 incr: 0 var,  0 idcode,  0 callback
+                 accu: 0 var,  1 idcode,  1 callback
+            accu incr: 0 var,  0 idcode,  0 callback
+388 Elapsed time:    0:03:21    Wed May 28 20:23:01 2025
+389 sps_tcl_fsdbDumpvars_vd_main
+390 argv[0]: 1
+391 argv[1]: tb_top.dut.busy
+392 argv[2]: +all
+393 argv[3]: +trace_process
+394 *Verdi* : Dumping the signal (tb_top.dut.busy).
+395 pliAppHDL_DumpVarComplete traverse var: profile - 
+          CPU/Mem usage: 0.030 sys,  0.050 user,  427.57M mem
+                   incr: 0.000 sys,  0.000 user,  0.00M mem
+                   accu: 0.000 sys,  0.000 user,  0.00M mem
+              accu incr: 0.000 sys,  0.000 user,  0.00M mem
+
+          Count usage: 0 var,  9 idcode,  6 callback
+                 incr: 0 var,  1 idcode,  1 callback
+                 accu: 0 var,  1 idcode,  1 callback
+            accu incr: 0 var,  1 idcode,  1 callback
+396 Elapsed time:    0:03:21    Wed May 28 20:23:01 2025
+397 pliAppHDL_DumpVarComplete: profile - 
+          CPU/Mem usage: 0.030 sys,  0.050 user,  427.57M mem
+                   incr: 0.000 sys,  0.000 user,  0.00M mem
+                   accu: 0.000 sys,  0.000 user,  0.00M mem
+              accu incr: 0.000 sys,  0.000 user,  0.00M mem
+
+          Count usage: 0 var,  9 idcode,  6 callback
+                 incr: 0 var,  0 idcode,  0 callback
+                 accu: 0 var,  1 idcode,  1 callback
+            accu incr: 0 var,  0 idcode,  0 callback
+398 Elapsed time:    0:03:21    Wed May 28 20:23:01 2025
+399 sps_tcl_fsdbDumpvars_vd_main
+400 argv[0]: 1
+401 argv[1]: tb_top.dut.error_detected
+402 argv[2]: +all
+403 argv[3]: +trace_process
+404 *Verdi* : Dumping the signal (tb_top.dut.error_detected).
+405 pliAppHDL_DumpVarComplete traverse var: profile - 
+          CPU/Mem usage: 0.030 sys,  0.050 user,  427.57M mem
+                   incr: 0.000 sys,  0.000 user,  0.00M mem
+                   accu: 0.000 sys,  0.000 user,  0.00M mem
+              accu incr: 0.000 sys,  0.000 user,  0.00M mem
+
+          Count usage: 0 var,  10 idcode,  7 callback
+                 incr: 0 var,  1 idcode,  1 callback
+                 accu: 0 var,  1 idcode,  1 callback
+            accu incr: 0 var,  1 idcode,  1 callback
+406 Elapsed time:    0:03:21    Wed May 28 20:23:01 2025
+407 pliAppHDL_DumpVarComplete: profile - 
+          CPU/Mem usage: 0.030 sys,  0.050 user,  427.57M mem
+                   incr: 0.000 sys,  0.000 user,  0.00M mem
+                   accu: 0.000 sys,  0.000 user,  0.00M mem
+              accu incr: 0.000 sys,  0.000 user,  0.00M mem
+
+          Count usage: 0 var,  10 idcode,  7 callback
+                 incr: 0 var,  0 idcode,  0 callback
+                 accu: 0 var,  1 idcode,  1 callback
+            accu incr: 0 var,  0 idcode,  0 callback
+408 Elapsed time:    0:03:21    Wed May 28 20:23:01 2025
+409 sps_tcl_fsdbDumpvars_vd_main
+410 argv[0]: 1
+411 argv[1]: tb_top.dut.syndrome
+412 argv[2]: +all
+413 argv[3]: +trace_process
+414 *Verdi* : Dumping the signal (tb_top.dut.syndrome).
+415 pliAppHDL_DumpVarComplete traverse var: profile - 
+          CPU/Mem usage: 0.030 sys,  0.050 user,  427.57M mem
+                   incr: 0.000 sys,  0.000 user,  0.00M mem
+                   accu: 0.000 sys,  0.000 user,  0.00M mem
+              accu incr: 0.000 sys,  0.000 user,  0.00M mem
+
+          Count usage: 0 var,  11 idcode,  8 callback
+                 incr: 0 var,  1 idcode,  1 callback
+                 accu: 0 var,  1 idcode,  1 callback
+            accu incr: 0 var,  1 idcode,  1 callback
+416 Elapsed time:    0:03:21    Wed May 28 20:23:01 2025
+417 pliAppHDL_DumpVarComplete: profile - 
+          CPU/Mem usage: 0.030 sys,  0.050 user,  427.57M mem
+                   incr: 0.000 sys,  0.000 user,  0.00M mem
+                   accu: 0.000 sys,  0.000 user,  0.00M mem
+              accu incr: 0.000 sys,  0.000 user,  0.00M mem
+
+          Count usage: 0 var,  11 idcode,  8 callback
+                 incr: 0 var,  0 idcode,  0 callback
+                 accu: 0 var,  1 idcode,  1 callback
+            accu incr: 0 var,  0 idcode,  0 callback
+418 Elapsed time:    0:03:21    Wed May 28 20:23:01 2025
+419 sps_tcl_fsdbDumpvars_vd_main
+420 argv[0]: 1
+421 argv[1]: tb_top.dut.corrected_counter
+422 argv[2]: +all
+423 argv[3]: +trace_process
+424 *Verdi* : Dumping the signal (tb_top.dut.corrected_counter).
+425 pliAppHDL_DumpVarComplete traverse var: profile - 
+          CPU/Mem usage: 0.030 sys,  0.050 user,  427.57M mem
+                   incr: 0.000 sys,  0.000 user,  0.00M mem
+                   accu: 0.000 sys,  0.000 user,  0.00M mem
+              accu incr: 0.000 sys,  0.000 user,  0.00M mem
+
+          Count usage: 0 var,  12 idcode,  9 callback
+                 incr: 0 var,  1 idcode,  1 callback
+                 accu: 0 var,  1 idcode,  1 callback
+            accu incr: 0 var,  1 idcode,  1 callback
+426 Elapsed time:    0:03:21    Wed May 28 20:23:01 2025
+427 pliAppHDL_DumpVarComplete: profile - 
+          CPU/Mem usage: 0.030 sys,  0.050 user,  427.57M mem
+                   incr: 0.000 sys,  0.000 user,  0.00M mem
+                   accu: 0.000 sys,  0.000 user,  0.00M mem
+              accu incr: 0.000 sys,  0.000 user,  0.00M mem
+
+          Count usage: 0 var,  12 idcode,  9 callback
+                 incr: 0 var,  0 idcode,  0 callback
+                 accu: 0 var,  1 idcode,  1 callback
+            accu incr: 0 var,  0 idcode,  0 callback
+428 Elapsed time:    0:03:21    Wed May 28 20:23:01 2025
+429 sps_tcl_fsdbDumpvars_vd_main
+430 argv[0]: 1
+431 argv[1]: tb_top.dut.corrected_parity
+432 argv[2]: +all
+433 argv[3]: +trace_process
+434 *Verdi* : Dumping the signal (tb_top.dut.corrected_parity).
+435 pliAppHDL_DumpVarComplete traverse var: profile - 
+          CPU/Mem usage: 0.030 sys,  0.050 user,  427.57M mem
+                   incr: 0.000 sys,  0.000 user,  0.00M mem
+                   accu: 0.000 sys,  0.000 user,  0.00M mem
+              accu incr: 0.000 sys,  0.000 user,  0.00M mem
+
+          Count usage: 0 var,  13 idcode,  10 callback
+                 incr: 0 var,  1 idcode,  1 callback
+                 accu: 0 var,  1 idcode,  1 callback
+            accu incr: 0 var,  1 idcode,  1 callback
+436 Elapsed time:    0:03:21    Wed May 28 20:23:01 2025
+437 pliAppHDL_DumpVarComplete: profile - 
+          CPU/Mem usage: 0.030 sys,  0.050 user,  427.57M mem
+                   incr: 0.000 sys,  0.000 user,  0.00M mem
+                   accu: 0.000 sys,  0.000 user,  0.00M mem
+              accu incr: 0.000 sys,  0.000 user,  0.00M mem
+
+          Count usage: 0 var,  13 idcode,  10 callback
+                 incr: 0 var,  0 idcode,  0 callback
+                 accu: 0 var,  1 idcode,  1 callback
+            accu incr: 0 var,  0 idcode,  0 callback
+438 Elapsed time:    0:03:21    Wed May 28 20:23:01 2025
+439 sps_tcl_fsdbDumpvars_vd_main
+440 argv[0]: 1
+441 argv[1]: tb_top.dut.enable_last
+442 argv[2]: +all
+443 argv[3]: +trace_process
+444 *Verdi* : Dumping the signal (tb_top.dut.enable_last).
+445 pliAppHDL_DumpVarComplete traverse var: profile - 
+          CPU/Mem usage: 0.030 sys,  0.050 user,  427.57M mem
+                   incr: 0.000 sys,  0.000 user,  0.00M mem
+                   accu: 0.000 sys,  0.000 user,  0.00M mem
+              accu incr: 0.000 sys,  0.000 user,  0.00M mem
+
+          Count usage: 0 var,  14 idcode,  11 callback
+                 incr: 0 var,  1 idcode,  1 callback
+                 accu: 0 var,  1 idcode,  1 callback
+            accu incr: 0 var,  1 idcode,  1 callback
+446 Elapsed time:    0:03:21    Wed May 28 20:23:01 2025
+447 pliAppHDL_DumpVarComplete: profile - 
+          CPU/Mem usage: 0.030 sys,  0.050 user,  427.57M mem
+                   incr: 0.000 sys,  0.000 user,  0.00M mem
+                   accu: 0.000 sys,  0.000 user,  0.00M mem
+              accu incr: 0.000 sys,  0.000 user,  0.00M mem
+
+          Count usage: 0 var,  14 idcode,  11 callback
+                 incr: 0 var,  0 idcode,  0 callback
+                 accu: 0 var,  1 idcode,  1 callback
+            accu incr: 0 var,  0 idcode,  0 callback
+448 Elapsed time:    0:03:21    Wed May 28 20:23:01 2025
+449 sps_tcl_fsdbDumpflush_vd_main at 0 : N/A(0)
+450 *Verdi* : Flush all FSDB Files at 0 ps.
+451 sps_tcl_fsdbDumpvars_vd_main
+452 argv[0]: 1
+453 argv[1]: tb_top.dut.counter_and_parity.clk
+454 argv[2]: +all
+455 argv[3]: +trace_process
+456 *Verdi* : Dumping the signal (tb_top.dut.counter_and_parity.clk).
+457 pliAppHDL_DumpVarComplete traverse var: profile - 
+          CPU/Mem usage: 0.050 sys,  0.070 user,  429.15M mem
+                   incr: 0.000 sys,  0.000 user,  0.00M mem
+                   accu: 0.000 sys,  0.000 user,  0.00M mem
+              accu incr: 0.000 sys,  0.000 user,  0.00M mem
+
+          Count usage: 0 var,  15 idcode,  12 callback
+                 incr: 0 var,  1 idcode,  1 callback
+                 accu: 0 var,  1 idcode,  1 callback
+            accu incr: 0 var,  1 idcode,  1 callback
+458 Elapsed time:    0:03:37    Wed May 28 20:23:17 2025
+459 pliAppHDL_DumpVarComplete: profile - 
+          CPU/Mem usage: 0.050 sys,  0.070 user,  429.15M mem
+                   incr: 0.000 sys,  0.000 user,  0.00M mem
+                   accu: 0.000 sys,  0.000 user,  0.00M mem
+              accu incr: 0.000 sys,  0.000 user,  0.00M mem
+
+          Count usage: 0 var,  15 idcode,  12 callback
+                 incr: 0 var,  0 idcode,  0 callback
+                 accu: 0 var,  1 idcode,  1 callback
+            accu incr: 0 var,  0 idcode,  0 callback
+460 Elapsed time:    0:03:37    Wed May 28 20:23:17 2025
+461 sps_tcl_fsdbDumpvars_vd_main
+462 argv[0]: 1
+463 argv[1]: tb_top.dut.counter_and_parity.rst
+464 argv[2]: +all
+465 argv[3]: +trace_process
+466 *Verdi* : Dumping the signal (tb_top.dut.counter_and_parity.rst).
+467 pliAppHDL_DumpVarComplete traverse var: profile - 
+          CPU/Mem usage: 0.050 sys,  0.070 user,  429.15M mem
+                   incr: 0.000 sys,  0.000 user,  0.00M mem
+                   accu: 0.000 sys,  0.000 user,  0.00M mem
+              accu incr: 0.000 sys,  0.000 user,  0.00M mem
+
+          Count usage: 0 var,  16 idcode,  13 callback
+                 incr: 0 var,  1 idcode,  1 callback
+                 accu: 0 var,  1 idcode,  1 callback
+            accu incr: 0 var,  1 idcode,  1 callback
+468 Elapsed time:    0:03:37    Wed May 28 20:23:17 2025
+469 pliAppHDL_DumpVarComplete: profile - 
+          CPU/Mem usage: 0.050 sys,  0.070 user,  429.15M mem
+                   incr: 0.000 sys,  0.000 user,  0.00M mem
+                   accu: 0.000 sys,  0.000 user,  0.00M mem
+              accu incr: 0.000 sys,  0.000 user,  0.00M mem
+
+          Count usage: 0 var,  16 idcode,  13 callback
+                 incr: 0 var,  0 idcode,  0 callback
+                 accu: 0 var,  1 idcode,  1 callback
+            accu incr: 0 var,  0 idcode,  0 callback
+470 Elapsed time:    0:03:37    Wed May 28 20:23:17 2025
+471 sps_tcl_fsdbDumpvars_vd_main
+472 argv[0]: 1
+473 argv[1]: tb_top.dut.counter_and_parity.enable
+474 argv[2]: +all
+475 argv[3]: +trace_process
+476 *Verdi* : Dumping the signal (tb_top.dut.counter_and_parity.enable).
+477 pliAppHDL_DumpVarComplete traverse var: profile - 
+          CPU/Mem usage: 0.050 sys,  0.070 user,  429.15M mem
+                   incr: 0.000 sys,  0.000 user,  0.00M mem
+                   accu: 0.000 sys,  0.000 user,  0.00M mem
+              accu incr: 0.000 sys,  0.000 user,  0.00M mem
+
+          Count usage: 0 var,  17 idcode,  14 callback
+                 incr: 0 var,  1 idcode,  1 callback
+                 accu: 0 var,  1 idcode,  1 callback
+            accu incr: 0 var,  1 idcode,  1 callback
+478 Elapsed time:    0:03:37    Wed May 28 20:23:17 2025
+479 pliAppHDL_DumpVarComplete: profile - 
+          CPU/Mem usage: 0.050 sys,  0.070 user,  429.15M mem
+                   incr: 0.000 sys,  0.000 user,  0.00M mem
+                   accu: 0.000 sys,  0.000 user,  0.00M mem
+              accu incr: 0.000 sys,  0.000 user,  0.00M mem
+
+          Count usage: 0 var,  17 idcode,  14 callback
+                 incr: 0 var,  0 idcode,  0 callback
+                 accu: 0 var,  1 idcode,  1 callback
+            accu incr: 0 var,  0 idcode,  0 callback
+480 Elapsed time:    0:03:37    Wed May 28 20:23:17 2025
+481 sps_tcl_fsdbDumpvars_vd_main
+482 argv[0]: 1
+483 argv[1]: tb_top.dut.counter_and_parity.corrected_counter
+484 argv[2]: +all
+485 argv[3]: +trace_process
+486 *Verdi* : Dumping the signal (tb_top.dut.counter_and_parity.corrected_counter).
+487 pliAppHDL_DumpVarComplete traverse var: profile - 
+          CPU/Mem usage: 0.050 sys,  0.070 user,  429.15M mem
+                   incr: 0.000 sys,  0.000 user,  0.00M mem
+                   accu: 0.000 sys,  0.000 user,  0.00M mem
+              accu incr: 0.000 sys,  0.000 user,  0.00M mem
+
+          Count usage: 0 var,  18 idcode,  15 callback
+                 incr: 0 var,  1 idcode,  1 callback
+                 accu: 0 var,  1 idcode,  1 callback
+            accu incr: 0 var,  1 idcode,  1 callback
+488 Elapsed time:    0:03:37    Wed May 28 20:23:17 2025
+489 pliAppHDL_DumpVarComplete: profile - 
+          CPU/Mem usage: 0.050 sys,  0.070 user,  429.15M mem
+                   incr: 0.000 sys,  0.000 user,  0.00M mem
+                   accu: 0.000 sys,  0.000 user,  0.00M mem
+              accu incr: 0.000 sys,  0.000 user,  0.00M mem
+
+          Count usage: 0 var,  18 idcode,  15 callback
+                 incr: 0 var,  0 idcode,  0 callback
+                 accu: 0 var,  1 idcode,  1 callback
+            accu incr: 0 var,  0 idcode,  0 callback
+490 Elapsed time:    0:03:37    Wed May 28 20:23:17 2025
+491 sps_tcl_fsdbDumpvars_vd_main
+492 argv[0]: 1
+493 argv[1]: tb_top.dut.counter_and_parity.corrected_parity
+494 argv[2]: +all
+495 argv[3]: +trace_process
+496 *Verdi* : Dumping the signal (tb_top.dut.counter_and_parity.corrected_parity).
+497 pliAppHDL_DumpVarComplete traverse var: profile - 
+          CPU/Mem usage: 0.050 sys,  0.070 user,  429.15M mem
+                   incr: 0.000 sys,  0.000 user,  0.00M mem
+                   accu: 0.000 sys,  0.000 user,  0.00M mem
+              accu incr: 0.000 sys,  0.000 user,  0.00M mem
+
+          Count usage: 0 var,  19 idcode,  16 callback
+                 incr: 0 var,  1 idcode,  1 callback
+                 accu: 0 var,  1 idcode,  1 callback
+            accu incr: 0 var,  1 idcode,  1 callback
+498 Elapsed time:    0:03:37    Wed May 28 20:23:17 2025
+499 pliAppHDL_DumpVarComplete: profile - 
+          CPU/Mem usage: 0.050 sys,  0.070 user,  429.15M mem
+                   incr: 0.000 sys,  0.000 user,  0.00M mem
+                   accu: 0.000 sys,  0.000 user,  0.00M mem
+              accu incr: 0.000 sys,  0.000 user,  0.00M mem
+
+          Count usage: 0 var,  19 idcode,  16 callback
+                 incr: 0 var,  0 idcode,  0 callback
+                 accu: 0 var,  1 idcode,  1 callback
+            accu incr: 0 var,  0 idcode,  0 callback
+500 Elapsed time:    0:03:37    Wed May 28 20:23:17 2025
+501 sps_tcl_fsdbDumpvars_vd_main
+502 argv[0]: 1
+503 argv[1]: tb_top.dut.counter_and_parity.counter
+504 argv[2]: +all
+505 argv[3]: +trace_process
+506 *Verdi* : Dumping the signal (tb_top.dut.counter_and_parity.counter).
+507 pliAppHDL_DumpVarComplete traverse var: profile - 
+          CPU/Mem usage: 0.050 sys,  0.070 user,  429.15M mem
+                   incr: 0.000 sys,  0.000 user,  0.00M mem
+                   accu: 0.000 sys,  0.000 user,  0.00M mem
+              accu incr: 0.000 sys,  0.000 user,  0.00M mem
+
+          Count usage: 0 var,  20 idcode,  17 callback
+                 incr: 0 var,  1 idcode,  1 callback
+                 accu: 0 var,  1 idcode,  1 callback
+            accu incr: 0 var,  1 idcode,  1 callback
+508 Elapsed time:    0:03:37    Wed May 28 20:23:17 2025
+509 pliAppHDL_DumpVarComplete: profile - 
+          CPU/Mem usage: 0.050 sys,  0.070 user,  429.15M mem
+                   incr: 0.000 sys,  0.000 user,  0.00M mem
+                   accu: 0.000 sys,  0.000 user,  0.00M mem
+              accu incr: 0.000 sys,  0.000 user,  0.00M mem
+
+          Count usage: 0 var,  20 idcode,  17 callback
+                 incr: 0 var,  0 idcode,  0 callback
+                 accu: 0 var,  1 idcode,  1 callback
+            accu incr: 0 var,  0 idcode,  0 callback
+510 Elapsed time:    0:03:37    Wed May 28 20:23:17 2025
+511 sps_tcl_fsdbDumpvars_vd_main
+512 argv[0]: 1
+513 argv[1]: tb_top.dut.counter_and_parity.parity_stored
+514 argv[2]: +all
+515 argv[3]: +trace_process
+516 *Verdi* : Dumping the signal (tb_top.dut.counter_and_parity.parity_stored).
+517 pliAppHDL_DumpVarComplete traverse var: profile - 
+          CPU/Mem usage: 0.050 sys,  0.070 user,  429.15M mem
+                   incr: 0.000 sys,  0.000 user,  0.00M mem
+                   accu: 0.000 sys,  0.000 user,  0.00M mem
+              accu incr: 0.000 sys,  0.000 user,  0.00M mem
+
+          Count usage: 0 var,  21 idcode,  18 callback
+                 incr: 0 var,  1 idcode,  1 callback
+                 accu: 0 var,  1 idcode,  1 callback
+            accu incr: 0 var,  1 idcode,  1 callback
+518 Elapsed time:    0:03:37    Wed May 28 20:23:17 2025
+519 pliAppHDL_DumpVarComplete: profile - 
+          CPU/Mem usage: 0.050 sys,  0.070 user,  429.15M mem
+                   incr: 0.000 sys,  0.000 user,  0.00M mem
+                   accu: 0.000 sys,  0.000 user,  0.00M mem
+              accu incr: 0.000 sys,  0.000 user,  0.00M mem
+
+          Count usage: 0 var,  21 idcode,  18 callback
+                 incr: 0 var,  0 idcode,  0 callback
+                 accu: 0 var,  1 idcode,  1 callback
+            accu incr: 0 var,  0 idcode,  0 callback
+520 Elapsed time:    0:03:37    Wed May 28 20:23:17 2025
+521 sps_tcl_fsdbDumpvars_vd_main
+522 argv[0]: 1
+523 argv[1]: tb_top.dut.counter_and_parity.busy
+524 argv[2]: +all
+525 argv[3]: +trace_process
+526 *Verdi* : Dumping the signal (tb_top.dut.counter_and_parity.busy).
+527 pliAppHDL_DumpVarComplete traverse var: profile - 
+          CPU/Mem usage: 0.050 sys,  0.070 user,  429.15M mem
+                   incr: 0.000 sys,  0.000 user,  0.00M mem
+                   accu: 0.000 sys,  0.000 user,  0.00M mem
+              accu incr: 0.000 sys,  0.000 user,  0.00M mem
+
+          Count usage: 0 var,  22 idcode,  19 callback
+                 incr: 0 var,  1 idcode,  1 callback
+                 accu: 0 var,  1 idcode,  1 callback
+            accu incr: 0 var,  1 idcode,  1 callback
+528 Elapsed time:    0:03:37    Wed May 28 20:23:17 2025
+529 pliAppHDL_DumpVarComplete: profile - 
+          CPU/Mem usage: 0.050 sys,  0.070 user,  429.15M mem
+                   incr: 0.000 sys,  0.000 user,  0.00M mem
+                   accu: 0.000 sys,  0.000 user,  0.00M mem
+              accu incr: 0.000 sys,  0.000 user,  0.00M mem
+
+          Count usage: 0 var,  22 idcode,  19 callback
+                 incr: 0 var,  0 idcode,  0 callback
+                 accu: 0 var,  1 idcode,  1 callback
+            accu incr: 0 var,  0 idcode,  0 callback
+530 Elapsed time:    0:03:37    Wed May 28 20:23:17 2025
+531 sps_tcl_fsdbDumpvars_vd_main
+532 argv[0]: 1
+533 argv[1]: tb_top.dut.counter_and_parity.error_detected
+534 argv[2]: +all
+535 argv[3]: +trace_process
+536 *Verdi* : Dumping the signal (tb_top.dut.counter_and_parity.error_detected).
+537 pliAppHDL_DumpVarComplete traverse var: profile - 
+          CPU/Mem usage: 0.050 sys,  0.070 user,  429.15M mem
+                   incr: 0.000 sys,  0.000 user,  0.00M mem
+                   accu: 0.000 sys,  0.000 user,  0.00M mem
+              accu incr: 0.000 sys,  0.000 user,  0.00M mem
+
+          Count usage: 0 var,  23 idcode,  20 callback
+                 incr: 0 var,  1 idcode,  1 callback
+                 accu: 0 var,  1 idcode,  1 callback
+            accu incr: 0 var,  1 idcode,  1 callback
+538 Elapsed time:    0:03:37    Wed May 28 20:23:17 2025
+539 pliAppHDL_DumpVarComplete: profile - 
+          CPU/Mem usage: 0.050 sys,  0.070 user,  429.15M mem
+                   incr: 0.000 sys,  0.000 user,  0.00M mem
+                   accu: 0.000 sys,  0.000 user,  0.00M mem
+              accu incr: 0.000 sys,  0.000 user,  0.00M mem
+
+          Count usage: 0 var,  23 idcode,  20 callback
+                 incr: 0 var,  0 idcode,  0 callback
+                 accu: 0 var,  1 idcode,  1 callback
+            accu incr: 0 var,  0 idcode,  0 callback
+540 Elapsed time:    0:03:37    Wed May 28 20:23:17 2025
+541 sps_tcl_fsdbDumpvars_vd_main
+542 argv[0]: 1
+543 argv[1]: tb_top.dut.counter_and_parity.enable_last
+544 argv[2]: +all
+545 argv[3]: +trace_process
+546 *Verdi* : Dumping the signal (tb_top.dut.counter_and_parity.enable_last).
+547 pliAppHDL_DumpVarComplete traverse var: profile - 
+          CPU/Mem usage: 0.050 sys,  0.070 user,  429.15M mem
+                   incr: 0.000 sys,  0.000 user,  0.00M mem
+                   accu: 0.000 sys,  0.000 user,  0.00M mem
+              accu incr: 0.000 sys,  0.000 user,  0.00M mem
+
+          Count usage: 0 var,  24 idcode,  21 callback
+                 incr: 0 var,  1 idcode,  1 callback
+                 accu: 0 var,  1 idcode,  1 callback
+            accu incr: 0 var,  1 idcode,  1 callback
+548 Elapsed time:    0:03:37    Wed May 28 20:23:17 2025
+549 pliAppHDL_DumpVarComplete: profile - 
+          CPU/Mem usage: 0.050 sys,  0.070 user,  429.15M mem
+                   incr: 0.000 sys,  0.000 user,  0.00M mem
+                   accu: 0.000 sys,  0.000 user,  0.00M mem
+              accu incr: 0.000 sys,  0.000 user,  0.00M mem
+
+          Count usage: 0 var,  24 idcode,  21 callback
+                 incr: 0 var,  0 idcode,  0 callback
+                 accu: 0 var,  1 idcode,  1 callback
+            accu incr: 0 var,  0 idcode,  0 callback
+550 Elapsed time:    0:03:37    Wed May 28 20:23:17 2025
+551 sps_tcl_fsdbDumpvars_vd_main
+552 argv[0]: 1
+553 argv[1]: tb_top.dut.counter_and_parity.width
+554 argv[2]: +all
+555 argv[3]: +trace_process
+556 *Verdi* : Dumping the signal (tb_top.dut.counter_and_parity.width).
+557 pliAppHDL_DumpVarComplete traverse var: profile - 
+          CPU/Mem usage: 0.050 sys,  0.070 user,  429.15M mem
+                   incr: 0.000 sys,  0.000 user,  0.00M mem
+                   accu: 0.000 sys,  0.000 user,  0.00M mem
+              accu incr: 0.000 sys,  0.000 user,  0.00M mem
+
+          Count usage: 0 var,  24 idcode,  21 callback
+                 incr: 0 var,  0 idcode,  0 callback
+                 accu: 0 var,  0 idcode,  0 callback
+            accu incr: 0 var,  0 idcode,  0 callback
+558 Elapsed time:    0:03:37    Wed May 28 20:23:17 2025
+559 pliAppHDL_DumpVarComplete: profile - 
+          CPU/Mem usage: 0.050 sys,  0.070 user,  429.15M mem
+                   incr: 0.000 sys,  0.000 user,  0.00M mem
+                   accu: 0.000 sys,  0.000 user,  0.00M mem
+              accu incr: 0.000 sys,  0.000 user,  0.00M mem
+
+          Count usage: 0 var,  24 idcode,  21 callback
+                 incr: 0 var,  0 idcode,  0 callback
+                 accu: 0 var,  0 idcode,  0 callback
+            accu incr: 0 var,  0 idcode,  0 callback
+560 Elapsed time:    0:03:37    Wed May 28 20:23:17 2025
+561 sps_tcl_fsdbDumpvars_vd_main
+562 argv[0]: 1
+563 argv[1]: tb_top.dut.counter_and_parity.blocks
+564 argv[2]: +all
+565 argv[3]: +trace_process
+566 *Verdi* : Dumping the signal (tb_top.dut.counter_and_parity.blocks).
+567 pliAppHDL_DumpVarComplete traverse var: profile - 
+          CPU/Mem usage: 0.050 sys,  0.070 user,  429.15M mem
+                   incr: 0.000 sys,  0.000 user,  0.00M mem
+                   accu: 0.000 sys,  0.000 user,  0.00M mem
+              accu incr: 0.000 sys,  0.000 user,  0.00M mem
+
+          Count usage: 0 var,  24 idcode,  21 callback
+                 incr: 0 var,  0 idcode,  0 callback
+                 accu: 0 var,  0 idcode,  0 callback
+            accu incr: 0 var,  0 idcode,  0 callback
+568 Elapsed time:    0:03:37    Wed May 28 20:23:17 2025
+569 pliAppHDL_DumpVarComplete: profile - 
+          CPU/Mem usage: 0.050 sys,  0.070 user,  429.15M mem
+                   incr: 0.000 sys,  0.000 user,  0.00M mem
+                   accu: 0.000 sys,  0.000 user,  0.00M mem
+              accu incr: 0.000 sys,  0.000 user,  0.00M mem
+
+          Count usage: 0 var,  24 idcode,  21 callback
+                 incr: 0 var,  0 idcode,  0 callback
+                 accu: 0 var,  0 idcode,  0 callback
+            accu incr: 0 var,  0 idcode,  0 callback
+570 Elapsed time:    0:03:37    Wed May 28 20:23:17 2025
+571 sps_tcl_fsdbDumpvars_vd_main
+572 argv[0]: 1
+573 argv[1]: tb_top.dut.counter_and_parity.parity_bits
+574 argv[2]: +all
+575 argv[3]: +trace_process
+576 *Verdi* : Dumping the signal (tb_top.dut.counter_and_parity.parity_bits).
+577 pliAppHDL_DumpVarComplete traverse var: profile - 
+          CPU/Mem usage: 0.050 sys,  0.070 user,  429.15M mem
+                   incr: 0.000 sys,  0.000 user,  0.00M mem
+                   accu: 0.000 sys,  0.000 user,  0.00M mem
+              accu incr: 0.000 sys,  0.000 user,  0.00M mem
+
+          Count usage: 0 var,  24 idcode,  21 callback
+                 incr: 0 var,  0 idcode,  0 callback
+                 accu: 0 var,  0 idcode,  0 callback
+            accu incr: 0 var,  0 idcode,  0 callback
+578 Elapsed time:    0:03:37    Wed May 28 20:23:17 2025
+579 pliAppHDL_DumpVarComplete: profile - 
+          CPU/Mem usage: 0.050 sys,  0.070 user,  429.15M mem
+                   incr: 0.000 sys,  0.000 user,  0.00M mem
+                   accu: 0.000 sys,  0.000 user,  0.00M mem
+              accu incr: 0.000 sys,  0.000 user,  0.00M mem
+
+          Count usage: 0 var,  24 idcode,  21 callback
+                 incr: 0 var,  0 idcode,  0 callback
+                 accu: 0 var,  0 idcode,  0 callback
+            accu incr: 0 var,  0 idcode,  0 callback
+580 Elapsed time:    0:03:37    Wed May 28 20:23:17 2025
+581 sps_tcl_fsdbDumpvars_vd_main
+582 argv[0]: 1
+583 argv[1]: tb_top.dut.counter_and_parity.count_reg
+584 argv[2]: +all
+585 argv[3]: +trace_process
+586 *Verdi* : Dumping the signal (tb_top.dut.counter_and_parity.count_reg).
+587 pliAppHDL_DumpVarComplete traverse var: profile - 
+          CPU/Mem usage: 0.050 sys,  0.070 user,  429.15M mem
+                   incr: 0.000 sys,  0.000 user,  0.00M mem
+                   accu: 0.000 sys,  0.000 user,  0.00M mem
+              accu incr: 0.000 sys,  0.000 user,  0.00M mem
+
+          Count usage: 0 var,  25 idcode,  22 callback
+                 incr: 0 var,  1 idcode,  1 callback
+                 accu: 0 var,  1 idcode,  1 callback
+            accu incr: 0 var,  1 idcode,  1 callback
+588 Elapsed time:    0:03:37    Wed May 28 20:23:17 2025
+589 pliAppHDL_DumpVarComplete: profile - 
+          CPU/Mem usage: 0.050 sys,  0.070 user,  429.15M mem
+                   incr: 0.000 sys,  0.000 user,  0.00M mem
+                   accu: 0.000 sys,  0.000 user,  0.00M mem
+              accu incr: 0.000 sys,  0.000 user,  0.00M mem
+
+          Count usage: 0 var,  25 idcode,  22 callback
+                 incr: 0 var,  0 idcode,  0 callback
+                 accu: 0 var,  1 idcode,  1 callback
+            accu incr: 0 var,  0 idcode,  0 callback
+590 Elapsed time:    0:03:37    Wed May 28 20:23:17 2025
+591 sps_tcl_fsdbDumpvars_vd_main
+592 argv[0]: 1
+593 argv[1]: tb_top.dut.counter_and_parity.count_neg
+594 argv[2]: +all
+595 argv[3]: +trace_process
+596 *Verdi* : Dumping the signal (tb_top.dut.counter_and_parity.count_neg).
+597 pliAppHDL_DumpVarComplete traverse var: profile - 
+          CPU/Mem usage: 0.050 sys,  0.070 user,  429.15M mem
+                   incr: 0.000 sys,  0.000 user,  0.00M mem
+                   accu: 0.000 sys,  0.000 user,  0.00M mem
+              accu incr: 0.000 sys,  0.000 user,  0.00M mem
+
+          Count usage: 0 var,  26 idcode,  23 callback
+                 incr: 0 var,  1 idcode,  1 callback
+                 accu: 0 var,  1 idcode,  1 callback
+            accu incr: 0 var,  1 idcode,  1 callback
+598 Elapsed time:    0:03:37    Wed May 28 20:23:17 2025
+599 pliAppHDL_DumpVarComplete: profile - 
+          CPU/Mem usage: 0.050 sys,  0.070 user,  429.15M mem
+                   incr: 0.000 sys,  0.000 user,  0.00M mem
+                   accu: 0.000 sys,  0.000 user,  0.00M mem
+              accu incr: 0.000 sys,  0.000 user,  0.00M mem
+
+          Count usage: 0 var,  26 idcode,  23 callback
+                 incr: 0 var,  0 idcode,  0 callback
+                 accu: 0 var,  1 idcode,  1 callback
+            accu incr: 0 var,  0 idcode,  0 callback
+600 Elapsed time:    0:03:37    Wed May 28 20:23:17 2025
+601 sps_tcl_fsdbDumpvars_vd_main
+602 argv[0]: 1
+603 argv[1]: tb_top.dut.counter_and_parity.counter_stored
+604 argv[2]: +all
+605 argv[3]: +trace_process
+606 *Verdi* : Dumping the signal (tb_top.dut.counter_and_parity.counter_stored).
+607 pliAppHDL_DumpVarComplete traverse var: profile - 
+          CPU/Mem usage: 0.050 sys,  0.070 user,  429.15M mem
+                   incr: 0.000 sys,  0.000 user,  0.00M mem
+                   accu: 0.000 sys,  0.000 user,  0.00M mem
+              accu incr: 0.000 sys,  0.000 user,  0.00M mem
+
+          Count usage: 0 var,  27 idcode,  24 callback
+                 incr: 0 var,  1 idcode,  1 callback
+                 accu: 0 var,  1 idcode,  1 callback
+            accu incr: 0 var,  1 idcode,  1 callback
+608 Elapsed time:    0:03:37    Wed May 28 20:23:17 2025
+609 pliAppHDL_DumpVarComplete: profile - 
+          CPU/Mem usage: 0.050 sys,  0.070 user,  429.15M mem
+                   incr: 0.000 sys,  0.000 user,  0.00M mem
+                   accu: 0.000 sys,  0.000 user,  0.00M mem
+              accu incr: 0.000 sys,  0.000 user,  0.00M mem
+
+          Count usage: 0 var,  27 idcode,  24 callback
+                 incr: 0 var,  0 idcode,  0 callback
+                 accu: 0 var,  1 idcode,  1 callback
+            accu incr: 0 var,  0 idcode,  0 callback
+610 Elapsed time:    0:03:37    Wed May 28 20:23:17 2025
+611 sps_tcl_fsdbDumpvars_vd_main
+612 argv[0]: 1
+613 argv[1]: tb_top.dut.counter_and_parity.rst_done
+614 argv[2]: +all
+615 argv[3]: +trace_process
+616 *Verdi* : Dumping the signal (tb_top.dut.counter_and_parity.rst_done).
+617 pliAppHDL_DumpVarComplete traverse var: profile - 
+          CPU/Mem usage: 0.050 sys,  0.070 user,  429.15M mem
+                   incr: 0.000 sys,  0.000 user,  0.00M mem
+                   accu: 0.000 sys,  0.000 user,  0.00M mem
+              accu incr: 0.000 sys,  0.000 user,  0.00M mem
+
+          Count usage: 0 var,  28 idcode,  25 callback
+                 incr: 0 var,  1 idcode,  1 callback
+                 accu: 0 var,  1 idcode,  1 callback
+            accu incr: 0 var,  1 idcode,  1 callback
+618 Elapsed time:    0:03:37    Wed May 28 20:23:17 2025
+619 pliAppHDL_DumpVarComplete: profile - 
+          CPU/Mem usage: 0.050 sys,  0.070 user,  429.15M mem
+                   incr: 0.000 sys,  0.000 user,  0.00M mem
+                   accu: 0.000 sys,  0.000 user,  0.00M mem
+              accu incr: 0.000 sys,  0.000 user,  0.00M mem
+
+          Count usage: 0 var,  28 idcode,  25 callback
+                 incr: 0 var,  0 idcode,  0 callback
+                 accu: 0 var,  1 idcode,  1 callback
+            accu incr: 0 var,  0 idcode,  0 callback
+620 Elapsed time:    0:03:37    Wed May 28 20:23:17 2025
+621 sps_tcl_fsdbDumpvars_vd_main
+622 argv[0]: 1
+623 argv[1]: tb_top.dut.counter_and_parity.i
+624 argv[2]: +all
+625 argv[3]: +trace_process
+626 *Verdi* : Dumping the signal (tb_top.dut.counter_and_parity.i).
+627 pliAppHDL_DumpVarComplete traverse var: profile - 
+          CPU/Mem usage: 0.050 sys,  0.070 user,  429.15M mem
+                   incr: 0.000 sys,  0.000 user,  0.00M mem
+                   accu: 0.000 sys,  0.000 user,  0.00M mem
+              accu incr: 0.000 sys,  0.000 user,  0.00M mem
+
+          Count usage: 0 var,  29 idcode,  26 callback
+                 incr: 0 var,  1 idcode,  1 callback
+                 accu: 0 var,  1 idcode,  1 callback
+            accu incr: 0 var,  1 idcode,  1 callback
+628 Elapsed time:    0:03:37    Wed May 28 20:23:17 2025
+629 pliAppHDL_DumpVarComplete: profile - 
+          CPU/Mem usage: 0.050 sys,  0.070 user,  429.15M mem
+                   incr: 0.000 sys,  0.000 user,  0.00M mem
+                   accu: 0.000 sys,  0.000 user,  0.00M mem
+              accu incr: 0.000 sys,  0.000 user,  0.00M mem
+
+          Count usage: 0 var,  29 idcode,  26 callback
+                 incr: 0 var,  0 idcode,  0 callback
+                 accu: 0 var,  1 idcode,  1 callback
+            accu incr: 0 var,  0 idcode,  0 callback
+630 Elapsed time:    0:03:37    Wed May 28 20:23:17 2025
+631 sps_tcl_fsdbDumpflush_vd_main at 0 : N/A(0)
+632 *Verdi* : Flush all FSDB Files at 0 ps.
+633 sps_tcl_fsdbDumpvars_vd_main
+634 argv[0]: 1
+635 argv[1]: tb_top.dut.syndrome_inst.clk
+636 argv[2]: +all
+637 argv[3]: +trace_process
+638 *Verdi* : Dumping the signal (tb_top.dut.syndrome_inst.clk).
+639 pliAppHDL_DumpVarComplete traverse var: profile - 
+          CPU/Mem usage: 0.060 sys,  0.080 user,  429.32M mem
+                   incr: 0.000 sys,  0.000 user,  0.00M mem
+                   accu: 0.000 sys,  0.000 user,  0.00M mem
+              accu incr: 0.000 sys,  0.000 user,  0.00M mem
+
+          Count usage: 0 var,  30 idcode,  26 callback
+                 incr: 0 var,  1 idcode,  0 callback
+                 accu: 0 var,  1 idcode,  0 callback
+            accu incr: 0 var,  1 idcode,  0 callback
+640 Elapsed time:    0:03:48    Wed May 28 20:23:28 2025
+641 pliAppHDL_DumpVarComplete: profile - 
+          CPU/Mem usage: 0.060 sys,  0.080 user,  429.32M mem
+                   incr: 0.000 sys,  0.000 user,  0.00M mem
+                   accu: 0.000 sys,  0.000 user,  0.00M mem
+              accu incr: 0.000 sys,  0.000 user,  0.00M mem
+
+          Count usage: 0 var,  30 idcode,  26 callback
+                 incr: 0 var,  0 idcode,  0 callback
+                 accu: 0 var,  1 idcode,  0 callback
+            accu incr: 0 var,  0 idcode,  0 callback
+642 Elapsed time:    0:03:48    Wed May 28 20:23:28 2025
+643 sps_tcl_fsdbDumpvars_vd_main
+644 argv[0]: 1
+645 argv[1]: tb_top.dut.syndrome_inst.enable
+646 argv[2]: +all
+647 argv[3]: +trace_process
+648 *Verdi* : Dumping the signal (tb_top.dut.syndrome_inst.enable).
+649 pliAppHDL_DumpVarComplete traverse var: profile - 
+          CPU/Mem usage: 0.060 sys,  0.080 user,  429.32M mem
+                   incr: 0.000 sys,  0.000 user,  0.00M mem
+                   accu: 0.000 sys,  0.000 user,  0.00M mem
+              accu incr: 0.000 sys,  0.000 user,  0.00M mem
+
+          Count usage: 0 var,  31 idcode,  27 callback
+                 incr: 0 var,  1 idcode,  1 callback
+                 accu: 0 var,  1 idcode,  1 callback
+            accu incr: 0 var,  1 idcode,  1 callback
+650 Elapsed time:    0:03:48    Wed May 28 20:23:28 2025
+651 pliAppHDL_DumpVarComplete: profile - 
+          CPU/Mem usage: 0.060 sys,  0.080 user,  429.32M mem
+                   incr: 0.000 sys,  0.000 user,  0.00M mem
+                   accu: 0.000 sys,  0.000 user,  0.00M mem
+              accu incr: 0.000 sys,  0.000 user,  0.00M mem
+
+          Count usage: 0 var,  31 idcode,  27 callback
+                 incr: 0 var,  0 idcode,  0 callback
+                 accu: 0 var,  1 idcode,  1 callback
+            accu incr: 0 var,  0 idcode,  0 callback
+652 Elapsed time:    0:03:48    Wed May 28 20:23:28 2025
+653 sps_tcl_fsdbDumpvars_vd_main
+654 argv[0]: 1
+655 argv[1]: tb_top.dut.syndrome_inst.parity_stored
+656 argv[2]: +all
+657 argv[3]: +trace_process
+658 *Verdi* : Dumping the signal (tb_top.dut.syndrome_inst.parity_stored).
+659 pliAppHDL_DumpVarComplete traverse var: profile - 
+          CPU/Mem usage: 0.060 sys,  0.080 user,  429.32M mem
+                   incr: 0.000 sys,  0.000 user,  0.00M mem
+                   accu: 0.000 sys,  0.000 user,  0.00M mem
+              accu incr: 0.000 sys,  0.000 user,  0.00M mem
+
+          Count usage: 0 var,  32 idcode,  28 callback
+                 incr: 0 var,  1 idcode,  1 callback
+                 accu: 0 var,  1 idcode,  1 callback
+            accu incr: 0 var,  1 idcode,  1 callback
+660 Elapsed time:    0:03:48    Wed May 28 20:23:28 2025
+661 pliAppHDL_DumpVarComplete: profile - 
+          CPU/Mem usage: 0.060 sys,  0.080 user,  429.32M mem
+                   incr: 0.000 sys,  0.000 user,  0.00M mem
+                   accu: 0.000 sys,  0.000 user,  0.00M mem
+              accu incr: 0.000 sys,  0.000 user,  0.00M mem
+
+          Count usage: 0 var,  32 idcode,  28 callback
+                 incr: 0 var,  0 idcode,  0 callback
+                 accu: 0 var,  1 idcode,  1 callback
+            accu incr: 0 var,  0 idcode,  0 callback
+662 Elapsed time:    0:03:48    Wed May 28 20:23:28 2025
+663 sps_tcl_fsdbDumpvars_vd_main
+664 argv[0]: 1
+665 argv[1]: tb_top.dut.syndrome_inst.counter_reg
+666 argv[2]: +all
+667 argv[3]: +trace_process
+668 *Verdi* : Dumping the signal (tb_top.dut.syndrome_inst.counter_reg).
+669 pliAppHDL_DumpVarComplete traverse var: profile - 
+          CPU/Mem usage: 0.060 sys,  0.080 user,  429.32M mem
+                   incr: 0.000 sys,  0.000 user,  0.00M mem
+                   accu: 0.000 sys,  0.000 user,  0.00M mem
+              accu incr: 0.000 sys,  0.000 user,  0.00M mem
+
+          Count usage: 0 var,  33 idcode,  29 callback
+                 incr: 0 var,  1 idcode,  1 callback
+                 accu: 0 var,  1 idcode,  1 callback
+            accu incr: 0 var,  1 idcode,  1 callback
+670 Elapsed time:    0:03:48    Wed May 28 20:23:28 2025
+671 pliAppHDL_DumpVarComplete: profile - 
+          CPU/Mem usage: 0.060 sys,  0.080 user,  429.32M mem
+                   incr: 0.000 sys,  0.000 user,  0.00M mem
+                   accu: 0.000 sys,  0.000 user,  0.00M mem
+              accu incr: 0.000 sys,  0.000 user,  0.00M mem
+
+          Count usage: 0 var,  33 idcode,  29 callback
+                 incr: 0 var,  0 idcode,  0 callback
+                 accu: 0 var,  1 idcode,  1 callback
+            accu incr: 0 var,  0 idcode,  0 callback
+672 Elapsed time:    0:03:48    Wed May 28 20:23:28 2025
+673 sps_tcl_fsdbDumpvars_vd_main
+674 argv[0]: 1
+675 argv[1]: tb_top.dut.syndrome_inst.syndrome
+676 argv[2]: +all
+677 argv[3]: +trace_process
+678 *Verdi* : Dumping the signal (tb_top.dut.syndrome_inst.syndrome).
+679 pliAppHDL_DumpVarComplete traverse var: profile - 
+          CPU/Mem usage: 0.060 sys,  0.080 user,  429.32M mem
+                   incr: 0.000 sys,  0.000 user,  0.00M mem
+                   accu: 0.000 sys,  0.000 user,  0.00M mem
+              accu incr: 0.000 sys,  0.000 user,  0.00M mem
+
+          Count usage: 0 var,  34 idcode,  30 callback
+                 incr: 0 var,  1 idcode,  1 callback
+                 accu: 0 var,  1 idcode,  1 callback
+            accu incr: 0 var,  1 idcode,  1 callback
+680 Elapsed time:    0:03:48    Wed May 28 20:23:28 2025
+681 pliAppHDL_DumpVarComplete: profile - 
+          CPU/Mem usage: 0.060 sys,  0.080 user,  429.32M mem
+                   incr: 0.000 sys,  0.000 user,  0.00M mem
+                   accu: 0.000 sys,  0.000 user,  0.00M mem
+              accu incr: 0.000 sys,  0.000 user,  0.00M mem
+
+          Count usage: 0 var,  34 idcode,  30 callback
+                 incr: 0 var,  0 idcode,  0 callback
+                 accu: 0 var,  1 idcode,  1 callback
+            accu incr: 0 var,  0 idcode,  0 callback
+682 Elapsed time:    0:03:48    Wed May 28 20:23:28 2025
+683 sps_tcl_fsdbDumpvars_vd_main
+684 argv[0]: 1
+685 argv[1]: tb_top.dut.syndrome_inst.busy
+686 argv[2]: +all
+687 argv[3]: +trace_process
+688 *Verdi* : Dumping the signal (tb_top.dut.syndrome_inst.busy).
+689 pliAppHDL_DumpVarComplete traverse var: profile - 
+          CPU/Mem usage: 0.060 sys,  0.080 user,  429.32M mem
+                   incr: 0.000 sys,  0.000 user,  0.00M mem
+                   accu: 0.000 sys,  0.000 user,  0.00M mem
+              accu incr: 0.000 sys,  0.000 user,  0.00M mem
+
+          Count usage: 0 var,  35 idcode,  31 callback
+                 incr: 0 var,  1 idcode,  1 callback
+                 accu: 0 var,  1 idcode,  1 callback
+            accu incr: 0 var,  1 idcode,  1 callback
+690 Elapsed time:    0:03:48    Wed May 28 20:23:28 2025
+691 pliAppHDL_DumpVarComplete: profile - 
+          CPU/Mem usage: 0.060 sys,  0.080 user,  429.32M mem
+                   incr: 0.000 sys,  0.000 user,  0.00M mem
+                   accu: 0.000 sys,  0.000 user,  0.00M mem
+              accu incr: 0.000 sys,  0.000 user,  0.00M mem
+
+          Count usage: 0 var,  35 idcode,  31 callback
+                 incr: 0 var,  0 idcode,  0 callback
+                 accu: 0 var,  1 idcode,  1 callback
+            accu incr: 0 var,  0 idcode,  0 callback
+692 Elapsed time:    0:03:48    Wed May 28 20:23:28 2025
+693 sps_tcl_fsdbDumpvars_vd_main
+694 argv[0]: 1
+695 argv[1]: tb_top.dut.syndrome_inst.corrected_counter
+696 argv[2]: +all
+697 argv[3]: +trace_process
+698 *Verdi* : Dumping the signal (tb_top.dut.syndrome_inst.corrected_counter).
+699 pliAppHDL_DumpVarComplete traverse var: profile - 
+          CPU/Mem usage: 0.060 sys,  0.080 user,  429.32M mem
+                   incr: 0.000 sys,  0.000 user,  0.00M mem
+                   accu: 0.000 sys,  0.000 user,  0.00M mem
+              accu incr: 0.000 sys,  0.000 user,  0.00M mem
+
+          Count usage: 0 var,  36 idcode,  32 callback
+                 incr: 0 var,  1 idcode,  1 callback
+                 accu: 0 var,  1 idcode,  1 callback
+            accu incr: 0 var,  1 idcode,  1 callback
+700 Elapsed time:    0:03:48    Wed May 28 20:23:28 2025
+701 pliAppHDL_DumpVarComplete: profile - 
+          CPU/Mem usage: 0.060 sys,  0.080 user,  429.32M mem
+                   incr: 0.000 sys,  0.000 user,  0.00M mem
+                   accu: 0.000 sys,  0.000 user,  0.00M mem
+              accu incr: 0.000 sys,  0.000 user,  0.00M mem
+
+          Count usage: 0 var,  36 idcode,  32 callback
+                 incr: 0 var,  0 idcode,  0 callback
+                 accu: 0 var,  1 idcode,  1 callback
+            accu incr: 0 var,  0 idcode,  0 callback
+702 Elapsed time:    0:03:48    Wed May 28 20:23:28 2025
+703 sps_tcl_fsdbDumpvars_vd_main
+704 argv[0]: 1
+705 argv[1]: tb_top.dut.syndrome_inst.error_detected
+706 argv[2]: +all
+707 argv[3]: +trace_process
+708 *Verdi* : Dumping the signal (tb_top.dut.syndrome_inst.error_detected).
+709 pliAppHDL_DumpVarComplete traverse var: profile - 
+          CPU/Mem usage: 0.060 sys,  0.090 user,  429.32M mem
+                   incr: 0.000 sys,  0.000 user,  0.00M mem
+                   accu: 0.000 sys,  0.000 user,  0.00M mem
+              accu incr: 0.000 sys,  0.000 user,  0.00M mem
+
+          Count usage: 0 var,  36 idcode,  32 callback
+                 incr: 0 var,  0 idcode,  0 callback
+                 accu: 0 var,  0 idcode,  0 callback
+            accu incr: 0 var,  0 idcode,  0 callback
+710 Elapsed time:    0:03:48    Wed May 28 20:23:28 2025
+711 pliAppHDL_DumpVarComplete: profile - 
+          CPU/Mem usage: 0.060 sys,  0.090 user,  429.32M mem
+                   incr: 0.000 sys,  0.000 user,  0.00M mem
+                   accu: 0.000 sys,  0.000 user,  0.00M mem
+              accu incr: 0.000 sys,  0.000 user,  0.00M mem
+
+          Count usage: 0 var,  36 idcode,  32 callback
+                 incr: 0 var,  0 idcode,  0 callback
+                 accu: 0 var,  0 idcode,  0 callback
+            accu incr: 0 var,  0 idcode,  0 callback
+712 Elapsed time:    0:03:48    Wed May 28 20:23:28 2025
+713 sps_tcl_fsdbDumpvars_vd_main
+714 argv[0]: 1
+715 argv[1]: tb_top.dut.syndrome_inst.corrected_parity
+716 argv[2]: +all
+717 argv[3]: +trace_process
+718 *Verdi* : Dumping the signal (tb_top.dut.syndrome_inst.corrected_parity).
+719 pliAppHDL_DumpVarComplete traverse var: profile - 
+          CPU/Mem usage: 0.060 sys,  0.090 user,  429.32M mem
+                   incr: 0.000 sys,  0.000 user,  0.00M mem
+                   accu: 0.000 sys,  0.000 user,  0.00M mem
+              accu incr: 0.000 sys,  0.000 user,  0.00M mem
+
+          Count usage: 0 var,  37 idcode,  33 callback
+                 incr: 0 var,  1 idcode,  1 callback
+                 accu: 0 var,  1 idcode,  1 callback
+            accu incr: 0 var,  1 idcode,  1 callback
+720 Elapsed time:    0:03:48    Wed May 28 20:23:28 2025
+721 pliAppHDL_DumpVarComplete: profile - 
+          CPU/Mem usage: 0.060 sys,  0.090 user,  429.32M mem
+                   incr: 0.000 sys,  0.000 user,  0.00M mem
+                   accu: 0.000 sys,  0.000 user,  0.00M mem
+              accu incr: 0.000 sys,  0.000 user,  0.00M mem
+
+          Count usage: 0 var,  37 idcode,  33 callback
+                 incr: 0 var,  0 idcode,  0 callback
+                 accu: 0 var,  1 idcode,  1 callback
+            accu incr: 0 var,  0 idcode,  0 callback
+722 Elapsed time:    0:03:48    Wed May 28 20:23:28 2025
+723 sps_tcl_fsdbDumpvars_vd_main
+724 argv[0]: 1
+725 argv[1]: tb_top.dut.syndrome_inst.enable_last
+726 argv[2]: +all
+727 argv[3]: +trace_process
+728 *Verdi* : Dumping the signal (tb_top.dut.syndrome_inst.enable_last).
+729 pliAppHDL_DumpVarComplete traverse var: profile - 
+          CPU/Mem usage: 0.060 sys,  0.090 user,  429.32M mem
+                   incr: 0.000 sys,  0.000 user,  0.00M mem
+                   accu: 0.000 sys,  0.000 user,  0.00M mem
+              accu incr: 0.000 sys,  0.000 user,  0.00M mem
+
+          Count usage: 0 var,  38 idcode,  34 callback
+                 incr: 0 var,  1 idcode,  1 callback
+                 accu: 0 var,  1 idcode,  1 callback
+            accu incr: 0 var,  1 idcode,  1 callback
+730 Elapsed time:    0:03:48    Wed May 28 20:23:28 2025
+731 pliAppHDL_DumpVarComplete: profile - 
+          CPU/Mem usage: 0.060 sys,  0.090 user,  429.32M mem
+                   incr: 0.000 sys,  0.000 user,  0.00M mem
+                   accu: 0.000 sys,  0.000 user,  0.00M mem
+              accu incr: 0.000 sys,  0.000 user,  0.00M mem
+
+          Count usage: 0 var,  38 idcode,  34 callback
+                 incr: 0 var,  0 idcode,  0 callback
+                 accu: 0 var,  1 idcode,  1 callback
+            accu incr: 0 var,  0 idcode,  0 callback
+732 Elapsed time:    0:03:48    Wed May 28 20:23:28 2025
+733 sps_tcl_fsdbDumpvars_vd_main
+734 argv[0]: 1
+735 argv[1]: tb_top.dut.syndrome_inst.rst
+736 argv[2]: +all
+737 argv[3]: +trace_process
+738 *Verdi* : Dumping the signal (tb_top.dut.syndrome_inst.rst).
+739 pliAppHDL_DumpVarComplete traverse var: profile - 
+          CPU/Mem usage: 0.060 sys,  0.090 user,  429.32M mem
+                   incr: 0.000 sys,  0.000 user,  0.00M mem
+                   accu: 0.000 sys,  0.000 user,  0.00M mem
+              accu incr: 0.000 sys,  0.000 user,  0.00M mem
+
+          Count usage: 0 var,  39 idcode,  35 callback
+                 incr: 0 var,  1 idcode,  1 callback
+                 accu: 0 var,  1 idcode,  1 callback
+            accu incr: 0 var,  1 idcode,  1 callback
+740 Elapsed time:    0:03:48    Wed May 28 20:23:28 2025
+741 pliAppHDL_DumpVarComplete: profile - 
+          CPU/Mem usage: 0.060 sys,  0.090 user,  429.32M mem
+                   incr: 0.000 sys,  0.000 user,  0.00M mem
+                   accu: 0.000 sys,  0.000 user,  0.00M mem
+              accu incr: 0.000 sys,  0.000 user,  0.00M mem
+
+          Count usage: 0 var,  39 idcode,  35 callback
+                 incr: 0 var,  0 idcode,  0 callback
+                 accu: 0 var,  1 idcode,  1 callback
+            accu incr: 0 var,  0 idcode,  0 callback
+742 Elapsed time:    0:03:48    Wed May 28 20:23:28 2025
+743 sps_tcl_fsdbDumpvars_vd_main
+744 argv[0]: 1
+745 argv[1]: tb_top.dut.syndrome_inst.width
+746 argv[2]: +all
+747 argv[3]: +trace_process
+748 *Verdi* : Dumping the signal (tb_top.dut.syndrome_inst.width).
+749 pliAppHDL_DumpVarComplete traverse var: profile - 
+          CPU/Mem usage: 0.060 sys,  0.090 user,  429.32M mem
+                   incr: 0.000 sys,  0.000 user,  0.00M mem
+                   accu: 0.000 sys,  0.000 user,  0.00M mem
+              accu incr: 0.000 sys,  0.000 user,  0.00M mem
+
+          Count usage: 0 var,  39 idcode,  35 callback
+                 incr: 0 var,  0 idcode,  0 callback
+                 accu: 0 var,  0 idcode,  0 callback
+            accu incr: 0 var,  0 idcode,  0 callback
+750 Elapsed time:    0:03:48    Wed May 28 20:23:28 2025
+751 pliAppHDL_DumpVarComplete: profile - 
+          CPU/Mem usage: 0.060 sys,  0.090 user,  429.32M mem
+                   incr: 0.000 sys,  0.000 user,  0.00M mem
+                   accu: 0.000 sys,  0.000 user,  0.00M mem
+              accu incr: 0.000 sys,  0.000 user,  0.00M mem
+
+          Count usage: 0 var,  39 idcode,  35 callback
+                 incr: 0 var,  0 idcode,  0 callback
+                 accu: 0 var,  0 idcode,  0 callback
+            accu incr: 0 var,  0 idcode,  0 callback
+752 Elapsed time:    0:03:48    Wed May 28 20:23:28 2025
+753 sps_tcl_fsdbDumpvars_vd_main
+754 argv[0]: 1
+755 argv[1]: tb_top.dut.syndrome_inst.blocks
+756 argv[2]: +all
+757 argv[3]: +trace_process
+758 *Verdi* : Dumping the signal (tb_top.dut.syndrome_inst.blocks).
+759 pliAppHDL_DumpVarComplete traverse var: profile - 
+          CPU/Mem usage: 0.060 sys,  0.090 user,  429.32M mem
+                   incr: 0.000 sys,  0.000 user,  0.00M mem
+                   accu: 0.000 sys,  0.000 user,  0.00M mem
+              accu incr: 0.000 sys,  0.000 user,  0.00M mem
+
+          Count usage: 0 var,  39 idcode,  35 callback
+                 incr: 0 var,  0 idcode,  0 callback
+                 accu: 0 var,  0 idcode,  0 callback
+            accu incr: 0 var,  0 idcode,  0 callback
+760 Elapsed time:    0:03:48    Wed May 28 20:23:28 2025
+761 pliAppHDL_DumpVarComplete: profile - 
+          CPU/Mem usage: 0.060 sys,  0.090 user,  429.32M mem
+                   incr: 0.000 sys,  0.000 user,  0.00M mem
+                   accu: 0.000 sys,  0.000 user,  0.00M mem
+              accu incr: 0.000 sys,  0.000 user,  0.00M mem
+
+          Count usage: 0 var,  39 idcode,  35 callback
+                 incr: 0 var,  0 idcode,  0 callback
+                 accu: 0 var,  0 idcode,  0 callback
+            accu incr: 0 var,  0 idcode,  0 callback
+762 Elapsed time:    0:03:48    Wed May 28 20:23:28 2025
+763 sps_tcl_fsdbDumpvars_vd_main
+764 argv[0]: 1
+765 argv[1]: tb_top.dut.syndrome_inst.parity_bits
+766 argv[2]: +all
+767 argv[3]: +trace_process
+768 *Verdi* : Dumping the signal (tb_top.dut.syndrome_inst.parity_bits).
+769 pliAppHDL_DumpVarComplete traverse var: profile - 
+          CPU/Mem usage: 0.060 sys,  0.090 user,  429.32M mem
+                   incr: 0.000 sys,  0.000 user,  0.00M mem
+                   accu: 0.000 sys,  0.000 user,  0.00M mem
+              accu incr: 0.000 sys,  0.000 user,  0.00M mem
+
+          Count usage: 0 var,  39 idcode,  35 callback
+                 incr: 0 var,  0 idcode,  0 callback
+                 accu: 0 var,  0 idcode,  0 callback
+            accu incr: 0 var,  0 idcode,  0 callback
+770 Elapsed time:    0:03:48    Wed May 28 20:23:28 2025
+771 pliAppHDL_DumpVarComplete: profile - 
+          CPU/Mem usage: 0.060 sys,  0.090 user,  429.32M mem
+                   incr: 0.000 sys,  0.000 user,  0.00M mem
+                   accu: 0.000 sys,  0.000 user,  0.00M mem
+              accu incr: 0.000 sys,  0.000 user,  0.00M mem
+
+          Count usage: 0 var,  39 idcode,  35 callback
+                 incr: 0 var,  0 idcode,  0 callback
+                 accu: 0 var,  0 idcode,  0 callback
+            accu incr: 0 var,  0 idcode,  0 callback
+772 Elapsed time:    0:03:48    Wed May 28 20:23:28 2025
+773 sps_tcl_fsdbDumpvars_vd_main
+774 argv[0]: 1
+775 argv[1]: tb_top.dut.syndrome_inst.error_detected_parity
+776 argv[2]: +all
+777 argv[3]: +trace_process
+778 *Verdi* : Dumping the signal (tb_top.dut.syndrome_inst.error_detected_parity).
+779 pliAppHDL_DumpVarComplete traverse var: profile - 
+          CPU/Mem usage: 0.060 sys,  0.090 user,  429.32M mem
+                   incr: 0.000 sys,  0.000 user,  0.00M mem
+                   accu: 0.000 sys,  0.000 user,  0.00M mem
+              accu incr: 0.000 sys,  0.000 user,  0.00M mem
+
+          Count usage: 0 var,  40 idcode,  36 callback
+                 incr: 0 var,  1 idcode,  1 callback
+                 accu: 0 var,  1 idcode,  1 callback
+            accu incr: 0 var,  1 idcode,  1 callback
+780 Elapsed time:    0:03:48    Wed May 28 20:23:28 2025
+781 pliAppHDL_DumpVarComplete: profile - 
+          CPU/Mem usage: 0.060 sys,  0.090 user,  429.32M mem
+                   incr: 0.000 sys,  0.000 user,  0.00M mem
+                   accu: 0.000 sys,  0.000 user,  0.00M mem
+              accu incr: 0.000 sys,  0.000 user,  0.00M mem
+
+          Count usage: 0 var,  40 idcode,  36 callback
+                 incr: 0 var,  0 idcode,  0 callback
+                 accu: 0 var,  1 idcode,  1 callback
+            accu incr: 0 var,  0 idcode,  0 callback
+782 Elapsed time:    0:03:48    Wed May 28 20:23:28 2025
+783 sps_tcl_fsdbDumpvars_vd_main
+784 argv[0]: 1
+785 argv[1]: tb_top.dut.syndrome_inst.i
+786 argv[2]: +all
+787 argv[3]: +trace_process
+788 *Verdi* : Dumping the signal (tb_top.dut.syndrome_inst.i).
+789 pliAppHDL_DumpVarComplete traverse var: profile - 
+          CPU/Mem usage: 0.060 sys,  0.090 user,  429.32M mem
+                   incr: 0.000 sys,  0.000 user,  0.00M mem
+                   accu: 0.000 sys,  0.000 user,  0.00M mem
+              accu incr: 0.000 sys,  0.000 user,  0.00M mem
+
+          Count usage: 0 var,  41 idcode,  37 callback
+                 incr: 0 var,  1 idcode,  1 callback
+                 accu: 0 var,  1 idcode,  1 callback
+            accu incr: 0 var,  1 idcode,  1 callback
+790 Elapsed time:    0:03:48    Wed May 28 20:23:28 2025
+791 pliAppHDL_DumpVarComplete: profile - 
+          CPU/Mem usage: 0.060 sys,  0.090 user,  429.32M mem
+                   incr: 0.000 sys,  0.000 user,  0.00M mem
+                   accu: 0.000 sys,  0.000 user,  0.00M mem
+              accu incr: 0.000 sys,  0.000 user,  0.00M mem
+
+          Count usage: 0 var,  41 idcode,  37 callback
+                 incr: 0 var,  0 idcode,  0 callback
+                 accu: 0 var,  1 idcode,  1 callback
+            accu incr: 0 var,  0 idcode,  0 callback
+792 Elapsed time:    0:03:48    Wed May 28 20:23:28 2025
+793 sps_tcl_fsdbDumpflush_vd_main at 0 : N/A(0)
+794 *Verdi* : Flush all FSDB Files at 0 ps.
+795 sps_tcl_fsdbDumpflush_vd_main at 415000 : N/A(0)
+796 *Verdi* : Flush all FSDB Files at 415,000 ps.
+797 End of simulation at 415000
+798 Memory usage: 432.755 M
+799 Elapsed time:    0:16:59    Wed May 28 20:36:39 2025
+800 Begin FSDB profile info:
+801 FSDB Writer : bc1(238) bcn(254) mtf/stf(0/6)
+FSDB Writer elapsed time : flush(0.021364) io wait(0.000000) theadpool wait(0.000000)
+FSDB Writer cpu time : MT Compression : 0
+802 End FSDB profile info
+803 FSDB closed. Name: /mnt/vol_NFS_rh003/estudiantes/DANIELA_VARGAS/Version_final/0516/versiones_finales/semana14/Contador_Hamming/TSMC_16/FLOW/common/rtl/sverilog/inter.fsdb Size: 18231
+804 Parallel profile     - ProducerThread:1 ConsumerThread:1 Buffer:64MB
+805                      - BlockUsed:1 Acquire:527 BufferUsed:6906
+806                      - Flush:56 Expand:0 ProducerWait:0 ConsumerWait:0
+807                      - MainProducerTime:0.175973755 TotalConsumerTime:0.000000000
+808                      - ElapsedTime:1007.000456000
+809 Producer   0 profile - BlockUsed:1 Acquire:527 BufferUsed:6906
+810 Consumer   0 profile - Affinity:-1 CPUTime:0.000000000 LifeTime:0.000000000 (-nan%)
+811                      - BlockUsed:1 Acquire:527 BufferUsed:6906
+812 SimExit
+813 Elapsed time:    0:16:59    Wed May 28 20:36:39 2025
+814 Sim process exit

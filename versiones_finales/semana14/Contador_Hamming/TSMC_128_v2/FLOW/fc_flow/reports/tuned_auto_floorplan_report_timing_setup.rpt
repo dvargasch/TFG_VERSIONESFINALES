@@ -1,0 +1,130 @@
+Warning: Scenario scenarioFF is not configured for setup analysis: skipping. (UIC-058)
+****************************************
+Report : timing
+        -path_type full
+        -delay_type max
+        -max_paths 1
+        -report_by design
+Design : top
+Version: U-2022.12-SP6
+Date   : Wed May 28 20:42:54 2025
+****************************************
+
+  Startpoint: counter_and_parity/count_reg_reg[0] (rising edge-triggered flip-flop clocked by SYS_CLK)
+  Endpoint: counter_and_parity/count_reg_reg[127] (rising edge-triggered flip-flop clocked by SYS_CLK)
+  Mode: mode1
+  Corner: cornerSS
+  Scenario: scenarioSS
+  Path Group: SYS_CLK
+  Path Type: max
+
+  Point                                            Incr      Path  
+  ------------------------------------------------------------------------
+  clock SYS_CLK (rise edge)                        0.00      0.00
+  clock network delay (ideal)                      0.00      0.00
+
+  counter_and_parity/count_reg_reg[0]/CP (SDFCNQD1HPBWP)
+                                                   0.00      0.00 r
+  counter_and_parity/count_reg_reg[0]/Q (SDFCNQD1HPBWP)
+                                                   0.37      0.37 r
+  counter_and_parity/add_107/ctmi_888/Z (CKAN2D1HPBWP)
+                                                   0.21      0.58 r
+  counter_and_parity/add_107/ctmi_887/Z (AN3D1HPBWP)
+                                                   0.19      0.77 r
+  counter_and_parity/add_107/ctmi_886/ZN (ND4D1HPBWP)
+                                                   0.24      1.01 f
+  counter_and_parity/add_107/ctmi_881/Z (OR4D1HPBWP)
+                                                   0.28      1.29 f
+  counter_and_parity/add_107/ctmi_880/ZN (NR4D1HPBWP)
+                                                   0.40      1.69 r
+  ctmi_1176/ZN (IND4D1HPBWP)                       0.52      2.21 f
+  ctmi_1175/ZN (INR3D0HPBWP)                       0.29      2.50 r
+  counter_and_parity/add_107/ctmi_853/ZN (ND2D1HPBWP)
+                                                   0.11      2.62 f
+  ctmi_1174/ZN (INR2XD0HPBWP)                      0.10      2.72 r
+  counter_and_parity/add_107/ctmi_851/ZN (ND2D1HPBWP)
+                                                   0.09      2.80 f
+  ctmi_1173/ZN (INR2XD0HPBWP)                      0.10      2.90 r
+  counter_and_parity/add_107/ctmi_849/ZN (ND2D1HPBWP)
+                                                   0.08      2.99 f
+  ctmi_1172/ZN (INR2XD0HPBWP)                      0.10      3.09 r
+  counter_and_parity/add_107/ctmi_847/ZN (ND2D1HPBWP)
+                                                   0.08      3.17 f
+  ctmi_1171/ZN (INR2XD0HPBWP)                      0.11      3.28 r
+  counter_and_parity/add_107/ctmi_845/ZN (ND2D1HPBWP)
+                                                   0.11      3.39 f
+  ctmi_1170/ZN (INR2XD0HPBWP)                      0.12      3.51 r
+  counter_and_parity/add_107/ctmi_843/ZN (ND2D1HPBWP)
+                                                   0.09      3.61 f
+  ctmi_1169/ZN (INR2XD0HPBWP)                      0.11      3.72 r
+  counter_and_parity/add_107/ctmi_841/ZN (ND2D1HPBWP)
+                                                   0.08      3.81 f
+  ctmi_1168/ZN (INR2XD0HPBWP)                      0.13      3.94 r
+  counter_and_parity/add_107/ctmi_839/ZN (ND2D1HPBWP)
+                                                   0.09      4.03 f
+  ctmi_1167/ZN (INR2XD0HPBWP)                      0.11      4.14 r
+  counter_and_parity/add_107/ctmi_837/ZN (ND2D1HPBWP)
+                                                   0.09      4.23 f
+  ctmi_1166/ZN (INR2XD0HPBWP)                      0.14      4.38 r
+  counter_and_parity/add_107/ctmi_835/ZN (ND2D1HPBWP)
+                                                   0.10      4.48 f
+  ctmi_1165/ZN (INR2XD0HPBWP)                      0.12      4.60 r
+  counter_and_parity/add_107/ctmi_833/ZN (ND2D1HPBWP)
+                                                   0.09      4.68 f
+  ctmi_1164/ZN (INR2XD0HPBWP)                      0.11      4.79 r
+  counter_and_parity/add_107/ctmi_831/ZN (ND2D1HPBWP)
+                                                   0.09      4.88 f
+  ctmi_1163/ZN (INR2XD0HPBWP)                      0.11      4.99 r
+  counter_and_parity/add_107/ctmi_829/ZN (ND2D1HPBWP)
+                                                   0.08      5.07 f
+  ctmi_1162/ZN (INR2XD0HPBWP)                      0.11      5.18 r
+  counter_and_parity/add_107/ctmi_827/ZN (ND2D1HPBWP)
+                                                   0.09      5.27 f
+  ctmi_1161/ZN (INR2XD0HPBWP)                      0.11      5.38 r
+  counter_and_parity/add_107/ctmi_825/ZN (ND2D1HPBWP)
+                                                   0.09      5.47 f
+  ctmi_1160/ZN (INR2XD0HPBWP)                      0.12      5.59 r
+  counter_and_parity/add_107/ctmi_823/ZN (ND2D1HPBWP)
+                                                   0.08      5.67 f
+  ctmi_1159/ZN (INR2XD0HPBWP)                      0.10      5.78 r
+  counter_and_parity/add_107/ctmi_821/ZN (ND2D1HPBWP)
+                                                   0.08      5.86 f
+  ctmi_1158/ZN (INR2XD0HPBWP)                      0.10      5.96 r
+  counter_and_parity/add_107/ctmi_819/ZN (ND2D1HPBWP)
+                                                   0.08      6.04 f
+  ctmi_1157/ZN (INR2XD0HPBWP)                      0.09      6.14 r
+  counter_and_parity/add_107/ctmi_817/ZN (ND2D1HPBWP)
+                                                   0.09      6.23 f
+  ctmi_1156/ZN (INR2XD0HPBWP)                      0.12      6.35 r
+  counter_and_parity/add_107/ctmi_815/ZN (ND2D1HPBWP)
+                                                   0.09      6.43 f
+  ctmi_1155/ZN (INR2XD0HPBWP)                      0.09      6.53 r
+  counter_and_parity/add_107/ctmi_813/ZN (ND2D1HPBWP)
+                                                   0.08      6.60 f
+  ctmi_1154/ZN (INR2XD0HPBWP)                      0.10      6.70 r
+  counter_and_parity/add_107/ctmi_811/ZN (ND2D1HPBWP)
+                                                   0.08      6.78 f
+  ctmi_1153/ZN (INR2XD0HPBWP)                      0.10      6.88 r
+  counter_and_parity/add_107/ctmi_809/ZN (CKND2D1HPBWP)
+                                                   0.08      6.96 f
+  ctmi_1152/ZN (MOAI22D0HPBWP)                     0.10      7.06 r
+  A805/ZN (IOA21D0HPBWP)                           0.12      7.17 r
+  counter_and_parity/count_reg_reg[127]/D (SDFCNQD1HPBWP)
+                                                   0.00      7.17 r
+  data arrival time                                          7.17
+
+  clock SYS_CLK (rise edge)                       10.00     10.00
+  clock network delay (ideal)                      0.00     10.00
+  counter_and_parity/count_reg_reg[127]/CP (SDFCNQD1HPBWP)
+                                                   0.00     10.00 r
+  clock uncertainty                               -0.30      9.70
+  library setup time                              -0.09      9.61
+  data required time                                         9.61
+  ------------------------------------------------------------------------
+  data required time                                         9.61
+  data arrival time                                         -7.17
+  ------------------------------------------------------------------------
+  slack (MET)                                                2.43
+
+
+1

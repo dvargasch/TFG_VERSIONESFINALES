@@ -1,0 +1,80 @@
+Invoking simulator...
+
+./results_1 -sml=verdi +UVM_VERDI_TRACE=UVM_AWARE +fsdb+gate=off -ucli2Proc -ucli
+debImport "-i" "-simflow" "-dbdir" "./results_1.daidir"
+*Verdi* Loading libsscore_vcs202012.so
+
+*Verdi* : Enable RPC Server(4046283)
+
+srcTBInvokeSim
+Chronologic VCS simulator copyright 1991-2020
+Contains Synopsys proprietary information.
+Compiler version R-2020.12-SP2_Full64; Runtime version R-2020.12-SP2_Full64;  May 28 20:19 2025
+xterm-256color is Not a valid terminal...
+Verdi>fsdbDumpvars 1 "tb_top.dut.clk"  +all +trace_process;fsdbDumpvars 1 "tb_top.dut.rst"  +all +trace_process;fsdbDumpvars 1 "tb_top.dut.enable"  +all +trace_process;fsdbDumpvars 1 "tb_top.dut.counter"  +all +trace_process;fsdbDumpvars 1 "tb_top.dut.width"  +all +trace_process;fsdbDumpvars 1 "tb_top.dut.blocks"  +all +trace_process;fsdbDumpvars 1 "tb_top.dut.parity_bits"  +all +trace_process;fsdbDumpvars 1 "tb_top.dut.parity_stored"  +all +trace_process;fsdbDumpvars 1 "tb_top.dut.busy"  +all +trace_process;fsdbDumpvars 1 "tb_top.dut.error_detected"  +all +trace_process;fsdbDumpvars 1 "tb_top.dut.syndrome"  +all +trace_process;fsdbDumpvars 1 "tb_top.dut.corrected_counter"  +all +trace_process;fsdbDumpvars 1 "tb_top.dut.corrected_parity"  +all +trace_process;fsdbDumpvars 1 "tb_top.dut.enable_last"  +all +trace_process;fsdbDumpflush 
+
+*Verdi* : Dumping the signal (tb_top.dut.clk).
+*Verdi* : Dumping the signal (tb_top.dut.rst).
+*Verdi* : Dumping the signal (tb_top.dut.enable).
+*Verdi* : Dumping the signal (tb_top.dut.counter).
+*Verdi* : Dumping the signal (tb_top.dut.width).
+*Verdi* : Dumping the signal (tb_top.dut.blocks).
+*Verdi* : Dumping the signal (tb_top.dut.parity_bits).
+*Verdi* : Dumping the signal (tb_top.dut.parity_stored).
+*Verdi* : Dumping the signal (tb_top.dut.busy).
+*Verdi* : Dumping the signal (tb_top.dut.error_detected).
+*Verdi* : Dumping the signal (tb_top.dut.syndrome).
+*Verdi* : Dumping the signal (tb_top.dut.corrected_counter).
+*Verdi* : Dumping the signal (tb_top.dut.corrected_parity).
+*Verdi* : Dumping the signal (tb_top.dut.enable_last).
+*Verdi* : Flush all FSDB Files at 0 ps.
+
+Verdi>fsdbDumpvars 1 "tb_top.dut.counter_and_parity.clk"  +all +trace_process;fsdbDumpvars 1 "tb_top.dut.counter_and_parity.rst"  +all +trace_process;fsdbDumpvars 1 "tb_top.dut.counter_and_parity.enable"  +all +trace_process;fsdbDumpvars 1 "tb_top.dut.counter_and_parity.corrected_counter"  +all +trace_process;fsdbDumpvars 1 "tb_top.dut.counter_and_parity.corrected_parity"  +all +trace_process;fsdbDumpvars 1 "tb_top.dut.counter_and_parity.counter"  +all +trace_process;fsdbDumpvars 1 "tb_top.dut.counter_and_parity.parity_stored"  +all +trace_process;fsdbDumpvars 1 "tb_top.dut.counter_and_parity.busy"  +all +trace_process;fsdbDumpvars 1 "tb_top.dut.counter_and_parity.error_detected"  +all +trace_process;fsdbDumpvars 1 "tb_top.dut.counter_and_parity.enable_last"  +all +trace_process;fsdbDumpvars 1 "tb_top.dut.counter_and_parity.width"  +all +trace_process;fsdbDumpvars 1 "tb_top.dut.counter_and_parity.blocks"  +all +trace_process;fsdbDumpvars 1 "tb_top.dut.counter_and_parity.parity_bits"  +all +trace_process;fsdbDumpvars 1 "tb_top.dut.counter_and_parity.count_reg"  +all +trace_process;fsdbDumpvars 1 "tb_top.dut.counter_and_parity.count_neg"  +all +trace_process;fsdbDumpvars 1 "tb_top.dut.counter_and_parity.counter_stored"  +all +trace_process;fsdbDumpvars 1 "tb_top.dut.counter_and_parity.rst_done"  +all +trace_process;fsdbDumpvars 1 "tb_top.dut.counter_and_parity.i"  +all +trace_process;fsdbDumpflush 
+
+*Verdi* : Dumping the signal (tb_top.dut.counter_and_parity.clk).
+*Verdi* : Dumping the signal (tb_top.dut.counter_and_parity.rst).
+*Verdi* : Dumping the signal (tb_top.dut.counter_and_parity.enable).
+*Verdi* : Dumping the signal (tb_top.dut.counter_and_parity.corrected_counter).
+*Verdi* : Dumping the signal (tb_top.dut.counter_and_parity.corrected_parity).
+*Verdi* : Dumping the signal (tb_top.dut.counter_and_parity.counter).
+*Verdi* : Dumping the signal (tb_top.dut.counter_and_parity.parity_stored).
+*Verdi* : Dumping the signal (tb_top.dut.counter_and_parity.busy).
+*Verdi* : Dumping the signal (tb_top.dut.counter_and_parity.error_detected).
+*Verdi* : Dumping the signal (tb_top.dut.counter_and_parity.enable_last).
+*Verdi* : Dumping the signal (tb_top.dut.counter_and_parity.width).
+*Verdi* : Dumping the signal (tb_top.dut.counter_and_parity.blocks).
+*Verdi* : Dumping the signal (tb_top.dut.counter_and_parity.parity_bits).
+*Verdi* : Dumping the signal (tb_top.dut.counter_and_parity.count_reg).
+*Verdi* : Dumping the signal (tb_top.dut.counter_and_parity.count_neg).
+*Verdi* : Dumping the signal (tb_top.dut.counter_and_parity.counter_stored).
+*Verdi* : Dumping the signal (tb_top.dut.counter_and_parity.rst_done).
+*Verdi* : Dumping the signal (tb_top.dut.counter_and_parity.i).
+*Verdi* : Flush all FSDB Files at 0 ps.
+
+Verdi>fsdbDumpvars 1 "tb_top.dut.syndrome_inst.clk"  +all +trace_process;fsdbDumpvars 1 "tb_top.dut.syndrome_inst.enable"  +all +trace_process;fsdbDumpvars 1 "tb_top.dut.syndrome_inst.parity_stored"  +all +trace_process;fsdbDumpvars 1 "tb_top.dut.syndrome_inst.counter_reg"  +all +trace_process;fsdbDumpvars 1 "tb_top.dut.syndrome_inst.syndrome"  +all +trace_process;fsdbDumpvars 1 "tb_top.dut.syndrome_inst.busy"  +all +trace_process;fsdbDumpvars 1 "tb_top.dut.syndrome_inst.corrected_counter"  +all +trace_process;fsdbDumpvars 1 "tb_top.dut.syndrome_inst.error_detected"  +all +trace_process;fsdbDumpvars 1 "tb_top.dut.syndrome_inst.corrected_parity"  +all +trace_process;fsdbDumpvars 1 "tb_top.dut.syndrome_inst.enable_last"  +all +trace_process;fsdbDumpvars 1 "tb_top.dut.syndrome_inst.rst"  +all +trace_process;fsdbDumpvars 1 "tb_top.dut.syndrome_inst.width"  +all +trace_process;fsdbDumpvars 1 "tb_top.dut.syndrome_inst.blocks"  +all +trace_process;fsdbDumpvars 1 "tb_top.dut.syndrome_inst.parity_bits"  +all +trace_process;fsdbDumpvars 1 "tb_top.dut.syndrome_inst.error_detected_parity"  +all +trace_process;fsdbDumpvars 1 "tb_top.dut.syndrome_inst.i"  +all +trace_process;fsdbDumpflush 
+
+*Verdi* : Dumping the signal (tb_top.dut.syndrome_inst.clk).
+*Verdi* : Dumping the signal (tb_top.dut.syndrome_inst.enable).
+*Verdi* : Dumping the signal (tb_top.dut.syndrome_inst.parity_stored).
+*Verdi* : Dumping the signal (tb_top.dut.syndrome_inst.counter_reg).
+*Verdi* : Dumping the signal (tb_top.dut.syndrome_inst.syndrome).
+*Verdi* : Dumping the signal (tb_top.dut.syndrome_inst.busy).
+*Verdi* : Dumping the signal (tb_top.dut.syndrome_inst.corrected_counter).
+*Verdi* : Dumping the signal (tb_top.dut.syndrome_inst.error_detected).
+*Verdi* : Dumping the signal (tb_top.dut.syndrome_inst.corrected_parity).
+*Verdi* : Dumping the signal (tb_top.dut.syndrome_inst.enable_last).
+*Verdi* : Dumping the signal (tb_top.dut.syndrome_inst.rst).
+*Verdi* : Dumping the signal (tb_top.dut.syndrome_inst.width).
+*Verdi* : Dumping the signal (tb_top.dut.syndrome_inst.blocks).
+*Verdi* : Dumping the signal (tb_top.dut.syndrome_inst.parity_bits).
+*Verdi* : Dumping the signal (tb_top.dut.syndrome_inst.error_detected_parity).
+*Verdi* : Dumping the signal (tb_top.dut.syndrome_inst.i).
+*Verdi* : Flush all FSDB Files at 0 ps.
+
+Verdi>run
+tb.sv, 52 :         $stop;
+           V C S   S i m u l a t i o n   R e p o r t 
+Time: 415000 ps
+CPU Time:      0.160 seconds;       Data structure size:   0.0Mb
+Wed May 28 20:36:39 2025
+debExit
