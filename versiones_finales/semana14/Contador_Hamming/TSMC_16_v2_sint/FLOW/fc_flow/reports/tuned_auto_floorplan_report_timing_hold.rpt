@@ -1,0 +1,48 @@
+Warning: Scenario scenarioSS is not configured for hold analysis: skipping. (UIC-058)
+****************************************
+Report : timing
+        -path_type full
+        -delay_type min
+        -max_paths 1
+        -report_by design
+Design : top
+Version: U-2022.12-SP6
+Date   : Thu May 29 19:27:11 2025
+****************************************
+
+  Startpoint: counter_and_parity/parity_stored_reg[1] (rising edge-triggered flip-flop clocked by SYS_CLK)
+  Endpoint: syndrome_inst/corrected_parity_reg[1] (rising edge-triggered flip-flop clocked by SYS_CLK)
+  Mode: mode1
+  Corner: cornerFF
+  Scenario: scenarioFF
+  Path Group: SYS_CLK
+  Path Type: min
+
+  Point                                            Incr      Path  
+  ------------------------------------------------------------------------
+  clock SYS_CLK (rise edge)                        0.00      0.00
+  clock network delay (ideal)                      0.00      0.00
+
+  counter_and_parity/parity_stored_reg[1]/CP (SDFCNQD0HPBWP)
+                                                   0.00      0.00 r
+  counter_and_parity/parity_stored_reg[1]/Q (SDFCNQD0HPBWP)
+                                                   0.15      0.15 r
+  ctmi_729/ZN (MOAI22D0HPBWP)                      0.03      0.18 f
+  syndrome_inst/corrected_parity_reg[1]/D (SDFCNQD0HPBWP)
+                                                   0.00      0.18 f
+  data arrival time                                          0.18
+
+  clock SYS_CLK (rise edge)                        0.00      0.00
+  clock network delay (ideal)                      0.00      0.00
+  syndrome_inst/corrected_parity_reg[1]/CP (SDFCNQD0HPBWP)
+                                                   0.00      0.00 r
+  library hold time                                0.01      0.01
+  data required time                                         0.01
+  ------------------------------------------------------------------------
+  data required time                                         0.01
+  data arrival time                                         -0.18
+  ------------------------------------------------------------------------
+  slack (MET)                                                0.16
+
+
+1

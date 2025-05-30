@@ -1,76 +1,27 @@
-simSetSimulator "-vcssv" -exec "./results_3" -args " " -uvmDebug on
-debImport "-i" "-simflow" "-dbdir" "./results_3.daidir"
+simSetSimulator "-vcssv" -exec "./results" -args " " -uvmDebug on
+debImport "-i" "-simflow" "-dbdir" "./results.daidir"
 srcTBInvokeSim
 wvCreateWindow
-wvCreateWindow
-wvCloseWindow -win $_nWave4
-srcHBSelect "tb_top.dut" -win $_nTrace1
-srcHBSelect "tb_top.dut" -win $_nTrace1
-srcSetScope "tb_top.dut" -delim "." -win $_nTrace1
-srcHBSelect "tb_top.dut" -win $_nTrace1
-srcSignalViewSelect "tb_top.dut.clk"
-srcSignalViewSelect "tb_top.dut.clk" "tb_top.dut.rst"
-srcSignalViewSelect "tb_top.dut.clk" "tb_top.dut.rst" "tb_top.dut.enable"
-srcSignalViewSelect "tb_top.dut.clk" "tb_top.dut.rst" "tb_top.dut.enable" \
-           "tb_top.dut.counter\[15:0\]"
-srcSignalViewSelect "tb_top.dut.clk" "tb_top.dut.rst" "tb_top.dut.enable" \
-           "tb_top.dut.counter\[15:0\]" "tb_top.dut.parity_stored\[11:0\]"
-wvAddSignal -win $_nWave3 "/tb_top/dut/clk" "/tb_top/dut/rst" \
-           "/tb_top/dut/enable" "/tb_top/dut/counter\[15:0\]" \
-           "/tb_top/dut/parity_stored\[11:0\]"
-wvSetPosition -win $_nWave3 {("G1" 0)}
-wvSetPosition -win $_nWave3 {("G1" 5)}
-wvSetPosition -win $_nWave3 {("G1" 5)}
-srcSignalViewSelect "tb_top.dut.error_detected"
-srcSignalViewSelect "tb_top.dut.error_detected" "tb_top.dut.syndrome\[11:0\]"
-srcSignalViewSelect "tb_top.dut.error_detected" "tb_top.dut.syndrome\[11:0\]" \
-           "tb_top.dut.corrected_counter\[15:0\]"
-srcSignalViewSelect "tb_top.dut.error_detected" "tb_top.dut.syndrome\[11:0\]" \
-           "tb_top.dut.corrected_counter\[15:0\]" \
-           "tb_top.dut.corrected_parity\[11:0\]"
-wvSetPosition -win $_nWave3 {("G1" 0)}
-wvSetPosition -win $_nWave3 {("G1" 1)}
-wvSetPosition -win $_nWave3 {("G1" 2)}
-wvSetPosition -win $_nWave3 {("G1" 3)}
-wvSetPosition -win $_nWave3 {("G1" 4)}
-wvSetPosition -win $_nWave3 {("G1" 5)}
-wvAddSignal -win $_nWave3 "/tb_top/dut/error_detected" \
-           "/tb_top/dut/syndrome\[11:0\]" \
-           "/tb_top/dut/corrected_counter\[15:0\]" \
-           "/tb_top/dut/corrected_parity\[11:0\]"
-wvSetPosition -win $_nWave3 {("G1" 5)}
-wvSetPosition -win $_nWave3 {("G1" 9)}
+srcHBSelect "tb_top.dut.syndrome_inst" -win $_nTrace1
+srcHBDrag -win $_nTrace1
+wvDumpScope "tb_top.dut.syndrome_inst"
+wvRenameGroup -win $_nWave3 {G1} {syndrome_inst}
+wvAddSignal -win $_nWave3 "/tb_top/dut/syndrome_inst/clk" \
+           "/tb_top/dut/syndrome_inst/enable" \
+           "/tb_top/dut/syndrome_inst/parity_stored\[11:0\]" \
+           "/tb_top/dut/syndrome_inst/counter_reg\[15:0\]" \
+           "/tb_top/dut/syndrome_inst/syndrome\[11:0\]" \
+           "/tb_top/dut/syndrome_inst/busy" \
+           "/tb_top/dut/syndrome_inst/corrected_counter\[15:0\]" \
+           "/tb_top/dut/syndrome_inst/error_detected" \
+           "/tb_top/dut/syndrome_inst/corrected_parity\[11:0\]" \
+           "/tb_top/dut/syndrome_inst/enable_last" \
+           "/tb_top/dut/syndrome_inst/rst"
+wvSetPosition -win $_nWave3 {("syndrome_inst" 0)}
+wvSetPosition -win $_nWave3 {("syndrome_inst" 11)}
+wvSetPosition -win $_nWave3 {("syndrome_inst" 11)}
 srcTBRunSim
+wvSelectGroup -win $_nWave3 {G2}
 wvZoomAll -win $_nWave3
 wvSelectGroup -win $_nWave3 {G2}
-wvZoom -win $_nWave3 94921.913289 210367.483506
-wvZoom -win $_nWave3 121144.705393 180118.785561
-srcDeselectAll -win $_nTrace1
-srcHBSelect "tb_top.dut" -win $_nTrace1
-srcHBSelect "tb_top.dut" -win $_nTrace1
-srcSetScope "tb_top.dut" -delim "." -win $_nTrace1
-srcHBSelect "tb_top.dut" -win $_nTrace1
-srcDeselectAll -win $_nTrace1
-srcDeselectAll -win $_nTrace1
-srcDeselectAll -win $_nTrace1
-srcSignalViewSelect "tb_top.dut.width"
-srcSignalViewSelect "tb_top.dut.enable_last"
-srcSignalViewSelect "tb_top.dut.enable_last"
-wvSetPosition -win $_nWave3 {("G1" 0)}
-wvSetPosition -win $_nWave3 {("G1" 9)}
-wvAddSignal -win $_nWave3 "/tb_top/dut/enable_last"
-wvSetPosition -win $_nWave3 {("G1" 9)}
-wvSetPosition -win $_nWave3 {("G1" 10)}
-srcTBSimReset
-srcTBRunSim
-wvZoomAll -win $_nWave3
-wvSelectSignal -win $_nWave3 {( "G1" 5 )} 
-wvSelectSignal -win $_nWave3 {( "G1" 6 )} 
-wvSelectGroup -win $_nWave3 {G2}
-srcHBSelect "tb_top.dut" -win $_nTrace1
-srcHBSelect "tb_top.dut" -win $_nTrace1
-srcSetScope "tb_top.dut" -delim "." -win $_nTrace1
-srcHBSelect "tb_top.dut" -win $_nTrace1
-wvZoom -win $_nWave3 52242.035815 183780.018850
-wvZoom -win $_nWave3 114477.726186 166795.378251
 debExit

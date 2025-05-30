@@ -1,6 +1,6 @@
 // Synopsys, Inc.
 // User: VARGAS_CHAVARRIA_2025
-// Date: Thu May 29 16:42:08 2025
+// Date: Thu May 29 18:01:25 2025
 
 // ==================================================================================================
 // This config file prototype is produced from the last run using the complete list of extracted fsms.

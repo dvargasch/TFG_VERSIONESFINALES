@@ -1,0 +1,136 @@
+Warning: Scenario scenarioFF is not configured for setup analysis: skipping. (UIC-058)
+****************************************
+Report : timing
+        -path_type full
+        -delay_type max
+        -max_paths 1
+        -report_by design
+Design : top
+Version: U-2022.12-SP6
+Date   : Thu May 29 21:41:44 2025
+****************************************
+
+  Startpoint: counter_and_parity/count_reg_reg[0] (rising edge-triggered flip-flop clocked by SYS_CLK)
+  Endpoint: counter_and_parity/count_reg_reg[63] (rising edge-triggered flip-flop clocked by SYS_CLK)
+  Mode: mode1
+  Corner: cornerSS
+  Scenario: scenarioSS
+  Path Group: SYS_CLK
+  Path Type: max
+
+  Point                                            Incr      Path  
+  ------------------------------------------------------------------------
+  clock SYS_CLK (rise edge)                        0.00      0.00
+  clock network delay (ideal)                      0.00      0.00
+
+  counter_and_parity/count_reg_reg[0]/CP (SDFCNQD1HPBWP)
+                                                   0.00      0.00 r
+  counter_and_parity/count_reg_reg[0]/Q (SDFCNQD1HPBWP)
+                                                   0.43      0.43 r
+  counter_and_parity/add_95/U_2/CO (HA1D0HPBWP)    0.17      0.60 r
+  counter_and_parity/add_95/U_5/CO (HA1D0HPBWP)    0.10      0.71 r
+  counter_and_parity/add_95/U_7/CO (HA1D0HPBWP)    0.10      0.81 r
+  counter_and_parity/add_95/U_10/CO (HA1D0HPBWP)   0.11      0.92 r
+  counter_and_parity/add_95/U_12/CO (HA1D0HPBWP)   0.11      1.03 r
+  counter_and_parity/add_95/U_15/CO (HA1D0HPBWP)   0.11      1.14 r
+  counter_and_parity/add_95/U_17/CO (HA1D0HPBWP)   0.11      1.25 r
+  counter_and_parity/add_95/U_20/CO (HA1D0HPBWP)   0.10      1.35 r
+  counter_and_parity/add_95/U_22/CO (HA1D0HPBWP)   0.11      1.46 r
+  counter_and_parity/add_95/U_25/CO (HA1D0HPBWP)   0.11      1.57 r
+  counter_and_parity/add_95/U_27/CO (HA1D0HPBWP)   0.11      1.68 r
+  counter_and_parity/add_95/U_30/CO (HA1D0HPBWP)   0.11      1.79 r
+  counter_and_parity/add_95/U_32/CO (HA1D0HPBWP)   0.11      1.90 r
+  counter_and_parity/add_95/U_35/CO (HA1D0HPBWP)   0.11      2.01 r
+  counter_and_parity/add_95/U_37/CO (HA1D0HPBWP)   0.11      2.12 r
+  counter_and_parity/add_95/U_40/CO (HA1D0HPBWP)   0.11      2.22 r
+  counter_and_parity/add_95/U_42/CO (HA1D0HPBWP)   0.12      2.34 r
+  counter_and_parity/add_95/U_45/CO (HA1D0HPBWP)   0.11      2.45 r
+  counter_and_parity/add_95/U_47/CO (HA1D0HPBWP)   0.11      2.56 r
+  counter_and_parity/add_95/U_50/CO (HA1D0HPBWP)   0.11      2.67 r
+  counter_and_parity/add_95/U_52/CO (HA1D0HPBWP)   0.11      2.78 r
+  counter_and_parity/add_95/U_55/CO (HA1D0HPBWP)   0.11      2.89 r
+  counter_and_parity/add_95/U_57/CO (HA1D0HPBWP)   0.11      3.00 r
+  counter_and_parity/add_95/U_60/CO (HA1D0HPBWP)   0.11      3.11 r
+  counter_and_parity/add_95/U_62/CO (HA1D0HPBWP)   0.11      3.22 r
+  counter_and_parity/add_95/U_65/CO (HA1D0HPBWP)   0.12      3.35 r
+  counter_and_parity/add_95/U_67/CO (HA1D0HPBWP)   0.12      3.47 r
+  counter_and_parity/add_95/U_70/CO (HA1D0HPBWP)   0.12      3.58 r
+  counter_and_parity/add_95/U_72/CO (HA1D0HPBWP)   0.11      3.69 r
+  counter_and_parity/add_95/U_75/CO (HA1D0HPBWP)   0.11      3.81 r
+  counter_and_parity/add_95/U_77/CO (HA1D0HPBWP)   0.11      3.92 r
+  counter_and_parity/add_95/U_80/CO (HA1D0HPBWP)   0.11      4.03 r
+  counter_and_parity/add_95/U_82/CO (HA1D0HPBWP)   0.12      4.15 r
+  counter_and_parity/add_95/U_85/CO (HA1D0HPBWP)   0.11      4.26 r
+  counter_and_parity/add_95/U_87/CO (HA1D0HPBWP)   0.11      4.37 r
+  counter_and_parity/add_95/U_90/CO (HA1D0HPBWP)   0.11      4.48 r
+  counter_and_parity/add_95/U_92/CO (HA1D0HPBWP)   0.11      4.59 r
+  counter_and_parity/add_95/U_95/CO (HA1D0HPBWP)   0.11      4.70 r
+  counter_and_parity/add_95/U_97/CO (HA1D0HPBWP)   0.11      4.80 r
+  counter_and_parity/add_95/U_100/CO (HA1D0HPBWP)
+                                                   0.11      4.91 r
+  counter_and_parity/add_95/U_102/CO (HA1D0HPBWP)
+                                                   0.11      5.02 r
+  counter_and_parity/add_95/U_105/CO (HA1D0HPBWP)
+                                                   0.11      5.13 r
+  counter_and_parity/add_95/U_107/CO (HA1D0HPBWP)
+                                                   0.11      5.24 r
+  counter_and_parity/add_95/U_110/CO (HA1D0HPBWP)
+                                                   0.11      5.35 r
+  counter_and_parity/add_95/U_112/CO (HA1D0HPBWP)
+                                                   0.12      5.47 r
+  counter_and_parity/add_95/U_115/CO (HA1D0HPBWP)
+                                                   0.12      5.59 r
+  counter_and_parity/add_95/U_117/CO (HA1D0HPBWP)
+                                                   0.12      5.70 r
+  counter_and_parity/add_95/U_120/CO (HA1D0HPBWP)
+                                                   0.11      5.82 r
+  counter_and_parity/add_95/U_122/CO (HA1D0HPBWP)
+                                                   0.11      5.93 r
+  counter_and_parity/add_95/U_125/CO (HA1D0HPBWP)
+                                                   0.12      6.04 r
+  counter_and_parity/add_95/U_127/CO (HA1D0HPBWP)
+                                                   0.12      6.16 r
+  counter_and_parity/add_95/U_130/CO (HA1D0HPBWP)
+                                                   0.11      6.27 r
+  counter_and_parity/add_95/U_132/CO (HA1D0HPBWP)
+                                                   0.11      6.38 r
+  counter_and_parity/add_95/U_135/CO (HA1D0HPBWP)
+                                                   0.11      6.48 r
+  counter_and_parity/add_95/U_137/CO (HA1D0HPBWP)
+                                                   0.11      6.59 r
+  counter_and_parity/add_95/U_140/CO (HA1D0HPBWP)
+                                                   0.11      6.69 r
+  counter_and_parity/add_95/U_142/CO (HA1D0HPBWP)
+                                                   0.11      6.80 r
+  counter_and_parity/add_95/U_145/CO (HA1D0HPBWP)
+                                                   0.11      6.91 r
+  counter_and_parity/add_95/U_147/CO (HA1D0HPBWP)
+                                                   0.11      7.02 r
+  counter_and_parity/add_95/U_150/CO (HA1D0HPBWP)
+                                                   0.11      7.13 r
+  counter_and_parity/add_95/U_152/CO (HA1D0HPBWP)
+                                                   0.11      7.24 r
+  counter_and_parity/add_95/U_155/CO (HA1D0HPBWP)
+                                                   0.09      7.34 r
+  counter_and_parity/add_95/ctmi_1409/ZN (MAOI22D0HPBWP)
+                                                   0.12      7.46 r
+  counter_and_parity/ctmi_1258/Z (AO22D0HPBWP)     0.14      7.60 r
+  counter_and_parity/count_reg_reg[63]/D (SDFCNQD1HPBWP)
+                                                   0.00      7.60 r
+  data arrival time                                          7.60
+
+  clock SYS_CLK (rise edge)                       10.00     10.00
+  clock network delay (ideal)                      0.00     10.00
+  counter_and_parity/count_reg_reg[63]/CP (SDFCNQD1HPBWP)
+                                                   0.00     10.00 r
+  clock uncertainty                               -0.30      9.70
+  library setup time                              -0.09      9.61
+  data required time                                         9.61
+  ------------------------------------------------------------------------
+  data required time                                         9.61
+  data arrival time                                         -7.60
+  ------------------------------------------------------------------------
+  slack (MET)                                                2.01
+
+
+1

@@ -1,0 +1,117 @@
+simSetSimulator "-vcssv" -exec "./results" -args " " -uvmDebug on
+debImport "-i" "-simflow" "-dbdir" "./results.daidir"
+srcTBInvokeSim
+wvCreateWindow
+verdiShowWindow -win $_Verdi_1 -switchFS
+srcHBSelect "tb_top.dut" -win $_nTrace1
+srcHBSelect "tb_top.dut" -win $_nTrace1
+srcHBSelect "tb_top.dut" -win $_nTrace1
+srcHBDrag -win $_nTrace1
+wvDumpScope "tb_top.dut"
+wvRenameGroup -win $_nWave3 {G1} {dut}
+wvAddSignal -win $_nWave3 "/tb_top/dut/clk" "/tb_top/dut/rst" \
+           "/tb_top/dut/enable" "/tb_top/dut/counter\[15:0\]"
+wvSetPosition -win $_nWave3 {("dut" 0)}
+wvSetPosition -win $_nWave3 {("dut" 4)}
+wvSetPosition -win $_nWave3 {("dut" 4)}
+srcTBRunSim
+wvZoomOut -win $_nWave3
+wvZoomAll -win $_nWave3
+wvZoomAll -win $_nWave3
+srcHBSelect "tb_top.dut.counter_and_parity" -win $_nTrace1
+srcHBDrag -win $_nTrace1
+wvSetPosition -win $_nWave3 {("dut" 0)}
+wvSetPosition -win $_nWave3 {("dut" 4)}
+wvSetPosition -win $_nWave3 {("G2" 0)}
+wvDumpScope "tb_top.dut.counter_and_parity"
+wvRenameGroup -win $_nWave3 {G2} {counter_and_parity}
+wvAddSignal -win $_nWave3 "/tb_top/dut/counter_and_parity/clk" \
+           "/tb_top/dut/counter_and_parity/rst" \
+           "/tb_top/dut/counter_and_parity/enable" \
+           "/tb_top/dut/counter_and_parity/corrected_counter\[15:0\]" \
+           "/tb_top/dut/counter_and_parity/corrected_parity\[11:0\]" \
+           "/tb_top/dut/counter_and_parity/counter\[15:0\]" \
+           "/tb_top/dut/counter_and_parity/parity_stored\[11:0\]" \
+           "/tb_top/dut/counter_and_parity/busy" \
+           "/tb_top/dut/counter_and_parity/error_detected" \
+           "/tb_top/dut/counter_and_parity/enable_last"
+wvSetPosition -win $_nWave3 {("counter_and_parity" 0)}
+wvSetPosition -win $_nWave3 {("counter_and_parity" 10)}
+wvSetPosition -win $_nWave3 {("counter_and_parity" 10)}
+srcTBRunSim
+srcTBSimBreak
+srcTBSimReset
+srcHBSelect "tb_top.dut.counter_and_parity" -win $_nTrace1
+srcTBRunSim
+wvZoomAll -win $_nWave3
+wvSelectSignal -win $_nWave3 {( "counter_and_parity" 9 )} 
+wvSelectSignal -win $_nWave3 {( "counter_and_parity" 7 )} 
+wvSelectSignal -win $_nWave3 {( "counter_and_parity" 1 )} 
+wvScrollDown -win $_nWave3 1
+wvScrollDown -win $_nWave3 0
+wvScrollUp -win $_nWave3 1
+wvScrollDown -win $_nWave3 0
+wvScrollDown -win $_nWave3 0
+wvSelectSignal -win $_nWave3 {( "dut" 3 )} 
+wvScrollDown -win $_nWave3 1
+srcHBSelect "tb_top.dut.syndrome_inst" -win $_nTrace1
+srcHBSelect "tb_top.dut.syndrome_inst" -win $_nTrace1
+srcSetScope "tb_top.dut.syndrome_inst" -delim "." -win $_nTrace1
+srcHBSelect "tb_top.dut.syndrome_inst" -win $_nTrace1
+wvSelectSignal -win $_nWave3 {( "counter_and_parity" 4 )} 
+srcHBSelect "tb_top.dut" -win $_nTrace1
+srcHBSelect "tb_top.dut.syndrome_inst" -win $_nTrace1
+srcHBDrag -win $_nTrace1
+wvSetPosition -win $_nWave3 {("dut" 0)}
+wvSetPosition -win $_nWave3 {("dut" 1)}
+wvSetPosition -win $_nWave3 {("dut" 2)}
+wvSetPosition -win $_nWave3 {("dut" 3)}
+wvSetPosition -win $_nWave3 {("dut" 4)}
+wvSetPosition -win $_nWave3 {("counter_and_parity" 0)}
+wvSetPosition -win $_nWave3 {("dut" 4)}
+wvDumpScope "tb_top.dut.syndrome_inst"
+wvSetPosition -win $_nWave3 {("dut" 4)}
+wvSetPosition -win $_nWave3 {("dut/syndrome_inst" 0)}
+wvAddSubGroup -win $_nWave3 -holdpost {syndrome_inst}
+wvAddSignal -win $_nWave3 "/tb_top/dut/syndrome_inst/clk" \
+           "/tb_top/dut/syndrome_inst/enable" \
+           "/tb_top/dut/syndrome_inst/parity_stored\[11:0\]" \
+           "/tb_top/dut/syndrome_inst/counter_reg\[15:0\]" \
+           "/tb_top/dut/syndrome_inst/syndrome\[11:0\]" \
+           "/tb_top/dut/syndrome_inst/busy" \
+           "/tb_top/dut/syndrome_inst/corrected_counter\[15:0\]" \
+           "/tb_top/dut/syndrome_inst/error_detected" \
+           "/tb_top/dut/syndrome_inst/corrected_parity\[11:0\]" \
+           "/tb_top/dut/syndrome_inst/enable_last" \
+           "/tb_top/dut/syndrome_inst/rst"
+wvSetPosition -win $_nWave3 {("dut/syndrome_inst" 0)}
+wvSetPosition -win $_nWave3 {("dut/syndrome_inst" 11)}
+srcTBSimReset
+srcTBRunSim
+wvZoomAll -win $_nWave3
+wvSelectSignal -win $_nWave3 {( "dut/syndrome_inst" 7 )} 
+wvSelectSignal -win $_nWave3 {( "dut/syndrome_inst" 8 )} 
+srcHBSelect "tb_top" -win $_nTrace1
+srcSetScope "tb_top" -delim "." -win $_nTrace1
+srcHBSelect "tb_top" -win $_nTrace1
+srcHBSelect "tb_top.dut" -win $_nTrace1
+srcSetScope "tb_top.dut" -delim "." -win $_nTrace1
+srcHBSelect "tb_top.dut" -win $_nTrace1
+srcHBSelect "tb_top.dut" -win $_nTrace1
+srcDeselectAll -win $_nTrace1
+wvSelectSignal -win $_nWave3 {( "dut/syndrome_inst" 11 )} 
+wvSelectSignal -win $_nWave3 {( "dut/syndrome_inst" 8 )} 
+srcDeselectAll -win $_nTrace1
+wvSelectSignal -win $_nWave3 {( "dut/syndrome_inst" 3 )} 
+wvScrollUp -win $_nWave3 1
+wvScrollDown -win $_nWave3 10
+wvScrollDown -win $_nWave3 3
+wvSelectSignal -win $_nWave3 {( "counter_and_parity" 9 )} 
+wvScrollUp -win $_nWave3 6
+wvScrollUp -win $_nWave3 5
+srcDeselectAll -win $_nTrace1
+srcSelect -signal "error_detected" -line 41 -pos 2 -win $_nTrace1
+srcSetOptions -annotate on -win $_nTrace1
+schSetOptions -win $_nSchema1 -annotate on
+srcDeselectAll -win $_nTrace1
+debExit

@@ -2,7 +2,7 @@ Magic 271485
 Revision Verdi_R-2020.12-SP2
 
 ; Window Layout <x> <y> <width> <height> <signalwidth> <valuewidth>
-viewPort 0 25 1130 389 184 1
+viewPort 0 25 1054 448 184 1
 
 ; File list:
 ; openDirFile [-d delimiter] [-s time_offset] [-rf auto_bus_rule_file] path_name file_name
@@ -16,16 +16,16 @@ signalSpacing 5
 
 ; windowTimeUnit is used for zoom, cursor & marker
 ; waveform viewport range
-zoom 0.000000 176750.000000
-cursor 175000.000000
+zoom 0.000000 247450.000000
+cursor 225000.000000
 marker 0.000000
 
 ; user define markers
 ; userMarker time_pos marker_name color linestyle
 ; visible top row signal index
-top 0
+top 11
 ; marker line index
-markerPos 13
+markerPos 36
 
 ; event list
 ; addEvent event_name event_expression
@@ -50,17 +50,40 @@ activeDirFile "" "/mnt/vol_NFS_rh003/estudiantes/DANIELA_VARGAS/Version_final/05
 addSignal -h 15 /tb_top/dut/counter_and_parity/clk
 addSignal -h 15 /tb_top/dut/counter_and_parity/rst
 addSignal -h 15 /tb_top/dut/counter_and_parity/enable
-addSignal -h 15 -UNSIGNED -BIN /tb_top/dut/counter_and_parity/corrected_counter[15:0]
-addSignal -h 15 -UNSIGNED -BIN /tb_top/dut/counter_and_parity/corrected_parity[11:0]
-addSignal -h 15 -UNSIGNED -BIN /tb_top/dut/counter_and_parity/counter[15:0]
-addSignal -h 15 -UNSIGNED -BIN /tb_top/dut/counter_and_parity/parity_stored[11:0]
-addSignal -h 15 /tb_top/dut/counter_and_parity/busy
-addSignal -h 15 /tb_top/dut/counter_and_parity/error_detected
 addSignal -h 15 /tb_top/dut/counter_and_parity/enable_last
 addSignal -h 15 -UNSIGNED -BIN /tb_top/dut/counter_and_parity/count_reg[15:0]
 addSignal -h 15 -UNSIGNED -BIN /tb_top/dut/counter_and_parity/counter_stored[15:0]
-addSignal -h 15 -UNSIGNED -BIN /tb_top/counter[15:0]
-addGroup "G2"
+addSignal -h 15 -UNSIGNED -BIN /tb_top/dut/counter_and_parity/parity_stored[11:0]
+addSignal -h 15 -UNSIGNED -BIN /tb_top/dut/counter_and_parity/corrected_counter[15:0]
+addSignal -h 15 -UNSIGNED -BIN /tb_top/dut/counter_and_parity/corrected_parity[11:0]
+addSignal -h 15 -UNSIGNED -BIN /tb_top/dut/counter_and_parity/counter[15:0]
+addSignal -h 15 /tb_top/dut/counter_and_parity/busy
+addSignal -h 15 /tb_top/dut/counter_and_parity/error_detected
+addGroup "syndrome_inst"
+addSignal -h 15 /tb_top/dut/syndrome_inst/clk
+addSignal -h 15 /tb_top/dut/syndrome_inst/rst
+addSignal -h 15 /tb_top/dut/syndrome_inst/enable
+addSignal -h 15 /tb_top/dut/syndrome_inst/enable_last
+addSignal -h 15 -UNSIGNED -BIN /tb_top/dut/syndrome_inst/parity_stored[11:0]
+addSignal -h 15 -UNSIGNED -BIN /tb_top/dut/syndrome_inst/counter_reg[15:0]
+addSignal -h 15 -UNSIGNED -BIN /tb_top/dut/syndrome_inst/syndrome[11:0]
+addSignal -h 15 /tb_top/dut/syndrome_inst/busy
+addSignal -h 15 -UNSIGNED -BIN /tb_top/dut/syndrome_inst/corrected_counter[15:0]
+addSignal -h 15 /tb_top/dut/syndrome_inst/error_detected
+addSignal -h 15 -UNSIGNED -BIN /tb_top/dut/syndrome_inst/corrected_parity[11:0]
+addGroup "dut"
+addSignal -h 15 /tb_top/dut/clk
+addSignal -h 15 /tb_top/dut/rst
+addSignal -h 15 /tb_top/dut/enable
+addSignal -h 15 -UNSIGNED -BIN /tb_top/dut/counter[15:0]
+addSignal -h 15 -UNSIGNED -BIN /tb_top/dut/parity_stored[11:0]
+addSignal -h 15 /tb_top/dut/busy
+addSignal -h 15 /tb_top/dut/error_detected
+addSignal -h 15 -UNSIGNED -BIN /tb_top/dut/syndrome[11:0]
+addSignal -h 15 -UNSIGNED -BIN /tb_top/dut/corrected_counter[15:0]
+addSignal -h 15 -UNSIGNED -BIN /tb_top/dut/corrected_parity[11:0]
+addSignal -h 15 /tb_top/dut/enable_last
+addGroup "G4"
 
 ; getSignalForm Scope Hierarchy Status
 ; active file of getSignalForm

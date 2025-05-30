@@ -63,11 +63,18 @@ module counter_and_parity  #(
   output  reg enable_last
 );
   reg [width-1:0] count_reg;
+  
   reg [width-1:0] counter_stored;
 
   integer i;
 
- 
+    always @(negedge clk or posedge rst) begin
+        if (rst) begin
+            count_reg <= 8'b0;
+        end else begin
+            count_reg <= counter;
+        end
+    end
 
     always @(posedge clk or posedge rst) begin
         if (rst) begin
@@ -76,19 +83,20 @@ module counter_and_parity  #(
             parity_stored <= '0;
             busy <= 1'b0;
             enable_last <= 1'b0;
+           
         end else begin
             
                 enable_last <= enable;
-           
+            end 
           if (!enable) begin
-    if (corrected_parity != 0) begin
-        parity_stored <= corrected_parity;
-    end
-    if (corrected_counter != 0) begin
-        count_reg <= corrected_counter;
-        busy <= 1'b0;
-    end
-end
+                if (corrected_parity != 0) begin
+                      parity_stored <= corrected_parity;
+                end
+                if (corrected_counter != 0) begin
+                      count_reg <= corrected_counter;
+                   busy <= 1'b0;
+                 end
+           end
 
 
            else if (enable) begin
@@ -106,7 +114,7 @@ end
       busy <= 1'b1;
     end
   end
-end
+
 
     assign error_detected = busy && (count_reg != counter_stored);
   
@@ -129,20 +137,21 @@ module syndrome  #(
   output reg [parity_bits-1:0] syndrome,
     input busy,
   output reg [width-1:0] corrected_counter,
-  output logic error_detected,
 
 
-    output logic [parity_bits-1:0] corrected_parity,
+
+ input error_detected,
+  output logic [parity_bits-1:0] corrected_parity,
   input enable_last,
   input rst
 );
-  
+   reg error_detected_parity;
    integer i;
-     assign error_detected = |syndrome;
-
+    assign error_detected_parity = |syndrome;
     always @(*) begin
+      
 
-      if (!enable_last) begin
+      if (!enable_last && !enable) begin
           for (i = 0; i < blocks; i = i + 1) begin
                 syndrome[i*3 + 0] = parity_stored[i*3 + 0] ^ counter_reg[i*4 + 3] ^ counter_reg[i*4 + 2] ^ counter_reg[i*4 + 0];
                 syndrome[i*3 + 1] = parity_stored[i*3 + 1] ^ counter_reg[i*4 + 3] ^ counter_reg[i*4 + 1] ^ counter_reg[i*4 + 0];
@@ -151,6 +160,8 @@ module syndrome  #(
         end
     end
 
+  
+  
 
     function automatic logic [3:0] correct_block(
         input logic [2:0] syn,
@@ -198,7 +209,7 @@ endfunction
   always_ff @(posedge clk or posedge rst) begin
       if (rst) begin
             corrected_parity <= '0;
-      end else if (!enable && error_detected) begin
+      end else if (!enable && error_detected_parity) begin
           for (int i = 0; i < blocks; i++) begin
             corrected_parity[i*3 +: 3] <= correct_block_parity(syndrome[i*3 +: 3], parity_stored[i*3 +: 3]);
             end
@@ -209,3 +220,7 @@ endfunction
   
   
 endmodule
+
+
+
+

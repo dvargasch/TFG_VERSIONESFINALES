@@ -1,0 +1,44 @@
+Invoking simulator...
+
+./results -sml=verdi +UVM_VERDI_TRACE=UVM_AWARE +fsdb+gate=off -ucli2Proc -ucli
+debImport "-i" "-simflow" "-dbdir" "./results.daidir"
+*Verdi* Loading libsscore_vcs202012.so
+
+*Verdi* : Enable RPC Server(231527)
+
+srcTBInvokeSim
+Chronologic VCS simulator copyright 1991-2020
+Contains Synopsys proprietary information.
+Compiler version R-2020.12-SP2_Full64; Runtime version R-2020.12-SP2_Full64;  May 29 20:35 2025
+xterm-256color is Not a valid terminal...
+Verdi>fsdbDumpvars 1 "tb_top.dut"  +all +trace_process;fsdbDumpflush 
+
+*Verdi* : Begin traversing the scope (tb_top.dut), layer (1).
+*Verdi* : Enable +trace_process and +all dumping.
+*Verdi* : End of traversing.
+*Verdi* : Flush all FSDB Files at 0 ps.
+
+Verdi>fsdbDumpvars 1 "tb_top.dut.counter_and_parity"  +all +trace_process;fsdbDumpflush 
+
+*Verdi* : Begin traversing the scope (tb_top.dut.counter_and_parity), layer (1).
+*Verdi* : Enable +trace_process and +all dumping.
+*Verdi* : End of traversing.
+*Verdi* : Flush all FSDB Files at 0 ps.
+
+Verdi>fsdbDumpvars 1 "tb_top.dut.syndrome_inst"  +all +trace_process;fsdbDumpflush 
+
+*Verdi* : Begin traversing the scope (tb_top.dut.syndrome_inst), layer (1).
+*Verdi* : Enable +trace_process and +all dumping.
+*Verdi* : End of traversing.
+*Verdi* : Flush all FSDB Files at 0 ps.
+
+Verdi>run
+tb.sv, 45 :         $stop;
+           V C S   S i m u l a t i o n   R e p o r t 
+Time: 415000 ps
+CPU Time:      0.100 seconds;       Data structure size:   0.2Mb
+Thu May 29 20:47:42 2025
+
+<VERDI_Terminated>
+
+debExit
