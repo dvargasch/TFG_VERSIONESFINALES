@@ -61,30 +61,30 @@ module tb_sram_2kbit;
 
     // Lectura sin error
     we <= 0;
-    addr <= 8'd10; @(posedge clk);
+    addr <= 8'd20; @(posedge clk);
     $display("Lectura normal 10 ? %h (esperado A5)", data_out);
 
     // Ver contenido antes del error
     $display("mem[10] antes del error = %b", dut.mem[10]);
-    enable <= 0;
+    enable <= 1;
     // Inyección de error en bit 2 (mem[10][2] = ~mem[10][2])
-    force dut.mem[20] = 14'b00100110111110;//10000110111100
+   // force dut.mem[20] = 14'b00000110111110;//10000110111100
   // @(posedge clk);
-    release dut.mem[20];
+    //release dut.mem[20];
     $display("Error inyectado en bit 2 de mem[10]");
- @(posedge clk);
- @(posedge clk);
+// @(posedge clk);
+// @(posedge clk);
 
     // Ver contenido después del error
     $display("mem[10] después del error = %b", dut.mem[10]);
 
     // Lectura con corrección
-    addr <= 8'd10; 
+  //  addr <= 8'd20; 
     $display("Lectura tras corrección ? %h (esperado A5)", data_out);
        // Lecturas normales
-    addr <= 8'd20; @(posedge clk);
+   // addr <= 8'd20; @(posedge clk);
     $display("Lectura 20 ? %h (esperado 3C)", data_out);
-    addr <= 8'd255; @(posedge clk);
+    //addr <= 8'd255; @(posedge clk);
     $display("Lectura 255 ? %h (esperado FF)", data_out);
      $display("mem[20] = %b", dut.mem[20]);
     $display("mem[10] después del error corregido = %b", dut.mem[10]);
@@ -93,6 +93,10 @@ module tb_sram_2kbit;
     @(posedge clk);
     @(posedge clk);
     enable <= 0; @(posedge clk);
+  @(posedge clk);
+force dut.mem[20] = 14'b00000110111110;
+release dut.mem[20];
+
     addr <= 8'd10; @(posedge clk);
     $display("mem[10] después del error corregido = %b", dut.mem[10]);
     $display("mem[20] = %b", dut.mem[20]);
@@ -111,14 +115,14 @@ module tb_sram_2kbit;
 
     // Lectura sin error
     we <= 0;
-    addr <= 8'd30; @(posedge clk);
+    addr <= 8'd20; @(posedge clk);
     $display("Lectura normal 10 ? %h (esperado A5)", data_out);
 
     // Ver contenido antes del error
     $display("mem[10] antes del error = %b", dut.mem[10]);
-    force dut.mem[40] = 14'b10010000110000; //10011000111100
+   // force dut.mem[40] = 14'b10010000110000; //10011000111100
   // @(posedge clk);
-    release dut.mem[40];
+  //  release dut.mem[40];
     // Inyección de error en bit 2 (mem[10][2] = ~mem[10][2])
    // force dut.mem[20] = 14'b  10000110111000;
   // @(posedge clk);
@@ -129,7 +133,7 @@ module tb_sram_2kbit;
     $display("mem[10] después del error = %b", dut.mem[10]);
 
     // Lectura con corrección
-    addr <= 8'd40; 
+   // addr <= 8'd40; 
     $display("Lectura tras corrección ? %h (esperado A5)", data_out);
    @(posedge clk);
     // Lecturas normales

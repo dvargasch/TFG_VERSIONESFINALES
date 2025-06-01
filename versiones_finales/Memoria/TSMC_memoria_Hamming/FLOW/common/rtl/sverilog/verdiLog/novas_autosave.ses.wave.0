@@ -2,7 +2,7 @@ Magic 271485
 Revision Verdi_R-2020.12-SP2
 
 ; Window Layout <x> <y> <width> <height> <signalwidth> <valuewidth>
-viewPort 0 25 1684 382 279 171
+viewPort 0 25 1385 553 215 1
 
 ; File list:
 ; openDirFile [-d delimiter] [-s time_offset] [-rf auto_bus_rule_file] path_name file_name
@@ -16,8 +16,8 @@ signalSpacing 5
 
 ; windowTimeUnit is used for zoom, cursor & marker
 ; waveform viewport range
-zoom 0.000000 328250.000000
-cursor 325000.000000
+zoom 0.000000 380062.204724
+cursor 295000.000000
 marker 0.000000
 
 ; user define markers
@@ -25,7 +25,7 @@ marker 0.000000
 ; visible top row signal index
 top 0
 ; marker line index
-markerPos 2
+markerPos 18
 
 ; event list
 ; addEvent event_name event_expression
@@ -45,11 +45,27 @@ COMPLEX_EVENT_END
 curSTATUS ByChange
 
 
-addGroup "G1"
+addGroup "dut"
 activeDirFile "" "/mnt/vol_NFS_rh003/estudiantes/DANIELA_VARGAS/Version_final/0516/versiones_finales/Memoria/TSMC_memoria_Hamming/FLOW/common/rtl/sverilog/inter.fsdb"
+addSignal -h 15 /tb_sram_2kbit/dut/clk
+addSignal -h 15 /tb_sram_2kbit/dut/rst
 addSignal -h 15 /tb_sram_2kbit/dut/enable
+addSignal -h 15 /tb_sram_2kbit/dut/we
+addSignal -h 15 -UNSIGNED -BIN /tb_sram_2kbit/dut/addr[7:0]
+addSignal -h 15 -UNSIGNED -BIN /tb_sram_2kbit/dut/addr_r[7:0]
+addSignal -h 15 -UNSIGNED -BIN /tb_sram_2kbit/dut/data_in[7:0]
+addSignal -h 15 -UNSIGNED -BIN /tb_sram_2kbit/dut/data_out[7:0]
 addSignal -h 15 /tb_sram_2kbit/dut/write_back
-addGroup "G2"
+addSignal -h 15 -UNSIGNED -BIN /tb_sram_2kbit/dut/mem[20][13:0]
+addGroup "syndrome_hight"
+addSignal -h 15 -UNSIGNED -BIN /tb_sram_2kbit/dut/syndrome_hight/codeword[6:0]
+addSignal -h 15 -UNSIGNED -BIN /tb_sram_2kbit/dut/syndrome_hight/syndrome[2:0]
+addSignal -h 15 -UNSIGNED -BIN /tb_sram_2kbit/dut/syndrome_hight/corrected_codeword[6:0]
+addGroup "syndrome_low"
+addSignal -h 15 -UNSIGNED -BIN /tb_sram_2kbit/dut/syndrome_low/codeword[6:0]
+addSignal -h 15 -UNSIGNED -BIN /tb_sram_2kbit/dut/syndrome_low/syndrome[2:0]
+addSignal -h 15 -UNSIGNED -BIN /tb_sram_2kbit/dut/syndrome_low/corrected_codeword[6:0]
+addGroup "G4"
 
 ; getSignalForm Scope Hierarchy Status
 ; active file of getSignalForm

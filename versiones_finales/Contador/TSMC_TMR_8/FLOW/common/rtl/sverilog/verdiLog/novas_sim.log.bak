@@ -4,122 +4,57 @@ Invoking simulator...
 debImport "-i" "-simflow" "-dbdir" "./prueba1.daidir"
 *Verdi* Loading libsscore_vcs202012.so
 
-*Verdi* : Enable RPC Server(1182046)
+*Verdi* : Enable RPC Server(1186116)
 
 srcTBInvokeSim
 Chronologic VCS simulator copyright 1991-2020
 Contains Synopsys proprietary information.
-Compiler version R-2020.12-SP2_Full64; Runtime version R-2020.12-SP2_Full64;  May 22 16:27 2025
+Compiler version R-2020.12-SP2_Full64; Runtime version R-2020.12-SP2_Full64;  May 22 17:06 2025
 xterm-256color is Not a valid terminal...
-Verdi>fsdbDumpvars 1 "tb_TMR_system.uut.counter_1"  +all +trace_process;fsdbDumpvars 1 "tb_TMR_system.uut.counter_2"  +all +trace_process;fsdbDumpvars 1 "tb_TMR_system.uut.counter_3"  +all +trace_process;fsdbDumpvars 1 "tb_TMR_system.uut.voter"  +all +trace_process;fsdbDumpflush 
-
-*Verdi* : Begin traversing the scope (tb_TMR_system.uut.counter_1), layer (1).
-*Verdi* : Enable +trace_process and +all dumping.
-*Verdi* : End of traversing.
-*Verdi* : Begin traversing the scope (tb_TMR_system.uut.counter_2), layer (1).
-*Verdi* : Enable +trace_process and +all dumping.
-*Verdi* : End of traversing.
-*Verdi* : Begin traversing the scope (tb_TMR_system.uut.counter_3), layer (1).
-*Verdi* : Enable +trace_process and +all dumping.
-*Verdi* : End of traversing.
-*Verdi* : Begin traversing the scope (tb_TMR_system.uut.voter), layer (1).
-*Verdi* : Enable +trace_process and +all dumping.
-*Verdi* : End of traversing.
-*Verdi* : Flush all FSDB Files at 0 ps.
-
 Verdi>fsdbDumpvars 1 "tb_TMR_system.uut"  +all +trace_process;fsdbDumpflush 
 
 *Verdi* : Begin traversing the scope (tb_TMR_system.uut), layer (1).
 *Verdi* : Enable +trace_process and +all dumping.
 *Verdi* : End of traversing.
 *Verdi* : Flush all FSDB Files at 0 ps.
-
-Verdi>run
-tb.sv, 70 :         $stop;
-Verdi>fsdbDumpvars 1 "tb_TMR_system.uut"  +all +trace_process;fsdbDumpflush 
-
-*Verdi* : Begin traversing the scope (tb_TMR_system.uut), layer (1).
-*Verdi* : Enable +trace_process and +all dumping.
-*Verdi* : End of traversing.
-*Verdi* : Flush all FSDB Files at 365,000 ps.
 
 Verdi>fsdbDumpvars 1 "tb_TMR_system.uut.counter_1"  +all +trace_process;fsdbDumpflush 
 
 *Verdi* : Begin traversing the scope (tb_TMR_system.uut.counter_1), layer (1).
 *Verdi* : Enable +trace_process and +all dumping.
 *Verdi* : End of traversing.
-*Verdi* : Flush all FSDB Files at 365,000 ps.
+*Verdi* : Flush all FSDB Files at 0 ps.
 
 Verdi>fsdbDumpvars 1 "tb_TMR_system.uut.counter_2"  +all +trace_process;fsdbDumpflush 
 
 *Verdi* : Begin traversing the scope (tb_TMR_system.uut.counter_2), layer (1).
 *Verdi* : Enable +trace_process and +all dumping.
 *Verdi* : End of traversing.
-*Verdi* : Flush all FSDB Files at 365,000 ps.
+*Verdi* : Flush all FSDB Files at 0 ps.
 
 Verdi>fsdbDumpvars 1 "tb_TMR_system.uut.counter_3"  +all +trace_process;fsdbDumpflush 
 
 *Verdi* : Begin traversing the scope (tb_TMR_system.uut.counter_3), layer (1).
 *Verdi* : Enable +trace_process and +all dumping.
 *Verdi* : End of traversing.
-*Verdi* : Flush all FSDB Files at 365,000 ps.
+*Verdi* : Flush all FSDB Files at 0 ps.
 
 Verdi>fsdbDumpvars 1 "tb_TMR_system.uut.voter"  +all +trace_process;fsdbDumpflush 
 
 *Verdi* : Begin traversing the scope (tb_TMR_system.uut.voter), layer (1).
 *Verdi* : Enable +trace_process and +all dumping.
 *Verdi* : End of traversing.
-*Verdi* : Flush all FSDB Files at 365,000 ps.
+*Verdi* : Flush all FSDB Files at 0 ps.
 
 Verdi>fsdbDumpvars 1 "tb_TMR_system.uut.width"  +all +trace_process;fsdbDumpflush 
 
 *Verdi* : Dumping the signal (tb_TMR_system.uut.width).
-*Verdi* : Flush all FSDB Files at 365,000 ps.
+*Verdi* : Flush all FSDB Files at 0 ps.
 
-Verdi>fsdbDumpvars 1 "tb_TMR_system.uut.counter_1"  +all +trace_process;fsdbDumpflush 
-
-*Verdi* : Begin traversing the scope (tb_TMR_system.uut.counter_1), layer (1).
-*Verdi* : Enable +trace_process and +all dumping.
-*Verdi* : End of traversing.
-*Verdi* : Flush all FSDB Files at 365,000 ps.
-
-Verdi>fsdbDumpvars 1 "tb_TMR_system.uut"  +all +trace_process;fsdbDumpflush 
-
-*Verdi* : Begin traversing the scope (tb_TMR_system.uut), layer (1).
-*Verdi* : Enable +trace_process and +all dumping.
-*Verdi* : End of traversing.
-*Verdi* : Flush all FSDB Files at 365,000 ps.
-
-Verdi>fsdbDumpvars 1 "tb_TMR_system.uut.counter_1"  +all +trace_process;fsdbDumpflush 
-
-*Verdi* : Begin traversing the scope (tb_TMR_system.uut.counter_1), layer (1).
-*Verdi* : Enable +trace_process and +all dumping.
-*Verdi* : End of traversing.
-*Verdi* : Flush all FSDB Files at 365,000 ps.
-
-Verdi>fsdbDumpvars 1 "tb_TMR_system.uut.counter_2"  +all +trace_process;fsdbDumpflush 
-
-*Verdi* : Begin traversing the scope (tb_TMR_system.uut.counter_2), layer (1).
-*Verdi* : Enable +trace_process and +all dumping.
-*Verdi* : End of traversing.
-*Verdi* : Flush all FSDB Files at 365,000 ps.
-
-Verdi>fsdbDumpvars 1 "tb_TMR_system.uut.counter_3"  +all +trace_process;fsdbDumpflush 
-
-*Verdi* : Begin traversing the scope (tb_TMR_system.uut.counter_3), layer (1).
-*Verdi* : Enable +trace_process and +all dumping.
-*Verdi* : End of traversing.
-*Verdi* : Flush all FSDB Files at 365,000 ps.
-
-Verdi>fsdbDumpvars 1 "tb_TMR_system.uut.voter"  +all +trace_process;fsdbDumpflush 
-
-*Verdi* : Begin traversing the scope (tb_TMR_system.uut.voter), layer (1).
-*Verdi* : Enable +trace_process and +all dumping.
-*Verdi* : End of traversing.
-*Verdi* : Flush all FSDB Files at 365,000 ps.
-
+Verdi>run
+tb.sv, 69 :         $stop;
            V C S   S i m u l a t i o n   R e p o r t 
 Time: 365000 ps
 CPU Time:      0.200 seconds;       Data structure size:   0.0Mb
-Thu May 22 17:05:04 2025
+Thu May 22 17:20:01 2025
 debExit

@@ -1,0 +1,5 @@
+	tb_voter_tmr.dut.tmr_out	ID_RED5
+	tb_voter_tmr.dut.voter_1.voted_data	ID_RED5
+	tb_voter_tmr.dut.voter_2.voted_data	ID_RED5
+	tb_voter_tmr.dut.voter_3.voted_data	ID_RED5
+	tb_voter_tmr.dut.final_voter.voted_data	ID_RED5

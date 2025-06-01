@@ -1,0 +1,6 @@
+simSetSimulator "-vcssv" -exec "./results_errores" -args " " -uvmDebug on
+debImport "-i" "-simflow" "-dbdir" "./results_errores.daidir"
+srcTBInvokeSim
+verdiSetActWin -dock widgetDock_<Member>
+verdiSetActWin -dock widgetDock_MTB_SOURCE_TAB_1
+debExit

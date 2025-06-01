@@ -1,0 +1,64 @@
+****************************************
+Report : qor
+Design : top
+Version: U-2022.12-SP6
+Date   : Sun Jun  1 00:43:56 2025
+****************************************
+
+
+
+Cell Count
+----------------------------------------
+Hierarchical Cell Count:              4
+Hierarchical Port Count:             72
+Leaf Cell Count:                     32
+Buf/Inv Cell Count:                  16
+Buf Cell Count:                       0
+Inv Cell Count:                      16
+Combinational Cell Count:            32
+   Single-bit Isolation Cell Count:                        0
+   Multi-bit Isolation Cell Count:                         0
+   Isolation Cell Banking Ratio:                           0.00%
+   Single-bit Level Shifter Cell Count:                    0
+   Multi-bit Level Shifter Cell Count:                     0
+   Level Shifter Cell Banking Ratio:                       0.00%
+   Single-bit ELS Cell Count:                              0
+   Multi-bit ELS Cell Count:                               0
+   ELS Cell Banking Ratio:                                 0.00%
+Sequential Cell Count:                0
+   Integrated Clock-Gating Cell Count:                     0
+   Sequential Macro Cell Count:                            0
+   Single-bit Sequential Cell Count:                       0
+   Multi-bit Sequential Cell Count:                        0
+   Sequential Cell Banking Ratio:                          0.00%
+   BitsPerflop:                                            0.00
+Macro Count:                          0
+----------------------------------------
+
+
+Area
+----------------------------------------
+Combinational Area:               70.40
+Noncombinational Area:             0.00
+Buf/Inv Area:                     19.20
+Total Buffer Area:                 0.00
+Total Inverter Area:              19.20
+Macro/Black Box Area:              0.00
+Net Area:                             0
+Net XLength:                     245.78
+Net YLength:                     167.31
+----------------------------------------
+Cell Area (netlist):                             70.40
+Cell Area (netlist and physical only):           70.40
+Net Length:                      413.09
+
+
+Design Rules
+----------------------------------------
+Total Number of Nets:                46
+Nets with Violations:                 0
+Max Trans Violations:                 0
+Max Cap Violations:                   0
+----------------------------------------
+
+1

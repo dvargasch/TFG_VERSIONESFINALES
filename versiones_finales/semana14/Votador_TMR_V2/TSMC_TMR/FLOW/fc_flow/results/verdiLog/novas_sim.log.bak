@@ -1,0 +1,45 @@
+Invoking simulator...
+
+./results -sml=verdi +UVM_VERDI_TRACE=UVM_AWARE +fsdb+gate=off -ucli2Proc -ucli
+debImport "-i" "-simflow" "-dbdir" "./results.daidir"
+*Verdi* Loading libsscore_vcs202303.so
+
+FSDB Dumper for VCS, Release Verdi_U-2023.03-SP2, Linux x86_64/64bit, 08/28/2023
+(C) 1996 - 2023 by Synopsys, Inc.
+
+*Verdi* : Create FSDB file '/mnt/vol_NFS_rh003/estudiantes/DANIELA_VARGAS/TFG_10/TFG/sintesis/Votador/TSMC_TMR/FLOW/fc_flow/results/inter.fsdb'
+
+*Verdi* : Flush all FSDB Files at 0 ps.
+
+*Verdi* : Enable RPC Server(3368152)
+
+srcTBInvokeSim
+Chronologic VCS simulator copyright 1991-2023
+Contains Synopsys proprietary information.
+Compiler version U-2023.03-SP2_Full64; Runtime version U-2023.03-SP2_Full64;  May 11 17:58 2025
+xterm-256color is Not a valid terminal...
+Verdi>fsdbDumpvars 1 "tb_voter_tmr.data_1"  +all +trace_process;fsdbDumpvars 1 "tb_voter_tmr.data_2"  +all +trace_process;fsdbDumpvars 1 "tb_voter_tmr.data_3"  +all +trace_process;fsdbDumpvars 1 "tb_voter_tmr.tmr_out"  +all +trace_process;fsdbDumpflush 
+
+*Verdi* : Dumping the signal (tb_voter_tmr.data_1).
+*Verdi* : Dumping the signal (tb_voter_tmr.data_2).
+*Verdi* : Dumping the signal (tb_voter_tmr.data_3).
+*Verdi* : Dumping the signal (tb_voter_tmr.tmr_out).
+*Verdi* : Flush all FSDB Files at 0 ps.
+
+Verdi>fsdbDumpvars 1 "tb_voter_tmr.dut.v_1"  +all +trace_process;fsdbDumpvars 1 "tb_voter_tmr.dut.v_2"  +all +trace_process;fsdbDumpvars 1 "tb_voter_tmr.dut.v_3"  +all +trace_process;fsdbDumpflush 
+
+*Verdi* : Dumping the signal (tb_voter_tmr.dut.v_1).
+*Verdi* : Dumping the signal (tb_voter_tmr.dut.v_2).
+*Verdi* : Dumping the signal (tb_voter_tmr.dut.v_3).
+*Verdi* : Flush all FSDB Files at 0 ps.
+
+Verdi>run
+$finish called from file "tb.sv", line 45.
+$finish at simulation time                50000
+Simulation complete, time is 50000 ps.
+tb.sv, 45 :         $finish;
+           V C S   S i m u l a t i o n   R e p o r t 
+Time: 50000 ps
+CPU Time:      0.110 seconds;       Data structure size:   0.0Mb
+Sun May 11 18:06:42 2025
+debExit

@@ -1,0 +1,42 @@
+version: (200506)
+
+available memory: 64M bytes
+used memory: 163840 bytes [need 160K bytes if disable swap]
+
+used block: 6 [memory(6) file(0)]
+                 [ 8K(4) 64K(2) { total 160K bytes } ]
+overhead: (9538) bytes for (6) blocks [Average: (1589) bytes/block]
+
+write  => 0(times) 0K(bytes) [0K bytes to file]
+read   => 2(times) 19K(bytes) [2K bytes compressed data from file]
+access => 854045(times) 6681M(bytes)
+          [hit ratio: 99.9998%]
+
+time: write(0) read(0)  unit: second
+
+swap file directory: (/mnt/vol_NFS_rh003/estudiantes/DANIELA_VARGAS/TFG_10/TFG/sintesis/Votador/TSMC_TMR/FLOW/common/rtl/sverilog/verdiLog)
+used swap file number: (3)
+
+
+
+swap file manager:
+arrSize: (256)
+idxCnt: (4)
+closeHead: (1)
+closeTail: (3)
+openCnt: (3)
+fid(3): fd(1073741825) fileName(/mnt/vol_NFS_rh003/estudiantes/DANIELA_VARGAS/TFG_10/TFG/sintesis/Votador/TSMC_TMR/FLOW/common/rtl/sverilog/results_errores_no_corregidos.daidir/kdb.elab++/work.lib++/top.sv#inc___vcs_unit__1__1#.tdc)
+	size(1392) lastModTime(1747014832) curModTime(1747014832)
+	mode(rb)	hot(0) cool(2) pos(0)
+fid(2): fd(34) fileName(/mnt/vol_NFS_rh003/estudiantes/DANIELA_VARGAS/TFG_10/TFG/sintesis/Votador/TSMC_TMR/FLOW/common/rtl/sverilog/verdiLog/_swap_0001#8323328#3458024)
+	size(0) lastModTime(0) curModTime(1747014877)
+	mode(w+b)	hot(3) cool(1) pos(0)
+fid(1): fd(1073741824) fileName(/mnt/vol_NFS_rh003/estudiantes/DANIELA_VARGAS/TFG_10/TFG/sintesis/Votador/TSMC_TMR/FLOW/common/rtl/sverilog/results_errores_no_corregidos.daidir/kdb.elab++/work.lib++/tb_errores_no_corregibles.sv.tdc)
+	size(4173) lastModTime(1747014832) curModTime(1747014832)
+	mode(rb)	hot(2) cool(0) pos(0)
+fid(0): fd(0) fileName(NULL)
+	mode(NULL)	hot(0) cool(0) pos(0)
+==================================================
+mySelf(0x18fafa60) pre(0x19bcbc50) next((nil))
+version(200506)
+date(Aug 13 2023 07:34:34)
