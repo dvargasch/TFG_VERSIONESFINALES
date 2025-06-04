@@ -1,0 +1,123 @@
+Command: vcs -Mupdate tb.sv -v /mnt/vol_NFS_rh003/profesores/pmendoza/KITS/TSMCHOME/digital/Front_End/verilog/tcbn65lphpbwpcghvt_200a/tcbn65lphpbwpcghvt.v \
+-v /mnt/vol_NFS_rh003/profesores/pmendoza/KITS/TSMCHOME/digital/Front_End/verilog/tcbn65lphpbwp_140a/tcbn65lphpbwp.v \
+-o results -full64 -sverilog -kdb -lca -debug_acc+all -debug_region+cell+encrypt \
+-l log_test +lint=TFIPC-L -cm line+tgl+cond+fsm+branch+assert
+                         Chronologic VCS (TM)
+       Version R-2020.12-SP2_Full64 -- Sun Jun  1 22:48:05 2025
+
+                    Copyright (c) 1991 - 2021 Synopsys, Inc.
+   This software and the associated documentation are proprietary to Synopsys,
+ Inc. This software may only be used in accordance with the terms and conditions
+ of a written license agreement with Synopsys, Inc. All other use, reproduction,
+            or distribution of this software is strictly prohibited.
+
+
+Warning-[LCA_FEATURES_ENABLED] Usage warning
+  LCA features enabled by '-lca' argument on the command line.  For more 
+  information regarding list of LCA features please refer to Chapter "LCA 
+  features" in the VCS Release Notes
+
+Parsing design file 'tb.sv'
+Parsing included file 'top_initial_syn.v'.
+Back to file 'tb.sv'.
+Parsing library file '/mnt/vol_NFS_rh003/profesores/pmendoza/KITS/TSMCHOME/digital/Front_End/verilog/tcbn65lphpbwpcghvt_200a/tcbn65lphpbwpcghvt.v'
+Parsing library file '/mnt/vol_NFS_rh003/profesores/pmendoza/KITS/TSMCHOME/digital/Front_End/verilog/tcbn65lphpbwp_140a/tcbn65lphpbwp.v'
+Top Level Modules:
+       tb_top
+TimeScale is 1 ns / 1 ps
+
+Lint-[TFIPC-L] Too few instance port connections
+top_initial_syn.v, 2483
+counter_and_parity, "DW01_add_J6_H0_D1 add_95( .A (counter),  .B ({1'b0, 1'b0, 1'b0, 1'b0, 1'b0, 1'b0, 1'b0, 1'b0, 1'b0, 1'b0, 1'b0, 1'b0, 1'b0, 1'b0, 1'b0, 1'b0, 1'b0, 1'b0, 1'b0, 1'b0, 1'b0, 1'b0, 1'b0, 1'b0, 1'b0, 1'b0, 1'b0, 1'b0, 1'b0, 1'b0, 1'b0, 1'b0, 1'b0, 1'b0, 1'b0, 1'b0, 1'b0, 1'b0, 1'b0, 1'b0, 1'b0, 1'b0, 1'b0, 1'b0, 1'b0, 1'b0, 1'b0, 1'b0, 1'b0, 1'b0, 1'b0, 1'b0, 1'b0, 1'b0, 1'b0, 1'b0, 1'b0, 1'b0, 1'b0, 1'b0, 1'b0, 1'b0, 1'b0, 1'b1}),  .CI (1'b0),  .SUM ({N290, N289, N288, N287, N286, N285, N284, N283, N282, N281, N280, N279, N278, N277, N276, N275, N274, N273, N272, N271, N270, N269, N268, N267, N266, N265, N264, N263, N262, N261, N260, N259, N258, N257, N256, N255, N254, N253, N252, N251, N250, N249, N248, N247, N246, N245, N244, N243, N242, N241, N240, N239 ... "
+  The above instance has fewer port connections than the module definition,
+  There are 5 port(s) in module "DW01_add_J6_H0_D1" definition, but only 4 
+  port connect(s) in the instance.
+  output port 'CO' is not connected.
+
+
+Lint-[TFIPC-L] Too few instance port connections
+top_initial_syn.v, 2848
+counter_and_parity, "DW01_cmp6_J6_H1_D1 ne_111( .A (counter),  .B (counter_stored),  .TC (1'b0),  .NE (N116));"
+  The above instance has fewer port connections than the module definition,
+  There are 9 port(s) in module "DW01_cmp6_J6_H1_D1" definition, but only 4 
+  port connect(s) in the instance.
+  output port 'LT' is not connected,
+  output port 'GT' is not connected,
+  output port 'EQ' is not connected,
+  output port 'LE' is not connected,
+  output port 'GE' is not connected.
+
+
+Lint-[TFIPC-L] Too few instance port connections
+top_initial_syn.v, 2864
+top, "counter_and_parity counter_and_parity( .clk (clk),  .rst (rst),  .enable (enable),  .corrected_counter (corrected_counter),  .corrected_parity (corrected_parity),  .counter (counter),  .parity_stored (parity_stored),  .error_detected (error_detected),  .enable_last (enable_last));"
+  The above instance has fewer port connections than the module definition,
+  There are 10 port(s) in module "counter_and_parity" definition, but only 9 
+  port connect(s) in the instance.
+  output port 'busy' is not connected.
+
+
+Lint-[TFIPC-L] Too few instance port connections
+top_initial_syn.v, 2869
+top, "syndrome syndrome_inst( .clk (clk),  .enable (enable),  .parity_stored (parity_stored),  .counter_reg (counter),  .syndrome (syndrome),  .corrected_counter (corrected_counter),  .error_detected (error_detected),  .corrected_parity (corrected_parity),  .enable_last (enable_last),  .rst (rst));"
+  The above instance has fewer port connections than the module definition,
+  There are 11 port(s) in module "syndrome" definition, but only 10 port 
+  connect(s) in the instance.
+  input port 'busy' is not connected.
+
+
+Warning-[PCWM-W] Port connection width mismatch
+tb.sv, 14
+"top dut( .clk (clk),  .rst (rst),  .enable (enable),  .counter (counter));"
+  The following 32-bit expression is connected to 64-bit port "counter" of 
+  module "top", instance "dut".
+  Expression: counter
+  Instantiated module defined at: "top_initial_syn.v", 2853
+  Use +lint=PCWM for more details.
+
+VCS Coverage Metrics Release R-2020.12-SP2_Full64 Copyright (c) 1991-2020 by Synopsys Inc.
+Starting vcs inline pass...
+27 modules and 4 UDPs read.
+recompiling module syndrome
+recompiling module DW01_cmp6_J6_H1_D1
+recompiling module DW01_add_J6_H0_D1
+recompiling module tb_top
+recompiling module AN2D0HPBWP
+recompiling module AO22D0HPBWP
+recompiling module AOI31D0HPBWP
+recompiling module CKLNQD1HPBWP
+recompiling module CKND0HPBWP
+recompiling module CKND2D0HPBWP
+recompiling module HA1D0HPBWP
+recompiling module IND2D0HPBWP
+recompiling module INR2D0HPBWP
+recompiling module LND1HPBWP
+recompiling module LNQD1HPBWP
+recompiling module MAOI22D0HPBWP
+recompiling module MOAI22D0HPBWP
+recompiling module ND3D0HPBWP
+recompiling module ND4D0HPBWP
+recompiling module NR2D0HPBWP
+recompiling module NR3D0HPBWP
+recompiling module NR4D0HPBWP
+recompiling module SDFCNQD0HPBWP
+recompiling module SEDFCNQD0HPBWP
+recompiling module XNR3D0HPBWP
+recompiling module XOR3D0HPBWP
+recompiling module XOR4D0HPBWP
+All of 27 modules done
+rm -f _cuarc*.so _csrc*.so pre_vcsobj_*.so share_vcsobj_*.so
+if [ -x ../results ]; then chmod a-x ../results; fi
+g++  -o ../results      -rdynamic  -Wl,-rpath='$ORIGIN'/results.daidir -Wl,-rpath=./results.daidir \
+-Wl,-rpath=/mnt/vol_NFS_rh003/tools/vcs/R-2020.12-SP2/linux64/lib -L/mnt/vol_NFS_rh003/tools/vcs/R-2020.12-SP2/linux64/lib \
+-Wl,-rpath-link=./  /usr/lib64/libnuma.so.1   objs/amcQw_d.o   _586232_archive_1.so \
+objs/udps/JvR1L.o objs/udps/m6zeg.o objs/udps/df3ii.o objs/udps/HWVx0.o  SIM_l.o \
+rmapats_mop.o rmapats.o rmar.o rmar_nd.o  rmar_llvm_0_1.o rmar_llvm_0_0.o        \
+-lvirsim -lerrorinf -lsnpsmalloc -lvfs    -lvcsnew -lsimprofile -lreader_common /mnt/vol_NFS_rh003/tools/vcs/R-2020.12-SP2/linux64/lib/libBA.a \
+-luclinative /mnt/vol_NFS_rh003/tools/vcs/R-2020.12-SP2/linux64/lib/vcs_tls.o   -Wl,-whole-archive \
+-lvcsucli    -Wl,-no-whole-archive        _vcs_pli_stub_.o   /mnt/vol_NFS_rh003/tools/vcs/R-2020.12-SP2/linux64/lib/vcs_save_restore_new.o \
+/mnt/vol_NFS_rh003/tools/verdi/R-2020.12-SP2/share/PLI/VCS/LINUX64/pli.a -ldl  -lc \
+-lm -lpthread -ldl 
+../results up to date
+CPU time: 1.640 seconds to compile + .369 seconds to elab + .261 seconds to link
+Verdi KDB elaboration done and the database successfully generated: 0 error(s), 0 warning(s)

@@ -113,7 +113,7 @@ Branch = 1
 [DesignTree]
 IfShowModule = {TRUE, FALSE}
 [DisabledMessages]
-version = Verdi_U-2023.03-SP2
+version = Verdi_R-2020.12-SP2
 [Emacs]
 EmacsFont = "Clean 14"
 EmacsBG = white
@@ -146,6 +146,7 @@ SmartTips = TRUE
 VectorFont = FALSE
 StateAutomaticFont = TRUE
 AnnotAutomaticFont = TRUE
+StopAskBkgndColor = FALSE
 ShowStateAction = FALSE
 ShowTransAction = FALSE
 ShowTransCond = FALSE
@@ -222,13 +223,13 @@ Selection-LineWidth = 1
 [FSM_Dlg-Print]
 Orientation = Landscape
 [Form]
-version = Verdi_U-2023.03-SP2
+version = Verdi_R-2020.12-SP2
 [General]
 autoSaveSession = FALSE
 TclAutoSource = 
 cmd_enter_form = FALSE
 SyncBrowserDir = TRUE
-version = Verdi_U-2023.03-SP2
+version = Verdi_R-2020.12-SP2
 SignalCaseInSensitive = FALSE
 [GlobalProp]
 ErrWindow_Font = Helvetica_M_R_12
@@ -381,7 +382,7 @@ saveWaveformStat = TRUE
 savePropStat = FALSE
 savePropDtl = TRUE
 [QtDialog]
-QwWarnMsgDlg = 650,425,600,250
+QwWarnMsgDlg = 650,610,600,250
 QwUserAskDlg = 798,505,324,134
 [Relationship]
 hideRecursiceNode = FALSE
@@ -394,11 +395,11 @@ ErrorObject = ID_GRAY5
 AnnotateSignal = TRUE
 HighlightSafetyObject = TRUE
 [Session Cache]
-2 = string (session file name)
 3 = string (session file name)
 4 = string (session file name)
 5 = string (session file name)
-1 = /mnt/vol_NFS_rh003/estudiantes/DANIELA_VARGAS/Version_final/0516/versiones_finales/Memoria/TSMC_memoria_TMR/FLOW/common/rtl/sverilog/verdiLog/novas_autosave.ses
+1 = /mnt/vol_NFS_rh003/estudiantes/DANIELA_VARGAS/Version_final/0516/versiones_finales/semana14/Memoria_TMR/TSMC_memoria_TMR/FLOW/common/rtl/sverilog/verdiLog/novas_autosave.ses
+2 = /mnt/vol_NFS_rh003/estudiantes/DANIELA_VARGAS/Version_final/0516/versiones_finales/Memoria/TSMC_memoria_TMR/FLOW/common/rtl/sverilog/verdiLog/novas_autosave.ses
 [Simulation]
 scsPath = scsim
 scsOption = 
@@ -677,48 +678,87 @@ DefaultDisplayTimeUnit = "1.000000ns"
 DefaultLogTimeUnit = "1.000000ns"
 [VIA.interactiveDebug.preference.vgifColumnSettingRC]
 [VIA.interactiveDebug.preference.vgifColumnSettingRC.setting0]
-parRuleSets = "/mnt/vol_synopsys2023/synopsys/verdi/U-2023.03-SP2/share/VIA/Apps/PredefinedParRules/par_rule_OVM.rc /mnt/vol_synopsys2023/synopsys/verdi/U-2023.03-SP2/share/VIA/Apps/PredefinedParRules/par_rule_UVM.rc /mnt/vol_synopsys2023/synopsys/verdi/U-2023.03-SP2/sh\
-are/VIA/Apps/PredefinedParRules/par_rule_LP.rc /mnt/vol_synopsys2023/synopsys/verdi/U-2023.03-SP2/share/VIA/Apps/PredefinedParRules/par_rule_VCS.rc "
+parRuleSets = "/mnt/vol_NFS_rh003/tools/verdi/R-2020.12-SP2/share/VIA/Apps/PredefinedParRules/par_rule_OVM.rc /mnt/vol_NFS_rh003/tools/verdi/R-2020.12-SP2/share/VIA/Apps/PredefinedParRules/par_rule_UVM.rc /mnt/vol_NFS_rh003/tools/verdi/R-2020.12-SP2/share/VIA/Apps/Prede\
+finedParRules/par_rule_LP.rc /mnt/vol_NFS_rh003/tools/verdi/R-2020.12-SP2/share/VIA/Apps/PredefinedParRules/par_rule_VCS.rc "
 [VIA.interactiveDebug.preference.vgifColumnSettingRC.setting0.column0]
-name = "Block's First Line"
-width = 120
-visualIndex = 1
-isHidden = TRUE
-isUserChangeColumnVisible = FALSE
-[VIA.interactiveDebug.preference.vgifColumnSettingRC.setting0.column1]
-name = "Time"
-width = 60
-visualIndex = 0
-isHidden = FALSE
-isUserChangeColumnVisible = FALSE
-[VIA.interactiveDebug.preference.vgifColumnSettingRC.setting0.column2]
-name = "Code"
-width = 60
-visualIndex = 4
-isHidden = TRUE
-isUserChangeColumnVisible = FALSE
-[VIA.interactiveDebug.preference.vgifColumnSettingRC.setting0.column3]
-name = "Message"
-width = 2000
-visualIndex = 6
-isHidden = FALSE
-isUserChangeColumnVisible = FALSE
-[VIA.interactiveDebug.preference.vgifColumnSettingRC.setting0.column4]
-name = "Reporter"
+name = Code
 width = 60
 visualIndex = 3
 isHidden = FALSE
 isUserChangeColumnVisible = FALSE
+[VIA.interactiveDebug.preference.vgifColumnSettingRC.setting0.column1]
+name = Type
+width = 60
+visualIndex = 4
+isHidden = TRUE
+isUserChangeColumnVisible = FALSE
+[VIA.interactiveDebug.preference.vgifColumnSettingRC.setting0.column2]
+name = Time
+width = 60
+visualIndex = 0
+isHidden = FALSE
+isUserChangeColumnVisible = FALSE
+[VIA.interactiveDebug.preference.vgifColumnSettingRC.setting0.column3]
+name = Message
+width = 2000
+visualIndex = 5
+isHidden = FALSE
+isUserChangeColumnVisible = FALSE
+[VIA.interactiveDebug.preference.vgifColumnSettingRC.setting0.column4]
+name = Reporter
+width = 60
+visualIndex = 2
+isHidden = FALSE
+isUserChangeColumnVisible = FALSE
 [VIA.interactiveDebug.preference.vgifColumnSettingRC.setting0.column5]
-name = "Type"
+name = Severity
+width = 60
+visualIndex = 1
+isHidden = FALSE
+isUserChangeColumnVisible = FALSE
+[VIA.interactiveDebug.preference.vgifColumnSettingRC.setting1]
+parRuleSets = "/mnt/vol_synopsys2023/synopsys/verdi/U-2023.03-SP2/share/VIA/Apps/PredefinedParRules/par_rule_OVM.rc /mnt/vol_synopsys2023/synopsys/verdi/U-2023.03-SP2/share/VIA/Apps/PredefinedParRules/par_rule_UVM.rc /mnt/vol_synopsys2023/synopsys/verdi/U-2023.03-SP2/sh\
+are/VIA/Apps/PredefinedParRules/par_rule_LP.rc /mnt/vol_synopsys2023/synopsys/verdi/U-2023.03-SP2/share/VIA/Apps/PredefinedParRules/par_rule_VCS.rc "
+[VIA.interactiveDebug.preference.vgifColumnSettingRC.setting1.column0]
+name = Reporter
+width = 60
+visualIndex = 3
+isHidden = FALSE
+isUserChangeColumnVisible = FALSE
+[VIA.interactiveDebug.preference.vgifColumnSettingRC.setting1.column1]
+name = Severity
+width = 60
+visualIndex = 2
+isHidden = FALSE
+isUserChangeColumnVisible = FALSE
+[VIA.interactiveDebug.preference.vgifColumnSettingRC.setting1.column2]
+name = Message
+width = 2000
+visualIndex = 6
+isHidden = FALSE
+isUserChangeColumnVisible = FALSE
+[VIA.interactiveDebug.preference.vgifColumnSettingRC.setting1.column3]
+name = Type
 width = 60
 visualIndex = 5
 isHidden = TRUE
 isUserChangeColumnVisible = FALSE
-[VIA.interactiveDebug.preference.vgifColumnSettingRC.setting0.column6]
-name = "Severity"
+[VIA.interactiveDebug.preference.vgifColumnSettingRC.setting1.column4]
+name = Block's
+width = 120
+visualIndex = 1
+isHidden = TRUE
+isUserChangeColumnVisible = FALSE
+[VIA.interactiveDebug.preference.vgifColumnSettingRC.setting1.column5]
+name = Code
 width = 60
-visualIndex = 2
+visualIndex = 4
+isHidden = TRUE
+isUserChangeColumnVisible = FALSE
+[VIA.interactiveDebug.preference.vgifColumnSettingRC.setting1.column6]
+name = Time
+width = 60
+visualIndex = 0
 isHidden = FALSE
 isUserChangeColumnVisible = FALSE
 [VIA.oneSearch.preference]
@@ -729,39 +769,33 @@ isOneSearchVisible = TRUE
 [VIA.oneSearch.preference.vgifColumnSettingRC.setting0]
 parRuleSets = ""
 [VIA.oneSearch.preference.vgifColumnSettingRC.setting0.column0]
-name = "Block's First Line"
-width = 120
-visualIndex = 1
-isHidden = TRUE
+name = Message
+width = 2000
+visualIndex = 4
+isHidden = FALSE
 isUserChangeColumnVisible = FALSE
 [VIA.oneSearch.preference.vgifColumnSettingRC.setting0.column1]
-name = "Severity"
-width = 60
-visualIndex = 2
-isHidden = FALSE
-isUserChangeColumnVisible = FALSE
-[VIA.oneSearch.preference.vgifColumnSettingRC.setting0.column2]
-name = "Message"
-width = 2000
-visualIndex = 5
-isHidden = FALSE
-isUserChangeColumnVisible = FALSE
-[VIA.oneSearch.preference.vgifColumnSettingRC.setting0.column3]
-name = "Time"
+name = Time
 width = 60
 visualIndex = 0
-isHidden = FALSE
+isHidden = TRUE
 isUserChangeColumnVisible = FALSE
-[VIA.oneSearch.preference.vgifColumnSettingRC.setting0.column4]
-name = "Code"
+[VIA.oneSearch.preference.vgifColumnSettingRC.setting0.column2]
+name = Code
+width = 60
+visualIndex = 2
+isHidden = TRUE
+isUserChangeColumnVisible = FALSE
+[VIA.oneSearch.preference.vgifColumnSettingRC.setting0.column3]
+name = Type
 width = 60
 visualIndex = 3
 isHidden = TRUE
 isUserChangeColumnVisible = FALSE
-[VIA.oneSearch.preference.vgifColumnSettingRC.setting0.column5]
-name = "Type"
+[VIA.oneSearch.preference.vgifColumnSettingRC.setting0.column4]
+name = Severity
 width = 60
-visualIndex = 4
+visualIndex = 1
 isHidden = TRUE
 isUserChangeColumnVisible = FALSE
 [VIA.parRule]
@@ -847,8 +881,12 @@ AutoApplySeverityColor = TRUE
 scope_to_save_with_macro
 open_file_dir
 open_rc_file_dir
+DisplayVerticalZoomTools = FALSE
+DisplayIndicateBar = FALSE
+overlay_same_added_analog_signals = FALSE
+maskTPropagation = TRUE
 getSignalForm = 0 0 800 479 100 30 100 30
-viewPort = 0 25 1272 559 426 65
+viewPort = 0 25 1272 677 219 1
 legendBackground = -c ID_BLACK
 valueBackground = -c ID_BLACK
 curveBackground = -c ID_BLACK
@@ -989,10 +1027,7 @@ signal_rc_abspath = TRUE
 signal_rc_no_natural_bus_range = FALSE
 save_scope_with_macro = FALSE
 FitAnaByBusSize = FALSE
-DisplayVerticalZoomTools = FALSE
-DisplayIndicateBar = FALSE
 overlay_added_analog_signals = FALSE
-overlay_same_added_analog_signals = FALSE
 case_insensitive = FALSE
 resaveSignals = TRUE
 adjustBusPrefix = adjustBus_
@@ -1014,7 +1049,8 @@ printBasic = 1 0 0 FALSE FALSE
 printDest = -printer {}
 printSignature = {%f %h %t} {}
 curveWindow_Drag&Drop_Mode = TRUE
-RecentFile1 = "\"/mnt/vol_NFS_rh003/estudiantes/DANIELA_VARGAS/Version_final/0516/versiones_finales/Memoria/TSMC_memoria_TMR/FLOW/common/rtl/sverilog/inter.fsdb\""
+RecentFile1 = "\"/mnt/vol_NFS_rh003/estudiantes/DANIELA_VARGAS/Version_final/0516/versiones_finales/semana14/Memoria_TMR/TSMC_memoria_TMR/FLOW/common/rtl/sverilog/inter.fsdb\""
+RecentFile2 = "\"/mnt/vol_NFS_rh003/estudiantes/DANIELA_VARGAS/Version_final/0516/versiones_finales/Memoria/TSMC_memoria_TMR/FLOW/common/rtl/sverilog/inter.fsdb\""
 open_file_time_range = FALSE
 legend_window_font = -f COURIER12 -c ID_CYAN5
 value_window_font = -f COURIER12 -c ID_CYAN5
@@ -1046,7 +1082,6 @@ maskFsaRegRule = TRUE
 maskFsaCoreRule = TRUE
 maskFsaSfsmRule = TRUE
 maskFsaEcrRule = TRUE
-maskTPropagation = TRUE
 [cov_hier_name_column]
 justify = TRUE
 [coverageColors]
@@ -1348,11 +1383,11 @@ margin_left = 0.50
 margin_right = 0.50
 margin_unit = inches
 [spiceDebug]
+MVDSSCSig = ID_BLUE7
 ThroughNet = ID_YELLOW5
 InstrumentSig = ID_GREEN5
 InterfaceElement = ID_GREEN5
 Run-timeInterfaceElement = ID_BLUE5
-MVDSSCSig = ID_BLUE7
 HighlightThroughNet = TRUE
 HighlightInterfaceElement = TRUE
 HighlightRuntimeInterfaceElement = TRUE
@@ -1380,7 +1415,7 @@ AddImportArgument = FALSE
 LineBreakWithScope = TRUE
 StopAfterCompileOption = -s
 [wave.0]
-viewPort = 0 25 1272 559 426 65
+viewPort = 0 25 1272 677 219 1
 [wave.1]
 viewPort = 127 219 960 332 100 65
 [wave.2]

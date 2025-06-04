@@ -1,40 +1,40 @@
-Command: /mnt/vol_NFS_rh003/estudiantes/DANIELA_VARGAS/Version_final/0516/versiones_finales/Memoria/TSMC_memoria_Hamming/FLOW/common/rtl/sverilog/prueba_3 -sml=verdi +UVM_VERDI_TRACE=UVM_AWARE +fsdb+gate=off -ucli2Proc -ucli -l /mnt/vol_NFS_rh003/estudiantes/DANIELA_VARGAS/Version_final/0516/versiones_finales/Memoria/TSMC_memoria_Hamming/FLOW/common/rtl/sverilog/verdiLog/sim.log
+Command: /mnt/vol_NFS_rh003/estudiantes/DANIELA_VARGAS/Version_final/0516/versiones_finales/semana14/MemoriaHamming/TSMC_memoria_Hamming/FLOW/common/rtl/sverilog/results -sml=verdi +UVM_VERDI_TRACE=UVM_AWARE +fsdb+gate=off -ucli2Proc -ucli -l /mnt/vol_NFS_rh003/estudiantes/DANIELA_VARGAS/Version_final/0516/versiones_finales/semana14/MemoriaHamming/TSMC_memoria_Hamming/FLOW/common/rtl/sverilog/verdiLog/sim.log
 Chronologic VCS simulator copyright 1991-2020
 Contains Synopsys proprietary information.
-Compiler version R-2020.12-SP2_Full64; Runtime version R-2020.12-SP2_Full64;  May 21 01:18 2025
+Compiler version R-2020.12-SP2_Full64; Runtime version R-2020.12-SP2_Full64;  Jun  2 18:49 2025
 
 ucli% synUtils::getArch
 linux64
 ucli% loaddl -simv /mnt/vol_NFS_rh003/tools/verdi/R-2020.12-SP2/share/PLI/VCS/LINUXAMD64/libnovas.so LoadFSDBDumpCmd;LoadFSDBDumpCmd
 LoadFSDBDumpCmd success
-ucli% config ckptfsdbcheck off;config endofsim noexit;config onfail {enable all};config followactivescope on;catch {setUcliVerdiConnected};set watch::resultTagsForVerdiBP {<ucli_break_bp_status_begin> <ucli_break_bp_status_end>};set ucliCore::support_restore_through_stask_in_verdi 1;cbug::config pretty_print auto;fsdbDumpfile {/mnt/vol_NFS_rh003/estudiantes/DANIELA_VARGAS/Version_final/0516/versiones_finales/Memoria/TSMC_memoria_Hamming/FLOW/common/rtl/sverilog/inter.fsdb} ;fsdbDumpflush ; 
+ucli% config ckptfsdbcheck off;config endofsim noexit;config onfail {enable all};config followactivescope on;catch {setUcliVerdiConnected};set watch::resultTagsForVerdiBP {<ucli_break_bp_status_begin> <ucli_break_bp_status_end>};set ucliCore::support_restore_through_stask_in_verdi 1;cbug::config pretty_print auto;fsdbDumpfile {/mnt/vol_NFS_rh003/estudiantes/DANIELA_VARGAS/Version_final/0516/versiones_finales/semana14/MemoriaHamming/TSMC_memoria_Hamming/FLOW/common/rtl/sverilog/inter.fsdb} ;fsdbDumpflush ; 
 *Verdi* Loading libsscore_vcs202012.so
 FSDB Dumper for VCS, Release Verdi_R-2020.12-SP2, Linux x86_64/64bit, 05/23/2021
 (C) 1996 - 2021 by Synopsys, Inc.
-*Verdi* : Create FSDB file '/mnt/vol_NFS_rh003/estudiantes/DANIELA_VARGAS/Version_final/0516/versiones_finales/Memoria/TSMC_memoria_Hamming/FLOW/common/rtl/sverilog/inter.fsdb'
+*Verdi* : Create FSDB file '/mnt/vol_NFS_rh003/estudiantes/DANIELA_VARGAS/Version_final/0516/versiones_finales/semana14/MemoriaHamming/TSMC_memoria_Hamming/FLOW/common/rtl/sverilog/inter.fsdb'
 *Verdi* : Flush all FSDB Files at 0 ps.
 
 ucli% synEnv::hasFataled
 0
 ucli% ucliCore::getToolPID
-224556
+726023
 ucli% sps_interactive
-*Verdi* : Enable RPC Server(224556)
+*Verdi* : Enable RPC Server(726023)
 
 ucli% ucliCore::getToolPID
-224556
+726023
 ucli% ucliCore::getToolPID
-224556
+726023
 ucli% if {[catch {ucliCore::setFocus tool}]} {}
 
 ucli% puts $ucliCore::nativeUcliMode
 0
 
 ucli% ucliCore::getToolTopPID
-224556
+726023
 ucli% pid
-224574
-ucli% synUtils::sendTool -active {_icl_createSharedMemory /tmp/vcs_dve_general.VARGAS_CHAVARRIA_2025.224556 }
+726041
+ucli% synUtils::sendTool -active {_icl_createSharedMemory /tmp/vcs_dve_general.VARGAS_CHAVARRIA_2025.726023 }
 
 ucli% if { [info vars watch::vcbp_str_len_limit_of_get_value] != ""} {set watch::vcbp_str_len_limit_of_get_value 1024}
 1024
@@ -73,23 +73,23 @@ ucli% fsdbDumpflush
 
 ucli% senv
 activeDomain: Verilog
-activeFile: tb_prueba3.sv
+activeFile: tb_prueba2TMR.sv
 activeFrame: 
 activeLine: 5
 activeScope: tb_sram_2kbit
 activeThread: 
 endCol: 0
-file: tb_prueba3.sv
+file: tb_prueba2TMR.sv
 frame: 
 fsdbFilename: 
 hasTB: 0
 inputFilename: 
 keyFilename: ucli.key
 line: 5
-logFilename: /mnt/vol_NFS_rh003/estudiantes/DANIELA_VARGAS/Version_final/0516/versiones_finales/Memoria/TSMC_memoria_Hamming/FLOW/common/rtl/sverilog/verdiLog/sim.log
+logFilename: /mnt/vol_NFS_rh003/estudiantes/DANIELA_VARGAS/Version_final/0516/versiones_finales/semana14/MemoriaHamming/TSMC_memoria_Hamming/FLOW/common/rtl/sverilog/verdiLog/sim.log
 macroIndex: -1
 macroOffset: -1
-pid: 224556
+pid: 726023
 scope: tb_sram_2kbit
 startCol: 0
 state: stopped
@@ -98,8 +98,8 @@ time: 0
 timePrecision: 1 ps
 vcdFilename: 
 vpdFilename:
-ucli% synUtils::resolveSourceFilename tb_prueba3.sv
-tb_prueba3.sv
+ucli% synUtils::resolveSourceFilename tb_prueba2TMR.sv
+tb_prueba2TMR.sv
 ucli% puts $::ucliCore::cbug_active
 0
 
@@ -111,14 +111,30 @@ ucli% stop
 No stop points are set
 ucli% if {[catch {ucliCore::setFocus tool}]} {}
 
-ucli% fsdbDumpvars 1 "tb_sram_2kbit.dut.enable"  +all +trace_process;fsdbDumpflush 
-*Verdi* : Dumping the signal (tb_sram_2kbit.dut.enable).
+ucli% fsdbDumpvars 1 "tb_sram_2kbit.dut"  +all +trace_process;fsdbDumpflush 
+*Verdi* : Begin traversing the scope (tb_sram_2kbit.dut), layer (1).
+*Verdi* : Enable +trace_process and +all dumping.
+*Verdi* : End of traversing.
 *Verdi* : Flush all FSDB Files at 0 ps.
 
 ucli% if {[catch {ucliCore::setFocus tool}]} {}
 
-ucli% fsdbDumpvars 1 "tb_sram_2kbit.dut.write_back"  +all +trace_process;fsdbDumpflush 
-*Verdi* : Dumping the signal (tb_sram_2kbit.dut.write_back).
+ucli% fsdbDumpvars 1 "tb_sram_2kbit.dut.syndrome_hight"  +all +trace_process;fsdbDumpflush 
+*Verdi* : Begin traversing the scope (tb_sram_2kbit.dut.syndrome_hight), layer (1).
+*Verdi* : Enable +trace_process and +all dumping.
+*Verdi* : End of traversing.
+*Verdi* : Flush all FSDB Files at 0 ps.
+
+ucli% fsdbDumpvars 1 "tb_sram_2kbit.dut.syndrome_hight"  +all +trace_process;fsdbDumpflush 
+*Verdi* : Begin traversing the scope (tb_sram_2kbit.dut.syndrome_hight), layer (1).
+*Verdi* : Enable +trace_process and +all dumping.
+*Verdi* : End of traversing.
+*Verdi* : Flush all FSDB Files at 0 ps.
+
+ucli% fsdbDumpvars 1 "tb_sram_2kbit.dut.syndrome_low"  +all +trace_process;fsdbDumpflush 
+*Verdi* : Begin traversing the scope (tb_sram_2kbit.dut.syndrome_low), layer (1).
+*Verdi* : Enable +trace_process and +all dumping.
+*Verdi* : End of traversing.
 *Verdi* : Flush all FSDB Files at 0 ps.
 
 ucli% if {[catch {ucliCore::setFocus tool}]} {}
@@ -126,124 +142,124 @@ ucli% if {[catch {ucliCore::setFocus tool}]} {}
 ucli% run
 <slp!&*()_+>
 t=25000 en=0 ? data_out=xxxxxxxx (esperado X)
-<slb!&*()_+>---<sls!&*()_+>loc: -1<sls!&*()_+>src: tb_prueba3.sv<sls!&*()_+>line: 54<sls!&*()_+>time: 25000 ps<sls!&*()_+>length: 0<sls!&*()_+>...<sls!&*()_+><sle!&*()_+>
+<slb!&*()_+>---<sls!&*()_+>loc: -1<sls!&*()_+>src: tb_prueba2TMR.sv<sls!&*()_+>line: 54<sls!&*()_+>time: 25000 ps<sls!&*()_+>length: 0<sls!&*()_+>...<sls!&*()_+><sle!&*()_+>
 <slp!&*()_+>
 Lectura normal 10 ? xx (esperado A5)
-<slb!&*()_+>---<sls!&*()_+>loc: -1<sls!&*()_+>src: tb_prueba3.sv<sls!&*()_+>line: 65<sls!&*()_+>time: 65000 ps<sls!&*()_+>length: 0<sls!&*()_+>...<sls!&*()_+><sle!&*()_+>
+<slb!&*()_+>---<sls!&*()_+>loc: -1<sls!&*()_+>src: tb_prueba2TMR.sv<sls!&*()_+>line: 65<sls!&*()_+>time: 65000 ps<sls!&*()_+>length: 0<sls!&*()_+>...<sls!&*()_+><sle!&*()_+>
 <slp!&*()_+>
 mem[10] antes del error = 01010100111100
-<slb!&*()_+>---<sls!&*()_+>loc: -1<sls!&*()_+>src: tb_prueba3.sv<sls!&*()_+>line: 68<sls!&*()_+>time: 65000 ps<sls!&*()_+>length: 0<sls!&*()_+>...<sls!&*()_+><sle!&*()_+>
+<slb!&*()_+>---<sls!&*()_+>loc: -1<sls!&*()_+>src: tb_prueba2TMR.sv<sls!&*()_+>line: 68<sls!&*()_+>time: 65000 ps<sls!&*()_+>length: 0<sls!&*()_+>...<sls!&*()_+><sle!&*()_+>
 <slp!&*()_+>
 Error inyectado en bit 2 de mem[10]
-<slb!&*()_+>---<sls!&*()_+>loc: -1<sls!&*()_+>src: tb_prueba3.sv<sls!&*()_+>line: 74<sls!&*()_+>time: 65000 ps<sls!&*()_+>length: 0<sls!&*()_+>...<sls!&*()_+><sle!&*()_+>
+<slb!&*()_+>---<sls!&*()_+>loc: -1<sls!&*()_+>src: tb_prueba2TMR.sv<sls!&*()_+>line: 75<sls!&*()_+>time: 75000 ps<sls!&*()_+>length: 0<sls!&*()_+>...<sls!&*()_+><sle!&*()_+>
 <slp!&*()_+>
 mem[10] despuÃ©s del error = 01010100111100
-<slb!&*()_+>---<sls!&*()_+>loc: -1<sls!&*()_+>src: tb_prueba3.sv<sls!&*()_+>line: 79<sls!&*()_+>time: 85000 ps<sls!&*()_+>length: 0<sls!&*()_+>...<sls!&*()_+><sle!&*()_+>
+<slb!&*()_+>---<sls!&*()_+>loc: -1<sls!&*()_+>src: tb_prueba2TMR.sv<sls!&*()_+>line: 80<sls!&*()_+>time: 85000 ps<sls!&*()_+>length: 0<sls!&*()_+>...<sls!&*()_+><sle!&*()_+>
 <slp!&*()_+>
 Lectura tras correcciÃ³n ? 2c (esperado A5)
-<slb!&*()_+>---<sls!&*()_+>loc: -1<sls!&*()_+>src: tb_prueba3.sv<sls!&*()_+>line: 83<sls!&*()_+>time: 85000 ps<sls!&*()_+>length: 0<sls!&*()_+>...<sls!&*()_+><sle!&*()_+>
+<slb!&*()_+>---<sls!&*()_+>loc: -1<sls!&*()_+>src: tb_prueba2TMR.sv<sls!&*()_+>line: 84<sls!&*()_+>time: 85000 ps<sls!&*()_+>length: 0<sls!&*()_+>...<sls!&*()_+><sle!&*()_+>
 <slp!&*()_+>
 Lectura 20 ? 2c (esperado 3C)
-<slb!&*()_+>---<sls!&*()_+>loc: -1<sls!&*()_+>src: tb_prueba3.sv<sls!&*()_+>line: 86<sls!&*()_+>time: 95000 ps<sls!&*()_+>length: 0<sls!&*()_+>...<sls!&*()_+><sle!&*()_+>
+<slb!&*()_+>---<sls!&*()_+>loc: -1<sls!&*()_+>src: tb_prueba2TMR.sv<sls!&*()_+>line: 87<sls!&*()_+>time: 85000 ps<sls!&*()_+>length: 0<sls!&*()_+>...<sls!&*()_+><sle!&*()_+>
 <slp!&*()_+>
 Lectura 255 ? 2c (esperado FF)
-<slb!&*()_+>---<sls!&*()_+>loc: -1<sls!&*()_+>src: tb_prueba3.sv<sls!&*()_+>line: 88<sls!&*()_+>time: 105000 ps<sls!&*()_+>length: 0<sls!&*()_+>...<sls!&*()_+><sle!&*()_+>
+<slb!&*()_+>---<sls!&*()_+>loc: -1<sls!&*()_+>src: tb_prueba2TMR.sv<sls!&*()_+>line: 89<sls!&*()_+>time: 85000 ps<sls!&*()_+>length: 0<sls!&*()_+>...<sls!&*()_+><sle!&*()_+>
 <slp!&*()_+>
-mem[20] = 00100110111110
-<slb!&*()_+>---<sls!&*()_+>loc: -1<sls!&*()_+>src: tb_prueba3.sv<sls!&*()_+>line: 89<sls!&*()_+>time: 105000 ps<sls!&*()_+>length: 0<sls!&*()_+>...<sls!&*()_+><sle!&*()_+>
-<slp!&*()_+>
-mem[10] despuÃ©s del error corregido = 01010100111100
-<slb!&*()_+>---<sls!&*()_+>loc: -1<sls!&*()_+>src: tb_prueba3.sv<sls!&*()_+>line: 90<sls!&*()_+>time: 105000 ps<sls!&*()_+>length: 0<sls!&*()_+>...<sls!&*()_+><sle!&*()_+>
+mem[20] = 01100110111110
+<slb!&*()_+>---<sls!&*()_+>loc: -1<sls!&*()_+>src: tb_prueba2TMR.sv<sls!&*()_+>line: 90<sls!&*()_+>time: 85000 ps<sls!&*()_+>length: 0<sls!&*()_+>...<sls!&*()_+><sle!&*()_+>
 <slp!&*()_+>
 mem[10] despuÃ©s del error corregido = 01010100111100
-<slb!&*()_+>---<sls!&*()_+>loc: -1<sls!&*()_+>src: tb_prueba3.sv<sls!&*()_+>line: 97<sls!&*()_+>time: 145000 ps<sls!&*()_+>length: 0<sls!&*()_+>...<sls!&*()_+><sle!&*()_+>
+<slb!&*()_+>---<sls!&*()_+>loc: -1<sls!&*()_+>src: tb_prueba2TMR.sv<sls!&*()_+>line: 91<sls!&*()_+>time: 85000 ps<sls!&*()_+>length: 0<sls!&*()_+>...<sls!&*()_+><sle!&*()_+>
 <slp!&*()_+>
-mem[20] = 00100110111110
-<slb!&*()_+>---<sls!&*()_+>loc: -1<sls!&*()_+>src: tb_prueba3.sv<sls!&*()_+>line: 98<sls!&*()_+>time: 145000 ps<sls!&*()_+>length: 0<sls!&*()_+>...<sls!&*()_+><sle!&*()_+>
+mem[10] despuÃ©s del error corregido = 01010100111100
+<slb!&*()_+>---<sls!&*()_+>loc: -1<sls!&*()_+>src: tb_prueba2TMR.sv<sls!&*()_+>line: 98<sls!&*()_+>time: 115000 ps<sls!&*()_+>length: 0<sls!&*()_+>...<sls!&*()_+><sle!&*()_+>
 <slp!&*()_+>
-t=145000 en=0 post ? data_out=00101100 (esperado X)
-<slb!&*()_+>---<sls!&*()_+>loc: -1<sls!&*()_+>src: tb_prueba3.sv<sls!&*()_+>line: 99<sls!&*()_+>time: 145000 ps<sls!&*()_+>length: 0<sls!&*()_+>...<sls!&*()_+><sle!&*()_+>
+mem[20] = 01100110111110
+<slb!&*()_+>---<sls!&*()_+>loc: -1<sls!&*()_+>src: tb_prueba2TMR.sv<sls!&*()_+>line: 99<sls!&*()_+>time: 115000 ps<sls!&*()_+>length: 0<sls!&*()_+>...<sls!&*()_+><sle!&*()_+>
+<slp!&*()_+>
+t=115000 en=0 post ? data_out=00101100 (esperado X)
+<slb!&*()_+>---<sls!&*()_+>loc: -1<sls!&*()_+>src: tb_prueba2TMR.sv<sls!&*()_+>line: 100<sls!&*()_+>time: 115000 ps<sls!&*()_+>length: 0<sls!&*()_+>...<sls!&*()_+><sle!&*()_+>
 <slp!&*()_+>
 Lectura normal 10 ? 2c (esperado A5)
-<slb!&*()_+>---<sls!&*()_+>loc: -1<sls!&*()_+>src: tb_prueba3.sv<sls!&*()_+>line: 115<sls!&*()_+>time: 235000 ps<sls!&*()_+>length: 0<sls!&*()_+>...<sls!&*()_+><sle!&*()_+>
+<slb!&*()_+>---<sls!&*()_+>loc: -1<sls!&*()_+>src: tb_prueba2TMR.sv<sls!&*()_+>line: 116<sls!&*()_+>time: 205000 ps<sls!&*()_+>length: 0<sls!&*()_+>...<sls!&*()_+><sle!&*()_+>
 <slp!&*()_+>
 mem[10] antes del error = 01010100111100
-<slb!&*()_+>---<sls!&*()_+>loc: -1<sls!&*()_+>src: tb_prueba3.sv<sls!&*()_+>line: 118<sls!&*()_+>time: 235000 ps<sls!&*()_+>length: 0<sls!&*()_+>...<sls!&*()_+><sle!&*()_+>
+<slb!&*()_+>---<sls!&*()_+>loc: -1<sls!&*()_+>src: tb_prueba2TMR.sv<sls!&*()_+>line: 119<sls!&*()_+>time: 205000 ps<sls!&*()_+>length: 0<sls!&*()_+>...<sls!&*()_+><sle!&*()_+>
 <slp!&*()_+>
 Error inyectado en bit 2 de mem[10]
-<slb!&*()_+>---<sls!&*()_+>loc: -1<sls!&*()_+>src: tb_prueba3.sv<sls!&*()_+>line: 126<sls!&*()_+>time: 235000 ps<sls!&*()_+>length: 0<sls!&*()_+>...<sls!&*()_+><sle!&*()_+>
+<slb!&*()_+>---<sls!&*()_+>loc: -1<sls!&*()_+>src: tb_prueba2TMR.sv<sls!&*()_+>line: 127<sls!&*()_+>time: 205000 ps<sls!&*()_+>length: 0<sls!&*()_+>...<sls!&*()_+><sle!&*()_+>
 <slp!&*()_+>
 mem[10] despuÃ©s del error = 01010100111100
-<slb!&*()_+>---<sls!&*()_+>loc: -1<sls!&*()_+>src: tb_prueba3.sv<sls!&*()_+>line: 129<sls!&*()_+>time: 235000 ps<sls!&*()_+>length: 0<sls!&*()_+>...<sls!&*()_+><sle!&*()_+>
+<slb!&*()_+>---<sls!&*()_+>loc: -1<sls!&*()_+>src: tb_prueba2TMR.sv<sls!&*()_+>line: 130<sls!&*()_+>time: 205000 ps<sls!&*()_+>length: 0<sls!&*()_+>...<sls!&*()_+><sle!&*()_+>
 <slp!&*()_+>
 Lectura tras correcciÃ³n ? 2c (esperado A5)
-<slb!&*()_+>---<sls!&*()_+>loc: -1<sls!&*()_+>src: tb_prueba3.sv<sls!&*()_+>line: 133<sls!&*()_+>time: 235000 ps<sls!&*()_+>length: 0<sls!&*()_+>...<sls!&*()_+><sle!&*()_+>
+<slb!&*()_+>---<sls!&*()_+>loc: -1<sls!&*()_+>src: tb_prueba2TMR.sv<sls!&*()_+>line: 134<sls!&*()_+>time: 205000 ps<sls!&*()_+>length: 0<sls!&*()_+>...<sls!&*()_+><sle!&*()_+>
 <slp!&*()_+>
 Lectura 20 ? 48 (esperado 3C)
-<slb!&*()_+>---<sls!&*()_+>loc: -1<sls!&*()_+>src: tb_prueba3.sv<sls!&*()_+>line: 137<sls!&*()_+>time: 255000 ps<sls!&*()_+>length: 0<sls!&*()_+>...<sls!&*()_+><sle!&*()_+>
+<slb!&*()_+>---<sls!&*()_+>loc: -1<sls!&*()_+>src: tb_prueba2TMR.sv<sls!&*()_+>line: 138<sls!&*()_+>time: 225000 ps<sls!&*()_+>length: 0<sls!&*()_+>...<sls!&*()_+><sle!&*()_+>
 <slp!&*()_+>
 Lectura 255 ? 2f (esperado FF)
-<slb!&*()_+>---<sls!&*()_+>loc: -1<sls!&*()_+>src: tb_prueba3.sv<sls!&*()_+>line: 139<sls!&*()_+>time: 265000 ps<sls!&*()_+>length: 0<sls!&*()_+>...<sls!&*()_+><sle!&*()_+>
+<slb!&*()_+>---<sls!&*()_+>loc: -1<sls!&*()_+>src: tb_prueba2TMR.sv<sls!&*()_+>line: 140<sls!&*()_+>time: 235000 ps<sls!&*()_+>length: 0<sls!&*()_+>...<sls!&*()_+><sle!&*()_+>
 <slp!&*()_+>
-mem[20] = 00100110111110
-<slb!&*()_+>---<sls!&*()_+>loc: -1<sls!&*()_+>src: tb_prueba3.sv<sls!&*()_+>line: 140<sls!&*()_+>time: 265000 ps<sls!&*()_+>length: 0<sls!&*()_+>...<sls!&*()_+><sle!&*()_+>
-<slp!&*()_+>
-mem[10] despuÃ©s del error corregido = 01010100111100
-<slb!&*()_+>---<sls!&*()_+>loc: -1<sls!&*()_+>src: tb_prueba3.sv<sls!&*()_+>line: 141<sls!&*()_+>time: 265000 ps<sls!&*()_+>length: 0<sls!&*()_+>...<sls!&*()_+><sle!&*()_+>
+mem[20] = 01100110111100
+<slb!&*()_+>---<sls!&*()_+>loc: -1<sls!&*()_+>src: tb_prueba2TMR.sv<sls!&*()_+>line: 141<sls!&*()_+>time: 235000 ps<sls!&*()_+>length: 0<sls!&*()_+>...<sls!&*()_+><sle!&*()_+>
 <slp!&*()_+>
 mem[10] despuÃ©s del error corregido = 01010100111100
-<slb!&*()_+>---<sls!&*()_+>loc: -1<sls!&*()_+>src: tb_prueba3.sv<sls!&*()_+>line: 148<sls!&*()_+>time: 275000 ps<sls!&*()_+>length: 0<sls!&*()_+>...<sls!&*()_+><sle!&*()_+>
+<slb!&*()_+>---<sls!&*()_+>loc: -1<sls!&*()_+>src: tb_prueba2TMR.sv<sls!&*()_+>line: 142<sls!&*()_+>time: 235000 ps<sls!&*()_+>length: 0<sls!&*()_+>...<sls!&*()_+><sle!&*()_+>
 <slp!&*()_+>
-mem[20] = 00100110111110
-<slb!&*()_+>---<sls!&*()_+>loc: -1<sls!&*()_+>src: tb_prueba3.sv<sls!&*()_+>line: 149<sls!&*()_+>time: 275000 ps<sls!&*()_+>length: 0<sls!&*()_+>...<sls!&*()_+><sle!&*()_+>
+mem[10] despuÃ©s del error corregido = 01010100111100
+<slb!&*()_+>---<sls!&*()_+>loc: -1<sls!&*()_+>src: tb_prueba2TMR.sv<sls!&*()_+>line: 149<sls!&*()_+>time: 245000 ps<sls!&*()_+>length: 0<sls!&*()_+>...<sls!&*()_+><sle!&*()_+>
 <slp!&*()_+>
-t=275000 en=0 post ? data_out=10101000 (esperado X)
-<slb!&*()_+>---<sls!&*()_+>loc: -1<sls!&*()_+>src: tb_prueba3.sv<sls!&*()_+>line: 150<sls!&*()_+>time: 275000 ps<sls!&*()_+>length: 0<sls!&*()_+>...<sls!&*()_+><sle!&*()_+>
-$finish called from file "tb_prueba3.sv", line 157.
-$finish at simulation time               325000
-Simulation complete, time is 325000 ps.
-tb_prueba3.sv, 157 :         $finish;
+mem[20] = 01100110111100
+<slb!&*()_+>---<sls!&*()_+>loc: -1<sls!&*()_+>src: tb_prueba2TMR.sv<sls!&*()_+>line: 150<sls!&*()_+>time: 245000 ps<sls!&*()_+>length: 0<sls!&*()_+>...<sls!&*()_+><sle!&*()_+>
+<slp!&*()_+>
+t=245000 en=0 post ? data_out=10101000 (esperado X)
+<slb!&*()_+>---<sls!&*()_+>loc: -1<sls!&*()_+>src: tb_prueba2TMR.sv<sls!&*()_+>line: 151<sls!&*()_+>time: 245000 ps<sls!&*()_+>length: 0<sls!&*()_+>...<sls!&*()_+><sle!&*()_+>
+$finish called from file "tb_prueba2TMR.sv", line 158.
+$finish at simulation time               295000
+Simulation complete, time is 295000 ps.
+tb_prueba2TMR.sv, 158 :         $finish;
 
 ucli% synEnv::hasFataled
 0
 ucli% ucliCore::getToolPID
-224556
+726023
 ucli% save::getUserdefinedProcs
 ::stateVerdiChangeCB ::LoadFSDBDumpCmd
 ucli% if {[catch {ucliCore::setFocus tool}]} {}
 
 ucli% fsdbDumpflush 
-*Verdi* : Flush all FSDB Files at 325,000 ps.
+*Verdi* : Flush all FSDB Files at 295,000 ps.
 
 ucli% senv
 activeDomain: Verilog
-activeFile: tb_prueba3.sv
+activeFile: tb_prueba2TMR.sv
 activeFrame: 
-activeLine: 157
+activeLine: 158
 activeScope: tb_sram_2kbit
 activeThread: 
 endCol: 0
-file: tb_prueba3.sv
+file: tb_prueba2TMR.sv
 frame: 
 fsdbFilename: 
 hasTB: 0
 inputFilename: 
 keyFilename: ucli.key
-line: 157
-logFilename: /mnt/vol_NFS_rh003/estudiantes/DANIELA_VARGAS/Version_final/0516/versiones_finales/Memoria/TSMC_memoria_Hamming/FLOW/common/rtl/sverilog/verdiLog/sim.log
+line: 158
+logFilename: /mnt/vol_NFS_rh003/estudiantes/DANIELA_VARGAS/Version_final/0516/versiones_finales/semana14/MemoriaHamming/TSMC_memoria_Hamming/FLOW/common/rtl/sverilog/verdiLog/sim.log
 macroIndex: -1
 macroOffset: -1
-pid: 224556
+pid: 726023
 scope: tb_sram_2kbit
 startCol: 0
 state: stopped
 thread: 
-time: 325000
+time: 295000
 timePrecision: 1 ps
 vcdFilename: 
 vpdFilename:
-ucli% synUtils::resolveSourceFilename tb_prueba3.sv
-tb_prueba3.sv
+ucli% synUtils::resolveSourceFilename tb_prueba2TMR.sv
+tb_prueba2TMR.sv
 ucli% puts $::ucliCore::cbug_active
 0
 
@@ -259,9 +275,9 @@ ucli% if {[catch {ucliCore::setFocus tool}]} {}
 
 ucli% finish; quit
            V C S   S i m u l a t i o n   R e p o r t 
-Time: 325000 ps
-CPU Time:      0.650 seconds;       Data structure size:   0.0Mb
-Wed May 21 01:26:15 2025
+Time: 295000 ps
+CPU Time:      0.150 seconds;       Data structure size:   0.0Mb
+Mon Jun  2 19:19:35 2025
 
 <VERDI_Terminated>
 

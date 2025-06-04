@@ -1,0 +1,23 @@
+****************************************
+Report : area
+Design : top
+Version: U-2022.12-SP6
+Date   : Tue Jun  3 22:29:14 2025
+****************************************
+
+Number of ports:                           71
+Number of nets:                            85
+Number of cells:                           34
+Number of combinational cells:             17
+Number of sequential cells:                17
+Number of macros/black boxes:               0
+Number of buf/inv:                          2
+Number of references:                       6
+
+Combinational area:                     95.20
+Buf/Inv area:                            2.40
+Noncombinational area:                 193.20
+Macro/Black Box area:                    0.00
+
+Total cell area:                       288.40
+1

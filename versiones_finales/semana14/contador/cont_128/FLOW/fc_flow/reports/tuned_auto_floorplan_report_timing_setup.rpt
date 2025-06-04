@@ -1,0 +1,98 @@
+Warning: Scenario scenarioFF is not configured for setup analysis: skipping. (UIC-058)
+****************************************
+Report : timing
+        -path_type full
+        -delay_type max
+        -max_paths 1
+        -report_by design
+Design : top
+Version: U-2022.12-SP6
+Date   : Tue Jun  3 22:43:20 2025
+****************************************
+
+  Startpoint: q_reg[0] (rising edge-triggered flip-flop clocked by SYS_CLK)
+  Endpoint: q_reg[127] (rising edge-triggered flip-flop clocked by SYS_CLK)
+  Mode: mode1
+  Corner: cornerSS
+  Scenario: scenarioSS
+  Path Group: SYS_CLK
+  Path Type: max
+
+  Point                                            Incr      Path  
+  ------------------------------------------------------------------------
+  clock SYS_CLK (rise edge)                        0.00      0.00
+  clock network delay (ideal)                      0.00      0.00
+
+  q_reg[0]/CP (SDFCNQD0HPBWP)                      0.00      0.00 r
+  q_reg[0]/Q (SDFCNQD0HPBWP)                       0.34      0.34 r
+  add_15/ctmi_213/Z (AN2D1HPBWP)                   0.16      0.51 r
+  add_15/ctmi_212/Z (AN3D1HPBWP)                   0.19      0.70 r
+  add_15/ctmi_211/ZN (ND4D1HPBWP)                  0.22      0.92 f
+  add_15/ctmi_206/Z (OR4D1HPBWP)                   0.27      1.19 f
+  add_15/ctmi_205/ZN (NR4D1HPBWP)                  0.24      1.42 r
+  add_15/ctmi_179/Z (AN4D1HPBWP)                   0.37      1.79 r
+  add_15/ctmi_178/ZN (ND3D1HPBWP)                  0.14      1.93 f
+  add_15/ctmi_493/ZN (INR2XD0HPBWP)                0.12      2.05 r
+  add_15/ctmi_176/ZN (ND2D1HPBWP)                  0.11      2.16 f
+  add_15/ctmi_492/ZN (INR2XD0HPBWP)                0.11      2.27 r
+  add_15/ctmi_174/ZN (ND2D1HPBWP)                  0.09      2.35 f
+  add_15/ctmi_491/ZN (INR2XD0HPBWP)                0.12      2.47 r
+  add_15/ctmi_172/ZN (ND2D1HPBWP)                  0.09      2.56 f
+  add_15/ctmi_490/ZN (INR2XD0HPBWP)                0.14      2.70 r
+  add_15/ctmi_170/ZN (ND2D1HPBWP)                  0.10      2.80 f
+  add_15/ctmi_489/ZN (INR2XD0HPBWP)                0.10      2.91 r
+  add_15/ctmi_168/ZN (ND2D1HPBWP)                  0.09      2.99 f
+  add_15/ctmi_488/ZN (INR2XD0HPBWP)                0.09      3.09 r
+  add_15/ctmi_166/ZN (ND2D1HPBWP)                  0.08      3.16 f
+  add_15/ctmi_487/ZN (INR2XD0HPBWP)                0.10      3.27 r
+  add_15/ctmi_164/ZN (ND2D1HPBWP)                  0.08      3.35 f
+  add_15/ctmi_486/ZN (INR2XD0HPBWP)                0.10      3.45 r
+  add_15/ctmi_162/ZN (ND2D1HPBWP)                  0.09      3.53 f
+  add_15/ctmi_485/ZN (INR2XD0HPBWP)                0.11      3.64 r
+  add_15/ctmi_160/ZN (ND2D1HPBWP)                  0.12      3.76 f
+  add_15/ctmi_484/ZN (INR2XD0HPBWP)                0.11      3.87 r
+  add_15/ctmi_158/ZN (ND2D1HPBWP)                  0.08      3.95 f
+  add_15/ctmi_483/ZN (INR2XD0HPBWP)                0.09      4.04 r
+  add_15/ctmi_156/ZN (ND2D1HPBWP)                  0.08      4.12 f
+  add_15/ctmi_482/ZN (INR2XD0HPBWP)                0.11      4.23 r
+  add_15/ctmi_154/ZN (ND2D1HPBWP)                  0.09      4.32 f
+  add_15/ctmi_481/ZN (INR2XD0HPBWP)                0.09      4.41 r
+  add_15/ctmi_152/ZN (ND2D1HPBWP)                  0.08      4.49 f
+  add_15/ctmi_480/ZN (INR2XD0HPBWP)                0.11      4.61 r
+  add_15/ctmi_150/ZN (ND2D1HPBWP)                  0.09      4.70 f
+  add_15/ctmi_479/ZN (INR2XD0HPBWP)                0.10      4.80 r
+  add_15/ctmi_148/ZN (ND2D1HPBWP)                  0.08      4.88 f
+  add_15/ctmi_478/ZN (INR2XD0HPBWP)                0.09      4.97 r
+  add_15/ctmi_146/ZN (ND2D1HPBWP)                  0.08      5.05 f
+  add_15/ctmi_477/ZN (INR2XD0HPBWP)                0.10      5.15 r
+  add_15/ctmi_144/ZN (ND2D1HPBWP)                  0.09      5.24 f
+  add_15/ctmi_476/ZN (INR2XD0HPBWP)                0.09      5.33 r
+  add_15/ctmi_142/ZN (ND2D1HPBWP)                  0.08      5.42 f
+  add_15/ctmi_475/ZN (INR2XD0HPBWP)                0.10      5.51 r
+  add_15/ctmi_140/ZN (ND2D1HPBWP)                  0.08      5.59 f
+  add_15/ctmi_474/ZN (INR2XD0HPBWP)                0.09      5.68 r
+  add_15/ctmi_138/ZN (ND2D1HPBWP)                  0.08      5.76 f
+  add_15/ctmi_473/ZN (INR2XD0HPBWP)                0.09      5.85 r
+  add_15/ctmi_136/ZN (ND2D1HPBWP)                  0.08      5.93 f
+  add_15/ctmi_472/ZN (INR2XD0HPBWP)                0.09      6.02 r
+  add_15/ctmi_134/ZN (ND2D1HPBWP)                  0.08      6.10 f
+  add_15/ctmi_471/ZN (INR2XD0HPBWP)                0.10      6.20 r
+  add_15/ctmi_132/ZN (ND2D1HPBWP)                  0.07      6.27 f
+  add_15/ctmi_470/ZN (MOAI22D0HPBWP)               0.10      6.37 r
+  q_reg[127]/D (SDFCNQD0HPBWP)                     0.00      6.37 r
+  data arrival time                                          6.37
+
+  clock SYS_CLK (rise edge)                       10.00     10.00
+  clock network delay (ideal)                      0.00     10.00
+  q_reg[127]/CP (SDFCNQD0HPBWP)                    0.00     10.00 r
+  clock uncertainty                               -0.30      9.70
+  library setup time                              -0.08      9.62
+  data required time                                         9.62
+  ------------------------------------------------------------------------
+  data required time                                         9.62
+  data arrival time                                         -6.37
+  ------------------------------------------------------------------------
+  slack (MET)                                                3.25
+
+
+1

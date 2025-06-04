@@ -1,0 +1,21 @@
+Invoking simulator...
+
+./results -sml=verdi +UVM_VERDI_TRACE=UVM_AWARE +fsdb+gate=off -ucli2Proc -ucli
+debImport "-i" "-simflow" "-dbdir" "./results.daidir"
+*Verdi* Loading libsscore_vcs202012.so
+
+*Verdi* : Enable RPC Server(583676)
+
+srcTBInvokeSim
+Chronologic VCS simulator copyright 1991-2020
+Contains Synopsys proprietary information.
+Compiler version R-2020.12-SP2_Full64; Runtime version R-2020.12-SP2_Full64;  Jun  1 22:36 2025
+xterm-256color is Not a valid terminal...
+           V C S   S i m u l a t i o n   R e p o r t 
+Time: 0 ps
+CPU Time:      0.180 seconds;       Data structure size:   0.0Mb
+Sun Jun  1 22:39:14 2025
+
+<VERDI_Terminated>
+
+debExit

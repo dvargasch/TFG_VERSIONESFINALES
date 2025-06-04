@@ -5,20 +5,20 @@ ifeq ($(LDVERSION), 0)
 endif
 
 ARCHIVE_OBJS=
-ARCHIVE_OBJS += _224208_archive_1.so
-_224208_archive_1.so : archive.9/_224208_archive_1.a
+ARCHIVE_OBJS += _725391_archive_1.so
+_725391_archive_1.so : archive.12/_725391_archive_1.a
 	@$(AR) -s $<
-	@$(PIC_LD) -shared  -Bsymbolic $(LD_NORELAX_FLAG)  -o .//../prueba_3.daidir//_224208_archive_1.so --whole-archive $< --no-whole-archive
+	@$(PIC_LD) -shared  -Bsymbolic $(LD_NORELAX_FLAG)  -o .//../results.daidir//_725391_archive_1.so --whole-archive $< --no-whole-archive
 	@rm -f $@
-	@ln -sf .//../prueba_3.daidir//_224208_archive_1.so $@
+	@ln -sf .//../results.daidir//_725391_archive_1.so $@
 
 
 ARCHIVE_OBJS += _prev_archive_1.so
-_prev_archive_1.so : archive.9/_prev_archive_1.a
+_prev_archive_1.so : archive.12/_prev_archive_1.a
 	@$(AR) -s $<
-	@$(PIC_LD) -shared  -Bsymbolic $(LD_NORELAX_FLAG)  -o .//../prueba_3.daidir//_prev_archive_1.so --whole-archive $< --no-whole-archive
+	@$(PIC_LD) -shared  -Bsymbolic $(LD_NORELAX_FLAG)  -o .//../results.daidir//_prev_archive_1.so --whole-archive $< --no-whole-archive
 	@rm -f $@
-	@ln -sf .//../prueba_3.daidir//_prev_archive_1.so $@
+	@ln -sf .//../results.daidir//_prev_archive_1.so $@
 
 
 
@@ -37,9 +37,9 @@ $(O0_OBJS) : %.o: %.c
 	$(CC_CG) $(CFLAGS_CG) -c -o $@ $<
 
 $(VCS_CU_ARC0) : $(VCS_CU_ARC_OBJS0)
-	$(PIC_LD) -shared  -Bsymbolic $(LD_NORELAX_FLAG)  -o .//../prueba_3.daidir//$(VCS_CU_ARC0) $(VCS_CU_ARC_OBJS0)
+	$(PIC_LD) -shared  -Bsymbolic $(LD_NORELAX_FLAG)  -o .//../results.daidir//$(VCS_CU_ARC0) $(VCS_CU_ARC_OBJS0)
 	rm -f $(VCS_CU_ARC0)
-	@ln -sf .//../prueba_3.daidir//$(VCS_CU_ARC0) $(VCS_CU_ARC0)
+	@ln -sf .//../results.daidir//$(VCS_CU_ARC0) $(VCS_CU_ARC0)
 
 CU_UDP_OBJS = \
 

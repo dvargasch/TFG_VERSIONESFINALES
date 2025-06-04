@@ -2530,16 +2530,16 @@ static inline U asm_bsf (U in)
 #ifdef __cplusplus
 extern "C" {
 #endif
-void  hs_0_M_0_21__prueba_3_daidir (UB  * pcode, scalar  val);
-void  hs_0_M_0_0__prueba_3_daidir (UB  * pcode, scalar  val);
-void  hs_0_M_0_1__prueba_3_daidir (UB  * pcode, scalar  val, U  I699, scalar  * I1368, U  did);
-void  hs_0_M_0_2__prueba_3_daidir (UB  * pcode);
-void  hs_0_M_0_11__prueba_3_daidir (UB  * pcode, scalar  val);
-void  hs_0_M_1_21__prueba_3_daidir (UB  * pcode, scalar  val);
-void  hs_0_M_1_0__prueba_3_daidir (UB  * pcode, scalar  val);
-void  hs_0_M_1_1__prueba_3_daidir (UB  * pcode, scalar  val, U  I699, scalar  * I1368, U  did);
-void  hs_0_M_1_2__prueba_3_daidir (UB  * pcode);
-void  hs_0_M_1_11__prueba_3_daidir (UB  * pcode, scalar  val);
+void  hs_0_M_0_21__results_daidir (UB  * pcode, scalar  val);
+void  hs_0_M_0_0__results_daidir (UB  * pcode, scalar  val);
+void  hs_0_M_0_1__results_daidir (UB  * pcode, scalar  val, U  I699, scalar  * I1368, U  did);
+void  hs_0_M_0_2__results_daidir (UB  * pcode);
+void  hs_0_M_0_11__results_daidir (UB  * pcode, scalar  val);
+void  hs_0_M_1_21__results_daidir (UB  * pcode, scalar  val);
+void  hs_0_M_1_0__results_daidir (UB  * pcode, scalar  val);
+void  hs_0_M_1_1__results_daidir (UB  * pcode, scalar  val, U  I699, scalar  * I1368, U  did);
+void  hs_0_M_1_2__results_daidir (UB  * pcode);
+void  hs_0_M_1_11__results_daidir (UB  * pcode, scalar  val);
 void  hsG_0__0 (struct dummyq_struct * I1353, EBLK  * I1348, U  I707);
 #ifdef __cplusplus
 }

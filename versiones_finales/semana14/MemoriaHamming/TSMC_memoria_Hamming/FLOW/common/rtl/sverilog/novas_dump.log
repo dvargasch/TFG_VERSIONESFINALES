@@ -2,93 +2,93 @@
 # log primitive debug message of FSDB dumping                                         #
 # This is for R&D to analyze when there are issues happening when FSDB dump           #
 #######################################################################################
-ANF: vcsd_get_serial_mode_status('/mnt/vol_NFS_rh003/estudiantes/DANIELA_VARGAS/Version_final/0516/versiones_finales/Memoria/TSMC_memoria_Hamming/FLOW/common/rtl/sverilog/prueba_3: undefined symbol: vcsd_get_serial_mode_status')
-ANF: vcsd_enable_sva_success_callback('/mnt/vol_NFS_rh003/estudiantes/DANIELA_VARGAS/Version_final/0516/versiones_finales/Memoria/TSMC_memoria_Hamming/FLOW/common/rtl/sverilog/prueba_3: undefined symbol: vcsd_enable_sva_success_callback')
-ANF: vcsd_disable_sva_success_callback('/mnt/vol_NFS_rh003/estudiantes/DANIELA_VARGAS/Version_final/0516/versiones_finales/Memoria/TSMC_memoria_Hamming/FLOW/common/rtl/sverilog/prueba_3: undefined symbol: vcsd_disable_sva_success_callback')
-ANF: vcsd_get_power_scope_name('/mnt/vol_NFS_rh003/estudiantes/DANIELA_VARGAS/Version_final/0516/versiones_finales/Memoria/TSMC_memoria_Hamming/FLOW/common/rtl/sverilog/prueba_3: undefined symbol: vcsd_get_power_scope_name')
-ANF: vcsd_begin_no_value_var_info('/mnt/vol_NFS_rh003/estudiantes/DANIELA_VARGAS/Version_final/0516/versiones_finales/Memoria/TSMC_memoria_Hamming/FLOW/common/rtl/sverilog/prueba_3: undefined symbol: vcsd_begin_no_value_var_info')
-ANF: vcsd_end_no_value_var_info('/mnt/vol_NFS_rh003/estudiantes/DANIELA_VARGAS/Version_final/0516/versiones_finales/Memoria/TSMC_memoria_Hamming/FLOW/common/rtl/sverilog/prueba_3: undefined symbol: vcsd_end_no_value_var_info')
-ANF: vcsd_remove_xprop_merge_mode_callback('/mnt/vol_NFS_rh003/estudiantes/DANIELA_VARGAS/Version_final/0516/versiones_finales/Memoria/TSMC_memoria_Hamming/FLOW/common/rtl/sverilog/prueba_3: undefined symbol: vcsd_remove_xprop_merge_mode_callback')
-ANF: vhpi_get_cb_info('/mnt/vol_NFS_rh003/estudiantes/DANIELA_VARGAS/Version_final/0516/versiones_finales/Memoria/TSMC_memoria_Hamming/FLOW/common/rtl/sverilog/prueba_3: undefined symbol: vhpi_get_cb_info')
-ANF: vhpi_free_handle('/mnt/vol_NFS_rh003/estudiantes/DANIELA_VARGAS/Version_final/0516/versiones_finales/Memoria/TSMC_memoria_Hamming/FLOW/common/rtl/sverilog/prueba_3: undefined symbol: vhpi_free_handle')
-ANF: vhpi_fetch_vcsd_handle('/mnt/vol_NFS_rh003/estudiantes/DANIELA_VARGAS/Version_final/0516/versiones_finales/Memoria/TSMC_memoria_Hamming/FLOW/common/rtl/sverilog/prueba_3: undefined symbol: vhpi_fetch_vcsd_handle')
-ANF: vhpi_fetch_vpi_handle('/mnt/vol_NFS_rh003/estudiantes/DANIELA_VARGAS/Version_final/0516/versiones_finales/Memoria/TSMC_memoria_Hamming/FLOW/common/rtl/sverilog/prueba_3: undefined symbol: vhpi_fetch_vpi_handle')
-ANF: vhpi_has_verilog_parent('/mnt/vol_NFS_rh003/estudiantes/DANIELA_VARGAS/Version_final/0516/versiones_finales/Memoria/TSMC_memoria_Hamming/FLOW/common/rtl/sverilog/prueba_3: undefined symbol: vhpi_has_verilog_parent')
-ANF: vhpi_is_verilog_scope('/mnt/vol_NFS_rh003/estudiantes/DANIELA_VARGAS/Version_final/0516/versiones_finales/Memoria/TSMC_memoria_Hamming/FLOW/common/rtl/sverilog/prueba_3: undefined symbol: vhpi_is_verilog_scope')
-ANF: scsd_xprop_is_enabled('/mnt/vol_NFS_rh003/estudiantes/DANIELA_VARGAS/Version_final/0516/versiones_finales/Memoria/TSMC_memoria_Hamming/FLOW/common/rtl/sverilog/prueba_3: undefined symbol: scsd_xprop_is_enabled')
-ANF: scsd_xprop_sig_is_promoted('/mnt/vol_NFS_rh003/estudiantes/DANIELA_VARGAS/Version_final/0516/versiones_finales/Memoria/TSMC_memoria_Hamming/FLOW/common/rtl/sverilog/prueba_3: undefined symbol: scsd_xprop_sig_is_promoted')
-ANF: scsd_xprop_int_xvalue('/mnt/vol_NFS_rh003/estudiantes/DANIELA_VARGAS/Version_final/0516/versiones_finales/Memoria/TSMC_memoria_Hamming/FLOW/common/rtl/sverilog/prueba_3: undefined symbol: scsd_xprop_int_xvalue')
-ANF: scsd_xprop_bool_xvalue('/mnt/vol_NFS_rh003/estudiantes/DANIELA_VARGAS/Version_final/0516/versiones_finales/Memoria/TSMC_memoria_Hamming/FLOW/common/rtl/sverilog/prueba_3: undefined symbol: scsd_xprop_bool_xvalue')
-ANF: scsd_xprop_enum_xvalue('/mnt/vol_NFS_rh003/estudiantes/DANIELA_VARGAS/Version_final/0516/versiones_finales/Memoria/TSMC_memoria_Hamming/FLOW/common/rtl/sverilog/prueba_3: undefined symbol: scsd_xprop_enum_xvalue')
-ANF: scsd_xprop_register_merge_mode_cb('/mnt/vol_NFS_rh003/estudiantes/DANIELA_VARGAS/Version_final/0516/versiones_finales/Memoria/TSMC_memoria_Hamming/FLOW/common/rtl/sverilog/prueba_3: undefined symbol: scsd_xprop_register_merge_mode_cb')
-ANF: scsd_xprop_delete_merge_mode_cb('/mnt/vol_NFS_rh003/estudiantes/DANIELA_VARGAS/Version_final/0516/versiones_finales/Memoria/TSMC_memoria_Hamming/FLOW/common/rtl/sverilog/prueba_3: undefined symbol: scsd_xprop_delete_merge_mode_cb')
-ANF: scsd_xprop_get_merge_mode('/mnt/vol_NFS_rh003/estudiantes/DANIELA_VARGAS/Version_final/0516/versiones_finales/Memoria/TSMC_memoria_Hamming/FLOW/common/rtl/sverilog/prueba_3: undefined symbol: scsd_xprop_get_merge_mode')
-ANF: scsd_thread_get_info('/mnt/vol_NFS_rh003/estudiantes/DANIELA_VARGAS/Version_final/0516/versiones_finales/Memoria/TSMC_memoria_Hamming/FLOW/common/rtl/sverilog/prueba_3: undefined symbol: scsd_thread_get_info')
-ANF: scsd_thread_vc_init('/mnt/vol_NFS_rh003/estudiantes/DANIELA_VARGAS/Version_final/0516/versiones_finales/Memoria/TSMC_memoria_Hamming/FLOW/common/rtl/sverilog/prueba_3: undefined symbol: scsd_thread_vc_init')
-ANF: scsd_master_set_delta_sync_cbk('/mnt/vol_NFS_rh003/estudiantes/DANIELA_VARGAS/Version_final/0516/versiones_finales/Memoria/TSMC_memoria_Hamming/FLOW/common/rtl/sverilog/prueba_3: undefined symbol: scsd_master_set_delta_sync_cbk')
-ANF: scsd_fgp_get_fsdb_cores('/mnt/vol_NFS_rh003/estudiantes/DANIELA_VARGAS/Version_final/0516/versiones_finales/Memoria/TSMC_memoria_Hamming/FLOW/common/rtl/sverilog/prueba_3: undefined symbol: scsd_fgp_get_fsdb_cores')
-ANF: vhdi_dt_get_type('/mnt/vol_NFS_rh003/estudiantes/DANIELA_VARGAS/Version_final/0516/versiones_finales/Memoria/TSMC_memoria_Hamming/FLOW/common/rtl/sverilog/prueba_3: undefined symbol: vhdi_dt_get_type')
-ANF: vhdi_dt_get_key('/mnt/vol_NFS_rh003/estudiantes/DANIELA_VARGAS/Version_final/0516/versiones_finales/Memoria/TSMC_memoria_Hamming/FLOW/common/rtl/sverilog/prueba_3: undefined symbol: vhdi_dt_get_key')
-ANF: vhdi_dt_get_vhdl_enum_info('/mnt/vol_NFS_rh003/estudiantes/DANIELA_VARGAS/Version_final/0516/versiones_finales/Memoria/TSMC_memoria_Hamming/FLOW/common/rtl/sverilog/prueba_3: undefined symbol: vhdi_dt_get_vhdl_enum_info')
-ANF: vhdi_dt_get_vhdl_physical_info('/mnt/vol_NFS_rh003/estudiantes/DANIELA_VARGAS/Version_final/0516/versiones_finales/Memoria/TSMC_memoria_Hamming/FLOW/common/rtl/sverilog/prueba_3: undefined symbol: vhdi_dt_get_vhdl_physical_info')
-ANF: vhdi_dt_get_vhdl_array_info('/mnt/vol_NFS_rh003/estudiantes/DANIELA_VARGAS/Version_final/0516/versiones_finales/Memoria/TSMC_memoria_Hamming/FLOW/common/rtl/sverilog/prueba_3: undefined symbol: vhdi_dt_get_vhdl_array_info')
-ANF: vhdi_dt_get_vhdl_record_info('/mnt/vol_NFS_rh003/estudiantes/DANIELA_VARGAS/Version_final/0516/versiones_finales/Memoria/TSMC_memoria_Hamming/FLOW/common/rtl/sverilog/prueba_3: undefined symbol: vhdi_dt_get_vhdl_record_info')
-ANF: vhdi_def_traverse_module('/mnt/vol_NFS_rh003/estudiantes/DANIELA_VARGAS/Version_final/0516/versiones_finales/Memoria/TSMC_memoria_Hamming/FLOW/common/rtl/sverilog/prueba_3: undefined symbol: vhdi_def_traverse_module')
-ANF: vhdi_def_traverse_scope('/mnt/vol_NFS_rh003/estudiantes/DANIELA_VARGAS/Version_final/0516/versiones_finales/Memoria/TSMC_memoria_Hamming/FLOW/common/rtl/sverilog/prueba_3: undefined symbol: vhdi_def_traverse_scope')
-ANF: vhdi_def_traverse_variable('/mnt/vol_NFS_rh003/estudiantes/DANIELA_VARGAS/Version_final/0516/versiones_finales/Memoria/TSMC_memoria_Hamming/FLOW/common/rtl/sverilog/prueba_3: undefined symbol: vhdi_def_traverse_variable')
-ANF: vhdi_def_get_module_id_by_vhpi('/mnt/vol_NFS_rh003/estudiantes/DANIELA_VARGAS/Version_final/0516/versiones_finales/Memoria/TSMC_memoria_Hamming/FLOW/common/rtl/sverilog/prueba_3: undefined symbol: vhdi_def_get_module_id_by_vhpi')
-ANF: vhdi_def_get_handle_by_module_id('/mnt/vol_NFS_rh003/estudiantes/DANIELA_VARGAS/Version_final/0516/versiones_finales/Memoria/TSMC_memoria_Hamming/FLOW/common/rtl/sverilog/prueba_3: undefined symbol: vhdi_def_get_handle_by_module_id')
-ANF: vhdi_def_get_variable_info_by_vhpi('/mnt/vol_NFS_rh003/estudiantes/DANIELA_VARGAS/Version_final/0516/versiones_finales/Memoria/TSMC_memoria_Hamming/FLOW/common/rtl/sverilog/prueba_3: undefined symbol: vhdi_def_get_variable_info_by_vhpi')
-ANF: vhdi_def_free('/mnt/vol_NFS_rh003/estudiantes/DANIELA_VARGAS/Version_final/0516/versiones_finales/Memoria/TSMC_memoria_Hamming/FLOW/common/rtl/sverilog/prueba_3: undefined symbol: vhdi_def_free')
-ANF: vhdi_ist_traverse_scope('/mnt/vol_NFS_rh003/estudiantes/DANIELA_VARGAS/Version_final/0516/versiones_finales/Memoria/TSMC_memoria_Hamming/FLOW/common/rtl/sverilog/prueba_3: undefined symbol: vhdi_ist_traverse_scope')
-ANF: vhdi_ist_traverse_variable('/mnt/vol_NFS_rh003/estudiantes/DANIELA_VARGAS/Version_final/0516/versiones_finales/Memoria/TSMC_memoria_Hamming/FLOW/common/rtl/sverilog/prueba_3: undefined symbol: vhdi_ist_traverse_variable')
-ANF: vhdi_ist_convert_by_vhpi('/mnt/vol_NFS_rh003/estudiantes/DANIELA_VARGAS/Version_final/0516/versiones_finales/Memoria/TSMC_memoria_Hamming/FLOW/common/rtl/sverilog/prueba_3: undefined symbol: vhdi_ist_convert_by_vhpi')
-ANF: vhdi_ist_clone('/mnt/vol_NFS_rh003/estudiantes/DANIELA_VARGAS/Version_final/0516/versiones_finales/Memoria/TSMC_memoria_Hamming/FLOW/common/rtl/sverilog/prueba_3: undefined symbol: vhdi_ist_clone')
-ANF: vhdi_ist_free('/mnt/vol_NFS_rh003/estudiantes/DANIELA_VARGAS/Version_final/0516/versiones_finales/Memoria/TSMC_memoria_Hamming/FLOW/common/rtl/sverilog/prueba_3: undefined symbol: vhdi_ist_free')
-ANF: vhdi_ist_hash_key('/mnt/vol_NFS_rh003/estudiantes/DANIELA_VARGAS/Version_final/0516/versiones_finales/Memoria/TSMC_memoria_Hamming/FLOW/common/rtl/sverilog/prueba_3: undefined symbol: vhdi_ist_hash_key')
-ANF: vhdi_ist_compare('/mnt/vol_NFS_rh003/estudiantes/DANIELA_VARGAS/Version_final/0516/versiones_finales/Memoria/TSMC_memoria_Hamming/FLOW/common/rtl/sverilog/prueba_3: undefined symbol: vhdi_ist_compare')
-ANF: vhdi_ist_get_value_addr('/mnt/vol_NFS_rh003/estudiantes/DANIELA_VARGAS/Version_final/0516/versiones_finales/Memoria/TSMC_memoria_Hamming/FLOW/common/rtl/sverilog/prueba_3: undefined symbol: vhdi_ist_get_value_addr')
-ANF: vhdi_set_scsd_callback('/mnt/vol_NFS_rh003/estudiantes/DANIELA_VARGAS/Version_final/0516/versiones_finales/Memoria/TSMC_memoria_Hamming/FLOW/common/rtl/sverilog/prueba_3: undefined symbol: vhdi_set_scsd_callback')
-ANF: vhdi_cbk_set_force_callback('/mnt/vol_NFS_rh003/estudiantes/DANIELA_VARGAS/Version_final/0516/versiones_finales/Memoria/TSMC_memoria_Hamming/FLOW/common/rtl/sverilog/prueba_3: undefined symbol: vhdi_cbk_set_force_callback')
-ANF: vhdi_trigger_init_force('/mnt/vol_NFS_rh003/estudiantes/DANIELA_VARGAS/Version_final/0516/versiones_finales/Memoria/TSMC_memoria_Hamming/FLOW/common/rtl/sverilog/prueba_3: undefined symbol: vhdi_trigger_init_force')
-ANF: vhdi_ist_check_scsd_callback('/mnt/vol_NFS_rh003/estudiantes/DANIELA_VARGAS/Version_final/0516/versiones_finales/Memoria/TSMC_memoria_Hamming/FLOW/common/rtl/sverilog/prueba_3: undefined symbol: vhdi_ist_check_scsd_callback')
-ANF: vhdi_ist_add_scsd_callback('/mnt/vol_NFS_rh003/estudiantes/DANIELA_VARGAS/Version_final/0516/versiones_finales/Memoria/TSMC_memoria_Hamming/FLOW/common/rtl/sverilog/prueba_3: undefined symbol: vhdi_ist_add_scsd_callback')
-ANF: vhdi_ist_remove_scsd_callback('/mnt/vol_NFS_rh003/estudiantes/DANIELA_VARGAS/Version_final/0516/versiones_finales/Memoria/TSMC_memoria_Hamming/FLOW/common/rtl/sverilog/prueba_3: undefined symbol: vhdi_ist_remove_scsd_callback')
-ANF: vhdi_ist_get_scsd_user_data('/mnt/vol_NFS_rh003/estudiantes/DANIELA_VARGAS/Version_final/0516/versiones_finales/Memoria/TSMC_memoria_Hamming/FLOW/common/rtl/sverilog/prueba_3: undefined symbol: vhdi_ist_get_scsd_user_data')
-ANF: vhdi_add_time_change_callback('/mnt/vol_NFS_rh003/estudiantes/DANIELA_VARGAS/Version_final/0516/versiones_finales/Memoria/TSMC_memoria_Hamming/FLOW/common/rtl/sverilog/prueba_3: undefined symbol: vhdi_add_time_change_callback')
-ANF: vhdi_get_real_value_by_value_addr('/mnt/vol_NFS_rh003/estudiantes/DANIELA_VARGAS/Version_final/0516/versiones_finales/Memoria/TSMC_memoria_Hamming/FLOW/common/rtl/sverilog/prueba_3: undefined symbol: vhdi_get_real_value_by_value_addr')
-ANF: vhdi_get_64_value_by_value_addr('/mnt/vol_NFS_rh003/estudiantes/DANIELA_VARGAS/Version_final/0516/versiones_finales/Memoria/TSMC_memoria_Hamming/FLOW/common/rtl/sverilog/prueba_3: undefined symbol: vhdi_get_64_value_by_value_addr')
-ANF: vhdi_xprop_inst_is_promoted('/mnt/vol_NFS_rh003/estudiantes/DANIELA_VARGAS/Version_final/0516/versiones_finales/Memoria/TSMC_memoria_Hamming/FLOW/common/rtl/sverilog/prueba_3: undefined symbol: vhdi_xprop_inst_is_promoted')
-ANF: vdi_ist_convert_by_vhdi('/mnt/vol_NFS_rh003/estudiantes/DANIELA_VARGAS/Version_final/0516/versiones_finales/Memoria/TSMC_memoria_Hamming/FLOW/common/rtl/sverilog/prueba_3: undefined symbol: vdi_ist_convert_by_vhdi')
-ANF: vhdi_ist_get_module_id('/mnt/vol_NFS_rh003/estudiantes/DANIELA_VARGAS/Version_final/0516/versiones_finales/Memoria/TSMC_memoria_Hamming/FLOW/common/rtl/sverilog/prueba_3: undefined symbol: vhdi_ist_get_module_id')
-ANF: vhdi_refine_foreign_scope_type('/mnt/vol_NFS_rh003/estudiantes/DANIELA_VARGAS/Version_final/0516/versiones_finales/Memoria/TSMC_memoria_Hamming/FLOW/common/rtl/sverilog/prueba_3: undefined symbol: vhdi_refine_foreign_scope_type')
-ANF: vhdi_flush_callback('/mnt/vol_NFS_rh003/estudiantes/DANIELA_VARGAS/Version_final/0516/versiones_finales/Memoria/TSMC_memoria_Hamming/FLOW/common/rtl/sverilog/prueba_3: undefined symbol: vhdi_flush_callback')
-ANF: vhdi_set_orig_name('/mnt/vol_NFS_rh003/estudiantes/DANIELA_VARGAS/Version_final/0516/versiones_finales/Memoria/TSMC_memoria_Hamming/FLOW/common/rtl/sverilog/prueba_3: undefined symbol: vhdi_set_orig_name')
-ANF: vhdi_set_dump_pt('/mnt/vol_NFS_rh003/estudiantes/DANIELA_VARGAS/Version_final/0516/versiones_finales/Memoria/TSMC_memoria_Hamming/FLOW/common/rtl/sverilog/prueba_3: undefined symbol: vhdi_set_dump_pt')
-ANF: vhdi_get_fsdb_option('/mnt/vol_NFS_rh003/estudiantes/DANIELA_VARGAS/Version_final/0516/versiones_finales/Memoria/TSMC_memoria_Hamming/FLOW/common/rtl/sverilog/prueba_3: undefined symbol: vhdi_get_fsdb_option')
-ANF: vhdi_fgp_get_mode('/mnt/vol_NFS_rh003/estudiantes/DANIELA_VARGAS/Version_final/0516/versiones_finales/Memoria/TSMC_memoria_Hamming/FLOW/common/rtl/sverilog/prueba_3: undefined symbol: vhdi_fgp_get_mode')
-ANF: vhdi_node_register_composite_var('/mnt/vol_NFS_rh003/estudiantes/DANIELA_VARGAS/Version_final/0516/versiones_finales/Memoria/TSMC_memoria_Hamming/FLOW/common/rtl/sverilog/prueba_3: undefined symbol: vhdi_node_register_composite_var')
-ANF: vhdi_node_analysis('/mnt/vol_NFS_rh003/estudiantes/DANIELA_VARGAS/Version_final/0516/versiones_finales/Memoria/TSMC_memoria_Hamming/FLOW/common/rtl/sverilog/prueba_3: undefined symbol: vhdi_node_analysis')
-ANF: vhdi_node_id('/mnt/vol_NFS_rh003/estudiantes/DANIELA_VARGAS/Version_final/0516/versiones_finales/Memoria/TSMC_memoria_Hamming/FLOW/common/rtl/sverilog/prueba_3: undefined symbol: vhdi_node_id')
-ANF: vhdi_node_ist_check_scsd_callback('/mnt/vol_NFS_rh003/estudiantes/DANIELA_VARGAS/Version_final/0516/versiones_finales/Memoria/TSMC_memoria_Hamming/FLOW/common/rtl/sverilog/prueba_3: undefined symbol: vhdi_node_ist_check_scsd_callback')
-ANF: vhdi_node_ist_add_scsd_callback('/mnt/vol_NFS_rh003/estudiantes/DANIELA_VARGAS/Version_final/0516/versiones_finales/Memoria/TSMC_memoria_Hamming/FLOW/common/rtl/sverilog/prueba_3: undefined symbol: vhdi_node_ist_add_scsd_callback')
-ANF: vhdi_node_ist_get_value_addr('/mnt/vol_NFS_rh003/estudiantes/DANIELA_VARGAS/Version_final/0516/versiones_finales/Memoria/TSMC_memoria_Hamming/FLOW/common/rtl/sverilog/prueba_3: undefined symbol: vhdi_node_ist_get_value_addr')
-ANF: vhdi_enc_def_traverse_module('/mnt/vol_NFS_rh003/estudiantes/DANIELA_VARGAS/Version_final/0516/versiones_finales/Memoria/TSMC_memoria_Hamming/FLOW/common/rtl/sverilog/prueba_3: undefined symbol: vhdi_enc_def_traverse_module')
-ANF: vhdi_enc_def_traverse_scope('/mnt/vol_NFS_rh003/estudiantes/DANIELA_VARGAS/Version_final/0516/versiones_finales/Memoria/TSMC_memoria_Hamming/FLOW/common/rtl/sverilog/prueba_3: undefined symbol: vhdi_enc_def_traverse_scope')
-ANF: vhdi_enc_def_traverse_variable('/mnt/vol_NFS_rh003/estudiantes/DANIELA_VARGAS/Version_final/0516/versiones_finales/Memoria/TSMC_memoria_Hamming/FLOW/common/rtl/sverilog/prueba_3: undefined symbol: vhdi_enc_def_traverse_variable')
-ANF: vhdi_enc_ist_traverse_scope('/mnt/vol_NFS_rh003/estudiantes/DANIELA_VARGAS/Version_final/0516/versiones_finales/Memoria/TSMC_memoria_Hamming/FLOW/common/rtl/sverilog/prueba_3: undefined symbol: vhdi_enc_ist_traverse_scope')
-ANF: vhdi_enc_ist_traverse_variable('/mnt/vol_NFS_rh003/estudiantes/DANIELA_VARGAS/Version_final/0516/versiones_finales/Memoria/TSMC_memoria_Hamming/FLOW/common/rtl/sverilog/prueba_3: undefined symbol: vhdi_enc_ist_traverse_variable')
-ANF: vhdi_enc_ist_get_module_id('/mnt/vol_NFS_rh003/estudiantes/DANIELA_VARGAS/Version_final/0516/versiones_finales/Memoria/TSMC_memoria_Hamming/FLOW/common/rtl/sverilog/prueba_3: undefined symbol: vhdi_enc_ist_get_module_id')
-ANF: vhdi_enc_def_get_handle_by_module_id('/mnt/vol_NFS_rh003/estudiantes/DANIELA_VARGAS/Version_final/0516/versiones_finales/Memoria/TSMC_memoria_Hamming/FLOW/common/rtl/sverilog/prueba_3: undefined symbol: vhdi_enc_def_get_handle_by_module_id')
+ANF: vcsd_get_serial_mode_status('/mnt/vol_NFS_rh003/estudiantes/DANIELA_VARGAS/Version_final/0516/versiones_finales/semana14/MemoriaHamming/TSMC_memoria_Hamming/FLOW/common/rtl/sverilog/results: undefined symbol: vcsd_get_serial_mode_status')
+ANF: vcsd_enable_sva_success_callback('/mnt/vol_NFS_rh003/estudiantes/DANIELA_VARGAS/Version_final/0516/versiones_finales/semana14/MemoriaHamming/TSMC_memoria_Hamming/FLOW/common/rtl/sverilog/results: undefined symbol: vcsd_enable_sva_success_callback')
+ANF: vcsd_disable_sva_success_callback('/mnt/vol_NFS_rh003/estudiantes/DANIELA_VARGAS/Version_final/0516/versiones_finales/semana14/MemoriaHamming/TSMC_memoria_Hamming/FLOW/common/rtl/sverilog/results: undefined symbol: vcsd_disable_sva_success_callback')
+ANF: vcsd_get_power_scope_name('/mnt/vol_NFS_rh003/estudiantes/DANIELA_VARGAS/Version_final/0516/versiones_finales/semana14/MemoriaHamming/TSMC_memoria_Hamming/FLOW/common/rtl/sverilog/results: undefined symbol: vcsd_get_power_scope_name')
+ANF: vcsd_begin_no_value_var_info('/mnt/vol_NFS_rh003/estudiantes/DANIELA_VARGAS/Version_final/0516/versiones_finales/semana14/MemoriaHamming/TSMC_memoria_Hamming/FLOW/common/rtl/sverilog/results: undefined symbol: vcsd_begin_no_value_var_info')
+ANF: vcsd_end_no_value_var_info('/mnt/vol_NFS_rh003/estudiantes/DANIELA_VARGAS/Version_final/0516/versiones_finales/semana14/MemoriaHamming/TSMC_memoria_Hamming/FLOW/common/rtl/sverilog/results: undefined symbol: vcsd_end_no_value_var_info')
+ANF: vcsd_remove_xprop_merge_mode_callback('/mnt/vol_NFS_rh003/estudiantes/DANIELA_VARGAS/Version_final/0516/versiones_finales/semana14/MemoriaHamming/TSMC_memoria_Hamming/FLOW/common/rtl/sverilog/results: undefined symbol: vcsd_remove_xprop_merge_mode_callback')
+ANF: vhpi_get_cb_info('/mnt/vol_NFS_rh003/estudiantes/DANIELA_VARGAS/Version_final/0516/versiones_finales/semana14/MemoriaHamming/TSMC_memoria_Hamming/FLOW/common/rtl/sverilog/results: undefined symbol: vhpi_get_cb_info')
+ANF: vhpi_free_handle('/mnt/vol_NFS_rh003/estudiantes/DANIELA_VARGAS/Version_final/0516/versiones_finales/semana14/MemoriaHamming/TSMC_memoria_Hamming/FLOW/common/rtl/sverilog/results: undefined symbol: vhpi_free_handle')
+ANF: vhpi_fetch_vcsd_handle('/mnt/vol_NFS_rh003/estudiantes/DANIELA_VARGAS/Version_final/0516/versiones_finales/semana14/MemoriaHamming/TSMC_memoria_Hamming/FLOW/common/rtl/sverilog/results: undefined symbol: vhpi_fetch_vcsd_handle')
+ANF: vhpi_fetch_vpi_handle('/mnt/vol_NFS_rh003/estudiantes/DANIELA_VARGAS/Version_final/0516/versiones_finales/semana14/MemoriaHamming/TSMC_memoria_Hamming/FLOW/common/rtl/sverilog/results: undefined symbol: vhpi_fetch_vpi_handle')
+ANF: vhpi_has_verilog_parent('/mnt/vol_NFS_rh003/estudiantes/DANIELA_VARGAS/Version_final/0516/versiones_finales/semana14/MemoriaHamming/TSMC_memoria_Hamming/FLOW/common/rtl/sverilog/results: undefined symbol: vhpi_has_verilog_parent')
+ANF: vhpi_is_verilog_scope('/mnt/vol_NFS_rh003/estudiantes/DANIELA_VARGAS/Version_final/0516/versiones_finales/semana14/MemoriaHamming/TSMC_memoria_Hamming/FLOW/common/rtl/sverilog/results: undefined symbol: vhpi_is_verilog_scope')
+ANF: scsd_xprop_is_enabled('/mnt/vol_NFS_rh003/estudiantes/DANIELA_VARGAS/Version_final/0516/versiones_finales/semana14/MemoriaHamming/TSMC_memoria_Hamming/FLOW/common/rtl/sverilog/results: undefined symbol: scsd_xprop_is_enabled')
+ANF: scsd_xprop_sig_is_promoted('/mnt/vol_NFS_rh003/estudiantes/DANIELA_VARGAS/Version_final/0516/versiones_finales/semana14/MemoriaHamming/TSMC_memoria_Hamming/FLOW/common/rtl/sverilog/results: undefined symbol: scsd_xprop_sig_is_promoted')
+ANF: scsd_xprop_int_xvalue('/mnt/vol_NFS_rh003/estudiantes/DANIELA_VARGAS/Version_final/0516/versiones_finales/semana14/MemoriaHamming/TSMC_memoria_Hamming/FLOW/common/rtl/sverilog/results: undefined symbol: scsd_xprop_int_xvalue')
+ANF: scsd_xprop_bool_xvalue('/mnt/vol_NFS_rh003/estudiantes/DANIELA_VARGAS/Version_final/0516/versiones_finales/semana14/MemoriaHamming/TSMC_memoria_Hamming/FLOW/common/rtl/sverilog/results: undefined symbol: scsd_xprop_bool_xvalue')
+ANF: scsd_xprop_enum_xvalue('/mnt/vol_NFS_rh003/estudiantes/DANIELA_VARGAS/Version_final/0516/versiones_finales/semana14/MemoriaHamming/TSMC_memoria_Hamming/FLOW/common/rtl/sverilog/results: undefined symbol: scsd_xprop_enum_xvalue')
+ANF: scsd_xprop_register_merge_mode_cb('/mnt/vol_NFS_rh003/estudiantes/DANIELA_VARGAS/Version_final/0516/versiones_finales/semana14/MemoriaHamming/TSMC_memoria_Hamming/FLOW/common/rtl/sverilog/results: undefined symbol: scsd_xprop_register_merge_mode_cb')
+ANF: scsd_xprop_delete_merge_mode_cb('/mnt/vol_NFS_rh003/estudiantes/DANIELA_VARGAS/Version_final/0516/versiones_finales/semana14/MemoriaHamming/TSMC_memoria_Hamming/FLOW/common/rtl/sverilog/results: undefined symbol: scsd_xprop_delete_merge_mode_cb')
+ANF: scsd_xprop_get_merge_mode('/mnt/vol_NFS_rh003/estudiantes/DANIELA_VARGAS/Version_final/0516/versiones_finales/semana14/MemoriaHamming/TSMC_memoria_Hamming/FLOW/common/rtl/sverilog/results: undefined symbol: scsd_xprop_get_merge_mode')
+ANF: scsd_thread_get_info('/mnt/vol_NFS_rh003/estudiantes/DANIELA_VARGAS/Version_final/0516/versiones_finales/semana14/MemoriaHamming/TSMC_memoria_Hamming/FLOW/common/rtl/sverilog/results: undefined symbol: scsd_thread_get_info')
+ANF: scsd_thread_vc_init('/mnt/vol_NFS_rh003/estudiantes/DANIELA_VARGAS/Version_final/0516/versiones_finales/semana14/MemoriaHamming/TSMC_memoria_Hamming/FLOW/common/rtl/sverilog/results: undefined symbol: scsd_thread_vc_init')
+ANF: scsd_master_set_delta_sync_cbk('/mnt/vol_NFS_rh003/estudiantes/DANIELA_VARGAS/Version_final/0516/versiones_finales/semana14/MemoriaHamming/TSMC_memoria_Hamming/FLOW/common/rtl/sverilog/results: undefined symbol: scsd_master_set_delta_sync_cbk')
+ANF: scsd_fgp_get_fsdb_cores('/mnt/vol_NFS_rh003/estudiantes/DANIELA_VARGAS/Version_final/0516/versiones_finales/semana14/MemoriaHamming/TSMC_memoria_Hamming/FLOW/common/rtl/sverilog/results: undefined symbol: scsd_fgp_get_fsdb_cores')
+ANF: vhdi_dt_get_type('/mnt/vol_NFS_rh003/estudiantes/DANIELA_VARGAS/Version_final/0516/versiones_finales/semana14/MemoriaHamming/TSMC_memoria_Hamming/FLOW/common/rtl/sverilog/results: undefined symbol: vhdi_dt_get_type')
+ANF: vhdi_dt_get_key('/mnt/vol_NFS_rh003/estudiantes/DANIELA_VARGAS/Version_final/0516/versiones_finales/semana14/MemoriaHamming/TSMC_memoria_Hamming/FLOW/common/rtl/sverilog/results: undefined symbol: vhdi_dt_get_key')
+ANF: vhdi_dt_get_vhdl_enum_info('/mnt/vol_NFS_rh003/estudiantes/DANIELA_VARGAS/Version_final/0516/versiones_finales/semana14/MemoriaHamming/TSMC_memoria_Hamming/FLOW/common/rtl/sverilog/results: undefined symbol: vhdi_dt_get_vhdl_enum_info')
+ANF: vhdi_dt_get_vhdl_physical_info('/mnt/vol_NFS_rh003/estudiantes/DANIELA_VARGAS/Version_final/0516/versiones_finales/semana14/MemoriaHamming/TSMC_memoria_Hamming/FLOW/common/rtl/sverilog/results: undefined symbol: vhdi_dt_get_vhdl_physical_info')
+ANF: vhdi_dt_get_vhdl_array_info('/mnt/vol_NFS_rh003/estudiantes/DANIELA_VARGAS/Version_final/0516/versiones_finales/semana14/MemoriaHamming/TSMC_memoria_Hamming/FLOW/common/rtl/sverilog/results: undefined symbol: vhdi_dt_get_vhdl_array_info')
+ANF: vhdi_dt_get_vhdl_record_info('/mnt/vol_NFS_rh003/estudiantes/DANIELA_VARGAS/Version_final/0516/versiones_finales/semana14/MemoriaHamming/TSMC_memoria_Hamming/FLOW/common/rtl/sverilog/results: undefined symbol: vhdi_dt_get_vhdl_record_info')
+ANF: vhdi_def_traverse_module('/mnt/vol_NFS_rh003/estudiantes/DANIELA_VARGAS/Version_final/0516/versiones_finales/semana14/MemoriaHamming/TSMC_memoria_Hamming/FLOW/common/rtl/sverilog/results: undefined symbol: vhdi_def_traverse_module')
+ANF: vhdi_def_traverse_scope('/mnt/vol_NFS_rh003/estudiantes/DANIELA_VARGAS/Version_final/0516/versiones_finales/semana14/MemoriaHamming/TSMC_memoria_Hamming/FLOW/common/rtl/sverilog/results: undefined symbol: vhdi_def_traverse_scope')
+ANF: vhdi_def_traverse_variable('/mnt/vol_NFS_rh003/estudiantes/DANIELA_VARGAS/Version_final/0516/versiones_finales/semana14/MemoriaHamming/TSMC_memoria_Hamming/FLOW/common/rtl/sverilog/results: undefined symbol: vhdi_def_traverse_variable')
+ANF: vhdi_def_get_module_id_by_vhpi('/mnt/vol_NFS_rh003/estudiantes/DANIELA_VARGAS/Version_final/0516/versiones_finales/semana14/MemoriaHamming/TSMC_memoria_Hamming/FLOW/common/rtl/sverilog/results: undefined symbol: vhdi_def_get_module_id_by_vhpi')
+ANF: vhdi_def_get_handle_by_module_id('/mnt/vol_NFS_rh003/estudiantes/DANIELA_VARGAS/Version_final/0516/versiones_finales/semana14/MemoriaHamming/TSMC_memoria_Hamming/FLOW/common/rtl/sverilog/results: undefined symbol: vhdi_def_get_handle_by_module_id')
+ANF: vhdi_def_get_variable_info_by_vhpi('/mnt/vol_NFS_rh003/estudiantes/DANIELA_VARGAS/Version_final/0516/versiones_finales/semana14/MemoriaHamming/TSMC_memoria_Hamming/FLOW/common/rtl/sverilog/results: undefined symbol: vhdi_def_get_variable_info_by_vhpi')
+ANF: vhdi_def_free('/mnt/vol_NFS_rh003/estudiantes/DANIELA_VARGAS/Version_final/0516/versiones_finales/semana14/MemoriaHamming/TSMC_memoria_Hamming/FLOW/common/rtl/sverilog/results: undefined symbol: vhdi_def_free')
+ANF: vhdi_ist_traverse_scope('/mnt/vol_NFS_rh003/estudiantes/DANIELA_VARGAS/Version_final/0516/versiones_finales/semana14/MemoriaHamming/TSMC_memoria_Hamming/FLOW/common/rtl/sverilog/results: undefined symbol: vhdi_ist_traverse_scope')
+ANF: vhdi_ist_traverse_variable('/mnt/vol_NFS_rh003/estudiantes/DANIELA_VARGAS/Version_final/0516/versiones_finales/semana14/MemoriaHamming/TSMC_memoria_Hamming/FLOW/common/rtl/sverilog/results: undefined symbol: vhdi_ist_traverse_variable')
+ANF: vhdi_ist_convert_by_vhpi('/mnt/vol_NFS_rh003/estudiantes/DANIELA_VARGAS/Version_final/0516/versiones_finales/semana14/MemoriaHamming/TSMC_memoria_Hamming/FLOW/common/rtl/sverilog/results: undefined symbol: vhdi_ist_convert_by_vhpi')
+ANF: vhdi_ist_clone('/mnt/vol_NFS_rh003/estudiantes/DANIELA_VARGAS/Version_final/0516/versiones_finales/semana14/MemoriaHamming/TSMC_memoria_Hamming/FLOW/common/rtl/sverilog/results: undefined symbol: vhdi_ist_clone')
+ANF: vhdi_ist_free('/mnt/vol_NFS_rh003/estudiantes/DANIELA_VARGAS/Version_final/0516/versiones_finales/semana14/MemoriaHamming/TSMC_memoria_Hamming/FLOW/common/rtl/sverilog/results: undefined symbol: vhdi_ist_free')
+ANF: vhdi_ist_hash_key('/mnt/vol_NFS_rh003/estudiantes/DANIELA_VARGAS/Version_final/0516/versiones_finales/semana14/MemoriaHamming/TSMC_memoria_Hamming/FLOW/common/rtl/sverilog/results: undefined symbol: vhdi_ist_hash_key')
+ANF: vhdi_ist_compare('/mnt/vol_NFS_rh003/estudiantes/DANIELA_VARGAS/Version_final/0516/versiones_finales/semana14/MemoriaHamming/TSMC_memoria_Hamming/FLOW/common/rtl/sverilog/results: undefined symbol: vhdi_ist_compare')
+ANF: vhdi_ist_get_value_addr('/mnt/vol_NFS_rh003/estudiantes/DANIELA_VARGAS/Version_final/0516/versiones_finales/semana14/MemoriaHamming/TSMC_memoria_Hamming/FLOW/common/rtl/sverilog/results: undefined symbol: vhdi_ist_get_value_addr')
+ANF: vhdi_set_scsd_callback('/mnt/vol_NFS_rh003/estudiantes/DANIELA_VARGAS/Version_final/0516/versiones_finales/semana14/MemoriaHamming/TSMC_memoria_Hamming/FLOW/common/rtl/sverilog/results: undefined symbol: vhdi_set_scsd_callback')
+ANF: vhdi_cbk_set_force_callback('/mnt/vol_NFS_rh003/estudiantes/DANIELA_VARGAS/Version_final/0516/versiones_finales/semana14/MemoriaHamming/TSMC_memoria_Hamming/FLOW/common/rtl/sverilog/results: undefined symbol: vhdi_cbk_set_force_callback')
+ANF: vhdi_trigger_init_force('/mnt/vol_NFS_rh003/estudiantes/DANIELA_VARGAS/Version_final/0516/versiones_finales/semana14/MemoriaHamming/TSMC_memoria_Hamming/FLOW/common/rtl/sverilog/results: undefined symbol: vhdi_trigger_init_force')
+ANF: vhdi_ist_check_scsd_callback('/mnt/vol_NFS_rh003/estudiantes/DANIELA_VARGAS/Version_final/0516/versiones_finales/semana14/MemoriaHamming/TSMC_memoria_Hamming/FLOW/common/rtl/sverilog/results: undefined symbol: vhdi_ist_check_scsd_callback')
+ANF: vhdi_ist_add_scsd_callback('/mnt/vol_NFS_rh003/estudiantes/DANIELA_VARGAS/Version_final/0516/versiones_finales/semana14/MemoriaHamming/TSMC_memoria_Hamming/FLOW/common/rtl/sverilog/results: undefined symbol: vhdi_ist_add_scsd_callback')
+ANF: vhdi_ist_remove_scsd_callback('/mnt/vol_NFS_rh003/estudiantes/DANIELA_VARGAS/Version_final/0516/versiones_finales/semana14/MemoriaHamming/TSMC_memoria_Hamming/FLOW/common/rtl/sverilog/results: undefined symbol: vhdi_ist_remove_scsd_callback')
+ANF: vhdi_ist_get_scsd_user_data('/mnt/vol_NFS_rh003/estudiantes/DANIELA_VARGAS/Version_final/0516/versiones_finales/semana14/MemoriaHamming/TSMC_memoria_Hamming/FLOW/common/rtl/sverilog/results: undefined symbol: vhdi_ist_get_scsd_user_data')
+ANF: vhdi_add_time_change_callback('/mnt/vol_NFS_rh003/estudiantes/DANIELA_VARGAS/Version_final/0516/versiones_finales/semana14/MemoriaHamming/TSMC_memoria_Hamming/FLOW/common/rtl/sverilog/results: undefined symbol: vhdi_add_time_change_callback')
+ANF: vhdi_get_real_value_by_value_addr('/mnt/vol_NFS_rh003/estudiantes/DANIELA_VARGAS/Version_final/0516/versiones_finales/semana14/MemoriaHamming/TSMC_memoria_Hamming/FLOW/common/rtl/sverilog/results: undefined symbol: vhdi_get_real_value_by_value_addr')
+ANF: vhdi_get_64_value_by_value_addr('/mnt/vol_NFS_rh003/estudiantes/DANIELA_VARGAS/Version_final/0516/versiones_finales/semana14/MemoriaHamming/TSMC_memoria_Hamming/FLOW/common/rtl/sverilog/results: undefined symbol: vhdi_get_64_value_by_value_addr')
+ANF: vhdi_xprop_inst_is_promoted('/mnt/vol_NFS_rh003/estudiantes/DANIELA_VARGAS/Version_final/0516/versiones_finales/semana14/MemoriaHamming/TSMC_memoria_Hamming/FLOW/common/rtl/sverilog/results: undefined symbol: vhdi_xprop_inst_is_promoted')
+ANF: vdi_ist_convert_by_vhdi('/mnt/vol_NFS_rh003/estudiantes/DANIELA_VARGAS/Version_final/0516/versiones_finales/semana14/MemoriaHamming/TSMC_memoria_Hamming/FLOW/common/rtl/sverilog/results: undefined symbol: vdi_ist_convert_by_vhdi')
+ANF: vhdi_ist_get_module_id('/mnt/vol_NFS_rh003/estudiantes/DANIELA_VARGAS/Version_final/0516/versiones_finales/semana14/MemoriaHamming/TSMC_memoria_Hamming/FLOW/common/rtl/sverilog/results: undefined symbol: vhdi_ist_get_module_id')
+ANF: vhdi_refine_foreign_scope_type('/mnt/vol_NFS_rh003/estudiantes/DANIELA_VARGAS/Version_final/0516/versiones_finales/semana14/MemoriaHamming/TSMC_memoria_Hamming/FLOW/common/rtl/sverilog/results: undefined symbol: vhdi_refine_foreign_scope_type')
+ANF: vhdi_flush_callback('/mnt/vol_NFS_rh003/estudiantes/DANIELA_VARGAS/Version_final/0516/versiones_finales/semana14/MemoriaHamming/TSMC_memoria_Hamming/FLOW/common/rtl/sverilog/results: undefined symbol: vhdi_flush_callback')
+ANF: vhdi_set_orig_name('/mnt/vol_NFS_rh003/estudiantes/DANIELA_VARGAS/Version_final/0516/versiones_finales/semana14/MemoriaHamming/TSMC_memoria_Hamming/FLOW/common/rtl/sverilog/results: undefined symbol: vhdi_set_orig_name')
+ANF: vhdi_set_dump_pt('/mnt/vol_NFS_rh003/estudiantes/DANIELA_VARGAS/Version_final/0516/versiones_finales/semana14/MemoriaHamming/TSMC_memoria_Hamming/FLOW/common/rtl/sverilog/results: undefined symbol: vhdi_set_dump_pt')
+ANF: vhdi_get_fsdb_option('/mnt/vol_NFS_rh003/estudiantes/DANIELA_VARGAS/Version_final/0516/versiones_finales/semana14/MemoriaHamming/TSMC_memoria_Hamming/FLOW/common/rtl/sverilog/results: undefined symbol: vhdi_get_fsdb_option')
+ANF: vhdi_fgp_get_mode('/mnt/vol_NFS_rh003/estudiantes/DANIELA_VARGAS/Version_final/0516/versiones_finales/semana14/MemoriaHamming/TSMC_memoria_Hamming/FLOW/common/rtl/sverilog/results: undefined symbol: vhdi_fgp_get_mode')
+ANF: vhdi_node_register_composite_var('/mnt/vol_NFS_rh003/estudiantes/DANIELA_VARGAS/Version_final/0516/versiones_finales/semana14/MemoriaHamming/TSMC_memoria_Hamming/FLOW/common/rtl/sverilog/results: undefined symbol: vhdi_node_register_composite_var')
+ANF: vhdi_node_analysis('/mnt/vol_NFS_rh003/estudiantes/DANIELA_VARGAS/Version_final/0516/versiones_finales/semana14/MemoriaHamming/TSMC_memoria_Hamming/FLOW/common/rtl/sverilog/results: undefined symbol: vhdi_node_analysis')
+ANF: vhdi_node_id('/mnt/vol_NFS_rh003/estudiantes/DANIELA_VARGAS/Version_final/0516/versiones_finales/semana14/MemoriaHamming/TSMC_memoria_Hamming/FLOW/common/rtl/sverilog/results: undefined symbol: vhdi_node_id')
+ANF: vhdi_node_ist_check_scsd_callback('/mnt/vol_NFS_rh003/estudiantes/DANIELA_VARGAS/Version_final/0516/versiones_finales/semana14/MemoriaHamming/TSMC_memoria_Hamming/FLOW/common/rtl/sverilog/results: undefined symbol: vhdi_node_ist_check_scsd_callback')
+ANF: vhdi_node_ist_add_scsd_callback('/mnt/vol_NFS_rh003/estudiantes/DANIELA_VARGAS/Version_final/0516/versiones_finales/semana14/MemoriaHamming/TSMC_memoria_Hamming/FLOW/common/rtl/sverilog/results: undefined symbol: vhdi_node_ist_add_scsd_callback')
+ANF: vhdi_node_ist_get_value_addr('/mnt/vol_NFS_rh003/estudiantes/DANIELA_VARGAS/Version_final/0516/versiones_finales/semana14/MemoriaHamming/TSMC_memoria_Hamming/FLOW/common/rtl/sverilog/results: undefined symbol: vhdi_node_ist_get_value_addr')
+ANF: vhdi_enc_def_traverse_module('/mnt/vol_NFS_rh003/estudiantes/DANIELA_VARGAS/Version_final/0516/versiones_finales/semana14/MemoriaHamming/TSMC_memoria_Hamming/FLOW/common/rtl/sverilog/results: undefined symbol: vhdi_enc_def_traverse_module')
+ANF: vhdi_enc_def_traverse_scope('/mnt/vol_NFS_rh003/estudiantes/DANIELA_VARGAS/Version_final/0516/versiones_finales/semana14/MemoriaHamming/TSMC_memoria_Hamming/FLOW/common/rtl/sverilog/results: undefined symbol: vhdi_enc_def_traverse_scope')
+ANF: vhdi_enc_def_traverse_variable('/mnt/vol_NFS_rh003/estudiantes/DANIELA_VARGAS/Version_final/0516/versiones_finales/semana14/MemoriaHamming/TSMC_memoria_Hamming/FLOW/common/rtl/sverilog/results: undefined symbol: vhdi_enc_def_traverse_variable')
+ANF: vhdi_enc_ist_traverse_scope('/mnt/vol_NFS_rh003/estudiantes/DANIELA_VARGAS/Version_final/0516/versiones_finales/semana14/MemoriaHamming/TSMC_memoria_Hamming/FLOW/common/rtl/sverilog/results: undefined symbol: vhdi_enc_ist_traverse_scope')
+ANF: vhdi_enc_ist_traverse_variable('/mnt/vol_NFS_rh003/estudiantes/DANIELA_VARGAS/Version_final/0516/versiones_finales/semana14/MemoriaHamming/TSMC_memoria_Hamming/FLOW/common/rtl/sverilog/results: undefined symbol: vhdi_enc_ist_traverse_variable')
+ANF: vhdi_enc_ist_get_module_id('/mnt/vol_NFS_rh003/estudiantes/DANIELA_VARGAS/Version_final/0516/versiones_finales/semana14/MemoriaHamming/TSMC_memoria_Hamming/FLOW/common/rtl/sverilog/results: undefined symbol: vhdi_enc_ist_get_module_id')
+ANF: vhdi_enc_def_get_handle_by_module_id('/mnt/vol_NFS_rh003/estudiantes/DANIELA_VARGAS/Version_final/0516/versiones_finales/semana14/MemoriaHamming/TSMC_memoria_Hamming/FLOW/common/rtl/sverilog/results: undefined symbol: vhdi_enc_def_get_handle_by_module_id')
 VCS compile option:
- option[0]: /mnt/vol_NFS_rh003/estudiantes/DANIELA_VARGAS/Version_final/0516/versiones_finales/Memoria/TSMC_memoria_Hamming/FLOW/common/rtl/sverilog/prueba_3
+ option[0]: /mnt/vol_NFS_rh003/estudiantes/DANIELA_VARGAS/Version_final/0516/versiones_finales/semana14/MemoriaHamming/TSMC_memoria_Hamming/FLOW/common/rtl/sverilog/results
  option[1]: -sml=verdi
  option[2]: +UVM_VERDI_TRACE=UVM_AWARE
  option[3]: +fsdb+gate=off
  option[4]: -ucli2Proc
  option[5]: -ucli
  option[6]: -l
- option[7]: /mnt/vol_NFS_rh003/estudiantes/DANIELA_VARGAS/Version_final/0516/versiones_finales/Memoria/TSMC_memoria_Hamming/FLOW/common/rtl/sverilog/verdiLog/sim.log
+ option[7]: /mnt/vol_NFS_rh003/estudiantes/DANIELA_VARGAS/Version_final/0516/versiones_finales/semana14/MemoriaHamming/TSMC_memoria_Hamming/FLOW/common/rtl/sverilog/verdiLog/sim.log
  option[8]: /mnt/vol_NFS_rh003/tools/vcs/R-2020.12-SP2/linux64/bin/vcs1
  option[9]: -Mcc=gcc
  option[10]: -Mcplusplus=g++
@@ -97,7 +97,7 @@ VCS compile option:
  option[13]: -Mxllcflags=
  option[14]: -Mxcflags= -pipe -fPIC -I/mnt/vol_NFS_rh003/tools/vcs/R-2020.12-SP2/include
  option[15]: -Mldflags= -rdynamic 
- option[16]: -Mout=prueba_3
+ option[16]: -Mout=results
  option[17]: -Mamsrun=
  option[18]: -Mvcsaceobjs=
  option[19]: -Mobjects= /mnt/vol_NFS_rh003/tools/vcs/R-2020.12-SP2/linux64/lib/libvirsim.so /mnt/vol_NFS_rh003/tools/vcs/R-2020.12-SP2/linux64/lib/liberrorinf.so /mnt/vol_NFS_rh003/tools/vcs/R-2020.12-SP2/linux64/lib/libsnpsmalloc.so /mnt/vol_NFS_rh003/tools/vcs/R-2020.12-SP2/linux64/lib/libvfs.so 
@@ -111,7 +111,7 @@ VCS compile option:
  option[27]: -l
  option[28]: log_test
  option[29]: -o
- option[30]: prueba_3
+ option[30]: results
  option[31]: -full64
  option[32]: -kdb
  option[33]: -Xufe=2steps
@@ -130,7 +130,7 @@ VCS compile option:
  option[46]: -fsdb
  option[47]: -sverilog
  option[48]: -gen_obj
- option[49]: tb_prueba3.sv
+ option[49]: tb_prueba2TMR.sv
  option[50]: -v
  option[51]: /mnt/vol_NFS_rh003/profesores/pmendoza/KITS/TSMCHOME/digital/Front_End/verilog/tcbn65lphpbwpcghvt_200a/tcbn65lphpbwpcghvt.v
  option[52]: -v
@@ -170,7 +170,7 @@ DISPLAY=:2
 VNCDESKTOP=redhat003:2 (VARGAS_CHAVARRIA_2025)
 HOSTNAME=redhat003
 VCS_STACK_EXEC=true
-OLDPWD=/mnt/vol_NFS_rh003/estudiantes/DANIELA_VARGAS/Version_final/0516/versiones_finales/Memoria/TSMC_memoria_Hamming/FLOW
+OLDPWD=/mnt/vol_NFS_rh003/estudiantes/DANIELA_VARGAS/Version_final/0516/versiones_finales/semana14/Votador_TMR_V2/TSMC_TMR_v1/FLOW/fc_flow/results
 EDITOR=gedit
 COLORTERM=truecolor
 SYNOPSYS_HOME=/mnt/vol_NFS_rh003/tools
@@ -184,7 +184,7 @@ USER=VARGAS_CHAVARRIA_2025
 VCS_EXEC_DONE=1
 GNOME_TERMINAL_SCREEN=/org/gnome/Terminal/screen/975d20d9_5ce0_416c_9530_3bda654c4b6a
 VCPS_HOME=/mnt/vol_synopsys2023/synopsys/vcps/U-2023.03-SP2-2
-PWD=/mnt/vol_NFS_rh003/estudiantes/DANIELA_VARGAS/Version_final/0516/versiones_finales/Memoria/TSMC_memoria_Hamming/FLOW/common/rtl/sverilog
+PWD=/mnt/vol_NFS_rh003/estudiantes/DANIELA_VARGAS/Version_final/0516/versiones_finales/semana14/MemoriaHamming/TSMC_memoria_Hamming/FLOW/common/rtl/sverilog
 SSH_ASKPASS=/usr/libexec/openssh/gnome-ssh-askpass
 HOME=/home/VARGAS_CHAVARRIA_2025
 DESIGN_HOME=/mnt/vol_NFS_rh003/estudiantes/DANIELA_VARGAS/Version_final/0516/versiones_finales/Registro/TSMC_Hamming_8_version2/FLOW/fc_flow/flow/work
@@ -327,7 +327,7 @@ BASH_FUNC_ml%%=() {  module ml "$@"
 }
 PS_HWPC=OFF
 NOVAS_LC_ALL=C
-SIMV_DAIDIR_PATH=/mnt/vol_NFS_rh003/estudiantes/DANIELA_VARGAS/Version_final/0516/versiones_finales/Memoria/TSMC_memoria_Hamming/FLOW/common/rtl/sverilog/./prueba_3.daidir
+SIMV_DAIDIR_PATH=/mnt/vol_NFS_rh003/estudiantes/DANIELA_VARGAS/Version_final/0516/versiones_finales/semana14/MemoriaHamming/TSMC_memoria_Hamming/FLOW/common/rtl/sverilog/./results.daidir
 NOVAS_SIGNAL_BASE_EXTRACTION=1
 SIGNAL_BASE_EXTRACTION=1
 NOVAS_VERDI_SVTB_BETA=1
@@ -344,7 +344,7 @@ XKEYSYMDB=/mnt/vol_NFS_rh003/tools/verdi/R-2020.12-SP2/etc/access/XKeysymDB2.1
 XLOCALEDIR=/mnt/vol_NFS_rh003/tools/verdi/R-2020.12-SP2/etc/access/locale
 NOVAS_SIGNAL_BASED_BA=0
 SIGNAL_BASED_BA=0
-FSDB_FILE=/mnt/vol_NFS_rh003/estudiantes/DANIELA_VARGAS/Version_final/0516/versiones_finales/Memoria/TSMC_memoria_Hamming/FLOW/common/rtl/sverilog/inter.fsdb
+FSDB_FILE=/mnt/vol_NFS_rh003/estudiantes/DANIELA_VARGAS/Version_final/0516/versiones_finales/semana14/MemoriaHamming/TSMC_memoria_Hamming/FLOW/common/rtl/sverilog/inter.fsdb
 VCS_UCLI_STDIN_BLOCKING=1
 FSDB_VHDL_PROTECTED=1
 FSDB_RD_IR_ENABLE=1
@@ -353,19 +353,19 @@ VCS_STOP_SAFE=1
 DVE_SIM_SELECT_LOOP=on
 FLEXLM_BORROWFILE=/home/VARGAS_CHAVARRIA_2025/.redhat003-borrow.txt
 Runtime command line arguments:
-argv[0]=/mnt/vol_NFS_rh003/estudiantes/DANIELA_VARGAS/Version_final/0516/versiones_finales/Memoria/TSMC_memoria_Hamming/FLOW/common/rtl/sverilog/prueba_3
+argv[0]=/mnt/vol_NFS_rh003/estudiantes/DANIELA_VARGAS/Version_final/0516/versiones_finales/semana14/MemoriaHamming/TSMC_memoria_Hamming/FLOW/common/rtl/sverilog/results
 argv[1]=-sml=verdi
 argv[2]=+UVM_VERDI_TRACE=UVM_AWARE
 argv[3]=+fsdb+gate=off
 argv[4]=-ucli2Proc
 argv[5]=-ucli
 argv[6]=-l
-argv[7]=/mnt/vol_NFS_rh003/estudiantes/DANIELA_VARGAS/Version_final/0516/versiones_finales/Memoria/TSMC_memoria_Hamming/FLOW/common/rtl/sverilog/verdiLog/sim.log
+argv[7]=/mnt/vol_NFS_rh003/estudiantes/DANIELA_VARGAS/Version_final/0516/versiones_finales/semana14/MemoriaHamming/TSMC_memoria_Hamming/FLOW/common/rtl/sverilog/verdiLog/sim.log
 280 profile - 100
           CPU/Mem usage: 0.010 sys,  0.040 user,  316.45M mem
-281 Elapsed time:    0:00:02    Wed May 21 01:18:33 2025
+281 Elapsed time:    0:00:10    Mon Jun  2 18:49:56 2025
 282 pliAppInit
-283 ndpGetenv(FSDB_FILE): /mnt/vol_NFS_rh003/estudiantes/DANIELA_VARGAS/Version_final/0516/versiones_finales/Memoria/TSMC_memoria_Hamming/FLOW/common/rtl/sverilog/inter.fsdb
+283 ndpGetenv(FSDB_FILE): /mnt/vol_NFS_rh003/estudiantes/DANIELA_VARGAS/Version_final/0516/versiones_finales/semana14/MemoriaHamming/TSMC_memoria_Hamming/FLOW/common/rtl/sverilog/inter.fsdb
 284 ndpGetenv(FSDB_SVA_STATUS): 1
 285 ndpGetenv(FSDB_VHDL_PROTECTED): 1
 286 [SC]Init: MemoryConsumed=0.00MB ElapsedTime=0hour 0min. 0sec.
@@ -379,12 +379,12 @@ argv[7]=/mnt/vol_NFS_rh003/estudiantes/DANIELA_VARGAS/Version_final/0516/version
 294 FSDB Dumper for VCS, Release Verdi_R-2020.12-SP2, Linux x86_64/64bit, 05/23/2021
 295 (C) 1996 - 2021 by Synopsys, Inc.
 296 sps_tcl_fsdbDumpfile_main at 0
-297 argv[0]: /mnt/vol_NFS_rh003/estudiantes/DANIELA_VARGAS/Version_final/0516/versiones_finales/Memoria/TSMC_memoria_Hamming/FLOW/common/rtl/sverilog/inter.fsdb
-298 *Verdi* : Create FSDB file '/mnt/vol_NFS_rh003/estudiantes/DANIELA_VARGAS/Version_final/0516/versiones_finales/Memoria/TSMC_memoria_Hamming/FLOW/common/rtl/sverilog/inter.fsdb'
+297 argv[0]: /mnt/vol_NFS_rh003/estudiantes/DANIELA_VARGAS/Version_final/0516/versiones_finales/semana14/MemoriaHamming/TSMC_memoria_Hamming/FLOW/common/rtl/sverilog/inter.fsdb
+298 *Verdi* : Create FSDB file '/mnt/vol_NFS_rh003/estudiantes/DANIELA_VARGAS/Version_final/0516/versiones_finales/semana14/MemoriaHamming/TSMC_memoria_Hamming/FLOW/common/rtl/sverilog/inter.fsdb'
 299 [spi_vcs_vd_ppi_create_root]: no upf option
 300 FSDB dumper cannot dump UPF related power signal ($power_tree): no ppiPowerNetwork.
-301 compile option from '/mnt/vol_NFS_rh003/estudiantes/DANIELA_VARGAS/Version_final/0516/versiones_finales/Memoria/TSMC_memoria_Hamming/FLOW/common/rtl/sverilog/prueba_3.daidir/vcs_rebuild'.
-302   "vcs '-Mupdate' 'tb_prueba3.sv' '-v' '/mnt/vol_NFS_rh003/profesores/pmendoza/KITS/TSMCHOME/digital/Front_End/verilog/tcbn65lphpbwpcghvt_200a/tcbn65lphpbwpcghvt.v' '-v' '/mnt/vol_NFS_rh003/profesores/pmendoza/KITS/TSMCHOME/digital/Front_End/verilog/tcbn65lphpbwp_140a/tcbn65lphpbwp.v' '-o' 'prueba_3' '-full64' '-sverilog' '-kdb' '-lca' '-debug_acc+all' '-debug_region+cell+encrypt' '-l' 'log_test' '+lint=TFIPC-L' '-cm' 'line+tgl+cond+fsm+branch+assert' 2>&1"
+301 compile option from '/mnt/vol_NFS_rh003/estudiantes/DANIELA_VARGAS/Version_final/0516/versiones_finales/semana14/MemoriaHamming/TSMC_memoria_Hamming/FLOW/common/rtl/sverilog/results.daidir/vcs_rebuild'.
+302   "vcs '-Mupdate' 'tb_prueba2TMR.sv' '-v' '/mnt/vol_NFS_rh003/profesores/pmendoza/KITS/TSMCHOME/digital/Front_End/verilog/tcbn65lphpbwpcghvt_200a/tcbn65lphpbwpcghvt.v' '-v' '/mnt/vol_NFS_rh003/profesores/pmendoza/KITS/TSMCHOME/digital/Front_End/verilog/tcbn65lphpbwp_140a/tcbn65lphpbwp.v' '-o' 'results' '-full64' '-sverilog' '-kdb' '-lca' '-debug_acc+all' '-debug_region+cell+encrypt' '-l' 'log_test' '+lint=TFIPC-L' '-cm' 'line+tgl+cond+fsm+branch+assert' 2>&1"
 303 sps_tcl_fsdbDumpflush_vd_main at 0 : N/A(0)
 304 *Verdi* : Flush all FSDB Files at 0 ps.
 305 sps_tcl_fsdbDumpflush_vd_main at 0 : N/A(0)
@@ -393,83 +393,151 @@ argv[7]=/mnt/vol_NFS_rh003/estudiantes/DANIELA_VARGAS/Version_final/0516/version
 308 FSDB_VCS_ENABLE_NATIVE_VC is enable
 309 sps_tcl_fsdbDumpvars_vd_main
 310 argv[0]: 1
-311 argv[1]: tb_sram_2kbit.dut.enable
+311 argv[1]: tb_sram_2kbit.dut
 312 argv[2]: +all
 313 argv[3]: +trace_process
-314 *Verdi* : Dumping the signal (tb_sram_2kbit.dut.enable).
-315 pliAppHDL_DumpVarComplete traverse var: profile - 
-          CPU/Mem usage: 0.230 sys,  0.180 user,  429.78M mem
-                   incr: 0.000 sys,  0.000 user,  2.24M mem
-                   accu: 0.000 sys,  0.000 user,  2.24M mem
-              accu incr: 0.000 sys,  0.000 user,  2.24M mem
+314 *Verdi* : Begin traversing the scope (tb_sram_2kbit.dut), layer (1).
+315 *Verdi* : Enable +trace_process and +all dumping.
+316 *Verdi* : End of traversing.
+317 pliAppHDL_DumpVarComplete traverse var: profile - 
+          CPU/Mem usage: 0.030 sys,  0.050 user,  430.63M mem
+                   incr: 0.000 sys,  0.010 user,  3.36M mem
+                   accu: 0.000 sys,  0.010 user,  3.36M mem
+              accu incr: 0.000 sys,  0.010 user,  3.36M mem
 
-          Count usage: 0 var,  1 idcode,  1 callback
-                 incr: 0 var,  1 idcode,  1 callback
-                 accu: 0 var,  1 idcode,  1 callback
-            accu incr: 0 var,  1 idcode,  1 callback
-316 Elapsed time:    0:01:48    Wed May 21 01:20:19 2025
-317 pliAppHDL_DumpVarComplete: profile - 
-          CPU/Mem usage: 0.230 sys,  0.180 user,  430.83M mem
+          Count usage: 277 var,  277 idcode,  22 callback
+                 incr: 277 var,  277 idcode,  22 callback
+                 accu: 277 var,  277 idcode,  22 callback
+            accu incr: 277 var,  277 idcode,  22 callback
+318 Elapsed time:    0:01:55    Mon Jun  2 18:51:41 2025
+319 pliAppHDL_DumpVarComplete: profile - 
+          CPU/Mem usage: 0.030 sys,  0.050 user,  431.68M mem
                    incr: 0.000 sys,  0.000 user,  1.05M mem
-                   accu: 0.000 sys,  0.000 user,  3.30M mem
+                   accu: 0.000 sys,  0.010 user,  4.42M mem
               accu incr: 0.000 sys,  0.000 user,  1.05M mem
 
-          Count usage: 0 var,  1 idcode,  1 callback
+          Count usage: 277 var,  277 idcode,  22 callback
                  incr: 0 var,  0 idcode,  0 callback
-                 accu: 0 var,  1 idcode,  1 callback
+                 accu: 277 var,  277 idcode,  22 callback
             accu incr: 0 var,  0 idcode,  0 callback
-318 Elapsed time:    0:01:48    Wed May 21 01:20:19 2025
-319 sps_tcl_fsdbDumpflush_vd_main at 0 : N/A(0)
-320 *Verdi* : Flush all FSDB Files at 0 ps.
-321 sps_tcl_fsdbDumpvars_vd_main
-322 argv[0]: 1
-323 argv[1]: tb_sram_2kbit.dut.write_back
-324 argv[2]: +all
-325 argv[3]: +trace_process
-326 *Verdi* : Dumping the signal (tb_sram_2kbit.dut.write_back).
-327 pliAppHDL_DumpVarComplete traverse var: profile - 
-          CPU/Mem usage: 0.310 sys,  0.240 user,  432.55M mem
+320 Elapsed time:    0:01:55    Mon Jun  2 18:51:41 2025
+321 sps_tcl_fsdbDumpflush_vd_main at 0 : N/A(0)
+322 *Verdi* : Flush all FSDB Files at 0 ps.
+323 sps_tcl_fsdbDumpvars_vd_main
+324 argv[0]: 1
+325 argv[1]: tb_sram_2kbit.dut.syndrome_hight
+326 argv[2]: +all
+327 argv[3]: +trace_process
+328 *Verdi* : Begin traversing the scope (tb_sram_2kbit.dut.syndrome_hight), layer (1).
+329 *Verdi* : Enable +trace_process and +all dumping.
+330 *Verdi* : End of traversing.
+331 pliAppHDL_DumpVarComplete traverse var: profile - 
+          CPU/Mem usage: 0.060 sys,  0.070 user,  433.43M mem
+                   incr: 0.000 sys,  0.000 user,  0.16M mem
+                   accu: 0.000 sys,  0.000 user,  0.16M mem
+              accu incr: 0.000 sys,  0.000 user,  0.16M mem
+
+          Count usage: 280 var,  280 idcode,  25 callback
+                 incr: 3 var,  3 idcode,  3 callback
+                 accu: 3 var,  3 idcode,  3 callback
+            accu incr: 3 var,  3 idcode,  3 callback
+332 Elapsed time:    0:03:06    Mon Jun  2 18:52:52 2025
+333 pliAppHDL_DumpVarComplete: profile - 
+          CPU/Mem usage: 0.060 sys,  0.070 user,  433.43M mem
+                   incr: 0.000 sys,  0.000 user,  0.00M mem
+                   accu: 0.000 sys,  0.000 user,  0.16M mem
+              accu incr: 0.000 sys,  0.000 user,  0.00M mem
+
+          Count usage: 280 var,  280 idcode,  25 callback
+                 incr: 0 var,  0 idcode,  0 callback
+                 accu: 3 var,  3 idcode,  3 callback
+            accu incr: 0 var,  0 idcode,  0 callback
+334 Elapsed time:    0:03:06    Mon Jun  2 18:52:52 2025
+335 sps_tcl_fsdbDumpflush_vd_main at 0 : N/A(0)
+336 *Verdi* : Flush all FSDB Files at 0 ps.
+337 sps_tcl_fsdbDumpvars_vd_main
+338 argv[0]: 1
+339 argv[1]: tb_sram_2kbit.dut.syndrome_hight
+340 argv[2]: +all
+341 argv[3]: +trace_process
+342 *Verdi* : Begin traversing the scope (tb_sram_2kbit.dut.syndrome_hight), layer (1).
+343 *Verdi* : Enable +trace_process and +all dumping.
+344 *Verdi* : End of traversing.
+345 pliAppHDL_DumpVarComplete traverse var: profile - 
+          CPU/Mem usage: 0.060 sys,  0.070 user,  433.43M mem
                    incr: 0.000 sys,  0.000 user,  0.00M mem
                    accu: 0.000 sys,  0.000 user,  0.00M mem
               accu incr: 0.000 sys,  0.000 user,  0.00M mem
 
-          Count usage: 0 var,  2 idcode,  2 callback
-                 incr: 0 var,  1 idcode,  1 callback
-                 accu: 0 var,  1 idcode,  1 callback
-            accu incr: 0 var,  1 idcode,  1 callback
-328 Elapsed time:    0:01:54    Wed May 21 01:20:25 2025
-329 pliAppHDL_DumpVarComplete: profile - 
-          CPU/Mem usage: 0.310 sys,  0.240 user,  432.55M mem
+          Count usage: 283 var,  280 idcode,  25 callback
+                 incr: 3 var,  0 idcode,  0 callback
+                 accu: 3 var,  0 idcode,  0 callback
+            accu incr: 3 var,  0 idcode,  0 callback
+346 Elapsed time:    0:03:19    Mon Jun  2 18:53:05 2025
+347 pliAppHDL_DumpVarComplete: profile - 
+          CPU/Mem usage: 0.060 sys,  0.070 user,  433.43M mem
                    incr: 0.000 sys,  0.000 user,  0.00M mem
                    accu: 0.000 sys,  0.000 user,  0.00M mem
               accu incr: 0.000 sys,  0.000 user,  0.00M mem
 
-          Count usage: 0 var,  2 idcode,  2 callback
+          Count usage: 283 var,  280 idcode,  25 callback
                  incr: 0 var,  0 idcode,  0 callback
-                 accu: 0 var,  1 idcode,  1 callback
+                 accu: 3 var,  0 idcode,  0 callback
             accu incr: 0 var,  0 idcode,  0 callback
-330 Elapsed time:    0:01:54    Wed May 21 01:20:25 2025
-331 sps_tcl_fsdbDumpflush_vd_main at 0 : N/A(0)
-332 *Verdi* : Flush all FSDB Files at 0 ps.
-333 sps_tcl_fsdbDumpflush_vd_main at 325000 : N/A(0)
-334 *Verdi* : Flush all FSDB Files at 325,000 ps.
-335 End of simulation at 325000
-336 Memory usage: 432.706 M
-337 Elapsed time:    0:07:43    Wed May 21 01:26:14 2025
-338 Begin FSDB profile info:
-339 FSDB Writer : bc1(9) bcn(0) mtf/stf(0/5)
-FSDB Writer elapsed time : flush(0.015548) io wait(0.000000) theadpool wait(0.000000)
+348 Elapsed time:    0:03:19    Mon Jun  2 18:53:05 2025
+349 sps_tcl_fsdbDumpflush_vd_main at 0 : N/A(0)
+350 *Verdi* : Flush all FSDB Files at 0 ps.
+351 sps_tcl_fsdbDumpvars_vd_main
+352 argv[0]: 1
+353 argv[1]: tb_sram_2kbit.dut.syndrome_low
+354 argv[2]: +all
+355 argv[3]: +trace_process
+356 *Verdi* : Begin traversing the scope (tb_sram_2kbit.dut.syndrome_low), layer (1).
+357 *Verdi* : Enable +trace_process and +all dumping.
+358 *Verdi* : End of traversing.
+359 pliAppHDL_DumpVarComplete traverse var: profile - 
+          CPU/Mem usage: 0.060 sys,  0.070 user,  433.43M mem
+                   incr: 0.000 sys,  0.000 user,  0.00M mem
+                   accu: 0.000 sys,  0.000 user,  0.00M mem
+              accu incr: 0.000 sys,  0.000 user,  0.00M mem
+
+          Count usage: 286 var,  283 idcode,  28 callback
+                 incr: 3 var,  3 idcode,  3 callback
+                 accu: 3 var,  3 idcode,  3 callback
+            accu incr: 3 var,  3 idcode,  3 callback
+360 Elapsed time:    0:03:25    Mon Jun  2 18:53:11 2025
+361 pliAppHDL_DumpVarComplete: profile - 
+          CPU/Mem usage: 0.060 sys,  0.070 user,  433.43M mem
+                   incr: 0.000 sys,  0.000 user,  0.00M mem
+                   accu: 0.000 sys,  0.000 user,  0.00M mem
+              accu incr: 0.000 sys,  0.000 user,  0.00M mem
+
+          Count usage: 286 var,  283 idcode,  28 callback
+                 incr: 0 var,  0 idcode,  0 callback
+                 accu: 3 var,  3 idcode,  3 callback
+            accu incr: 0 var,  0 idcode,  0 callback
+362 Elapsed time:    0:03:25    Mon Jun  2 18:53:11 2025
+363 sps_tcl_fsdbDumpflush_vd_main at 0 : N/A(0)
+364 *Verdi* : Flush all FSDB Files at 0 ps.
+365 sps_tcl_fsdbDumpflush_vd_main at 295000 : N/A(0)
+366 *Verdi* : Flush all FSDB Files at 295,000 ps.
+367 End of simulation at 295000
+368 Memory usage: 433.611 M
+369 Elapsed time:    0:29:49    Mon Jun  2 19:19:35 2025
+370 Begin FSDB profile info:
+371 FSDB Writer : bc1(79) bcn(1215) mtf/stf(0/7)
+FSDB Writer elapsed time : flush(0.019960) io wait(0.000000) theadpool wait(0.000000)
 FSDB Writer cpu time : MT Compression : 0
-340 End FSDB profile info
-341 FSDB closed. Name: /mnt/vol_NFS_rh003/estudiantes/DANIELA_VARGAS/Version_final/0516/versiones_finales/Memoria/TSMC_memoria_Hamming/FLOW/common/rtl/sverilog/inter.fsdb Size: 9064
-342 Parallel profile     - ProducerThread:1 ConsumerThread:1 Buffer:64MB
-343                      - BlockUsed:1 Acquire:14 BufferUsed:175
-344                      - Flush:9 Expand:0 ProducerWait:0 ConsumerWait:0
-345                      - MainProducerTime:0.659306759 TotalConsumerTime:0.000000000
-346                      - ElapsedTime:461.939757000
-347 Producer   0 profile - BlockUsed:1 Acquire:14 BufferUsed:175
-348 Consumer   0 profile - Affinity:-1 CPUTime:0.000000000 LifeTime:0.000000000 (-nan%)
-349                      - BlockUsed:1 Acquire:14 BufferUsed:175
-350 SimExit
-351 Elapsed time:    0:07:44    Wed May 21 01:26:15 2025
-352 Sim process exit
+372 End FSDB profile info
+373 FSDB closed. Name: /mnt/vol_NFS_rh003/estudiantes/DANIELA_VARGAS/Version_final/0516/versiones_finales/semana14/MemoriaHamming/TSMC_memoria_Hamming/FLOW/common/rtl/sverilog/inter.fsdb Size: 11762
+374 Parallel profile     - ProducerThread:1 ConsumerThread:1 Buffer:64MB
+375                      - BlockUsed:1 Acquire:299 BufferUsed:4222
+376                      - Flush:13 Expand:0 ProducerWait:0 ConsumerWait:0
+377                      - MainProducerTime:0.161954356 TotalConsumerTime:0.000000000
+378                      - ElapsedTime:1778.671193000
+379 Producer   0 profile - BlockUsed:1 Acquire:299 BufferUsed:4222
+380 Consumer   0 profile - Affinity:-1 CPUTime:0.000000000 LifeTime:0.000000000 (-nan%)
+381                      - BlockUsed:1 Acquire:299 BufferUsed:4222
+382 SimExit
+383 Elapsed time:    0:29:49    Mon Jun  2 19:19:35 2025
+384 Sim process exit
