@@ -1,0 +1,56 @@
+Warning: Scenario scenarioFF is not configured for setup analysis: skipping. (UIC-058)
+****************************************
+Report : timing
+        -path_type full
+        -delay_type max
+        -max_paths 1
+        -report_by design
+Design : top
+Version: U-2022.12-SP6
+Date   : Thu Jun  5 10:51:25 2025
+****************************************
+
+  Startpoint: counter_and_parity/count_reg_reg[2] (rising edge-triggered flip-flop clocked by SYS_CLK)
+  Endpoint: syndrome_inst/corrected_counter_reg[2] (rising edge-triggered flip-flop clocked by SYS_CLK)
+  Mode: mode1
+  Corner: cornerSS
+  Scenario: scenarioSS
+  Path Group: SYS_CLK
+  Path Type: max
+
+  Point                                            Incr      Path  
+  ------------------------------------------------------------------------
+  clock SYS_CLK (rise edge)                        0.00      0.00
+  clock network delay (ideal)                      0.00      0.00
+
+  counter_and_parity/count_reg_reg[2]/CP (SDFCND0HPBWP)
+                                                   0.00      0.00 r
+  counter_and_parity/count_reg_reg[2]/Q (SDFCND0HPBWP)
+                                                   0.45      0.45 r
+  syndrome_inst/ctmi_71/ZN (MAOI22D0HPBWP)         0.25      0.70 r
+  syndrome_inst/ctmi_75/ZN (XNR3D0HPBWP)           0.32      1.02 f
+  syndrome_inst/ctmi_74/ZN (NR2XD0HPBWP)           0.10      1.12 r
+  syndrome_inst/ctmi_4/ZN (CKND1HPBWP)             0.08      1.20 f
+  syndrome_inst/ctmi_84/ZN (NR2XD0HPBWP)           0.08      1.28 r
+  syndrome_inst/ctmi_83/ZN (CKND2D1HPBWP)          0.08      1.36 f
+  syndrome_inst/ctmi_82/ZN (MAOI22D0HPBWP)         0.12      1.48 f
+  syndrome_inst/ctmi_81/ZN (NR2XD0HPBWP)           0.07      1.56 r
+  syndrome_inst/corrected_counter_reg[2]/D (SDFCNQD0HPBWP)
+                                                   0.00      1.56 r
+  data arrival time                                          1.56
+
+  clock SYS_CLK (rise edge)                       10.00     10.00
+  clock network delay (ideal)                      0.00     10.00
+  syndrome_inst/corrected_counter_reg[2]/CP (SDFCNQD0HPBWP)
+                                                   0.00     10.00 r
+  clock uncertainty                               -0.30      9.70
+  library setup time                              -0.07      9.63
+  data required time                                         9.63
+  ------------------------------------------------------------------------
+  data required time                                         9.63
+  data arrival time                                         -1.56
+  ------------------------------------------------------------------------
+  slack (MET)                                                8.07
+
+
+1

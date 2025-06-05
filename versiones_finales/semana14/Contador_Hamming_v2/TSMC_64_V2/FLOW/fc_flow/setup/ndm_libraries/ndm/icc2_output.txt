@@ -1,0 +1,67 @@
+ 
+                              IC Compiler II (TM)
+
+             Version R-2020.09-SP6 for linux64 - May 17, 2021 -SLE
+
+                    Copyright (c) 1988 - 2021 Synopsys, Inc.
+   This software and the associated documentation are proprietary to Synopsys,
+ Inc. This software may only be used in accordance with the terms and conditions
+ of a written license agreement with Synopsys, Inc. All other use, reproduction,
+   or distribution of this software is strictly prohibited.  Licensed Products
+     communicate with Synopsys servers for the purpose of providing software
+    updates, detecting software piracy and verifying that customers are using
+    Licensed Products in conformity with the applicable License Key for such
+  Licensed Products. Synopsys will use information gathered in connection with
+    this process to deliver software updates and pursue software pirates and
+                                   infringers.
+
+ Inclusivity & Diversity - Visit SolvNetPlus to read the "Synopsys Statement on
+            Inclusivity and Diversity" (Refer to article 000036315 at
+                        https://solvnetplus.synopsys.com)
+
+Warning: Cannot use command line editor for terminal type 'xterm-256color'. (CLE-100)
+Load ICV ICCII menu file: /mnt/vol_NFS_rh003/synopsys_tools/synopsys/icvalidator/R-2020.09-SP3-8/etc/tcl-u/Icc2Menu.tcl
+ + VUE INFO: Please click View->IC Validator VUE in LayoutWindow menu
+            to launch VUE.
+
+ + VUE INFO: Found a usable port: 2446
+
+icc2_shell> ls
+.                                    my_workspace_tpdn65lpgv2od3_sd.ndm
+..                                   my_workspace_tpfn65lpgv2od3.ndm
+PreFrameCheck                        tcbn65lphpbwp_physical_only.ndm
+check_workspace.ems                  tcbn65lphpbwpcghvt_physical_only.ndm
+icc2_command.log                     tcbn65lphpbwpcghvtml.ndm
+icc2_output.txt                      tcbn65lphpbwpml.ndm
+lm_command.log                       tpdn65lpgv2od3_sd_physical_only.ndm
+lm_output.txt                        tpdn65lpgv2od3_sdml.ndm
+memoria_lef.ndm                      tpfn65lpgv2od3_physical_only.ndm
+my_workspace_tcbn65lphpbwp.ndm       tpfn65lpgv2od3ml.ndm
+my_workspace_tcbn65lphpbwpcghvt.ndm  ts1n65lpa2048x32m4_140a_5m.ndm
+icc2_shell> create_lib -ref_libs {tcbn65lphpbwp_physical_only.ndm                       tcbn65lphpbwpcghvt_physical_only.ndm                       tcbn65lphpbwpcghvtml.ndm                       tcbn65lphpbwpml.ndm
+                      tpdn65lpgv2od3_sd_physical_only.ndm                       tpdn65lpgv2od3_sdml.ndm                       tpfn65lpgv2od3_physical_only.ndm                       tpfn65lpgv2od3ml.ndm                       ts1n65lpa2048x32m4_140a_5m.ndm} tcms_all_libs
+Warning: Technology used to create frame-view and current technology have inconsistency: Fat table contents are different. (FRAM-054)
+Warning: Technology 'tcbn65lphpbwpcghvt.tf' used for frame-view creation in library 'tcbn65lphpbwpcghvt_physical_only', is inconsistent with the current technology 'tcbn65lphpbwp.tf' of library 'tcms_all_libs'. (NDM-102)
+Warning: Technology used to create frame-view and current technology have inconsistency: Fat table contents are different. (FRAM-054)
+Warning: Technology 'tcbn65lphpbwpcghvt.tf' used for frame-view creation in library 'tcbn65lphpbwpcghvtml', is inconsistent with the current technology 'tcbn65lphpbwp.tf' of library 'tcms_all_libs'. (NDM-102)
+Warning: Technology used to create frame-view and current technology have inconsistency: Fat table contents are different. (FRAM-054)
+Warning: Technology 'tpdn65lpgv2od3_sd.tf' used for frame-view creation in library 'tpdn65lpgv2od3_sd_physical_only', is inconsistent with the current technology 'tcbn65lphpbwp.tf' of library 'tcms_all_libs'. (NDM-102)
+Warning: Technology used to create frame-view and current technology have inconsistency: Fat table contents are different. (FRAM-054)
+Warning: Technology 'tpdn65lpgv2od3_sd.tf' used for frame-view creation in library 'tpdn65lpgv2od3_sdml', is inconsistent with the current technology 'tcbn65lphpbwp.tf' of library 'tcms_all_libs'. (NDM-102)
+Warning: Technology used to create frame-view and current technology have inconsistency: Fat table contents are different. (FRAM-054)
+Warning: Technology 'tpfn65lpgv2od3.tf' used for frame-view creation in library 'tpfn65lpgv2od3_physical_only', is inconsistent with the current technology 'tcbn65lphpbwp.tf' of library 'tcms_all_libs'. (NDM-102)
+Warning: Technology used to create frame-view and current technology have inconsistency: Fat table contents are different. (FRAM-054)
+Warning: Technology 'tpfn65lpgv2od3.tf' used for frame-view creation in library 'tpfn65lpgv2od3ml', is inconsistent with the current technology 'tcbn65lphpbwp.tf' of library 'tcms_all_libs'. (NDM-102)
+Warning: Technology used to create frame-view and current technology have inconsistency: Fat table contents are different. (FRAM-054)
+Warning: Technology 'tsmcn65_9lmT2.tf' used for frame-view creation in library 'ts1n65lpa2048x32m4_140a_5m', is inconsistent with the current technology 'tcbn65lphpbwp.tf' of library 'tcms_all_libs'. (NDM-102)
+{tcms_all_libs}
+icc2_shell> change_selection [get_libs {ts1n65lpa2048x32m4_140a_5m}]
+icc2_shell> change_selection [get_libs {tcms_all_libs}]
+icc2_shell> change_selection [get_libs {tpfn65lpgv2od3_physical_only}]
+icc2_shell> exit
+Maximum memory usage for this session: 449.34 MB
+Maximum memory usage for this session including child processes: 449.34 MB
+CPU usage for this session:     19 seconds (  0.01 hours)
+Elapsed time for this session:    370 seconds (  0.10 hours)
+Thank you for using IC Compiler II.
+

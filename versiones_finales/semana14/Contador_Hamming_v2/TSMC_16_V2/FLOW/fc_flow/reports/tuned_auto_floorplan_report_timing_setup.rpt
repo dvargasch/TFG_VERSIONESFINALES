@@ -1,0 +1,64 @@
+Warning: Scenario scenarioFF is not configured for setup analysis: skipping. (UIC-058)
+****************************************
+Report : timing
+        -path_type full
+        -delay_type max
+        -max_paths 1
+        -report_by design
+Design : top
+Version: U-2022.12-SP6
+Date   : Thu Jun  5 14:59:24 2025
+****************************************
+
+  Startpoint: counter_and_parity/count_reg_reg[0] (rising edge-triggered flip-flop clocked by SYS_CLK)
+  Endpoint: counter_and_parity/count_reg_reg[15] (rising edge-triggered flip-flop clocked by SYS_CLK)
+  Mode: mode1
+  Corner: cornerSS
+  Scenario: scenarioSS
+  Path Group: SYS_CLK
+  Path Type: max
+
+  Point                                            Incr      Path  
+  ------------------------------------------------------------------------
+  clock SYS_CLK (rise edge)                        0.00      0.00
+  clock network delay (ideal)                      0.00      0.00
+
+  counter_and_parity/count_reg_reg[0]/CP (SDFCNQD1HPBWP)
+                                                   0.00      0.00 r
+  counter_and_parity/count_reg_reg[0]/Q (SDFCNQD1HPBWP)
+                                                   0.37      0.37 r
+  counter_and_parity/ctmi_494/ZN (ND2D1HPBWP)      0.12      0.49 f
+  counter_and_parity/ctmi_510/ZN (NR2XD0HPBWP)     0.10      0.60 r
+  counter_and_parity/ctmi_509/ZN (ND2D1HPBWP)      0.09      0.68 f
+  counter_and_parity/ctmi_508/ZN (NR2XD0HPBWP)     0.09      0.78 r
+  counter_and_parity/ctmi_507/ZN (ND2D1HPBWP)      0.08      0.86 f
+  counter_and_parity/ctmi_506/ZN (NR2XD0HPBWP)     0.10      0.96 r
+  counter_and_parity/ctmi_505/ZN (ND2D1HPBWP)      0.09      1.05 f
+  counter_and_parity/ctmi_504/ZN (NR2XD0HPBWP)     0.10      1.15 r
+  counter_and_parity/ctmi_503/ZN (ND2D1HPBWP)      0.09      1.24 f
+  counter_and_parity/ctmi_502/ZN (NR2XD0HPBWP)     0.09      1.33 r
+  counter_and_parity/ctmi_501/ZN (ND2D1HPBWP)      0.08      1.41 f
+  counter_and_parity/ctmi_500/ZN (NR2XD0HPBWP)     0.10      1.51 r
+  counter_and_parity/ctmi_499/ZN (ND2D1HPBWP)      0.09      1.60 f
+  counter_and_parity/ctmi_498/ZN (NR2XD0HPBWP)     0.07      1.67 r
+  counter_and_parity/ctmi_497/ZN (MOAI22D0HPBWP)   0.07      1.74 f
+  counter_and_parity/ctmi_495/ZN (MOAI22D0HPBWP)   0.11      1.85 r
+  counter_and_parity/count_reg_reg[15]/D (SDFCNQD1HPBWP)
+                                                   0.00      1.85 r
+  data arrival time                                          1.85
+
+  clock SYS_CLK (rise edge)                       10.00     10.00
+  clock network delay (ideal)                      0.00     10.00
+  counter_and_parity/count_reg_reg[15]/CP (SDFCNQD1HPBWP)
+                                                   0.00     10.00 r
+  clock uncertainty                               -0.30      9.70
+  library setup time                              -0.10      9.60
+  data required time                                         9.60
+  ------------------------------------------------------------------------
+  data required time                                         9.60
+  data arrival time                                         -1.85
+  ------------------------------------------------------------------------
+  slack (MET)                                                7.76
+
+
+1

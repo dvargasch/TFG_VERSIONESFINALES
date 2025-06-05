@@ -1,0 +1,135 @@
+Information: Corner cornerFF: no PVT mismatches. (PVT-032)
+Information: Corner cornerSS: no PVT mismatches. (PVT-032)
+****************************************
+Report : power
+        -significant_digits 2
+Design : top
+Version: U-2022.12-SP6
+Date   : Thu Jun  5 15:22:10 2025
+****************************************
+Information: Activity propagation will be performed for scenario scenarioSS.
+Information: Doing activity propagation for mode 'mode1' and corner 'cornerSS' with effort level 'medium'. (POW-024)
+Information: Timer-derived activity data is cached on scenario scenarioSS (POW-052)
+Infomation: Fast mode activity propagation power.rtl_activity_annotation setup is ignored. Always use accurate mode.
+Information: Running switching activity propagation in scalar mode!
+
+ **** Information : No. of simulation cycles = 6 ****
+Information: Propagated activity on scenario scenarioFF identical to that on scenarioSS (POW-006)
+Information: The stitching and editing of coupling caps is turned OFF for design 'top_lib:top/auto_floorplan.design'. (TIM-125)
+Information: Design Average RC for design top  (NEX-011)
+Information: r = 0.858161 ohm/um, via_r = 1.815407 ohm/cut, c = 0.134833 ff/um, cc = 0.000000 ff/um (X dir) (NEX-017)
+Information: r = 0.868123 ohm/um, via_r = 1.815407 ohm/cut, c = 0.154469 ff/um, cc = 0.000000 ff/um (Y dir) (NEX-017)
+Information: The RC mode used is VR for design 'top'. (NEX-022)
+Information: Update timing completed net estimation for all the timing graph nets (TIM-111)
+Information: Net estimation statistics: timing graph nets = 2489, routed nets = 0, across physical hierarchy nets = 0, parasitics cached nets = 2489, delay annotated nets = 0, parasitics annotated nets = 0, multi-voltage nets = 0. (TIM-112)
+************************************************************
+Timer Settings:
+Delay Calculation Style:                   auto
+Signal Integrity Analysis:                 disabled
+Timing Window Analysis:                    disabled
+Advanced Waveform Propagation:             disabled
+Variation Type:                            fixed_derate
+Clock Reconvergence Pessimism Removal:     disabled
+Advanced Receiver Model:                   disabled
+ML Acceleration:                           off
+************************************************************
+Mode: mode1
+Corner: cornerFF
+Scenario: scenarioFF
+Voltage: 1.32
+Temperature: 125.00
+
+Voltage Unit         : 1V
+Capacitance Unit     : 1pF
+Time Unit            : 1ns
+Temperature Unit     : 1C
+Dynamic Power Unit   : 1nW
+Leakage Power Unit   : 1nW
+
+Switched supply net power scaling:
+scaling for leakage power
+
+Supply nets:
+VDD (power) probability 1.00 (default)
+VSS (ground) probability 1.00 (default)
+Warning: Power table extrapolation (extrapolation mode) for port CDN on cell counter_and_parity/count_reg_reg[126] for parameter Tinp. Lowest table value = 0.004000, highest table value = 0.331200, value = 5.302982 (POW-046)
+Warning: Power table extrapolation (extrapolation mode) for port CDN on cell counter_and_parity/count_reg_reg[125] for parameter Tinp. Lowest table value = 0.004000, highest table value = 0.331200, value = 5.300961 (POW-046)
+Warning: Power table extrapolation (extrapolation mode) for port CDN on cell counter_and_parity/count_reg_reg[124] for parameter Tinp. Lowest table value = 0.004000, highest table value = 0.331200, value = 5.300961 (POW-046)
+Warning: Power table extrapolation (extrapolation mode) for port CDN on cell counter_and_parity/count_reg_reg[123] for parameter Tinp. Lowest table value = 0.004000, highest table value = 0.331200, value = 5.302982 (POW-046)
+Warning: Power table extrapolation (extrapolation mode) for port CDN on cell counter_and_parity/count_reg_reg[122] for parameter Tinp. Lowest table value = 0.004000, highest table value = 0.331200, value = 5.300827 (POW-046)
+Warning: Power table extrapolation (extrapolation mode) for port CDN on cell counter_and_parity/count_reg_reg[121] for parameter Tinp. Lowest table value = 0.004000, highest table value = 0.331200, value = 5.300827 (POW-046)
+Warning: Power table extrapolation (extrapolation mode) for port CDN on cell counter_and_parity/count_reg_reg[120] for parameter Tinp. Lowest table value = 0.004000, highest table value = 0.331200, value = 5.300827 (POW-046)
+Warning: Power table extrapolation (extrapolation mode) for port CDN on cell counter_and_parity/count_reg_reg[119] for parameter Tinp. Lowest table value = 0.004000, highest table value = 0.331200, value = 5.300827 (POW-046)
+Warning: Power table extrapolation (extrapolation mode) for port CDN on cell counter_and_parity/count_reg_reg[118] for parameter Tinp. Lowest table value = 0.004000, highest table value = 0.331200, value = 5.300827 (POW-046)
+Warning: Power table extrapolation (extrapolation mode) for port CDN on cell counter_and_parity/count_reg_reg[117] for parameter Tinp. Lowest table value = 0.004000, highest table value = 0.331200, value = 5.298805 (POW-046)
+Note - message 'POW-046' limit (10) exceeded. Remainder will be suppressed.
+Warning: Fall toggles on pin counter_and_parity/count_reg_reg[50]/QN are impossible given input states; converted to rise toggles. (POW-069)
+
+  Cell Internal Power    = 3.29e+05 nW ( 89.8%)
+  Net Switching Power    = 3.73e+04 nW ( 10.2%)
+Total Dynamic Power      = 3.66e+05 nW (100.0%)
+
+Cell Leakage Power       = 2.84e+05 nW
+
+
+  Attributes
+  ----------
+      u  -  User defined power group
+      i  -  Includes clock pin internal power
+
+Power Group         Internal Power        Switching Power          Leakage Power            Total Power    (   %  )    Attrs
+-----------------------------------------------------------------------------------------------------------------------------
+io_pad                    0.00e+00               0.00e+00               0.00e+00               0.00e+00    (  0.0%)         
+memory                    0.00e+00               0.00e+00               0.00e+00               0.00e+00    (  0.0%)         
+black_box                 0.00e+00               0.00e+00               0.00e+00               0.00e+00    (  0.0%)         
+clock_network             3.12e+05               1.10e+04               1.06e+03               3.24e+05    ( 49.8%)        i
+register                  1.39e+04               3.35e+03               1.40e+05               1.57e+05    ( 24.1%)         
+sequential                0.00e+00               0.00e+00               0.00e+00               0.00e+00    (  0.0%)         
+combinational             3.33e+03               2.29e+04               1.43e+05               1.69e+05    ( 26.0%)         
+-----------------------------------------------------------------------------------------------------------------------------
+Total                     3.29e+05 nW            3.73e+04 nW            2.84e+05 nW            6.50e+05 nW
+Mode: mode1
+Corner: cornerSS
+Scenario: scenarioSS
+Voltage: 1.08
+Temperature: 125.00
+
+Voltage Unit         : 1V
+Capacitance Unit     : 1pF
+Time Unit            : 1ns
+Temperature Unit     : 1C
+Dynamic Power Unit   : 1nW
+Leakage Power Unit   : 1nW
+
+Switched supply net power scaling:
+scaling for leakage power
+
+Supply nets:
+VDD (power) probability 1.00 (default)
+VSS (ground) probability 1.00 (default)
+Warning: Fall toggles on pin counter_and_parity/count_reg_reg[50]/QN are impossible given input states; converted to rise toggles. (POW-069)
+
+  Cell Internal Power    = 1.70e+05 nW ( 87.3%)
+  Net Switching Power    = 2.48e+04 nW ( 12.7%)
+Total Dynamic Power      = 1.95e+05 nW (100.0%)
+
+Cell Leakage Power       = 3.19e+03 nW
+
+
+  Attributes
+  ----------
+      u  -  User defined power group
+      i  -  Includes clock pin internal power
+
+Power Group         Internal Power        Switching Power          Leakage Power            Total Power    (   %  )    Attrs
+-----------------------------------------------------------------------------------------------------------------------------
+io_pad                    0.00e+00               0.00e+00               0.00e+00               0.00e+00    (  0.0%)         
+memory                    0.00e+00               0.00e+00               0.00e+00               0.00e+00    (  0.0%)         
+black_box                 0.00e+00               0.00e+00               0.00e+00               0.00e+00    (  0.0%)         
+clock_network             1.61e+05               7.33e+03               1.35e+01               1.68e+05    ( 84.9%)        i
+register                  7.46e+03               2.19e+03               1.62e+03               1.13e+04    (  5.7%)         
+sequential                0.00e+00               0.00e+00               0.00e+00               0.00e+00    (  0.0%)         
+combinational             1.70e+03               1.53e+04               1.56e+03               1.86e+04    (  9.4%)         
+-----------------------------------------------------------------------------------------------------------------------------
+Total                     1.70e+05 nW            2.48e+04 nW            3.19e+03 nW            1.98e+05 nW
+1
