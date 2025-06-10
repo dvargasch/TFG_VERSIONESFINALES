@@ -1,0 +1,53 @@
+Warning: Scenario scenarioFF is not configured for setup analysis: skipping. (UIC-058)
+****************************************
+Report : timing
+        -path_type full
+        -delay_type max
+        -max_paths 1
+        -report_by design
+Design : top
+Version: U-2022.12-SP6
+Date   : Mon Jun  9 17:50:08 2025
+****************************************
+
+  Startpoint: counter_2/q_reg[0] (rising edge-triggered flip-flop clocked by SYS_CLK)
+  Endpoint: counter_3/q_reg[5] (rising edge-triggered flip-flop clocked by SYS_CLK)
+  Mode: mode1
+  Corner: cornerSS
+  Scenario: scenarioSS
+  Path Group: SYS_CLK
+  Path Type: max
+
+  Point                                            Incr      Path  
+  ------------------------------------------------------------------------
+  clock SYS_CLK (rise edge)                        0.00      0.00
+  clock network delay (ideal)                      0.00      0.00
+
+  counter_2/q_reg[0]/CP (SDFCNQD0HPBWP)            0.00      0.00 r
+  counter_2/q_reg[0]/Q (SDFCNQD0HPBWP)             0.38      0.38 f
+  voter/ctmi_243/ZN (MAOI222D1HPBWP)               0.12      0.50 r
+  voter/ctmi_14/ZN (CKND0HPBWP)                    0.37      0.87 f
+  ne_48/ctmi_87/ZN (MAOI22D0HPBWP)                 0.26      1.13 f
+  ne_48/ctmi_86/ZN (NR4D0HPBWP)                    0.12      1.25 r
+  ne_48/ctmi_13/Z (AN4D0HPBWP)                     0.23      1.48 r
+  ne_48/ctmi_14/ZN (INVD1HPBWP)                    0.10      1.58 f
+  counter_3/phfnr_buf_40/ZN (INVD1HPBWP)           0.15      1.73 r
+  counter_3/ctmi_210/ZN (OAI211D1HPBWP)            0.13      1.86 f
+  counter_3/ctmi_209/ZN (CKND2D1HPBWP)             0.07      1.93 r
+  counter_3/q_reg[5]/D (SDFCNQD0HPBWP)             0.00      1.93 r
+  data arrival time                                          1.93
+
+  clock SYS_CLK (rise edge)                       10.00     10.00
+  clock network delay (ideal)                      0.00     10.00
+  counter_3/q_reg[5]/CP (SDFCNQD0HPBWP)            0.00     10.00 r
+  clock uncertainty                               -0.30      9.70
+  library setup time                              -0.07      9.63
+  data required time                                         9.63
+  ------------------------------------------------------------------------
+  data required time                                         9.63
+  data arrival time                                         -1.93
+  ------------------------------------------------------------------------
+  slack (MET)                                                7.70
+
+
+1

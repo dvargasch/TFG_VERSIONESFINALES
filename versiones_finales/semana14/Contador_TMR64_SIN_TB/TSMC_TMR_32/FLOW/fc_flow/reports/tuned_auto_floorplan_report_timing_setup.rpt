@@ -1,0 +1,78 @@
+Warning: Scenario scenarioFF is not configured for setup analysis: skipping. (UIC-058)
+****************************************
+Report : timing
+        -path_type full
+        -delay_type max
+        -max_paths 1
+        -report_by design
+Design : top
+Version: U-2022.12-SP6
+Date   : Mon Jun  9 18:05:01 2025
+****************************************
+
+  Startpoint: counter_1/q_reg[0] (rising edge-triggered flip-flop clocked by SYS_CLK)
+  Endpoint: counter_1/q_reg[31] (rising edge-triggered flip-flop clocked by SYS_CLK)
+  Mode: mode1
+  Corner: cornerSS
+  Scenario: scenarioSS
+  Path Group: SYS_CLK
+  Path Type: max
+
+  Point                                            Incr      Path  
+  ------------------------------------------------------------------------
+  clock SYS_CLK (rise edge)                        0.00      0.00
+  clock network delay (ideal)                      0.00      0.00
+
+  counter_1/q_reg[0]/CP (SDFCNQD0HPBWP)            0.00      0.00 r
+  counter_1/q_reg[0]/Q (SDFCNQD0HPBWP)             0.39      0.39 r
+  voter/ctmi_960/ZN (MAOI222D1HPBWP)               0.16      0.55 f
+  voter/ctmi_62/ZN (CKND0HPBWP)                    0.35      0.90 r
+  counter_1/ctmi_870/ZN (ND2D1HPBWP)               0.19      1.09 f
+  counter_1/ctmi_869/ZN (INR2XD0HPBWP)             0.12      1.22 r
+  counter_1/ctmi_868/ZN (ND2D1HPBWP)               0.10      1.31 f
+  counter_1/ctmi_867/ZN (INR2XD0HPBWP)             0.11      1.42 r
+  counter_1/ctmi_866/ZN (ND2D1HPBWP)               0.10      1.51 f
+  counter_1/ctmi_865/ZN (INR2XD0HPBWP)             0.11      1.63 r
+  counter_1/ctmi_864/ZN (ND2D1HPBWP)               0.10      1.73 f
+  counter_1/ctmi_863/ZN (INR2XD0HPBWP)             0.11      1.84 r
+  counter_1/ctmi_862/ZN (ND2D1HPBWP)               0.09      1.93 f
+  counter_1/ctmi_861/ZN (INR2XD0HPBWP)             0.10      2.03 r
+  counter_1/ctmi_860/ZN (ND2D1HPBWP)               0.09      2.13 f
+  counter_1/ctmi_859/ZN (INR2XD0HPBWP)             0.11      2.24 r
+  counter_1/ctmi_858/ZN (ND2D1HPBWP)               0.11      2.34 f
+  counter_1/ctmi_857/ZN (INR2XD0HPBWP)             0.13      2.48 r
+  counter_1/ctmi_856/ZN (ND2D1HPBWP)               0.12      2.59 f
+  counter_1/ctmi_855/ZN (INR2XD0HPBWP)             0.11      2.70 r
+  counter_1/ctmi_854/ZN (ND2D1HPBWP)               0.12      2.82 f
+  counter_1/ctmi_853/ZN (INR2XD0HPBWP)             0.13      2.95 r
+  counter_1/ctmi_852/ZN (ND2D1HPBWP)               0.10      3.05 f
+  counter_1/ctmi_851/ZN (INR2XD0HPBWP)             0.10      3.15 r
+  counter_1/ctmi_850/ZN (ND2D1HPBWP)               0.10      3.25 f
+  counter_1/ctmi_849/ZN (INR2XD0HPBWP)             0.12      3.37 r
+  counter_1/ctmi_848/ZN (ND2D1HPBWP)               0.10      3.47 f
+  counter_1/ctmi_847/ZN (INR2XD0HPBWP)             0.12      3.59 r
+  counter_1/ctmi_846/ZN (ND2D1HPBWP)               0.10      3.69 f
+  counter_1/ctmi_845/ZN (INR2XD0HPBWP)             0.11      3.80 r
+  counter_1/ctmi_844/ZN (ND2D1HPBWP)               0.11      3.91 f
+  counter_1/ctmi_843/ZN (INR2XD0HPBWP)             0.12      4.03 r
+  counter_1/ctmi_842/ZN (ND2D1HPBWP)               0.09      4.12 f
+  counter_1/ctmi_841/ZN (IND2D1HPBWP)              0.12      4.25 f
+  counter_1/ctmi_840/ZN (MAOI22D0HPBWP)            0.16      4.40 f
+  counter_1/ctmi_838/ZN (OAI22D0HPBWP)             0.12      4.53 r
+  counter_1/q_reg[31]/D (SDFCNQD0HPBWP)            0.00      4.53 r
+  data arrival time                                          4.53
+
+  clock SYS_CLK (rise edge)                       10.00     10.00
+  clock network delay (ideal)                      0.00     10.00
+  counter_1/q_reg[31]/CP (SDFCNQD0HPBWP)           0.00     10.00 r
+  clock uncertainty                               -0.30      9.70
+  library setup time                              -0.16      9.54
+  data required time                                         9.54
+  ------------------------------------------------------------------------
+  data required time                                         9.54
+  data arrival time                                         -4.53
+  ------------------------------------------------------------------------
+  slack (MET)                                                5.01
+
+
+1

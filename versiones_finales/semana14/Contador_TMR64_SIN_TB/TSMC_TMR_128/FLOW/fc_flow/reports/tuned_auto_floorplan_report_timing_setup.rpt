@@ -1,0 +1,123 @@
+Warning: Scenario scenarioFF is not configured for setup analysis: skipping. (UIC-058)
+****************************************
+Report : timing
+        -path_type full
+        -delay_type max
+        -max_paths 1
+        -report_by design
+Design : top
+Version: U-2022.12-SP6
+Date   : Mon Jun  9 17:31:58 2025
+****************************************
+
+  Startpoint: counter_1/q_reg[92] (rising edge-triggered flip-flop clocked by SYS_CLK)
+  Endpoint: counter_2/q_reg[127] (rising edge-triggered flip-flop clocked by SYS_CLK)
+  Mode: mode1
+  Corner: cornerSS
+  Scenario: scenarioSS
+  Path Group: SYS_CLK
+  Path Type: max
+
+  Point                                            Incr      Path  
+  ------------------------------------------------------------------------
+  clock SYS_CLK (rise edge)                        0.00      0.00
+  clock network delay (ideal)                      0.00      0.00
+
+  counter_1/q_reg[92]/CP (SDFCNQD0HPBWP)           0.00      0.00 r
+  counter_1/q_reg[92]/Q (SDFCNQD0HPBWP)            0.34      0.34 f
+  voter/ctmi_3680/ZN (MAOI222D1HPBWP)              0.12      0.46 r
+  voter/ctmi_56/ZN (CKND0HPBWP)                    0.49      0.95 f
+  ne_47/ctmi_2028/ZN (AOI22D1HPBWP)                0.29      1.24 r
+  ne_47/ctmi_2018/ZN (ND4D1HPBWP)                  0.16      1.40 f
+  ne_47/ctmi_1991/ZN (NR4D0HPBWP)                  0.25      1.65 r
+  ne_47/ctmi_1831/ZN (ND4D1HPBWP)                  0.18      1.83 f
+  ne_47/ctmi_1830/Z (OR3D4HPBWP)                   0.50      2.33 f
+  counter_2/phfnr_buf_4658/ZN (INVD1HPBWP)         1.98      4.31 r
+  counter_2/DP_OP_6_40867_55635_J2/ctmi_1038/ZN (AOI22D1HPBWP)
+                                                   0.71      5.02 f
+  counter_2/DP_OP_6_40867_55635_J2/ctmi_1035/Z (OR3D1HPBWP)
+                                                   0.33      5.35 f
+  counter_2/DP_OP_6_40867_55635_J2/ctmi_1031/ZN (INR4D1HPBWP)
+                                                   0.29      5.64 r
+  counter_2/DP_OP_6_40867_55635_J2/ctmi_1018/ZN (ND4D1HPBWP)
+                                                   0.46      6.11 f
+  counter_2/DP_OP_6_40867_55635_J2/ctmi_993/ZN (NR3D1HPBWP)
+                                                   0.40      6.50 r
+  counter_2/DP_OP_6_40867_55635_J2/ctmi_940/ZN (ND3D2HPBWP)
+                                                   0.30      6.80 f
+  counter_2/DP_OP_6_40867_55635_J2/ctmi_897/Z (OR3D1HPBWP)
+                                                   0.20      7.00 f
+  counter_2/DP_OP_6_40867_55635_J2/ctmi_896/ZN (NR2XD0HPBWP)
+                                                   0.10      7.10 r
+  counter_2/ctmi_2771/ZN (IND2D1HPBWP)             0.11      7.22 f
+  counter_2/DP_OP_6_40867_55635_J2/ctmi_894/ZN (NR2XD0HPBWP)
+                                                   0.10      7.32 r
+  counter_2/ctmi_2769/ZN (IND2D1HPBWP)             0.10      7.42 f
+  counter_2/DP_OP_6_40867_55635_J2/ctmi_892/ZN (NR2XD0HPBWP)
+                                                   0.11      7.53 r
+  counter_2/ctmi_2767/ZN (IND2D1HPBWP)             0.11      7.65 f
+  counter_2/DP_OP_6_40867_55635_J2/ctmi_890/ZN (NR2XD0HPBWP)
+                                                   0.11      7.76 r
+  counter_2/ctmi_2765/ZN (IND2D1HPBWP)             0.11      7.86 f
+  counter_2/DP_OP_6_40867_55635_J2/ctmi_888/ZN (NR2XD0HPBWP)
+                                                   0.11      7.97 r
+  counter_2/ctmi_2763/ZN (IND2D1HPBWP)             0.11      8.08 f
+  counter_2/DP_OP_6_40867_55635_J2/ctmi_886/ZN (NR2XD0HPBWP)
+                                                   0.10      8.18 r
+  counter_2/ctmi_2761/ZN (IND2D1HPBWP)             0.11      8.29 f
+  counter_2/DP_OP_6_40867_55635_J2/ctmi_884/ZN (NR2XD0HPBWP)
+                                                   0.10      8.39 r
+  counter_2/ctmi_2759/ZN (IND2D1HPBWP)             0.11      8.50 f
+  counter_2/DP_OP_6_40867_55635_J2/ctmi_882/ZN (NR2XD0HPBWP)
+                                                   0.12      8.62 r
+  counter_2/ctmi_2758/ZN (IND2D1HPBWP)             0.12      8.73 f
+  counter_2/DP_OP_6_40867_55635_J2/ctmi_880/ZN (NR2XD0HPBWP)
+                                                   0.11      8.84 r
+  counter_2/ctmi_2757/ZN (IND2D1HPBWP)             0.11      8.95 f
+  counter_2/DP_OP_6_40867_55635_J2/ctmi_878/ZN (NR2XD0HPBWP)
+                                                   0.09      9.04 r
+  counter_2/ctmi_2756/ZN (IND2D1HPBWP)             0.11      9.15 f
+  counter_2/DP_OP_6_40867_55635_J2/ctmi_876/ZN (NR2XD0HPBWP)
+                                                   0.10      9.25 r
+  counter_2/ctmi_2755/ZN (IND2D1HPBWP)             0.11      9.36 f
+  counter_2/DP_OP_6_40867_55635_J2/ctmi_874/ZN (NR2XD0HPBWP)
+                                                   0.09      9.45 r
+  counter_2/ctmi_2754/ZN (IND2D1HPBWP)             0.11      9.56 f
+  counter_2/DP_OP_6_40867_55635_J2/ctmi_872/ZN (NR2XD0HPBWP)
+                                                   0.13      9.69 r
+  counter_2/ctmi_2753/ZN (IND2D1HPBWP)             0.11      9.79 f
+  counter_2/DP_OP_6_40867_55635_J2/ctmi_870/ZN (NR2XD0HPBWP)
+                                                   0.11      9.90 r
+  counter_2/ctmi_2752/ZN (IND2D1HPBWP)             0.11     10.01 f
+  counter_2/DP_OP_6_40867_55635_J2/ctmi_868/ZN (NR2XD0HPBWP)
+                                                   0.13     10.14 r
+  counter_2/ctmi_2751/ZN (IND2D1HPBWP)             0.11     10.25 f
+  counter_2/DP_OP_6_40867_55635_J2/ctmi_866/ZN (NR2XD0HPBWP)
+                                                   0.11     10.36 r
+  counter_2/ctmi_2750/ZN (IND2D1HPBWP)             0.11     10.47 f
+  counter_2/DP_OP_6_40867_55635_J2/ctmi_864/ZN (NR2XD0HPBWP)
+                                                   0.09     10.56 r
+  counter_2/ctmi_2749/ZN (IND2D1HPBWP)             0.10     10.66 f
+  counter_2/DP_OP_6_40867_55635_J2/ctmi_862/ZN (NR2XD0HPBWP)
+                                                   0.10     10.76 r
+  counter_2/ctmi_2748/ZN (IND2D1HPBWP)             0.11     10.87 f
+  counter_2/DP_OP_6_40867_55635_J2/ctmi_860/ZN (NR2XD0HPBWP)
+                                                   0.09     10.96 r
+  counter_2/ctmi_2747/ZN (MOAI22D0HPBWP)           0.16     11.12 r
+  counter_2/q_reg[127]/D (SDFCNQD1HPBWP)           0.00     11.12 r
+  data arrival time                                         11.12
+
+  clock SYS_CLK (rise edge)                       10.00     10.00
+  clock network delay (ideal)                      0.00     10.00
+  counter_2/q_reg[127]/CP (SDFCNQD1HPBWP)          0.00     10.00 r
+  clock uncertainty                               -0.30      9.70
+  library setup time                              -0.11      9.59
+  data required time                                         9.59
+  ------------------------------------------------------------------------
+  data required time                                         9.59
+  data arrival time                                        -11.12
+  ------------------------------------------------------------------------
+  slack (VIOLATED)                                          -1.53
+
+
+1
